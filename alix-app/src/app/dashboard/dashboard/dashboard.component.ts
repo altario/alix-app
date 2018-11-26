@@ -14,7 +14,5 @@ export class DashboardComponent implements OnInit {
         this.api.getJSON().subscribe(data => {
             console.log(data);
         });
-
-        console.log("AND I AM IN HERE JUST O MAKE SURE!!");
     }
 }
