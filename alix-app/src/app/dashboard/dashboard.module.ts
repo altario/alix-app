@@ -8,9 +8,15 @@ import { DashboardRoutes } from './dashboard.routing';
 
 import { NgxEchartsModule } from 'ngx-echarts';
 import { 
-    AreaComponent ,
+    AreaBasicComponent,
     AreaStackComponent,
-    RadarComponent
+    BarComponent,
+    BoxplotComponent,
+    BubbleComponent,
+    DoughnutComponent, 
+    RadarComponent,
+    ScatterComponent,
+    ScatterMapComponent
 } from '../charts/index';
 @NgModule({
     imports: [
@@ -21,9 +27,15 @@ import {
     ],
     declarations: [
         DashboardComponent,
-        AreaComponent,
+        AreaBasicComponent,
         AreaStackComponent,
-        RadarComponent
+        BarComponent,
+        BoxplotComponent,
+        BubbleComponent,
+        DoughnutComponent,
+        RadarComponent,
+        ScatterComponent,
+        ScatterMapComponent
     ]
 })
 export class DashboardModule { }

@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, Router } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 /**
  * Generic app routes
@@ -21,6 +23,7 @@ import { BaseLayoutComponent } from './core/base-layout/base-layout.component';
 
 import { NgxEchartsModule } from 'ngx-echarts';
 
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -30,7 +33,9 @@ import { NgxEchartsModule } from 'ngx-echarts';
     imports: [
         BrowserModule,
         RouterModule.forRoot(AppRoutes),
-        NgbModule.forRoot()
+        NgbModule.forRoot(),
+        HttpModule,
+        HttpClientModule
     ],
     providers: [],
     bootstrap: [AppComponent]
