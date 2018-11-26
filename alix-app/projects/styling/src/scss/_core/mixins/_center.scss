@@ -1,0 +1,60 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #MIXINS
+//    =center
+//    =center--important
+//
+//  #EXAMPLES
+//    [+1] centers both horizontally and vertically
+//    [+2] centers horizontally
+//    [+3] centers vertically
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #MIXINS
+// --------------------------------------------------
+
+// =center
+@mixin center($_axis: both, $_important: null) {
+  position: absolute $_important;
+  @if $_axis == both {
+    top: 50% $_important;
+    left: 50% $_important;
+    transform: translate(-50%, -50%) $_important;
+  }
+  @else if $_axis == h {
+    left: 50% $_important;
+    transform: translateX(-50%) $_important;
+  }
+  @else if $_axis == v {
+    top: 50% $_important;
+    transform: translateY(-50%) $_important;
+  }
+}
+
+
+// =center--important
+@mixin center--important($_axis: both) {
+  @include center($_axis, important);
+}
+
+
+
+
+
+// --------------------------------------------------
+// #EXAMPLES
+// --------------------------------------------------
+
+// [+1] centers both horizontally and vertically
+// @include center;
+
+// [+2] centers horizontally
+// @include center(h);
+
+// [+3] centers vertically
+// @include center(v);

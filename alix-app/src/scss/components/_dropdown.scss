@@ -1,0 +1,19 @@
+
+
+
+// _dropdown
+.dropdown {
+  & > ul.dropdown-menu {
+    border: none;
+    box-shadow: shadow(topdown--2);
+
+    li {
+      font-size: $font-size--small;
+      a {
+        &:hover {
+          background: $color__gray--lightest;
+        }
+      }
+    }
+  }
+}

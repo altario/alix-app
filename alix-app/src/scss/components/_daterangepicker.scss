@@ -1,0 +1,186 @@
+// ------------------------------------------------------------------
+//
+// INDEX
+//
+//  #STYLES
+//
+// ------------------------------------------------------------------
+
+
+// ------------------------------------------------------------------
+// #VARS
+// ------------------------------------------------------------------
+
+// $popover__arrow__width: .8rem;
+// $popover__arrow__height: .7rem;
+
+
+// ------------------------------------------------------------------
+// #STYLES
+// ------------------------------------------------------------------
+
+// _daterangepicker
+.daterangepicker {
+  &.opensleft {
+    transform: translate(0px, 4px);
+  }
+  &.opensright {
+    transform: translate(-42px, 4px);
+  }
+  &.ltr {
+    padding: 30px 50px;
+    border-width: $border-width__default;
+    border-color: $input__focus-border-color;
+    border-radius: $input__border-radius;
+    box-shadow: shadow(topdown--2);
+    &:before,
+    &:after {
+      display: none;
+    }
+    .calendar {
+      margin: 0;
+      &.right {
+        margin-bottom: 60px;
+      }
+      &.left,
+      &.right {
+        .daterangepicker_input {
+          display: none;
+        }
+        .calendar-table {
+          padding: 0;
+          table {
+            border-collapse: separate;
+            border-spacing: 0 8px;
+            td {
+              width: 36px;
+              // @include anim;
+              &:hover {
+                background: white;
+                border: 1px solid $input__focus-border-color;
+              }
+            }
+            thead {
+              th {
+                height: 26px;
+                line-height: 26px;
+                border: none;
+                padding: 0;
+                color: $color__gray--dark;
+                vertical-align: middle;
+                font-size: $font-size--tiny;
+                font-weight: $font-weight--bold;
+                text-transform: uppercase;
+              }
+              tr {
+                &:last-child {
+                  pointer-events: none;
+                  th {
+                    &:first-child,
+                    &:last-child {
+                      color: $color__gray--medium;
+                    }
+                  }
+                }
+              }
+              .month {
+                vertical-align: top;
+              }
+              .monthselect,
+              .yearselect {
+                height: 30px;
+                padding: 0;
+                appearance: none;
+                cursor: pointer;
+                border: none;
+                border-radius: $border-radius__default;
+                background: transparent;
+                color: $color__gray--dark;
+                text-align: center;
+                text-align-last: center;
+                font-weight: $font-weight--bold;
+                text-transform: uppercase;
+                &:hover {
+                  background: $color__gray--lighter;
+                }
+              }
+              .prev,
+              .next {
+                height: 30px;
+                line-height: 30px;
+                margin-bottom: 15px;
+                display: block;
+                border-radius: $border-radius__default;
+                font-size: 12px;
+                i {
+                  display: none;
+                }
+                &:hover {
+                  background: $color__gray--lighter;
+                }
+              }
+              .prev {
+                transform: translateX(-25px);
+                @include icon(chevron-left);
+                font-weight: $font-weight--light;
+              }
+              .next {
+                transform: translateX(25px);
+                @include icon(chevron-right);
+                font-weight: $font-weight--light;
+              }
+            }
+            tbody {
+              tr {
+                td {
+                  height: 26px;
+                  line-height: 26px;
+                  border-radius: $border-radius__default;
+                  color: $color__gray--dark;
+                  font-size: $font-size--tiny;
+                  font-weight: $font-weight--bold;
+                  text-transform: uppercase;
+                  &.off {
+                    display: none;
+                  }
+                  &.off,
+                  &.weekend {
+                    color: $color__gray--medium;
+                  }
+                  &.active {
+                    color: white;
+                    background: $input__focus-border-color;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .ranges {
+      height: 30px;
+      position: absolute;
+      right: 50px;
+      bottom: 30px;
+      margin: 0;
+      .range_inputs {
+        height: 100%;
+        @include align(right);
+        button {
+          line-height: 30px;
+          border: none;
+        }
+        .btn-default {
+          background: $color__gray--dark;
+        }
+        .btn-success {
+          order: 1;
+          margin-left: 10px;
+          background: $input__focus-border-color;
+        }
+      }
+    }
+  }
+}

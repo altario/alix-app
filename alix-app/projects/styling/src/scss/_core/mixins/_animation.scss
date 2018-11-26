@@ -1,0 +1,66 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #MIXINS
+//    =animation
+//    =animation-stack
+//    =keyframes
+//
+//  #EXAMPLES
+//    [+1] single animation (name time times delay ease)
+//    [+2] single animation with delay (name time times ease)
+//    [+3] multiple stack animations (name time times delay ease)
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #MIXINS
+// --------------------------------------------------
+
+// =animation
+@mixin animation($_name) {
+  animation: #{$_name};
+}
+
+
+// =animation-stack
+@mixin animation-stack($animate...) {
+  $max: length($animate);
+  $animations: '';
+
+  @for $i from 1 through $max {
+    $animations: #{$animations + nth($animate, $i)};
+
+    @if $i < $max {
+      $animations: #{$animations + ", "};
+    }
+  }
+  animation: $animations;
+}
+
+
+// =keyframes
+@mixin keyframes($_anim-name) {
+  @keyframes #{$_anim-name} {
+    @content;
+  }
+}
+
+
+
+
+
+// --------------------------------------------------
+// #EXAMPLES
+// --------------------------------------------------
+
+// [+1] single animation (name time times delay ease)
+// @include animation(spin 2s infinit linear);
+
+// [+2] single animation with delay (name time times ease)
+// @include animation(spin 2s 1 2s linear);
+
+// [+3] multiple stack animations (name time times delay ease)
+// @include animation-stack(bounce 2s 1 linear, spin 2s 1 2s linear);

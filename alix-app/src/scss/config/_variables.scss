@@ -1,0 +1,327 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #VARS
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #VARS
+// --------------------------------------------------
+
+// $flags --------------------
+
+// $flags: fontawesome fallback for icons
+$font-fontawesome-fallback:           true;
+
+// $flags: custom iconfonts for icons
+$font-fonticons-custom:               true;
+
+// $flags: grid
+$grid__vertical-gutters:              false;
+
+
+
+// $body --------------------
+
+// $body: defaults
+$body__color__background:             white;
+$body__color__text:                   $color__gray--darkest;
+$body__color__highlight--background:  $color__brand--1;
+$body__color__highlight--text:        white;
+
+
+
+// $theme-color-map --------------------
+$theme-color-map: (
+  // primary
+  'primary':         $color__brand--1,
+  'secondary':       $color__brand--2,
+
+  // states
+  'success':         $color__state--success,
+  'info':            $color__state--info,
+  'warning':         $color__state--warning,
+  'danger':          $color__state--danger,
+
+  // gray
+  'light':           $color__gray--light,
+  'gray-light':      $color__custom__gray--3,
+  'gray-medium':     $color__gray--medium,
+  'gray-darker':     $color__gray--darker,
+  'gray-dark':       $color__gray--dark,
+  'gray-darkest':    $color__gray--darkest,
+  'white':           white,
+
+  // other
+  'default':         $color__brand--1,
+
+  // social
+  'facebook':        $color__social--facebook,
+  'twitter':         $color__social--twitter,
+);
+
+
+// $shadows-map --------------------
+// TODO: add shadows
+$alt_shadow-map: (
+  // card
+  card:                               0px 2px 50px rgba($color__gray--medium, .15),
+
+  // topdown
+  topdown--1:                         0px 1px 6px rgba($color__gray--darkest, .02),
+  topdown--2:                         0px 2px 6px rgba($color__gray--darkest, .18),
+  topdown--3:                         0px 4px 12px rgba($color__gray--darkest, .18),
+
+  // downtop
+  downtop--2:                         0px -2px 6px rgba($color__gray--darkest, .18),
+
+  // wide
+  wide--1:                            0px 0px 160px rgba($color__gray--light, 1),
+  wide--2:                            (0px 0px 160px rgba($color__gray--light, 1), 0px 4px 4px rgba(black, .05)),
+);
+
+
+
+// $breakpoints --------------------
+$alt_breakpoints: (
+  xl: 1280px,
+  lg: 1024px,
+  md: 768px,
+  sm: 568px,
+
+  // ios
+  iphone8plus: 414px,
+  iphone8: 375px,
+);
+
+
+
+// $grid --------------------
+
+// $grid: defaults
+$grid__default--columns:              12;
+$grid__default--gutter-width:         30px;
+
+
+
+// $paths --------------------
+
+// $paths: paths
+$path__assets:                        '/assets/';
+$path__images:                        $path__assets + 'img/';
+$path__fonts:                         $path__assets + 'fonts/';
+
+
+
+// $iconfonts --------------------
+
+// $iconfonts: prefixes
+$iconfont-prefix:                     ico;
+$iconfont__altaricons-prefix:         $iconfont-prefix;
+$iconfont__fontawesome-prefix:        $iconfont-prefix;
+
+
+
+// $fonts --------------------
+
+// $fonts: font-family
+$font-family--primary:                'Lato', sans-serif;
+$font-family--secondary:              'Lato', sans-serif;
+$font-family--code:                   monospace;
+$font-family--icon:                   'altaricons';
+$font-family--fontawesome:            'Font Awesome 5 Pro';
+$font-family--fontawesome--brands:    'Font Awesome 5 Brands';
+
+// $fonts: letter-spacing
+$letter-spacing--1:                   1px;
+$letter-spacing--2:                   1.5px;
+$letter-spacing--3:                   3px;
+
+// $fonts: sizes
+$font-size--default:                  16px; // base default for 'rem' and 'em'
+
+$font-size--jumbo:                    rem(48px); // 3rem
+$font-size--head-1:                   rem(30px); // 1.875rem
+$font-size--lead:                     rem(28px); // 1.75rem
+$font-size--head-2:                   rem(24px); // 1.5rem
+$font-size--head-3:                   rem(20px); // 1.25rem
+$font-size--normal:                   rem(16px); // 1rem
+$font-size--small:                    rem(14px); // 0.83em
+$font-size--head-4:                   rem(12px); // 0.75rem
+$font-size--tiny:                     rem(10px); // 0.625rem
+$font-size--nano:                     rem(8px);  // 0.5rem
+
+// $fonts: line-height
+$line-height__base:                   1.5;
+$line-height--1:                      1.2;
+$line-height--2:                      1.8;
+$line-height--3:                      2;
+$line-height--4:                      2.4;
+
+// $fonts: font-weight
+$font-weight--light:                  300;
+$font-weight--normal:                 400;
+$font-weight--medium:                 500;
+$font-weight--semibold:               600;
+$font-weight--bold:                   700;
+
+$font-weight__default:                $font-weight--normal;
+
+
+// $fonts: margins
+$header__margin-top:                  0;
+$header__margin-bottom:               1rem;
+
+
+
+// $border --------------------
+
+// $border: border
+$border-radius__default:              4px;
+$border-width__default:               1px;
+$border-width__default--sm:           2px;
+$border-width__default--lg:           4px;
+
+
+
+
+// $buttons --------------------
+
+// $buttons: shadow
+$button__shadow--enable: true;
+
+// $buttons: icon box
+$button__icon-box: false; // true or false // background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAAuCAYAAACbIBHcAAABfGlDQ1BJQ0MgUHJvZmlsZQAAKJFjYGAqSSwoyGFhYGDIzSspCnJ3UoiIjFJgv8PAzcDDIMRgxSCemFxc4BgQ4MOAE3y7xsAIoi/rgsxK8/x506a1fP4WNq+ZclYlOrj1gQF3SmpxMgMDIweQnZxSnJwLZOcA2TrJBUUlQPYMIFu3vKQAxD4BZIsUAR0IZN8BsdMh7A8gdhKYzcQCVhMS5AxkSwDZAkkQtgaInQ5hW4DYyRmJKUC2B8guiBvAgNPDRcHcwFLXkYC7SQa5OaUwO0ChxZOaFxoMcgcQyzB4MLgwKDCYMxgwWDLoMjiWpFaUgBQ65xdUFmWmZ5QoOAJDNlXBOT+3oLQktUhHwTMvWU9HwcjA0ACkDhRnEKM/B4FNZxQ7jxDLX8jAYKnMwMDcgxBLmsbAsH0PA4PEKYSYyjwGBn5rBoZt5woSixLhDmf8xkKIX5xmbARh8zgxMLDe+///sxoDA/skBoa/E////73o//+/i4H2A+PsQA4AJHdp4IxrEg8AAAGbaVRYdFhNTDpjb20uYWRvYmUueG1wAAAAAAA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJYTVAgQ29yZSA1LjQuMCI+CiAgIDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+CiAgICAgIDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiCiAgICAgICAgICAgIHhtbG5zOmV4aWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vZXhpZi8xLjAvIj4KICAgICAgICAgPGV4aWY6UGl4ZWxYRGltZW5zaW9uPjYxPC9leGlmOlBpeGVsWERpbWVuc2lvbj4KICAgICAgICAgPGV4aWY6UGl4ZWxZRGltZW5zaW9uPjQ2PC9leGlmOlBpeGVsWURpbWVuc2lvbj4KICAgICAgPC9yZGY6RGVzY3JpcHRpb24+CiAgIDwvcmRmOlJERj4KPC94OnhtcG1ldGE+CmMHWcoAAAF1SURBVGgF7ZpLS8NAFIVvjNRV6cpHrSLWitFISh+o/8Wd4M6Va3+emyxaIdCi4OMniGKTphvNdBdhIJh4Lsnc2U1uMuee803ILGJ9J4MMGyuG+V3aFdOmUBfSQrrCCcj2rjDclDXr+vbuT4cTz3VSC3FPbq4uM7cg2ztzVCW/UUiXHGDm9uGkmxvrNOyephpUc3UdNeCmd1tbdDHopvypubqOGqsoob53Quc9j2zbXkr+/sScJbWB55L/ENA4mP5rWzDTe61tCqM5xYuF1tBarUbqvsqYVk79cUCPz69a006nTceHbW29qAL8nS6q8TzriOk86ZXpWSFdJlp5ejWSNOw7HcUxuU6HdpqbWkiNRp1mYaStF1WAmb73R3R0sJ+cyPSb6/3jk55e3orypl0HZvprFtIomGgbQRb0sSO7AGuJaXDgbHJCmi16sLCQBgfOJmfJ7xds2WOF5Z3G5s2nJqT5sscqC2ls3nxqQpove6yykaR/AC0sO0P3zzFzAAAAAElFTkSuQmCC)
+
+// $buttons: sizes normal
+$button__height:                      40px;
+$button__icon-size:                   16px;
+$button__line-height:                 $button__height - ($border-width__default*2);
+$button__font-size:                   $font-size--head-4;
+$button__border-width:                $border-width__default;
+$button__font-weight:                 $font-weight--bold;
+$button__padding-x:                   32px;
+$button__padding-y:                   0px;
+$button__letter-spacing:              $letter-spacing--2;
+
+// $buttons: sizes tiny
+$button__height-tiny:                 20px;
+$button__icon-size-tiny:              8px;
+$button__line-height-tiny:            $button__height-tiny - ($border-width__default*2);
+$button__font-size-tiny:              $font-size--nano;
+$button__border-width-tiny:           $border-width__default;
+$button__font-weight-tiny:            $font-weight--normal;
+$button__padding-x-tiny:              12px;
+$button__padding-y-tiny:              0px;
+$button__letter-spacing-tiny:         $letter-spacing--2;
+
+// $buttons: sizes small
+$button__height-small:                26px;
+$button__icon-size-small:             12px;
+$button__line-height-small:           $button__height-small - ($border-width__default*2);
+$button__font-size-small:             $font-size--tiny;
+$button__border-width-small:          $border-width__default;
+$button__font-weight-small:           $font-weight--normal;
+$button__padding-x-small:             24px;
+$button__padding-y-small:             0px;
+$button__letter-spacing-small:        $letter-spacing--2;
+
+// $buttons: sizes big
+$button__height-big:                  60px;
+$button__icon-size-big:               20px;
+$button__line-height-big:             $button__height-big - ($border-width__default*2);
+$button__font-size-big:               $font-size--default;
+$button__border-width-big:            $border-width__default;
+$button__font-weight-big:             $font-weight--bold;
+$button__padding-x-big:               40px;
+$button__padding-y-big:               0px;
+$button__letter-spacing-big:          $letter-spacing--2;
+
+// $buttons: sizes huge
+$button__height-huge:                 140px;
+$button__icon-size-huge:              40px;
+$button__line-height-huge:            $button__height-huge - ($border-width__default*2);
+$button__font-size-huge:              $font-size--default;
+$button__border-width-huge:           $border-width__default;
+$button__font-weight-huge:            $font-weight--bold;
+$button__padding-x-huge:              70px;
+$button__padding-y-huge:              0px;
+$button__letter-spacing-huge:         $letter-spacing--2;
+
+
+
+// $forms --------------------
+
+$input__group--margin-bottom:         1.6rem;
+
+// $forms: input
+$input__height:                       40px;
+$input__padding-x:                    15px;
+$input__padding-y:                    0;
+$input__line-height:                  $line-height__base;
+$input__font-size:                    $font-size--small;
+$input__border-radius:                0px;
+
+// $forms: input small
+$input__height-sm:                    20px;
+$input__padding-x-sm:                 8px;
+$input__padding-y-sm:                 0;
+$input__line-height-sm:               $line-height__base;
+$input__font-size-sm:                 $font-size--tiny;
+$input__border-radius-sm:             0px;
+
+// $forms: input large
+$input__height-lg:                    60px;
+$input__padding-x-lg:                 20px;
+$input__padding-y-lg:                 0;
+$input__line-height-lg:               $line-height__base;
+$input__font-size-lg:                 $font-size--default;
+$input__border-radius-lg:             0px;
+
+// $forms: base
+$input__bg:                           white;
+$input__color:                        $color__gray--dark;
+$input__border-color:                 $color__gray--medium;
+$input__border-width:                 1px;
+$input__box-shadow:                   none;
+$input__placeholder--color:           $color__gray;
+
+// $forms: disabled
+$input__disabled__bg:                 $color__gray--light;
+$input__disabled__color:              $color__gray--medium;
+$input__disabled__border-color:       $input__border-color;
+
+// $forms: focus
+$input__focus-border-color:           $color__brand--1;
+$input__focus-color:                  $color__gray--dark;
+$input__focus-width:                  $input__border-width;
+$input__focus-box-shadow:             $input__box-shadow;
+
+// $forms: group
+// $form-group__margin-bottom:           8px;
+
+// $forms: checkbox
+$input__checkbox__size:               18px;
+$input__checkbox__size--inner:        10px;
+$input__checkbox__gutter:             25px; // left gutter fix
+$input__checkbox__margin--y:          0.3rem;
+$input__checkbox__margin--x:          0.25rem;
+$input__checkbox__color:              $color__gray--dark;
+
+
+
+// $links --------------------
+
+// $links: colors
+$link__color:                         $color__brand--1;
+
+
+
+// $transition --------------------
+
+// $transition: base
+$transition__base:                    all .25s ease-in-out;
+$transition__base--noprop:            .25s;

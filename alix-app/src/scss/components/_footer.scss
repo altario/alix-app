@@ -1,0 +1,139 @@
+.credits {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  & > .panel__header {
+    padding: 25px;
+    background-color: $color__gray--dark--lightest;
+    color: $color__gray--dark;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 25px;
+    font-size: 13px;
+    text-align: center;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  & > .panel__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    padding: 25px;
+    & > p {
+      font-weight: normal;
+      line-height: 19px;
+      font-size: 13px;
+      color: $color__gray--lighter;
+    }
+    & > h5 {
+      line-height: 21px;
+      font-size: 11px;
+      text-align: justify;
+      color: $color__gray--dark;
+      margin-top: 15px;
+      margin-bottom: 45px;
+    }
+    & > .price {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      & > h1 {
+        color: $color__brand--1;
+        margin-bottom: 10px;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      & > h2 {
+        color: $color__brand--1;
+        margin-bottom: 5px;
+        font-size: 18px;
+      }
+      & > p {
+        line-height: 21px;
+        font-size: 11px;
+        color: $color__gray--dark;
+      }
+      & > button {
+        margin-top: 40px;
+        width: 100%;
+        border: $color__brand--1;
+        background: $color__brand--1;
+      }
+    }
+  }
+}
+
+.credits__most-sold {
+  & > .panel__header {
+    display: flex;
+    justify-content: center;
+    background-color: $color__brand--1;
+    color: white;
+  }
+}
+
+.credits__custom {
+  & > .panel__header {
+    display: flex;
+    justify-content: center;
+    background-color: $color__brand--1;
+    color: white;
+  }
+  & > .panel__content {
+    .price {
+      & > button {
+        background-color: $color__brand--1;
+        border-color: $color__brand--1;
+      }
+      .price__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1;
+        & > span {
+          font-size: 24px;
+          font-weight: bold;
+          color: $color__gray--dark;
+        }
+      }
+    }
+  }
+}
+
+//
+
+
+.credit-history__card {
+}
+.credit-history__table {
+  padding: 30px;
+  border-spacing:4px 0px;
+  border-collapse: separate;
+  th, td {
+    background: $color__gray--dark--lightest;
+    padding: 30px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    border: 0px!important;
+  }
+  td {
+    font-style: Regular;
+    font-size: 13px;
+    line-height: 25px;
+    color: $color__gray--dark;
+    font-weight: bold;
+  }
+  th {
+    border-bottom: 4px solid white!important;
+    padding: 30px;
+    background-color: $color__gray--dark--lightest;
+    color: $color__brand--1;
+  }
+  tr:nth-child(even) {
+    td {
+      background: $color__gray--dark--lighter;
+    }
+  }
+  // tr:nth-child(odd)
+}

@@ -1,0 +1,49 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #VARS
+//    $defaults
+//
+//  #MIXINS
+//    =animations
+//
+//  #EXAMPLES
+//    [+1] angle default params
+//    [+2] angle with side/sides declared (before, after or both)
+//    [+3] angle with side/sides declared and custom angle
+//    [+4] angle with side/sides declared, custom angle and flipped side//
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #VARS
+// --------------------------------------------------
+
+// $defaults
+$alt_mixins__angle__direction-default: 1.5deg;
+
+
+
+
+
+// --------------------------------------------------
+// #MIXINS
+// --------------------------------------------------
+
+// =cursor
+@mixin cursor($_cursor, $_cursor-size: 12) {
+  cursor: url($_cursor) $_cursor-size/2 $_cursor-size/2, default !important;
+}
+
+
+
+
+
+// --------------------------------------------------
+// #EXAMPLES
+// --------------------------------------------------
+
+// [+1] cursor with custom image
+// @include cursor('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAKCAYAAABi8KSDAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADZSURBVHgBtZChCoNQFIZ1U0HwFhGRVYvBpMW4KmxPsO4LzD5W1vYAPsDwHVYNSwaLYVoE4WK4GLwKCsJ2hStsLGxhpxzOOR//+c9hoyiymS9jwfwQM2wYxtpxnIDWkiQBUmuatnqBTdPcKopygBCe6QBj3AzDEOu6fiFCpMe2bRuIorgpy9IviuL+vpqARKjrunC20fc9/uST4zhA8jiOzdJ1XSjLMvP0duJ5/lbXNaKgZVkeAMCrqspP0/Q6KSdJEiKEjqqq7ilIDhMEwc7zfJdlWTx5/tufH/MnS6Wr5jQFAAAAAElFTkSuQmCC');

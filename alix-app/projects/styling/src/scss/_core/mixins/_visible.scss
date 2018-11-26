@@ -1,0 +1,57 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #MIXINS
+//    =visible
+//    =show
+//    =hide
+//
+//  #EXAMPLES
+//    [+1] show element
+//    [+2] hide element
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #MIXINS
+// --------------------------------------------------
+
+// =visible
+@mixin visible($_type) {
+  @if $_type == hide {
+    visibility: hidden;
+    opacity: 0;
+  }
+  @else if $_type == show {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+
+// =show
+@mixin show {
+  @include visible(show);
+}
+
+
+// =hide
+@mixin hide {
+  @include visible(hide);
+}
+
+
+
+
+
+// --------------------------------------------------
+// #EXAMPLES
+// --------------------------------------------------
+
+// [+1] show element
+// @include show;
+
+// [+2] hide element
+// @include hide;

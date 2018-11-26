@@ -1,0 +1,73 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #DEPENDENCIES
+//     (../functions/_is-direction.scss)
+//
+//  #VARS
+//    $alt_mixins__linear-gradient__direction-default
+//
+//  #MIXINS
+//    =linear-gradient
+//
+//  #EXAMPLES
+//    [+1] use linear gradient as background
+//    [+2] use linear gradient as background with custom simple direction and multiple colors
+//    [+3] use linear gradient as background with direction in deg and multiple colors
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #DEPENDENCIES
+// --------------------------------------------------
+
+// (../functions/_is-direction.scss)
+
+
+
+
+
+// --------------------------------------------------
+// #VARS
+// --------------------------------------------------
+
+// $direction
+$alt_mixins__linear-gradient__direction-default: 180deg;
+
+
+
+
+
+// --------------------------------------------------
+// #MIXINS
+// --------------------------------------------------
+
+// =linear-gradient
+@mixin linear-gradient($_direction, $_color-stops...) {
+  @if is-direction($_direction) == false {
+    $_color-stops: $_direction, $_color-stops;
+    $_direction: $alt_mixins__linear-gradient__direction-default;
+  }
+  background: nth(nth($_color-stops, 1), 1);
+  background: -webkit-linear-gradient(legacy-direction($_direction), $_color-stops);
+  background: linear-gradient($_direction, $_color-stops);
+}
+
+
+
+
+
+// --------------------------------------------------
+// #EXAMPLES
+// --------------------------------------------------
+
+// [+1] use linear gradient as background
+// @include linear-gradient(#31B7D7, #EDAC7D);
+
+// [+2] use linear gradient as background with custom simple direction and multiple colors
+// @include linear-gradient(to right, #E47D7D 0%, #C195D3 50%, #4FB4E8 100%);
+
+// [+3] use linear gradient as background with direction in deg and multiple colors
+// @include linear-gradient(42deg, #B58234 0%, #D2B545 50%, #D7C04D 50.01%, #FFFFFF 100%);

@@ -1,0 +1,196 @@
+// ------------------------------------------------------------------
+//
+// INDEX
+//
+//  #VARS
+//
+//  #MIXINS
+//
+//  #STYLES
+//
+// ------------------------------------------------------------------
+
+
+// ------------------------------------------------------------------
+// #MAPS
+// ------------------------------------------------------------------
+
+
+
+
+
+
+// ------------------------------------------------------------------
+// #VARS
+// ------------------------------------------------------------------
+$alt_components__sidebar__paddding:  30px;
+$alt_components__sidebar__btn__badge__paddding:  7px;
+
+
+$alt_components__sidebar__btn__font-size--default: $font-size--small;
+$alt_components__sidebar__btn__badge__font-size: $alt_components__sidebar__btn__font-size--default;
+$alt_components__sidebar__btn__text__font-size:  $alt_components__sidebar__btn__font-size--default;
+$alt_components__sidebar__btn__icon__font-size:  $alt_components__sidebar__btn__font-size--default;
+
+$alt_components__sidebar__btn__badge__font-weight: $font-weight--bold;
+
+$alt_components__sidebar__btn__font-weight--default: $font-weight--normal;
+
+$alt_components__sidebar__btn__badge--active__bg-color:  $color__state--success;
+$alt_components__sidebar__btn__badge--active__color: white;
+
+$alt_components__sidebar__link__color: $color__gray--dark;
+
+$alt_components__sidebar__link--active__color: $color__state--success;
+
+
+$alt_components__sidebar__btn__text--active__color:  $color__state--success;
+
+$alt_components__sidebar__btn__icon--active__color:  $color__state--success;
+
+$alt_components__sidebar__btn--active__font-weight:  $font-weight--bold;
+
+$alt_components__sidebar__link__divider__color: $color__gray--light;
+
+
+
+
+// ------------------------------------------------------------------
+// #MIXINS
+// ------------------------------------------------------------------
+
+
+
+
+
+
+// ------------------------------------------------------------------
+// #STYLES
+// ------------------------------------------------------------------
+
+.container-sidebar {
+  @include calc-col(300px);
+  background: white;
+}
+// container-content
+
+.sidebar{
+ //ONLY for TESTING purposes
+ //width: 300px;
+ //height: 100vh;
+ //actual settings
+ width: 100%;
+ height: 100%;
+ padding: 0;
+ margin: 0;
+ border: none;
+ padding: $alt_components__sidebar__paddding;
+
+ //specificity issues due to *btn-icon* class, spec wayyy too high
+ .sidebar__links {
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid $color__gray--light;
+  font-size: $font-size--tiny;
+  &:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border: none;
+  }
+  .sidebar__link {
+    .sidebar__btn {
+      padding: 0 !important;
+      border: none;
+      @include align(row middle);
+      .btn__text {
+        padding-left: 26px !important;
+       }
+       .btn__badge {
+       }
+     }
+   }
+ }
+}
+
+.sidebar__links{
+ width: 100%;
+ padding: 0;
+ margin: 0;
+ list-style-type: none;
+}
+
+.sidebar__link{
+ display: flex;
+ -webkit-align-items: center;
+         align-items: center;
+ padding-bottom: 10px;
+ margin: 0;
+ width: 100%;
+ color: $alt_components__sidebar__link__color;
+}
+
+.sidebar__btn{
+ display: flex;
+ -webkit-align-items: center;
+         align-items: center;
+ -webkit-justify-content: space-between;
+         justify-content: space-between;
+ width: 100%;
+ margin: 0;
+
+ font-weight: $alt_components__sidebar__btn__font-weight--default;
+ font-size: $alt_components__sidebar__btn__badge__font-size;
+
+
+ &::before{
+   font-size: $alt_components__sidebar__btn__icon__font-size;
+   width: 0px!important;
+ }
+}
+
+.btn__badge{
+ display: flex;
+ -webkit-align-items: center;
+         align-items: center;
+ -webkit-justify-content: center;
+         justify-content: center;
+ line-height: $alt_components__sidebar__btn__badge__font-size;
+ font-weight: $alt_components__sidebar__btn__badge__font-weight;
+ padding: $alt_components__sidebar__btn__badge__paddding;
+ padding-left: $alt_components__sidebar__btn__badge__paddding;
+ padding-right: $alt_components__sidebar__btn__badge__paddding;
+ text-align: right;
+}
+
+.sidebar__bot-links{
+ border-top: 1px solid $alt_components__sidebar__link__divider__color;
+ margin-top: 24px;
+ padding-top: 24px;
+}
+.sidebar__links {
+  .sidebar__link--active,
+  .active {
+    .sidebar__btn {
+      position: relative;
+      left: -4px;
+      color: $alt_components__sidebar__btn__text--active__color;
+      font-weight: $alt_components__sidebar__btn--active__font-weight;
+    }
+    .btn__badge {
+      color: $alt_components__sidebar__btn__badge--active__color;
+      background: $alt_components__sidebar__btn__badge--active__bg-color;
+      position: relative;
+      right: -$alt_components__sidebar__btn__badge__paddding;
+    }
+
+    &::before {
+      position: relative;
+      left: -12px;
+      content: "";
+      display: inline-block;
+      height: 24px;
+      background-color: $alt_components__sidebar__link--active__color;
+      padding-left: 4px;
+    }
+  }
+}

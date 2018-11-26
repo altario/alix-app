@@ -1,0 +1,124 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #VARS
+//    $iconfonts-map
+//
+//  #RESOLVERS
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #VARS
+// --------------------------------------------------
+
+// iconfonts merged
+$iconfonts-map: ();
+
+
+
+
+
+// --------------------------------------------------
+// #RESOLVERS
+// --------------------------------------------------
+
+// populate '$iconfonts-map' with choosed fontawesome names
+@each $key, $value in $iconfont-fontawesome {
+  $iconfonts-map: map-merge($iconfonts-map, ($key: "#{$key}"));
+}
+
+// populate '$iconfonts-map' with custom iconfonts
+@each $key, $value in $iconfont-custom {
+  $iconfonts-map: map-merge($iconfonts-map, ($key: "#{$key}"));
+}
+
+
+
+
+
+// --------------------------------------------------
+// #EXTENDS
+// --------------------------------------------------
+
+// fonticon-styles
+%fonticon-styles {
+  @include iconfont-styles;
+}
+
+
+
+
+
+// --------------------------------------------------
+// #MIXINS
+// --------------------------------------------------
+
+// =iconfont-build
+@mixin iconfont-build($_fonticon-prefix, $_font-family, $_font-weight) {
+  $iconfont__map-compare: $iconfont-custom;
+  $iconfont__map-compare--bol: false;
+  @if $_font-family == $font-family--icon {
+    $iconfont__map-compare--bol: true;
+  }
+
+  font-family: $_font-family;
+  font-weight: $_font-weight;
+
+  @each $key, $value in $iconfonts-map {
+    @if map-has-key($iconfont__map-compare, $key) == $iconfont__map-compare--bol {
+      @at-root .#{$_fonticon-prefix}-#{$key} {
+        @include icon($key, $_styles: false);
+      }
+    }
+  }
+}
+
+
+
+
+
+// --------------------------------------------------
+// #STYLES
+// --------------------------------------------------
+
+// altaricons --------------------
+
+// altaricons: regular
+.#{$iconfont__altaricons-prefix} {
+  @extend %fonticon-styles;
+  @include iconfont-build($iconfont__altaricons-prefix, $font-family--icon, 400);
+}
+
+
+
+// fontawesome --------------------
+
+@if $font-fontawesome-fallback {
+
+  // fontawesome: brands
+  .#{$iconfont__fontawesome-prefix}b {
+    @extend %fonticon-styles;
+    @include iconfont-build($iconfont__fontawesome-prefix, $font-family--fontawesome--brands, 400);
+  }
+
+  // fontawesome: pro light
+  .#{$iconfont__fontawesome-prefix}l {
+    @extend %fonticon-styles;
+    @include iconfont-build($iconfont__fontawesome-prefix, $font-family--fontawesome, 300);
+  }
+
+  // fontawesome: pro regular
+  .#{$iconfont__fontawesome-prefix}r {
+    @extend %fonticon-styles;
+    @include iconfont-build($iconfont__fontawesome-prefix, $font-family--fontawesome, 400);
+  }
+
+  // fontawesome: pro solid
+  .#{$iconfont__fontawesome-prefix}s {
+    @extend %fonticon-styles;
+    @include iconfont-build($iconfont__fontawesome-prefix, $font-family--fontawesome, 900);
+  }
+}

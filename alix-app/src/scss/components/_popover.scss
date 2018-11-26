@@ -1,0 +1,55 @@
+// ------------------------------------------------------------------
+//
+// INDEX
+//
+//  #STYLES
+//
+// ------------------------------------------------------------------
+
+
+// ------------------------------------------------------------------
+// #VARS
+// ------------------------------------------------------------------
+
+$popover__arrow__width: .8rem;
+$popover__arrow__height: .7rem;
+
+
+// ------------------------------------------------------------------
+// #STYLES
+// ------------------------------------------------------------------
+
+// _popover
+.popover {
+  width: 300px;
+  transform: translate(-118px);
+  border-radius: $input__border-radius;
+  border: none;
+  box-shadow: shadow(topdown--2);
+
+  // arrow
+  .popover-arrow {
+    border: none;
+  }
+
+  // arrow positioning
+  &.bs-popover-bottom {
+    margin-top: $popover__arrow__height + .2rem;
+    .arrow {
+      height: $popover__arrow__height;
+      top: calc((#{$popover__arrow__height} + 1px) * -1);
+      &:before,
+      &:after {
+        border-width: 0 $popover__arrow__width $popover__arrow__height $popover__arrow__width;
+      }
+      &:before {
+        border-bottom-color: rgba(black, .08);
+      }
+    }
+  }
+
+  // content
+  .popover-content {
+    font-size: $font-size--small;
+  }
+}

@@ -1,0 +1,36 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #MIXINS
+//    =input-placeholder
+//
+//  #EXAMPLES
+//    [+1] defines cross browser input placeholder
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #MIXINS
+// --------------------------------------------------
+
+// =input-placeholder
+@mixin input-placeholder {
+  &.placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}
+
+
+
+
+
+// --------------------------------------------------
+// #EXAMPLES
+// --------------------------------------------------
+
+// [+1] defines cross browser input placeholder
+// @include input-placeholder;

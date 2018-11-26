@@ -1,0 +1,53 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #DEPENDENCIES
+//    (../_mixins/_input-placeholder.scss)
+//    (../_mixins/_selection.scss)
+//    (../functions/_lightness.scss)
+//
+//  #STYLES
+//    selection
+//    input-placeholder
+//    focus
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #DEPENDENCIES
+// --------------------------------------------------
+
+// (../_mixins/_input-placeholder.scss)
+// (../_mixins/_selection.scss)
+// (../functions/_lightness.scss)
+
+
+
+
+
+// --------------------------------------------------
+// #STYLES
+// --------------------------------------------------
+
+// selection
+@include selection {
+  color: $body__color__highlight--text;
+  background: $body__color__highlight--background;
+}
+
+
+// input-placeholder
+input,
+textarea {
+  @include input-placeholder {
+    color: rgba($color__gray--light, .8);
+  }
+}
+
+
+// focus
+*:focus {
+  @include outline;
+}

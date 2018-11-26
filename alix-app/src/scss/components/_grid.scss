@@ -1,0 +1,98 @@
+// ------------------------------------------------------------------
+//
+// INDEX
+//
+//  #MIXINS
+//
+//  #STYLES
+//
+// ------------------------------------------------------------------
+
+
+// ------------------------------------------------------------------
+// #MAPS
+// ------------------------------------------------------------------
+
+// $alt_components__grid--gutters
+$alt_components__grid--gutters: (
+  nano:   4px,
+  tiny:   8px,
+  small:  12px,
+  normal: 16px,
+  big:    24px,
+  huge:   40px,
+);
+
+
+
+
+
+// ------------------------------------------------------------------
+// #VARS
+// ------------------------------------------------------------------
+
+// $gutters
+$alt_components__grid--enable-vertival-gutters: $grid__vertical-gutters;
+$alt_components__grid--columns: $grid__default--columns;
+$alt_components__grid--gutter-width: $grid__default--gutter-width;
+
+
+
+
+
+// ------------------------------------------------------------------
+// #STYLES
+// ------------------------------------------------------------------
+
+// gerenate gutters
+@each $_gutter in $alt_components__grid--gutters {
+  $key: nth($_gutter, 1);
+  $value: nth($_gutter, 2);
+
+  .row {
+
+    // default
+    & + .row {
+      margin-top: $alt_components__grid--gutter-width;
+    }
+
+    // no-gutters
+    &.no-gutters {
+      & + .row {
+        margin-top: 0;
+      }
+    }
+
+    &.gutter-#{$key} {
+      margin-left: -$value/2;
+      margin-right: -$value/2;
+      & + .row {
+        margin-top: $value;
+      }
+      & > * {
+        padding-left: $value/2;
+        padding-right: $value/2;
+        @if $alt_components__grid--enable-vertival-gutters {
+          padding-bottom: $value;
+
+          // @for $i from 1 through $alt_components__grid--columns {
+          //   &[class*="-#{$i}"] {
+          //     &:nth-child(n+#{$i}) {
+          //       .cont {
+          //         margin-top: $value;
+          //       }
+          //     }
+          //   }
+          // }
+        }
+      }
+    }
+    @if $alt_components__grid--enable-vertival-gutters == false {
+      &.gutter-vertical-#{$key} {
+        & > * {
+          padding-bottom: $value;
+        }
+      }
+    }
+  }
+}

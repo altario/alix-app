@@ -1,0 +1,58 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #MIXINS
+//    =pseudo
+//
+//  #EXAMPLES
+//    [+1] create pseudo
+//    [+2] create pseudo with after
+//    [+3] create pseudo with after and not with the same size
+//    [+4] create pseudo with same size and a background
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #MIXINS
+// --------------------------------------------------
+
+// =pseudo
+@mixin pseudo($_pseudo: before, $_same-size: true) {
+  // position: relative;
+  &:#{$_pseudo} {
+    content: '';
+    display: block;
+    @if $_same-size {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    @content;
+  }
+}
+
+
+
+
+
+// --------------------------------------------------
+// #EXAMPLES
+// --------------------------------------------------
+
+// [+1] create pseudo
+// @include pseudo;
+
+// [+2] create pseudo with after
+// @include pseudo(after);
+
+// [+3] create pseudo with after and not with the same size
+// @include pseudo(after, false);
+
+// [+4] create pseudo with same size and a background
+// @include pseudo(after) {
+//   background: rgba(#273444, .95);
+// }

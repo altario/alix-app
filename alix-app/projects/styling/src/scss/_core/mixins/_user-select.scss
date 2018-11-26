@@ -1,0 +1,37 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #MIXINS
+//    =user-select
+//
+//  #EXAMPLES
+//    [+1] turns user select to none
+//    [+2] turns user select to custom value
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #MIXINS
+// --------------------------------------------------
+
+// =user-select
+@mixin user-select($_type: none) {
+  -webkit-touch-callout: $_type;
+  user-select: $_type;
+}
+
+
+
+
+
+// --------------------------------------------------
+// #EXAMPLES
+// --------------------------------------------------
+
+// [+1] turns user select to none
+// @include user-select;
+
+// [+2] turns user select to custom value
+// @include user-select(all);

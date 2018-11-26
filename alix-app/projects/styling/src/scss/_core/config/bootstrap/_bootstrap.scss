@@ -1,0 +1,64 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #IMPORTS
+//    bootstrap --------------------
+//      required
+//      optional
+//      modules
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #IMPORTS
+// --------------------------------------------------
+
+// bootstrap --------------------
+
+/* INIT: Bootstrap import -------------------- */
+
+// bootstrap: required
+@import 'scss/functions';
+@import 'scss/mixins';
+@import 'bootstrap-vars'; // bootstrap overrided variables used from "../_variables.scss"
+@import 'scss/variables';
+
+// bootstrap: optional
+@import 'scss/root';
+@import 'scss/reboot';
+
+// bootstrap: modules
+// @import 'scss/type';
+@import 'scss/images';
+// @import 'scss/code';
+@import 'scss/grid';
+@import 'scss/tables';
+// @import 'scss/forms';
+// @import 'scss/buttons';
+@import 'scss/transitions';
+@import 'scss/dropdown';
+@import 'scss/button-group';
+// @import 'scss/input-group';
+@import 'scss/custom-forms';
+@import 'scss/nav';
+@import 'scss/navbar';
+@import 'scss/card';
+@import 'scss/breadcrumb';
+@import 'scss/pagination';
+@import 'scss/badge';
+@import 'scss/jumbotron';
+@import 'scss/alert';
+@import 'scss/progress';
+@import 'scss/media';
+@import 'scss/list-group';
+@import 'scss/close';
+@import 'scss/modal';
+@import 'scss/tooltip';
+@import 'scss/popover';
+@import 'scss/carousel';
+@import 'scss/utilities';
+// @import 'scss/print';
+
+/* END: Bootstrap import -------------------- */

@@ -1,0 +1,41 @@
+// ------------------------------------------------------------------
+//
+// INDEX
+//
+//  #STYLES
+//    _html
+//    _body
+//    _box-sizing
+//
+// ------------------------------------------------------------------
+
+
+// ------------------------------------------------------------------
+// #STYLES
+// ------------------------------------------------------------------
+
+@at-root {
+  @-ms-viewport { width: device-width; } // stylelint-disable-line at-rule-no-vendor-prefix
+}
+
+// _html
+html {
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+}
+
+// _body
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// _box-sizing
+* {
+  &,
+  &:before,
+  &:after {
+    box-sizing: inherit;
+  }
+}

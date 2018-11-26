@@ -1,0 +1,63 @@
+<!-- TEXTAREA -->
+<div class="doc-content__block">
+  <h1 id="forms-textarea">Textarea</h1>
+  <a class="ext-doc ext-doc--bootstrap" href="https://getbootstrap.com/docs/4.0/components/forms/" target="_blank">Forms</a>
+
+  <h3 id="forms-textarea-default">Textarea Default</h3>
+  <div class="doc-content__block__items">
+    <div class="row">
+      <div class="col-12">
+        <div class="doc-code-block doc-code-block--overflow-visible">
+          <div class="doc-code-block__inner doc-code-block__inner--form">
+
+            <form>
+              <div class="form-group">
+                <div class="label-group">
+                  <label for="exampleInputEmail1">Input Name</label>
+                </div>
+                <div class="input-group">
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                </div>
+              </div>
+            </form>
+
+          </div>
+          <div class="doc-code-block__inner doc-code-block__inner--code">
+            <ngx-prism [language]="'html'">
+              {{ formTextareaDefault }}
+            </ngx-prism>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 id="forms-textarea-default-disabled">Textarea Default <span>(disabled)</span></h3>
+  <div class="doc-content__block__items">
+    <div class="row">
+      <div class="col-12">
+        <div class="doc-code-block doc-code-block--overflow-visible">
+          <div class="doc-code-block__inner doc-code-block__inner--form">
+
+            <form>
+              <div class="form-group">
+                <div class="label-group">
+                  <label for="exampleFormControlTextarea2">Input Name</label>
+                </div>
+                <div class="input-group">
+                  <textarea class="form-control" id="exampleFormControlTextarea2" rows="5" disabled></textarea>
+                </div>
+              </div>
+            </form>
+
+          </div>
+          <div class="doc-code-block__inner doc-code-block__inner--code">
+            <ngx-prism [language]="'html'">
+              {{ formTextareaDefaultDisabled }}
+            </ngx-prism>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

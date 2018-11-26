@@ -1,0 +1,127 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #VARS
+//    $defaults
+//
+//  #MIXINS
+//    =animations
+//
+//  #EXAMPLES
+//    [+1] angle default params
+//    [+2] angle with side/sides declared (before, after or both)
+//    [+3] angle with side/sides declared and custom angle
+//    [+4] angle with side/sides declared, custom angle and flipped side//
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #VARS
+// --------------------------------------------------
+
+// $defaults
+$alt_mixins__angle__direction-default: 1.5deg;
+
+
+
+
+
+// --------------------------------------------------
+// #MIXINS
+// --------------------------------------------------
+
+// =angle
+@mixin angle($_pseudo: 'before', $_angle: $alt_mixins__angle__direction-default, $_flip: false) {
+  @if $_pseudo == 'before' or $_pseudo == 'after' or $_pseudo == 'both' {
+    position: relative;
+    z-index: 1;
+    $selector: if($_pseudo == 'both', '&:before,&:after', '&:#{$_pseudo}');
+
+    #{$selector} {
+      background: inherit;
+      content: '';
+      display: block;
+      height: 50%;
+      left: 0;
+      position: absolute;
+      right: 0;
+      z-index: -1;
+    }
+
+    @if $_pseudo == 'before' {
+      #{$selector} {
+        top: 0;
+
+        @if $_flip {
+          transform: skewY($_angle * -1);
+          transform-origin: 0 0;
+        } @else {
+          transform: skewY($_angle);
+          transform-origin: 100% 0;
+        }
+      }
+    }
+
+    @if $_pseudo == 'after' {
+      #{$selector} {
+        bottom: 0;
+
+        @if $_flip {
+          transform: skewY($_angle);
+          transform-origin: 0 100%;
+        } @else {
+          transform: skewY($_angle * -1);
+          transform-origin: 100%;
+        }
+      }
+    }
+
+    @if $_pseudo == 'both' {
+      &:before {
+        top: 0;
+
+        @if $_flip {
+          transform: skewY($_angle * -1);
+          transform-origin: 0 0;
+        } @else {
+          transform: skewY($_angle);
+          transform-origin: 100% 0;
+        }
+      }
+
+      &:after {
+        bottom: 0;
+
+        @if $_flip {
+          transform: skewY($_angle);
+          transform-origin: 0 0;
+        } @else {
+          transform: skewY($_angle * -1);
+          transform-origin: 100%;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+// --------------------------------------------------
+// #EXAMPLES
+// --------------------------------------------------
+
+// [+1] angle default params
+// @include angle;
+
+// [+2] angle with side/sides declared (before, after or both)
+// @include angle(before);
+
+// [+3] angle with side/sides declared and custom angle
+// @include angle(before, 10deg);
+
+// [+4] angle with side/sides declared, custom angle and flipped side
+// @include angle(before, 10deg, true);

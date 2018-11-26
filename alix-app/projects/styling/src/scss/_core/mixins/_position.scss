@@ -1,0 +1,67 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #MIXINS
+//    =position
+//    =relative
+//    =absolute
+//    =fixed
+//
+//  #EXAMPLES
+//    // [+1] positions the element relative with custom values
+//    // [+2] positions the element absolute with custom values
+//    // [+3] positions the element fixed with custom values
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #MIXINS
+// --------------------------------------------------
+
+// =position
+@mixin position($_position, $_args) {
+  @each $o in top right bottom left {
+    $i: index($_args, $o);
+    @if $i and $i + 1 <= length($_args) and type-of(nth($_args, $i + 1)) == number {
+      #{$o}: nth($_args, $i + 1);
+    }
+  }
+  position: $_position;
+}
+
+
+// =relative
+@mixin relative($_args) {
+  @include position(relative, $_args);
+}
+
+
+// =absolute
+@mixin absolute($_args) {
+  @include position(absolute, $_args);
+}
+
+
+// =fixed
+@mixin fixed($_args) {
+  @include position(fixed, $_args);
+}
+
+
+
+
+
+// --------------------------------------------------
+// #EXAMPLES
+// --------------------------------------------------
+
+// [+1] positions the element relative with custom values
+// @include relative(top 20px left 20px);
+
+// [+2] positions the element absolute with custom values
+// @include absolute(top 20px left 20px);
+
+// [+3] positions the element fixed with custom values
+// @include fixed(top 0 left 0);

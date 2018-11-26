@@ -1,4 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'scss/main';
+
+// html, body
+html, body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+// all
+* {
+  outline: none !important;
+}
+
+
+
+
+
 
 $body-bg: #fff;
 

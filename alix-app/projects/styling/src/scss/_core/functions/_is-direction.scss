@@ -1,0 +1,65 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #FUNCTIONS
+//    @is-direction
+//    @legacy-direction
+//
+//  #EXAMPLES
+//    [+1] for use with linear-gradient mixin
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #FUNCTIONS
+// --------------------------------------------------
+
+// @is-direction
+@function is-direction($_value) {
+  $_is-keyword: index((to top, to top right, to right top, to right, to bottom right, to right bottom, to bottom, to bottom left, to left bottom, to left, to left top, to top left), $_value);
+  $_is-angle: type-of($_value) == 'number' and index('deg' 'grad' 'turn' 'rad', unit($_value));
+
+  @return $_is-keyword or $_is-angle;
+}
+
+
+// @legacy-direction
+@function legacy-direction($_value) {
+  @if is-direction($_value) == false {
+    @error "Cannot convert `#{$_value}` to legacy syntax because it doesn't seem to be a direction.";
+  }
+
+  $_conversion-map: (
+    to top          : bottom,
+    to top right    : bottom left,
+    to right top    : left bottom,
+    to right        : left,
+    to bottom right : top left,
+    to right bottom : left top,
+    to bottom       : top,
+    to bottom left  : top right,
+    to left bottom  : right top,
+    to left         : right,
+    to left top     : right bottom,
+    to top left     : bottom right
+  );
+
+  @if map-has-key($_conversion-map, $_value) {
+    @return map-get($_conversion-map, $_value);
+  }
+
+  @return 90deg - $_value;
+}
+
+
+
+
+
+// --------------------------------------------------
+// #EXAMPLES
+// --------------------------------------------------
+
+// [+1] for use with linear-gradient mixin
+// is-direction(45deg);

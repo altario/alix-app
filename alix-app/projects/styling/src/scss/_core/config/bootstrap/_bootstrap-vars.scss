@@ -1,0 +1,140 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #VARS
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #VARS
+// --------------------------------------------------
+
+// $body
+// --------------------
+$body-bg:                            $body__color__background;
+$body-color:                         $body__color__text;
+
+
+
+// $grid
+// --------------------
+$grid-columns:                       $grid__default--columns;
+$grid-gutter-width:                  $grid__default--gutter-width;
+
+
+
+// $fonts
+// --------------------
+$font-family-sans-serif:             $font-family--primary;
+$font-family-monospace:              $font-family--code;
+
+$font-weight-base:                   $font-weight__default;
+$line-height-base:                   $line-height__base;
+
+// font-weight
+$font-weight-light:                  $font-weight--light;
+$font-weight-normal:                 $font-weight--normal;
+$font-weight-bold:                   $font-weight--bold;
+
+
+
+// $fonts
+// --------------------
+$border-width:                       $border-width__default;
+$border-color:                       $input__border-color;
+$border-radius:                      $border-radius__default;
+$border-radius-sm:                   $border-width__default--sm;
+$border-radius-lg:                   $border-width__default--lg;
+
+
+
+// $buttons
+// --------------------
+
+// sizes
+$btn-line-height:                    $button__line-height;
+$btn-padding-x:                      $button__padding-x;
+$btn-padding-y:                      $button__padding-y;
+
+$btn-line-height-sm:                 $button__line-height-small;
+$btn-padding-x-sm:                   $button__padding-x-small;
+$btn-padding-y-sm:                   $button__padding-y-small;
+
+$btn-line-height-lg:                 $button__line-height-big;
+$btn-padding-x-lg:                   $button__padding-x-big;
+$btn-padding-y-lg:                   $button__padding-y-big;
+
+
+
+// $forms
+// --------------------
+
+$input-padding-x:                    $input__padding-x;
+$input-padding-y:                    $input__padding-y;
+$input-line-height:                  $input__line-height;
+
+$input-padding-x-sm:                 $input__padding-x-sm;
+$input-padding-y-sm:                 $input__padding-y-sm;
+$input-line-height-sm:               $input__line-height-sm;
+
+$input-padding-x-lg:                 $input__padding-x-lg;
+$input-padding-y-lg:                 $input__padding-y-lg;
+$input-line-height-lg:               $input__line-height-lg;
+
+$input-bg:                           $input__bg;
+$input-placeholder-color:            $input__placeholder--color;
+
+$input-disabled-bg:                  $input__disabled__bg;
+
+$input-color:                        $input__color;
+$input-border-color:                 $input__border-color;
+$input-border-width:                 $input__border-width;
+$input-box-shadow:                   $input__box-shadow;
+
+$input-focus-border-color:           $input__focus-border-color;
+$input-focus-color:                  $input__focus-color;
+$input-focus-width:                  $input__focus-width;
+$input-focus-box-shadow:             $input__focus-box-shadow;
+
+// group
+$form-group-margin-bottom:           $input__group--margin-bottom;
+
+// border-radius
+$input-border-radius:                $input__border-radius;
+$input-border-radius-sm:             $input__border-radius-sm;
+$input-border-radius-lg:             $input__border-radius-lg;
+
+
+$form-check-input-gutter:            $input__checkbox__gutter;
+$form-check-input-margin-y:          $input__checkbox__margin--y;
+$form-check-input-margin-x:          $input__checkbox__margin--x;
+
+
+
+// $links
+// --------------------
+$link-color:                         $link__color;
+
+
+
+// $transition
+// --------------------
+$transition-base:                    $transition__base;
+
+
+
+// $flags
+// --------------------
+$enable-shadows: $button__shadow--enable;
+
+
+
+// $theme-colors
+$theme-colors: $theme-color-map;
+
+$yiq-text-dark:  black !default;
+$yiq-text-light: white !default;
+
+$yiq-contrasted-threshold: 198 !default;

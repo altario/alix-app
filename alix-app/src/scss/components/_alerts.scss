@@ -1,0 +1,191 @@
+// ------------------------------------------------------------------
+//
+// INDEX
+//
+//  #MIXINS
+//
+//  #STYLES
+//
+// ------------------------------------------------------------------
+
+// ------------------------------------------------------------------
+// #MIXINS
+// ------------------------------------------------------------------
+
+// =alert__base__dismissable
+@mixin alert__base__dismissable {
+  &.alert-dismissible {
+    padding-right: 40px;
+
+    .close {
+      opacity: 1;
+      padding: 0 15px;
+      @include center(v);
+      @include outline;
+      span {
+        text-shadow: none;
+        &:first-child {
+          width: 8px;
+          height: 8px;
+          position: relative;
+          color: transparent;
+          @include icon(times) {
+            width: 8px;
+            height: 8px;
+            line-height: 8px;
+            @include center;
+            font-size: 8px;
+            color: white;
+            font-weight: $font-weight--light;
+          }
+        }
+      }
+    }
+  }
+}
+
+// =alert__base
+@mixin alert__base {
+  border: none;
+  padding: 15px 40px;
+  @include align(row middle);
+
+  @include icon(info) {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 11px;
+    color: white;
+    font-size: 18px;
+    background: rgba(white, .2);
+    @include align(middle);
+  }
+
+  // +alert__base__dismissable
+  @include alert__base__dismissable;
+}
+
+// =alert__types__color
+@mixin alert__types__color($_color) {
+  background: $_color;
+  .alert-button {
+    .btn {
+      &:hover,
+      &:active {
+        color: $_color;
+      }
+    }
+  }
+}
+
+@mixin alert__types__type--danger {
+  &.alert-danger {
+    background: white;
+    border: 1px solid $color__state--danger;
+    &:before {
+      color: white;
+      background: $color__state--danger;
+    }
+    &.alert-dismissible {
+      .close {
+        top: 25px;
+        span {
+          &:before {
+            color: $color__gray--lighter !important;
+          }
+        }
+      }
+    }
+    .alert-body {
+      text-align: left !important;
+      color: $color__gray--dark;
+      .title {
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        font-size: $font-size--head-3;
+        font-weight: $font-weight--bold;
+        color: $color__state--danger;
+        @include line-clamp(1);
+      }
+    }
+  }
+}
+
+// =alert__types
+@mixin alert__types {
+  &.alert-success {
+    // +alert__types__color
+    @include alert__types__color($color__state--success);
+  }
+  &.alert-info {
+    // +alert__types__color
+    @include alert__types__color($color__state--info);
+  }
+  &.alert-warning {
+    // +alert__types__color
+    @include alert__types__color($color__state--warning);
+  }
+
+  // +alert__types__type--danger
+  @include alert__types__type--danger;
+}
+
+// =alert__body
+@mixin alert__body {
+  .alert-body {
+    flex: 1;
+    padding-right: 15px;
+    padding-left: 15px;
+    font-size: $font-size--tiny;
+    color: white;
+    text-align: center;
+    @include mq(md) {
+      text-align: left;
+      font-size: $font-size--nano;
+    }
+  }
+}
+
+// =alert__button
+@mixin alert__button {
+  .alert-button {
+    .btn {
+      color: white;
+      background-color: transparent;
+      background-image: none;
+      border-color: white;
+      &:hover {
+        background: rgba(white, .7);
+      }
+      &:active {
+        background: white;
+        border-color: white;
+      }
+    }
+  }
+}
+
+
+
+
+
+// ------------------------------------------------------------------
+// #STYLES
+// ------------------------------------------------------------------
+
+// _alert
+.alert {
+
+  // +alert__base
+  @include alert__base;
+
+  // +alert__types
+  @include alert__types;
+
+  // +alert__body
+  @include alert__body;
+
+  // +alert__button
+  @include alert__button;
+}

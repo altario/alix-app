@@ -1,0 +1,38 @@
+// ------------------------------------------------------------
+//
+// INDEX
+//
+//  #MIXINS
+//    [+1] include default shadow
+//    [+2] include custom shadow
+//
+// ------------------------------------------------------------
+
+
+// ------------------------------------------------------------
+// #MIXINS
+// ------------------------------------------------------------
+
+// =shadow
+@mixin shadow($_shadow) {
+  @if (map-has-key($alt_shadow-map, $_shadow)) {
+    box-shadow: map-get($alt_shadow-map, $_shadow);
+  }
+  @else {
+    box-shadow: $_shadow;
+  }
+}
+
+
+
+
+
+// ------------------------------------------------------------------
+// #EXAMPLES
+// ------------------------------------------------------------------
+
+// [+1] include default box-shadow
+// @include box-shadow;
+
+// [+2] include custom box-shadow
+// @include box-shadow(1px 2px 3px tomato);
