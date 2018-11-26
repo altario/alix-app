@@ -20,11 +20,13 @@ import { BaseLayoutComponent } from './core/base-layout/base-layout.component';
  */
 
 import { NgxEchartsModule } from 'ngx-echarts';
+import { StylesComponent } from './styles/styles.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        BaseLayoutComponent
+        BaseLayoutComponent,
+        StylesComponent
         
     ],
     imports: [
