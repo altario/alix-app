@@ -1,0 +1,158 @@
+// ------------------------------------------------------------------
+//
+// INDEX
+//
+//  #DEPENDENCIES
+//
+//  #STYLES
+//
+// ------------------------------------------------------------------
+
+
+// ------------------------------------------------------------------
+// #DEPENDENCIES
+// ------------------------------------------------------------------
+
+// (../config/variables.scss)
+// (../mixins/_user-select.scss)
+// (../mixins/_font-size.scss)
+// (../mixins/_on-event.scss)
+// (../tools/_clickable.scss)
+
+
+
+
+
+// ------------------------------------------------------------------
+// #STYLES
+// ------------------------------------------------------------------
+
+// body
+// body {
+//   // font-family: $font-family--primary;
+//   font-weight: $font-weight--light;
+//   line-height: $line-height--4;
+//   // text-align: justify;
+// }
+
+
+
+// headings --------------------
+
+h1, h2, h3, h4 {
+  font-weight: $font-weight--bold;
+  line-height: $line-height--1;
+  margin-top: $header__margin-top;
+  margin-bottom: $header__margin-bottom;
+}
+h1 {
+  font-size: $font-size--head-1;
+}
+h2 {
+  font-size: $font-size--head-2;
+}
+h3 {
+  font-size: $font-size--head-3;
+}
+h4 {
+  text-transform: uppercase;
+  font-size: $font-size--head-4;
+}
+
+
+
+// paragraph --------------------
+
+// paragraph: p
+p {
+  line-height: $line-height--4;
+  margin-bottom: 0.2em;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+
+// anchor --------------------
+
+// anchor: a
+a {
+  font-weight: $font-weight--bold;
+  transition: $transition__base;
+}
+
+
+
+// font-size --------------------
+
+// font-size: jumbo
+.font-size--jumbo {
+  font-size: $font-size--jumbo;
+}
+
+// font-size: head-1
+.font-size--head-1 {
+  font-size: $font-size--head-1;
+}
+
+// font-size: head-2
+.font-size--head-2 {
+  font-size: $font-size--head-2;
+}
+
+// font-size: head-3
+.font-size--head-3 {
+  font-size: $font-size--head-3;
+}
+
+// font-size: head-4
+.font-size--head-4 {
+  font-size: $font-size--head-4;
+}
+
+// font-size: lead
+.font-size--lead {
+  font-size: $font-size--lead;
+}
+
+// font-size: small
+.font-size--small {
+  line-height: $line-height--3;
+  font-size: $font-size--small;
+}
+
+// font-size: tiny/small
+.font-size--tiny,
+.font-size--nano {
+  line-height: $line-height--2;
+}
+
+// font-size: tiny
+.font-size--tiny {
+  font-size: $font-size--tiny;
+}
+
+// font-size: nano
+.font-size--nano {
+  font-size: $font-size--nano;
+}
+
+
+
+// font-weight --------------------
+
+// font-weight: light
+.font-weight--light {
+  font-weight: $font-weight--light;
+}
+
+// font-weight: normal
+.font-weight--normal {
+  font-weight: $font-weight--normal;
+}
+
+// font-weight: bold
+.font-weight--bold {
+  font-weight: $font-weight--bold;
+}

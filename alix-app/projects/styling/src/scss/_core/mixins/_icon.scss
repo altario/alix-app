@@ -1,0 +1,96 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #DEPENDENCIES
+//    (../base/_iconfont.scss)
+//    (../base/_variables.scss)
+//
+//  #VARS
+//    $defaults
+//
+//  #MIXINS
+//    =icon
+//
+//  #EXAMPLES
+//    [+1] include an icon by name
+//    [+2] include an icon by name giving specific position
+//    [+3] include an icon by name giving specific position and without styles
+//    [+4] include an icon by name giving specific position, specifying font-family and iconfont map
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #DEPENDENCIES
+// --------------------------------------------------
+
+// (../base/_iconfont.scss)
+// (../base/_variables.scss)
+
+
+
+
+
+// --------------------------------------------------
+// #MIXINS
+// --------------------------------------------------
+
+// =iconfont-styles
+@mixin iconfont-styles {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  speak: none;
+  line-height: 1;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  display: inline-block;
+  text-rendering: auto;
+}
+
+// =icon
+@mixin icon($_icon: false, $_position: before, $_styles: true) {
+  $font-family: $font-family--icon; // fonticon default
+
+  &:#{$_position} {
+    @if $_icon {
+      @if map-has-key($iconfont-custom, $_icon) {
+        content: '#{map-get($iconfont-custom, $_icon)}';
+      }
+      @else if map-has-key($iconfont-fa, $_icon) {
+        content: '#{map-get($iconfont-fa, $_icon)}';
+        $font-family: $font-family--fontawesome; // Font-Awesome fallback
+      }
+      @else {
+        @warn 'The icon: `#{$_icon}` is not a valid fonticon or a `#{$font-family--fontawesome}` fallback.';
+      }
+    }
+    @if $_styles {
+      font-family: $font-family;
+      font-weight: normal;
+      @include iconfont-styles;
+    }
+    @content;
+  }
+}
+
+
+
+
+
+// --------------------------------------------------
+// #EXAMPLES
+// --------------------------------------------------
+
+// [+1] include an icon by name
+// @include icon(search);
+
+// [+2] include an icon by name giving specific position
+// @include icon(search, after);
+
+// [+3] include an icon by name giving specific position and without styles
+// @include icon(search, after, false);
+
+// [+4] include an icon by name giving specific position, specifying font-family and iconfont map
+// @include icon(search, after, true, 'Font Awesome', $iconfont);

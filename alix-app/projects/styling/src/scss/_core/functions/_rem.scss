@@ -1,0 +1,39 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #FUNCTIONS
+//    @rem
+//
+//  #EXAMPLES
+//    [+1] convert pixels to rem
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #FUNCTIONS
+// --------------------------------------------------
+
+// @rem
+@function rem($_pixels, $_context: $font-size--default) {
+  @if (unitless($_pixels)) {
+    $_pixels: $_pixels * 1px;
+  }
+  @if (unitless($_context)) {
+    $_context: $_context * 1px;
+  }
+  @return $_pixels / $_context * 1rem;
+}
+
+
+
+
+
+// --------------------------------------------------
+// #EXAMPLES
+// --------------------------------------------------
+
+// [+1] convert pixels to rem
+// font-size: rem(38);
+// font-size: rem(38px);

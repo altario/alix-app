@@ -1,0 +1,43 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #MIXINS
+//    =size
+//    =size-i (width important)
+//
+//  #EXAMPLES
+//    [+1] same size both horizontally and vertically
+//    [+2] custom different size both horizontally and vertically
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #MIXINS
+// --------------------------------------------------
+
+// =size
+@mixin size($_width, $_height: $_width, $_important: null) {
+  width: $_width $_important;
+  height: $_height $_important;
+}
+
+
+// =size-i (width important)
+@mixin size-i($_width, $_height: $_width) {
+  @include size($_width, $_width, important);
+}
+
+
+
+
+// --------------------------------------------------
+// #EXAMPLES
+// --------------------------------------------------
+
+// [+1] same size both horizontally and vertically
+// @include size(100%);
+
+// [+2] custom different size both horizontally and vertically
+// @include size(100%, 80%);

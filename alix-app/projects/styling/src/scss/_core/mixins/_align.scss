@@ -1,0 +1,271 @@
+// ------------------------------------------------------------------
+//
+// INDEX
+//
+//  #MIXINS
+//    =align
+//
+//  #EXAMPLES
+//    [+1] align with arguments
+//    [+2] align with arguments and margin between elements
+//    [+3] align with arguments and margin between elements declaring side
+//
+// ------------------------------------------------------------------
+
+
+// ------------------------------------------------------------------
+// #MIXINS
+// ------------------------------------------------------------------
+
+// =align
+@mixin align($_args: 0, $_gutter: 0px) {
+
+  // default --------------------
+
+  // default: vars
+  $map: $_args;
+  $gutter-side: right;
+  $flex-direction: row;
+  $flex-wrap: nowrap;
+
+  // default: styles
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: $flex-direction $flex-wrap;
+
+
+
+  // wrap --------------------
+
+  // wrap: nowrap (already is nowrap by default: commented)
+  // @if index($map, nowrap)) {
+  //   $flex-wrap: nowrap;
+  // }
+
+  // wrap: wrap
+  @if index($map, wrap) {
+    $flex-wrap: wrap;
+  }
+
+  // wrap: wrap-reverse
+  @if index($map, wrap-reverse) {
+    $flex-wrap: wrap-reverse;
+  }
+
+  // wrap: output
+  flex-wrap: $flex-wrap;
+
+
+
+  // direction --------------------
+
+  // direction: row (already is row by default: commented)
+  // @if $flex-direction == row) {
+  //   $flex-direction: row;
+  // }
+
+  // direction: reverse
+  @if index($map, reverse) {
+    $flex-direction: row-reverse;
+    $gutter-side: left;
+  }
+
+  // direction: column
+  @if index($map, column) {
+    $flex-direction: column;
+    $gutter-side: bottom;
+    > * {
+      flex-basis: auto;
+    }
+  }
+
+  // direction: column-reverse
+  @if index($map, column-reverse) {
+    $flex-direction: column-reverse;
+    $gutter-side: top;
+  }
+
+  // direction: output
+  flex-direction: $flex-direction;
+
+
+
+  // align horizontal --------------------
+
+  // align horizontal: row
+  @if $flex-direction == row or $flex-direction == row-reverse {
+
+    // align horizontal: row left (already is left by default: commented)
+    // @if index($map, left) {
+    //   justify-content: flex-start;
+    //   > * {
+    //     align-self: flex-start;
+    //     margin-right: auto;
+    //   }
+    // }
+
+    // align horizontal: row center
+    @if index($map, center) {
+      justify-content: center;
+    }
+
+    // align horizontal: row right
+    @if index($map, right) {
+      justify-content: flex-end;
+      // > * {
+      //   align-self: flex-end;
+      //   margin-left: auto;
+      // }
+    }
+  }
+
+  // align horizontal: column
+  @if $flex-direction == column or $flex-direction == column-reverse {
+
+    // align horizontal: column left (already is left by default: commented)
+    // @if index($map, left) {
+    //   align-items: flex-start;
+    //   > * {
+    //     align-self: flex-start;
+    //     margin-bottom: auto;
+    //   }
+    // }
+
+    // center
+    @if index($map, center) {
+      align-items: center;
+    }
+
+    // right
+    @if index($map, right) {
+      align-items: flex-end;
+      // > * {
+      //   align-self: flex-end;
+      //   margin-top: auto;
+      // }
+    }
+  }
+
+
+  // align vertical --------------------
+
+  // align horizontal: row
+  @if $flex-direction == row or $flex-direction == row-reverse {
+
+    // top
+    @if index($map, top) {
+      align-items: flex-start;
+    }
+
+    // middle
+    @if index($map, middle) {
+      align-items: center;
+    }
+
+    // bottom
+    @if index($map, bottom) {
+      align-items: flex-end;
+    }
+  }
+
+  // align horizontal: column
+  @if $flex-direction == column or $flex-direction == column-reverse {
+
+    // top
+    @if index($map, top) {
+      justify-content: flex-start;
+    }
+
+    // middle
+    @if index($map, middle) {
+      justify-content: center;
+    }
+
+    // bottom
+    @if index($map, bottom) {
+      justify-content: flex-end;
+    }
+  }
+
+
+
+  // stretch --------------------
+
+  // stretch
+  @if index($map, stretch) {
+    align-items: stretch;
+  }
+
+
+
+  // space --------------------
+
+  // space: between
+  @if index($map, between) {
+    justify-content: space-between;
+  }
+
+  // space: around
+  @if index($map, around) {
+    justify-content: space-around;
+  }
+
+  // space: evenly
+  @if index($map, space-evenly) {
+    justify-content: space-evenly;
+  }
+
+
+
+  // centered --------------------
+
+  // centered: child centered
+  > * {
+    // max-width: 100%;
+    // flex: 1 1 0%;
+    box-sizing: border-box;
+
+    // centered
+    @if index($map, centered) {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    // output content inside children
+    @content;
+  }
+
+
+
+  // gutter --------------------
+
+  // gutter: resolver
+  $_gutter: ($_gutter / 1px) * 1px;
+
+  // gutter: children
+  @if $_gutter != 0px {
+    > * {
+      + * {
+        margin-#{$gutter-side}: $_gutter;
+      }
+    }
+  }
+}
+
+
+
+
+
+// ------------------------------------------------------------------
+// #EXAMPLES
+// ------------------------------------------------------------------
+
+// [+1] align with arguments
+// @include align(center middle reverse); // center | right | top | middle | bottom | reverse | column | column-reverse | between | around | centered
+
+// [+2] align with arguments and margin between elements
+// @include align(center middle reverse, 20px);
+
+// [+3] align with arguments and margin between elements declaring side
+// @include align(center middle reverse, 20px, left);

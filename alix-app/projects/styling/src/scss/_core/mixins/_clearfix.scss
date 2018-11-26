@@ -1,0 +1,35 @@
+// --------------------------------------------------
+//
+//  #MIXINS
+//    =clearfix
+//
+//  #EXAMPLES
+//    [+1] applies clearfix
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #MIXINS
+// --------------------------------------------------
+
+// =clearfix
+@mixin clearfix {
+  &:after {
+    content: '' !important;
+    // display: table !important;
+    display: block !important;
+    clear: both !important;
+  }
+}
+
+
+
+
+
+// --------------------------------------------------
+// #EXAMPLES
+// --------------------------------------------------
+
+// [+1] applies clearfix
+// @include clearfix;

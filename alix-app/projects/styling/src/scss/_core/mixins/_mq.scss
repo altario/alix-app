@@ -1,0 +1,71 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #DEPENDENCIES
+//    (../base/_variables.scss)
+//
+//  #MIXINS
+//    =mq
+//
+//  #EXAMPLES
+//    [+1] use with predefined variable
+//    [+2] use with predefined variable and custom parameter
+//    [+2] use with custom variable and parameter
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #DEPENDENCIES
+// --------------------------------------------------
+
+// (../base/_variables.scss)
+
+
+
+
+
+// --------------------------------------------------
+// #MIXINS
+// --------------------------------------------------
+
+// =mq
+@mixin mq($_bp, $_rule: max-width, $_compensation: false) {
+  $bp-in-map: map-has-key($alt_breakpoints, $_bp);
+  @if $bp-in-map == true {
+    @if $_compensation == true {
+      $_compensation: 1px;
+      @media screen and (#{$_rule}: (map-get($alt_breakpoints, $_bp) + $_compensation)) {
+        @content;
+      }
+    }
+    @else {
+      @media screen and (#{$_rule}: map-get($alt_breakpoints, $_bp)) {
+        @content;
+      }
+    }
+  }
+  @else {
+    @media screen and (#{$_rule}: $_bp) {
+      @content;
+    }
+  }
+}
+
+
+
+
+
+// --------------------------------------------------
+// #EXAMPLES
+// --------------------------------------------------
+
+// [+1] use with predefined variable
+// @include mq(lg);
+
+// [+2] use with predefined variable and custom parameter
+// @include mq(lg, max-width);
+
+// [+2] use with custom variable and parameter
+// @include mq(500px, max-width);

@@ -1,0 +1,425 @@
+<!-- FORMS -->
+<div class="doc-content__block">
+  <h1 id="forms">#Forms</h1>
+  <a class="ext-doc ext-doc--bootstrap" href="https://getbootstrap.com/docs/4.0/components/forms/" target="_blank">Forms</a>
+
+  <h3 id="forms-default-empty-with-label">Default Empty with Label</h3>
+  <div class="doc-content__block__items">
+    <div class="row">
+      <div class="col-12">
+        <div class="doc-code-block">
+          <div class="doc-code-block__inner doc-code-block__inner--form">
+
+            <form>
+              <div class="form-group">
+                <div class="label-group">
+                  <label for="exampleInputEmail1">Input Name</label>
+                </div>
+                <div class="input-group">
+                  <input type="email" class="form-control" id="exampleInputEmail1">
+                </div>
+              </div>
+            </form>
+
+          </div>
+          <div class="doc-code-block__inner doc-code-block__inner--code">
+            <ngx-prism [language]="'html'">
+              {{ formDefaultEmptyWithLabel }}
+            </ngx-prism>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 id="forms-default-empty-with-placeholder">Default Empty with Placeholder</h3>
+  <div class="doc-content__block__items">
+    <div class="row">
+      <div class="col-12">
+        <div class="doc-code-block">
+          <div class="doc-code-block__inner doc-code-block__inner--form">
+
+            <form>
+              <div class="form-group">
+                <div class="input-group">
+                  <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Please write here">
+                </div>
+              </div>
+            </form>
+
+          </div>
+          <div class="doc-code-block__inner doc-code-block__inner--code">
+            <ngx-prism [language]="'html'">
+              {{ formDefaultEmptyWithPlaceholder }}
+            </ngx-prism>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 id="forms-default-empty-with-label-and-placeholder">Default Empty with Label and Placeholder</h3>
+  <div class="doc-content__block__items">
+    <div class="row">
+      <div class="col-12">
+        <div class="doc-code-block">
+          <div class="doc-code-block__inner doc-code-block__inner--form">
+
+            <form>
+              <div class="form-group">
+                <div class="label-group">
+                  <label for="exampleInputEmail2">Input Name</label>
+                </div>
+                <div class="input-group">
+                  <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Please write here">
+                </div>
+              </div>
+            </form>
+
+          </div>
+          <div class="doc-code-block__inner doc-code-block__inner--code">
+            <ngx-prism [language]="'html'">
+              {{ formDefaultEmptywithLabelandPlaceholder }}
+            </ngx-prism>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 id="forms-labeled-1">Labeled 1</h3>
+  <div class="doc-content__block__items">
+    <div class="row">
+      <div class="col-12">
+        <div class="doc-code-block">
+          <div class="doc-code-block__inner doc-code-block__inner--form">
+
+            <form>
+              <div class="form-group">
+                <div class="label-group">
+                  <label for="exampleInputEmail3">Input Name</label>
+                </div>
+                <div class="input-group">
+                  <input type="email" class="form-control" id="exampleInputEmail4">
+                </div>
+                <div class="feedback-group">
+                  <div class="feedback">Please enter a valid URL.</div>
+                </div>
+              </div>
+            </form>
+
+          </div>
+          <div class="doc-code-block__inner doc-code-block__inner--code">
+            <ngx-prism [language]="'html'">
+              {{ formLabeled1 }}
+            </ngx-prism>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 id="forms-labeled-2-with-info">Labeled 2 with Info</h3>
+  <div class="doc-content__block__items">
+    <div class="row">
+      <div class="col-12">
+        <div class="doc-code-block">
+          <div class="doc-code-block__inner doc-code-block__inner--form">
+
+            <form>
+              <div class="form-group">
+                <div class="label-group">
+                  <label for="exampleInputEmail4">Input Name</label>
+                </div>
+                <div class="input-group">
+                  <input type="email" class="form-control" id="exampleInputEmail5">
+                </div>
+                <div class="feedback-group">
+                  <div class="feedback">Please enter a valid URL.</div>
+                  <button type="button" class="button-info" [outsideClick]="true" popover="This button is disabled because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes." placement="bottom"></button>
+                </div>
+              </div>
+            </form>
+
+          </div>
+          <div class="doc-code-block__inner doc-code-block__inner--code">
+            <ngx-prism [language]="'html'">
+              {{ formLabeled2WithInfo }}
+            </ngx-prism>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 id="forms-labeled-3-limitedto-10-characters">Labeled 3 <span>(limited to 10 characters)</span></h3>
+  <div class="doc-content__block__items">
+    <div class="row">
+      <div class="col-12">
+        <div class="doc-code-block">
+          <div class="doc-code-block__inner doc-code-block__inner--form">
+
+            <form>
+              <div class="form-group">
+                <div class="label-group">
+                  <label for="exampleInputEmail5">Input Name</label>
+                  <div class="label-count">10</div>
+                </div>
+                <div class="input-group">
+                  <input type="email" class="form-control" id="exampleInputEmail6" maxlength="10">
+                </div>
+              </div>
+            </form>
+
+          </div>
+          <div class="doc-code-block__inner doc-code-block__inner--code">
+            <ngx-prism [language]="'html'">
+              {{ formLabeled3LimitedTo10Characters }}
+            </ngx-prism>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 id="forms-mandatory-width-mandatory-class">Mandatory <span>(width mandatory class)</span></h3>
+  <div class="doc-content__block__items">
+    <div class="row">
+      <div class="col-12">
+        <div class="doc-code-block">
+          <div class="doc-code-block__inner doc-code-block__inner--form">
+
+            <form>
+              <div class="form-group mandatory">
+                <div class="label-group">
+                  <label for="exampleInputEmail6">Input Name</label>
+                </div>
+                <div class="input-group">
+                  <input type="email" class="form-control" id="exampleInputEmail7" required>
+                </div>
+              </div>
+            </form>
+
+          </div>
+          <div class="doc-code-block__inner doc-code-block__inner--code">
+            <ngx-prism [language]="'html'">
+              {{ formMandatoryWithMandatoryClass }}
+            </ngx-prism>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 id="forms-filled-and-typing">Filled and Typing</h3>
+  <div class="doc-content__block__items">
+    <div class="row">
+      <div class="col-12">
+        <div class="doc-code-block">
+          <div class="doc-code-block__inner doc-code-block__inner--form">
+
+            <form>
+              <div class="form-group">
+                <div class="label-group">
+                  <label for="exampleInputEmail7">Input Name</label>
+                </div>
+                <div class="input-group">
+                  <input type="email" class="form-control" id="exampleInputEmail7" value="Please write here">
+                </div>
+              </div>
+            </form>
+
+          </div>
+          <div class="doc-code-block__inner doc-code-block__inner--code">
+            <ngx-prism [language]="'html'">
+              {{ formFilledAndTyping }}
+            </ngx-prism>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 id="forms-unity-1">Unity 1</h3>
+  <div class="doc-content__block__items">
+    <div class="row">
+      <div class="col-6">
+        <div class="doc-code-block">
+          <div class="doc-code-block__inner doc-code-block__inner--form">
+
+            <form>
+              <div class="form-group form-group-tn">
+                <div class="label-group">
+                  <label for="exampleInputEmail8">Input Name</label>
+                  <div class="label-count">2</div>
+                </div>
+                <div class="input-group">
+                  <input type="email" class="form-control" id="exampleInputEmail8" value="23">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="air ai-calendar"></i>
+                    </span>
+                  </div>
+                </div>
+                <div class="feedback-group">
+                  <div class="feedback">Value cannot be 0.</div>
+                  <button type="button" class="button-info" [outsideClick]="true" popover="This button is disabled because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes." placement="bottom"></button>
+                </div>
+              </div>
+            </form>
+
+          </div>
+          <div class="doc-code-block__inner doc-code-block__inner--code">
+            <ngx-prism [language]="'html'">
+              {{ formUnity1a }}
+            </ngx-prism>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="doc-code-block">
+          <div class="doc-code-block__inner doc-code-block__inner--form">
+
+            <form>
+              <div class="form-group form-group-sm">
+                <div class="label-group">
+                  <label for="exampleInputEmail9">Input Name</label>
+                </div>
+                <div class="input-group">
+                  <input type="email" class="form-control" id="exampleInputEmail9" value="10">
+                  <div class="input-group-append">
+                    <span class="input-group-text">days</span>
+                  </div>
+                </div>
+                <div class="feedback-group">
+                  <div class="feedback">Value cannot be 0.</div>
+                </div>
+              </div>
+            </form>
+
+          </div>
+          <div class="doc-code-block__inner doc-code-block__inner--code">
+            <ngx-prism [language]="'html'">
+              {{ formUnity1b }}
+            </ngx-prism>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 id="forms-selected-with-selected-and-mandatory-class">Selected <span>(with <strong>selected</strong> and <strong>mandatory</strong> class)</span></h3>
+  <div class="doc-content__block__items">
+    <div class="row">
+      <div class="col-12">
+        <div class="doc-code-block">
+          <div class="doc-code-block__inner doc-code-block__inner--form">
+
+            <form>
+              <div class="form-group selected mandatory">
+                <div class="label-group">
+                  <label for="exampleInputEmail10">Input Name</label>
+                  <div class="label-count">-2</div>
+                </div>
+                <div class="input-group">
+                  <input type="email" class="form-control" id="exampleInputEmail10" value="This is some text">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">@</span>
+                  </div>
+                  <div class="input-group-append">
+                    <span class="input-group-text">days</span>
+                  </div>
+                </div>
+              </div>
+            </form>
+
+          </div>
+          <div class="doc-code-block__inner doc-code-block__inner--code">
+            <ngx-prism [language]="'html'">
+              {{ formSelectedWithSelectedAndMandatoryClass }}
+            </ngx-prism>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 id="forms-errors-width-mandatory-and-invalid-class">Errors <span>(width <strong>mandatory</strong> and <strong>invalid</strong> class)</span></h3>
+  <div class="doc-content__block__items">
+    <div class="row">
+      <div class="col-12">
+        <div class="doc-code-block">
+          <div class="doc-code-block__inner doc-code-block__inner--form">
+
+            <form>
+              <div class="form-group mandatory invalid">
+                <div class="label-group">
+                  <label for="exampleInputEmail10">Input Name</label>
+                  <div class="label-count">-2</div>
+                </div>
+                <div class="input-group">
+                  <input type="email" class="form-control" id="exampleInputEmail10" value="This is some text">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">@</span>
+                  </div>
+                  <div class="input-group-append">
+                    <span class="input-group-text">days</span>
+                  </div>
+                </div>
+                <div class="feedback-group">
+                  <div class="feedback">Please enter a valid URL.</div>
+                </div>
+              </div>
+            </form>
+
+          </div>
+          <div class="doc-code-block__inner doc-code-block__inner--code">
+            <ngx-prism [language]="'html'">
+              {{ formErrorsWidthMandatoryAndInvalidClass }}
+            </ngx-prism>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 id="forms-field-disabled">Field <span>(disabled)</span></h3>
+  <div class="doc-content__block__items">
+    <div class="row">
+      <div class="col-12">
+        <div class="doc-code-block">
+          <div class="doc-code-block__inner doc-code-block__inner--form">
+
+            <form>
+              <div class="form-group">
+                <div class="label-group">
+                  <label for="exampleInputEmail10">Input Name</label>
+                  <div class="label-count">-2</div>
+                </div>
+                <div class="input-group">
+                  <input type="email" class="form-control" id="exampleInputEmail10" value="This is some text" disabled>
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">@</span>
+                  </div>
+                  <div class="input-group-append">
+                    <span class="input-group-text">days</span>
+                  </div>
+                </div>
+                <div class="feedback-group">
+                  <div class="feedback">Please enter a valid URL.</div>
+                </div>
+              </div>
+            </form>
+
+          </div>
+          <div class="doc-code-block__inner doc-code-block__inner--code">
+            <ngx-prism [language]="'html'">
+              {{ formFieldDisabled }}
+            </ngx-prism>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

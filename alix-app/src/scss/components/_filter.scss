@@ -1,0 +1,208 @@
+// ------------------------------------------------------------------
+//
+// INDEX
+//
+//  #MIXINS
+//
+//  #STYLES
+//
+// ------------------------------------------------------------------
+
+
+// ------------------------------------------------------------------
+//  #MIXINS
+// ------------------------------------------------------------------
+
+
+// =alt_filter__header
+@mixin alt_filter__header {
+  .navbar {
+    height: 100%;
+    padding: 0 30px;
+    background: $color__gray--lighter;
+    @include align(row middle);
+    .navbar-brand {
+      padding: 0;
+      margin: 0 60px 0 0;
+      font-size: $font-size--small;
+      font-weight: $font-weight--normal;
+    }
+    .navbar-collapse {
+      @include align(row middle);
+      .navbar-nav-content {
+        .nav-item {
+          height: 30px;
+          @include align(row middle);
+          span {
+            height: 30px;
+            line-height: 30px;
+            margin-right: 20px;
+            padding: 0 30px 0 20px;
+            background: #F0F4F7;
+            color: $color__gray--dark;
+            font-size: $font-size--small;
+            font-weight: $font-weight--normal;
+            letter-spacing: $letter-spacing--2;
+            position: relative;
+            a {
+              width: 28px;
+              height: 30px;
+              display: block;
+              padding: 0 10px;
+              position: absolute;
+              top: 0;
+              right: 0;
+              @include icon(times) {
+                width: 8px;
+                height: 8px;
+                line-height: 8px;
+                font-size: 8px;
+                font-weight: $font-weight--light;
+              }
+            }
+          }
+        }
+      }
+
+      .navbar-nav-settings {
+        width: 24px;
+        height: 24px;
+        .nav-item {
+          width: 24px;
+          height: 24px;
+          .dropdown-toggle {
+            width: 24px;
+            height: 24px;
+            display: block;
+            @include icon(cog, after) {
+              width: 24px;
+              height: 24px;
+              line-height: 24px;
+              display: block;
+              font-size: 24px;
+              color: $color__gray--dark;
+              border: none;
+              font-weight: $font-weight--light;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// =alt_filter__menu__sidebar
+@mixin alt_filter__menu__sidebar {
+  .filter__sidebar {
+    padding: 40px;
+    @include calc-col(200px);
+    background: $color__gray--lighter;
+    .filter__sidebar__block {
+      width: 100%;
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+      position: relative;
+      &:after {
+        content: '';
+        width: calc(100% - 60px);
+        height: 1px;
+        background: $color__gray--medium;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 20px;
+      }
+      &:last-child {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        &:after {
+          display: none;
+        }
+      }
+
+      .form-check {
+        margin-bottom: 15px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+// =alt_filter__menu__content
+@mixin alt_filter__menu__content {
+  .filter__content {
+    @include calc-col(12, 200px);
+    padding: 40px;
+    .filter__content__actions {
+      .col {
+        @include align(row right);
+        .btn {
+          margin-right: 20px;
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// =alt_filter__menu__header
+@mixin alt_filter__menu__header {
+  .dropdown-header {
+    height: 60px;
+    line-height: 60px;
+    padding: 0 40px;
+    font-size: $font-size--normal;
+    font-weight: $font-weight--bold;
+    border-bottom: 1px solid $color__gray--medium;
+  }
+}
+
+// =alt_filter__menu
+@mixin alt_filter__menu {
+  .filter__menu {
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-shadow: shadow(topdown--2);
+    .container-fluid {
+      padding: 0;
+    }
+
+    // +alt_filter__menu__header
+    @include alt_filter__menu__header;
+
+    // +alt_filter__menu__sidebar
+    @include alt_filter__menu__sidebar;
+
+    // +alt_filter__menu__content
+    @include alt_filter__menu__content;
+  }
+}
+
+// =alt_filter
+@mixin alt_filter {
+  width: 100%;
+  height: 60px;
+
+  // +alt_filter__header
+  @include alt_filter__header;
+
+  // +alt_filter__menu
+  @include alt_filter__menu;
+}
+
+
+
+// ------------------------------------------------------------------
+//  #STYLES
+// ------------------------------------------------------------------
+
+// _filter
+.filter {
+  // +alt_filter
+  @include alt_filter;
+}

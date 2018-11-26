@@ -1,0 +1,36 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #MIXINS
+//    =selection
+//
+//  #EXAMPLES
+//    [+1] sets mouse selection for text and elements
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #MIXINS
+// --------------------------------------------------
+
+// =selection
+@mixin selection {
+  &::-moz-selection { @content; }
+  &::selection { @content; }
+}
+
+
+
+
+
+// --------------------------------------------------
+// #EXAMPLES
+// --------------------------------------------------
+
+// [+1] sets mouse selection for text and elements
+// @include selection {
+//   color: lightness($color__ui__primary);
+//   background: $color__ui__primary;
+// }

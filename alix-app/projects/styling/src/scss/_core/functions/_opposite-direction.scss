@@ -1,0 +1,55 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #FUNCTIONS
+//    @opposite-direction
+//
+//  #EXAMPLES
+//    [+1] for use with triangle mixin
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #FUNCTIONS
+// --------------------------------------------------
+
+// @opposite-direction
+@function opposite-direction($directions) {
+  $opposite-directions: ();
+  $direction-map: (
+    'top':    'bottom',
+    'right':  'left',
+    'bottom': 'top',
+    'left':   'right',
+    'center': 'center',
+    'both':   'both',
+    'ltr':    'rtl',
+    'rtl':    'ltr',
+  );
+
+  @each $direction in $directions {
+    $direction: to-lower-case($direction);
+
+    @if map-has-key($direction-map, $direction) {
+      $opposite-directions: append($opposite-directions, unquote(map-get($direction-map, $direction)));
+    }
+    @else {
+      @warn "No opposite direction can be found for `#{$direction}`. Direction omitted.";
+    }
+  }
+
+  @return $opposite-directions;
+}
+
+
+
+
+
+// --------------------------------------------------
+// #EXAMPLES
+// --------------------------------------------------
+
+// [+1] for use with triangle mixin
+// opposite-direction(left);

@@ -1,0 +1,143 @@
+// ------------------------------------------------------------------
+//
+// INDEX
+//
+//  #VARS
+//
+//  #MIXINS
+//    =alt_panel__header
+//    =alt_panel__content
+//    =alt_panel__footer
+//    =alt_panel--big
+//    =alt_panel--dark
+//    =alt_panel--profile
+//    =alt_panel
+//
+//  #STYLES
+//
+// ------------------------------------------------------------------
+
+
+// ------------------------------------------------------------------
+// #STYLES
+// ------------------------------------------------------------------
+
+// =alt_panel__header
+@mixin alt_panel__header {
+  .panel__header {
+    height: 40px;
+    padding: 0 60px;
+    background: $color__gray--light;
+    @include align(row middle between);
+
+    .panel__header__title {
+      text-transform: uppercase;
+      font-size: $font-size--small;
+      font-weight: $font-weight--bold;
+      letter-spacing: $letter-spacing--1;
+      color: $color__brand--1;
+    }
+  }
+}
+
+// =alt_panel__content
+@mixin alt_panel__content {
+  .panel__content {
+    padding: 35px 60px 20px;
+    letter-spacing: $letter-spacing--1;
+  }
+}
+
+// =alt_panel__footer
+@mixin alt_panel__footer {
+  .panel__footer {
+    padding: 0 60px 25px;
+    background: transparent;
+    letter-spacing: $letter-spacing--1;
+    @include align(right);
+    .btn {
+      padding: 0;
+      font-weight: $font-weight--bold;
+      @include icon(chevron-down, after) {
+        margin-left: 10px;
+        font-weight: $font-weight--light;
+      }
+    }
+  }
+}
+
+// =alt_panel--big
+@mixin alt_panel--big {
+  &.panel--big {
+    .panel__header {
+      height: 80px;
+    }
+  }
+}
+
+// =alt_panel--dark
+@mixin alt_panel--dark {
+  &.panel--dark {
+    .panel__header {
+      background: $color__dark-blue-gray--1;
+      .panel__header__title {
+        color: white;
+        text-transform: initial;
+      }
+    }
+  }
+}
+
+// =alt_panel--profile
+@mixin alt_panel--profile {
+  &.panel--profile {
+    .panel__header {
+      background: $color__gray--lighter;
+      .panel__header__title {
+        color: $color__dark-blue-gray--1;
+        text-transform: initial;
+      }
+    }
+  }
+}
+
+// =alt_panel
+@mixin alt_panel {
+  box-shadow: shadow(wide--2);
+
+  // defaults --------------------
+
+  // +alt_panel__header
+  @include alt_panel__header;
+
+  // +alt_panel__content
+  @include alt_panel__content;
+
+  // +alt_panel__footer
+  @include alt_panel__footer;
+
+
+
+  // type --------------------
+
+  // +alt_panel--big
+  @include alt_panel--big;
+
+  // +alt_panel--dark
+  @include alt_panel--dark;
+
+  // +alt_panel--profile
+  @include alt_panel--profile;
+}
+
+
+
+// ------------------------------------------------------------------
+// #STYLES
+// ------------------------------------------------------------------
+
+// _panel
+.panel {
+  // +alt_panel
+  @include alt_panel;
+}

@@ -1,0 +1,65 @@
+// --------------------------------------------------
+//
+//           __== ALTAR SASS FRAMEWORK ==__
+//
+// INDEX
+//
+//  #IMPORTS
+//    +/imports
+//    +/layout
+//    +/components
+//    +/page-components
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #IMPORTS
+// --------------------------------------------------
+
+// +/libs
+@import 'libs';
+
+
+// +/imports
+@import 'imports';
+
+
+// +/bootstrap
+@import '~projects/styling/src/scss/_core/config/bootstrap/bootstrap';
+
+// +/config
+@import 'config/typography';
+@import 'config/fonts';
+@import 'config/iconfont';
+@import 'config/base';
+@import 'config/ui';
+
+
+// +/resolvers (required)
+@import '~projects/styling/src/scss/resolvers/iconfonts';
+
+
+// +/helpers
+@import 'helpers/animations';
+
+
+// +/components
+@import 'components/buttons';
+@import 'components/input-group';
+// @import 'components/popover';
+// @import 'components/daterangepicker';
+@import 'components/forms';
+@import 'components/grid';
+// @import 'components/alerts';
+@import 'components/modals';
+// @import 'components/panels';
+@import 'components/accordion';
+@import 'components/chips';
+@import 'components/nav';
+// @import 'components/sidebar';
+// @import 'components/filter';
+// @import 'components/footer';
+// @import 'components/filters';
+@import 'components/dropdown';
+// @import 'components/breadcrumbs';

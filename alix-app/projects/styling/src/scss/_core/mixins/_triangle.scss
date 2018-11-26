@@ -1,0 +1,67 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #MIXINS
+//    =center
+//    =center-i
+//
+//  #EXAMPLES
+//    [+1] makes triangle for tooltips and such
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #DEPENDENCIES
+// --------------------------------------------------
+
+// (../mixins/_size.scss)
+// (../mixins/_position.scss)
+// (../functions/_opposite-direction.scss)
+
+
+
+
+
+// --------------------------------------------------
+// #MIXINS
+// --------------------------------------------------
+
+// =triangle
+@mixin triangle($_direction, $_position, $_color: currentColor, $_size: 1em, $_size2: 1em) {
+  @if not index(top right bottom left, $_direction) {
+    @warn "Direction must be one of top, right, bottom or left.";
+  }
+
+  @else {
+    content: '';
+    @include absolute($_position);
+    @include size(0);
+    z-index: 2;
+
+    border-#{opposite-direction($_direction)}: $_size solid $_color;
+    $_perpendicular-borders: $_size2/2 solid transparent;
+
+    @if $_direction == top or $_direction == bottom {
+      border-left:   $_perpendicular-borders;
+      border-right:  $_perpendicular-borders;
+    }
+
+    @else if $_direction == right or $_direction == left {
+      border-bottom: $_perpendicular-borders;
+      border-top:    $_perpendicular-borders;
+    }
+  }
+}
+
+
+
+
+
+// --------------------------------------------------
+// #EXAMPLES
+// --------------------------------------------------
+
+// [+1] makes triangle for tooltips and such
+// @include triangle(bottom, top 100% left 1em, tomato, 10px, 10px);

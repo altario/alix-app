@@ -1,0 +1,52 @@
+// ------------------------------------------------------------
+//
+// INDEX
+//
+//  #MIXINS
+//    =anim
+//
+//  #EXAMPLES
+//    [+1] include anim with default params
+//    [+2] include anim with custom params
+//
+// ------------------------------------------------------------
+
+
+// ------------------------------------------------------------
+// #MIXINS
+// ------------------------------------------------------------
+
+// =anim
+@mixin anim($_transition...) {
+  @if $_transition == all {
+    transition: all $transition__base--noprop ease-in-out;
+  }
+  @else {
+    @include on-event(true) {
+      transition:
+      background $transition__base--noprop ease-in-out,
+      color $transition__base--noprop/2 ease-in-out,
+      border $transition__base--noprop ease-in-out,
+      transform $transition__base--noprop ease-in-out,
+      ;
+      @if length($_transition) > 0 {
+        transition-property: #{$_transition};
+      }
+    }
+  }
+}
+
+
+
+
+
+// --------------------------------------------------
+// #EXAMPLES
+// --------------------------------------------------
+
+// [+1] include anim with default params
+// @include anim;
+
+// [+2] include anim with custom params
+// @include anim(all);
+

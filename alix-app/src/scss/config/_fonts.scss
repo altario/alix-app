@@ -1,0 +1,31 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #STYLES
+//    google fonts
+//    custom fonts
+//    font-awesome pro family
+//    custom icon fonts
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #STYLES
+// --------------------------------------------------
+
+// google fonts --------------------
+
+// google fonts: Lato
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,500,700');
+
+
+
+// custom fonts --------------------
+
+// +font-face (path: 'assets/fonts/fontname/fontname.ttf')
+// @include font-face($font-family--primary, 'Poppins-Regular', $font-weight--normal);
+// @include font-face($font-family--primary, 'Poppins-Bold', $font-weight--bold);
+// @include font-face($font-family--secondary, 'PTSans-Regular', $font-weight--normal);
+// @include font-face($font-family--secondary, 'PTSans-Bold', $font-weight--bold);

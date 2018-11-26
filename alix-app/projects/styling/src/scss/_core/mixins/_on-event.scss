@@ -1,0 +1,54 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #MIXINS
+//    =on-event
+//
+//  #EXAMPLES
+//    [+1] on event multiple pseudo selectors without self
+//    [+2] on event multiple pseudo selectors with self
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #MIXINS
+// --------------------------------------------------
+
+// =on-event
+@mixin on-event($_self: false) {
+  @if $_self {
+    &,
+    &:hover,
+    &:active,
+    &:focus,
+    &:before,
+    &:after {
+      @content;
+    }
+  }
+  @else {
+    &:hover,
+    &:active,
+    &:focus,
+    &:before,
+    &:after {
+      @content;
+    }
+  }
+}
+
+
+
+
+
+// --------------------------------------------------
+// #EXAMPLES
+// --------------------------------------------------
+
+// [+1] on event multiple pseudo selectors without self
+// @include on-event;
+
+// [+2] on event multiple pseudo selectors with self
+// @include on-event(true);

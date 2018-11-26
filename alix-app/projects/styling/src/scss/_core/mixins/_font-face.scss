@@ -1,0 +1,112 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #DEPENDENCIES
+//    (../functions/paths.scss)
+//
+//  #MIXINS
+//    =font-face
+//    =font-face-icons
+//    =font-face-fontawesome
+//
+//  #EXAMPLES
+//    [+1] import custom font
+//    [+2] import custom fonticons
+//    [+3] import fontawesome
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #DEPENDENCIES
+// --------------------------------------------------
+
+// (../functions/paths.scss)
+
+
+
+
+
+// --------------------------------------------------
+// #MIXINS
+// --------------------------------------------------
+
+// =font-face
+@mixin font-face($_font-family, $_font--filename, $_weight: normal, $_style: normal) {
+  $font--path: $path__fonts + $_font--filename + '/' + $_font--filename;
+
+  @font-face {
+    // src: url($font--path + '.eot?#iefix') format('embedded-opentype'),     // IE6-IE8
+    //      url($font--path + '.woff') format('woff'),                        // Super Modern Browsers
+    //      url($font--path + '.woff2') format('woff2'),                      // Pretty Modern Browsers
+    //      url($font--path + '.ttf') format('truetype'),                     // Safari, Android, iOS
+    //      url($font--path + '.svg#' + $_font--filename + '') format('svg'); // Legacy iOS
+
+    font-family: $_font-family;
+    src: url($font--path + '.eot');                                        // IE9 Compat Modes
+    src: url($font--path + '.woff') format('woff'),                        // Super Modern Browsers
+         url($font--path + '.woff2') format('woff2'),                      // Pretty Modern Browsers
+         url($font--path + '.ttf') format('truetype');                     // Safari, Android, iOS
+    font-weight: $_weight;
+    font-style: $_style;
+  }
+}
+
+// =font-face-icons
+@mixin font-face-icons($_font-family, $_font--filename) {
+  $font--path: $path__fonts + '/' + $_font--filename + '/' + $_font--filename;
+
+  @font-face {
+    font-family: $_font-family;
+    src: url($font--path + '.woff') format('woff'),
+        //  url($font--path + '.woff2') format('woff2'),
+         url($font--path + '.ttf') format('truetype'),
+         url($font--path + '.svg#' + $_font--filename + '') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+// =font-face-fontawesome
+@mixin font-face-fontawesome {
+  $font-awesome-map: (
+    fa-brands-400:  (family: 'Font Awesome 5 Brands', weight: 400),
+    fa-light-300:   (family: 'Font Awesome 5 Pro',    weight: 300),
+    fa-regular-400: (family: 'Font Awesome 5 Pro',    weight: 400),
+    fa-solid-900:   (family: 'Font Awesome 5 Pro',    weight: 900),
+  );
+
+  @each $font-name, $font-weight in $font-awesome-map {
+    $font--path: $path__fonts + '/fontawesome-pro/' + $font-name + '/' + $font-name;
+
+    @font-face {
+      font-family: map-deep-get($font-awesome-map, $font-name, family);
+      src: url($font--path + '.eot');
+      src: url($font--path + '.eot?#iefix') format("embedded-opentype"),
+           url($font--path + '.woff2') format("woff2"),
+           url($font--path + '.woff') format("woff"),
+           url($font--path + '.ttf') format("truetype"),
+           url($font--path + '.svg#fontawesome') format("svg");
+      font-weight: map-deep-get($font-awesome-map, $font-name, weight);
+      font-style: normal;
+    }
+  }
+}
+
+
+
+
+
+// --------------------------------------------------
+// #EXAMPLES
+// --------------------------------------------------
+
+// [+1] import custom font
+// @include font-face('Poppins', 'PoppinsRegular');
+
+// [+2] import custom fonticons
+// @include font-face-icons('fonticons', 'fonticons');
+
+// [+3] import fontawesome
+// @include fontawesome;

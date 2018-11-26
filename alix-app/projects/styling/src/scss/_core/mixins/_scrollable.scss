@@ -1,0 +1,65 @@
+// --------------------------------------------------
+//
+// INDEX
+//
+//  #MIXINS
+//    =scrollable
+//    =scrollable--important
+//
+//  #EXAMPLES
+//    [+1] centers both horizontally and vertically
+//    [+2] centers horizontally
+//    [+3] centers vertically
+//
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// #MIXINS
+// --------------------------------------------------
+
+// =scrollable
+@mixin scrollable($_axis: both, $_important: null) {
+  @if $_axis == none {
+    overflow-x: hidden $_important;
+    overflow-y: hidden $_important;
+  }
+  @else {
+    -webkit-overflow-scrolling: touch;
+    @if $_axis == both {
+      overflow-x: scroll $_important;
+      overflow-y: scroll $_important;
+    }
+    @else if $_axis == h {
+      overflow-x: scroll $_important;
+      overflow-y: hidden $_important;
+    }
+    @else if $_axis == v {
+      overflow-x: hidden $_important;
+      overflow-y: scroll $_important;
+    }
+  }
+}
+
+
+// =scrollable--important
+@mixin scrollable--important($_axis: both) {
+  @include scrollable($_axis, important);
+}
+
+
+
+
+
+// --------------------------------------------------
+// #EXAMPLES
+// --------------------------------------------------
+
+// [+1] scrollable both horizontally and vertically
+// @include scrollable;
+
+// [+2] scrollable horizontally only
+// @include scrollable(h);
+
+// [+3] scrollable vertically only
+// @include scrollable(v);
