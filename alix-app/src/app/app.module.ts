@@ -23,9 +23,15 @@ import { DashboardLayoutComponent } from "./core/dashboard-layout/dashboard-layo
  */
 
 import { NgxEchartsModule } from "ngx-echarts";
+import { StylesComponent } from "./styles/styles.component";
 
 @NgModule({
-    declarations: [AppComponent, BaseLayoutComponent, DashboardLayoutComponent],
+    declarations: [
+        AppComponent,
+        BaseLayoutComponent,
+        StylesComponent,
+        DashboardLayoutComponent
+    ],
     imports: [
         BrowserModule,
         RouterModule.forRoot(AppRoutes, { enableTracing: true }),
