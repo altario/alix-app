@@ -11,7 +11,5 @@ export class PanelListComponent implements OnInit {
 
     constructor() {}
 
-    ngOnInit() {
-        console.log(this.config);
-    }
+    ngOnInit() {}
 }

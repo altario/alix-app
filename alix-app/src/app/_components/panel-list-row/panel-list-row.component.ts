@@ -10,7 +10,5 @@ export class PanelListRowComponent implements OnInit {
 
     constructor() {}
 
-    ngOnInit() {
-        console.log(this.config);
-    }
+    ngOnInit() {}
 }

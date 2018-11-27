@@ -26,7 +26,8 @@ import {
     StackedComponent,
     SliderRangeComponent,
     PanelListRowComponent,
-    PanelListComponent
+    PanelListComponent,
+    LongPanelComponent
 } from "../_components/index";
 
 import { Ng5SliderModule } from "ng5-slider";
@@ -56,7 +57,8 @@ import { Ng5SliderModule } from "ng5-slider";
         StackedComponent,
         SliderRangeComponent,
         PanelListRowComponent,
-        PanelListComponent
+        PanelListComponent,
+        LongPanelComponent
     ]
 })
 export class PortfolioModule {}

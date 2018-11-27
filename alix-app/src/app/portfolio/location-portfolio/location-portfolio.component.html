@@ -1,1 +1,10 @@
-<div class="card-columns" *ngFor="let panel of panels"></div>
+<div
+    class="databoard clearfix"
+    style="border:1px solid #efefef;"
+    *ngFor="let spec of specs"
+>
+    <app-stacked
+        *ngIf="spec.type == 'StackedComponent'"
+        [config]="spec"
+    ></app-stacked>
+</div>

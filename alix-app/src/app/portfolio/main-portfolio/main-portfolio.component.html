@@ -72,12 +72,12 @@
     style="border:1px solid #efefef;"
     *ngFor="let spec of specs"
 >
-    <app-stacked
-        *ngIf="spec.type == 'StackedComponent'"
-        [config]="spec"
-    ></app-stacked>
     <app-panel-list-row
-        *ngIf="spec.type == 'PanelListRowComponent'"
+        *ngIf="spec.type === 'PanelListRowComponent'"
         [config]="spec"
     ></app-panel-list-row>
+    <app-long-panel
+        *ngIf="spec.type === 'LongPanelComponent'"
+        [config]="spec"
+    ></app-long-panel>
 </div>

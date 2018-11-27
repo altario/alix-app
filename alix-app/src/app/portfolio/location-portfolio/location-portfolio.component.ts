@@ -8,7 +8,13 @@ import { MockapiService } from "../../_services/_mockapi.service";
     providers: [MockapiService]
 })
 export class LocationPortfolioComponent implements OnInit {
+    specs: Array<object>;
     constructor(private api: MockapiService) {}
 
-    ngOnInit() {}
+    ngOnInit() {
+        this.api.getJSON("portfolio/location-portfolio").subscribe(data => {
+            // console.log(data);
+            this.specs = data;
+        });
+    }
 }

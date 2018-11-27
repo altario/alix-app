@@ -2,7 +2,9 @@
 <div *ngFor="let columns of config.items" style="display: flex;">
     <div *ngFor="let row of columns">
         <h6 *ngIf="row.title">{{ row.title }}</h6>
-        <div *ngIf="row.type === 'string'">{{ row.value }}{{ row.label }}</div>
+        <div *ngIf="row.type === 'string'">
+            {{ row.value[0] }}{{ row.value[1] }}
+        </div>
         <div *ngIf="row.type === 'box'">
             <div [ngClass]="{ good: row.condition == 'ok' }">
                 {{ row.value }}
