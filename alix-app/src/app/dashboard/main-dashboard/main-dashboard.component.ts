@@ -96,11 +96,15 @@ const specs = [ // Array de objectos que corresponde a cada componente
     providers: [MockapiService]
 })
 export class MainDashboardComponent implements OnInit {
+    specs:any;
+    
     constructor(private api: MockapiService) {}
 
     ngOnInit() {
         this.api.getJSON().subscribe(data => {
             console.log(data);
         });
+
+        this.specs = specs;
     }
 }
