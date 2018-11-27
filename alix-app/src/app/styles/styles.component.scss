@@ -1,0 +1,33 @@
+$color: #2D3035;
+$amount: 40;
+$text-secondary-color: #8D8C8D !important;
+
+.uppercase { text-transform: uppercase }
+.highlighted_kpi {
+  font-size: 48px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  color: $color;
+  line-height: 1em;
+  small {
+    font-weight: 100;
+    font-size: .5em;
+    padding: 0 .1em;
+   }
+   .of { padding: 0 .25em }
+   small,
+   span {
+     display: inline-block
+   }
+}
+
+.label_up,
+.label_down {
+    font-size: 10px;
+    color: #2D3035;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+.text-secondary { color: $text-secondary-color}
