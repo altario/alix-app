@@ -22,7 +22,12 @@ import {
     ScatterMapComponent
 } from "../charts/index";
 
-import { StackedComponent, SliderRangeComponent } from "../_components/index";
+import {
+    StackedComponent,
+    SliderRangeComponent,
+    PanelListRowComponent,
+    PanelListComponent
+} from "../_components/index";
 
 import { Ng5SliderModule } from "ng5-slider";
 
@@ -49,7 +54,9 @@ import { Ng5SliderModule } from "ng5-slider";
         ScatterMapComponent,
 
         StackedComponent,
-        SliderRangeComponent
+        SliderRangeComponent,
+        PanelListRowComponent,
+        PanelListComponent
     ]
 })
 export class PortfolioModule {}
