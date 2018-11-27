@@ -2,12 +2,12 @@ import { Component, OnInit } from "@angular/core";
 import { MockapiService } from "../../_services/_mockapi.service";
 
 @Component({
-    selector: "app-dashboard",
-    templateUrl: "./demand-offer-dashboard.component.html",
-    styleUrls: ["./demand-offer-dashboard.component.scss"],
+    selector: "app-demand-offer-portfolio",
+    templateUrl: "./demand-offer-portfolio.component.html",
+    styleUrls: ["./demand-offer-portfolio.component.scss"],
     providers: [MockapiService]
 })
-export class DemandAndOfferDashboardComponent implements OnInit {
+export class DemandAndOfferPortfolioComponent implements OnInit {
     constructor(private api: MockapiService) {}
 
     ngOnInit() {

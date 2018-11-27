@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { DemandAndOfferDashboardComponent } from "./demand-offer-dashboard.component";
+import { DemandAndOfferDashboardComponent } from "./demand-offer-portfolio.component";
 
 describe("DemandAndOfferDashboardComponent", () => {
     let component: DemandAndOfferDashboardComponent;

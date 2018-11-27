@@ -3,10 +3,10 @@ import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
-import { MainDashboardComponent } from "./main-dashboard/main-dashboard.component";
-import { LocationDashboardComponent } from "./location-dashboard/location-dashboard.component";
-import { DemandAndOfferDashboardComponent } from "./demand-offer-dashboard/demand-offer-dashboard.component";
-import { DashboardRoutes } from "./dashboard.routing";
+import { MainPortfolioComponent } from "./main-portfolio/main-portfolio.component";
+import { LocationPortfolioComponent } from "./location-portfolio/location-portfolio.component";
+import { DemandAndOfferPortfolioComponent } from "./demand-offer-portfolio/demand-offer-portfolio.component";
+import { PortfolioRoutes } from "./portfolio.routing";
 
 import { NgxEchartsModule } from "ngx-echarts";
 
@@ -20,27 +20,24 @@ import {
     RadarComponent,
     ScatterComponent,
     ScatterMapComponent
-} from '../charts/index';
+} from "../charts/index";
 
-import {
-    StackedComponent,
-    SliderRangeComponent
-} from '../_components/index';
+import { StackedComponent, SliderRangeComponent } from "../_components/index";
 
-import { Ng5SliderModule } from 'ng5-slider';
+import { Ng5SliderModule } from "ng5-slider";
 
 @NgModule({
     imports: [
         CommonModule,
         NgbModule,
-        RouterModule.forChild(DashboardRoutes),
+        RouterModule.forChild(PortfolioRoutes),
         NgxEchartsModule,
         Ng5SliderModule
     ],
     declarations: [
-        MainDashboardComponent,
-        LocationDashboardComponent,
-        DemandAndOfferDashboardComponent,
+        MainPortfolioComponent,
+        LocationPortfolioComponent,
+        DemandAndOfferPortfolioComponent,
         AreaBasicComponent,
         AreaStackComponent,
         BarComponent,
@@ -52,8 +49,7 @@ import { Ng5SliderModule } from 'ng5-slider';
         ScatterMapComponent,
 
         StackedComponent,
-        SliderRangeComponent,
-        
+        SliderRangeComponent
     ]
 })
-export class DashboardModule {}
+export class PortfolioModule {}

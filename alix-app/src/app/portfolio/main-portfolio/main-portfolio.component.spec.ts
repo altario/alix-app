@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { LocationDashboardComponent } from "./location-dashboard.component";
+import { DashboardComponent } from "./main-portfolio.component";
 
-describe("LocationDashboardComponent", () => {
-    let component: LocationDashboardComponent;
-    let fixture: ComponentFixture<LocationDashboardComponent>;
+describe("DashboardComponent", () => {
+    let component: DashboardComponent;
+    let fixture: ComponentFixture<DashboardComponent>;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [LocationDashboardComponent]
+            declarations: [DashboardComponent]
         }).compileComponents();
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(LocationDashboardComponent);
+        fixture = TestBed.createComponent(DashboardComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });
