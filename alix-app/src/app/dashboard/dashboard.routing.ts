@@ -1,9 +1,19 @@
-import { Routes } from '@angular/router';
-import { DashboardComponent } from "./dashboard/dashboard.component";
+import { Routes } from "@angular/router";
+import { MainDashboardComponent } from "./main-dashboard/main-dashboard.component";
+import { LocationDashboardComponent } from "./location-dashboard/location-dashboard.component";
+import { DemandAndOfferDashboardComponent } from "./demand-offer-dashboard/demand-offer-dashboard.component";
 
 export const DashboardRoutes: Routes = [
     {
-        path: '',
-        component: DashboardComponent
+        path: "location",
+        component: LocationDashboardComponent
+    },
+    {
+        path: "demand-offer",
+        component: DemandAndOfferDashboardComponent
+    },
+    {
+        path: "",
+        component: MainDashboardComponent
     }
 ];
