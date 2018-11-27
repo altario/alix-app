@@ -34,7 +34,7 @@ import { StylesComponent } from "./styles/styles.component";
     ],
     imports: [
         BrowserModule,
-        RouterModule.forRoot(AppRoutes, { enableTracing: true }),
+        RouterModule.forRoot(AppRoutes),
         NgbModule.forRoot(),
         HttpModule,
         HttpClientModule

@@ -1,8 +1,3 @@
-<div class="card-columns">
-    <div class="card ">
-        <div class="card-body">
-            <h5 class="card-title">Area Simple</h5>
-            <alix-area-basic options="{}"></alix-area-basic>
-        </div>
-    </div>
+<div class="card-columns" *ngFor="let panel of panels">
+    <app-type-of-neighbourhood [data]="panel"></app-type-of-neighbourhood>
 </div>
