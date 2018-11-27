@@ -1,16 +1,16 @@
-import { RouterModule, Routes } from "@angular/router";
-import { BaseLayoutComponent } from "./core";
+import { Routes } from "@angular/router";
+import { BaseLayoutComponent, DashboardLayoutComponent } from "./core";
 
 export const AppRoutes: Routes = [
+    {
+        path: "dashboard/:id",
+        component: DashboardLayoutComponent,
+        loadChildren: "./dashboard/dashboard.module#DashboardModule"
+    },
     {
         path: "",
         component: BaseLayoutComponent,
         loadChildren: "./position/position.module#PositionModule"
-    },
-    {
-        path: "dashboard/:id",
-        component: BaseLayoutComponent,
-        loadChildren: "./dashboard/dashboard.module#DashboardModule"
     },
     {
         path: "**",

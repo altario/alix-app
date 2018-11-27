@@ -3,11 +3,11 @@ import { MockapiService } from "../../_services/_mockapi.service";
 
 @Component({
     selector: "app-dashboard",
-    templateUrl: "./dashboard.component.html",
-    styleUrls: ["./dashboard.component.scss"],
+    templateUrl: "./main-dashboard.component.html",
+    styleUrls: ["./main-dashboard.component.scss"],
     providers: [MockapiService]
 })
-export class DashboardComponent implements OnInit {
+export class MainDashboardComponent implements OnInit {
     constructor(private api: MockapiService) {}
 
     ngOnInit() {

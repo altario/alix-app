@@ -16,6 +16,7 @@ import { AppRoutes } from "./app.routing";
 
 import { AppComponent } from "./app.component";
 import { BaseLayoutComponent } from "./core/base-layout/base-layout.component";
+import { DashboardLayoutComponent } from "./core/dashboard-layout/dashboard-layout.component";
 
 /**
  * echarts
@@ -24,10 +25,10 @@ import { BaseLayoutComponent } from "./core/base-layout/base-layout.component";
 import { NgxEchartsModule } from "ngx-echarts";
 
 @NgModule({
-    declarations: [AppComponent, BaseLayoutComponent],
+    declarations: [AppComponent, BaseLayoutComponent, DashboardLayoutComponent],
     imports: [
         BrowserModule,
-        RouterModule.forRoot(AppRoutes),
+        RouterModule.forRoot(AppRoutes, { enableTracing: true }),
         NgbModule.forRoot(),
         HttpModule,
         HttpClientModule

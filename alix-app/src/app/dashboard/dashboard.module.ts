@@ -1,23 +1,24 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { RouterModule } from "@angular/router";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { DashboardRoutes } from './dashboard.routing';
+import { MainDashboardComponent } from "./main-dashboard/main-dashboard.component";
+import { LocationDashboardComponent } from "./location-dashboard/location-dashboard.component";
+import { DashboardRoutes } from "./dashboard.routing";
 
-import { NgxEchartsModule } from 'ngx-echarts';
-import { 
+import { NgxEchartsModule } from "ngx-echarts";
+import {
     AreaBasicComponent,
     AreaStackComponent,
     BarComponent,
     BoxplotComponent,
     BubbleComponent,
-    DoughnutComponent, 
+    DoughnutComponent,
     RadarComponent,
     ScatterComponent,
     ScatterMapComponent
-} from '../charts/index';
+} from "../charts/index";
 @NgModule({
     imports: [
         CommonModule,
@@ -26,7 +27,8 @@ import {
         NgxEchartsModule
     ],
     declarations: [
-        DashboardComponent,
+        MainDashboardComponent,
+        LocationDashboardComponent,
         AreaBasicComponent,
         AreaStackComponent,
         BarComponent,
@@ -38,4 +40,4 @@ import {
         ScatterMapComponent
     ]
 })
-export class DashboardModule { }
+export class DashboardModule {}
