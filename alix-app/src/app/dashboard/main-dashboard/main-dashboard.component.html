@@ -1,4 +1,6 @@
-<div class="card-columns">
+<!-- <div class="card-columns">
+
+
     <div class="card ">
         <div class="card-body">
             <h5 class="card-title">Area Simple</h5>
@@ -61,4 +63,10 @@
             <alix-scatter-map options="{}"></alix-scatter-map>
         </div>
     </div>
+</div> -->
+
+<div class="databoard clearfix" style="border:1px solid #efefef;" *ngFor="let spec of specs">
+    <app-stacked *ngIf="spec.type=='StackedComponent'" [config]="spec"></app-stacked>
+
 </div>
+
