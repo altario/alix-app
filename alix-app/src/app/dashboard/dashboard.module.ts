@@ -5,6 +5,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 import { MainDashboardComponent } from "./main-dashboard/main-dashboard.component";
 import { LocationDashboardComponent } from "./location-dashboard/location-dashboard.component";
+import { DemandAndOfferDashboardComponent } from "./demand-offer-dashboard/demand-offer-dashboard.component";
 import { DashboardRoutes } from "./dashboard.routing";
 
 import { NgxEchartsModule } from "ngx-echarts";
@@ -29,6 +30,7 @@ import {
     declarations: [
         MainDashboardComponent,
         LocationDashboardComponent,
+        DemandAndOfferDashboardComponent,
         AreaBasicComponent,
         AreaStackComponent,
         BarComponent,
