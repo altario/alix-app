@@ -18,12 +18,21 @@ import {
     ScatterComponent,
     ScatterMapComponent
 } from '../charts/index';
+
+import {
+    StackedComponent,
+    SliderRangeComponent
+} from '../_components/index';
+
+import { Ng5SliderModule } from 'ng5-slider';
+
 @NgModule({
     imports: [
         CommonModule,
         NgbModule,
         RouterModule.forChild(DashboardRoutes),
-        NgxEchartsModule
+        NgxEchartsModule,
+        Ng5SliderModule
     ],
     declarations: [
         DashboardComponent,
@@ -35,7 +44,11 @@ import {
         DoughnutComponent,
         RadarComponent,
         ScatterComponent,
-        ScatterMapComponent
+        ScatterMapComponent,
+
+        StackedComponent,
+        SliderRangeComponent,
+        
     ]
 })
 export class DashboardModule { }
