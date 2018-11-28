@@ -1,0 +1,22 @@
+<div style="border: 1px solid #000000;" *ngFor="let item of config.items">
+    <div>
+        <h2 *ngIf="item.title">{{ item.title }}</h2>
+        <div *ngIf="item.left_component.data_icon">
+            <img src="{{item.left_component.data_icon}}" alt="" />
+        </div>
+
+        <div *ngFor="let itm of item.right_component.items">
+            <div *ngIf="itm.title">
+                <p>{{ itm.title }}</p>
+                <p *ngIf="itm.icon"><img src="{{ itm.icon }}" alt="" /></p>
+                <p *ngIf="itm.value">{{ itm.value }}</p>
+                <p *ngIf="itm.label">{{ itm.label }}</p>
+            </div>
+            <div *ngIf="!itm.title">
+                <p *ngIf="itm.icon"><img src="{{ itm.icon }}" alt="" /></p>
+                <p *ngIf="itm.value">{{ itm.value }}</p>
+                <p *ngIf="itm.label">{{ itm.label }}</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div style="display: flex; flex-direction: column; border: 1px solid #000000">
+    <div>
+        <h6>{{ config.title }}</h6>
+    </div>
+    <div style="display: flex;">
+        <div>
+            <h6>{{ config.loanOriginalValue.title }}</h6>
+            <div>{{ config.loanOriginalValue.label }}</div>
+        </div>
+        <div>
+            <h6>{{ config.currentExposure.title }}</h6>
+            <div>{{ config.currentExposure.label }}</div>
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <h6>{{ config.timeToMaturity.title }}</h6>
+            <div>
+                {{ config.timeToMaturity.label }} of
+                {{ config.timeToMaturity.label }}
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: column">
+            <span>Started:</span> <span>15Nov2003</span> <span>Maturity:</span
+            ><span>14Nov2021</span>
+        </div>
+    </div>
+</div>

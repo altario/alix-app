@@ -1,0 +1,29 @@
+<div style="display: flex;">
+    <div style="width: 70%">
+        <img style="width: 100%; height: auto;" src="{{config.img}}" alt="" />
+    </div>
+    <div style="width: 30%; display: flex;">
+        <ul>
+            <li>{{ config.title }}</li>
+            <li>{{ config.location.estate }}</li>
+            <li>{{ config.status }}</li>
+            <li>{{ config.category }}</li>
+            <li>
+                <img src="{{config.location.icon}}" alt="" />{{
+                    config.location.label
+                }}
+            </li>
+            <li>
+                {{ config.location.address[0] }}
+                {{ config.location.address[1] }}
+                {{ config.location.address[2] }}
+            </li>
+        </ul>
+        <ul>
+            <li>{{ config.info.price }}</li>
+            <li>{{ config.info.pricePsm }}</li>
+            <li>{{ config.info.estimated }}</li>
+            <li>{{ config.info.area }}</li>
+        </ul>
+    </div>
+</div>

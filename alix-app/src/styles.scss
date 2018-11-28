@@ -1,35 +1,31 @@
-@import 'scss/main';
+@import "scss/main";
 
 // html, body
-html, body {
-  height: 100vh;
-  overflow: hidden;
+html,
+body {
+    height: 100vh;
+    // overflow: hidden;
 }
 
 // all
 * {
-  outline: none !important;
+    outline: none !important;
 }
-
-
-
-
-
 
 $body-bg: #fff;
 
 #main-wrapper {
-  width: 100%;
-  overflow: hidden;
+    width: 100%;
+    overflow: hidden;
 }
 
 .page-wrapper {
-  background: $body-bg;
-  position: relative;
-  transition: 0.2s ease-in;
+    background: $body-bg;
+    position: relative;
+    transition: 0.2s ease-in;
 }
 
 .page-wrapper > .container-fluid {
-  padding: 20px;
-  min-height: calc(100vh - 180px);
+    padding: 20px;
+    min-height: calc(100vh - 180px);
 }
