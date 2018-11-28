@@ -1,19 +1,24 @@
-import { RouterModule, Routes } from '@angular/router';
-import { BaseLayoutComponent } from './core';
-
-import { StylesComponent } from './styles/styles.component';
+import { Routes } from "@angular/router";
+import { StylesComponent } from "./styles/styles.component";
+import { BaseLayoutComponent, DashboardLayoutComponent } from "./core";
 
 export const AppRoutes: Routes = [
-  {
-    path: '', component: BaseLayoutComponent,
-    loadChildren: './dashboard/dashboard.module#DashboardModule'
-  },
-  {
-    path: 'styles',
-    component: StylesComponent
-  },
-  {
-    path: '**',
-    redirectTo: 'error/404'
-  }
+    {
+        path: "dashboard/:id",
+        component: DashboardLayoutComponent,
+        loadChildren: "./dashboard/dashboard.module#DashboardModule"
+    },
+    {
+        path: "styles",
+        component: StylesComponent
+    },
+    {
+        path: "",
+        component: BaseLayoutComponent,
+        loadChildren: "./position/position.module#PositionModule"
+    },
+    {
+        path: "**",
+        redirectTo: "error/404"
+    }
 ];
