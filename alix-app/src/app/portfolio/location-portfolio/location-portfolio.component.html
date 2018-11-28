@@ -1,0 +1,19 @@
+<div
+    class="databoard clearfix"
+    style="border:1px solid #efefef;"
+    *ngFor="let spec of specs"
+>
+    <app-stacked
+        *ngIf="spec.type == 'StackedComponent'"
+        [config]="spec"
+    ></app-stacked>
+
+    <app-stacked-scatter
+        *ngIf="spec.type == 'StackedScatterComponent'"
+        [config]="spec"
+    ></app-stacked-scatter>
+    <app-panel-box
+        *ngIf="spec.type == 'PanelBoxComponent'"
+        [config]="spec"
+    ></app-panel-box>
+</div>

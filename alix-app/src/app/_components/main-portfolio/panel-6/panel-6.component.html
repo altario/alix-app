@@ -1,0 +1,25 @@
+<div style="display: flex; flex-direction: column; border: 1px solid #000000">
+    <div>
+        <h6>{{ config.title }}</h6>
+    </div>
+    <div style="display: flex;">
+        <div>
+            <h6>{{ config.exposureUntilDur.title }}</h6>
+            <div>{{ config.exposureUntilDur.label }}</div>
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <h6>{{ config.timeToDurationDate.title }}</h6>
+            <div>
+                {{ config.timeToDurationDate.label[0] }} of
+                {{ config.timeToDurationDate.label[1] }}
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: column">
+            <span>Today:</span> <span>15Nov2003</span> <span>Duration:</span
+            ><span>14Nov2021</span>
+        </div>
+    </div>
+</div>

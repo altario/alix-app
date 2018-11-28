@@ -1,12 +1,12 @@
 import { Routes } from "@angular/router";
 import { StylesComponent } from "./styles/styles.component";
-import { BaseLayoutComponent, DashboardLayoutComponent } from "./core";
+import { BaseLayoutComponent, PortfolioLayoutComponent } from "./core";
 
 export const AppRoutes: Routes = [
     {
-        path: "dashboard/:id",
-        component: DashboardLayoutComponent,
-        loadChildren: "./dashboard/dashboard.module#DashboardModule"
+        path: "portfolio/:id",
+        component: PortfolioLayoutComponent,
+        loadChildren: "./portfolio/portfolio.module#PortfolioModule"
     },
     {
         path: "styles",

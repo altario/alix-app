@@ -16,7 +16,7 @@ import { AppRoutes } from "./app.routing";
 
 import { AppComponent } from "./app.component";
 import { BaseLayoutComponent } from "./core/base-layout/base-layout.component";
-import { DashboardLayoutComponent } from "./core/dashboard-layout/dashboard-layout.component";
+import { PortfolioLayoutComponent } from "./core/portfolio-layout/portfolio-layout.component";
 
 /**
  * echarts
@@ -30,11 +30,11 @@ import { StylesComponent } from "./styles/styles.component";
         AppComponent,
         BaseLayoutComponent,
         StylesComponent,
-        DashboardLayoutComponent
+        PortfolioLayoutComponent
     ],
     imports: [
         BrowserModule,
-        RouterModule.forRoot(AppRoutes, { enableTracing: true }),
+        RouterModule.forRoot(AppRoutes),
         NgbModule.forRoot(),
         HttpModule,
         HttpClientModule

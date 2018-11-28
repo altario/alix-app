@@ -1,0 +1,32 @@
+<div style="display: flex; flex-direction: column; border: 1px solid #000000">
+    <div>
+        <h6>{{ config.title }}</h6>
+    </div>
+    <div style="display: flex;">
+        <div>
+            <h6>{{ config.status.title }}</h6>
+            <div
+                [ngClass]="{
+                    good: config.status.condition == 'ok'
+                }"
+            >
+                BBB
+            </div>
+        </div>
+        <div>
+            <h6>{{ config.riskAROC.title }}</h6>
+            <div>{{ config.riskAROC.label }}</div>
+        </div>
+    </div>
+
+    <div style="display:flex;">
+        <div>
+            <h6>{{ config.regCapAbs.title }}</h6>
+            <div>{{ config.regCapAbs.label }}</div>
+        </div>
+        <div>
+            <h6>{{ config.expectedLoss.title }}</h6>
+            <div>{{ config.expectedLoss.label }}</div>
+        </div>
+    </div>
+</div>
