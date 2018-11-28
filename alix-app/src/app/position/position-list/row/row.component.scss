@@ -9,6 +9,21 @@
     justify-content: space-around;
     align-items: center;
 
+    .position-row__title { width: 30% }
+    .position-row__loan { width: 10% }
+    .position-row__time { 
+        width: 15%; 
+        font-family: 'Lato', sans-serif;
+        font-size: 10px;
+        text-align: center;
+    }
+    .position-row__state { 
+        width: 30%;
+        
+    }
+    .position-row__button { width: 10% }
+
+
     ul.position-row__info {
         padding: 0;
         display: flex;

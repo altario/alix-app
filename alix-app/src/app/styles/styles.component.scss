@@ -82,7 +82,6 @@ h2.deleteMe {
 
 .label__up {
   vertical-align: bottom;
-  @include line-clamp(2, rem(11px));
 }
 
 .label__up,
@@ -92,6 +91,7 @@ h2.deleteMe {
     font-family: $font-family--primary;
     font-weight: $font-weight--normal;
     text-transform: uppercase;
+    @include line-clamp(2, rem(11px));
   }
 
 
@@ -137,20 +137,25 @@ h2.deleteMe {
 
 // table
 
-.table--simple {
-  th {
-    font-size: rem(12px);
-    padding: 0 20px 0 0;
-    color: $font-family--primary;
-    font-family: $font-family--secondary;
-    font-weight: $font-weight--bold;
-    color: $color__text_table;
-  }
-  td {
-    font-size: rem(12px);
-    font-family: $font-family--secondary;
-    font-weight: $font-weight--thin;
-    color: $color__text_table;
+.table__simple {
+  display: table;
+  .table__row {
+     display: table-row;
+    .cell__title {
+      font-size: rem(12px);
+      padding: 0 20px 0 0;
+      font-family: $font-family--secondary;
+      font-weight: $font-weight--bold;
+      color: $color__text_table;
+      display: table-cell;
+    }
+    .cell__information {
+      font-size: rem(12px);
+      font-family: $font-family--secondary;
+      font-weight: $font-weight--thin;
+      color: $color__text_table;
+      display: table-cell;
+    }
   }
 }
 
@@ -159,31 +164,67 @@ h2.deleteMe {
 $box-padding: 20px;
 
 .box {
-  background-color: red;
   padding: 0;
+  background-color: red;
   .box-header {
-    .title {
-      padding: $box-padding
-    }
+    .title { padding: $box-padding }
     .icons { padding-top: $box-padding }
   }
 }
 
-.type__table {
-  .box-body .col-6 {
-    padding: $box-padding;
-  }
-  .cell__wrapper__title {
-    height: rem(32px);
-    @include align(bottom);
-  }
-  .cell__wrapper__info {
-    height: rem(48px);
-    align-items: flex-start;
-  }
-  .cell__wrapper__bottom {
+$color1: #252B48;
+$color2: #1C2038;
+$color3: #252B48; 
 
+.box {
+  .box-header {
+    background-color: $color1;
   }
+  .cell__wrapper:nth-child(1),
+  .cell__wrapper:nth-child(2){
+    background-color: $color2;
+  }
+  .cell__wrapper:nth-child(3),
+  .cell__wrapper:nth-child(4){
+    background-color: $color3;
+  }
+
+}
+
+
+.box--table {
+  .box-body {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    .cell__wrapper {
+      padding: $box-padding;
+      width: 50%;  
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .cell__wrapper__top {
+        height: rem(32px);
+        @include align(bottom);
+        & + .cell__wrapper__info {
+          margin-top: 0;
+        }
+      }
+      .cell__wrapper__info {
+        height: rem(48px);
+        align-items: flex-start;
+        margin-top: 33px;
+        .tags { 
+          margin-top: 10px;
+          display: inline-block
+        }
+      }
+    }  
+  }
+
 }
 
 
