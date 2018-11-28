@@ -24,13 +24,15 @@ import { PortfolioLayoutComponent } from "./core/portfolio-layout/portfolio-layo
 
 import { NgxEchartsModule } from "ngx-echarts";
 import { StylesComponent } from "./styles/styles.component";
+import { PanelValueListComponent } from './_shared/panels/panel-value-list/panel-value-list.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         BaseLayoutComponent,
         StylesComponent,
-        PortfolioLayoutComponent
+        PortfolioLayoutComponent,
+        PanelValueListComponent
     ],
     imports: [
         BrowserModule,

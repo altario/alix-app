@@ -22,39 +22,33 @@
         </ul>
         <ul class="secondary-nav navbar-nav px-3">
             <li class="left-nav">
-                <a href="" class="back-btn"><</a> mini title
+                <a href="" class="back-btn"><i class="icor ico-chevron-left"></i>Back</a>
+                <span>mini title</span>
             </li>
             <li>
                 <a
                     class="nav-link"
                     [routerLink]="['.']"
-                    routerLinkActive="active"
-                >
-                    Main
-                </a>
+                    routerLinkActive="active">Main</a>
             </li>
             <li>
                 <a
                     class="nav-link"
                     [routerLink]="['demand-offer']"
-                    routerLinkActive="active"
-                >
-                    Demand & Offer
-                </a>
+                    routerLinkActive="active">Demand & Offer</a>
             </li>
             <li>
                 <a
                     class="nav-link"
                     [routerLink]="['location']"
-                    routerLinkActive="active"
-                >
-                    Location
-                </a>
+                    routerLinkActive="active">Location</a>
             </li>
         </ul>
     </nav>
-    <nav></nav>
+
     <div class="container-fluid">
-        <div role="main"><router-outlet></router-outlet></div>
+        <div role="main">
+            <router-outlet></router-outlet>
+        </div>
     </div>
 </main>

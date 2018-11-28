@@ -9,7 +9,7 @@ export class AreaBasicComponent implements OnInit {
 
     public options: any = {};
 
-    ngOnInit() { 
+    ngOnInit() {
 
         this.options = {
             xAxis: {
