@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { MainPortfolioComponent } from './main-portfolio/main-portfolio.component';
+import { FinancialComponent } from './financial/financial.component';
 import { LocationPortfolioComponent } from './location-portfolio/location-portfolio.component';
 import { DemandAndOfferPortfolioComponent } from './demand-offer-portfolio/demand-offer-portfolio.component';
 import { PortfolioRoutes } from './portfolio.routing';
@@ -49,7 +49,7 @@ import { Ng5SliderModule } from 'ng5-slider';
         Ng5SliderModule
     ],
     declarations: [
-        MainPortfolioComponent,
+        FinancialComponent,
         LocationPortfolioComponent,
         DemandAndOfferPortfolioComponent,
         AreaBasicComponent,

@@ -4,14 +4,14 @@ import { BaseLayoutComponent, PortfolioLayoutComponent } from './core';
 
 export const AppRoutes: Routes = [
     {
-        path: 'portfolio/:id',
-        component: PortfolioLayoutComponent,
-        loadChildren: './pages/portfolio/portfolio.module#PortfolioModule'
-    },
-    {
         path: '',
         component: BaseLayoutComponent,
         loadChildren: './pages/position/position.module#PositionModule'
+    },
+    {
+        path: 'portfolio/:id',
+        component: PortfolioLayoutComponent,
+        loadChildren: './pages/portfolio/portfolio.module#PortfolioModule'
     },
     {
         path: '**',
