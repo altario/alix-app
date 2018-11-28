@@ -2,9 +2,12 @@
     <div class="position-row__title">{{ company.name }}</div>
     <div class="position-row__loan">{{ company.loanType }}</div>
     <div class="position-row__time">
-        {{ company.dateStart }} > {{ company.dateEnd }}
+        {{ company.dateStart }} > {{ company.dateEnd }} 
+        > {{ company.dateEnd }}
     </div>
-    <div class="position-row__state">{{ company.state }}</div>
+    <div class="position-row__state">
+        <span>{{ company.state }}</span>
+    </div>
     <ul class="position-row__info">
         <li *ngFor="let info of company.infos">
             <div>{{ info.title }}</div>

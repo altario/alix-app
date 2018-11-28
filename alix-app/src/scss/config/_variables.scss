@@ -27,10 +27,10 @@ $grid__vertical-gutters:              false;
 // $body --------------------
 
 // $body: defaults
-$body__color__background:             white;
-$body__color__text:                   $color__gray--darkest;
+$body__color__background:             black;
+$body__color__text:                   #FFFFFF;
 $body__color__highlight--background:  $color__brand--1;
-$body__color__highlight--text:        white;
+$body__color__highlight--text:        #FFFFFF;
 
 
 
@@ -103,7 +103,8 @@ $alt_breakpoints: (
 
 // $grid: defaults
 $grid__default--columns:              12;
-$grid__default--gutter-width:         30px;
+$grid__default--gutter-width:         20px;
+$grid--gutter-height:                 12px;
 
 
 
@@ -128,7 +129,7 @@ $iconfont__fontawesome-prefix:        $iconfont-prefix;
 // $fonts --------------------
 
 // $fonts: font-family
-$font-family--primary:                'Lato', sans-serif;
+$font-family--primary:                'Source Sans Pro', sans-serif;
 $font-family--secondary:              'Lato', sans-serif;
 $font-family--code:                   monospace;
 $font-family--icon:                   'altaricons';
@@ -162,6 +163,7 @@ $line-height--3:                      2;
 $line-height--4:                      2.4;
 
 // $fonts: font-weight
+$font-weight--thin:                   100;
 $font-weight--light:                  300;
 $font-weight--normal:                 400;
 $font-weight--medium:                 500;
