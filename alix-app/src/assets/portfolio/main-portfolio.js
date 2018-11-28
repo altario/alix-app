@@ -123,10 +123,22 @@ exports = {
                 ]
             },
             info: {
-                price: "M€",
-                pricePsm: "K€/sqm",
-                estimated: "M€",
-                area: "SQM"
+                price: {
+                    title: "Price in to",
+                    label: "M€"
+                },
+                pricePsm: {
+                    title: "Price per SQM",
+                    label: "K€/sqm"
+                },
+                estimated: {
+                    title: "Price in to",
+                    label: "M€"
+                },
+                area: {
+                    title: "Price in to",
+                    label: "SQM"
+                }
             }
         }
     }

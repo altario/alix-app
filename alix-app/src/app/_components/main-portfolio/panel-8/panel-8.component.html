@@ -20,10 +20,22 @@
             </li>
         </ul>
         <ul>
-            <li>{{ config.info.price }}</li>
-            <li>{{ config.info.pricePsm }}</li>
-            <li>{{ config.info.estimated }}</li>
-            <li>{{ config.info.area }}</li>
+            <li>
+                <div>{{ config.info.price.title }}</div>
+                <div>{{ config.info.price.price }}</div>
+            </li>
+            <li>
+                <div>{{ config.info.pricePsm.title }}</div>
+                <div>{{ config.info.pricePsm.label }}</div>
+            </li>
+            <li>
+                <div>{{ config.info.estimated.title }}</div>
+                <div>{{ config.info.estimated.label }}</div>
+            </li>
+            <li>
+                <div>{{ config.info.area.title }}</div>
+                <div>{{ config.info.area.label }}</div>
+            </li>
         </ul>
     </div>
 </div>

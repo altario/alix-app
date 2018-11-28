@@ -9,6 +9,6 @@ export class MockapiService {
     constructor(private http: HttpClient) {}
 
     public getJSON(jsonFile): Observable<any> {
-        return this.http.get(`./assets/${jsonFile}.json`);
+        return this.http.get(`./assets/${jsonFile}.js`);
     }
 }
