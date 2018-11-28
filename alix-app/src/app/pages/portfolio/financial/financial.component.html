@@ -1,20 +1,20 @@
 <div *ngIf="config" class="container-fluid">
     <div class="row-no-gutter">
         <div class="col-12">
-            <h1>{{ config.position_1.title }}</h1>
+            <h1>{{ config.client.clientName.value }}</h1>
         </div>
         <div class="col">
-            <app-panel-1 [config]="config.position_1['panel_1']"></app-panel-1>
+            <app-panel-1 [config]="config"></app-panel-1>
         </div>
         <div class="col">
-            <app-panel-2 [config]="config.position_1['panel_2']"></app-panel-2>
+            <app-panel-2 [config]="config"></app-panel-2>
         </div>
         <div class="col">
-            <app-panel-3 [config]="config.position_1['panel_3']"></app-panel-3>
+            <app-panel-3 [config]="config"></app-panel-3>
         </div>
     </div>
 
-    <div class="row-no-gutter">
+    <!-- <div class="row-no-gutter">
         <div class="col-12">
             <h1>{{ config.position_2.title }}</h1>
         </div>
@@ -37,5 +37,5 @@
             <h1>{{ config.position_3.title }}</h1>
         </div>
         <app-panel-8 [config]="config.position_3['panel_8']"></app-panel-8>
-    </div>
+    </div> -->
 </div>
