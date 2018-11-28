@@ -1,9 +1,9 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-    selector: "app-panel-4",
-    templateUrl: "./panel-4.component.html",
-    styleUrls: ["./panel-4.component.scss"]
+    selector: 'app-panel-4',
+    templateUrl: './panel-4.component.html',
+    styleUrls: ['./panel-4.component.scss']
 })
 export class Panel4Component implements OnInit {
     @Input()
@@ -12,6 +12,5 @@ export class Panel4Component implements OnInit {
     constructor() {}
 
     ngOnInit() {
-        console.log(this.config);
     }
 }

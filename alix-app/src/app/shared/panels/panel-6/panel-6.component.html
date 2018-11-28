@@ -1,25 +1,28 @@
 <div style="display: flex; flex-direction: column; border: 1px solid #000000">
     <div>
-        <h6>{{ config.title }}</h6>
+        <h6>Duration</h6> <!-- #HC -->
     </div>
     <div style="display: flex;">
         <div>
-            <h6>{{ config.exposureUntilDur.title }}</h6>
-            <div>{{ config.exposureUntilDur.label }}</div>
+            <h6>{{ config.financial.duration }}</h6> <!-- #Missing -->
+            <div>{{ config.financial.duration }} M€</div> <!-- #Missing -->
         </div>
     </div>
 
     <div>
         <div>
-            <h6>{{ config.timeToDurationDate.title }}</h6>
+            <h6>{{ config.financial.duration.timeToDuration.label }}</h6>
             <div>
-                {{ config.timeToDurationDate.label[0] }} of
-                {{ config.timeToDurationDate.label[1] }}
+                {{ config.financial.duration.timeToDuration.value }}M of
+                {{ config.financial.duration.totalDuration.value }}Y
             </div>
         </div>
         <div style="display: flex; flex-direction: column">
-            <span>Today:</span> <span>15Nov2003</span> <span>Duration:</span
-            ><span>14Nov2021</span>
+            <span>{{ config.financial.duration.today.label }}:</span>
+            <span>{{ today }}</span>
+
+            <span>{{config.financial.duration.durationDate.label}}:</span>
+            <span>{{config.financial.duration.durationDate.value}}</span>
         </div>
     </div>
 </div>

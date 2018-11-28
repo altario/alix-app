@@ -1,32 +1,28 @@
 <div style="display: flex; flex-direction: column; border: 1px solid #000000">
+  <div>
+    <h6>Key Financial</h6> <!-- #HC -->
+  </div>
+  <div style="display: flex;">
     <div>
-        <h6>{{ config.title }}</h6>
+      <h6>{{ config.financial.keyFinancial.status.label }}</h6>
+      <div [ngClass]="{ good: config.financial.keyFinancial.status.value === 'Performing' }">
+        {{config.financial.keyFinancial.status.value}}
+      </div>
     </div>
-    <div style="display: flex;">
-        <div>
-            <h6>{{ config.status.title }}</h6>
-            <div
-                [ngClass]="{
-                    good: config.status.condition == 'ok'
-                }"
-            >
-                BBB
-            </div>
-        </div>
-        <div>
-            <h6>{{ config.riskAROC.title }}</h6>
-            <div>{{ config.riskAROC.label }}</div>
-        </div>
+    <div>
+      <h6>{{ config.financial.keyFinancial.raroc.label }}</h6>
+      <div>{{ config.financial.keyFinancial.raroc.value }}</div>
     </div>
+  </div>
 
-    <div style="display:flex;">
-        <div>
-            <h6>{{ config.regCapAbs.title }}</h6>
-            <div>{{ config.regCapAbs.label }}</div>
-        </div>
-        <div>
-            <h6>{{ config.expectedLoss.title }}</h6>
-            <div>{{ config.expectedLoss.label }}</div>
-        </div>
+  <div style="display:flex;">
+    <div>
+      <h6>{{ config.financial.keyFinancial.absorbedRegulatoryCapital.label }}</h6>
+      <div>{{ config.financial.keyFinancial.absorbedRegulatoryCapital.value }}</div>
     </div>
+    <div>
+      <h6>{{ config.financial.keyFinancial.expectedLoss.label }}</h6>
+      <div>{{ config.financial.keyFinancial.expectedLoss.value }}</div>
+    </div>
+  </div>
 </div>

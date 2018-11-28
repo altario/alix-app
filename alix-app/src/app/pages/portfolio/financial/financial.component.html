@@ -1,37 +1,37 @@
 <div *ngIf="config" class="container-fluid">
-    <div class="row-no-gutter">
-        <div class="col-12">
-            <h1>{{ config.client.clientName.value }}</h1>
-        </div>
-        <div class="col">
-            <app-panel-1 [config]="config"></app-panel-1>
-        </div>
-        <div class="col">
-            <app-panel-2 [config]="config"></app-panel-2>
-        </div>
-        <div class="col">
-            <app-panel-3 [config]="config"></app-panel-3>
-        </div>
+  <div class="row-no-gutter">
+    <div class="col-12">
+      <h1>{{ config.client.clientName.value }}</h1>
     </div>
-
-    <!-- <div class="row-no-gutter">
-        <div class="col-12">
-            <h1>{{ config.position_2.title }}</h1>
-        </div>
-        <div class="col">
-            <app-panel-4 [config]="config.position_2['panel_4']"></app-panel-4>
-        </div>
-        <div class="col">
-            <app-panel-5 [config]="config.position_2['panel_5']"></app-panel-5>
-        </div>
-        <div class="col">
-            <app-panel-6 [config]="config.position_2['panel_6']"></app-panel-6>
-        </div>
-        <div class="col">
-            <app-panel-7 [config]="config.position_2['panel_7']"></app-panel-7>
-        </div>
+    <div class="col">
+      <app-panel-1 [config]="config"></app-panel-1>
     </div>
+    <div class="col">
+      <app-panel-2 [config]="config"></app-panel-2>
+    </div>
+    <div class="col">
+      <app-panel-3 [config]="config"></app-panel-3>
+    </div>
+  </div>
 
+  <div class="row-no-gutter">
+    <div class="col-12">
+      <h1>Loan XYZ Alpha II</h1> <!-- #HC -->
+    </div>
+    <div class="col">
+      <app-panel-4 [config]="config"></app-panel-4>
+    </div>
+    <div class="col">
+      <app-panel-5 [config]="config"></app-panel-5>
+    </div>
+    <div class="col">
+      <app-panel-6 [config]="config"></app-panel-6>
+    </div>
+    <div class="col">
+      <app-panel-7 [config]="config"></app-panel-7>
+    </div>
+  </div>
+  <!-- 
     <div class="row-no-gutter">
         <div class="col-12">
             <h1>{{ config.position_3.title }}</h1>

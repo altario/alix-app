@@ -1,29 +1,32 @@
 <div style="display: flex; flex-direction: column; border: 1px solid #000000">
     <div>
-        <h6>{{ config.title }}</h6>
+        <h6>Position</h6> <!-- #HC -->
     </div>
     <div style="display: flex;">
         <div>
-            <h6>{{ config.loanOriginalValue.title }}</h6>
-            <div>{{ config.loanOriginalValue.label }}</div>
+            <h6>{{ config.financial.position.loanOriginalValue.label }}</h6>
+            <div>{{ config.financial.position.loanOriginalValue.value }}</div>
         </div>
         <div>
-            <h6>{{ config.currentExposure.title }}</h6>
-            <div>{{ config.currentExposure.label }}</div>
+            <h6>{{ config.financial.position.currentExposure.label }}</h6>
+            <div>{{ config.financial.position.currentExposure.value }}</div>
         </div>
     </div>
 
     <div>
         <div>
-            <h6>{{ config.timeToMaturity.title }}</h6>
+            <h6>{{ config.financial.position.timeToMaturity.label }}</h6>
             <div>
-                {{ config.timeToMaturity.label }} of
-                {{ config.timeToMaturity.label }}
+                {{ config.financial.position.timeToMaturity.value }} of
+                {{ config.financial.position.totalMaturity.value }}
             </div>
         </div>
         <div style="display: flex; flex-direction: column">
-            <span>Started:</span> <span>15Nov2003</span> <span>Maturity:</span
-            ><span>14Nov2021</span>
+            <span>{{config.financial.position.startDate.label}}</span>
+            <span>{{config.financial.position.startDate.value}}</span>
+
+            <span>{{config.financial.position.endDate.label}}:</span>
+            <span>{{config.financial.position.endDate.value}}</span>
         </div>
     </div>
 </div>
