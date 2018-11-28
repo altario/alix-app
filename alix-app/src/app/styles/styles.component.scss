@@ -71,7 +71,7 @@ h2.deleteMe {
   border-radius: 3px;
 }
 
-.tags__green {
+.tags--green {
   background-color: #6AC427;
   color: $body__color__text
  }
@@ -119,15 +119,15 @@ h2.deleteMe {
 // Title
 
 .title {
-    .main__title {
+    .title--primary {
       font-size: rem(16px);
       color: #00A6D9;
       font-family: $font-family--primary;
       font-weight: $font-weight--normal;
     }
-    .strong { font-weight: $font-weight--bold }
+    .u-strong { font-weight: $font-weight--bold }
 
-    .secondary__title {
+    .title--secondary {
       font-size: rem(16px);
       color: $font-family--primary;
       font-family: $font-family--secondary;
@@ -137,11 +137,11 @@ h2.deleteMe {
 
 // table
 
-.table__simple {
+.table--simple {
   display: table;
   .table__row {
      display: table-row;
-    .cell__title {
+    .tabel__cell-title {
       font-size: rem(12px);
       padding: 0 20px 0 0;
       font-family: $font-family--secondary;
@@ -149,7 +149,7 @@ h2.deleteMe {
       color: $color__text_table;
       display: table-cell;
     }
-    .cell__information {
+    .tabel__cell-information {
       font-size: rem(12px);
       font-family: $font-family--secondary;
       font-weight: $font-weight--thin;
@@ -166,34 +166,37 @@ $box-padding: 20px;
 .box {
   padding: 0;
   background-color: red;
-  .box-header {
+  .box--header {
     .title { padding: $box-padding }
     .icons { padding-top: $box-padding }
   }
 }
 
+
+
 $color1: #252B48;
 $color2: #1C2038;
 $color3: #252B48; 
 
-.box {
-  .box-header {
-    background-color: $color1;
-  }
-  .cell__wrapper:nth-child(1),
-  .cell__wrapper:nth-child(2){
-    background-color: $color2;
-  }
-  .cell__wrapper:nth-child(3),
-  .cell__wrapper:nth-child(4){
-    background-color: $color3;
-  }
 
+.color-main {
+  
+  .color-header {
+
+  }
+  .color-body{
+    .color-dark {
+
+    }
+    .color-light {
+
+    }
+  }
 }
 
 
 .box--table {
-  .box-body {
+  .box--body {
     padding: 0;
     display: flex;
     flex-direction: row;
