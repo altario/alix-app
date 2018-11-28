@@ -1,14 +1,14 @@
-import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { RouterModule } from "@angular/router";
-import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { MainPortfolioComponent } from "./main-portfolio/main-portfolio.component";
-import { LocationPortfolioComponent } from "./location-portfolio/location-portfolio.component";
-import { DemandAndOfferPortfolioComponent } from "./demand-offer-portfolio/demand-offer-portfolio.component";
-import { PortfolioRoutes } from "./portfolio.routing";
+import { MainPortfolioComponent } from './main-portfolio/main-portfolio.component';
+import { LocationPortfolioComponent } from './location-portfolio/location-portfolio.component';
+import { DemandAndOfferPortfolioComponent } from './demand-offer-portfolio/demand-offer-portfolio.component';
+import { PortfolioRoutes } from './portfolio.routing';
 
-import { NgxEchartsModule } from "ngx-echarts";
+import { NgxEchartsModule } from 'ngx-echarts';
 
 import {
     AreaBasicComponent,
@@ -20,7 +20,7 @@ import {
     RadarComponent,
     ScatterComponent,
     ScatterMapComponent
-} from "../charts/index";
+} from '../../_shared/charts/index';
 
 import {
     StackedComponent,
@@ -36,9 +36,9 @@ import {
     Panel6Component,
     Panel7Component,
     Panel8Component
-} from "../_components/index";
+} from '../../_components/index';
 
-import { Ng5SliderModule } from "ng5-slider";
+import { Ng5SliderModule } from 'ng5-slider';
 
 @NgModule({
     imports: [
