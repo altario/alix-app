@@ -14,19 +14,21 @@
 // #MIXINS
 // ------------------------------------------------------------------
 
-
 @import '~src/scss/imports';
 
-.tags {
+$tags-colors: ("success", $color__state--success),("warning", $color__state--warning),("past",$color__state--past),("danger", $color__state--danger);
+
+ .tags {
   padding: 6px 15px;
   font-size: rem(12px);
   font-family: $font-family--primary;
   font-weight: $font-weight--bold;
   letter-spacing: $letter-spacing--2;
   border-radius: 3px;
+  background-color: $color__state--default;
+  @each $color in $tags-colors {
+    &.tags--#{nth($color,1)} {
+      background-color: nth($color,2);
+    }
+  }
 }
-
-.tags__green {
-  background-color: #6AC427;
-  color: $body__color__text
- }
