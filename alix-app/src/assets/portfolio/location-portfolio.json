@@ -287,5 +287,74 @@
                 }
             }
         ]
+    },
+    {
+        "type": "PanelBoxComponent",
+        "position": 1,
+        "items": [
+            {
+                "title": "Supermarkets",
+
+                "left_component": {
+                    "data_icon": "cart.svg"
+                },
+
+                "right_component": {
+                    "items": [
+                        {
+                            "value": "# 5",
+                            "label": "Units in 200m Radius"
+                        },
+                        {
+                            "icon": "man.svg",
+                            "value": "2 Min",
+                            "label": "Walking"
+                        }
+                    ]
+                }
+            },
+            {
+                "title": "Pharmacy",
+
+                "left_component": {
+                    "data_icon": "pharmacy.svg"
+                },
+
+                "right_component": {
+                    "items": [
+                        {
+                            "value": "# 2",
+                            "label": "Units in 200m Radius"
+                        },
+                        {
+                            "icon": "man.svg",
+                            "value": "3 Min",
+                            "label": "Walking"
+                        }
+                    ]
+                }
+            },
+            {
+                "title": "Clinics",
+
+                "left_component": {
+                    "data_icon": "hospital.svg"
+                },
+
+                "right_component": {
+                    "items": [
+                        {
+                            "value": "# 1",
+                            "label": "Units in 200m Radius"
+                        },
+                        {
+                            "icon": "man.svg",
+                            "value": "1 Min",
+                            "label": "Walking"
+                        }
+                    ]
+                }
+            }
+        ]
     }
 ]
