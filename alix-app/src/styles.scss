@@ -3,8 +3,8 @@
 // html, body
 html,
 body {
-    height: 100vh;
-    // overflow: hidden;
+    min-height: 100vh;
+    overflow: scroll;
 }
 
 // all

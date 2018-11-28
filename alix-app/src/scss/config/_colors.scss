@@ -49,24 +49,10 @@ $color__custom__color--pink: #e6356f;
 $color__custom__color--red: #c02e1d;
 $color__custom__color--orange: #f16c20;
 $color__custom__color--yellow: #ebc844;
-$color__custom__color--green: #a2b86c;
+$color__custom__color--green: #6ac427;
 $color__custom__color--turquoise: #1395ba;
 $color__custom__color--purple: #b0a8bb;
 
-// $custom: gradient
-$color__custom__grad--pink: #c3357c, #69349c;
-$color__custom__grad--blue: #6272c3, #6098da;
-
-// $color --------------------
-
-// $color: brand
-$color__brand--1: $color__custom__brand--1;
-$color__brand--2: $color__custom__brand--2;
-
-// $color: gray
-$color__gray--lightest: #f9fafc;
-$color__gray--lighter: #e0e6ed;
-$color__gray--light: $color__custom__gray--1;
 $color__gray: $color__custom__gray--3;
 $color__gray--medium: $color__custom__gray--5;
 $color__gray--dark: $color__custom__gray--9;
@@ -83,7 +69,7 @@ $color__pink: $color__custom__color--pink;
 $color__purple: $color__custom__color--purple;
 
 // $color: state
-$color__state--success: $color__green;
+$color__state--success: #00ff6c;
 $color__state--info: $color__blue;
 $color__state--warning: $color__yellow;
 $color__state--danger: $color__red;
