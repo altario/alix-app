@@ -25,12 +25,17 @@ import {
 import {
     StackedComponent,
     SliderRangeComponent,
-    PanelListRowComponent,
-    PanelListComponent,
     LongPanelComponent,
-    StackedImageComponent,
     StackedScatterComponent,
-    PanelBoxComponent
+    PanelBoxComponent,
+    Panel1Component,
+    Panel2Component,
+    Panel3Component,
+    Panel4Component,
+    Panel5Component,
+    Panel6Component,
+    Panel7Component,
+    Panel8Component
 } from "../_components/index";
 
 import { Ng5SliderModule } from "ng5-slider";
@@ -59,12 +64,17 @@ import { Ng5SliderModule } from "ng5-slider";
 
         StackedComponent,
         SliderRangeComponent,
-        PanelListRowComponent,
-        PanelListComponent,
         PanelBoxComponent,
         LongPanelComponent,
-        StackedImageComponent,
-        StackedScatterComponent
+        StackedScatterComponent,
+        Panel1Component,
+        Panel2Component,
+        Panel3Component,
+        Panel4Component,
+        Panel5Component,
+        Panel6Component,
+        Panel7Component,
+        Panel8Component
     ]
 })
 export class PortfolioModule {}

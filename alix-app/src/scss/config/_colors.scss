@@ -16,7 +16,6 @@
 //
 // --------------------------------------------------
 
-
 // --------------------------------------------------
 // #VARS
 // --------------------------------------------------
@@ -24,77 +23,67 @@
 // $custom --------------------
 
 // $custom: gray
-$color__custom__gray--1:              #C4C4C4;
-$color__custom__gray--2:              #BFBFBF;
-$color__custom__gray--3:              #A0A0A0;
-$color__custom__gray--4:              #777A82;
-$color__custom__gray--5:              #5E6372;
-$color__custom__gray--6:              #4E5560;
-$color__custom__gray--7:              #50575E;
-$color__custom__gray--8:              #4A4E54;
-$color__custom__gray--9:              #3C444C;
-$color__custom__gray--10:             #303A43;
-$color__custom__gray--11:             #2E3742;
-$color__custom__gray--12:             #2A333D;
-$color__custom__gray--13:             #1F3041;
-$color__custom__gray--14:             #202B36;
-$color__custom__gray--15:             #091521;
-
+$color__custom__gray--1: #c4c4c4;
+$color__custom__gray--2: #bfbfbf;
+$color__custom__gray--3: #a0a0a0;
+$color__custom__gray--4: #777a82;
+$color__custom__gray--5: #5e6372;
+$color__custom__gray--6: #4e5560;
+$color__custom__gray--7: #50575e;
+$color__custom__gray--8: #4a4e54;
+$color__custom__gray--9: #3c444c;
+$color__custom__gray--10: #303a43;
+$color__custom__gray--11: #2e3742;
+$color__custom__gray--12: #2a333d;
+$color__custom__gray--13: #1f3041;
+$color__custom__gray--14: #202b36;
+$color__custom__gray--15: #091521;
 
 // $custom: brand
-$color__custom__brand--1:             #FF43B3;
-$color__custom__brand--2:             #B53581;
-$color__custom__brand--3:             #90348E;
-$color__custom__brand--4:             #1B1B30;
-
+$color__custom__brand--1: #389bff;
+$color__custom__brand--2: #967dd9;
 
 // $custom: color
-$color__custom__color--blue:          #6098DA;
-$color__custom__color--pink:          #E6356F;
-$color__custom__color--red:           #C02E1D;
-$color__custom__color--orange:        #F16C20;
-$color__custom__color--yellow:        #EBC844;
-$color__custom__color--green:         #A2B86C;
-$color__custom__color--turquoise:     #1395BA;
-$color__custom__color--purple:        #B0A8BB;
-
+$color__custom__color--blue: #6098da;
+$color__custom__color--pink: #e6356f;
+$color__custom__color--red: #c02e1d;
+$color__custom__color--orange: #f16c20;
+$color__custom__color--yellow: #ebc844;
+$color__custom__color--green: #a2b86c;
+$color__custom__color--turquoise: #1395ba;
+$color__custom__color--purple: #b0a8bb;
 
 // $custom: gradient
-$color__custom__grad--pink:           #C3357C, #69349C;
-$color__custom__grad--blue:           #6272C3, #6098DA;
-
-
+$color__custom__grad--pink: #c3357c, #69349c;
+$color__custom__grad--blue: #6272c3, #6098da;
 
 // $color --------------------
 
 // $color: brand
-$color__brand--1:                     $color__custom__brand--1;
-$color__brand--2:                     $color__custom__brand--2;
-
+$color__brand--1: $color__custom__brand--1;
+$color__brand--2: $color__custom__brand--2;
 
 // $color: gray
-$color__gray--lightest:               #F9FAFC;
-$color__gray--lighter:                #E0E6ED;
-$color__gray--light:                  $color__custom__gray--1;
-$color__gray:                         $color__custom__gray--3;
-$color__gray--medium:                 $color__custom__gray--5;
-$color__gray--dark:                   $color__custom__gray--9;
-$color__gray--darker:                 $color__custom__gray--11;
-$color__gray--darkest:                $color__custom__gray--14;
-
+$color__gray--lightest: #f9fafc;
+$color__gray--lighter: #e0e6ed;
+$color__gray--light: $color__custom__gray--1;
+$color__gray: $color__custom__gray--3;
+$color__gray--medium: $color__custom__gray--5;
+$color__gray--dark: $color__custom__gray--9;
+$color__gray--darker: $color__custom__gray--11;
+$color__gray--darkest: $color__custom__gray--14;
 
 // $color: color
-$color__blue:                         $color__custom__color--blue;
-$color__green:                        $color__custom__color--green;
-$color__yellow:                       $color__custom__color--yellow;
-$color__orange:                       $color__custom__color--orange;
-$color__red:                          $color__custom__color--red;
-$color__pink:                         $color__custom__color--pink;
-$color__purple:                       $color__custom__color--purple;
-
+$color__blue: $color__custom__color--blue;
+$color__green: $color__custom__color--green;
+$color__yellow: $color__custom__color--yellow;
+$color__orange: $color__custom__color--orange;
+$color__red: $color__custom__color--red;
+$color__pink: $color__custom__color--pink;
+$color__purple: $color__custom__color--purple;
 
 // $color: state
-$color__state--success:               $color__green;
-$color__state--info:                  $color__blue;
-$color__state--warning:               $color__yellow;
-$color__state--danger:                $color__red;
+$color__state--success: $color__green;
+$color__state--info: $color__blue;
+$color__state--warning: $color__yellow;
+$color__state--danger: $color__red;

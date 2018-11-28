@@ -1,83 +1,41 @@
-<!--
-    <div class="card-columns">
-
-
-        <div class="card ">
-            <div class="card-body">
-                <h5 class="card-title">Area Simple</h5>
-                <alix-area-basic options="{}"></alix-area-basic>
-            </div>
+<div *ngIf="config" class="container-fluid">
+    <div class="row-no-gutter">
+        <div class="col-12">
+            <h1>{{ config.position_1.title }}</h1>
         </div>
-
-        <div class="card ">
-            <div class="card-body">
-                <h5 class="card-title">Area Stack</h5>
-                <alix-area-stack options="{}"></alix-area-stack>
-            </div>
+        <div class="col">
+            <app-panel-1 [config]="config.position_1['panel_1']"></app-panel-1>
         </div>
-
-        <div class="card ">
-            <div class="card-body">
-                <h5 class="card-title">Bar</h5>
-                <alix-bar options="{}"></alix-bar>
-            </div>
+        <div class="col">
+            <app-panel-2 [config]="config.position_1['panel_2']"></app-panel-2>
         </div>
-
-        <div class="card ">
-            <div class="card-body">
-                <h5 class="card-title">BoxPlot</h5>
-                <alix-boxplot options="{}"></alix-boxplot>
-            </div>
-        </div>
-
-        <div class="card ">
-            <div class="card-body">
-                <h5 class="card-title">Bubble</h5>
-                <alix-bubble options="{}"></alix-bubble>
-            </div>
-        </div>
-
-        <div class="card ">
-            <div class="card-body">
-                <h5 class="card-title">Doughnut</h5>
-                <alix-doughnut options="{}"></alix-doughnut>
-            </div>
-        </div>
-
-        <div class="card ">
-            <div class="card-body">
-                <h5 class="card-title">Radar</h5>
-                <alix-radar options="{}"></alix-radar>
-            </div>
-        </div>
-
-        <div class="card ">
-            <div class="card-body">
-                <h5 class="card-title">Scatter</h5>
-                <alix-scatter options="{}"></alix-scatter>
-            </div>
-        </div>
-
-        <div class="card ">
-            <div class="card-body">
-                <h5 class="card-title">Scatter Map</h5>
-                <alix-scatter-map options="{}"></alix-scatter-map>
-            </div>
+        <div class="col">
+            <app-panel-3 [config]="config.position_1['panel_3']"></app-panel-3>
         </div>
     </div>
--->
 
-<div
-    class="databoard clearfix"
-    style="border:1px solid #efefef;"
-    *ngFor="let spec of specs"
->
-    <app-panel-list-row
-        *ngIf="spec.type === 'PanelListRowComponent'"
-        [config]="spec"
-    ></app-panel-list-row>
-    <app-long-panel
-        *ngIf="spec.type === 'LongPanelComponent'"
-        [config]="spec"
-    ></app-long-panel>
+    <div class="row-no-gutter">
+        <div class="col-12">
+            <h1>{{ config.position_2.title }}</h1>
+        </div>
+        <div class="col">
+            <app-panel-4 [config]="config.position_2['panel_4']"></app-panel-4>
+        </div>
+        <div class="col">
+            <app-panel-5 [config]="config.position_2['panel_5']"></app-panel-5>
+        </div>
+        <div class="col">
+            <app-panel-6 [config]="config.position_2['panel_6']"></app-panel-6>
+        </div>
+        <div class="col">
+            <app-panel-7 [config]="config.position_2['panel_7']"></app-panel-7>
+        </div>
+    </div>
+
+    <div class="row-no-gutter">
+        <div class="col-12">
+            <h1>{{ config.position_3.title }}</h1>
+        </div>
+        <app-panel-8 [config]="config.position_3['panel_8']"></app-panel-8>
+    </div>
 </div>

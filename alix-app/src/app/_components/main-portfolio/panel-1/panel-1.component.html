@@ -1,0 +1,26 @@
+<div style="display: flex; flex-direction: column; border: 1px solid #000000">
+    <div style="display: flex;">
+        <div>
+            <h6>{{ config.clientDuration.title }}</h6>
+            {{ config.clientDuration.label }}
+        </div>
+        <div>
+            <h6>{{ config.clientCreditRating.title }}</h6>
+            <div
+                [ngClass]="{
+                    good: config.clientCreditRating.condition == 'ok'
+                }"
+            >
+                BBB
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h6>{{ config.probabilityOfDefault.title }}</h6>
+        <div style="display: flex;">
+            <div>{{ config.probabilityOfDefault.probLabel }}</div>
+            <div>{{ config.probabilityOfDefault.TCDLabel }}</div>
+        </div>
+    </div>
+</div>

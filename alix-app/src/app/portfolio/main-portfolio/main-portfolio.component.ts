@@ -8,14 +8,14 @@ import { MockapiService } from "../../_services/_mockapi.service";
     providers: [MockapiService]
 })
 export class MainPortfolioComponent implements OnInit {
-    specs: any;
+    config: any;
 
     constructor(private api: MockapiService) {}
 
     ngOnInit() {
         this.api.getJSON("portfolio/main-portfolio").subscribe(data => {
-            // console.log(data);
-            this.specs = data;
+            console.log(data);
+            this.config = data;
         });
     }
 }
