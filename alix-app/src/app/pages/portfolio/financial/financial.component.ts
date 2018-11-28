@@ -1,21 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import { MockapiService } from '../../../services/mockapi.service';
+import { ActivatedRoute } from '@angular/router';
+
+// dataset
+import * as dataset from '../../../data/dataset';
 
 @Component({
     selector: 'app-financial',
     templateUrl: './financial.component.html',
     styleUrls: ['./financial.component.scss'],
-    providers: [MockapiService]
 })
 export class FinancialComponent implements OnInit {
-    config: any;
+    public config: any;
+    private dossierId: any;
 
-    constructor(private api: MockapiService) {}
+    constructor(private route: ActivatedRoute) {}
 
     ngOnInit() {
-        this.api.getJSON('portfolio/financial').subscribe(data => {
-            console.log(data);
-            this.config = data;
-        });
+      // console.log(dataset.dossiersMainData);
+      // console.log(this.route.snapshot.params['id']);
+
+      this.route.params.subscribe( params => {
+        this.dossierId = params['id'];
+        console.log(dataset.dossiersMainData['dossier' + this.dossierId]);
+      });
     }
 }
