@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MockapiService } from '../../../_services/_mockapi.service';
+import { MockapiService } from '../../../services/mockapi.service';
 
 @Component({
     selector: 'app-location-portfolio',

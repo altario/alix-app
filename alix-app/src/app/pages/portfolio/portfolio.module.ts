@@ -20,14 +20,9 @@ import {
     RadarComponent,
     ScatterComponent,
     ScatterMapComponent
-} from '../../_shared/charts/index';
+} from '../../shared/charts/index';
 
 import {
-    StackedComponent,
-    SliderRangeComponent,
-    LongPanelComponent,
-    StackedScatterComponent,
-    PanelBoxComponent,
     Panel1Component,
     Panel2Component,
     Panel3Component,
@@ -36,7 +31,7 @@ import {
     Panel6Component,
     Panel7Component,
     Panel8Component
-} from '../../_components/index';
+} from '../../shared/panels/index';
 
 import { Ng5SliderModule } from 'ng5-slider';
 
@@ -49,9 +44,12 @@ import { Ng5SliderModule } from 'ng5-slider';
         Ng5SliderModule
     ],
     declarations: [
+        // pages
         FinancialComponent,
         LocationPortfolioComponent,
         DemandAndOfferPortfolioComponent,
+
+        // charts
         AreaBasicComponent,
         AreaStackComponent,
         BarComponent,
@@ -62,11 +60,7 @@ import { Ng5SliderModule } from 'ng5-slider';
         ScatterComponent,
         ScatterMapComponent,
 
-        StackedComponent,
-        SliderRangeComponent,
-        PanelBoxComponent,
-        LongPanelComponent,
-        StackedScatterComponent,
+        // panels
         Panel1Component,
         Panel2Component,
         Panel3Component,
