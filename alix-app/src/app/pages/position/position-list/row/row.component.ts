@@ -1,10 +1,10 @@
-import { Component, OnInit, Input } from "@angular/core";
-import { Router } from "@angular/router";
+import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
-    selector: "position-list-row",
-    templateUrl: "./row.component.html",
-    styleUrls: ["./row.component.scss"]
+    selector: 'app-position-list-row',
+    templateUrl: './row.component.html',
+    styleUrls: ['./row.component.scss']
 })
 export class RowComponent implements OnInit {
     @Input() company: Object = {};
@@ -14,6 +14,6 @@ export class RowComponent implements OnInit {
     ngOnInit() {}
 
     goToDashboard(id) {
-        this.router.navigate(["/portfolio", id]);
+        this.router.navigate(['/portfolio', id]);
     }
 }
