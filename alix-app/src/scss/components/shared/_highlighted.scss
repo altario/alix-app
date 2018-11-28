@@ -1,0 +1,35 @@
+// ------------------------------------------------------------------
+//
+// INDEX
+//
+//  #MIXINS
+//
+//  #STYLES
+//
+//  Highlighted
+//
+// ------------------------------------------------------------------
+
+// ------------------------------------------------------------------
+// #MIXINS
+// ------------------------------------------------------------------
+
+
+.highlighted_kpi {
+    font-size: $font-size--jumbo;
+    font-family: $font-family--primary;
+    font-weight: $font-weight--thin;
+    color: $color__text_highlighted;
+    line-height: $font-size--jumbo;
+    small {
+      font-weight: $font-weight--thin;
+      font-size: $font-size--head-2;
+      padding: 0 .1em;
+      line-height: $font-size--head-2;
+     }
+     .of { padding: 0 .25em }
+     small,
+     span {
+       display: inline-block
+     }
+  }

@@ -1,0 +1,32 @@
+// ------------------------------------------------------------------
+//
+// INDEX
+//
+//  #MIXINS
+//
+//  #STYLES
+//
+//  Tags
+//
+// ------------------------------------------------------------------
+
+// ------------------------------------------------------------------
+// #MIXINS
+// ------------------------------------------------------------------
+
+
+@import '~src/scss/imports';
+
+.tags {
+  padding: 6px 15px;
+  font-size: rem(12px);
+  font-family: $font-family--primary;
+  font-weight: $font-weight--bold;
+  letter-spacing: $letter-spacing--2;
+  border-radius: 3px;
+}
+
+.tags__green {
+  background-color: #6AC427;
+  color: $body__color__text
+ }

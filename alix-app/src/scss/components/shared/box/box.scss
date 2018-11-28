@@ -1,0 +1,31 @@
+@import '~src/scss/imports';
+
+// box
+
+.box {
+  padding: 0;
+  background-color: red;
+  .box__header {
+    .box__title { padding: $box-padding }
+    .icons { padding-top: $box-padding }
+  }
+}
+
+$color1: #252B48;
+$color2: #1C2038;
+$color3: #252B48; 
+
+.box {
+  .box__header {
+    background-color: $color1;
+  }
+  .cell__wrapper:nth-child(1),
+  .cell__wrapper:nth-child(2){
+    background-color: $color2;
+  }
+  .cell__wrapper:nth-child(3),
+  .cell__wrapper:nth-child(4){
+    background-color: $color3;
+  }
+
+}

@@ -1,0 +1,44 @@
+// ------------------------------------------------------------------
+//
+// INDEX
+//
+//  #MIXINS
+//
+//  #STYLES
+//
+//  Titles
+//
+// ------------------------------------------------------------------
+
+// ------------------------------------------------------------------
+// #MIXINS
+// ------------------------------------------------------------------
+
+
+@import '~src/scss/imports';
+.title--compound {
+    .main__title {
+      font-size: rem(16px);
+      color: #00A6D9;
+      font-family: $font-family--primary;
+      font-weight: $font-weight--normal;
+    }
+    .secondary__title {
+      font-size: rem(16px);
+      color: $font-family--primary;
+      font-family: $font-family--secondary;
+      font-weight: $font-weight--bold;
+    }
+}
+
+.title {
+  font-size: rem(16px);
+  color: $font-family--primary;
+  font-family: $font-family--secondary;
+  font-weight: $font-weight--bold;
+  text-transform: uppercase;
+}
+
+.u-strong { font-weight: $font-weight--bold }
+
+.u-uppercase { text-transform: uppercase }
