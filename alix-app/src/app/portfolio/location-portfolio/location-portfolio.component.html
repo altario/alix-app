@@ -7,4 +7,16 @@
         *ngIf="spec.type == 'StackedComponent'"
         [config]="spec"
     ></app-stacked>
+    <app-stacked-image
+        *ngIf="spec.type == 'StackedImageComponent'"
+        [config]="spec"
+    ></app-stacked-image>
+    <app-stacked-image
+        *ngIf="spec.type == 'StackedScatterComponent'"
+        [config]="spec"
+    ></app-stacked-image>
+    <app-panel-box
+        *ngIf="spec.type == 'PanelBoxComponent'"
+        [config]="spec"
+    ></app-panel-box>
 </div>
