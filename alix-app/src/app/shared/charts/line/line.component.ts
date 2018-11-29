@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'alix-line',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./line.component.scss']
 })
 export class LineComponent implements OnInit {
+    @Input()
+    public series: any = [];
+
   public options: any = {};
   public initOpts: any = {};
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
     selector: 'alix-bar',
@@ -6,15 +6,17 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./bar.component.scss']
 })
 export class BarComponent implements OnInit {
-    
+    @Input()
+    public series: any = [];
+
     public options: any = {};
 
-    ngOnInit() { 
+    ngOnInit() {
 
-        var xAxisData = [];
-        var data1 = [];
-        var data2 = [];
-        for (var i = 0; i < 100; i++) {
+        let xAxisData = [];
+        let data1 = [];
+        let data2 = [];
+        for (let i = 0; i < 100; i++) {
             xAxisData.push('类目' + i);
             data1.push((Math.sin(i / 5) * (i / 5 - 10) + i / 6) * 5);
             data2.push((Math.cos(i / 5) * (i / 5 - 10) + i / 6) * 5);

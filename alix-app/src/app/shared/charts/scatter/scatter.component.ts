@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
     selector: 'alix-scatter',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./scatter.component.scss']
 })
 export class ScatterComponent implements OnInit {
+    @Input()
+    public series: any = [];
 
     public options: any = {};
 

@@ -17,6 +17,7 @@ import { PortfolioRoutes } from './portfolio.routing';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { Ng5SliderModule } from 'ng5-slider';
 
+
 // charts
 import {
   AreaBasicComponent,
@@ -43,6 +44,8 @@ import {
   Panel8Component,
   Panel13Component
 } from '../../shared/panels/index';
+
+import { SliderRangeComponent } from '../../shared/slider-range/slider-range.component';
 
 @NgModule({
   imports: [
@@ -80,7 +83,10 @@ import {
     Panel6Component,
     Panel7Component,
     Panel8Component,
-    Panel13Component
+    Panel13Component,
+
+    // Slider
+    SliderRangeComponent
   ]
 })
 export class PortfolioModule { }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
     selector: 'alix-area-stack',
@@ -6,9 +6,11 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./area-stack.component.scss']
 })
 export class AreaStackComponent implements OnInit {
+    @Input()
+    public series: any = [];
 
     public options: any = {};
-    
+
     ngOnInit() { 
 
         this.options = {
