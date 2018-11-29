@@ -4,17 +4,16 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 export class CustomCurrencyPipe implements PipeTransform {
   transform(value: number, decimal: number = 2) {
-    console.log(value);
     switch (true) {
       case value < 1000000 && value >= 1000:
-        return (value / 1000).toFixed(decimal) + 'K';
+        return (value / 1000).toFixed(decimal);
       case value < 100000000 && value >= 1000000:
-        return (value / 1000000).toFixed(decimal) + 'M';
+        return (value / 1000000).toFixed(decimal);
       case value >= 100000000:
-        return (value / 100000000).toFixed(decimal) + 'B';
+        return (value / 100000000).toFixed(decimal);
 
       default:
-        return (value / 1).toFixed(2) + 'K';
+        return (value / 1).toFixed(2);
     }
   }
 }

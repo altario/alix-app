@@ -23,10 +23,10 @@
         </div>
         <div style="display: flex; flex-direction: column">
             <span>{{config.financial.position.startDate.label}}</span>
-            <span>{{config.financial.position.startDate.value | cusdate | date: "MM/dd/yy" }}</span>
+            <span>{{config.financial.position.startDate.value | cusdate | date: 'd MMM y' }}</span>
 
             <span>{{config.financial.position.endDate.label}}:</span>
-            <span>{{config.financial.position.endDate.value | cusdate | date: "MM/dd/yy" }}</span>
+            <span>{{config.financial.position.endDate.value | cusdate | date: 'd MMM y' }}</span>
         </div>
     </div>
 </div>

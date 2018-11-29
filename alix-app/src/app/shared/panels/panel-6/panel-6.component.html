@@ -11,18 +11,18 @@
 
     <div>
         <div>
-            <h6>{{ config.financial.duration.timeToDuration.label | uppercase }}</h6>
+            <h6>{{ config.financial.duration.timeToDuration.label }}</h6>
             <div>
-                {{ config.financial.duration.timeToDuration.value }}M of
-                {{ config.financial.duration.totalDuration.value }}Y
+                {{ config.financial.duration.timeToDuration.value | number:'1.0-0' }}M of
+                {{ config.financial.duration.totalDuration.value | number:'1.0-0' }}Y
             </div>
         </div>
         <div style="display: flex; flex-direction: column">
-            <span>{{ config.financial.duration.today.label | uppercase }}:</span>
-            <span>{{ today | date: "MM/dd/yy" }}</span>
+            <span>{{ config.financial.duration.today.label }}:</span>
+            <span>{{ today | date: 'd MMM y' }}</span>
 
             <span>{{config.financial.duration.durationDate.label}}:</span>
-            <span>{{config.financial.duration.durationDate.value}}</span>
+            <span>{{config.financial.duration.durationDate.value | cusdate | date: 'd MMM y'}}</span>
         </div>
     </div>
 </div>
