@@ -10,6 +10,7 @@
       <app-panel-9 comparisonCriteria="{{config.comparableAssets.comparisonCriteria.value}}" [config]="config.comparableAssets.populations.population3"></app-panel-9>
     </div>
   </div>
+
   <div class="row-no-gutter">
       <div class="col-12">
         <h1># SC Today</h1> <!-- #HC -->
@@ -19,7 +20,21 @@
   <div class="row row-no-gutter">
     <div class="col-3">
       <app-panel-10 [config]="selectedStateOfConservationToday"></app-panel-10>
-      <!-- <app-panel-10 [config]="config.stateOfConservationToday.populations.population1"></app-panel-10> -->
+    </div>
+    <div class="col-9">
+        <alix-line></alix-line>
+    </div>
+  </div>
+
+  <div class="row-no-gutter">
+      <div class="col-12">
+        <h1>State Of Conservation All Assets</h1> <!-- #HC -->
+        <!-- <app-dropdown [config]="getPopulationNames()" (callback)="changeValue($event)"></app-dropdown> -->
+      </div>
+    </div>
+  <div class="row row-no-gutter">
+    <div class="col-3">
+      <app-panel-11 [config]="config.panelFromMapStateOfConservationBreakdownAllAssets.years['2013']"></app-panel-11>
     </div>
     <div class="col-9">
         <alix-line></alix-line>
