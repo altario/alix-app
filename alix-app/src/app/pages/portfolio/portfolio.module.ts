@@ -1,15 +1,23 @@
+// angular
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+// portfolio
 import { FinancialComponent } from './financial/financial.component';
-import { LocationPortfolioComponent } from './location-portfolio/location-portfolio.component';
-import { DemandAndOfferPortfolioComponent } from './demand-offer-portfolio/demand-offer-portfolio.component';
+import { StateOfConservationComponent } from './state-of-conservation/state-of-conservation.component';
+import { LocationComponent } from './location/location.component';
+import { DemandAndOfferComponent } from './demand-offer/demand-offer.component';
+
+// routes
 import { PortfolioRoutes } from './portfolio.routing';
 
+// plugins
 import { NgxEchartsModule } from 'ngx-echarts';
+import { Ng5SliderModule } from 'ng5-slider';
 
+// charts
 import {
     AreaBasicComponent,
     AreaStackComponent,
@@ -22,6 +30,7 @@ import {
     ScatterMapComponent
 } from '../../shared/charts/index';
 
+// panels
 import {
     Panel1Component,
     Panel2Component,
@@ -32,8 +41,6 @@ import {
     Panel7Component,
     Panel8Component
 } from '../../shared/panels/index';
-
-import { Ng5SliderModule } from 'ng5-slider';
 
 @NgModule({
     imports: [
@@ -46,8 +53,9 @@ import { Ng5SliderModule } from 'ng5-slider';
     declarations: [
         // pages
         FinancialComponent,
-        LocationPortfolioComponent,
-        DemandAndOfferPortfolioComponent,
+        StateOfConservationComponent,
+        LocationComponent,
+        DemandAndOfferComponent,
 
         // charts
         AreaBasicComponent,
