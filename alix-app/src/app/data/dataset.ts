@@ -12,7 +12,7 @@ export const dossiersMainData = {
     client: {
       clientName: {
         label: 'Client Name',
-        value: 'ACME & Company S.p.A.'
+        value: 'ACME  Company S.p.A.'
       }
     },
     financial: {
@@ -1088,23 +1088,23 @@ export const dossiersMainData = {
         architectureSnapshot: {
           value: 'asset1Architecture.jpg'
         },
-        a19ThCentury: {
+        _19ThCentury: {
           value: '0.0821',
           label: '19th Century'
         },
-        a1900To1950: {
+        _1900To1950: {
           value: '0.1128',
           label: '1900 - 1950'
         },
-        a1950To1970: {
+        _1950To1970: {
           value: '0.2667',
           label: '1950 - 1970'
         },
-        a1970To1990: {
+        _1970To1990: {
           value: '0.2325',
           label: '1970 - 1990'
         },
-        a1990To2000: {
+        _1990To2000: {
           value: '0.0745',
           label: '1990 - 2000'
         },
@@ -1123,19 +1123,19 @@ export const dossiersMainData = {
               value: '0.0234',
               label: '> 100K €'
             },
-            a80K: {
+            _80K: {
               value: '0.0378',
               label: '80K €'
             },
-            a60K: {
+            _60K: {
               value: '0.1545',
               label: '60K €'
             },
-            a40K: {
+            _40K: {
               value: '0.2245',
               label: '40K €'
             },
-            a20K: {
+            _20K: {
               value: '0.2923',
               label: '20K €'
             },
@@ -1151,19 +1151,19 @@ export const dossiersMainData = {
               value: '1.96202531645569',
               label: 'Milano'
             },
-            a80KVsMilanPerc: {
+            _80KVsMilanPerc: {
               value: '1.82089552238806',
               label: 'Milano'
             },
-            a60KVsMilanPerc: {
+            _60KVsMilanPerc: {
               value: '1.04095112285337',
               label: 'Milano'
             },
-            a40KVsMilanPerc: {
+            _40KVsMilanPerc: {
               value: '0.85078318219291',
               label: 'Milano'
             },
-            a20KVsMilanPerc: {
+            _20KVsMilanPerc: {
               value: '-0.209572742022715',
               label: 'Milano'
             },
@@ -1180,19 +1180,19 @@ export const dossiersMainData = {
               value: '0.01521',
               label: '> 100K €'
             },
-            a80K: {
+            _80K: {
               value: '0.03024',
               label: '80K €'
             },
-            a60K: {
+            _60K: {
               value: '0.118965',
               label: '60K €'
             },
-            a40K: {
+            _40K: {
               value: '0.17511',
               label: '40K €'
             },
-            a20K: {
+            _20K: {
               value: '0.195841',
               label: '20K €'
             },
@@ -1208,19 +1208,19 @@ export const dossiersMainData = {
               value: '0.925316455696198',
               label: 'Milano'
             },
-            a80KVsMilanPerc: {
+            _80KVsMilanPerc: {
               value: '1.25671641791045',
               label: 'Milano'
             },
-            a60KVsMilanPerc: {
+            _60KVsMilanPerc: {
               value: '0.571532364597094',
               label: 'Milano'
             },
-            a40KVsMilanPerc: {
+            _40KVsMilanPerc: {
               value: '0.44361088211047',
               label: 'Milano'
             },
-            a20KVsMilanPerc: {
+            _20KVsMilanPerc: {
               value: '-0.470413737155219',
               label: 'Milano'
             },
@@ -1237,19 +1237,19 @@ export const dossiersMainData = {
               value: '0.0088218',
               label: '> 100K €'
             },
-            a80K: {
+            _80K: {
               value: '0.0178416',
               label: '80K €'
             },
-            a60K: {
+            _60K: {
               value: '0.08208585',
               label: '60K €'
             },
-            a40K: {
+            _40K: {
               value: '0.1120704',
               label: '40K €'
             },
-            a20K: {
+            _20K: {
               value: '0.12533824',
               label: '20K €'
             },
@@ -1265,28 +1265,28 @@ export const dossiersMainData = {
               value: '0.116683544303795',
               label: 'Milano'
             },
-            a80KVsMilanPerc: {
+            _80KVsMilanPerc: {
               value: '0.331462686567164',
               label: 'Milano'
             },
-            a60KVsMilanPerc: {
+            _60KVsMilanPerc: {
               value: '0.0843573315719945',
               label: 'Milano'
             },
-            a40KVsMilanPerc: {
+            _40KVsMilanPerc: {
               value: '-0.0760890354492991',
               label: 'Milano'
             },
-            a20KVsMilanPerc: {
+            _20KVsMilanPerc: {
               value: '-0.66106479177934',
               label: 'Milano'
             },
-            smaller20KVsMilanPerc: {
+            _smaller20KVsMilanPerc: {
               value: '0.587380699198835',
               label: 'Milano'
             }
           },
-          a2003: {
+          2003: {
             averagePrice: {
               value: '20245.05'
             },
@@ -1294,19 +1294,19 @@ export const dossiersMainData = {
               value: '0.00661635',
               label: '> 100K €'
             },
-            a80K: {
+            _80K: {
               value: '0.01248912',
               label: '80K €'
             },
-            a60K: {
+            _60K: {
               value: '0.060743529',
               label: '60K €'
             },
-            a40K: {
+            _40K: {
               value: '0.0840528',
               label: '40K €'
             },
-            a20K: {
+            _20K: {
               value: '0.136098201',
               label: '20K €'
             },
@@ -1322,19 +1322,19 @@ export const dossiersMainData = {
               value: '-0.140733766233766',
               label: 'Milano'
             },
-            a80KVsMilanPerc: {
+            _80KVsMilanPerc: {
               value: '-0.0538545454545455',
               label: 'Milano'
             },
-            a60KVsMilanPerc: {
+            _60KVsMilanPerc: {
               value: '-0.171302469304229',
               label: 'Milano'
             },
-            a40KVsMilanPerc: {
+            _40KVsMilanPerc: {
               value: '-0.37922599704579',
               label: 'Milano'
             },
-            a20KVsMilanPerc: {
+            _20KVsMilanPerc: {
               value: '-0.621318305509182',
               label: 'Milano'
             },

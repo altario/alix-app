@@ -16,9 +16,6 @@
 
 @import '~src/scss/imports';
 
-$lines: 2;
-$font-size: rem(11px);
-
 .label__up,
 .label__down {
     font-size: $font-size;
@@ -29,9 +26,3 @@ $font-size: rem(11px);
   }
 
   .label__up { @include line-clamp($lines, $font-size) }
-
-  .cell__wrapper__top {
-    height: calc(#{$line-height__base} * #{$lines} * #{$font_size}) ;
-    display: flex;
-    @include align(bottom);
-  }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div style="display: flex; flex-direction: column; border: 1px solid #000000">
   <div style="display: flex;">
     <div>
@@ -8,15 +9,77 @@
       <h6>{{ config.financial.clientPortfolio.clientCreditRating.label | uppercase }}</h6>
       <div [ngClass]="{good: config.financial.clientPortfolio.clientCreditRating.value === 'Baa'}">
         {{ config.financial.clientPortfolio.clientCreditRating.value | uppercase}}
+=======
+<div class="box box--bg col-3 box--table box--table--small">
+  <div class="box__body box__body--bg">
+    <div class=" cell__wrapper cell__wrapper--bg-dark">
+      <div class="cell__wrapper__top">
+        <span class="label__up label--color">
+          {{ config.financial.clientPortfolio.clientPortfolioDuration.label }}
+        </span>
+      </div>
+      <div class="cell__wrapper__info">
+        <p class="highlighted--medium highlighted--color">
+          {{ config.financial.clientPortfolio.clientPortfolioDuration.value }}
+          <small class="u-uppercase highlighted__small--color">
+            y
+          </small>
+        </p>
+>>>>>>> 1aee9ec5d50a8c9ea6d3e1bc95c4bc9afaca4422
       </div>
     </div>
-  </div>
 
+<<<<<<< HEAD
   <div>
     <h6>{{ config.financial.clientPortfolio.probabilityOfDefaultInT0.label | uppercase }}</h6>
     <div style="display: flex;">
       <div>To {{config.financial.clientPortfolio.probabilityOfDefaultInT0.value | percent:'1.2-2' }}</div>
       <div>TCD {{config.financial.clientPortfolio.probabilityOfDefaultToday.value | percent:'1.1-2'}}</div>
+=======
+    <div class=" cell__wrapper cell__wrapper--bg-dark">
+        <div class="cell__wrapper__top">
+          <span class="label__up label--color">
+              {{ config.financial.clientPortfolio.clientCreditRating.label }}
+          </span>
+        </div>
+        <div class="cell__wrapper__info">
+          <div [ngClass]="{good: config.financial.clientPortfolio.clientCreditRating.value == 'baa'}"
+            class="tag"
+          >
+              {{ config.financial.clientPortfolio.clientCreditRating.value }}
+            </div>
+        </div>
+      </div>
+
+      <div class="w-100"></div>
+
+      <div class=" cell__wrapper cell__wrapper--bg-light">
+        <div class="cell__wrapper__top">
+          <span class="label__up label--color">
+              {{ config.financial.clientPortfolio.probabilityOfDefaultInT0.label }}
+          </span>
+        </div>
+        <div class="cell__wrapper__info">
+          <p class="highlighted--medium highlighted--color">
+            <small class="u-uppercase highlighted__small--color"> To </small>
+            {{config.financial.clientPortfolio.probabilityOfDefaultInT0.value}}
+            <small class="u-uppercase highlighted__small--color">%</small>
+          </p>
+        </div>
+      </div>
+
+      <div class=" cell__wrapper cell__wrapper--bg-light">
+        <div class="cell__wrapper__info">
+          <p class="highlighted--medium highlighted--color">
+            <small class="u-uppercase highlighted__small--color"> To </small>
+            {{config.financial.clientPortfolio.probabilityOfDefaultToday.value}}
+            <small class="u-uppercase highlighted__small--color">%</small>
+          </p>
+      </div>
+>>>>>>> 1aee9ec5d50a8c9ea6d3e1bc95c4bc9afaca4422
     </div>
   </div>
 </div>
+
+
+
