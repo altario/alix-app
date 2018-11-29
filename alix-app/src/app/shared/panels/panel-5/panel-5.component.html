@@ -5,11 +5,11 @@
     <div style="display: flex;">
         <div>
             <h6>{{ config.financial.position.loanOriginalValue.label }}</h6>
-            <div>{{ config.financial.position.loanOriginalValue.value }}</div>
+            <div>{{ config.financial.position.loanOriginalValue.value | curr }}</div>
         </div>
         <div>
             <h6>{{ config.financial.position.currentExposure.label }}</h6>
-            <div>{{ config.financial.position.currentExposure.value }}</div>
+            <div>{{ config.financial.position.currentExposure.value | curr:1}}</div>
         </div>
     </div>
 
