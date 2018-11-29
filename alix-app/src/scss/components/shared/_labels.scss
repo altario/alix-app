@@ -16,16 +16,20 @@
 
 @import '~src/scss/imports';
 
+$lines: 2;
+$font-size: rem(11px);
+
 .label__up {
   vertical-align: bottom;
 }
 
 .label__up,
 .label__down {
-    font-size: rem(11px);
+    font-size: $font-size;
     color: $color__text_label;
     font-family: $font-family--primary;
     font-weight: $font-weight--normal;
     text-transform: uppercase;
-    @include line-clamp(2, rem(11px));
+    height: calc(#{$line-height__base} * #{$lines} * #{$font_size}) ;
+    @include line-clamp($lines, $font-size);
   }
