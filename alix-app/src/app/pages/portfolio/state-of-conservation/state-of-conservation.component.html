@@ -13,40 +13,16 @@
   <div class="row-no-gutter">
       <div class="col-12">
         <h1># SC Today</h1> <!-- #HC -->
+        <app-dropdown [config]="getPopulationNames()" (callback)="changeValue($event)"></app-dropdown>
       </div>
     </div>
   <div class="row row-no-gutter">
     <div class="col-3">
-      <app-panel-10 [config]="config.stateOfConservationToday.populations.population1"></app-panel-10>
+      <app-panel-10 [config]="selectedStateOfConservationToday"></app-panel-10>
+      <!-- <app-panel-10 [config]="config.stateOfConservationToday.populations.population1"></app-panel-10> -->
     </div>
     <div class="col-9">
-      A Graph here
-    </div>
-  </div>
-  <div class="row-no-gutter">
-      <div class="col-12">
-        <h1># SC Today</h1> <!-- #HC -->
-      </div>
-    </div>
-  <div class="row row-no-gutter">
-    <div class="col-3">
-      <app-panel-10 [config]="config.stateOfConservationToday.populations.population2"></app-panel-10>
-    </div>
-    <div class="col-9">
-      A Graph here
-    </div>
-  </div>
-  <div class="row-no-gutter">
-      <div class="col-12">
-        <h1># SC Today</h1> <!-- #HC -->
-      </div>
-    </div>
-  <div class="row row-no-gutter">
-    <div class="col-3">
-      <app-panel-10 [config]="config.stateOfConservationToday.populations.population3"></app-panel-10>
-    </div>
-    <div class="col-9">
-      A Graph here
+        <alix-line></alix-line>
     </div>
   </div>
 </div>
