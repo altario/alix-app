@@ -1,28 +1,74 @@
-<div style="display: flex; flex-direction: column; border: 1px solid #000000">
-  <div>
-    <h6>Key Financial</h6> <!-- #HC -->
-  </div>
-  <div style="display: flex;">
-    <div>
-      <h6>{{ config.financial.keyFinancial.status.label }}</h6>
-      <div [ngClass]="{ good: config.financial.keyFinancial.status.value === 'Performing' }">
-        {{config.financial.keyFinancial.status.value}}
+<div class="box box--table">
+  <div class="box__header box__header--bg">
+    <div class="d-flex flex-row justify-content-between">
+      <div class="box__title title--compound">
+        <h1 class="title">Key Financial<!-- #HC --></h1>
+      </div>
+      <div class="icons">
+        <i class="icol ico-file-alt"></i>
+        <i class="icol ico-info-circle"></i>
       </div>
     </div>
-    <div>
-      <h6>{{ config.financial.keyFinancial.raroc.label }}</h6>
-      <div>{{ config.financial.keyFinancial.raroc.value | perc:1}}</div>
-    </div>
   </div>
+  <div class="box__body box__body--bg">
+      <div class=" cell__wrapper cell__wrapper--bg-dark">
+        <div class="cell__wrapper__top">
+          <span class="label__up label--color">
+            {{ config.financial.keyFinancial.status.label }}
+          </span>
+        </div>
+        <div class="cell__wrapper__info">
+          <div [ngClass]="{ good: config.financial.keyFinancial.status.value === 'Performing' }" class="tag">
+            {{config.financial.keyFinancial.status.value}}
+          </div>
+        </div>
+      </div>
+  
+      <div class=" cell__wrapper cell__wrapper--bg-dark">
+          <div class="cell__wrapper__top">
+            <span class="label__up label--color">
+              {{ config.financial.keyFinancial.raroc.label }}
+            </span>
+          </div>
+          <div class="cell__wrapper__info">
+              <p class="highlighted--big highlighted--color">
+                {{ config.financial.keyFinancial.raroc.value | perc:1}}
 
-  <div style="display:flex;">
-    <div>
-      <h6>{{ config.financial.keyFinancial.absorbedRegulatoryCapital.label }}</h6>
-      <div>{{ config.financial.keyFinancial.absorbedRegulatoryCapital.value | curr }}</div>
-    </div>
-    <div>
-      <h6>{{ config.financial.keyFinancial.expectedLoss.label }}</h6>
-      <div>{{ config.financial.keyFinancial.expectedLoss.value | curr }}</div>
-    </div>
+                <small class="u-uppercase highlighted__small--color">%</small>
+              </p>
+          </div>
+        </div>
+  
+        <div class="w-100"></div>
+
+        <div class=" cell__wrapper cell__wrapper--bg-light">
+            <div class="cell__wrapper__top">
+              <span class="label__up label--color">
+                {{ config.financial.keyFinancial.absorbedRegulatoryCapital.label }}
+              </span>
+            </div>
+            <div class="cell__wrapper__info">
+                <p class="highlighted--big highlighted--color">
+                  {{ config.financial.keyFinancial.absorbedRegulatoryCapital.value | curr }}
+                  <small class="u-uppercase highlighted__small--color">m€</small>
+                </p>
+            </div>
+          </div>
+  
+          <div class=" cell__wrapper cell__wrapper--bg-light">
+              <div class="cell__wrapper__top">
+                <span class="label__up label--color">
+                  {{ config.financial.keyFinancial.expectedLoss.label }}
+                </span>
+              </div>
+              <div class="cell__wrapper__info">
+                  <p class="highlighted--big highlighted--color">
+                    {{ config.financial.keyFinancial.expectedLoss.value | curr }}
+                    <small class="u-uppercase highlighted__small--color">k€</small>
+                  </p>
+              </div>
+            </div>
+      
+
   </div>
 </div>
