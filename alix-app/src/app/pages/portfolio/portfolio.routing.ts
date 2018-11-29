@@ -1,7 +1,11 @@
+// angular
 import { Routes } from '@angular/router';
+
+// components
 import { FinancialComponent } from './financial/financial.component';
-import { LocationPortfolioComponent } from './location-portfolio/location-portfolio.component';
-import { DemandAndOfferPortfolioComponent } from './demand-offer-portfolio/demand-offer-portfolio.component';
+import { StateOfConservationComponent } from './state-of-conservation/state-of-conservation.component';
+import { LocationComponent } from './location/location.component';
+import { DemandAndOfferComponent } from './demand-offer/demand-offer.component';
 
 export const PortfolioRoutes: Routes = [
     {
@@ -9,11 +13,19 @@ export const PortfolioRoutes: Routes = [
         component: FinancialComponent
     },
     {
-        path: 'location',
-        component: LocationPortfolioComponent
+        path: 'financial',
+        component: FinancialComponent
     },
     {
-        path: 'demand-offer',
-        component: DemandAndOfferPortfolioComponent
+      path: 'state-of-conservation',
+      component: StateOfConservationComponent
+    },
+    {
+      path: 'demand-offer',
+      component: DemandAndOfferComponent
+    },
+    {
+        path: 'location',
+        component: LocationComponent
     }
-];
+  ];

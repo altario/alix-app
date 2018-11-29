@@ -11,5 +11,6 @@ export class Panel5Component implements OnInit {
 
     constructor() {}
 
-    ngOnInit() {}
+    ngOnInit() {
+    }
 }

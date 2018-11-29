@@ -22,14 +22,10 @@ import { PortfolioLayoutComponent } from './core/portfolio-layout/portfolio-layo
  * echarts
  */
 
-import { NgxEchartsModule } from 'ngx-echarts';
-import { StylesComponent } from './styles/styles.component';
-
 @NgModule({
     declarations: [
         AppComponent,
         BaseLayoutComponent,
-        StylesComponent,
         PortfolioLayoutComponent
     ],
     imports: [

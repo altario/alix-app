@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from "@angular/core";
 export class Panel6Component implements OnInit {
     @Input()
     public config: any;
+    public today: Date = new Date();
 
     constructor() {}
 
