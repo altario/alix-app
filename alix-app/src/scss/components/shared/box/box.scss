@@ -9,6 +9,7 @@ $color4: #8C8C8D;
 
 .box {
   padding: 0;
+  width: 100%;
   .box__header {
     .box__title { padding: $box-padding }
     .icons {
@@ -29,6 +30,7 @@ $color4: #8C8C8D;
     }
   }
   &__body {
+    width: 100%;
     .cell__wrapper {
       .cell__wrapper__top { margin-bottom: 5px }
       .cell__wrapper__info { margin: 5px 0 }

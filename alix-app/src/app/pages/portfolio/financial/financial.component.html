@@ -1,7 +1,7 @@
 <div *ngIf="config" class="container-fluid">
   <div class="row-no-gutter">
     <div class="col-12">
-      <h1>{{ config.client.clientName.value }}</h1>
+      <h1 class="section-title">{{ config.client.clientName.value }}</h1>
     </div>
   </div>
   <div class="row row-no-gutter">
@@ -18,25 +18,27 @@
 
   <div class="row-no-gutter">
     <div class="col-12">
-      <h1>Loan XYZ Alpha II</h1> <!-- #HC -->
+      <h1 class="section-title">Loan XYZ Alpha II</h1> <!-- #HC -->
     </div>
-    <div class="col">
+  </div>
+  <div class="row row-no-gutter">
+    <div class="col-3">
       <app-panel-4 [config]="config"></app-panel-4>
     </div>
-    <div class="col">
+    <div class="col-3">
       <app-panel-5 [config]="config"></app-panel-5>
     </div>
-    <div class="col">
+    <div class="col-3">
       <app-panel-6 [config]="config"></app-panel-6>
     </div>
-    <div class="col">
+    <div class="col-3">
       <app-panel-7 [config]="config"></app-panel-7>
     </div>
   </div>
 
   <div class="row-no-gutter">
     <div class="col-12">
-      <h1>Collateral Asset</h1> <!-- #HC -->
+      <h1 class="section-title">Collateral Asset</h1> <!-- #HC -->
     </div>
     <app-panel-8 [config]="config"></app-panel-8>
   </div>
