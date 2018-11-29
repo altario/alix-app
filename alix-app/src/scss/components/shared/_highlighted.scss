@@ -15,17 +15,36 @@
 // ------------------------------------------------------------------
 
 
-.highlighted_kpi {
-    font-size: $font-size--jumbo;
+.highlighted--big {
+    font-size: $font-size__highlighted--big;
     font-family: $font-family--primary;
     font-weight: $font-weight--thin;
     color: $color__text_highlighted;
-    line-height: $font-size--jumbo;
+    line-height: $font-size__highlighted--big;
     small {
       font-weight: $font-weight--thin;
-      font-size: $font-size--head-2;
+      font-size: $font-size__highlighted--big__small;
       padding: 0 .1em;
-      line-height: $font-size--head-2;
+      line-height: $font-size__highlighted--big__small;
+     }
+     .of { padding: 0 .25em }
+     small,
+     span {
+       display: inline-block
+     }
+  }
+
+  .highlighted--medium {
+    font-size: $font-size__highlighted--medium;
+    font-family: $font-family--primary;
+    font-weight: $font-weight--thin;
+    color: $color__text_highlighted;
+    line-height: $font-size__highlighted--medium;
+    small {
+      font-weight: $font-weight--thin;
+      font-size: $font-size__highlighted--medium__small;
+      padding: 0 .1em;
+      line-height: $font-size__highlighted--medium__small;
      }
      .of { padding: 0 .25em }
      small,

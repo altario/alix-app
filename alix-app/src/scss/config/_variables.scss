@@ -329,8 +329,7 @@ $transition__base:                    all .25s ease-in-out;
 $transition__base--noprop:            .25s;
 
 
-
-
+//// USED
 // delete
 
 // $color
@@ -341,4 +340,11 @@ $text__secondary-color: #8D8C8D !important;
 $amount: 40;
 
 $box-padding: 20px;
+
+
+
+$font-size__highlighted--big:                    rem(48px); // 3rem
+$font-size__highlighted--big__small:             rem(24px);
+$font-size__highlighted--medium:                 rem(36px);
+$font-size__highlighted--medium__small:          rem(12px);
 
