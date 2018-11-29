@@ -52,3 +52,9 @@
 .u-strong { font-weight: $font-weight--bold }
 .u-uppercase { text-transform: uppercase }
 
+
+.section-title {
+  font-size: rem(36px);
+  font-family: $font-family--primary;
+  font-weight: $font-weight--bold;
+}
