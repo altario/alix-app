@@ -44,43 +44,45 @@ import {
   Panel13Component
 } from '../../shared/panels/index';
 
+import { CustomCurrencyPipe } from 'src/app/helpers/currency/currency.pipe';
+
 @NgModule({
-  imports: [
-    CommonModule,
-    NgbModule,
-    RouterModule.forChild(PortfolioRoutes),
-    NgxEchartsModule,
-    Ng5SliderModule
-  ],
-  declarations: [
-    // pages
-    FinancialComponent,
-    StateOfConservationComponent,
-    LocationComponent,
-    DemandAndOfferComponent,
+    imports: [
+        CommonModule,
+        NgbModule,
+        RouterModule.forChild(PortfolioRoutes),
+        NgxEchartsModule,
+        Ng5SliderModule
+    ],
+    declarations: [
+        CustomCurrencyPipe,
+        // pages
+        FinancialComponent,
+        StateOfConservationComponent,
+        LocationComponent,
+        DemandAndOfferComponent,
 
-    // charts
-    AreaBasicComponent,
-    AreaStackComponent,
-    BarComponent,
-    BoxplotComponent,
-    BubbleComponent,
-    DoughnutComponent,
-    RadarComponent,
-    ScatterComponent,
-    ScatterMapComponent,
-    LineComponent,
+        // charts
+        AreaBasicComponent,
+        AreaStackComponent,
+        BarComponent,
+        BoxplotComponent,
+        BubbleComponent,
+        DoughnutComponent,
+        RadarComponent,
+        ScatterComponent,
+        ScatterMapComponent,
 
-    // panels
-    Panel1Component,
-    Panel2Component,
-    Panel3Component,
-    Panel4Component,
-    Panel5Component,
-    Panel6Component,
-    Panel7Component,
-    Panel8Component,
-    Panel13Component
-  ]
+        // panels
+        Panel1Component,
+        Panel2Component,
+        Panel3Component,
+        Panel4Component,
+        Panel5Component,
+        Panel6Component,
+        Panel7Component,
+        Panel8Component,
+        Panel13Component
+    ]
 })
 export class PortfolioModule { }
