@@ -77,3 +77,12 @@
 @import 'components/shared/tags';
 @import 'components/shared/labels';
 @import 'components/shared/titles';
+@import 'components/shared/sections';
+
+
+.container-fluid {
+    padding: 0;
+    .page-section {
+        padding: 60px 0 60px 20px;
+    }
+}
