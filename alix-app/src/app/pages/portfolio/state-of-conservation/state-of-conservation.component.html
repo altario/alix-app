@@ -1,2 +1,13 @@
-<h1>State of Conservation</h1>
-<p>content here...</p>
+<div *ngIf="config" class="container-fluid">
+  <div class="row row-no-gutter">
+    <div class="col-3">
+      <app-panel-9 comparisonCriteria="{{config.comparableAssets.comparisonCriteria.value}}" [config]="config.comparableAssets.populations.population1"></app-panel-9>
+    </div>
+    <div class="col-3">
+      <app-panel-9 comparisonCriteria="{{config.comparableAssets.comparisonCriteria.value}}" [config]="config.comparableAssets.populations.population2"></app-panel-9>
+    </div>
+    <div class="col-3">
+      <app-panel-9 comparisonCriteria="{{config.comparableAssets.comparisonCriteria.value}}" [config]="config.comparableAssets.populations.population3"></app-panel-9>
+    </div>
+  </div>
+</div>

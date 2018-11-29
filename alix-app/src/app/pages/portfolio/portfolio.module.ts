@@ -48,6 +48,7 @@ import {
   Panel6Component,
   Panel7Component,
   Panel8Component,
+  Panel9Component,
   Panel13Component
 } from '@shared/panels/index';
 
@@ -92,6 +93,7 @@ import {
         Panel6Component,
         Panel7Component,
         Panel8Component,
+        Panel9Component,
         Panel13Component
     ]
 })
