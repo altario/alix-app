@@ -58,7 +58,10 @@
   .highlighted--color {
     color: $color__text_highlighted;
     .highlighted__small--color {
-      color: $color__text_highlighted_small;
+      color: $text__secondary-color;
+    }
+    .highlighted__small--color__exception {
+      color: $color__text_highlighted;
     }
   }
  
