@@ -9,5 +9,6 @@ export * from './panel-8/panel-8.component';
 export * from './panel-9/panel-9.component';
 export * from './panel-10/panel-10.component';
 export * from './panel-11/panel-11.component';
+export * from './panel-12/panel-12.component';
 export * from './panel-13/panel-13.component';
 export * from './panel-14/panel-14.component';
