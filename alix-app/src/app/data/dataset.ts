@@ -594,37 +594,37 @@ export const dossiersMainData = {
               value: '9750'
             },
             newVsLastYearPerc: {
-              value: '0.033015'
+              value: '0.0372760000000001'
             },
             inConstruction: {
               value: '9067.5'
             },
             inConstructionVsLastYearPerc: {
-              value: '0.0296000000000001'
+              value: '0.0306310000000001'
             },
             renovated: {
               value: '7820'
             },
             renovatedVsLastYearPerc: {
-              value: '0.0329839999999999'
+              value: '0.033155'
             },
             used: {
               value: '6235'
             },
             usedVsLastYearPerc: {
-              value: '0.029053'
+              value: '0.030845'
             },
             needsRenovation: {
               value: '5870'
             },
             needsRenovationVsLastYearPerc: {
-              value: '0.030837'
+              value: '0.029455'
             },
             ruin: {
               value: '5250'
             },
             ruinVsLastYearPerc: {
-              value: '0.0317970000000001'
+              value: '0.0344310000000001'
             }
           },
           population2: {
@@ -635,37 +635,37 @@ export const dossiersMainData = {
               value: '9134'
             },
             newVsLastYearPerc: {
-              value: '0.030016'
+              value: '0.0288379999999999'
             },
             inConstruction: {
               value: '8494.62'
             },
             inConstructionVsLastYearPerc: {
-              value: '0.037161'
+              value: '0.034602'
             },
             renovated: {
               value: '7144'
             },
             renovatedVsLastYearPerc: {
-              value: '0.0344040000000001'
+              value: '0.0328040000000001'
             },
             used: {
               value: '6010'
             },
             usedVsLastYearPerc: {
-              value: '0.031428'
+              value: '0.0334110000000001'
             },
             needsRenovation: {
               value: '5660'
             },
             needsRenovationVsLastYearPerc: {
-              value: '0.030192'
+              value: '0.0283659999999999'
             },
             ruin: {
               value: '4990'
             },
             ruinVsLastYearPerc: {
-              value: '0.029031'
+              value: '0.0344439999999999'
             }
           },
           population3: {
@@ -676,37 +676,37 @@ export const dossiersMainData = {
               value: '3435'
             },
             newVsLastYearPerc: {
-              value: '0.025409'
+              value: '0.0250269999999999'
             },
             inConstruction: {
               value: '3320'
             },
             inConstructionVsLastYearPerc: {
-              value: '0.025183'
+              value: '0.027085'
             },
             renovated: {
               value: '2870'
             },
             renovatedVsLastYearPerc: {
-              value: '0.0236510000000001'
+              value: '0.0203850000000001'
             },
             used: {
               value: '2050'
             },
             usedVsLastYearPerc: {
-              value: '0.020894'
+              value: '0.028516'
             },
             needsRenovation: {
               value: '1870'
             },
             needsRenovationVsLastYearPerc: {
-              value: '0.0232870000000001'
+              value: '0.025692'
             },
             ruin: {
               value: '1670'
             },
             ruinVsLastYearPerc: {
-              value: '0.0266409999999999'
+              value: '0.0211380000000001'
             }
           }
         }
@@ -1088,23 +1088,23 @@ export const dossiersMainData = {
         architectureSnapshot: {
           value: 'asset1Architecture.jpg'
         },
-        a19ThCentury: {
+        _19ThCentury: {
           value: '0.0821',
           label: '19th Century'
         },
-        a1900To1950: {
+        _1900To1950: {
           value: '0.1128',
           label: '1900 - 1950'
         },
-        a1950To1970: {
+        _1950To1970: {
           value: '0.2667',
           label: '1950 - 1970'
         },
-        a1970To1990: {
+        _1970To1990: {
           value: '0.2325',
           label: '1970 - 1990'
         },
-        a1990To2000: {
+        _1990To2000: {
           value: '0.0745',
           label: '1990 - 2000'
         },
@@ -1123,19 +1123,19 @@ export const dossiersMainData = {
               value: '0.0234',
               label: '> 100K €'
             },
-            a80K: {
+            _80K: {
               value: '0.0378',
               label: '80K €'
             },
-            a60K: {
+            _60K: {
               value: '0.1545',
               label: '60K €'
             },
-            a40K: {
+            _40K: {
               value: '0.2245',
               label: '40K €'
             },
-            a20K: {
+            _20K: {
               value: '0.2923',
               label: '20K €'
             },
@@ -1151,19 +1151,19 @@ export const dossiersMainData = {
               value: '1.96202531645569',
               label: 'Milano'
             },
-            a80KVsMilanPerc: {
+            _80KVsMilanPerc: {
               value: '1.82089552238806',
               label: 'Milano'
             },
-            a60KVsMilanPerc: {
+            _60KVsMilanPerc: {
               value: '1.04095112285337',
               label: 'Milano'
             },
-            a40KVsMilanPerc: {
+            _40KVsMilanPerc: {
               value: '0.85078318219291',
               label: 'Milano'
             },
-            a20KVsMilanPerc: {
+            _20KVsMilanPerc: {
               value: '-0.209572742022715',
               label: 'Milano'
             },
@@ -1174,140 +1174,140 @@ export const dossiersMainData = {
           },
           2013: {
             averagePrice: {
-              value: '24743.95'
+              value: '22494.5'
             },
             greater100K: {
-              value: '0.01521',
+              value: '0.01638',
               label: '> 100K €'
             },
-            a80K: {
-              value: '0.03024',
+            _80K: {
+              value: '0.029484',
               label: '80K €'
             },
-            a60K: {
-              value: '0.118965',
+            _60K: {
+              value: '0.112785',
               label: '60K €'
             },
-            a40K: {
-              value: '0.17511',
+            _40K: {
+              value: '0.159395',
               label: '40K €'
             },
-            a20K: {
-              value: '0.195841',
+            _20K: {
+              value: '0.198764',
               label: '20K €'
             },
             smaller20K: {
-              value: '0.464634',
+              value: '0.483192',
               label: '< 20K €'
             },
             averagePriceVsMilanPerc: {
-              value: '0.143834840713835',
+              value: '0.0398498551943953',
               label: 'Milano'
             },
             greater100KVsMilanPerc: {
-              value: '0.925316455696198',
+              value: '1.07341772151898',
               label: 'Milano'
             },
-            a80KVsMilanPerc: {
-              value: '1.25671641791045',
+            _80KVsMilanPerc: {
+              value: '1.20029850746269',
               label: 'Milano'
             },
-            a60KVsMilanPerc: {
-              value: '0.571532364597094',
+            _60KVsMilanPerc: {
+              value: '0.489894319682959',
               label: 'Milano'
             },
-            a40KVsMilanPerc: {
-              value: '0.44361088211047',
+            _40KVsMilanPerc: {
+              value: '0.314056059356966',
               label: 'Milano'
             },
-            a20KVsMilanPerc: {
-              value: '-0.470413737155219',
+            _20KVsMilanPerc: {
+              value: '-0.462509464575446',
               label: 'Milano'
             },
             smaller20KVsMilanPerc: {
-              value: '0.1280262199563',
+              value: '0.173080844865259',
               label: 'Milano'
             }
           },
           2008: {
             averagePrice: {
-              value: '18638.3'
+              value: '17995.6'
             },
             greater100K: {
-              value: '0.0088218',
+              value: '0.0119574',
               label: '> 100K €'
             },
-            a80K: {
-              value: '0.0178416',
+            _80K: {
+              value: '0.01680588',
               label: '80K €'
             },
-            a60K: {
-              value: '0.08208585',
+            _60K: {
+              value: '0.06203175',
               label: '60K €'
             },
-            a40K: {
-              value: '0.1120704',
+            _40K: {
+              value: '0.11317045',
               label: '40K €'
             },
-            a20K: {
-              value: '0.12533824',
+            _20K: {
+              value: '0.14112244',
               label: '20K €'
             },
             smaller20K: {
-              value: '0.65384211',
+              value: '0.65491208',
               label: '< 20K €'
             },
             averagePriceVsMilanPerc: {
-              value: '-0.0930632841913544',
+              value: '-0.124336964046825',
               label: 'Milano'
             },
             greater100KVsMilanPerc: {
-              value: '0.116683544303795',
+              value: '0.513594936708857',
               label: 'Milano'
             },
-            a80KVsMilanPerc: {
-              value: '0.331462686567164',
+            _80KVsMilanPerc: {
+              value: '0.254170149253731',
               label: 'Milano'
             },
-            a60KVsMilanPerc: {
-              value: '0.0843573315719945',
+            _60KVsMilanPerc: {
+              value: '-0.180558124174373',
               label: 'Milano'
             },
-            a40KVsMilanPerc: {
-              value: '-0.0760890354492991',
+            _40KVsMilanPerc: {
+              value: '-0.067020197856554',
               label: 'Milano'
             },
-            a20KVsMilanPerc: {
-              value: '-0.66106479177934',
+            _20KVsMilanPerc: {
+              value: '-0.618381719848567',
               label: 'Milano'
             },
             smaller20KVsMilanPerc: {
-              value: '0.587380699198835',
+              value: '0.589978344258315',
               label: 'Milano'
             }
           },
-          a2003: {
+          2003: {
             averagePrice: {
-              value: '20245.05'
+              value: '23458.55'
             },
             greater100K: {
-              value: '0.00661635',
+              value: '0.00717444',
               label: '> 100K €'
             },
-            a80K: {
-              value: '0.01248912',
+            _80K: {
+              value: '0.0114279984',
               label: '80K €'
             },
-            a60K: {
-              value: '0.060743529',
+            _60K: {
+              value: '0.04714413',
               label: '60K €'
             },
-            a40K: {
-              value: '0.0840528',
+            _40K: {
+              value: '0.083746133',
               label: '40K €'
             },
-            a20K: {
-              value: '0.136098201',
+            _20K: {
+              value: '0.1505072986',
               label: '20K €'
             },
             smaller20K: {
@@ -1315,27 +1315,27 @@ export const dossiersMainData = {
               label: '< 20K €'
             },
             averagePriceVsMilanPerc: {
-              value: '0.0369693846813917',
+              value: '0.201567699710184',
               label: 'Milano'
             },
             greater100KVsMilanPerc: {
-              value: '-0.140733766233766',
+              value: '-0.0682545454545456',
               label: 'Milano'
             },
-            a80KVsMilanPerc: {
-              value: '-0.0538545454545455',
+            _80KVsMilanPerc: {
+              value: '-0.134242545454545',
               label: 'Milano'
             },
-            a60KVsMilanPerc: {
-              value: '-0.171302469304229',
+            _60KVsMilanPerc: {
+              value: '-0.356833151432469',
               label: 'Milano'
             },
-            a40KVsMilanPerc: {
-              value: '-0.37922599704579',
+            _40KVsMilanPerc: {
+              value: '-0.381490893648449',
               label: 'Milano'
             },
-            a20KVsMilanPerc: {
-              value: '-0.621318305509182',
+            _20KVsMilanPerc: {
+              value: '-0.581226214245965',
               label: 'Milano'
             },
             smaller20KVsMilanPerc: {

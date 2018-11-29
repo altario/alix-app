@@ -3,12 +3,12 @@
       <div class=" cell__wrapper cell__wrapper--bg-dark">
         <div class="cell__wrapper__top">
           <span class="label__up label--color">
-              {{ config.financial.clientPortfolio.totalLoansOriginalValue.label }}
+              {{ config.financial.clientPortfolio.totalLoansOriginalValue.label | uppercase }}
           </span>
         </div>
         <div class="cell__wrapper__info">
           <p class="highlighted--medium highlighted--color">
-              {{ config.financial.clientPortfolio.totalLoansOriginalValue.value }}
+              {{ config.financial.clientPortfolio.totalLoansOriginalValue.value | curr }}
             <small class="u-uppercase highlighted__small--color">
                 M€
             </small>
@@ -19,12 +19,12 @@
       <div class=" cell__wrapper cell__wrapper--bg-dark">
         <div class="cell__wrapper__top">
           <span class="label__up label--color">
-              {{ config.financial.clientPortfolio.currentClientsExposure.label }}
+              {{ config.financial.clientPortfolio.currentClientsExposure.label | uppercase }}<
           </span>
         </div>
         <div class="cell__wrapper__info">
             <p class="highlighted--medium highlighted--color">
-                {{ config.financial.clientPortfolio.currentClientsExposure.value }}
+                {{ config.financial.clientPortfolio.currentClientsExposure.value | curr}}
                 <small class="u-uppercase highlighted__small--color">
                 M€
               </small>

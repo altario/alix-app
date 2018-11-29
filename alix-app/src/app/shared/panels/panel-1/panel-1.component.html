@@ -23,9 +23,7 @@
           </span>
         </div>
         <div class="cell__wrapper__info">
-          <div [ngClass]="{good: config.financial.clientPortfolio.clientCreditRating.value == 'baa'}"
-            class="tag"
-          >
+          <div [ngClass]="{good: config.financial.clientPortfolio.clientCreditRating.value === 'Baa'}" class="tag">
               {{ config.financial.clientPortfolio.clientCreditRating.value }}
             </div>
         </div>
@@ -42,7 +40,7 @@
         <div class="cell__wrapper__info">
           <p class="highlighted--medium highlighted--color">
             <small class="u-uppercase highlighted__small--color"> To </small>
-            {{config.financial.clientPortfolio.probabilityOfDefaultInT0.value}}
+            {{ config.financial.clientPortfolio.probabilityOfDefaultInT0.value | perc }}
             <small class="u-uppercase highlighted__small--color">%</small>
           </p>
         </div>
@@ -52,7 +50,7 @@
         <div class="cell__wrapper__info">
           <p class="highlighted--medium highlighted--color">
             <small class="u-uppercase highlighted__small--color"> To </small>
-            {{config.financial.clientPortfolio.probabilityOfDefaultToday.value}}
+            {{config.financial.clientPortfolio.probabilityOfDefaultToday.value | perc:1 }}
             <small class="u-uppercase highlighted__small--color">%</small>
           </p>
       </div>

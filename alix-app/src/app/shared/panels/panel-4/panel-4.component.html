@@ -11,18 +11,18 @@
     </div>
     <div>
       <h6>{{ config.financial.keyFinancial.raroc.label }}</h6>
-      <div>{{ config.financial.keyFinancial.raroc.value }}</div>
+      <div>{{ config.financial.keyFinancial.raroc.value | perc:1}}</div>
     </div>
   </div>
 
   <div style="display:flex;">
     <div>
       <h6>{{ config.financial.keyFinancial.absorbedRegulatoryCapital.label }}</h6>
-      <div>{{ config.financial.keyFinancial.absorbedRegulatoryCapital.value }}</div>
+      <div>{{ config.financial.keyFinancial.absorbedRegulatoryCapital.value | curr }}</div>
     </div>
     <div>
       <h6>{{ config.financial.keyFinancial.expectedLoss.label }}</h6>
-      <div>{{ config.financial.keyFinancial.expectedLoss.value }}</div>
+      <div>{{ config.financial.keyFinancial.expectedLoss.value | curr }}</div>
     </div>
   </div>
 </div>

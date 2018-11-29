@@ -1,3 +1,5 @@
+import { from } from 'rxjs';
+
 export * from './area-basic/area-basic.component';
 export * from './area-stack/area-stack.component';
 export * from './bar/bar.component';
@@ -7,3 +9,4 @@ export * from './doughnut/doughnut.component';
 export * from './radar/radar.component';
 export * from './scatter/scatter.component';
 export * from './scatter-map/scatter-map.component';
+export * from './line/line.component';
