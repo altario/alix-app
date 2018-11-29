@@ -3,19 +3,18 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({ name: 'curr' })
 
 export class CustomCurrencyPipe implements PipeTransform {
-  transform(value: string) {
-    const val = parseInt(value, 10);
-    // console.log(val);
+  transform(value: number, decimal: number = 2) {
+    console.log(value);
     switch (true) {
-      case val >= 1000:
-        return (val / 1000).toFixed(2).replace(/\.0$/, '') + 'K';
-      case val >= 1000000:
-        return (val / 1000000).toFixed(2).replace(/\.0$/, '') + 'M';
-      case val >= 1000000000:
-        return (val / 1000000000).toFixed(2).replace(/\.0$/, '') + 'B';
+      case value < 1000000 && value >= 1000:
+        return (value / 1000).toFixed(decimal) + 'K';
+      case value < 100000000 && value >= 1000000:
+        return (value / 1000000).toFixed(decimal) + 'M';
+      case value >= 100000000:
+        return (value / 100000000).toFixed(decimal) + 'B';
 
       default:
-        break;
+        return (value / 1).toFixed(2) + 'K';
     }
   }
 }
