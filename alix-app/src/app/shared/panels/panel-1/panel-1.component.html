@@ -1,26 +1,22 @@
 <div style="display: flex; flex-direction: column; border: 1px solid #000000">
-    <div style="display: flex;">
-        <div>
-            <h6>{{ config.clientDuration.title }}</h6>
-            {{ config.clientDuration.label }}
-        </div>
-        <div>
-            <h6>{{ config.clientCreditRating.title }}</h6>
-            <div
-                [ngClass]="{
-                    good: config.clientCreditRating.condition == 'ok'
-                }"
-            >
-                BBB
-            </div>
-        </div>
-    </div>
-
+  <div style="display: flex;">
     <div>
-        <h6>{{ config.probabilityOfDefault.title }}</h6>
-        <div style="display: flex;">
-            <div>{{ config.probabilityOfDefault.probLabel }}</div>
-            <div>{{ config.probabilityOfDefault.TCDLabel }}</div>
-        </div>
+      <h6>{{ config.financial.clientPortfolio.clientPortfolioDuration.label }}</h6>
+      {{ config.financial.clientPortfolio.clientPortfolioDuration.value }}Y
     </div>
+    <div>
+      <h6>{{ config.financial.clientPortfolio.clientCreditRating.label }}</h6>
+      <div [ngClass]="{good: config.financial.clientPortfolio.clientCreditRating.value == 'Baa'}">
+        {{ config.financial.clientPortfolio.clientCreditRating.value }}
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h6>{{ config.financial.clientPortfolio.probabilityOfDefaultInT0.label }}</h6>
+    <div style="display: flex;">
+      <div>To {{config.financial.clientPortfolio.probabilityOfDefaultInT0.value}} %</div>
+      <div>TCD {{config.financial.clientPortfolio.probabilityOfDefaultToday.value}} %</div>
+    </div>
+  </div>
 </div>
