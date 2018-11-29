@@ -97,4 +97,8 @@ $color__purple:                       $color__custom__color--purple;
 $color__state--success:               $color__green;
 $color__state--info:                  $color__blue;
 $color__state--warning:               $color__yellow;
+$color__state--past:                  $color__orange;
 $color__state--danger:                $color__red;
+$color--state--default:               $color__gray;
+
+$status--colors: ("success", $color__state--success),("info",$color__state--info),("warning", $color__state--warning),("past",$color__state--past),("danger", $color__state--danger);
