@@ -1,0 +1,18 @@
+<div style="display: flex; flex-direction: column; border: 1px solid #000000">
+  <div style="display: flex;">
+    <div>
+      <h6>{{ config.financial.clientPortfolio.openPositionsLoansOriginalValue.label }}</h6>
+      {{ config.financial.clientPortfolio.openPositionsLoansOriginalValue.value }}
+    </div>
+  </div>
+
+  <div>
+    <h6># Positions</h6> <!-- #HC-->
+    <div style="display: flex;">
+      <div>
+        {{ config.financial.clientPortfolio.openPositions.value }} open from a total of {{
+        config.financial.clientPortfolio.totalPositions.value }} positions
+      </div>
+    </div>
+  </div>
+</div>

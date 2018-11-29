@@ -1,0 +1,28 @@
+<div style="display: flex; flex-direction: column; border: 1px solid #000000">
+    <div>
+        <h6>Duration</h6> <!-- #HC -->
+    </div>
+    <div style="display: flex;">
+        <div>
+            <h6>{{ config.financial.duration }}</h6> <!-- #Missing -->
+            <div>{{ config.financial.duration }} M€</div> <!-- #Missing -->
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <h6>{{ config.financial.duration.timeToDuration.label | uppercase }}</h6>
+            <div>
+                {{ config.financial.duration.timeToDuration.value }}M of
+                {{ config.financial.duration.totalDuration.value }}Y
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: column">
+            <span>{{ config.financial.duration.today.label | uppercase }}:</span>
+            <span>{{ today | date: "MM/dd/yy" }}</span>
+
+            <span>{{config.financial.duration.durationDate.label}}:</span>
+            <span>{{config.financial.duration.durationDate.value}}</span>
+        </div>
+    </div>
+</div>

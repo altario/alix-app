@@ -47,6 +47,7 @@ $theme-color-map: (
   'danger':          $color__state--danger,
 
   // gray
+  'lightest':        $color__gray--lightest,
   'light':           $color__gray--light,
   'gray-light':      $color__custom__gray--3,
   'gray-medium':     $color__gray--medium,
@@ -327,3 +328,26 @@ $link__color:                         $color__brand--1;
 // $transition: base
 $transition__base:                    all .25s ease-in-out;
 $transition__base--noprop:            .25s;
+
+
+//// USED
+// delete
+
+// $color
+$color__text_highlighted: #FFFFFF;
+$color__text_label: #CED6FF;
+$color__text_table: #CED6FF;
+$text__secondary-color: #8D8C8D !important;
+$amount: 40;
+
+$box-padding: 20px;
+
+
+
+$font-size__highlighted--big:                    rem(48px); // 3rem
+$font-size__highlighted--big__small:             rem(24px);
+$font-size__highlighted--medium:                 rem(36px);
+$font-size__highlighted--medium__small:          rem(12px);
+
+$lines: 2;
+$font-size: rem(11px);

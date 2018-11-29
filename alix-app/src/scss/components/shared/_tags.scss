@@ -1,0 +1,33 @@
+// ------------------------------------------------------------------
+//
+// INDEX
+//
+//  #MIXINS
+//
+//  #STYLES
+//
+//  Tags
+//
+// ------------------------------------------------------------------
+
+// ------------------------------------------------------------------
+// #MIXINS
+// ------------------------------------------------------------------
+
+@import '~src/scss/imports';
+
+ .tag {
+  display: inline-block;
+  padding: 6px 15px;
+  font-size: rem(12px);
+  font-family: $font-family--primary;
+  font-weight: $font-weight--bold;
+  letter-spacing: $letter-spacing--2;
+  border-radius: 3px;
+  background-color: $color__state--default;
+  @each $color in $status--colors {
+    &.tag--#{nth($color,1)} {
+      background-color: nth($color,2);
+    }
+  }
+}

@@ -1,0 +1,28 @@
+// ------------------------------------------------------------------
+//
+// INDEX
+//
+//  #MIXINS
+//
+//  #STYLES
+//
+//  Label
+//
+// ------------------------------------------------------------------
+
+// ------------------------------------------------------------------
+// #MIXINS
+// ------------------------------------------------------------------
+
+@import '~src/scss/imports';
+
+.label__up,
+.label__down {
+    font-size: $font-size;
+    color: $color__text_label;
+    font-family: $font-family--primary;
+    font-weight: $font-weight--normal;
+    text-transform: uppercase;
+  }
+
+  .label__up { @include line-clamp($lines, $font-size) }

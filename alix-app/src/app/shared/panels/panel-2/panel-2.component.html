@@ -1,0 +1,10 @@
+<div style="display: flex; border: 1px solid #000000">
+  <div>
+    <h6>{{ config.financial.clientPortfolio.totalLoansOriginalValue.label | uppercase }}</h6>
+    {{ config.financial.clientPortfolio.totalLoansOriginalValue.value | curr }}
+  </div>
+  <div>
+    <h6>{{ config.financial.clientPortfolio.currentClientsExposure.label | uppercase }}</h6>
+    {{ config.financial.clientPortfolio.currentClientsExposure.value }}
+  </div>
+</div>

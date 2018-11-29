@@ -1,0 +1,32 @@
+<div style="display: flex; flex-direction: column; border: 1px solid #000000">
+    <div>
+        <h6>Position</h6> <!-- #HC -->
+    </div>
+    <div style="display: flex;">
+        <div>
+            <h6>{{ config.financial.position.loanOriginalValue.label }}</h6>
+            <div>{{ config.financial.position.loanOriginalValue.value }}</div>
+        </div>
+        <div>
+            <h6>{{ config.financial.position.currentExposure.label }}</h6>
+            <div>{{ config.financial.position.currentExposure.value }}</div>
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <h6>{{ config.financial.position.timeToMaturity.label }}</h6>
+            <div>
+                {{ config.financial.position.timeToMaturity.value }} of
+                {{ config.financial.position.totalMaturity.value }}
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: column">
+            <span>{{config.financial.position.startDate.label}}</span>
+            <span>{{config.financial.position.startDate.value}}</span>
+
+            <span>{{config.financial.position.endDate.label}}:</span>
+            <span>{{config.financial.position.endDate.value}}</span>
+        </div>
+    </div>
+</div>

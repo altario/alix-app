@@ -1,0 +1,34 @@
+@import '~src/scss/imports';
+
+.box--table {
+  .box__body {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .cell__wrapper {      
+      padding: $box-padding/2 $box-padding;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .cell__wrapper__top {
+        height: calc(#{$line-height__base} * #{$lines} * #{$font_size}) ;
+        @include align(bottom);
+        & + .cell__wrapper__info {
+          margin-top: 0;
+        }
+      }
+      .cell__wrapper__info {
+        height: rem(48px);
+        align-items: flex-start;
+        margin-top: 33px;
+        .tags {
+          margin-top: 10px;
+          display: inline-block
+        }
+      }
+    }
+  }
+}

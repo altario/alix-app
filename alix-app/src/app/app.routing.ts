@@ -1,24 +1,24 @@
-import { Routes } from "@angular/router";
-import { StylesComponent } from "./styles/styles.component";
-import { BaseLayoutComponent, DashboardLayoutComponent } from "./core";
+import { Routes } from '@angular/router';
+
+import { BaseLayoutComponent, PortfolioLayoutComponent } from './core';
 
 export const AppRoutes: Routes = [
-    {
-        path: "dashboard/:id",
-        component: DashboardLayoutComponent,
-        loadChildren: "./dashboard/dashboard.module#DashboardModule"
-    },
-    {
-        path: "styles",
-        component: StylesComponent
-    },
-    {
-        path: "",
-        component: BaseLayoutComponent,
-        loadChildren: "./position/position.module#PositionModule"
-    },
-    {
-        path: "**",
-        redirectTo: "error/404"
-    }
+  {
+    path: '',
+    component: BaseLayoutComponent,
+    loadChildren: './pages/position/position.module#PositionModule'
+  },
+  {
+    path: 'portfolio/:id',
+    component: PortfolioLayoutComponent,
+    loadChildren: './pages/portfolio/portfolio.module#PortfolioModule'
+  },
+  {
+    path: '**',
+    redirectTo: 'error/404'
+  },
+  {
+    path: 'styling',
+    loadChildren: './styling/styling.module#StylingModule'
+  }
 ];
