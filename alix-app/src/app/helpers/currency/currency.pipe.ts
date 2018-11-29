@@ -4,8 +4,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 export class CustomCurrencyPipe implements PipeTransform {
   transform(value: string) {
-    let val = parseInt(value);
-    console.log(val);
+    const val = parseInt(value, 10);
+    // console.log(val);
     switch (true) {
       case val >= 1000:
         return (val / 1000).toFixed(2).replace(/\.0$/, '') + 'K';
