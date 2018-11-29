@@ -19,6 +19,47 @@ import { Ng5SliderModule } from 'ng5-slider';
 
 // charts
 import {
+  AreaBasicComponent,
+  AreaStackComponent,
+  BarComponent,
+  BoxplotComponent,
+  BubbleComponent,
+  DoughnutComponent,
+  RadarComponent,
+  ScatterComponent,
+  ScatterMapComponent,
+  LineComponent
+} from '../../shared/charts/index';
+
+// panels
+import {
+  Panel1Component,
+  Panel2Component,
+  Panel3Component,
+  Panel4Component,
+  Panel5Component,
+  Panel6Component,
+  Panel7Component,
+  Panel8Component,
+  Panel13Component
+} from '../../shared/panels/index';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    NgbModule,
+    RouterModule.forChild(PortfolioRoutes),
+    NgxEchartsModule,
+    Ng5SliderModule
+  ],
+  declarations: [
+    // pages
+    FinancialComponent,
+    StateOfConservationComponent,
+    LocationComponent,
+    DemandAndOfferComponent,
+
+    // charts
     AreaBasicComponent,
     AreaStackComponent,
     BarComponent,
@@ -27,11 +68,10 @@ import {
     DoughnutComponent,
     RadarComponent,
     ScatterComponent,
-    ScatterMapComponent
-} from '../../shared/charts/index';
+    ScatterMapComponent,
+    LineComponent,
 
-// panels
-import {
+    // panels
     Panel1Component,
     Panel2Component,
     Panel3Component,
@@ -39,44 +79,8 @@ import {
     Panel5Component,
     Panel6Component,
     Panel7Component,
-    Panel8Component
-} from '../../shared/panels/index';
-
-@NgModule({
-    imports: [
-        CommonModule,
-        NgbModule,
-        RouterModule.forChild(PortfolioRoutes),
-        NgxEchartsModule,
-        Ng5SliderModule
-    ],
-    declarations: [
-        // pages
-        FinancialComponent,
-        StateOfConservationComponent,
-        LocationComponent,
-        DemandAndOfferComponent,
-
-        // charts
-        AreaBasicComponent,
-        AreaStackComponent,
-        BarComponent,
-        BoxplotComponent,
-        BubbleComponent,
-        DoughnutComponent,
-        RadarComponent,
-        ScatterComponent,
-        ScatterMapComponent,
-
-        // panels
-        Panel1Component,
-        Panel2Component,
-        Panel3Component,
-        Panel4Component,
-        Panel5Component,
-        Panel6Component,
-        Panel7Component,
-        Panel8Component
-    ]
+    Panel8Component,
+    Panel13Component
+  ]
 })
-export class PortfolioModule {}
+export class PortfolioModule { }
