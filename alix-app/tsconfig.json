@@ -5,6 +5,7 @@
     "paths": {
       "@core/*": ["src/app/core/*"],
       "@data/*": ["src/app/data/*"],
+      "@helpers/*": ["src/app/helpers/*"],
       "@pages/*": ["src/app/pages/*"],
       "@services/*": ["src/app/services/*"],
       "@shared/*": ["src/app/shared/*"],

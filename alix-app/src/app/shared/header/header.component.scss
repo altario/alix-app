@@ -62,4 +62,13 @@ $header__navbar--height: 50px;
       }
     }
   }
+
+  .navbar__right {
+    .btn {
+      height: 100%;
+      border: none;
+      padding: 0;
+      background: tomato;
+    }
+  }
 }

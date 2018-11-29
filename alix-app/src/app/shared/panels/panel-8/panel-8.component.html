@@ -7,9 +7,12 @@
     <ul>
       <li>General</li> <!-- #HC -->
       <li>{{ config.financial.collateralAsset.neighborhood.value }}</li>
-      <li>{{ config.financial.collateralAsset.address.value }}</li>
       <li>
-        <span>{{ config.financial.collateralAsset.typeOfNeighborhoodIcon.value }}</span>
+        <span><i class="icol ico-info-circle"></i></span>
+        <span>{{ config.financial.collateralAsset.address.value }}</span>
+      </li>
+      <li>
+        <span><i class="icol ico-info-circle"></i></span>
         <span>{{ config.financial.collateralAsset.typeOfNeighborhood.value }}</span>
       </li>
       <li>{{ config.financial.collateralAsset.status.value }}</li>
@@ -25,7 +28,7 @@
       </li>
       <li>
         <h6>{{ config.financial.collateralAsset.totalArea.label }}</h6>
-        <div>{{ config.financial.collateralAsset.totalArea.value }}</div>
+        <div>{{ config.financial.collateralAsset.totalArea.value | number:'1.0-0'}}SQM</div>
       </li>
     </ul>
   </div>

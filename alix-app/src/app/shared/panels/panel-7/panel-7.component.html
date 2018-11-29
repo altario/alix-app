@@ -5,22 +5,22 @@
   <div style="display: flex;">
     <div>
       <h6>{{ config.financial.collateral.valuationAtT0.label }}</h6>
-      <div>{{ config.financial.collateral.valuationAtT0.value }}</div>
+      <div>{{ config.financial.collateral.valuationAtT0.value | curr:1 }}€</div>
     </div>
     <div>
       <h6>{{ config.financial.collateral.loanToValue.label }}</h6>
-      <div>{{ config.financial.collateral.loanToValue.value }}</div>
+      <div>{{ config.financial.collateral.loanToValue.value | perc:1}}%</div>
     </div>
   </div>
 
   <div style="display:flex;">
     <div>
       <h6>{{ config.financial.collateral.adjustedCollateralValuation.label }}</h6>
-      <div>{{ config.financial.collateral.adjustedCollateralValuation.value }}</div>
+      <div>{{ config.financial.collateral.adjustedCollateralValuation.value | curr }}€</div>
     </div>
     <div>
       <h6>{{ config.financial.collateral.adjustedLoanToValue.label }}</h6>
-      <div>{{ config.financial.collateral.adjustedLoanToValue.value }}</div>
+      <div>{{ config.financial.collateral.adjustedLoanToValue.value | perc:1 }}%</div>
     </div>
   </div>
 </div>

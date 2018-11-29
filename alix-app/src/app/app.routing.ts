@@ -1,6 +1,8 @@
+// routes
 import { Routes } from '@angular/router';
 
-import { BaseLayoutComponent, PortfolioLayoutComponent } from './core';
+// components
+import { BaseLayoutComponent, PortfolioLayoutComponent } from '@core/index';
 
 export const AppRoutes: Routes = [
   {
