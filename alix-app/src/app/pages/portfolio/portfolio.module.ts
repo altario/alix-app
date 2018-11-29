@@ -17,6 +17,13 @@ import { PortfolioRoutes } from './portfolio.routing';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { Ng5SliderModule } from 'ng5-slider';
 
+// pipes
+import {
+  CustomCurrencyPipe,
+  CustomPercentagePipe,
+  CustomDateConverterPipe
+} from '@helpers/index';
+
 // charts
 import {
   AreaBasicComponent,
@@ -29,7 +36,7 @@ import {
   ScatterComponent,
   ScatterMapComponent,
   LineComponent
-} from '../../shared/charts/index';
+} from '@shared/charts/index';
 
 // panels
 import {
@@ -42,9 +49,7 @@ import {
   Panel7Component,
   Panel8Component,
   Panel13Component
-} from '../../shared/panels/index';
-
-import { CustomCurrencyPipe, CustomPercentagePipe, CustomDateConverterPipe } from '../../helpers';
+} from '@shared/panels/index';
 
 @NgModule({
     imports: [
@@ -55,14 +60,16 @@ import { CustomCurrencyPipe, CustomPercentagePipe, CustomDateConverterPipe } fro
         Ng5SliderModule
     ],
     declarations: [
-        CustomCurrencyPipe,
-        CustomPercentagePipe,
-        CustomDateConverterPipe,
         // pages
         FinancialComponent,
         StateOfConservationComponent,
         LocationComponent,
         DemandAndOfferComponent,
+
+        // pipes
+        CustomCurrencyPipe,
+        CustomPercentagePipe,
+        CustomDateConverterPipe,
 
         // charts
         AreaBasicComponent,
