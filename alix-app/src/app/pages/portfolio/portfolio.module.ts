@@ -44,7 +44,7 @@ import {
   Panel13Component
 } from '../../shared/panels/index';
 
-import { CustomCurrencyPipe, CustomPercentagePipe } from '../../helpers';
+import { CustomCurrencyPipe, CustomPercentagePipe, CustomDateConverterPipe } from '../../helpers';
 
 @NgModule({
     imports: [
@@ -57,6 +57,7 @@ import { CustomCurrencyPipe, CustomPercentagePipe } from '../../helpers';
     declarations: [
         CustomCurrencyPipe,
         CustomPercentagePipe,
+        CustomDateConverterPipe,
         // pages
         FinancialComponent,
         StateOfConservationComponent,
