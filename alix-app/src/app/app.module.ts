@@ -17,6 +17,7 @@ import { AppRoutes } from './app.routing';
 import { AppComponent } from './app.component';
 import { BaseLayoutComponent } from './core/base-layout/base-layout.component';
 import { PortfolioLayoutComponent } from './core/portfolio-layout/portfolio-layout.component';
+import { HeaderComponent } from './shared/header/header.component';
 
 /**
  * echarts
@@ -26,7 +27,8 @@ import { PortfolioLayoutComponent } from './core/portfolio-layout/portfolio-layo
     declarations: [
         AppComponent,
         BaseLayoutComponent,
-        PortfolioLayoutComponent
+        PortfolioLayoutComponent,
+        HeaderComponent
     ],
     imports: [
         BrowserModule,
