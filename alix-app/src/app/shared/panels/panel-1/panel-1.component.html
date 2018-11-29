@@ -1,22 +1,22 @@
 <div style="display: flex; flex-direction: column; border: 1px solid #000000">
   <div style="display: flex;">
     <div>
-      <h6>{{ config.financial.clientPortfolio.clientPortfolioDuration.label }}</h6>
+      <h6>{{ config.financial.clientPortfolio.clientPortfolioDuration.label | uppercase }}</h6>
       {{ config.financial.clientPortfolio.clientPortfolioDuration.value }}Y
     </div>
     <div>
-      <h6>{{ config.financial.clientPortfolio.clientCreditRating.label }}</h6>
-      <div [ngClass]="{good: config.financial.clientPortfolio.clientCreditRating.value == 'Baa'}">
-        {{ config.financial.clientPortfolio.clientCreditRating.value }}
+      <h6>{{ config.financial.clientPortfolio.clientCreditRating.label | uppercase }}</h6>
+      <div [ngClass]="{good: config.financial.clientPortfolio.clientCreditRating.value === 'Baa'}">
+        {{ config.financial.clientPortfolio.clientCreditRating.value | uppercase}}
       </div>
     </div>
   </div>
 
   <div>
-    <h6>{{ config.financial.clientPortfolio.probabilityOfDefaultInT0.label }}</h6>
+    <h6>{{ config.financial.clientPortfolio.probabilityOfDefaultInT0.label | uppercase }}</h6>
     <div style="display: flex;">
-      <div>To {{config.financial.clientPortfolio.probabilityOfDefaultInT0.value}} %</div>
-      <div>TCD {{config.financial.clientPortfolio.probabilityOfDefaultToday.value}} %</div>
+      <div>To {{config.financial.clientPortfolio.probabilityOfDefaultInT0.value | percent:'1.2-2' }}</div>
+      <div>TCD {{config.financial.clientPortfolio.probabilityOfDefaultToday.value | percent:'1.1-2'}}</div>
     </div>
   </div>
 </div>
