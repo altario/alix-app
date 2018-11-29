@@ -19,7 +19,6 @@ export class FinancialComponent implements OnInit {
       // console.log(params['id']);
       this.config = dataset.dossiersMainData.dossier1;
       // this.config = dataset.dossiersMainData['dossier' + params['id']];
-      console.log(this.config);
     });
   }
 }
