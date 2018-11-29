@@ -9,6 +9,9 @@ export class LineComponent implements OnInit {
     @Input()
     public series: any = [];
 
+    @Input()
+    public opts: any = {};
+
   public options: any = {};
   public initOpts: any = {};
 
@@ -29,16 +32,10 @@ export class LineComponent implements OnInit {
         yAxis: {
             type: 'value'
         },
-        series: [{
-          name: 'Linha 1',
-          data: [820, 932, 901, 934, 1290, 1330, 1320],
-          type: 'line'
-        }, {
-          name: 'Linha 2',
-          data: [33, 5464, 901, 456, 445, 335, 2342 ],
-          type: 'line'
-        }]
-      };
+        series: this.series
+    };
+
+    this.options = Object.assign(this.opts, this.options);
 
     this.initOpts = {
       renderer: 'svg',
