@@ -29,11 +29,11 @@
   <div class="row-no-gutter">
     <div class="col-12">
       <h1>State Of Conservation All Assets</h1> <!-- #HC -->
-      <!-- <app-dropdown [config]="getPopulationNames()" (callback)="changeValue($event)"></app-dropdown> -->
     </div>
   </div>
   <div class="row row-no-gutter">
     <div class="col-3">
+      <app-slider-range [value]="selectedSOCAllAssetsValues[0]" [steps]="selectedSOCAllAssetsValues[1]" (callback)="changeSOCAllAssetsValue($event)"></app-slider-range>
       <app-panel-11 [config]="selectedSOCAllAssets"></app-panel-11>
     </div>
     <div class="col-9">

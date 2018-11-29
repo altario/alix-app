@@ -15,6 +15,7 @@ export class StateOfConservationComponent implements OnInit {
   public config: any;
   public selectedStateOfConservationToday: object;
   public selectedStateOfConservationPSM: object;
+  public selectedSOCAllAssetsValues: Array<any>;
   public selectedSOCAllAssets: object;
 
   constructor(private route: ActivatedRoute) {}
@@ -25,9 +26,9 @@ export class StateOfConservationComponent implements OnInit {
 
       this.selectedStateOfConservationToday = this.config.stateOfConservationToday.populations.population1;
       this.selectedStateOfConservationPSM = this.config.stateOfConservationPricePerSqm.populations.population1;
-      this.selectedSOCAllAssets = this.initLastStateOfConservationAllAssets();
+      this.selectedSOCAllAssetsValues = this.initLastStateOfConservationAllAssets();
+      this.selectedSOCAllAssets = this.config.panelFromMapStateOfConservationBreakdownAllAssets.years[this.selectedSOCAllAssetsValues[0]];
       // this.config = dataset.dossiersMainData['dossier' + params['id']];
-      console.log(this.selectedStateOfConservationPSM);
       console.log(this.config);
     });
   }
@@ -38,19 +39,26 @@ export class StateOfConservationComponent implements OnInit {
     });
   }
 
-  changeSCTodayValue(populationId): void {
-    this.selectedStateOfConservationToday = this.config.stateOfConservationToday.populations[populationId];
+  changeSCTodayValue(callbackEvent): void {
+    this.selectedStateOfConservationToday = this.config.stateOfConservationToday.populations[callbackEvent];
   }
 
-  changeSCPpsmValue(populationId): void {
-    this.selectedStateOfConservationPSM = this.config.stateOfConservationPricePerSqm.populations[populationId];
+  changeSCPpsmValue(callbackEvent): void {
+    this.selectedStateOfConservationPSM = this.config.stateOfConservationPricePerSqm.populations[callbackEvent];
   }
 
-  initLastStateOfConservationAllAssets(): object {
-    // Just incase... This is to get the last object of the years object.
-    return this.config.panelFromMapStateOfConservationBreakdownAllAssets.years[
+  changeSOCAllAssetsValue(callbackEvent): void {
+    this.selectedSOCAllAssets = this.config.panelFromMapStateOfConservationBreakdownAllAssets.years[callbackEvent.value];
+  }
+
+  initLastStateOfConservationAllAssets(): Array<any> {
+    // Just incase... This is to get the last object of the years object. [0]
+    // &&
+    // the array of years to populte the slider [1]
+    return [
       Object.keys(this.config.panelFromMapStateOfConservationBreakdownAllAssets.years)[
-      Object.keys(this.config.panelFromMapStateOfConservationBreakdownAllAssets.years).length - 1]
+        Object.keys(this.config.panelFromMapStateOfConservationBreakdownAllAssets.years).length - 1],
+      Object.keys(this.config.panelFromMapStateOfConservationBreakdownAllAssets.years)
     ];
   }
 
