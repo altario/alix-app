@@ -20,8 +20,13 @@ $color4: #8C8C8D;
             width: 40px;
             text-align: center;
             color: $color4;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          &:first-child { padding-top: 15px }
+          &:last-child { padding-bottom: 15px }
         }
-
     }
   }
 }
@@ -40,3 +45,4 @@ $color4: #8C8C8D;
   }
 
 }
+
