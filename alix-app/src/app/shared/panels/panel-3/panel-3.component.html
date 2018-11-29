@@ -1,18 +1,46 @@
-<div style="display: flex; flex-direction: column; border: 1px solid #000000">
-  <div style="display: flex;">
-    <div>
-      <h6>{{ config.financial.clientPortfolio.openPositionsLoansOriginalValue.label }}</h6>
-      {{ config.financial.clientPortfolio.openPositionsLoansOriginalValue.value }}
-    </div>
-  </div>
+<div class="box box--bg box--table box--table--small">
+    <div class="box__body box__body--bg">
+      <div class="cell__wrapper cell__wrapper--bg-dark">
+        <div class="cell__wrapper__top">
+          <span class="label__up label--color">
+              {{ config.financial.clientPortfolio.openPositionsLoansOriginalValue.label }}
+          </span>
+        </div>
+        <div class="cell__wrapper__info">
+          <p class="highlighted--medium highlighted--color">
+              {{ config.financial.clientPortfolio.openPositionsLoansOriginalValue.value | curr}}
+            <small class="u-uppercase highlighted__small--color">
+              b
+            </small>
+          </p>
+        </div>
+      </div>
 
-  <div>
-    <h6># Positions</h6> <!-- #HC-->
-    <div style="display: flex;">
-      <div>
-        {{ config.financial.clientPortfolio.openPositions.value }} open from a total of {{
-        config.financial.clientPortfolio.totalPositions.value }} positions
+      <div class="w-100"></div>
+
+      <div class=" cell__wrapper cell__wrapper--bg-light">
+        <div class="cell__wrapper__top">
+          <span class="label__up label--color">
+              # Positions
+          </span>
+        </div>
+        <div class="cell__wrapper__info">
+          <p class="highlighted--medium highlighted--color">
+            {{ config.financial.clientPortfolio.openPositions.value }}
+            <small class="highlighted__small--color">open from a total of</small>
+          </p>
+        </div>
+      </div>
+
+      <div class=" cell__wrapper cell__wrapper--bg-light">
+        <div class="cell__wrapper__info">
+          <p class="highlighted--medium highlighted--color">
+              {{ config.financial.clientPortfolio.totalPositions.value }}
+            <small class="highlighted__small--color">positions</small>
+          </p>
       </div>
     </div>
   </div>
 </div>
+  
+  

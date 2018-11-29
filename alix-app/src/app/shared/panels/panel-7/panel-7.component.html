@@ -1,26 +1,26 @@
 <div style="display: flex; flex-direction: column; border: 1px solid #000000">
+  <div>
+    <h6>Collateral</h6> <!-- #HC -->
+  </div>
+  <div style="display: flex;">
     <div>
-        <h6>{{ config.title }}</h6>
+      <h6>{{ config.financial.collateral.valuationAtT0.label }}</h6>
+      <div>{{ config.financial.collateral.valuationAtT0.value | curr:1 }}€</div>
     </div>
-    <div style="display: flex;">
-        <div>
-            <h6>{{ config.financial.collateral.valuationAtT0.title }}</h6>
-            <div>{{ config.financial.collateral.valuationAtT0.label }}</div>
-        </div>
-        <div>
-            <h6>{{ config.financial.collateral.loanToValue.title }}</h6>
-            <div>{{ config.financial.collateral.loanToValue.label }}</div>
-        </div>
+    <div>
+      <h6>{{ config.financial.collateral.loanToValue.label }}</h6>
+      <div>{{ config.financial.collateral.loanToValue.value | perc:1}}%</div>
     </div>
+  </div>
 
-    <div style="display:flex;">
-        <div>
-            <h6>{{ config.financial.collateral.adjustedCollateralValuation.title }}</h6>
-            <div>{{ config.financial.collateral.adjustedCollateralValuation.label }}</div>
-        </div>
-        <div>
-            <h6>{{ config.financial.collateral.adjustedLoanToValue.title }}</h6>
-            <div>{{ config.financial.collateral.adjustedLoanToValue.label }}</div>
-        </div>
+  <div style="display:flex;">
+    <div>
+      <h6>{{ config.financial.collateral.adjustedCollateralValuation.label }}</h6>
+      <div>{{ config.financial.collateral.adjustedCollateralValuation.value | curr }}€</div>
     </div>
+    <div>
+      <h6>{{ config.financial.collateral.adjustedLoanToValue.label }}</h6>
+      <div>{{ config.financial.collateral.adjustedLoanToValue.value | perc:1 }}%</div>
+    </div>
+  </div>
 </div>

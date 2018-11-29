@@ -17,6 +17,12 @@ import { PortfolioRoutes } from './portfolio.routing';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { Ng5SliderModule } from 'ng5-slider';
 
+// pipes
+import {
+  CustomCurrencyPipe,
+  CustomPercentagePipe,
+  CustomDateConverterPipe
+} from '@helpers/index';
 
 // charts
 import {
@@ -30,7 +36,7 @@ import {
   ScatterComponent,
   ScatterMapComponent,
   LineComponent
-} from '../../shared/charts/index';
+} from '@shared/charts/index';
 
 // panels
 import {
@@ -42,8 +48,9 @@ import {
   Panel6Component,
   Panel7Component,
   Panel8Component,
+  Panel9Component,
   Panel13Component
-} from '../../shared/panels/index';
+} from '@shared/panels/index';
 
 import { SliderRangeComponent } from '../../shared/slider-range/slider-range.component';
 
@@ -61,6 +68,11 @@ import { SliderRangeComponent } from '../../shared/slider-range/slider-range.com
     StateOfConservationComponent,
     LocationComponent,
     DemandAndOfferComponent,
+
+    // pipes
+    CustomCurrencyPipe,
+    CustomPercentagePipe,
+    CustomDateConverterPipe,
 
     // charts
     AreaBasicComponent,
@@ -83,6 +95,7 @@ import { SliderRangeComponent } from '../../shared/slider-range/slider-range.com
     Panel6Component,
     Panel7Component,
     Panel8Component,
+    Panel9Component,
     Panel13Component,
 
     // Slider

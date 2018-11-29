@@ -19,7 +19,6 @@
     font-size: $font-size__highlighted--big;
     font-family: $font-family--primary;
     font-weight: $font-weight--thin;
-    color: $color__text_highlighted;
     line-height: $font-size__highlighted--big;
     small {
       font-weight: $font-weight--thin;
@@ -38,13 +37,16 @@
     font-size: $font-size__highlighted--medium;
     font-family: $font-family--primary;
     font-weight: $font-weight--thin;
-    color: $color__text_highlighted;
     line-height: $font-size__highlighted--medium;
     small {
       font-weight: $font-weight--thin;
       font-size: $font-size__highlighted--medium__small;
-      padding: 0 .1em;
       line-height: $font-size__highlighted--medium__small;
+      padding: 0 .1em;
+     }
+     small.u-uppercase {
+      font-size: $font-size__highlighted--medium__small--upper;
+      line-height: $font-size__highlighted--medium__small--upper;
      }
      .of { padding: 0 .25em }
      small,
@@ -52,3 +54,11 @@
        display: inline-block
      }
   }
+
+  .highlighted--color {
+    color: $color__text_highlighted;
+    .highlighted__small--color {
+      color: $color__text_highlighted_small;
+    }
+  }
+ 

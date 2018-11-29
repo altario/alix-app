@@ -5,11 +5,11 @@
     <div style="display: flex;">
         <div>
             <h6>{{ config.financial.position.loanOriginalValue.label }}</h6>
-            <div>{{ config.financial.position.loanOriginalValue.value }}</div>
+            <div>{{ config.financial.position.loanOriginalValue.value | curr }}</div>
         </div>
         <div>
             <h6>{{ config.financial.position.currentExposure.label }}</h6>
-            <div>{{ config.financial.position.currentExposure.value }}</div>
+            <div>{{ config.financial.position.currentExposure.value | curr:1}}</div>
         </div>
     </div>
 
@@ -17,16 +17,16 @@
         <div>
             <h6>{{ config.financial.position.timeToMaturity.label }}</h6>
             <div>
-                {{ config.financial.position.timeToMaturity.value }} of
-                {{ config.financial.position.totalMaturity.value }}
+                {{ config.financial.position.timeToMaturity.value | number:'1.0-0' }} Y of
+                {{ config.financial.position.totalMaturity.value | number:'1.0-0' }} Y
             </div>
         </div>
         <div style="display: flex; flex-direction: column">
             <span>{{config.financial.position.startDate.label}}</span>
-            <span>{{config.financial.position.startDate.value}}</span>
+            <span>{{config.financial.position.startDate.value | cusdate | date: 'd MMM y' }}</span>
 
             <span>{{config.financial.position.endDate.label}}:</span>
-            <span>{{config.financial.position.endDate.value}}</span>
+            <span>{{config.financial.position.endDate.value | cusdate | date: 'd MMM y' }}</span>
         </div>
     </div>
 </div>

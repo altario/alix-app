@@ -24,7 +24,7 @@
 // $custom --------------------
 
 // $custom: gray
-$color__custom__gray--1:              #C4C4C4;
+$color__custom__gray--1:              #F2F2F3; // NEW
 $color__custom__gray--2:              #BFBFBF;
 $color__custom__gray--3:              #A0A0A0;
 $color__custom__gray--4:              #777A82;
@@ -42,10 +42,8 @@ $color__custom__gray--15:             #091521;
 
 
 // $custom: brand
-$color__custom__brand--1:             #FF43B3;
-$color__custom__brand--2:             #B53581;
-$color__custom__brand--3:             #90348E;
-$color__custom__brand--4:             #1B1B30;
+$color__custom__brand--1:             #389BFF;
+$color__custom__brand--2:             #967DD9;
 
 
 // $custom: color
@@ -73,7 +71,7 @@ $color__brand--2:                     $color__custom__brand--2;
 
 
 // $color: gray
-$color__gray--lightest:               #F9FAFC;
+$color__gray--lightest:               $color__custom__gray--1;
 $color__gray--lighter:                #E0E6ED;
 $color__gray--light:                  $color__custom__gray--1;
 $color__gray:                         $color__custom__gray--3;

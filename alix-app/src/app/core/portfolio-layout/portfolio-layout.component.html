@@ -1,48 +1,48 @@
-<<main id="dashboard-wrapper">
-    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0">
-      <ul class="primary-nav navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-          <a class="nav-link" [routerLink]="['/']" routerLinkActive="active">Dashboard</a>
-        </li>
-        <li class="nav-item text-nowrap">
-          <a class="nav-link" [routerLink]="['#']" routerLinkActive="active">Monitoring</a>
-        </li>
-        <li class="nav-item text-nowrap">
-          <a class="nav-link" [routerLink]="['#']" routerLinkActive="active">Portfolios</a>
-        </li>
-        <li class="nav-item text-nowrap">
-          <a class="nav-link" [routerLink]="['#']" routerLinkActive="active">Positions</a>
-        </li>
-        <li class="nav-item text-nowrap">
-          <a class="nav-link" [routerLink]="['#']" routerLinkActive="active">Reports</a>
-        </li>
-        <li class="nav-item text-nowrap">
-          <a class="nav-link" [routerLink]="['#']" routerLinkActive="active">Counterparts</a>
-        </li>
-      </ul>
-      <ul class="secondary-nav navbar-nav px-3">
-        <li class="left-nav">
-          <a [routerLink]="['/']" class="back-btn"><i class="icor ico-chevron-left"></i>Back</a>
-          <span>mini title</span>
-        </li>
-        <li>
-          <a class="nav-link" [routerLink]="['.']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Financial</a>
-        </li>
-        <li>
-            <a class="nav-link" [routerLink]="['state-of-conservation']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">State of Conservation</a>
-        </li>
-        <li>
-          <a class="nav-link" [routerLink]="['demand-offer']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Demand & Offer</a>
-        </li>
-        <li>
-          <a class="nav-link" [routerLink]="['location']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Location</a>
-        </li>
-      </ul>
-    </nav>
-  
-    <div class="container-fluid">
-      <div role="main">
-        <router-outlet></router-outlet>
-      </div>
+<main id="dashboard-wrapper">
+  <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0">
+    <ul class="primary-nav navbar-nav px-3">
+      <li class="nav-item text-nowrap">
+        <a class="nav-link" [routerLink]="['/']" routerLinkActive="active">Dashboard</a>
+      </li>
+      <li class="nav-item text-nowrap">
+        <a class="nav-link" [routerLink]="['#']" routerLinkActive="active">Monitoring</a>
+      </li>
+      <li class="nav-item text-nowrap">
+        <a class="nav-link" [routerLink]="['#']" routerLinkActive="active">Portfolios</a>
+      </li>
+      <li class="nav-item text-nowrap">
+        <a class="nav-link" [routerLink]="['#']" routerLinkActive="active">Positions</a>
+      </li>
+      <li class="nav-item text-nowrap">
+        <a class="nav-link" [routerLink]="['#']" routerLinkActive="active">Reports</a>
+      </li>
+      <li class="nav-item text-nowrap">
+        <a class="nav-link" [routerLink]="['#']" routerLinkActive="active">Counterparts</a>
+      </li>
+    </ul>
+    <ul class="secondary-nav navbar-nav px-3">
+      <li class="left-nav">
+        <a [routerLink]="['/']" class="back-btn"><i class="icor ico-chevron-left"></i>Back</a>
+        <span>mini title</span>
+      </li>
+      <li>
+        <a class="nav-link" [routerLink]="['.']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Financial</a>
+      </li>
+      <li>
+        <a class="nav-link" [routerLink]="['state-of-conservation']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">State of Conservation</a>
+      </li>
+      <li>
+        <a class="nav-link" [routerLink]="['demand-offer']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Demand & Offer</a>
+      </li>
+      <li>
+        <a class="nav-link" [routerLink]="['location']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Location</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container-fluid">
+    <div role="main">
+      <router-outlet></router-outlet>
     </div>
-  </main>
+  </div>
+</main>

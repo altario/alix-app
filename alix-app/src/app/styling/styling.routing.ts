@@ -1,5 +1,7 @@
+// angular
 import { Routes } from '@angular/router';
 
+// components
 import { StylesComponent } from './styles/styles.component';
 import { PanelsComponent } from './panels/panels.component';
 
