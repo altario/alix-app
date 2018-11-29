@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import * as echarts from "echarts";
 
 declare let google: any;
@@ -9,10 +9,13 @@ declare let google: any;
     styleUrls: ["./bubble.component.scss"]
 })
 export class BubbleComponent implements OnInit {
+    @Input()
+    public series: any = [];
+
     public options: any = {};
 
     ngOnInit() {
-        var data = [
+        let data = [
             [
                 [28604, 77, 17096869, "Australia", 1990],
                 [31163, 77.4, 27662440, "Canada", 1990],

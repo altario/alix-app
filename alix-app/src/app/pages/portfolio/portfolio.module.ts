@@ -52,49 +52,54 @@ import {
   Panel13Component
 } from '@shared/panels/index';
 
+import { SliderRangeComponent } from '../../shared/slider-range/slider-range.component';
+
 @NgModule({
-    imports: [
-        CommonModule,
-        NgbModule,
-        RouterModule.forChild(PortfolioRoutes),
-        NgxEchartsModule,
-        Ng5SliderModule
-    ],
-    declarations: [
-        // pages
-        FinancialComponent,
-        StateOfConservationComponent,
-        LocationComponent,
-        DemandAndOfferComponent,
+  imports: [
+    CommonModule,
+    NgbModule,
+    RouterModule.forChild(PortfolioRoutes),
+    NgxEchartsModule,
+    Ng5SliderModule
+  ],
+  declarations: [
+    // pages
+    FinancialComponent,
+    StateOfConservationComponent,
+    LocationComponent,
+    DemandAndOfferComponent,
 
-        // pipes
-        CustomCurrencyPipe,
-        CustomPercentagePipe,
-        CustomDateConverterPipe,
+    // pipes
+    CustomCurrencyPipe,
+    CustomPercentagePipe,
+    CustomDateConverterPipe,
 
-        // charts
-        AreaBasicComponent,
-        AreaStackComponent,
-        BarComponent,
-        BoxplotComponent,
-        BubbleComponent,
-        DoughnutComponent,
-        RadarComponent,
-        ScatterComponent,
-        ScatterMapComponent,
-        LineComponent,
+    // charts
+    AreaBasicComponent,
+    AreaStackComponent,
+    BarComponent,
+    BoxplotComponent,
+    BubbleComponent,
+    DoughnutComponent,
+    RadarComponent,
+    ScatterComponent,
+    ScatterMapComponent,
+    LineComponent,
 
-        // panels
-        Panel1Component,
-        Panel2Component,
-        Panel3Component,
-        Panel4Component,
-        Panel5Component,
-        Panel6Component,
-        Panel7Component,
-        Panel8Component,
-        Panel9Component,
-        Panel13Component
-    ]
+    // panels
+    Panel1Component,
+    Panel2Component,
+    Panel3Component,
+    Panel4Component,
+    Panel5Component,
+    Panel6Component,
+    Panel7Component,
+    Panel8Component,
+    Panel9Component,
+    Panel13Component,
+
+    // Slider
+    SliderRangeComponent
+  ]
 })
 export class PortfolioModule { }

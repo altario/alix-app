@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as echarts from 'echarts';
 
@@ -11,11 +11,15 @@ import * as echarts from 'echarts';
 })
 export class ScatterMapComponent implements OnInit {
 
+    @Input()
+    public series: any = [];
+
+
     public options: any = {};
 
     ngOnInit() {
 
-        var data = [
+        let data = [
             { name: '海门', value: 9 },
             { name: '鄂尔多斯', value: 12 },
             { name: '招远', value: 12 },
@@ -208,7 +212,7 @@ export class ScatterMapComponent implements OnInit {
             { name: '大庆', value: 279 }
         ];
 
-        var geoCoordMap = {
+        let geoCoordMap = {
             '海门': [121.15, 31.89],
             '鄂尔多斯': [109.781327, 39.608266],
             '招远': [120.38, 37.35],
@@ -401,10 +405,10 @@ export class ScatterMapComponent implements OnInit {
             '大庆': [125.03, 46.58]
         };
 
-        var convertData = function (data) {
-            var res = [];
-            for (var i = 0; i < data.length; i++) {
-                var geoCoord = geoCoordMap[data[i].name];
+        let convertData = function (data) {
+            let res = [];
+            for (let i = 0; i < data.length; i++) {
+                let geoCoord = geoCoordMap[data[i].name];
                 if (geoCoord) {
                     res.push({
                         name: data[i].name,
@@ -417,7 +421,7 @@ export class ScatterMapComponent implements OnInit {
 
         this.http.get('assets/data/HK.json')
             .subscribe(geoJson => {
-                
+
                 echarts.registerMap('HK', geoJson);
 
                 this.options = {

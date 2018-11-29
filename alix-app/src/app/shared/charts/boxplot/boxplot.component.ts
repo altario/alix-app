@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import * as echarts from 'echarts';
 import { prepareBoxplotData } from 'echarts/extension/dataTool';
 
@@ -9,6 +9,9 @@ import { prepareBoxplotData } from 'echarts/extension/dataTool';
     styleUrls: ['./boxplot.component.scss']
 })
 export class BoxplotComponent implements OnInit {
+
+    @Input()
+    public series: any = [];
 
     public options: any = {};
 

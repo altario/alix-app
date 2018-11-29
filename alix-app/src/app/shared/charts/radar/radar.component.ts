@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
     selector: 'alix-radar',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./radar.component.scss']
 })
 export class RadarComponent implements OnInit {
+    @Input()
+    public series: any = [];
+
 
     public options: any = {};
 

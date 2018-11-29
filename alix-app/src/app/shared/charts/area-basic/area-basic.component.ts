@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
     selector: 'alix-area-basic',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./area-basic.component.scss']
 })
 export class AreaBasicComponent implements OnInit {
+
+    @Input()
+    public series: any = [];
 
     public options: any = {};
 

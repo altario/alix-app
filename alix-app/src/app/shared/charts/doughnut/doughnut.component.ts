@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
     selector: 'alix-doughnut',
@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./doughnut.component.scss']
 })
 export class DoughnutComponent implements OnInit {
+    @Input()
+    public series: any = [];
 
     public options: any = {};
 
-    ngOnInit() { 
+    ngOnInit() {
 
         this.options = {
             tooltip: {
