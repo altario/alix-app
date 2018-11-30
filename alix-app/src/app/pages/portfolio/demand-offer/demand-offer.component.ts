@@ -3,7 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 
 // dataset
 import * as dataset from '@data/dataset';
-import { anchorDef } from '@angular/core/src/view';
+import * as chartdataset from '@data/charts-dataset';
+
 
 @Component({
     selector: 'app-demand-offer',
@@ -20,7 +21,30 @@ export class DemandAndOfferComponent implements OnInit {
         this.route.params.subscribe(params => {
             // console.log(params['id']);
             this.config = dataset.dossiersMainData.dossier1;
+
+
             this.opts = {
+                marketValue: {
+                  legend: {
+                    data: [
+                      chartdataset.dossier1ChartsData.demandOffer.mktValueVsReplacementCost.marketValueSqm.label,
+                      chartdataset.dossier1ChartsData.demandOffer.mktValueVsReplacementCost.replacementCostSqm.label
+                    ]
+                  },
+                  tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                      type: 'cross',
+                      label: {
+                        backgroundColor: '#6a7985'
+                      }
+                    }
+                  },
+                  xAxis: {
+                      type: 'category',
+                      data: chartdataset.dossier1ChartsData.demandOffer.mktValueVsReplacementCost.year.values
+                  }
+                },
                 sqm: {
                     title: {
                         text: '# SQM / Asset Demand'
@@ -33,16 +57,20 @@ export class DemandAndOfferComponent implements OnInit {
                 }
             };
 
+
+
             this.series = {
                 marketValue: [{
-                    name: 'Linha 1',
-                    data: [820, 932, 901, 934, 1290, 1330, 1320],
-                    type: 'line'
+                  name: chartdataset.dossier1ChartsData.demandOffer.mktValueVsReplacementCost.marketValueSqm.label,
+                  data: chartdataset.dossier1ChartsData.demandOffer.mktValueVsReplacementCost.marketValueSqm.values,
+                  type: 'line'
                 }, {
-                    name: 'Linha 2',
-                    data: [33, 5464, 901, 456, 445, 335, 2342],
-                    type: 'line'
+                  name: chartdataset.dossier1ChartsData.demandOffer.mktValueVsReplacementCost.replacementCostSqm.label,
+                  data: chartdataset.dossier1ChartsData.demandOffer.mktValueVsReplacementCost.replacementCostSqm.values,
+                  type: 'line'
                 }],
+
+
                 sqm: [{
                     symbolSize: 20,
                     data: [

@@ -6,11 +6,11 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./line.component.scss']
 })
 export class LineComponent implements OnInit {
-    @Input()
-    public series: any = [];
+  @Input()
+  public series: any = [];
 
-    @Input()
-    public opts: any = {};
+  @Input()
+  public opts: any = {};
 
   public options: any = {};
   public initOpts: any = {};
@@ -18,24 +18,22 @@ export class LineComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-      this.options = {
-        title: {
-          text: 'Market Value -VS- Replacement Cost'
-        },
-        legend: {
-          data: ['Linha 1', 'Linha 2']
-        },
-        xAxis: {
-            type: 'category',
-            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-        },
-        yAxis: {
-            type: 'value'
-        },
-        series: this.series
+    this.options = {
+
+      legend: {
+        data: ['Linha 1', 'Linha 2']
+      },
+      xAxis: {
+        type: 'category',
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+      },
+      yAxis: {
+        type: 'value'
+      },
+      series: this.series
     };
 
-    this.options = Object.assign(this.opts, this.options);
+    this.options = Object.assign(this.options, this.opts);
 
     this.initOpts = {
       renderer: 'svg',
