@@ -58,4 +58,29 @@
         <alix-line></alix-line>
     </div>
   </div>
+
+  <div class="row-no-gutter">
+    <div class="col-12">
+      <h1>SQM Price per State of Conservation bar plot</h1> <!-- #HC -->
+    </div>
+  </div>
+  <div class="row row-no-gutter">
+      <alix-line></alix-line>
+  </div>
+  <div class="row row-no-gutter">
+    <alix-line></alix-line>
+  </div>
+
+  <div class="row-no-gutter">
+    <div class="col-3">
+      <app-slider-range [value]="selectedSOCAllAssetsValues[0]" [steps]="" (callback)="changeSOCAllAssetsValue($event)"></app-slider-range> <!-- #HC #Missing [steps]-->
+      <app-panel-11 [config]="selectedSOCAllAssets"></app-panel-11>
+    </div>
+  </div>
+  <div class="row-no-gutter">
+    <div class="col-6">
+    </div>
+    <div class="col-6">
+    </div>
+  </div>
 </div>
