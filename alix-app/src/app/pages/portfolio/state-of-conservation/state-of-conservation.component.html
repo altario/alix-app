@@ -73,8 +73,8 @@
 
   <div class="row-no-gutter">
     <div class="col-3">
-      <app-slider-range [value]="selectedSOCAllAssetsValues[0]" [steps]="" (callback)="changeSOCAllAssetsValue($event)"></app-slider-range> <!-- #HC #Missing [steps]-->
-      <app-panel-11 [config]="selectedSOCAllAssets"></app-panel-11>
+      <app-slider-range [value]="2018" [steps]="['2013', '2015', '2018']" (callback)="changeImageTransition($event)"></app-slider-range> <!-- #HC #Missing [steps]-->
+      <app-panel-13 [imagesObj]="imageTransitionObject" [config]="imageTransitionValue"></app-panel-13>
     </div>
   </div>
   <div class="row-no-gutter">

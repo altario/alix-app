@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class Panel13Component implements OnInit {
     @Input() public config: object;
+    @Input() public imagesObj: object;
 
     constructor() {}
 

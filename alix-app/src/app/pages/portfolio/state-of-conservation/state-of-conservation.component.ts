@@ -17,6 +17,12 @@ export class StateOfConservationComponent implements OnInit {
   public selectedStateOfConservationPSM: object;
   public selectedSOCAllAssetsValues: Array<any>;
   public selectedSOCAllAssets: object;
+  public imageTransitionValue = '2018';
+  public imageTransitionObject = {
+    '2013': 'assets/images/differencePerYear/asset1.jpg',
+    '2015': 'assets/images/differencePerYear/asset2.jpg',
+    '2018': 'assets/images/differencePerYear/asset1.jpg'
+  }; // #HC
 
   constructor(private route: ActivatedRoute) {}
   ngOnInit() {
@@ -49,6 +55,11 @@ export class StateOfConservationComponent implements OnInit {
 
   changeSOCAllAssetsValue(callbackEvent): void {
     this.selectedSOCAllAssets = this.config.panelFromMapStateOfConservationBreakdownAllAssets.years[callbackEvent.value];
+  }
+
+  changeImageTransition(callbackEvent): void {
+    console.log(callbackEvent);
+    this.imageTransitionValue = callbackEvent.value;
   }
 
   initLastStateOfConservationAllAssets(): Array<any> {
