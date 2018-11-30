@@ -13,3 +13,4 @@ export * from './panel-12/panel-12.component';
 export * from './panel-13/panel-13.component';
 export * from './panel-14/panel-14.component';
 export * from './panel-15/panel-15.component';
+export * from './panel-21/panel-21.component';
