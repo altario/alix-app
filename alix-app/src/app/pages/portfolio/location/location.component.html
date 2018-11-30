@@ -37,7 +37,7 @@
   </div>
 
   <div class="row row-no-gutter">
-    <div class="col-3">
+    <div class="col-4">
       <app-panel-26 [config]="{
         name: 'Fashion Retailers',
         total: config.retailersBreakdown.fashionRetailers.value,
@@ -45,7 +45,7 @@
         growth: config.retailersBreakdown.growth2YFashionRetailersRating.value
       }"></app-panel-26>
     </div>
-    <div class="col-3">
+    <div class="col-4">
       <app-panel-26 [config]="{
         name: 'Museums & Art Galeries',
         total: config.retailersBreakdown.museumArtGalleries.value,
@@ -53,13 +53,22 @@
         growth: config.retailersBreakdown.growthGrowth2YMuseumArtGalleries.value
       }"></app-panel-26>
     </div>
-    <div class="col-3">
+    <div class="col-4">
       <app-panel-26 [config]="{
         name: 'Bars & Restaurants',
         total: config.retailersBreakdown.barsRestaurants.value,
         rating: config.retailersBreakdown.growth2YBarsRestaurants.value,
         growth: config.retailersBreakdown.growthGrowth2YBarsRestaurants.value
       }"></app-panel-26>
+    </div>
+  </div>
+
+  <div class="row row-no-gutter">
+    <div class="col-3">
+      <app-panel-27 [config]="config.accommodation"></app-panel-27>
+    </div>
+    <div class="col-9">
+      Something here
     </div>
   </div>
 </div>
