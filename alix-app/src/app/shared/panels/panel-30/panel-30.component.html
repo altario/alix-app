@@ -1,5 +1,8 @@
 <div style="border: 1px solid #FFFFFF">
-  <h6>{{name}}</h6> <!-- #HC -->
+  <div>
+    <h6>Metrostations</h6> <!-- #HC -->
+    <p>500m Radius</p> <!-- #HC -->
+  </div>
   <div>
     <div>
       <i class="icol ico-info-circle"></i>
@@ -7,13 +10,55 @@
     <div>
       <div>
         <span>
-          <h1># {{ config.total }}</h1>
+          <span style="border-radius: 50px; display: block; height: 30px; width: 30px;" [style.backgroundColor]="config.metroGaribaldiLineColor.value"></span>
         </span>
-        <span>Units in 200m Radius</span>
+        <span>
+          <div>
+            Garibaldi <!-- #HC -->
+          </div>
+          <div>
+            <span>{{ config.metroGaribaldi.value }} Min</span> {{ config.legendForAll.value }} <i class="icol ico-info-circle"></i>
+          </div>
+        </span>
       </div>
       <div>
-        <span><i class="icol ico-info-circle"></i></span>
-        <span>{{ config.closest }} Min</span><span>{{ config.legend }}</span>
+        <span>
+          <span style="border-radius: 50px; display: block; height: 30px; width: 30px;" [style.backgroundColor]="config.metroGioiaLineColor.value"></span>
+        </span>
+        <span>
+          <div>
+            Gioia <!-- #HC -->
+          </div>
+          <div>
+            <span>{{ config.metroGioia.value }} Min</span> {{ config.legendForAll.value }} <i class="icol ico-info-circle"></i>
+          </div>
+        </span>
+      </div>
+      <div>
+        <span>
+          <span style="border-radius: 50px; display: block; height: 30px; width: 30px;" [style.backgroundColor]="config.metroIsolaLineColor.value"></span>
+        </span>
+        <span>
+          <div>
+            Isola <!-- #HC -->
+          </div>
+          <div>
+            <span>{{ config.metroIsola.value }} Min</span> {{ config.legendForAll.value }} <i class="icol ico-info-circle"></i>
+          </div>
+        </span>
+      </div>
+      <div>
+        <span>
+          <span style="border-radius: 50px; display: block; height: 30px; width: 30px; background-color: #EEEEEE;"></span>
+        </span>
+        <span>
+          <div>
+            Stazione Centrale <!-- #HC -->
+          </div>
+          <div>
+            <span>{{ config.stazioneCentrale.value }} Min</span> {{ config.legendForAll.value }} <i class="icol ico-info-circle"></i>
+          </div>
+        </span>
       </div>
     </div>
   </div>
