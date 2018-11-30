@@ -62,7 +62,9 @@ import {
   Panel25Component,
   Panel26Component,
   Panel27Component,
-  Panel28Component
+  Panel28Component,
+  Panel29Component,
+  Panel30Component
 } from '@shared/panels/index';
 
 import { SliderRangeComponent } from '@shared/slider-range/slider-range.component';
@@ -124,6 +126,8 @@ import { DropdownComponent } from '@shared/dropdown/dropdown.component';
     Panel26Component,
     Panel27Component,
     Panel28Component,
+    Panel29Component,
+    Panel30Component,
 
     // Slider
     SliderRangeComponent,
