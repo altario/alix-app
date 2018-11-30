@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class Panel9Component implements OnInit {
     @Input() public comparisonCriteria: string;
-    @Input() public config: object;
+    @Input() public config: any;
 
     constructor() {}
 

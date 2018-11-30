@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-position-list',
-  templateUrl: './position-list.component.html',
-  styleUrls: ['./position-list.component.scss']
+  selector: 'app-portfolio-list',
+  templateUrl: './portfolio-list.component.html',
+  styleUrls: ['./portfolio-list.component.scss']
 })
-export class PositionListComponent implements OnInit {
+export class PortfolioListComponent implements OnInit {
   companies = [{
       id: 1,
       name: 'ACME & Company',

@@ -9,6 +9,8 @@ import { FinancialComponent } from './financial/financial.component';
 import { StateOfConservationComponent } from './state-of-conservation/state-of-conservation.component';
 import { LocationComponent } from './location/location.component';
 import { DemandAndOfferComponent } from './demand-offer/demand-offer.component';
+import { PortfolioListComponent } from './portfolio-list/portfolio-list.component';
+import { RowComponent } from './portfolio-list/row/row.component';
 
 // components
 import { SliderRangeComponent } from '@shared/slider-range/slider-range.component';
@@ -72,6 +74,8 @@ import {
   Panel31Component
 } from '@shared/panels/index';
 
+import { PortfolioLayoutComponent } from '@core/index';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -83,11 +87,15 @@ import {
     Ng5SliderModule
   ],
   declarations: [
+    PortfolioLayoutComponent,
+
     // pages
     FinancialComponent,
     StateOfConservationComponent,
     LocationComponent,
     DemandAndOfferComponent,
+    PortfolioListComponent,
+    RowComponent,
 
     // pipes
     CustomCurrencyPipe,

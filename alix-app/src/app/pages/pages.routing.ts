@@ -7,7 +7,7 @@ import { MonitoringComponent } from './monitoring/monitoring.component';
 import { ReportsComponent } from './reports/reports.component';
 import { CounterpartsComponent } from './counterparts/counterparts.component';
 
-import { BaseLayoutComponent, PortfolioLayoutComponent } from '@core/index';
+import { BaseLayoutComponent } from '@core/index';
 
 export const PagesRoutes: Routes = [
   {
@@ -20,13 +20,8 @@ export const PagesRoutes: Routes = [
   },
   {
     path: 'portfolios',
-    component: PortfolioLayoutComponent,
-    loadChildren: './portfolio/portfolio.module#PortfolioModule'
-  },
-  {
-    path: 'positions',
     component: BaseLayoutComponent,
-    loadChildren: './position/position.module#PositionModule'
+    loadChildren: './portfolio/portfolio.module#PortfolioModule'
   },
   {
     path: 'reports',

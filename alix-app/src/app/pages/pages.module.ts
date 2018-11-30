@@ -12,7 +12,7 @@ import { MonitoringComponent } from './monitoring/monitoring.component';
 import { ReportsComponent } from './reports/reports.component';
 import { CounterpartsComponent } from './counterparts/counterparts.component';
 
-import { BaseLayoutComponent, PortfolioLayoutComponent } from '@core/index';
+import { BaseLayoutComponent } from '@core/index';
 
 @NgModule({
   imports: [
@@ -24,8 +24,7 @@ import { BaseLayoutComponent, PortfolioLayoutComponent } from '@core/index';
     MonitoringComponent,
     ReportsComponent,
     CounterpartsComponent,
-    BaseLayoutComponent,
-    PortfolioLayoutComponent
+    BaseLayoutComponent
   ]
 })
 export class PagesModule { }

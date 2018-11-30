@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class Panel29Component implements OnInit {
     @Input() public name: string;
-    @Input() public config: object;
+    @Input() public config: any;
 
     constructor() {}
 

@@ -7,13 +7,13 @@ import { Router } from '@angular/router';
     styleUrls: ['./row.component.scss']
 })
 export class RowComponent implements OnInit {
-    @Input() company: Object = {};
+    @Input() company: any = {};
 
     constructor(private router: Router) {}
 
     ngOnInit() {}
 
     goToDashboard(id) {
-        this.router.navigate(['/portfolio', id]);
+        this.router.navigate(['/portfolios', id]);
     }
 }
