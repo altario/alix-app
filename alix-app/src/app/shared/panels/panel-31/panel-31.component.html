@@ -1,0 +1,28 @@
+<div style="border: 1px solid #FFFFFF">
+  <div>
+    <h6>{{config.name}}</h6> <!-- #HC -->
+  </div>
+  <div>
+    <div>
+      <i class="icol ico-info-circle"></i>
+    </div>
+    <div>
+      <div>
+        <span><i class="icol ico-info-circle"></i></span>
+        <span>{{ config.pubTrans }} Min</span>
+        <span> Walk+Train</span>
+      </div>
+      <div>
+        <span><i class="icol ico-info-circle"></i></span>
+        <span>{{ config.taxi }} Min</span>
+        <span> Taxi</span>
+      </div>
+      <div *ngIf="config.walking">
+        <span><i class="icol ico-info-circle"></i></span>
+        <span>{{ config.walking }} Min</span>
+        <span> Walking</span>
+      </div>
+    </div>
+  </div>
+</div>
+  

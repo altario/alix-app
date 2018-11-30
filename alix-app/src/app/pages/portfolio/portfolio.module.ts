@@ -49,11 +49,27 @@ import {
   Panel7Component,
   Panel8Component,
   Panel9Component,
+  Panel10Component,
+  Panel11Component,
+  Panel12Component,
   Panel13Component,
-  Panel10Component
+  Panel14Component,
+  Panel15Component,
+  Panel21Component,
+  Panel22Component,
+  Panel23Component,
+  Panel24Component,
+  Panel25Component,
+  Panel26Component,
+  Panel27Component,
+  Panel28Component,
+  Panel29Component,
+  Panel30Component,
+  Panel31Component
 } from '@shared/panels/index';
 
-import { SliderRangeComponent } from '../../shared/slider-range/slider-range.component';
+import { SliderRangeComponent } from '@shared/slider-range/slider-range.component';
+import { DropdownComponent } from '@shared/dropdown/dropdown.component';
 
 @NgModule({
   imports: [
@@ -98,10 +114,28 @@ import { SliderRangeComponent } from '../../shared/slider-range/slider-range.com
     Panel8Component,
     Panel9Component,
     Panel10Component,
+    Panel11Component,
+    Panel12Component,
     Panel13Component,
+    Panel14Component,
+    Panel15Component,
+    Panel21Component,
+    Panel22Component,
+    Panel23Component,
+    Panel24Component,
+    Panel25Component,
+    Panel26Component,
+    Panel27Component,
+    Panel28Component,
+    Panel29Component,
+    Panel30Component,
+    Panel31Component,
 
     // Slider
-    SliderRangeComponent
+    SliderRangeComponent,
+
+    // Dropdown
+    DropdownComponent
   ]
 })
 export class PortfolioModule { }

@@ -1,0 +1,3 @@
+<select (change)="onChange($event)">
+  <option *ngFor="let opt of config; let i = index" value="{{opt.id}}" [selected]="dropvalue == opt.id">{{opt.value}}</option>
+</select>

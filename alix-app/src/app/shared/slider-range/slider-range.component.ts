@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Options, ChangeContext, PointerType } from 'ng5-slider';
 
 @Component({
@@ -7,21 +7,29 @@ import { Options, ChangeContext, PointerType } from 'ng5-slider';
   styleUrls: ['./slider-range.component.scss']
 })
 export class SliderRangeComponent implements OnInit {
+
   @Output()
   callback = new EventEmitter();
 
-  minValue = 10;
-  maxValue = 90;
+  @Input()
+  value: any = 0;
+
+  @Input()
+  steps: any = [];
+
   options: Options = {
-    floor: 0,
-    ceil: 100,
-    step: 10,
-    showTicks: true
+    stepsArray: [],
+    showTicks: true,
+    showSelectionBar: true
   };
 
   constructor() { }
 
   ngOnInit() {
+
+      this.options.stepsArray = this.steps.map(step => {
+          return {value: step};
+      });
   }
 
   onChangeValue(changeContext: ChangeContext) {
