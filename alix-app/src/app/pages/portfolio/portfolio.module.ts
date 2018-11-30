@@ -10,6 +10,10 @@ import { StateOfConservationComponent } from './state-of-conservation/state-of-c
 import { LocationComponent } from './location/location.component';
 import { DemandAndOfferComponent } from './demand-offer/demand-offer.component';
 
+// components
+import { SliderRangeComponent } from '@shared/slider-range/slider-range.component';
+import { DropdownComponent } from '@shared/dropdown/dropdown.component';
+
 // routes
 import { PortfolioRoutes } from './portfolio.routing';
 
@@ -68,14 +72,13 @@ import {
   Panel31Component
 } from '@shared/panels/index';
 
-import { SliderRangeComponent } from '@shared/slider-range/slider-range.component';
-import { DropdownComponent } from '@shared/dropdown/dropdown.component';
-
 @NgModule({
   imports: [
     CommonModule,
     NgbModule,
     RouterModule.forChild(PortfolioRoutes),
+
+    // plugins
     NgxEchartsModule,
     Ng5SliderModule
   ],
@@ -131,10 +134,8 @@ import { DropdownComponent } from '@shared/dropdown/dropdown.component';
     Panel30Component,
     Panel31Component,
 
-    // Slider
+    // components
     SliderRangeComponent,
-
-    // Dropdown
     DropdownComponent
   ]
 })
