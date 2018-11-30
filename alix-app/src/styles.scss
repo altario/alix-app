@@ -1,9 +1,9 @@
-@import 'scss/main';
+@import "scss/main";
 
 // html, body
-html, body {
-  height: 100vh;
-  overflow: hidden;
+html,
+body {
+  min-height: 100vh;
 }
 
 // all
@@ -12,24 +12,22 @@ html, body {
 }
 
 
-
-
-
-
-$body-bg: #fff;
-
-#main-wrapper {
-  width: 100%;
-  overflow: hidden;
+.app-wrapper {
+  height: 100%;
 }
 
-.page-wrapper {
-  background: $body-bg;
-  position: relative;
-  transition: 0.2s ease-in;
-}
+// #main-wrapper {
+//     width: 100%;
+//     overflow: hidden;
+// }
 
-.page-wrapper > .container-fluid {
-  padding: 20px;
-  min-height: calc(100vh - 180px);
-}
+// .page-wrapper {
+//     background: #151D28;
+//     position: relative;
+//     transition: 0.2s ease-in;
+// }
+
+// .page-wrapper > .container-fluid {
+//     padding: 20px;
+//     min-height: calc(100vh - 180px);
+// }

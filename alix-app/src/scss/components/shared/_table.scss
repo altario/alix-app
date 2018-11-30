@@ -1,0 +1,25 @@
+@import '~src/scss/imports';
+
+// table
+
+.table__simple {
+  display: table;
+  .table__row {
+     display: table-row;
+    .cell__title {
+      font-size: rem(12px);
+      padding: 0 20px 0 0;
+      font-family: $font-family--secondary;
+      font-weight: $font-weight--bold;
+      color: $color__text_table;
+      display: table-cell;
+    }
+    .cell__information {
+      font-size: rem(12px);
+      font-family: $font-family--secondary;
+      font-weight: $font-weight--thin;
+      color: $color__text_table;
+      display: table-cell;
+    }
+  }
+}

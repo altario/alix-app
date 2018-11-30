@@ -27,10 +27,10 @@ $grid__vertical-gutters:              false;
 // $body --------------------
 
 // $body: defaults
-$body__color__background:             white;
-$body__color__text:                   $color__gray--darkest;
+$body__color__background:             black;
+$body__color__text:                   #FFFFFF;
 $body__color__highlight--background:  $color__brand--1;
-$body__color__highlight--text:        white;
+$body__color__highlight--text:        #FFFFFF;
 
 
 
@@ -47,6 +47,7 @@ $theme-color-map: (
   'danger':          $color__state--danger,
 
   // gray
+  'lightest':        $color__gray--lightest,
   'light':           $color__gray--light,
   'gray-light':      $color__custom__gray--3,
   'gray-medium':     $color__gray--medium,
@@ -103,7 +104,8 @@ $alt_breakpoints: (
 
 // $grid: defaults
 $grid__default--columns:              12;
-$grid__default--gutter-width:         30px;
+$grid__default--gutter-width:         20px;
+$grid--gutter-height:                 12px;
 
 
 
@@ -128,7 +130,7 @@ $iconfont__fontawesome-prefix:        $iconfont-prefix;
 // $fonts --------------------
 
 // $fonts: font-family
-$font-family--primary:                'Lato', sans-serif;
+$font-family--primary:                'Source Sans Pro', sans-serif;
 $font-family--secondary:              'Lato', sans-serif;
 $font-family--code:                   monospace;
 $font-family--icon:                   'altaricons';
@@ -162,6 +164,7 @@ $line-height--3:                      2;
 $line-height--4:                      2.4;
 
 // $fonts: font-weight
+$font-weight--thin:                   100;
 $font-weight--light:                  300;
 $font-weight--normal:                 400;
 $font-weight--medium:                 500;
@@ -325,3 +328,31 @@ $link__color:                         $color__brand--1;
 // $transition: base
 $transition__base:                    all .25s ease-in-out;
 $transition__base--noprop:            .25s;
+
+
+//// USED
+// delete
+
+// $color
+$text__secondary-color: #8D8C8D !important;
+
+
+$color__text_highlighted:           #FFFFFF;
+$color__text_highlighted_small:       $text__secondary-color;
+$color__text_label:                 #CED6FF;
+$color__text_table:                 #CED6FF;
+$amount: 40;
+
+$box-padding: 20px;
+
+
+
+$font-size__highlighted--big:                    rem(48px); // 3rem
+$font-size__highlighted--big__small:             rem(24px);
+$font-size__highlighted--medium:                 rem(36px);
+$font-size__highlighted--medium__small--upper:   rem(24px);
+$font-size__highlighted--medium__small:          rem(12px);
+
+
+$lines: 2;
+$font-size: rem(11px);

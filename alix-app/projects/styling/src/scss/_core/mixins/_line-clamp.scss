@@ -17,23 +17,22 @@
 // --------------------------------------------------
 
 // =line-clamp
-@mixin line-clamp($_line-count: 1, $_line-height: $line-height__base) {
+@mixin line-clamp($_line-count: 1, $font_size: $font-size--default , $_line-height: $line-height__base) {
   @if $_line-count == 1 {
     white-space: nowrap;
   }
   @else {
     line-height: $_line-height;
-    max-height: $_line-height * $_line-count;
+    max-height: calc(#{$_line-height} * #{$_line-count} * #{$font_size}) ;
     display: block;
     display: -webkit-box;
     -webkit-line-clamp: $_line-count;
     -webkit-box-orient: vertical;
-  }
 
+  }
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 
 
 

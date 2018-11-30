@@ -1,0 +1,59 @@
+<div class="box box--bg box--table box--table--small">
+  <div class="box__body box__body--bg">
+    <div class=" cell__wrapper cell__wrapper--bg-dark">
+      <div class="cell__wrapper__top">
+        <span class="label__up label--color">
+          {{ config.financial.clientPortfolio.clientPortfolioDuration.label }}
+        </span>
+      </div>
+      <div class="cell__wrapper__info">
+        <p class="highlighted--medium highlighted--color">
+          {{ config.financial.clientPortfolio.clientPortfolioDuration.value }}
+          <small class="u-uppercase highlighted__small--color">
+            y
+          </small>
+        </p>
+      </div>
+    </div>
+
+    <div class=" cell__wrapper cell__wrapper--bg-dark">
+        <div class="cell__wrapper__top">
+          <span class="label__up label--color">
+              {{ config.financial.clientPortfolio.clientCreditRating.label }}
+          </span>
+        </div>
+        <div class="cell__wrapper__info">
+          <div [ngClass]="{good: config.financial.clientPortfolio.clientCreditRating.value === 'Baa'}" class="tag">
+              {{ config.financial.clientPortfolio.clientCreditRating.value }}
+            </div>
+        </div>
+      </div>
+
+      <div class="w-100"></div>
+
+      <div class=" cell__wrapper cell__wrapper--bg-light">
+        <div class="cell__wrapper__top">
+          <span class="label__up label--color">
+              {{ config.financial.clientPortfolio.probabilityOfDefaultInT0.label }}
+          </span>
+        </div>
+        <div class="cell__wrapper__info">
+          <p class="highlighted--medium highlighted--color">
+            <small class="u-uppercase highlighted__small--color"> To </small>
+            {{ config.financial.clientPortfolio.probabilityOfDefaultInT0.value | perc }}
+            <small class="u-uppercase highlighted__small--color">%</small>
+          </p>
+        </div>
+      </div>
+
+      <div class=" cell__wrapper cell__wrapper--bg-light">
+        <div class="cell__wrapper__info">
+          <p class="highlighted--medium highlighted--color">
+            <small class="u-uppercase highlighted__small--color"> To </small>
+            {{config.financial.clientPortfolio.probabilityOfDefaultToday.value | perc:1 }}
+            <small class="u-uppercase highlighted__small--color">%</small>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>

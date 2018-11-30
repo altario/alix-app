@@ -1,0 +1,36 @@
+<div class="box box--bg box--table box--table--small">
+    <div class="box__body box__body--bg">
+      <div class=" cell__wrapper cell__wrapper--bg-dark">
+        <div class="cell__wrapper__top">
+          <span class="label__up label--color">
+              {{ config.financial.clientPortfolio.totalLoansOriginalValue.label | uppercase }}
+          </span>
+        </div>
+        <div class="cell__wrapper__info">
+          <p class="highlighted--medium highlighted--color">
+              {{ config.financial.clientPortfolio.totalLoansOriginalValue.value | curr }}
+            <small class="u-uppercase highlighted__small--color">
+                M€
+            </small>
+          </p>
+        </div>
+      </div>
+
+      <div class=" cell__wrapper cell__wrapper--bg-dark">
+        <div class="cell__wrapper__top">
+          <span class="label__up label--color">
+              {{ config.financial.clientPortfolio.currentClientsExposure.label | uppercase }}<
+          </span>
+        </div>
+        <div class="cell__wrapper__info">
+            <p class="highlighted--medium highlighted--color">
+                {{ config.financial.clientPortfolio.currentClientsExposure.value | curr}}
+                <small class="u-uppercase highlighted__small--color">
+                M€
+              </small>
+            </p>
+          </div>
+      </div>
+
+  </div>
+</div>

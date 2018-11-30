@@ -1,0 +1,51 @@
+<div *ngIf="config" class="container-fluid">
+
+  <div class="row">
+    <div class="col-4">
+        <app-panel-14 [config]="config"></app-panel-14>
+    </div>
+    <div class="col-8">
+        <alix-line [series]="series.marketValue" [opts]="opts.marketValue"></alix-line>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+        <h2>Transaction Speed</h2>
+    </div>
+    <div class="col-3">
+        <app-slider-range [value]="2018" [steps]="[2015,2016,2017,2018]"></app-slider-range>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <h2># SQM / Asset Demand</h2>
+      <div><alix-scatter [series]="series.sqm" [opts]="opts.sqm"></alix-scatter></div>
+    </div>
+    <div class="col">
+      <h2># Rooms / Asset Demand</h2>
+      <div>
+        <alix-scatter [series]="series.rooms" [opts]="opts.rooms" ></alix-scatter>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4">
+      <app-panel-15 [config]="config"></app-panel-15>
+    </div>
+    <div class="col-8">
+      <alix-area-stack></alix-area-stack>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4">
+      <app-panel-15 [config]="config"></app-panel-15>
+    </div>
+    <div class="col-8">
+      <alix-area-stack></alix-area-stack>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<nav class="navbar fixed-top">
+
+  <div class="navbar__left">
+    <!-- logo -->
+    <a class="brand" routerLink="['/']">
+      <img src="assets/images/bnl_logo-light.png" alt="logo">
+    </a>
+
+    <!-- environment -->
+    <div class="environment">Monitoring Environment</div>
+  </div>
+
+  <div class="navbar__right">
+    <a class="btn btn-ghost-lightest" [routerLink]="['/']" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active">Dashboard</a>
+    <a class="btn btn-ghost-lightest" [routerLink]="['monitoring']" routerLinkActive="active">Monitoring</a>
+    <a class="btn btn-ghost-lightest" [routerLink]="['portfolios']" routerLinkActive="active">Portfolios</a>
+    <a class="btn btn-ghost-lightest" [routerLink]="['reports']" routerLinkActive="active">Reports</a>
+    <a class="btn btn-ghost-lightest" [routerLink]="['counterparts']" routerLinkActive="active">Counterparts</a>
+  </div>
+</nav>
