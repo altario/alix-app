@@ -12,11 +12,11 @@
   </div>
 
   <div class="row-no-gutter">
-      <div class="col-12">
-        <h1># SC Today</h1> <!-- #HC -->
-        <app-dropdown [config]="getPopulationNames()" (callback)="changeValue($event)"></app-dropdown>
-      </div>
+    <div class="col-12">
+      <h1># SC Today</h1> <!-- #HC -->
+      <app-dropdown [config]="getSCTodayPopulationNames()" (callback)="changeSCTodayValue($event)"></app-dropdown>
     </div>
+  </div>
   <div class="row row-no-gutter">
     <div class="col-3">
       <app-panel-10 [config]="selectedStateOfConservationToday"></app-panel-10>
@@ -27,14 +27,32 @@
   </div>
 
   <div class="row-no-gutter">
-      <div class="col-12">
-        <h1>State Of Conservation All Assets</h1> <!-- #HC -->
-        <!-- <app-dropdown [config]="getPopulationNames()" (callback)="changeValue($event)"></app-dropdown> -->
-      </div>
+    <div class="col-12">
+      <h1>State Of Conservation All Assets</h1> <!-- #HC -->
     </div>
+  </div>
   <div class="row row-no-gutter">
     <div class="col-3">
-      <app-panel-11 [config]="config.panelFromMapStateOfConservationBreakdownAllAssets.years['2013']"></app-panel-11>
+      <app-slider-range [value]="selectedSOCAllAssetsValues[0]" [steps]="selectedSOCAllAssetsValues[1]" (callback)="changeSOCAllAssetsValue($event)"></app-slider-range>
+      <app-panel-11 [config]="selectedSOCAllAssets"></app-panel-11>
+    </div>
+    <div class="col-9">
+        <alix-line></alix-line>
+    </div>
+  </div>
+
+  <div class="row-no-gutter">
+    <div class="col-12">
+      <h1>IN Construction Satelite images</h1> <!-- #HC -->
+    </div>
+  </div>
+  <div class="row row-no-gutter">
+  </div>
+
+  <div class="row row-no-gutter">
+    <div class="col-3">
+      <app-dropdown [config]="getSCTodayPopulationNames()" (callback)="changeSCPpsmValue($event)"></app-dropdown>
+      <app-panel-12 [config]="selectedStateOfConservationPSM"></app-panel-12>
     </div>
     <div class="col-9">
         <alix-line></alix-line>
