@@ -20,3 +20,4 @@ export * from './panel-24/panel-24.component';
 export * from './panel-25/panel-25.component';
 export * from './panel-26/panel-26.component';
 export * from './panel-27/panel-27.component';
+export * from './panel-28/panel-28.component';
