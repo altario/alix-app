@@ -27,15 +27,13 @@ export class StateOfConservationComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
   ngOnInit() {
     this.route.params.subscribe(params => {
-      // console.log(params['id']);
+      // this.config = dataset.dossiersMainData['dossier' + params['id']];
       this.config = dataset.dossiersMainData.dossier1.stateOfConservation;
 
       this.selectedStateOfConservationToday = this.config.stateOfConservationToday.populations.population1;
       this.selectedStateOfConservationPSM = this.config.stateOfConservationPricePerSqm.populations.population1;
       this.selectedSOCAllAssetsValues = this.initLastStateOfConservationAllAssets();
       this.selectedSOCAllAssets = this.config.panelFromMapStateOfConservationBreakdownAllAssets.years[this.selectedSOCAllAssetsValues[0]];
-      // this.config = dataset.dossiersMainData['dossier' + params['id']];
-      console.log(this.config);
     });
   }
 

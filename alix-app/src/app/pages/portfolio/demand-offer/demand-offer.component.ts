@@ -20,8 +20,8 @@ export class DemandAndOfferComponent implements OnInit {
     ngOnInit() {
         this.route.params.subscribe(params => {
             // console.log(params['id']);
-            this.config = dataset.dossiersMainData.dossier1;
-
+            this.config = dataset.dossiersMainData.dossier1.demandAndOffer;
+            console.log(this.config)
 
             this.opts = {
                 marketValue: {
