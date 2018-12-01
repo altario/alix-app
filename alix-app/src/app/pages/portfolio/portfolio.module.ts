@@ -15,6 +15,9 @@ import { RowComponent } from './portfolio-list/row/row.component';
 // components
 import { SliderRangeComponent } from '@shared/slider-range/slider-range.component';
 import { DropdownComponent } from '@shared/dropdown/dropdown.component';
+import { ReportSelectorComponent } from '@shared/report-selector/report-selector.component';
+import { ReportStickyComponent } from '@shared/report-sticky/report-sticky.component';
+
 
 // routes
 import { PortfolioRoutes } from './portfolio.routing';
@@ -75,6 +78,7 @@ import {
 } from '@shared/panels/index';
 
 import { PortfolioLayoutComponent } from '@core/index';
+import { PortfolioReportService } from '@services/portfolio-report.service';
 
 @NgModule({
   imports: [
@@ -144,7 +148,10 @@ import { PortfolioLayoutComponent } from '@core/index';
 
     // components
     SliderRangeComponent,
-    DropdownComponent
-  ]
+    DropdownComponent,
+    ReportSelectorComponent,
+    ReportStickyComponent,
+  ],
+  providers: [PortfolioReportService]
 })
 export class PortfolioModule { }
