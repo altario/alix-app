@@ -6,13 +6,13 @@
   </div>
   <div class="row row-no-gutter">
     <div class="col-3">
-      <app-panel-1 [config]="config"></app-panel-1>
+      <app-panel-1 [config]="config.financial.clientPortfolio"></app-panel-1>
     </div>
     <div class="col-3">
-      <app-panel-2 [config]="config"></app-panel-2>
+      <app-panel-2 [config]="config.financial.clientPortfolio"></app-panel-2>
     </div>
     <div class="col-3">
-      <app-panel-3 [config]="config"></app-panel-3>
+      <app-panel-3 [config]="config.financial.clientPortfolio"></app-panel-3>
     </div>
   </div>
 
@@ -23,16 +23,16 @@
   </div>
   <div class="row row-no-gutter">
     <div class="col-3">
-      <app-panel-4 [config]="config"></app-panel-4>
+      <app-panel-4 [config]="config.financial.keyFinancial"></app-panel-4>
     </div>
     <div class="col-3">
-      <app-panel-5 [config]="config"></app-panel-5>
+      <app-panel-5 [config]="config.financial.position"></app-panel-5>
     </div>
     <div class="col-3">
-      <app-panel-6 [config]="config"></app-panel-6>
+      <app-panel-6 [config]="config.financial.duration"></app-panel-6>
     </div>
     <div class="col-3">
-      <app-panel-7 [config]="config"></app-panel-7>
+      <app-panel-7 [config]="config.financial.collateral"></app-panel-7>
     </div>
   </div>
 
@@ -40,6 +40,6 @@
     <div class="col-12">
       <h1 class="section-title">Collateral Asset</h1> <!-- #HC -->
     </div>
-    <app-panel-8 [config]="config"></app-panel-8>
+    <app-panel-8 [config]="config.financial.collateralAsset"></app-panel-8>
   </div>
 </div>

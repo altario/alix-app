@@ -1,34 +1,34 @@
 <div style="display: flex;">
   <div style="width: 70%">
-    <img style="width: 100%; height: auto;" src="assets/images/{{config.financial.collateralAsset.assetImage.value}}"
+    <img style="width: 100%; height: auto;" src="assets/images/{{config.assetImage.value}}"
       alt="" />
   </div>
   <div style="width: 30%; display: flex;">
     <ul>
       <li>General</li> <!-- #HC -->
-      <li>{{ config.financial.collateralAsset.neighborhood.value }}</li>
+      <li>{{ config.neighborhood.value }}</li>
       <li>
         <span><i class="icol ico-info-circle"></i></span>
-        <span>{{ config.financial.collateralAsset.address.value }}</span>
+        <span>{{ config.address.value }}</span>
       </li>
       <li>
         <span><i class="icol ico-info-circle"></i></span>
-        <span>{{ config.financial.collateralAsset.typeOfNeighborhood.value }}</span>
+        <span>{{ config.typeOfNeighborhood.value }}</span>
       </li>
-      <li>{{ config.financial.collateralAsset.status.value }}</li>
+      <li>{{ config.status.value }}</li>
     </ul>
     <ul>
       <li>
-        <h6>{{ config.financial.collateralAsset.floor.label }}</h6>
-        <div>{{ config.financial.collateralAsset.floor.value }}</div>
+        <h6>{{ config.floor.label }}</h6>
+        <div>{{ config.floor.value }}</div>
       </li>
       <li>
-        <h6>{{ config.financial.collateralAsset.numberOfFloors.label }}</h6>
-        <div>{{ config.financial.collateralAsset.numberOfFloors.value }}</div>
+        <h6>{{ config.numberOfFloors.label }}</h6>
+        <div>{{ config.numberOfFloors.value }}</div>
       </li>
       <li>
-        <h6>{{ config.financial.collateralAsset.totalArea.label }}</h6>
-        <div>{{ config.financial.collateralAsset.totalArea.value | number:'1.0-0'}}SQM</div>
+        <h6>{{ config.totalArea.label }}</h6>
+        <div>{{ config.totalArea.value | number:'1.0-0'}}SQM</div>
       </li>
     </ul>
   </div>

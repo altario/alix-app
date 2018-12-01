@@ -16,12 +16,12 @@
       <div class=" cell__wrapper cell__wrapper--bg-dark">
         <div class="cell__wrapper__top">
           <span class="label__up label--color">
-            {{ config.financial.collateral.valuationAtT0.label }}
+            {{ config.valuationAtT0.label }}
           </span>
         </div>
         <div class="cell__wrapper__info">
           <p class="highlighted--big highlighted--color">
-              {{ config.financial.collateral.valuationAtT0.value | curr:1 }}
+              {{ config.valuationAtT0.value | curr:1 }}
             <small class="u-uppercase highlighted__small--color">M€</small>
           </p>
         </div>
@@ -30,12 +30,12 @@
     <div class=" cell__wrapper cell__wrapper--bg-dark">
         <div class="cell__wrapper__top">
           <span class="label__up label--color">
-            {{ config.financial.collateral.loanToValue.label }}
+            {{ config.loanToValue.label }}
           </span>
         </div>
         <div class="cell__wrapper__info">
             <p class="highlighted--big highlighted--color">
-                {{ config.financial.collateral.loanToValue.value | perc:1}}
+                {{ config.loanToValue.value | perc:1}}
               <small class="u-uppercase highlighted__small--color">%</small>
             </p>
         </div>
@@ -46,12 +46,12 @@
     <div class=" cell__wrapper cell__wrapper--bg-light">
         <div class="cell__wrapper__top">
           <span class="label__up label--color">
-              {{ config.financial.collateral.adjustedCollateralValuation.label }}
+              {{ config.adjustedCollateralValuation.label }}
           </span>
         </div>
         <div class="cell__wrapper__info">
           <p class="highlighted--big highlighted--color">
-              {{ config.financial.collateral.adjustedCollateralValuation.value | curr }}
+              {{ config.adjustedCollateralValuation.value | curr }}
             <small class="highlighted__small--color u-uppercase">€</small>
           </p>
         </div>
@@ -60,7 +60,7 @@
     <div class=" cell__wrapper cell__wrapper--bg-light">
       <div class="cell__wrapper__info">
         <p class="highlighted--big highlighted--color">
-            {{ config.financial.collateral.adjustedLoanToValue.value | perc:1 }}
+            {{ config.adjustedLoanToValue.value | perc:1 }}
           <small class="highlighted__small--color u-uppercase">%</small>
         </p>
       </div>

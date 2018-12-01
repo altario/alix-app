@@ -3,12 +3,12 @@
       <div class="cell__wrapper cell__wrapper--bg-dark">
         <div class="cell__wrapper__top">
           <span class="label__up label--color">
-              {{ config.financial.clientPortfolio.openPositionsLoansOriginalValue.label }}
+              {{ config.openPositionsLoansOriginalValue.label }}
           </span>
         </div>
         <div class="cell__wrapper__info">
           <p class="highlighted--medium highlighted--color">
-              {{ config.financial.clientPortfolio.openPositionsLoansOriginalValue.value | curr}}
+              {{ config.openPositionsLoansOriginalValue.value | curr}}
             <small class="u-uppercase highlighted__small--color">
               b
             </small>
@@ -26,7 +26,7 @@
         </div>
         <div class="cell__wrapper__info">
           <p class="highlighted--medium highlighted--color">
-            {{ config.financial.clientPortfolio.openPositions.value }}
+            {{ config.openPositions.value }}
             <small class="highlighted__small--color">open from a total of</small>
           </p>
         </div>
@@ -35,7 +35,7 @@
       <div class=" cell__wrapper cell__wrapper--bg-light">
         <div class="cell__wrapper__info">
           <p class="highlighted--medium highlighted--color">
-              {{ config.financial.clientPortfolio.totalPositions.value }}
+              {{ config.totalPositions.value }}
             <small class="highlighted__small--color">positions</small>
           </p>
       </div>

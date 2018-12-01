@@ -16,12 +16,12 @@
     <div class=" cell__wrapper cell__wrapper--bg-dark">
       <div class="cell__wrapper__top">
         <span class="label__up label--color">
-          {{ config.financial.position.loanOriginalValue.label }}
+          {{ config.loanOriginalValue.label }}
         </span>
       </div>
       <div class="cell__wrapper__info">
         <p class="highlighted--big highlighted--color">
-          {{ config.financial.position.loanOriginalValue.value | curr }}
+          {{ config.loanOriginalValue.value | curr }}
           <small class="u-uppercase highlighted__small--color">m€</small>
         </p>
       </div>
@@ -30,12 +30,12 @@
   <div class=" cell__wrapper cell__wrapper--bg-dark">
       <div class="cell__wrapper__top">
         <span class="label__up label--color">
-          {{ config.financial.position.currentExposure.label }}
+          {{ config.currentExposure.label }}
       </span>
       </div>
       <div class="cell__wrapper__info">
           <p class="highlighted--big highlighted--color">
-              {{ config.financial.position.currentExposure.value | curr:1}}
+              {{ config.currentExposure.value | curr:1}}
             <small class="u-uppercase highlighted__small--color">m€</small>
           </p>
       </div>
@@ -46,15 +46,15 @@
   <div class=" cell__wrapper cell__wrapper--bg-light">
       <div class="cell__wrapper__top">
         <span class="label__up label--color">
-          {{ config.financial.position.timeToMaturity.label }}
+          {{ config.timeToMaturity.label }}
         </span>
       </div>
       <div class="cell__wrapper__info">
         <p class="highlighted--big highlighted--color">
-          {{ config.financial.position.timeToMaturity.value | number:'1.0-0' }}
+          {{ config.timeToMaturity.value | number:'1.0-0' }}
           <small class="u-uppercase highlighted__small--color__exception">y</small>
           <small class="highlighted__small--color of">of</small>
-          <span class="highlighted__small--color">{{ config.financial.position.totalMaturity.value | number:'1.0-0' }}</span>
+          <span class="highlighted__small--color">{{ config.totalMaturity.value | number:'1.0-0' }}</span>
           <small class="highlighted__small--color u-uppercase">y</small>
         </p>
       </div>
@@ -64,12 +64,12 @@
     <div class="cell__wrapper__info">
       <div class="table__simple">
           <div class="table__row">
-            <span class="cell__title">{{config.financial.position.startDate.label}}:</span>
-            <span class="cell__information">{{config.financial.position.startDate.value | cusdate | date: 'd MMM y' }}</span>
+            <span class="cell__title">{{config.startDate.label}}:</span>
+            <span class="cell__information">{{config.startDate.value | cusdate | date: 'd MMM y' }}</span>
           </div>
           <div class="table__row">
-            <span class="cell__title">{{config.financial.position.endDate.label}}:</span>
-            <span class="cell__information">{{config.financial.position.endDate.value | cusdate | date: 'd MMM y' }}</span>
+            <span class="cell__title">{{config.endDate.label}}:</span>
+            <span class="cell__information">{{config.endDate.value | cusdate | date: 'd MMM y' }}</span>
           </div>
         </div>
     </div>

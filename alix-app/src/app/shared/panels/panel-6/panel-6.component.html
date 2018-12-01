@@ -16,12 +16,12 @@
           <div class=" cell__wrapper cell__wrapper--bg-dark">
             <div class="cell__wrapper__top">
               <span class="label__up label--color">
-                {{ config.financial.duration }} <!-- #Missing -->
+                {{ config }} <!-- #Missing -->
             </span>
             </div>
             <div class="cell__wrapper__info">
               <p class="highlighted--big highlighted--color">
-                {{ config.financial.duration }} <!-- #Missing -->
+                {{ config }} <!-- #Missing -->
                 <small class="u-uppercase highlighted__small--color">m€</small>
               </p>
             </div>
@@ -32,16 +32,16 @@
         <div class=" cell__wrapper cell__wrapper--bg-light">
             <div class="cell__wrapper__top">
               <span class="label__up label--color">
-                {{ config.financial.duration.timeToDuration.label }}
+                {{ config.timeToDuration.label }}
             </span>
             </div>
             <div class="cell__wrapper__info">
               <p class="highlighted--big highlighted--color">
-                {{ config.financial.duration.timeToDuration.value | number:'1.0-0' }}
+                {{ config.timeToDuration.value | number:'1.0-0' }}
                 <small class="u-uppercase highlighted__small--color__exception">m</small>
                 <small class="highlighted__small--color of">of</small>
                 <span class="highlighted__small--color">
-                    {{ config.financial.duration.totalDuration.value | number:'1.0-0' }}
+                    {{ config.totalDuration.value | number:'1.0-0' }}
                 </span>
                 <small class="highlighted__small--color u-uppercase">y</small>
               </p>
@@ -52,12 +52,12 @@
           <div class="cell__wrapper__info">
             <div class="table__simple">
                 <div class="table__row">
-                  <span class="cell__title">{{ config.financial.duration.today.label }}:</span>
+                  <span class="cell__title">{{ config.today.label }}:</span>
                   <span class="cell__information">{{ today | date: 'd MMM y' }}</span>
                 </div>
                 <div class="table__row">
-                  <span class="cell__title">{{config.financial.duration.durationDate.label}}:</span>
-                  <span class="cell__information">{{config.financial.duration.durationDate.value | cusdate | date: 'd MMM y'}}</span>
+                  <span class="cell__title">{{config.durationDate.label}}:</span>
+                  <span class="cell__information">{{config.durationDate.value | cusdate | date: 'd MMM y'}}</span>
                 </div>
               </div>
           </div>
