@@ -170,6 +170,7 @@ $font-weight--normal:                 400;
 $font-weight--medium:                 500;
 $font-weight--semibold:               600;
 $font-weight--bold:                   700;
+$font-weight--black:                  900;
 
 $font-weight__default:                $font-weight--normal;
 
@@ -347,9 +348,9 @@ $box-padding: 20px;
 
 
 
-$font-size__highlighted--big:                    rem(48px); // 3rem
-$font-size__highlighted--big__small:             rem(24px);
-$font-size__highlighted--medium:                 rem(36px);
+$font-size__highlighted--big:                    rem(38px); // 3rem
+$font-size__highlighted--big__small:             rem(20px);
+$font-size__highlighted--medium:                 rem(32px);
 $font-size__highlighted--medium__small--upper:   rem(24px);
 $font-size__highlighted--medium__small:          rem(12px);
 

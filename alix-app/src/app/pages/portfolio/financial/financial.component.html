@@ -1,9 +1,9 @@
 <div *ngIf="config" class="container-fluid">
   <section class="page-section bg--light">
-    <div class="row-no-gutter">
-      <h1 class="section-title">{{ config.client.clientName.value }}</h1>
+    <div class="row">
+      <h1 class="section-title col-12">{{ config.client.clientName.value }}</h1>
     </div>
-    <div class="row row-no-gutter">
+    <div class="row">
       <div class="col-3">
         <app-panel-1 [config]="config"></app-panel-1>
       </div>
@@ -17,10 +17,10 @@
   </section>
 
   <section class="page-section bg--dark">
-    <div class="row-no-gutter">
-      <h1 class="section-title">Loan XYZ Alpha II</h1> <!-- #HC -->
+    <div class="row">
+      <h1 class="section-title col-12">Loan XYZ Alpha II</h1> <!-- #HC -->
     </div>
-    <div class="row row-no-gutter">
+    <div class="row">
       <div class="col-3">
         <app-panel-4 [config]="config"></app-panel-4>
       </div>
@@ -37,9 +37,9 @@
   </section>
 
   <section class="page-section bg--light">
-    <div class="row-no-gutter">
-      <h1 class="section-title">Collateral Asset</h1> <!-- #HC -->
-      <app-panel-8 [config]="config"></app-panel-8>
+    <div class="row">
+      <h1 class="section-title col-12">Collateral Asset</h1> <!-- #HC -->
     </div>
+      <app-panel-8 [config]="config"></app-panel-8>
   </section>
 </div>

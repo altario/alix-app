@@ -1,0 +1,47 @@
+// ------------------------------------------------------------------
+//
+// INDEX
+//
+//  #MIXINS
+//
+//  #STYLES
+//
+//  Tags
+//
+// ------------------------------------------------------------------
+
+// ------------------------------------------------------------------
+// #MIXINS
+// ------------------------------------------------------------------
+
+@import '~src/scss/imports';
+
+$bullet-size--small: 5px;
+$bullet-size--medium: 10px;
+$bullet-size--big: 15px;
+
+
+.bullet-point {
+  &--small {
+    height: $bullet-size--small;
+    width: $bullet-size-small;
+    border-radius: $bullet-size--small;
+  }
+  &--small {
+    height: $bullet-size--small;
+    width: $bullet-size-small;
+    border-radius: $bullet-size--small;
+  }
+  &--small {
+    height: $bullet-size--small;
+    width: $bullet-size-small;
+    border-radius: $bullet-size--small;
+  }
+
+  background-color: $color__state--default;
+  @each $color in $status--colors {
+    &.tag--#{nth($color,1)} {
+      background-color: nth($color,2);
+    }
+  }
+}

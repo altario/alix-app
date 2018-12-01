@@ -25,7 +25,6 @@
   }
   .secondary__title {
     font-size: rem(16px);
-    color: $font-family--primary;
     font-family: $font-family--secondary;
     font-weight: $font-weight--bold;
   }
@@ -51,7 +50,7 @@
 
 .u-strong { font-weight: $font-weight--bold }
 .u-uppercase { text-transform: uppercase }
-
+.u-underline { text-decoration: underline }
 
 .section-title {
   font-size: rem(36px);

@@ -1,35 +1,37 @@
-<div style="display: flex;">
-  <div style="width: 70%">
-    <img style="width: 100%; height: auto;" src="assets/images/{{config.financial.collateralAsset.assetImage.value}}"
-      alt="" />
+<img class="col-6" src="assets/images/{{config.financial.collateralAsset.assetImage.value}}"
+  alt="" />
+<div class="col-3">
+    <h1 class="boxInformation--title">General</h1> <!-- #HC -->
+  
+    <h1 class="boxInformation--title u-underline">{{ config.financial.collateralAsset.neighborhood.value }}</h1>
+  <div class="icon-list">
+    <div class="list-row">
+      <i class="icol ico-map-marker-alt"></i>
+      {{ config.financial.collateralAsset.address.value }}
+    </div>
+    <div class="list-row">
+      <i class="icol ico-home"></i>
+      <span>{{ config.financial.collateralAsset.typeOfNeighborhood.value }}</span>
+    </div>
+    <div class="list-row">
+      <span class="bullet-point bullet-point--success"></span>
+      {{ config.financial.collateralAsset.status.value }}
+    </div>
   </div>
-  <div style="width: 30%; display: flex;">
-    <ul>
-      <li>General</li> <!-- #HC -->
-      <li>{{ config.financial.collateralAsset.neighborhood.value }}</li>
-      <li>
-        <span><i class="icol ico-info-circle"></i></span>
-        <span>{{ config.financial.collateralAsset.address.value }}</span>
-      </li>
-      <li>
-        <span><i class="icol ico-info-circle"></i></span>
-        <span>{{ config.financial.collateralAsset.typeOfNeighborhood.value }}</span>
-      </li>
-      <li>{{ config.financial.collateralAsset.status.value }}</li>
-    </ul>
-    <ul>
-      <li>
-        <h6>{{ config.financial.collateralAsset.floor.label }}</h6>
-        <div>{{ config.financial.collateralAsset.floor.value }}</div>
-      </li>
-      <li>
-        <h6>{{ config.financial.collateralAsset.numberOfFloors.label }}</h6>
-        <div>{{ config.financial.collateralAsset.numberOfFloors.value }}</div>
-      </li>
-      <li>
-        <h6>{{ config.financial.collateralAsset.totalArea.label }}</h6>
-        <div>{{ config.financial.collateralAsset.totalArea.value | number:'1.0-0'}}SQM</div>
-      </li>
-    </ul>
-  </div>
+</div>
+<div class="col-3">
+  <ul>
+    <li>
+      <h6>{{ config.financial.collateralAsset.floor.label }}</h6>
+      <div>{{ config.financial.collateralAsset.floor.value }}</div>
+    </li>
+    <li>
+      <h6>{{ config.financial.collateralAsset.numberOfFloors.label }}</h6>
+      <div>{{ config.financial.collateralAsset.numberOfFloors.value }}</div>
+    </li>
+    <li>
+      <h6>{{ config.financial.collateralAsset.totalArea.label }}</h6>
+      <div>{{ config.financial.collateralAsset.totalArea.value | number:'1.0-0'}}SQM</div>
+    </li>
+  </ul>
 </div>

@@ -83,6 +83,11 @@
 .container-fluid {
     padding: 0;
     .page-section {
-        padding: 60px 0 60px 20px;
+        padding: 60px 20px;
+        > * {
+            margin: 0;
+            min-width: 1024px;
+            max-width: 1680px;
+        }
     }
 }
