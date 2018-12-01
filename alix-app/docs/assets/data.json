@@ -1,0 +1,55 @@
+{
+    "app": "Alix Dashboars",
+    "version": "0.0.1",
+
+    "data": [
+        {
+            "name": "jan",
+            "value": "01"
+        },
+        {
+            "name": "fev",
+            "value": "01"
+        },
+        {
+            "name": "mar",
+            "value": "01"
+        },
+        {
+            "name": "abr",
+            "value": "01"
+        },
+        {
+            "name": "mai",
+            "value": "01"
+        },
+        {
+            "name": "jun",
+            "value": "01"
+        },
+        {
+            "name": "jul",
+            "value": "01"
+        },
+        {
+            "name": "ago",
+            "value": "01"
+        },
+        {
+            "name": "set",
+            "value": "01"
+        },
+        {
+            "name": "out",
+            "value": "01"
+        },
+        {
+            "name": "nov",
+            "value": "01"
+        },
+        {
+            "name": "dez",
+            "value": "01"
+        }
+    ]
+}
