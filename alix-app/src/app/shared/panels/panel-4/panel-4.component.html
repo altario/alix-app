@@ -1,12 +1,9 @@
+<app-report-selector></app-report-selector>
 <div class="box box--table">
   <div class="box__header box__header--bg">
     <div class="d-flex flex-row justify-content-between">
       <div class="box__title title--compound">
         <h1 class="title">Key Financial<!-- #HC --></h1>
-      </div>
-      <div class="icons">
-        <i class="icol ico-file-alt"></i>
-        <i class="icol ico-info-circle"></i>
       </div>
     </div>
   </div>
@@ -14,12 +11,12 @@
       <div class=" cell__wrapper cell__wrapper--bg-dark">
         <div class="cell__wrapper__top">
           <span class="label__up label--color">
-            {{ config.financial.keyFinancial.status.label }}
+            {{ config.status.label }}
           </span>
         </div>
         <div class="cell__wrapper__info">
-          <div [ngClass]="{ good: config.financial.keyFinancial.status.value === 'Performing' }" class="tag">
-            {{config.financial.keyFinancial.status.value}}
+          <div [ngClass]="{ good: config.status.value === 'Performing' }" class="tag">
+            {{config.status.value}}
           </div>
         </div>
       </div>
@@ -27,12 +24,12 @@
       <div class=" cell__wrapper cell__wrapper--bg-dark">
           <div class="cell__wrapper__top">
             <span class="label__up label--color">
-              {{ config.financial.keyFinancial.raroc.label }}
+              {{ config.raroc.label }}
             </span>
           </div>
           <div class="cell__wrapper__info">
               <p class="highlighted--big highlighted--color">
-                {{ config.financial.keyFinancial.raroc.value | perc:1}}
+                {{ config.raroc.value | perc:1}}
 
                 <small class="u-uppercase highlighted__small--color">%</small>
               </p>
@@ -44,12 +41,12 @@
         <div class=" cell__wrapper cell__wrapper--bg-light">
             <div class="cell__wrapper__top">
               <span class="label__up label--color">
-                {{ config.financial.keyFinancial.absorbedRegulatoryCapital.label }}
+                {{ config.absorbedRegulatoryCapital.label }}
               </span>
             </div>
             <div class="cell__wrapper__info">
                 <p class="highlighted--big highlighted--color">
-                  {{ config.financial.keyFinancial.absorbedRegulatoryCapital.value | curr }}
+                  {{ config.absorbedRegulatoryCapital.value | curr }}
                   <small class="u-uppercase highlighted__small--color">m€</small>
                 </p>
             </div>
@@ -58,12 +55,12 @@
           <div class=" cell__wrapper cell__wrapper--bg-light">
               <div class="cell__wrapper__top">
                 <span class="label__up label--color">
-                  {{ config.financial.keyFinancial.expectedLoss.label }}
+                  {{ config.expectedLoss.label }}
                 </span>
               </div>
               <div class="cell__wrapper__info">
                   <p class="highlighted--big highlighted--color">
-                    {{ config.financial.keyFinancial.expectedLoss.value | curr }}
+                    {{ config.expectedLoss.value | curr }}
                     <small class="u-uppercase highlighted__small--color">k€</small>
                   </p>
               </div>

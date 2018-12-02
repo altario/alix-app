@@ -11,25 +11,6 @@ import { StylingRoutes } from './styling.routing';
 import { StylesComponent } from './styles/styles.component';
 import { PanelsComponent } from './panels/panels.component';
 
-// pipes
-import {
-  CustomCurrencyPipe,
-  CustomPercentagePipe,
-  CustomDateConverterPipe
-} from '@helpers/index';
-
-// panels
-import {
-    Panel1Component,
-    Panel2Component,
-    Panel3Component,
-    Panel4Component,
-    Panel5Component,
-    Panel6Component,
-    Panel7Component,
-    Panel8Component
-} from '@shared/panels/index';
-
 @NgModule({
     imports: [
         CommonModule,
@@ -39,22 +20,7 @@ import {
     declarations: [
         // pages
         StylesComponent,
-        PanelsComponent,
-
-        // pipes
-        CustomCurrencyPipe,
-        CustomPercentagePipe,
-        CustomDateConverterPipe,
-
-        // panels
-        Panel1Component,
-        Panel2Component,
-        Panel3Component,
-        Panel4Component,
-        Panel5Component,
-        Panel6Component,
-        Panel7Component,
-        Panel8Component
+        PanelsComponent
     ]
 })
 export class StylingModule {}

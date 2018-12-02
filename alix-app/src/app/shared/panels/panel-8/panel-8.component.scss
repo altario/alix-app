@@ -1,21 +1,3 @@
-@import '~src/scss/imports';
-
-
-.boxInformation--title {
-    color: $text__secondary-color;
-    font-family: $font-family--primary;
-    font-weight: $font-weight--black;
-    text-transform: uppercase;
-    font-size: rem(14px);
-}
-
-.list-row {
-    color: $text__secondary-color;
-    display: flex;
-    flex-direction: row;
-    @include align(middle);
-    i {
-        font-size: 48px;
-        width: 60px;
-    }
+:host {
+  position: relative;
 }

@@ -1,41 +1,40 @@
+// angular
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes, Router } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpModule } from '@angular/http';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
-/**
- * Generic app routes
- */
+// routes
 import { AppRoutes } from './app.routing';
 
-/**
- * Include generic app component
- */
-
+// components
 import { AppComponent } from './app.component';
-import { BaseLayoutComponent } from './core/base-layout/base-layout.component';
-import { PortfolioLayoutComponent } from './core/portfolio-layout/portfolio-layout.component';
 import { HeaderComponent } from './shared/header/header.component';
 
-/**
- * echarts
- */
+
+// import { BaseLayoutComponent } from './core/base-layout/base-layout.component';
+// import { PortfolioLayoutComponent } from './core/portfolio-layout/portfolio-layout.component';
+// import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 @NgModule({
     declarations: [
-        AppComponent,
-        BaseLayoutComponent,
-        PortfolioLayoutComponent,
-        HeaderComponent
+      // app
+      AppComponent,
+
+      // components
+      HeaderComponent,
+      // BaseLayoutComponent,
+      // PortfolioLayoutComponent,
+      // DashboardComponent
     ],
     imports: [
-        BrowserModule,
-        RouterModule.forRoot(AppRoutes),
-        NgbModule.forRoot(),
-        HttpModule,
-        HttpClientModule
+      BrowserModule,
+      RouterModule.forRoot(AppRoutes),
+      NgbModule.forRoot(),
+      HttpModule,
+      HttpClientModule
     ],
     providers: [],
     bootstrap: [AppComponent]
