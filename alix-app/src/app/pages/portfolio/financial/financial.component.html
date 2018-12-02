@@ -1,45 +1,51 @@
 <div *ngIf="config" class="container-fluid">
-  <div class="row-no-gutter">
-    <div class="col-12">
-      <h1 class="section-title">{{ config.client.clientName.value }}</h1>
+  <section class="page-section bg--dark">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="section-title">{{ config.client.clientName.value }}</h1>
+      </div>
     </div>
-  </div>
-  <div class="row row-no-gutter">
-    <div class="col-3">
-      <app-panel-1 [config]="config.financial.clientPortfolio"></app-panel-1>
+    <div class="row">
+      <div class="col-3">
+        <app-panel-1 [config]="config.financial.clientPortfolio"></app-panel-1>
+      </div>
+      <div class="col-3">
+        <app-panel-2 [config]="config.financial.clientPortfolio"></app-panel-2>
+      </div>
+      <div class="col-3">
+        <app-panel-3 [config]="config.financial.clientPortfolio"></app-panel-3>
+      </div>
     </div>
-    <div class="col-3">
-      <app-panel-2 [config]="config.financial.clientPortfolio"></app-panel-2>
-    </div>
-    <div class="col-3">
-      <app-panel-3 [config]="config.financial.clientPortfolio"></app-panel-3>
-    </div>
-  </div>
-
-  <div class="row-no-gutter">
-    <div class="col-12">
-      <h1 class="section-title">Loan XYZ Alpha II</h1> <!-- #HC -->
-    </div>
-  </div>
-  <div class="row row-no-gutter">
-    <div class="col-3">
-      <app-panel-4 [config]="config.financial.keyFinancial"></app-panel-4>
-    </div>
-    <div class="col-3">
-      <app-panel-5 [config]="config.financial.position"></app-panel-5>
-    </div>
-    <div class="col-3">
-      <app-panel-6 [config]="config.financial.duration"></app-panel-6>
-    </div>
-    <div class="col-3">
-      <app-panel-7 [config]="config.financial.collateral"></app-panel-7>
-    </div>
-  </div>
+  </section>
 
   <section class="page-section bg--light">
     <div class="row">
-      <h1 class="section-title col-12">Collateral Asset</h1> <!-- #HC -->
+      <div class="col-12">
+        <h1 class="section-title">Loan XYZ Alpha II</h1> <!-- #HC -->
+      </div>
     </div>
-    <app-panel-8 [config]="config.financial.collateralAsset"></app-panel-8>
+    <div class="row">
+      <div class="col-3">
+        <app-panel-4 [config]="config.financial.keyFinancial"></app-panel-4>
+      </div>
+      <div class="col-3">
+        <app-panel-5 [config]="config.financial.position"></app-panel-5>
+      </div>
+      <div class="col-3">
+        <app-panel-6 [config]="config.financial.duration"></app-panel-6>
+      </div>
+      <div class="col-3">
+        <app-panel-7 [config]="config.financial.collateral"></app-panel-7>
+      </div>
+    </div>
   </section>
+
+  <section class="page-section bg--dark">
+    <div class="row">
+       <h1 class="section-title col-12">Collateral Asset</h1> <!-- #HC -->
+    </div>
+    <div class="row">
+      <app-panel-8 [config]="config.financial.collateralAsset"></app-panel-8>
+    </div>
+    </section>
 </div>
