@@ -1,32 +1,56 @@
 <app-report-selector></app-report-selector>
-<div style="border: 1px solid #FFFFFF">
-  <h6>Asset price</h6> <!-- #HC -->
-  <h1>{{ config.demandAndOffer.replacementIndicators.marketPriceSqmForSale.value }} €/sqm</h1> <!-- #HC -->
-  <h5>{{ config.financial.collateral.valuationAtT0.value | number:'1.0-0' }}€</h5> <!-- #HC -->
-  <ul>
-    <li>
-      <span>{{ config.demandAndOffer.forSale.populations.population1.populationName.value }} </span>
-      <span style="display: inline-block; background-color: #913BAF; width: 5px; height: 11px;"></span>
-      <span> {{ config.demandAndOffer.forSale.populations.population1.priceSqmForSale.value }}k sqm</span>
-      <span> {{ config.demandAndOffer.forSale.populations.population1.demandRate.value | perc:0 }}%</span>
-      <span> Milan</span> <!-- #HC -->
-      <span> # {{ config.demandAndOffer.forSale.populations.population1.averageSqm.value }} Peer</span>
-    </li>
-    <li>
-      <span>{{ config.demandAndOffer.forSale.populations.population2.populationName.value }}</span>
-      <span style="display: inline-block; background-color: #F26D4F; width: 5px; height: 11px;"></span>
-      <span>{{ config.demandAndOffer.forSale.populations.population2.priceSqmForSale.value }}k sqm</span>
-      <span>{{ config.demandAndOffer.forSale.populations.population2.demandRate.value }}%</span>
-      <span>Milan</span> <!-- #HC -->
-      <span># {{ config.demandAndOffer.forSale.populations.population2.averageSqm.value }} Peer</span>
-    </li>
-    <li>
-      <span>{{ config.demandAndOffer.forSale.populations.population3.populationName.value }}</span>
-      <span style="display: inline-block; background-color: #BF5E5E; width: 5px; height: 11px;"></span>
-      <span>{{ config.demandAndOffer.forSale.populations.population3.priceSqmForSale.value }}k sqm</span>
-      <span>{{ config.demandAndOffer.forSale.populations.population3.demandRate.value }}%</span>
-      <span>Milan</span> <!-- #HC -->
-      <span># {{ config.demandAndOffer.forSale.populations.population3.averageSqm.value }} Peer</span>
-    </li>
-  </ul>
+<div class="box box--table">
+  <div class="box__header box__header--bg">
+    <div class="d-flex flex-row justify-content-between">
+      <div class="title--compound">
+        <div class="main__title">
+          <span class="u-strong u-uppercase">
+              Asset price <!-- #HC -->
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="box__body box__body--bg">
+    <div class=" cell__wrapper cell__wrapper--bg-dark">
+      <div class="highlighted--big highlighted--color">
+        {{ config.demandAndOffer.replacementIndicators.marketPriceSqmForSale.value }}
+        <small class="u-uppercase highlighted__small--color">€/sqm</small>
+      </div><!-- #HC -->
+      <div class="highlighted--small highlighted--color">
+        {{ config.financial.collateral.valuationAtT0.value | number:'1.0-0' }}
+        <small class="u-uppercase highlighted__small--color">€</small>
+      </div><!-- #HC -->
+    </div>
+    <div class=" cell__wrapper cell__wrapper--bg-dark">
+      <div class="table">
+        <div class="table-row">
+          <span class="border--right" style="border-right-color: #913BAF;">{{ config.demandAndOffer.forSale.populations.population1.populationName.value }} </span>
+          <span> {{ config.demandAndOffer.forSale.populations.population1.priceSqmForSale.value }}k sqm</span>
+          <span><span class="truncate"> {{ config.demandAndOffer.forSale.populations.population1.demandRate.value | perc:0 }}</span>%</span>
+          <span> Milan</span> <!-- #HC -->
+          <span> # {{ config.demandAndOffer.forSale.populations.population1.averageSqm.value }} Peer</span>
+        </div>
+        <div class="table-row">
+            <span class="border--right" style="border-right-color: #F26D4F;">{{ config.demandAndOffer.forSale.populations.population2.populationName.value }}</span>
+          <span>{{ config.demandAndOffer.forSale.populations.population2.priceSqmForSale.value }}k sqm</span>
+          <span><span class="truncate">{{ config.demandAndOffer.forSale.populations.population2.demandRate.value }}</span>%</span>
+          <span>Milan</span> <!-- #HC -->
+          <span># {{ config.demandAndOffer.forSale.populations.population2.averageSqm.value }} Peer</span>
+        </div>
+        <div class="table-row">
+            <span class="border--right" style="border-right-color: #BF5E5E;">{{ config.demandAndOffer.forSale.populations.population3.populationName.value }}</span>
+          <span>{{ config.demandAndOffer.forSale.populations.population3.priceSqmForSale.value }}k sqm</span>
+          <span><span class="truncate">{{ config.demandAndOffer.forSale.populations.population3.demandRate.value }}</span>%</span>
+          <span>Milan</span> <!-- #HC -->
+          <span># {{ config.demandAndOffer.forSale.populations.population3.averageSqm.value }} Peer</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+
+
+
