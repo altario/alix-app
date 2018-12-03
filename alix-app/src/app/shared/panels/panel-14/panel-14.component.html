@@ -7,68 +7,71 @@
   <div style="display: flex;">
     <div>
       <h5>Exposure After Replacement</h5>
-      <div>{{ config.replacementIndicators.exposureAfterReplacement.value }}</div>
-      <div>{{ config.replacementIndicators.timeReplacementIsFulfilled.value }} months of {{ config.replacementIndicators.timeReplacementIsFulfilled.label }}</div>
+      <div>{{ config.exposureAfterReplacement.value | perc:1 }}%</div>
+      <div>{{ config.timeReplacementIsFulfilled.value | number:'1.0-0' }} months of {{ config.timeReplacementIsFulfilled.label }}</div>
     </div>
   </div>
 
   <div style="display:flex;">
     <div>
-      <span>{{ config.replacementIndicators.replacementCost.label }}</span>
-      <span>{{ config.replacementIndicators.replacementCost.value }}</span>
+      <span>{{ config.replacementCost.label }}</span>
+      <span> {{ config.replacementCost.value | curr:0 }}k</span>
     </div>
     / 
     <div>
-      <span>{{ config.replacementIndicators.replacementCostSqm.value }}</span>
-      <span>{{ config.replacementIndicators.replacementCostSqm.label }}</span>
+      <span>{{ config.replacementCostSqm.value | curr:0 }}k</span>
+      <span> {{ config.replacementCostSqm.label }}</span>
     </div>
   </div>
 
   <div style="display:flex;">
     <div>
       <span>Market Price:</span>
-      <span>{{ config.replacementIndicators.marketPrice.value }}</span>
+      <span>{{ config.marketPrice.value | curr:0 }}</span>
     </div>
-    /
+     /
     <div>
-      <span>{{ config.replacementIndicators.marketPriceSqmForSale.value }}</span>
-      <span>per SQM</span>
+      <span>{{ config.marketPriceSqmForSale.value | curr:0 }}</span>
+      <span> per SQM</span>
     </div>
   </div>
+
   <div style="display:flex;">
     <div>
-      <span>{{ config.replacementIndicators.ltvLoanToValue.label }}</span>
-      <span>{{ config.replacementIndicators.ltvLoanToValue.value }}</span>
+      <span>{{ config.ltvLoanToValue.label }}</span>
+      <span>{{ config.ltvLoanToValue.value | perc:0 }}%</span>
     </div>
   </div>
   <div style="display:flex;">
     <div>
       <span>Exposure:</span>
-      <span>{{ config.replacementIndicators.exposure.value }}</span>
+      <span>{{ config.exposure.value | curr:0 }}k</span>
+    </div>
+  </div>
+
+  <div style="display:flex;">
+    <div>
+      <span>{{ config.exposureAfterReplacementAbs.label }}</span>
+      <span>{{ config.exposureAfterReplacementAbs.value | curr:0 }}k</span>
     </div>
   </div>
   <div style="display:flex;">
     <div>
-      <span>{{ config.replacementIndicators.exposureAfterReplacementAbs.label }}</span>
-      <span>{{ config.replacementIndicators.exposureAfterReplacementAbs.value }}</span>
+      <span>{{ config.exposureAfterReplacementPerc.label }}</span>
+      <span>{{ config.exposureAfterReplacementPerc.value | perc:1 }}%</span>
+    </div>
+  </div>
+
+  <div style="display:flex;">
+    <div>
+      <span>{{ config.monthlyInstallment.label }}</span>
+      <span>{{ config.monthlyInstallment.value | curr:1}}k</span>
     </div>
   </div>
   <div style="display:flex;">
     <div>
-      <span>{{ config.replacementIndicators.exposureAfterReplacementPerc.label }}</span>
-      <span>{{ config.replacementIndicators.exposureAfterReplacementPerc.value }}</span>
-    </div>
-  </div>
-  <div style="display:flex;">
-    <div>
-      <span>{{ config.replacementIndicators.monthlyInstallment.label }}</span>
-      <span>{{ config.replacementIndicators.monthlyInstallment.value }}</span>
-    </div>
-  </div>
-  <div style="display:flex;">
-    <div>
-      <span>{{ config.replacementIndicators.timeReplacementIsFulfilled.label }}</span>
-      <span>{{ config.replacementIndicators.timeReplacementIsFulfilled.value }}</span>
+      <span>{{ config.timeReplacementIsFulfilled.label }}</span>
+      <span> {{ config.timeReplacementIsFulfilled.value | number:'1.0-0'}}</span>
     </div>
   </div>
 </div>
