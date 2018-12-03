@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'alix-area-basic',
@@ -12,6 +12,9 @@ export class AreaBasicComponent implements OnInit {
 
   @Input()
   public opts: any = {};
+
+  @Output()
+  public chartInit = new EventEmitter();
 
   public options: any = {};
   public initOpts: any = {};
@@ -27,11 +30,7 @@ export class AreaBasicComponent implements OnInit {
       yAxis: {
         type: 'value'
       },
-      series: [{
-        data: [820, 932, 901, 934, 1290, 1330, 1320],
-        type: 'line',
-        areaStyle: {}
-      }]
+      series: this.series
     };
 
     this.options = Object.assign(this.options, this.opts);
@@ -43,6 +42,10 @@ export class AreaBasicComponent implements OnInit {
 
   constructor() {
 
+  }
+
+  onChartInit(e) {
+    this.chartInit.emit(e);
   }
 
 }

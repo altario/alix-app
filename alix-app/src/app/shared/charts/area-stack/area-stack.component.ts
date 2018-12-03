@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'alix-area-stack',
@@ -11,6 +11,9 @@ export class AreaStackComponent implements OnInit {
 
   @Input()
   public opts: any = {};
+
+  @Output()
+  public chartInit = new EventEmitter();
 
   public options: any = {};
   public initOpts: any = {};
