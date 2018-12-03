@@ -15,6 +15,9 @@ export * from './panel-14/panel-14.component';
 export * from './panel-15/panel-15.component';
 export * from './panel-16/panel-16.component';
 export * from './panel-17/panel-17.component';
+export * from './panel-18/panel-18.component';
+export * from './panel-19/panel-19.component';
+export * from './panel-20/panel-20.component';
 export * from './panel-21/panel-21.component';
 export * from './panel-22/panel-22.component';
 export * from './panel-23/panel-23.component';
@@ -26,4 +29,8 @@ export * from './panel-28/panel-28.component';
 export * from './panel-29/panel-29.component';
 export * from './panel-30/panel-30.component';
 export * from './panel-31/panel-31.component';
+export * from './panel-32/panel-32.component';
+export * from './panel-33/panel-33.component';
+export * from './panel-34/panel-34.component';
+export * from './panel-35/panel-35.component';
 

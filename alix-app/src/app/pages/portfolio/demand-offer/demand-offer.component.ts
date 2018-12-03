@@ -12,41 +12,23 @@ import * as chartdataset from '@data/charts-dataset';
   styleUrls: ['./demand-offer.component.scss']
 })
 export class DemandAndOfferComponent implements OnInit {
-  public config: object;
+
+  public config: any;
   public series: any;
   public opts: any;
   public chartInstance: any = {};
+  public population: any;
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       // console.log(params['id']);
-      this.config = dataset.dossiersMainData.dossier1.demandAndOffer;
+      this.config = dataset.dossiersMainData.dossier1;
+      this.population = this.config.demandAndOffer.forSale.populations[Object.keys(this.config.demandAndOffer.forSale.populations)[0]]
 
 
       this.opts = {
-        marketValue: {
-          legend: {
-            data: [
-              chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost.marketValueSqm.label,
-              chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost.replacementCostSqm.label
-            ]
-          },
-          tooltip: {
-            trigger: 'axis',
-            axisPointer: {
-              type: 'cross',
-              label: {
-                backgroundColor: '#6a7985'
-              }
-            }
-          },
-          xAxis: {
-            type: 'category',
-            data: chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost.year.values
-          }
-        },
         sqm: {
           title: {
             text: '# SQM / Asset Demand'
@@ -56,22 +38,23 @@ export class DemandAndOfferComponent implements OnInit {
           title: {
             text: '# Rooms / Asset Demand'
           },
+          xAxis: [
+            {
+              type: 'value',
+              scale: true,
+              axisLabel: {
+                formatter: function(x, y) {
+                  return 'Label: ' + x;
+                }
+              }
+            }
+          ],
         }
       };
 
 
 
       this.series = {
-        marketValue: [{
-          name: chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost.marketValueSqm.label,
-          data: chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost.marketValueSqm.values,
-          type: 'line'
-        }, {
-          name: chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost.replacementCostSqm.label,
-          data: chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost.replacementCostSqm.values,
-          type: 'line'
-        }],
-
 
         sqm: [{
           symbolSize: 20,
@@ -115,8 +98,59 @@ export class DemandAndOfferComponent implements OnInit {
       };
     });
 
+    this.marketValue();
     this.priceTodayVsOvertime();
     this.peerListedAssets5YForSale();
+
+  }
+
+  getPopulationNames(): Array<any> {
+    return Object.keys(this.config.demandAndOffer.forSale.populations).map((population, i) => {
+      return { id: i, key: population, value: this.config.demandAndOffer.forSale.populations[population].populationName.value };
+    });
+  }
+
+  changePopulationValue(callbackEvent) {
+    this.population = this.config.demandAndOffer.forSale.populations[callbackEvent.value];
+  }
+
+  /**
+   * 
+   */
+
+  marketValue() {
+
+    this.opts.marketValue= {
+      legend: {
+        data: [
+          chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost.marketValueSqm.label,
+          chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost.replacementCostSqm.label
+        ]
+      },
+      tooltip: {
+        trigger: 'axis',
+          axisPointer: {
+          type: 'cross',
+            label: {
+            backgroundColor: '#6a7985'
+          }
+        }
+      },
+      xAxis: {
+        type: 'category',
+          data: chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost.year.values
+      }
+    };
+
+    this.series.marketValue = [{
+        name: chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost.marketValueSqm.label,
+        data: chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost.marketValueSqm.values,
+        type: 'line'
+      }, {
+        name: chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost.replacementCostSqm.label,
+        data: chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost.replacementCostSqm.values,
+        type: 'line'
+      }];
   }
 
   priceTodayVsOvertime() {
@@ -180,6 +214,28 @@ export class DemandAndOfferComponent implements OnInit {
     }];
   }
 
+  longTermRentEvolutionEurSqm() {
+
+  }
+
+  peerListedAssets5YLr() {
+
+  }
+
+  peerAssetsDemandRateListingToUnlistingLr() {
+
+  }
+
+  peerListedAssets5YSr() {
+
+  }
+
+  peerAssetsOccupancyRateSr() {
+
+  }
+  /**
+   * 
+   */
   getPriceTodayVsOvertime(): Array<any> {
     const options = Object.keys(chartdataset.dossier1ChartsData.demandOffer.priceTodayVsOvertime).map((population, i) => {
         return { id: i-1, key: population, value: chartdataset.dossier1ChartsData.demandOffer.priceTodayVsOvertime[population].label };
@@ -208,4 +264,5 @@ export class DemandAndOfferComponent implements OnInit {
     this.chartInstance[chart] = e;
     console.log(this.chartInstance);
   }
+
 }

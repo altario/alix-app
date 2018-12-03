@@ -162,9 +162,6 @@
         margin-top: 40px;
         margin-bottom: 40px;
         color: $color__gray--lighter;
-        u-strong {
-          font-weight: $font-weight--bold;
-        }
         @include icon(check-circle) {
           font-size: 32px;
           color: $color__state--success;
@@ -210,9 +207,6 @@
         margin-top: 40px;
         margin-bottom: 40px;
         color: $color__gray--lighter;
-        u-strong {
-          font-weight: $font-weight--bold;
-        }
         @include icon(info-circle) {
           font-size: 32px;
           margin-top: -70px;

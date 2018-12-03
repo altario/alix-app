@@ -1,16 +1,15 @@
 <app-report-selector></app-report-selector>
 <div style="border: 1px solid #FFFFFF">
-  <h6>{{config.name}}</h6>
+  <h6>Architecture</h6> <!-- #HC -->
+  <h1>{{ config._19ThCentury.label }}</h1>
+
   <div>
-    <div><i class="icol ico-info-circle"></i></div>
-    <div>
-      <div>
-        <span>{{config.rating}}</span><span> {{config.total | number: '1.0-0'}} places</span>
-      </div>
-      <div>stars here</div>
-      <div>
-        <span>{{config.growth}} stars</span><span>2 years ago</span>
-      </div>
-    </div>
+    <div><span>< {{ config._19ThCentury.label }}</span><span> {{ config._19ThCentury.value | perc:0 }}%</span></div>
+    <div><span>{{ config._1900To1950.label }}</span><span> {{ config._1900To1950.value | perc:0 }}%</span></div>
+    <div><span>{{ config._1950To1970.label }}</span><span> {{ config._1950To1970.value | perc:0 }}%</span></div>
+    <div><span>{{ config._1970To1990.label }}</span><span> {{ config._1970To1990.value | perc:0 }}%</span></div>
+    <div><span>{{ config._1990To2000.label }}</span><span> {{ config._1990To2000.value | perc:0 }}%</span></div>
+    <div><span>{{ config.after2000.label }}</span><span> {{ config.after2000.value | perc:0 }}%</span></div>
   </div>
 </div>
+  

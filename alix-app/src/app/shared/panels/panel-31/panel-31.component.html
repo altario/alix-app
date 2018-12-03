@@ -1,29 +1,52 @@
 <app-report-selector></app-report-selector>
 <div style="border: 1px solid #FFFFFF">
-  <div>
-    <h6>{{config.name}}</h6> <!-- #HC -->
-  </div>
+  <h6>Accomodation in Bera</h6> <!-- #HC-->
   <div>
     <div>
-      <i class="icol ico-info-circle"></i>
+      <span>
+        <div>Average Booking Night rate</div> <!-- #HC -->
+        <div>{{ config.averageBookingNightRate.value }}€</div>
+        <div>{{ config.averageBookingNightRateVsMilan.value | perc:0 }} Milano</div> <!-- #HC Milano-->
+      </span>
+      <span>
+        <div>Median Booking Night Rate</div> <!-- #HC -->
+        <div>{{ config.medianBookingNightRate.value }}€</div>
+        <div>{{ config.medianBookingNightRateVsMilan.value | perc:0 }} Milano</div> <!-- #HC Milano-->
+      </span>
+    </div>
+    <div>
+      <span>
+        <div>Average AIRBNB night rate</div> <!-- #HC -->
+        <div>{{ config.averageAirbnbNightRate.value }}€</div>
+        <div>{{ config.averageAirbnbNightRateVsMilan.value | perc:0 }} Milano</div> <!-- #HC Milano-->
+      </span>
+      <span>
+        <div>Median AIRBNB night rate</div> <!-- #HC -->
+        <div>{{ config.medianAirbnbNightRate.value }}€</div>
+        <div>{{ config.medianAirbnbNightRateVsMilan.value | perc:0 }} Milano</div> <!-- #HC Milano-->
+      </span>
     </div>
     <div>
       <div>
-        <span><i class="icol ico-info-circle"></i></span>
-        <span>{{ config.pubTrans }} Min</span>
-        <span> Walk+Train</span>
+        <span><i class="icol ico-info-circle"></i></span> <!-- #HC -->
+        <span>
+          <div>Brera</div> <!-- #HC -->
+          <div># {{ config.numberOfBookingsNeighborhood.value }}</div>
+        </span>
+        <span>
+          <div>Milano</div> <!-- #HC -->
+          <div># {{ config.numberOfBookingsMilan.value }}</div>
+        </span>
       </div>
       <div>
-        <span><i class="icol ico-info-circle"></i></span>
-        <span>{{ config.taxi }} Min</span>
-        <span> Taxi</span>
-      </div>
-      <div *ngIf="config.walking">
-        <span><i class="icol ico-info-circle"></i></span>
-        <span>{{ config.walking }} Min</span>
-        <span> Walking</span>
+        <span><i class="icol ico-info-circle"></i></span> <!-- #HC -->
+        <span>
+          <div># {{ config.numberOfAirbnbNeighborhood.value }}</div>
+        </span>
+        <span>
+          <div># {{ config.numberOfAirbnbMilan.value }}</div>
+        </span>
       </div>
     </div>
   </div>
 </div>
-  

@@ -14,54 +14,70 @@
 // #MIXINS
 // ------------------------------------------------------------------
 
+%highlighted {
+  display: flex;
+  align-items: flex-end;
+  .of { padding: 0 .25em }
+  small,
+  span {
+    display: inline-block
+  }
+}
+
 
 .highlighted--big {
-    font-size: $font-size__highlighted--big;
-    font-family: $font-family--primary;
+  @extend %highlighted;
+  font-size: $font-size__highlighted--big;
+  font-family: $font-family--primary;
+  font-weight: $font-weight--thin;
+  line-height: $font-size__highlighted--big;
+  small {
     font-weight: $font-weight--thin;
-    line-height: $font-size__highlighted--big;
-    small {
-      font-weight: $font-weight--thin;
-      font-size: $font-size__highlighted--big__small;
-      padding: 0 .1em;
-      line-height: $font-size__highlighted--big__small;
-     }
-     .of { padding: 0 .25em }
-     small,
-     span {
-       display: inline-block
-     }
+    font-size: $font-size__highlighted--big__small;
+    padding: 0 .1em;
+    line-height: $font-size__highlighted--big__small;
   }
+}
 
-  .highlighted--medium {
-    font-size: $font-size__highlighted--medium;
-    font-family: $font-family--primary;
+.highlighted--medium {
+  @extend %highlighted;
+  font-size: $font-size__highlighted--medium;
+  font-family: $font-family--primary;
+  font-weight: $font-weight--thin;
+  line-height: $font-size__highlighted--medium;
+  small {
     font-weight: $font-weight--thin;
-    line-height: $font-size__highlighted--medium;
-    small {
-      font-weight: $font-weight--thin;
-      font-size: $font-size__highlighted--medium__small;
-      line-height: $font-size__highlighted--medium__small;
-      padding: 0 .1em;
-     }
-     small.u-uppercase {
+    font-size: $font-size__highlighted--medium__small;
+    line-height: $font-size__highlighted--medium__small;
+    padding: 0 .1em;
+    &.u-uppercase {
       font-size: $font-size__highlighted--medium__small--upper;
       line-height: $font-size__highlighted--medium__small--upper;
-     }
-     .of { padding: 0 .25em }
-     small,
-     span {
-       display: inline-block
-     }
+    }
   }
+}
 
-  .highlighted--color {
-    color: $color__text_highlighted;
-    .highlighted__small--color {
-      color: $text__secondary-color;
-    }
-    .highlighted__small--color__exception {
-      color: $color__text_highlighted;
-    }
+.highlighted--huge {
+  @extend %highlighted;
+  font-size: $font-size__highlighted--huge;
+  font-family: $font-family--primary;
+  font-weight: $font-weight--thin;
+  line-height: $font-size__highlighted--huge;
+  small {
+    font-weight: $font-weight--thin;
+    font-size: $font-size__highlighted--huge__small;
+    line-height: $font-size__highlighted--huge__small;
+    padding: 0 .1em;
   }
+}
+
+.highlighted--color {
+  color: $color__text_highlighted;
+  .highlighted__small--color {
+    color: $text__secondary-color;
+  }
+  .highlighted__small--color__exception {
+    color: $color__text_highlighted;
+  }
+}
  

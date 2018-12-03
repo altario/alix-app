@@ -1,24 +1,34 @@
 <app-report-selector></app-report-selector>
-<div style="border: 1px solid #FFFFFF">
-  <h6><i class="icol ico-info-circle"></i>Focus Asset</h6> <!-- #HC -->
-  <ul>
-    <li>
-      <span>{{config.new.value | perc:0}} %</span><span style="display: inline-block; background-color: #00B5E9; width: 5px; height: 11px;"></span><span>New</span> <!-- #HC -->
-    </li>
-    <li>
-      <span>{{config.inConstruction.value | perc:0}} %</span><span style="display: inline-block; background-color: #7AC143; width: 5px; height: 11px;"></span><span>In Construction</span> <!-- #HC -->
-    </li>
-    <li>
-      <span>{{config.renovated.value | perc:0}} %</span><span style="display: inline-block; background-color: #C7DA2C; width: 5px; height: 11px;"></span><span>Renovated</span> <!-- #HC -->
-    </li>
-    <li>
-      <span>{{config.used.value | perc:0}} %</span><span style="display: inline-block; background-color: #F2E603; width: 5px; height: 11px;"></span><span>Used</span> <!-- #HC -->
-    </li>
-    <li>
-      <span>{{config.needsRenovation.value | perc:0}} %</span><span style="display: inline-block; background-color: #FCB86B; width: 5px; height: 11px;"></span><span>Needs Renov.</span> <!-- #HC -->
-    </li>
-    <li>
-      <span>{{config.ruin.value | perc:0}} %</span><span style="display: inline-block; background-color: #E9545C; width: 5px; height: 11px;"></span><span>Ruin</span> <!-- #HC -->
-    </li>
-  </ul>
+<div class="box">
+   <div class="box__header box__header--bg">
+    <div class="d-flex flex-row justify-content-center">
+      <div class="box__title title--compound row-list--small">
+        <i class="icon--small icol ico-map-marker-alt"></i>
+        <h1 class="title"> Focus Asset </h1><!-- #HC -->
+      </div>
+    </div>
+  </div>
+  <div class="box-list">
+    <div class="titles">
+      <span>{{config.new.value | perc:0}} %</span>
+      <span class="square" style="background-color: #00B5E9; "></span>
+      <span>New</span> <!-- #HC -->
+    </div>
+    <div>
+      <span>{{config.inConstruction.value | perc:0}} %</span><span class="square" style="background-color: #7AC143; "></span><span>In Construction</span> <!-- #HC -->
+    </div>
+    <div>
+      <span>{{config.renovated.value | perc:0}} %</span><span class="square" style="background-color: #C7DA2C; "></span><span>Renovated</span> <!-- #HC -->
+    </div>
+    <div>
+      <span>{{config.used.value | perc:0}} %</span><span class="square" style="background-color: #F2E603; "></span><span>Used</span> <!-- #HC -->
+    </div>
+    <div>
+      <span>{{config.needsRenovation.value | perc:0}} %</span><span class="square" style="background-color: #FCB86B; "></span><span>Needs Renov.</span> <!-- #HC -->
+    </div>
+    <div>
+      <span>{{config.ruin.value | perc:0}} %</span><span class="square" style="background-color: #E9545C; "></span><span>Ruin</span> <!-- #HC -->
+    </div>
+  </div>
 </div>
+

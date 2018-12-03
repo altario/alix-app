@@ -170,6 +170,7 @@ $font-weight--normal:                 400;
 $font-weight--medium:                 500;
 $font-weight--semibold:               600;
 $font-weight--bold:                   700;
+$font-weight--black:                  900;
 
 $font-weight__default:                $font-weight--normal;
 
@@ -334,10 +335,12 @@ $transition__base--noprop:            .25s;
 // delete
 
 // $color
-$text__secondary-color: #8D8C8D !important;
 
 
-$color__text_highlighted:           #FFFFFF;
+$text__primary-color:               #FFFFFF !important;
+$text__secondary-color:             #8D8C8D !important;
+
+$color__text_highlighted:             $text__primary-color;
 $color__text_highlighted_small:       $text__secondary-color;
 $color__text_label:                 #CED6FF;
 $color__text_table:                 #CED6FF;
@@ -346,13 +349,34 @@ $amount: 40;
 $box-padding: 20px;
 
 
-
-$font-size__highlighted--big:                    rem(48px); // 3rem
-$font-size__highlighted--big__small:             rem(24px);
-$font-size__highlighted--medium:                 rem(36px);
+$font-size__highlighted--huge:                   rem(57px); // 3rem
+$font-size__highlighted--huge__small:            rem(40px);
+$font-size__highlighted--big:                    rem(38px); // 3rem
+$font-size__highlighted--big__small:             rem(20px);
+$font-size__highlighted--medium:                 rem(32px);
 $font-size__highlighted--medium__small--upper:   rem(24px);
 $font-size__highlighted--medium__small:          rem(12px);
 
 
 $lines: 2;
 $font-size: rem(11px);
+
+$bullet-size: (
+  small:   6px,
+  medium:  15px,
+  big:     20px
+);
+
+
+$icon-row--size: (
+  small:   rem(16px),
+  medium:  rem(32px),
+  big:     rem(74px)
+);
+
+$row-list--size: (
+  small:    30px,
+  medium:   50px,
+  big:      100px
+);
+

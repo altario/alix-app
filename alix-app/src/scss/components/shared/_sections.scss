@@ -1,0 +1,69 @@
+$box--bg: transparent;
+$box__header--bg: transparent;
+$box__body--bg: transparent;
+$box__body-bg--light: #34363B;
+$box__body-bg--dark: #2D3035;
+
+
+@mixin box--bg ($box--bg: transparent, $box__body-bg--dark: $box__body-bg--dark, $box__body-bg--light: $box__body-bg--light, $box__body--bg: transparent, $box__header--bg: transparent ){
+  & { background-color: $box--bg }
+  &__header--bg { background-color: $box__header--bg }
+  &__body--bg {
+    background-color: $box__body--bg;
+    .cell__wrapper--bg-dark {
+      background-color: $box__body-bg--dark
+    }
+    .cell__wrapper--bg-light {
+      background-color: $box__body-bg--light
+    }
+  }
+}
+
+@mixin lateral-wrapper--color (
+	$base--color: $text__secondary-color,
+	$title--color: $base--color,
+	$sub-title--color: $base--color,
+	$span--color: $base--color
+	) {
+	.lateral-wrapper {
+		.title { color: $title--color }
+		.sub-title { color: $sub-title--color }
+		i,
+		span { color: $span--color }
+	}
+}
+
+@mixin box-list--color ($title-color: $text__secondary-color, $text-color: #DBDBDE, $states-color: $text__primary-color ){
+	.box-list {
+		& > div {
+			&.titles span { color: $title-color }
+			span { color: $text-color }
+			span:nth-child(1) { color: $states-color }
+		}
+	}
+}
+
+@mixin box-list--bg ( $bg-color: $box__body-bg--dark ){
+	span { background-color: $bg-color }
+}
+
+.box { @include box--bg (green, transparent, transparent) }
+
+
+.bg--light {
+	background-color: red;
+	.box { @include box--bg (green, $box__body-bg--dark, $box__body-bg--light) }
+	@include lateral-wrapper--color;
+	@include box-list--color;
+}
+
+.bg--dark {
+	background-color: purple !important;
+	.box { @include box--bg (orange, $box__body-bg--dark, $box__body-bg--light) }
+	@include lateral-wrapper--color;
+	@include box-list--bg;
+	@include box-list--color;
+
+}
+
+@include box-list--bg;

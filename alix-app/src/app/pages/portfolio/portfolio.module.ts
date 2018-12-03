@@ -76,7 +76,14 @@ import {
   Panel30Component,
   Panel31Component,
   Panel16Component,
-  Panel17Component
+  Panel17Component,
+  Panel18Component,
+  Panel19Component,
+  Panel20Component,
+  Panel32Component,
+  Panel33Component,
+  Panel34Component,
+  Panel35Component
 } from '@shared/panels/index';
 
 import { PortfolioLayoutComponent } from '@core/index';
@@ -138,6 +145,9 @@ import { PortfolioReportService } from '@services/portfolio-report.service';
     Panel15Component,
     Panel16Component,
     Panel17Component,
+    Panel18Component,
+    Panel19Component,
+    Panel20Component,
     Panel21Component,
     Panel22Component,
     Panel23Component,
@@ -149,6 +159,10 @@ import { PortfolioReportService } from '@services/portfolio-report.service';
     Panel29Component,
     Panel30Component,
     Panel31Component,
+    Panel32Component,
+    Panel33Component,
+    Panel34Component,
+    Panel35Component,
 
     // components
     SliderRangeComponent,

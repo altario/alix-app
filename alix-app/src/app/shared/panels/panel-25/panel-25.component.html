@@ -1,30 +1,43 @@
 <app-report-selector></app-report-selector>
 <div style="border: 1px solid #FFFFFF">
-  <h6>Street Condition</h6> <!-- #HC -->
-  <h1><i class="icol ico-info-circle"></i>Excellent</h1> <!-- #HC -->
+  <h6>Type of neighbourhood</h6> <!-- #HC -->
+  <h1><i class="icol ico-info-circle"></i> {{ config.modeTypeOfNeighborhood.value }}</h1>
   <ul>
     <li>
-      <span>XXI Century</span>
-      <span style="display: inline-block; background-color: #05E900; width: 5px; height: 11px;"></span>
-      <span>{{config.xxiCentury.value | perc:0 }} %</span>
-      <span>{{config.xxiCenturyGrowth3Y.value | perc:0 }}%</span>
-      <span> 3 Years</span> <!-- #HC -->
+      <span>Residential</span>
+      <span style="display: inline-block; background-color: #8FC0A9; width: 5px; height: 11px;"></span>
+      <span>{{config.residential.value | perc:0}} %</span> .
+      <span># {{config.absResidential.value | number:'1.0-0'}}</span><!-- #HC -->
     </li>
     <li>
-      <span>XX Century</span>
-      <span style="display: inline-block; background-color: #3A99D8; width: 5px; height: 11px;"></span>
-      <span>{{config.xxCentury.value | perc:0 }} %</span>
-      <span>{{config.xxCenturyGrowth3Y.value | perc:0 }}% </span>
-      <span> 3 Years</span> <!-- #HC -->
+      <span>Retail</span>
+      <span style="display: inline-block; background-color: #E49D89; width: 5px; height: 11px;"></span>
+      <span>{{config.retail.value | perc:0}} %</span> .
+      <span># {{config.absRetail.value | number:'1.0-0'}}</span><!-- #HC -->
     </li>
     <li>
-      <span>
-        < XX Century>
-      </span>
-      <span style="display: inline-block; background-color: #FC0D1B; width: 5px; height: 11px;"></span>
-      <span>{{ config.beforeXxCentury.value | perc:0 }} %</span>
-      <span>{{ config.beforeXxCenturyGrowth3Y.value | perc:0 }}% </span>
-      <span> 3 Years</span> <!-- #HC -->
+      <span>Hospitality</span>
+      <span style="display: inline-block; background-color: #769A9F; width: 5px; height: 11px;"></span>
+      <span>{{config.hospitality.value | perc:0}} %</span> .
+      <span># {{config.absHospitality.value | number:'1.0-0'}}</span><!-- #HC -->
+    </li>
+    <li>
+      <span>Offices</span>
+      <span style="display: inline-block; background-color: #DB6C68; width: 5px; height: 11px;"></span>
+      <span>{{config.offices.value | perc:0}} %</span> .
+      <span># {{config.absOffices.value | number:'1.0-0'}}</span><!-- #HC -->
+    </li>
+    <li>
+      <span>Warehouses</span>
+      <span style="display: inline-block; background-color: #6BA5FC; width: 5px; height: 11px;"></span>
+      <span>{{config.warehouse.value | perc:0}} %</span> .
+      <span># {{config.absWarehouse.value | number:'1.0-0'}}</span><!-- #HC -->
+    </li>
+    <li>
+      <span>Factories</span>
+      <span style="display: inline-block; background-color: #91809B; width: 5px; height: 11px;"></span>
+      <span>{{config.factories.value | perc:0}} %</span> .
+      <span># {{config.absFactories.value | number:'1.0-0'}}</span><!-- #HC -->
     </li>
   </ul>
 </div>

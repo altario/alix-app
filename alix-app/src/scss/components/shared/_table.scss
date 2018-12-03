@@ -3,23 +3,19 @@
 // table
 
 .table__simple {
-  display: table;
+  display: flex;
   .table__row {
-     display: table-row;
-    .cell__title {
-      font-size: rem(12px);
-      padding: 0 20px 0 0;
-      font-family: $font-family--secondary;
-      font-weight: $font-weight--bold;
-      color: $color__text_table;
-      display: table-cell;
-    }
+     display: flex;
+     .cell__title,
     .cell__information {
-      font-size: rem(12px);
-      font-family: $font-family--secondary;
-      font-weight: $font-weight--thin;
+      font-size: rem(10px);
       color: $color__text_table;
-      display: table-cell;
+      font-family: $font-family--secondary;
     }
+    .cell__title {
+      padding: 0 20px 0 0;
+      font-weight: $font-weight--bold;
+    }
+    .cell__information { font-weight: $font-weight--thin }
   }
 }

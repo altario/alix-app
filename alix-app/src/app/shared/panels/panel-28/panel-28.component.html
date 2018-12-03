@@ -1,21 +1,46 @@
 <app-report-selector></app-report-selector>
 <div style="border: 1px solid #FFFFFF">
-  <h6>Time Shift</h6> <!-- #HC -->
-  <h1><i class="icol ico-info-circle"></i>Daily Life</h1> <!-- #HC -->
-  <ul>
-    <li>
-      <span>Daily Life</span> <!-- #HC -->
-      <span style="display: inline-block; background-color: #3A99D8; width: 5px; height: 11px;"></span>
-      <span>{{config.daylife.value | perc:0 }}%</span>
-      <span> {{config.daylifeGrowth3Y.value | perc:0 }}%</span>
-      <span> 3 Years</span> <!-- #HC -->
-    </li>
-    <li>
-      <span>Night Life</span> <!-- #HC -->
-      <span style="display: inline-block; background-color: #FC0D1B; width: 5px; height: 11px;"></span>
-      <span>{{config.nightlife.value | perc:0 }} %</span>
-      <span>{{config.nightlifeGrowth3Y.value | perc:0 }}% </span>
-      <span> 3 Years</span> <!-- #HC -->
-    </li>
-  </ul>
+  <h6>Vehicles</h6> <!-- #HC -->
+
+  <div>
+    <h6>Average Vehicle price</h6> <!-- #HC-->
+    <div>
+      <span>{{ config.averagePrice.value | curr:0 }}</span>
+      <span>{{config.averagePriceVsMilanPerc.value | perc:0}}%</span>
+      <span> z{{config.averagePriceVsMilanPerc.label}}</span>
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <span>{{ config.greater100K.label }}</span>
+      <span> {{ config.greater100KVsMilanPerc.value | perc:0 }}%</span>
+      <span> {{ config.greater100KVsMilanPerc.label }}</span>
+    </div>
+    <div>
+      <span>{{ config._80K.label }}</span>
+      <span> {{ config._80KVsMilanPerc.value | perc:0 }}%</span>
+      <span> {{ config._80KVsMilanPerc.label }}</span>
+    </div>
+    <div>
+      <span>{{ config._60K.label }}</span>
+      <span> {{ config._60KVsMilanPerc.value | perc:0 }}%</span>
+      <span> {{ config._60KVsMilanPerc.label }}</span>
+    </div>
+    <div>
+      <span>{{ config._40K.label }}</span>
+      <span> {{ config._40KVsMilanPerc.value | perc:0 }}%</span>
+      <span> {{ config._40KVsMilanPerc.label }}</span>
+    </div>
+    <div>
+      <span>{{ config._20K.label }}</span>
+      <span> {{ config._20KVsMilanPerc.value | perc:0 }}%</span>
+      <span> {{ config._20KVsMilanPerc.label }}</span>
+    </div>
+    <div>
+      <span>{{ config.smaller20K.label }}</span>
+      <span> {{ config.smaller20KVsMilanPerc.value | perc:0 }}%</span>
+      <span> {{ config.smaller20KVsMilanPerc.label }}</span>
+    </div>
+  </div>
 </div>

@@ -1,22 +1,30 @@
 <app-report-selector></app-report-selector>
 <div style="border: 1px solid #FFFFFF">
-  <h6>{{name}}</h6> <!-- #HC -->
-  <div>
-    <div>
-      <i class="icol ico-info-circle"></i>
-    </div>
-    <div>
-      <div>
-        <span>
-          <h1># {{ config.total }}</h1>
-        </span>
-        <span>Units in 200m Radius</span>
-      </div>
-      <div>
-        <span><i class="icol ico-info-circle"></i></span>
-        <span>{{ config.closest }} Min</span><span>{{ config.legend }}</span>
-      </div>
-    </div>
-  </div>
+  <h6>Street Condition</h6> <!-- #HC -->
+  <h1><i class="icol ico-info-circle"></i>Excellent</h1> <!-- #HC -->
+  <ul>
+    <li>
+      <span>XXI Century</span>
+      <span style="display: inline-block; background-color: #05E900; width: 5px; height: 11px;"></span>
+      <span>{{config.xxiCentury.value | perc:0 }} %</span>
+      <span>{{config.xxiCenturyGrowth3Y.value | perc:0 }}%</span>
+      <span> 3 Years</span> <!-- #HC -->
+    </li>
+    <li>
+      <span>XX Century</span>
+      <span style="display: inline-block; background-color: #3A99D8; width: 5px; height: 11px;"></span>
+      <span>{{config.xxCentury.value | perc:0 }} %</span>
+      <span>{{config.xxCenturyGrowth3Y.value | perc:0 }}% </span>
+      <span> 3 Years</span> <!-- #HC -->
+    </li>
+    <li>
+      <span>
+        < XX Century>
+      </span>
+      <span style="display: inline-block; background-color: #FC0D1B; width: 5px; height: 11px;"></span>
+      <span>{{ config.beforeXxCentury.value | perc:0 }} %</span>
+      <span>{{ config.beforeXxCenturyGrowth3Y.value | perc:0 }}% </span>
+      <span> 3 Years</span> <!-- #HC -->
+    </li>
+  </ul>
 </div>
-  

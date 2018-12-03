@@ -25,7 +25,6 @@
   }
   .secondary__title {
     font-size: rem(16px);
-    color: $font-family--primary;
     font-family: $font-family--secondary;
     font-weight: $font-weight--bold;
   }
@@ -38,23 +37,26 @@
   text-transform: uppercase;
 }
 
-.state-text {
-  font-size: rem(11px);
+%state-text {
   font-family: $font-family--primary;
   font-weight: $font-weight--bold;
-  @each $color in $status--colors {
-    &.state-text--#{nth($color,1)} {
-      color: nth($color,2);
-    }
+  &.text--small{ font-size: rem(11px) }
+}
+
+@each $color in $status--colors {
+  &.text--#{nth($color,1)} {
+    @extend %state-text;
+    color: nth($color,2);
   }
 }
 
 .u-strong { font-weight: $font-weight--bold }
 .u-uppercase { text-transform: uppercase }
-
+.u-underline { text-decoration: underline }
 
 .section-title {
   font-size: rem(36px);
   font-family: $font-family--primary;
   font-weight: $font-weight--light;
+  margin: 40px 0 0 0;
 }

@@ -1,86 +1,122 @@
 <div *ngIf="config" class="container-fluid">
-  <div class="row row-no-gutter">
-    <div class="col-3">
-      <app-panel-9 comparisonCriteria="{{config.comparableAssets.comparisonCriteria.value}}" [config]="config.comparableAssets.populations.population1"></app-panel-9>
-    </div>
-    <div class="col-3">
-      <app-panel-9 comparisonCriteria="{{config.comparableAssets.comparisonCriteria.value}}" [config]="config.comparableAssets.populations.population2"></app-panel-9>
-    </div>
-    <div class="col-3">
-      <app-panel-9 comparisonCriteria="{{config.comparableAssets.comparisonCriteria.value}}" [config]="config.comparableAssets.populations.population3"></app-panel-9>
-    </div>
-  </div>
+    <section class="page-section bg--dark">
+      <div class="row">
+          <div class="col-4">
+            <app-panel-9 comparisonCriteria="{{config.comparableAssets.comparisonCriteria.value}}" [config]="config.comparableAssets.populations.population1"></app-panel-9>
+          </div>
+          <div class="col-4">
+            <app-panel-9 comparisonCriteria="{{config.comparableAssets.comparisonCriteria.value}}" [config]="config.comparableAssets.populations.population2"></app-panel-9>
+          </div>
+          <div class="col-4">
+            <app-panel-9 comparisonCriteria="{{config.comparableAssets.comparisonCriteria.value}}" [config]="config.comparableAssets.populations.population3"></app-panel-9>
+          </div>
+        </div>
+      </section>
+      <section class="page-section bg--light">
+        <div class="row">
+            <div class="col-12">
+              <app-dropdown [config]="getSCTodayPopulationNames()" (callback)="changeSCTodayValue($event)"></app-dropdown>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <app-panel-10 [config]="selectedStateOfConservationToday"></app-panel-10>
+            </div>
+            <div class="col-8">
+                <alix-line></alix-line>
+            </div>
+          </div>
+      </section>
+      <section class="page-section bg--dark">
+        <div class="row">
+          <div class="col-12">
+            <h1 class="section-title">State Of Conservation All Assets</h1> <!-- #HC -->
+          </div>
+        </div>
+      </section>
+      <section class="page-section bg--light">
+        <div class="row">
+          <div class="col-12">
+            <h1 class="section-title">State Of Conservation All Assets</h1> <!-- #HC -->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <app-slider-range [value]="selectedSOCAllAssetsValues[0]" [steps]="selectedSOCAllAssetsValues[1]" (callback)="changeSOCAllAssetsValue($event)"></app-slider-range>
+            <app-panel-11 [config]="selectedSOCAllAssets"></app-panel-11>
+          </div>
+          <div class="col-8">
+              <alix-line></alix-line>
+          </div>
+        </div>
+      </section>
 
-  <div class="row-no-gutter">
-    <div class="col-12">
-      <h1># SC Today</h1> <!-- #HC -->
-      <app-dropdown [config]="getSCTodayPopulationNames()" (callback)="changeSCTodayValue($event)"></app-dropdown>
-    </div>
-  </div>
-  <div class="row row-no-gutter">
-    <div class="col-3">
-      <app-panel-10 [config]="selectedStateOfConservationToday"></app-panel-10>
-    </div>
-    <div class="col-9">
-        <alix-line></alix-line>
-    </div>
-  </div>
+      <section class="page-section bg--dark">
+          <div class="row">
+            <div class="col-12">
+              <h1 class="section-title">IN Construction Satelite images</h1> <!-- #HC -->
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <app-slider-range [value]="selectedSOCAllAssetsValues[0]" [steps]="selectedSOCAllAssetsValues[1]" (callback)="changeSOCAllAssetsValue($event)"></app-slider-range>
+              <app-panel-11 [config]="selectedSOCAllAssets"></app-panel-11>
+            </div>
+            <div class="col-8">
+                <alix-line></alix-line>
+            </div>
+          </div>
+        </section>
 
-  <div class="row-no-gutter">
-    <div class="col-12">
-      <h1>State Of Conservation All Assets</h1> <!-- #HC -->
-    </div>
-  </div>
-  <div class="row row-no-gutter">
-    <div class="col-3">
-      <app-slider-range [value]="selectedSOCAllAssetsValues[0]" [steps]="selectedSOCAllAssetsValues[1]" (callback)="changeSOCAllAssetsValue($event)"></app-slider-range>
-      <app-panel-11 [config]="selectedSOCAllAssets"></app-panel-11>
-    </div>
-    <div class="col-9">
-        <alix-line></alix-line>
-    </div>
-  </div>
+        <section class="page-section bg--light">
+          <div class="row">
+            <div class="col-12">
+                <h1 class="section-title">IN Construction Satelite images</h1> <!-- #HC -->
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <app-dropdown [config]="getSCTodayPopulationNames()" (callback)="changeSCPpsmValue($event)"></app-dropdown>
+              <app-panel-12 [config]="selectedStateOfConservationPSM"></app-panel-12>
+            </div>
+            <div class="col-8">
+                <alix-line></alix-line>
+            </div>
+          </div>
+        </section>
+    
 
-  <div class="row-no-gutter">
-    <div class="col-12">
-      <h1>IN Construction Satelite images</h1> <!-- #HC -->
-    </div>
-  </div>
-  <div class="row row-no-gutter">
-  </div>
 
-  <div class="row row-no-gutter">
-    <div class="col-3">
-      <app-dropdown [config]="getSCTodayPopulationNames()" (callback)="changeSCPpsmValue($event)"></app-dropdown>
-      <app-panel-12 [config]="selectedStateOfConservationPSM"></app-panel-12>
-    </div>
-    <div class="col-9">
-        <alix-line></alix-line>
-    </div>
-  </div>
+        <section class="page-section bg--dark">
+            <div class="row">
+              <div class="col-12">
+                  <h1 class="section-title">SQM Price per State of Conservation bar plot</h1> <!-- #HC -->
+                </div>
+            </div>
+            <div class="row">
+                <alix-line></alix-line>
+            </div>
+            <div class="row">
+              <alix-line></alix-line>
+            </div>
+          </section>
+          <section class="page-section bg--dark">
+            <div class="row">
+                <div class="col-4">
+                  <app-slider-range [value]="2018" [steps]="['2013', '2015', '2018']" (callback)="changeImageTransition($event)"></app-slider-range> <!-- #HC #Missing [steps]-->
+                  <app-panel-13 [imagesObj]="imageTransitionObject" [config]="imageTransitionValue"></app-panel-13>
+                </div>
+              </div>
+          </section>
+          <section class="page-section bg--light">
+            <div class="row">
+              <div class="col-6">
+              </div>
+              <div class="col-6">
+              </div>
+            </div>
+          </section>
 
-  <div class="row-no-gutter">
-    <div class="col-12">
-      <h1>SQM Price per State of Conservation bar plot</h1> <!-- #HC -->
-    </div>
-  </div>
-  <div class="row row-no-gutter">
-      <alix-line></alix-line>
-  </div>
-  <div class="row row-no-gutter">
-    <alix-line></alix-line>
-  </div>
 
-  <div class="row-no-gutter">
-    <div class="col-3">
-      <app-slider-range [value]="2018" [steps]="['2013', '2015', '2018']" (callback)="changeImageTransition($event)"></app-slider-range> <!-- #HC #Missing [steps]-->
-      <app-panel-13 [imagesObj]="imageTransitionObject" [config]="imageTransitionValue"></app-panel-13>
-    </div>
-  </div>
-  <div class="row-no-gutter">
-    <div class="col-6">
-    </div>
-    <div class="col-6">
-    </div>
-  </div>
-</div>
+
+
