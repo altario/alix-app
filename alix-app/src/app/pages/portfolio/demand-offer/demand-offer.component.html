@@ -36,7 +36,8 @@
       <app-panel-15 [config]="config"></app-panel-15>
     </div>
     <div class="col-8">
-      <alix-area-stack></alix-area-stack>
+      <app-dropdown [config]="getPriceTodayVsOvertime()" (callback)="changePriceTodayVsOvertime($event)"></app-dropdown>
+      <alix-area-basic [series]="series.priceTodayVsOvertime" [opts]="opts.priceTodayVsOvertime" (chartInit)="onChartInit('priceTodayVsOvertime',$event)"></alix-area-basic>
     </div>
   </div>
 
