@@ -29,7 +29,7 @@ export class DemandAndOfferComponent implements OnInit {
       this.config = dataset.dossiersMainData.dossier1;
       console.log(this.config)
       this.populationForSale = this.config.demandAndOffer.forSale.populations.population1;
-      this.populationLongRent = this.config.demandAndOffer.forSale.populations.population1;
+      this.populationLongRent = this.config.demandAndOffer.longRent.populations.population1;
 
 
       this.opts = {
@@ -119,7 +119,7 @@ export class DemandAndOfferComponent implements OnInit {
   }
 
   changePopulationLongRentValue(callbackEvent) {
-    this.populationLongRent = this.config.demandAndOffer.forSale.populations[callbackEvent];
+    this.populationLongRent = this.config.demandAndOffer.longRent.populations[callbackEvent];
   }
 
   /**
