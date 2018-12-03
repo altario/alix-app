@@ -37,14 +37,16 @@
   text-transform: uppercase;
 }
 
-.state-text {
-  font-size: rem(11px);
+%state-text {
   font-family: $font-family--primary;
   font-weight: $font-weight--bold;
-  @each $color in $status--colors {
-    &.state-text--#{nth($color,1)} {
-      color: nth($color,2);
-    }
+  &.text--small{ font-size: rem(11px) }
+}
+
+@each $color in $status--colors {
+  &.text--#{nth($color,1)} {
+    @extend %state-text;
+    color: nth($color,2);
   }
 }
 

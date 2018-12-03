@@ -1,42 +1,44 @@
 <app-report-selector></app-report-selector>
-<div class="row">
-  <img class="col-6" src="assets/images/{{config.assetImage.value}}"
-    alt="" />
-  <div class="col-3 lateral-wrapper">
-    <div class="title">General</div> <!-- #HC -->
-    <div class="sub-title u-underline">{{ config.neighborhood.value }}</div>
-    <div class="row-list--medium">
-      <i class="icon--medium icol ico-map-marker-alt"></i>
-      <span class="row-list__text">{{ config.address.value }}</span>
-    </div>
-    <div class="row-list--medium">
-      <i class="icon--medium icol ico-home"></i>
-      <span class="row-list__text">{{ config.typeOfNeighborhood.value }}</span>
-    </div>
-    <div class="row-list--medium">
-      <div class="bullet-point-row">
-        <span class="bullet-point--warning bullet-point--small"></span>
+<div class="col-12">
+  <div class="row">
+    <img class="col-6" src="assets/images/{{config.assetImage.value}}"
+      alt="" />
+    <div class="col-3 lateral-wrapper">
+      <div class="title">General</div> <!-- #HC -->
+      <div class="sub-title u-underline">{{ config.neighborhood.value }}</div>
+      <div class="row-list--medium">
+        <i class="icon--medium icol ico-map-marker-alt"></i>
+        <span class="row-list__text">{{ config.address.value }}</span>
       </div>
-      <span class="row-list__text">{{ config.status.value }}</span>
+      <div class="row-list--medium">
+        <i class="icon--medium icol ico-home"></i>
+        <span class="row-list__text">{{ config.typeOfNeighborhood.value }}</span>
+      </div>
+      <div class="row-list--medium">
+        <div class="bullet-point-row">
+          <span class="bullet-point--warning bullet-point--small"></span>
+        </div>
+        <span class="row-list__text">{{ config.status.value }}</span>
+      </div>
     </div>
-  </div>
-  <div class="col-3 lateral-wrapper">
-    <div>
-      <span class="label__up label--color">{{ config.floor.label }}</span>
-      <p class="highlighted--big highlighted--color">{{ config.floor.value }}</p>
-    </div>
-    <div>
-      <span class="label__up label--color">{{ config.numberOfFloors.label }}</span>
-      <p class="highlighted--big highlighted--color">
-          {{ config.numberOfFloors.value }}
-      </p>
-    </div>
-    <div>
-      <span class="label__up label--color">{{ config.totalArea.label }}</span>
-      <p class="highlighted--big highlighted--color">
-        {{ config.totalArea.value | number:'1.0-0'}}
-        <small class="u-uppercase highlighted__small--color">SQM</small>
-      </p>
+    <div class="col-3 lateral-wrapper">
+      <div>
+        <span class="label__up label--color">{{ config.floor.label }}</span>
+        <p class="highlighted--big highlighted--color">{{ config.floor.value }}</p>
+      </div>
+      <div>
+        <span class="label__up label--color">{{ config.numberOfFloors.label }}</span>
+        <p class="highlighted--big highlighted--color">
+            {{ config.numberOfFloors.value }}
+        </p>
+      </div>
+      <div>
+        <span class="label__up label--color">{{ config.totalArea.label }}</span>
+        <p class="highlighted--big highlighted--color">
+          {{ config.totalArea.value | number:'1.0-0'}}
+          <small class="u-uppercase highlighted__small--color">SQM</small>
+        </p>
+      </div>
     </div>
   </div>
 </div>

@@ -337,8 +337,10 @@ $transition__base--noprop:            .25s;
 // $color
 
 
-$color__text_highlighted:           #FFFFFF;
+$text__primary-color:               #FFFFFF !important;
 $text__secondary-color:             #8D8C8D !important;
+
+$color__text_highlighted:             $text__primary-color;
 $color__text_highlighted_small:       $text__secondary-color;
 $color__text_label:                 #CED6FF;
 $color__text_table:                 #CED6FF;
@@ -347,7 +349,8 @@ $amount: 40;
 $box-padding: 20px;
 
 
-
+$font-size__highlighted--huge:                   rem(57px); // 3rem
+$font-size__highlighted--huge__small:            rem(40px);
 $font-size__highlighted--big:                    rem(38px); // 3rem
 $font-size__highlighted--big__small:             rem(20px);
 $font-size__highlighted--medium:                 rem(32px);
