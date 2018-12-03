@@ -1,0 +1,70 @@
+$box--bg: transparent;
+$box__header--bg: transparent;
+$box__body--bg: transparent;
+$box__body-bg--light: #34363B;
+$box__body-bg--dark: #2D3035;
+
+
+.box {
+  &--bg { background-color: $box__header--bg }
+  &__header--bg { background-color: $box__header--bg }
+  &__body--bg {
+    background-color: $box__body--bg;
+    .cell__wrapper--bg-dark {
+      background-color: $box__body-bg--dark
+    }
+    .cell__wrapper--bg-light {
+      background-color: $box__body-bg--light
+    }
+  }
+}
+
+$text__secondary-color--light: $text__secondary-color;
+$text__secondary-color--dark: $text__secondary-color;
+
+.bg--light {
+	background-color: #151D28;
+	.box {
+		&--bg { background-color: #091521 }
+		&__header--bg { background-color: transparent }
+		&__body--bg {
+			background-color: transparent;
+			.cell__wrapper--bg-dark {
+				background-color: #101115;
+			}
+			.cell__wrapper--bg-light {
+				background-color: lighten(#101115, 5%);
+			}
+		}
+	}
+	.lateral-wrapper {
+		background-color: blue;
+		.title { color: $text__secondary-color--light }
+		.sub-title { color: $text__secondary-color--light }
+		i,
+		span { color: $text__secondary-color--light }
+	}
+}
+
+.bg--dark {
+	background-color: #151D28;
+	.box {
+		&--bg { background-color: #091521 }
+		&__header--bg { background-color: transparent }
+		&__body--bg {
+			background-color: transparent;
+			.cell__wrapper--bg-dark {
+				background-color: #101115;
+			}
+			.cell__wrapper--bg-light {
+				background-color: lighten(#101115, 5%);
+			}
+		}
+	}
+	.lateral-wrapper {
+		.title { color: $text__secondary-color--dark }
+		.sub-title { color: $text__secondary-color--dark }
+		i,
+		span { color: $text__secondary-color--dark }
+	}
+}

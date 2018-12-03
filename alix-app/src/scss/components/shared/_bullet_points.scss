@@ -1,0 +1,40 @@
+// ------------------------------------------------------------------
+//
+// INDEX
+//
+//  #MIXINS
+//
+//  #STYLES
+//
+//  Bullets
+//
+// ------------------------------------------------------------------
+
+// ------------------------------------------------------------------
+// #MIXINS
+// ------------------------------------------------------------------
+
+@import '~src/scss/imports';
+
+%bullet-point {
+  background-color: $color__state--default;
+  display: inline-block;
+}
+
+  @each $size in $bullet-size {
+    $key: nth($size, 1);
+    $value: nth($size, 2);
+
+    &.bullet-point--#{$key} {
+      @extend %bullet-point;
+      height: $value;
+      width: $value;
+      border-radius: $value;
+    }
+  }
+
+  @each $color in $status--colors {
+    &.bullet-point--#{nth($color,1)} {
+      background-color: nth($color,2);
+    }
+  }

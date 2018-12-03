@@ -335,10 +335,10 @@ $transition__base--noprop:            .25s;
 // delete
 
 // $color
-$text__secondary-color: #8D8C8D !important;
 
 
 $color__text_highlighted:           #FFFFFF;
+$text__secondary-color:             #8D8C8D !important;
 $color__text_highlighted_small:       $text__secondary-color;
 $color__text_label:                 #CED6FF;
 $color__text_table:                 #CED6FF;
@@ -357,3 +357,23 @@ $font-size__highlighted--medium__small:          rem(12px);
 
 $lines: 2;
 $font-size: rem(11px);
+
+$bullet-size: (
+  small:   6px,
+  medium:  15px,
+  big:     20px
+);
+
+
+$icon-row--size: (
+  small:   rem(16px),
+  medium:  rem(32px),
+  big:     rem(74px)
+);
+
+$row-list--size: (
+  small:    30px,
+  medium:   50px,
+  big:      100px
+);
+

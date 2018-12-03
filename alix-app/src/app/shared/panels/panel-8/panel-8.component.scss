@@ -1,3 +1,13 @@
 :host {
-  position: relative;
+	.sub-title { text-transform: none }
+	.lateral-wrapper {
+		padding: 20px 0;
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+		& > div {
+			padding: 0 20px;
+		}
+	}
 }
+

@@ -14,8 +14,14 @@
 // #MIXINS
 // ------------------------------------------------------------------
 
+%highlighted {
+  display: flex;
+  align-items: flex-end;
+}
+
 
 .highlighted--big {
+    @extend %highlighted;
     font-size: $font-size__highlighted--big;
     font-family: $font-family--primary;
     font-weight: $font-weight--thin;
@@ -34,6 +40,7 @@
   }
 
   .highlighted--medium {
+    @extend %highlighted;
     font-size: $font-size__highlighted--medium;
     font-family: $font-family--primary;
     font-weight: $font-weight--thin;

@@ -39,27 +39,6 @@ $color4: #8C8C8D;
   }
 }
 
-$box--bg: transparent;
-$box__header--bg: transparent;
-$box__body--bg: transparent;
-$box__body-bg--light: #34363B;
-$box__body-bg--dark: #2D3035;
-
-
-.box {
-  &--bg { background-color: $box__header--bg }
-  &__header--bg { background-color: $box__header--bg }
-  &__body--bg {
-    background-color: $box__body--bg;
-    .cell__wrapper--bg-dark {
-      background-color: $box__body-bg--dark
-    }
-    .cell__wrapper--bg-light {
-      background-color: $box__body-bg--light
-    }
-  }
-}
-
 
 app-panel-1,
 app-panel-2,

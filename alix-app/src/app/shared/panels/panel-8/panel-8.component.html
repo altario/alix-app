@@ -1,34 +1,42 @@
 <app-report-selector></app-report-selector>
-<div class="row no-gutters">
+<div class="row">
   <img class="col-6" src="assets/images/{{config.assetImage.value}}"
     alt="" />
-  <div class="col-3">
-
-      <li>General</li> <!-- #HC -->
-      <li>{{ config.neighborhood.value }}</li>
-      <li>
-        <span><i class="icol ico-map-marker-alt"></i></span>
-        <span>{{ config.address.value }}</span>
-      </li>
-      <li>
-        <span><i class="icol ico-home"></i></span>
-        <span>{{ config.typeOfNeighborhood.value }}</span>
-      </li>
-      <li>{{ config.status.value }}</li>
-
-  </div>
-    <div class="col-3">
-      <li>
-        <h6>{{ config.floor.label }}</h6>
-        <div>{{ config.floor.value }}</div>
-      </li>
-      <li>
-        <h6>{{ config.numberOfFloors.label }}</h6>
-        <div>{{ config.numberOfFloors.value }}</div>
-      </li>
-      <li>
-        <h6>{{ config.totalArea.label }}</h6>
-        <div>{{ config.totalArea.value | number:'1.0-0'}}SQM</div>
-      </li>
+  <div class="col-3 lateral-wrapper">
+    <div class="title">General</div> <!-- #HC -->
+    <div class="sub-title u-underline">{{ config.neighborhood.value }}</div>
+    <div class="row-list--medium">
+      <i class="icon--medium icol ico-map-marker-alt"></i>
+      <span class="row-list__text">{{ config.address.value }}</span>
     </div>
+    <div class="row-list--medium">
+      <i class="icon--medium icol ico-home"></i>
+      <span class="row-list__text">{{ config.typeOfNeighborhood.value }}</span>
+    </div>
+    <div class="row-list--medium">
+      <div class="bullet-point-row">
+        <span class="bullet-point--warning bullet-point--small"></span>
+      </div>
+      <span class="row-list__text">{{ config.status.value }}</span>
+    </div>
+  </div>
+  <div class="col-3 lateral-wrapper">
+    <div>
+      <span class="label__up label--color">{{ config.floor.label }}</span>
+      <p class="highlighted--big highlighted--color">{{ config.floor.value }}</p>
+    </div>
+    <div>
+      <span class="label__up label--color">{{ config.numberOfFloors.label }}</span>
+      <p class="highlighted--big highlighted--color">
+          {{ config.numberOfFloors.value }}
+      </p>
+    </div>
+    <div>
+      <span class="label__up label--color">{{ config.totalArea.label }}</span>
+      <p class="highlighted--big highlighted--color">
+        {{ config.totalArea.value | number:'1.0-0'}}
+        <small class="u-uppercase highlighted__small--color">SQM</small>
+      </p>
+    </div>
+  </div>
 </div>
