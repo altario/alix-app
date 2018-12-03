@@ -1,3 +1,40 @@
 :host {
   position: relative;
+  .truncate {
+    max-width: 1.8em;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-flex;
+  }
+  // .box-list {
+  //   justify-content: flex-start;
+  //   flex-wrap: nowrap;
+  //   span { flex-wrap: nowrap }
+  //   & > div > span { flex: auto }
+  //   .border--right {
+  //     flex: auto;
+  //     border-right-style: solid;
+  //     border-right-width: 5px;
+  //   }
+  // }
+  .table {
+    display: table;
+    font-size: 12px;
+    .table-row {
+      display: table-row;
+      & > span {
+        display: table-cell;
+        padding: 0 0 0 .5em;
+        &:first-child {
+          padding-right: .8em;
+        }
+      }
+      .border--right {
+        flex: auto;
+        border-right-style: solid;
+        border-right-width: 5px;
+        text-align: right;
+      }
+    }
+  }
 }

@@ -44,7 +44,7 @@ $box__body-bg--dark: #2D3035;
 }
 
 @mixin box-list--bg ( $bg-color: $box__body-bg--dark ){
-	span { background-color: $bg-color }
+	.box-list { span { background-color: $bg-color } }
 }
 
 .box { @include box--bg (green, transparent, transparent) }
@@ -54,6 +54,7 @@ $box__body-bg--dark: #2D3035;
 	background-color: red;
 	.box { @include box--bg (green, $box__body-bg--dark, $box__body-bg--light) }
 	@include lateral-wrapper--color;
+	@include box-list--bg;
 	@include box-list--color;
 }
 
@@ -66,4 +67,3 @@ $box__body-bg--dark: #2D3035;
 
 }
 
-@include box-list--bg;

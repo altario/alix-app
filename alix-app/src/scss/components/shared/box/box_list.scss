@@ -15,17 +15,17 @@ $box-list-font-size--small: rem(9px);
 		justify-content: space-between;
 		align-items: baseline;
 		flex-wrap: wrap;
-		span {
+		& > span {
 			flex: 1;
 			font-size: $box-list-font-size;
 			padding: 5px;
 			height: 100%;
-		}
-		span:nth-child(1) {
-			width: 90px;
-			text-align: right;
-			font-weight: $font-weight--semibold;
-			padding-right: 10px;
+			&:nth-child(1) {
+				width: 90px;
+				text-align: right;
+				font-weight: $font-weight--semibold;
+				padding-right: 10px;
+			}
 		}
 		&.titles span {
 			font-family: $font-family--secondary;

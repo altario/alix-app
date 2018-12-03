@@ -1,77 +1,72 @@
 <app-report-selector></app-report-selector>
-<div style="display: flex; flex-direction: column; border: 1px solid #000000">
-  <div>
-    <h3>Replacement Indicators</h3>
-    <h6>Replacement is the effort to build a similar asset</h6>
-  </div>
-  <div style="display: flex;">
-    <div>
-      <h5>Exposure After Replacement</h5>
-      <div>{{ config.exposureAfterReplacement.value | perc:1 }}%</div>
-      <div>{{ config.timeReplacementIsFulfilled.value | number:'1.0-0' }} months of {{ config.timeReplacementIsFulfilled.label }}</div>
-    </div>
-  </div>
 
-  <div style="display:flex;">
-    <div>
-      <span>{{ config.replacementCost.label }}</span>
-      <span> {{ config.replacementCost.value | curr:0 }}k</span>
-    </div>
-    / 
-    <div>
-      <span>{{ config.replacementCostSqm.value | curr:0 }}k</span>
-      <span> {{ config.replacementCostSqm.label }}</span>
+<div class="box box--table">
+  <div class="box__header box__header--bg">
+    <div class="d-flex flex-row justify-content-between">
+      <div class="title--compound">
+        <div class="main__title">
+          <span class="u-strong u-uppercase">Replacement Indicators</span>
+        </div>
+        <div class="label__down label--color">
+          Replacement is the effort to build a similar asset
+        </div>
+      </div>
     </div>
   </div>
+  <div class="box__body box__body--bg">
+    <div class=" cell__wrapper cell__wrapper--bg-dark">
+        <span class="label__up label--color">Exposure After Replacement</span>
+        
+        <div class="highlighted--huge highlighted--color">
+          {{ config.exposureAfterReplacement.value | perc:1 }}
+          <small class="u-uppercase highlighted__small--color">%</small>
+        </div>
+        <span class="label__down label--color u-none">{{ config.timeReplacementIsFulfilled.value | number:'1.0-0' }} months of {{ config.timeReplacementIsFulfilled.label }}</span>
+    </div>
 
-  <div style="display:flex;">
-    <div>
-      <span>Market Price:</span>
-      <span>{{ config.marketPrice.value | curr:0 }}</span>
-    </div>
-     /
-    <div>
-      <span>{{ config.marketPriceSqmForSale.value | curr:0 }}</span>
-      <span> per SQM</span>
-    </div>
-  </div>
+    <div class=" cell__wrapper cell__wrapper--bg-dark">
+      <div class="text-row">
+        <span>{{ config.replacementCost.label }}</span>
+        <span class="u-strong"> {{ config.replacementCost.value | curr:0 }}k</span>
+        /
+        <span class="u-strong">{{ config.replacementCostSqm.value | curr:0 }}k</span>
+        <span> {{ config.replacementCostSqm.label }}</span>
+      </div>
 
-  <div style="display:flex;">
-    <div>
-      <span>{{ config.ltvLoanToValue.label }}</span>
-      <span>{{ config.ltvLoanToValue.value | perc:0 }}%</span>
-    </div>
-  </div>
-  <div style="display:flex;">
-    <div>
-      <span>Exposure:</span>
-      <span>{{ config.exposure.value | curr:0 }}k</span>
-    </div>
-  </div>
+      <div class="text-row">
+        <span>Market Price:</span>
+        <span class="u-strong">{{ config.marketPrice.value | curr:0 }}</span>
+       /
+        <span class="u-strong">{{ config.marketPriceSqmForSale.value | curr:0 }}</span>
+        <span> per SQM</span>
+      </div>
 
-  <div style="display:flex;">
-    <div>
-      <span>{{ config.exposureAfterReplacementAbs.label }}</span>
-      <span>{{ config.exposureAfterReplacementAbs.value | curr:0 }}k</span>
-    </div>
-  </div>
-  <div style="display:flex;">
-    <div>
-      <span>{{ config.exposureAfterReplacementPerc.label }}</span>
-      <span>{{ config.exposureAfterReplacementPerc.value | perc:1 }}%</span>
-    </div>
-  </div>
+      <div class="text-row">
+        <span>{{ config.ltvLoanToValue.label }}</span>
+        <span class="u-strong">{{ config.ltvLoanToValue.value | perc:0 }}%</span>
+      </div>
+      <div class="text-row">
+        <span>Exposure:</span>
+        <span class="u-strong">{{ config.exposure.value | curr:0 }}k</span>
+      </div>
 
-  <div style="display:flex;">
-    <div>
-      <span>{{ config.monthlyInstallment.label }}</span>
-      <span>{{ config.monthlyInstallment.value | curr:1}}k</span>
-    </div>
-  </div>
-  <div style="display:flex;">
-    <div>
-      <span>{{ config.timeReplacementIsFulfilled.label }}</span>
-      <span> {{ config.timeReplacementIsFulfilled.value | number:'1.0-0'}}</span>
+      <div class="text-row">
+        <span>{{ config.exposureAfterReplacementAbs.label }}</span>
+        <span class="u-strong">{{ config.exposureAfterReplacementAbs.value | curr:0 }}k</span>
+      </div>
+      <div class="text-row">
+        <span>{{ config.exposureAfterReplacementPerc.label }}</span>
+        <span class="u-strong">{{ config.exposureAfterReplacementPerc.value | perc:1 }}%</span>
+      </div>
+
+      <div class="text-row">
+        <span>{{ config.monthlyInstallment.label }}</span>
+        <span class="u-strong">{{ config.monthlyInstallment.value | curr:1}}k</span>
+      </div>
+      <div class="text-row">
+        <span>{{ config.timeReplacementIsFulfilled.label }}</span>
+        <span class="u-strong"> {{ config.timeReplacementIsFulfilled.value | number:'1.0-0'}}</span>
+      </div>
     </div>
   </div>
 </div>
