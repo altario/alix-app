@@ -3,7 +3,7 @@
     <ul class="secondary-nav navbar-nav px-3">
       <li class="left-nav">
         <a [routerLink]="['/']" class="back-btn"><i class="icor ico-chevron-left"></i>Back</a>
-        <span>mini title</span>
+        <span>{{ config.client.clientName.value }}</span>
       </li>
       <li>
         <a class="nav-link" [routerLink]="['.']" routerLinkActive="active">Financial</a>
