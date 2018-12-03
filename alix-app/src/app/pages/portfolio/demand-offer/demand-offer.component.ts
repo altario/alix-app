@@ -25,7 +25,8 @@ export class DemandAndOfferComponent implements OnInit {
     this.route.params.subscribe(params => {
       // console.log(params['id']);
       this.config = dataset.dossiersMainData.dossier1;
-      this.population = this.config.demandAndOffer.forSale.populations[Object.keys(this.config.demandAndOffer.forSale.populations)[0]]
+      console.log(this.config)
+      this.population = this.config.demandAndOffer.forSale.populations[Object.keys(this.config.demandAndOffer.forSale.populations)[0]];
 
 
       this.opts = {
