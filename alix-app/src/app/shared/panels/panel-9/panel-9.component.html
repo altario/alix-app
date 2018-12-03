@@ -2,57 +2,65 @@
 
 
 <div class="box box--table">
-    <div class="box__header box__header--bg">
-      <div class="d-flex flex-row justify-content-between">
-        <div class="title--compound">
-          <div class="main__title">
-            <span class="u-strong u-uppercase">{{comparisonCriteria}}</span>
-            Assets In
-          </div>
-          <div class="secondary__title">
-            {{config.populationName.value}}
-          </div>
+  <div class="box__header box__header--bg">
+    <div class="d-flex flex-row justify-content-between">
+      <div class="title--compound">
+        <div class="main__title">
+          <span class="u-strong u-uppercase">{{comparisonCriteria}}</span>
+          Assets In
         </div>
-      </div>
-    </div>
-    <div class="box__body box__body--bg">
-      <div class=" cell__wrapper cell__wrapper--bg-dark">
-
-        <div class="highlighted--huge highlighted--color">
-          {{config.comparableGradeAssetsPerc.value | perc:1}}
-          <small class="u-uppercase highlighted__small--color">%</small>
-        </div>
-        <div class="highlighted--small highlighted--color">
-          <span>
-            {{config.comparableGradeAssetsAbs.value | curr:1}}
-          </span>
-          <small>
-            K out of
-          </small>
-          <span>
-            {{config.totalAssetsInAndOutsideRange.value | curr:1}}
-          </span>
-          <small>
-            k
-          </small>
-        </div>
-        <span style="display: block; height: 6px; background-color: #50BC85;" [style.width.%]="config.comparableGradeAssetsPerc.value | perc:1"></span>
-
-        <div>
-          <span class="text--success">
-            {{config.growth1YPerc.value | perc:1 }} %
-          </span>
-          <span>
-            {{config.growth1YAbs.value }}
-          </span>
-          <small>k</small>
-          <small class="highlighted__small--color">
-            {{ config.growth1YAbs.label }}
-          </small>
+        <div class="secondary__title">
+          {{config.populationName.value}}
         </div>
       </div>
     </div>
   </div>
+  <div class="box__body box__body--bg">
+    <div class=" cell__wrapper cell__wrapper--bg-dark">
+      <div class="highlighted--huge highlighted--color">
+        {{config.comparableGradeAssetsPerc.value | perc:1}}
+        <small class="u-uppercase highlighted__small--color">%</small>
+      </div>
+      <div class="highlighted--small highlighted--color">
+        <span>
+          {{config.comparableGradeAssetsAbs.value | curr:1}}
+        </span>
+        <small>
+          K out of
+        </small>
+        <span>
+          {{config.totalAssetsInAndOutsideRange.value | curr:1}}
+        </span>
+        <small>
+          k
+        </small>
+      </div>
+      <span style="display: block; height: 6px; background-color: #50BC85;" [style.width.%]="config.comparableGradeAssetsPerc.value | perc:1"></span>
 
- <!-- #MISSING config.growth5YPerc.value -->
-<!-- <span>{{config.growth5YPerc.value}}</span><span>{{config.growth5YAbs.value}}</span><span>{{config.growth5YAbs.label}}</span> -->
+      <div>
+        <span class="text--success">
+          {{config.growth1YPerc.value | perc:1 }} %
+        </span>
+        <span>
+          {{config.growth1YAbs.value }}
+        </span>
+        <small>k</small>
+        <small class="highlighted__small--color">
+          {{ config.growth1YAbs.label }}
+        </small>
+      </div>
+      <div>
+        <span class="text--success">
+          {{config.growth5Y.value | perc:0 }}%
+        </span>
+        <span>
+          {{ config.growth5YAbs.value }}
+        </span>
+        <small>k</small>
+        <small class="highlighted__small--color">
+          {{config.growth5YAbs.label}}
+        </small>
+      </div>
+    </div>
+  </div>
+</div>
