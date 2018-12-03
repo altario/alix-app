@@ -18,6 +18,8 @@ export class DemandAndOfferComponent implements OnInit {
   public opts: any;
   public chartInstance: any = {};
   public population: any;
+  public populationForSale: any;
+  public populationLongRent: any;
 
   constructor(private route: ActivatedRoute) { }
 
@@ -25,7 +27,9 @@ export class DemandAndOfferComponent implements OnInit {
     this.route.params.subscribe(params => {
       // console.log(params['id']);
       this.config = dataset.dossiersMainData.dossier1;
-      this.population = this.config.demandAndOffer.forSale.populations[Object.keys(this.config.demandAndOffer.forSale.populations)[0]]
+      console.log(this.config)
+      this.populationForSale = this.config.demandAndOffer.forSale.populations.population1;
+      this.populationLongRent = this.config.demandAndOffer.forSale.populations.population1;
 
 
       this.opts = {
@@ -110,8 +114,12 @@ export class DemandAndOfferComponent implements OnInit {
     });
   }
 
-  changePopulationValue(callbackEvent) {
-    this.population = this.config.demandAndOffer.forSale.populations[callbackEvent.value];
+  changePopulationForSaleValue(callbackEvent) {
+    this.populationForSale = this.config.demandAndOffer.forSale.populations[callbackEvent];
+  }
+
+  changePopulationLongRentValue(callbackEvent) {
+    this.populationLongRent = this.config.demandAndOffer.forSale.populations[callbackEvent];
   }
 
   /**

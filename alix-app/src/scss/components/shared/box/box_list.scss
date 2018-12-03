@@ -47,8 +47,9 @@ $box-list-font-size--small: rem(9px);
 		}
 	}
 	.square {
-    min-width: 5px;
+   	min-width: 5px;
     max-width: 5px;
-    height: 11px;
+		height: 11px;
+		padding: 0;
   }
 }

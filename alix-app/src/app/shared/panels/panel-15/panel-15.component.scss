@@ -6,17 +6,7 @@
     overflow: hidden;
     display: inline-flex;
   }
-  // .box-list {
-  //   justify-content: flex-start;
-  //   flex-wrap: nowrap;
-  //   span { flex-wrap: nowrap }
-  //   & > div > span { flex: auto }
-  //   .border--right {
-  //     flex: auto;
-  //     border-right-style: solid;
-  //     border-right-width: 5px;
-  //   }
-  // }
+
   .table {
     display: table;
     font-size: 12px;
@@ -24,16 +14,20 @@
       display: table-row;
       & > span {
         display: table-cell;
-        padding: 0 0 0 .5em;
-        &:first-child {
+        padding: 0;
+        border: 2px solid transparent;
+        vertical-align: middle;
+        &:first-child { 
           padding-right: .8em;
+          text-align: right;
         }
-      }
-      .border--right {
-        flex: auto;
-        border-right-style: solid;
-        border-right-width: 5px;
-        text-align: right;
+        .square {
+          display: inline-block;
+          min-width: 5px;
+          max-width: 5px;
+          height: 11px;
+          padding: 0;
+        }
       }
     }
   }

@@ -1,4 +1,53 @@
 <app-report-selector></app-report-selector>
-<p>
-  panel16 works!
-</p>
+
+<div class="box box--table">
+  <div class="box__header box__header--bg">
+    <div class="d-flex flex-row justify-content-between">
+      <div class="box__title title--compound">
+        <h1 class="title"># Peer Assets Last 5 Years</h1>
+      </div>
+    </div>
+  </div>
+  <div class="box__body box__body--bg">
+    <div class="cell__wrapper cell__wrapper cell__wrapper--bg-dark">
+      <div class="cell__wrapper__top">
+        <span class="label__up label--color">{{ config.population1.populationName.value }} </span>
+      </div>
+      <div class="cell__wrapper__info">
+        <p class="highlighted--big highlighted--color">
+          {{ config.population1.absPeerAssetsLuxurySale5Y.value }}
+        </p>
+      </div>
+
+      <div class="w-100"></div>
+
+    </div>
+  </div>
+  <div class="box__body box__body--bg">
+    <div class="cell__wrapper cell__wrapper cell__wrapper--bg-dark">
+      <div class="cell__wrapper__top">
+        <span class="label__up label--color">{{ config.population2.populationName.value }} </span>
+      </div>
+      <div class="cell__wrapper__info">
+        <p class="highlighted--big highlighted--color">
+          {{ config.population2.absPeerAssetsLuxurySale5Y.value }}
+        </p>
+      </div>
+
+      <div class="w-100"></div>
+
+    </div>
+  </div>
+  <div class="box__body box__body--bg">
+    <div class="cell__wrapper cell__wrapper cell__wrapper--bg-dark">
+      <div class="cell__wrapper__top">
+        <span class="label__up label--color">{{ config.population3.populationName.value }} </span>
+      </div>
+      <div class="cell__wrapper__info">
+        <p class="highlighted--big highlighted--color">
+          {{ config.population3.absPeerAssetsLuxurySale5Y.value }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
