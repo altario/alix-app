@@ -12,79 +12,12 @@ import { DemandAndOfferComponent } from './demand-offer/demand-offer.component';
 import { PortfolioListComponent } from './portfolio-list/portfolio-list.component';
 import { RowComponent } from './portfolio-list/row/row.component';
 
-// components
-import { SliderRangeComponent } from '@shared/slider-range/slider-range.component';
-import { DropdownComponent } from '@shared/dropdown/dropdown.component';
-import { ReportSelectorComponent } from '@shared/report-selector/report-selector.component';
-import { ReportStickyComponent } from '@shared/report-sticky/report-sticky.component';
-
-
 // routes
 import { PortfolioRoutes } from './portfolio.routing';
 
-// plugins
-import { NgxEchartsModule } from 'ngx-echarts';
-import { Ng5SliderModule } from 'ng5-slider';
 
-// pipes
-import {
-  CustomCurrencyPipe,
-  CustomPercentagePipe,
-  CustomDateConverterPipe
-} from '@helpers/index';
-
-// charts
-import {
-  AreaBasicComponent,
-  AreaStackComponent,
-  BarComponent,
-  BoxplotComponent,
-  BubbleComponent,
-  DoughnutComponent,
-  RadarComponent,
-  ScatterComponent,
-  ScatterMapComponent,
-  LineComponent
-} from '@shared/charts/index';
-
-// panels
-import {
-  Panel1Component,
-  Panel2Component,
-  Panel3Component,
-  Panel4Component,
-  Panel5Component,
-  Panel6Component,
-  Panel7Component,
-  Panel8Component,
-  Panel9Component,
-  Panel10Component,
-  Panel11Component,
-  Panel12Component,
-  Panel13Component,
-  Panel14Component,
-  Panel15Component,
-  Panel21Component,
-  Panel22Component,
-  Panel23Component,
-  Panel24Component,
-  Panel25Component,
-  Panel26Component,
-  Panel27Component,
-  Panel28Component,
-  Panel29Component,
-  Panel30Component,
-  Panel31Component,
-  Panel16Component,
-  Panel17Component,
-  Panel18Component,
-  Panel19Component,
-  Panel20Component,
-  Panel32Component,
-  Panel33Component,
-  Panel34Component,
-  Panel35Component
-} from '@shared/panels/index';
+//Shared Module
+import { SharedModule } from '@shared/shared.module';
 
 import { PortfolioLayoutComponent } from '@core/index';
 import { PortfolioReportService } from '@services/portfolio-report.service';
@@ -94,10 +27,7 @@ import { PortfolioReportService } from '@services/portfolio-report.service';
     CommonModule,
     NgbModule,
     RouterModule.forChild(PortfolioRoutes),
-
-    // plugins
-    NgxEchartsModule,
-    Ng5SliderModule
+    SharedModule
   ],
   declarations: [
     PortfolioLayoutComponent,
@@ -108,67 +38,8 @@ import { PortfolioReportService } from '@services/portfolio-report.service';
     LocationComponent,
     DemandAndOfferComponent,
     PortfolioListComponent,
-    RowComponent,
+    RowComponent
 
-    // pipes
-    CustomCurrencyPipe,
-    CustomPercentagePipe,
-    CustomDateConverterPipe,
-
-    // charts
-    AreaBasicComponent,
-    AreaStackComponent,
-    BarComponent,
-    BoxplotComponent,
-    BubbleComponent,
-    DoughnutComponent,
-    RadarComponent,
-    ScatterComponent,
-    ScatterMapComponent,
-    LineComponent,
-
-    // panels
-    Panel1Component,
-    Panel2Component,
-    Panel3Component,
-    Panel4Component,
-    Panel5Component,
-    Panel6Component,
-    Panel7Component,
-    Panel8Component,
-    Panel9Component,
-    Panel10Component,
-    Panel11Component,
-    Panel12Component,
-    Panel13Component,
-    Panel14Component,
-    Panel15Component,
-    Panel16Component,
-    Panel17Component,
-    Panel18Component,
-    Panel19Component,
-    Panel20Component,
-    Panel21Component,
-    Panel22Component,
-    Panel23Component,
-    Panel24Component,
-    Panel25Component,
-    Panel26Component,
-    Panel27Component,
-    Panel28Component,
-    Panel29Component,
-    Panel30Component,
-    Panel31Component,
-    Panel32Component,
-    Panel33Component,
-    Panel34Component,
-    Panel35Component,
-
-    // components
-    SliderRangeComponent,
-    DropdownComponent,
-    ReportSelectorComponent,
-    ReportStickyComponent,
   ],
   providers: [PortfolioReportService]
 })

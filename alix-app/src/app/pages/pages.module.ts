@@ -14,10 +14,14 @@ import { CounterpartsComponent } from './counterparts/counterparts.component';
 
 import { BaseLayoutComponent } from '@core/index';
 
+//Shared Module
+import { SharedModule } from '@shared/shared.module';
+
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(PagesRoutes)
+    RouterModule.forChild(PagesRoutes),
+    SharedModule
   ],
   declarations: [
     DashboardComponent,
