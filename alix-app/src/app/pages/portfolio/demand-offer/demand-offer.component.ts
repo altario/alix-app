@@ -116,6 +116,7 @@ export class DemandAndOfferComponent implements OnInit {
     });
 
     this.priceTodayVsOvertime();
+    this.peerListedAssets5YForSale();
   }
 
   priceTodayVsOvertime() {
@@ -142,8 +143,41 @@ export class DemandAndOfferComponent implements OnInit {
       type: 'line',
       areaStyle: {}
     }];
+  }
 
-    console.log(this.series.priceTodayVsOvertime)
+  peerListedAssets5YForSale() {
+    this.opts.peerListedAssets5YForSale = {
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'cross',
+          label: {
+            backgroundColor: '#6a7985'
+          }
+        }
+      },
+      xAxis: {
+        type: 'category',
+        data: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YForSale.year.values
+      }
+    };
+
+    this.series.peerListedAssets5YForSale = [{
+      name: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YForSale['radius1Km'].label,
+      data: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YForSale['radius1Km'].values,
+      type: 'line',
+      areaStyle: {}
+    }, {
+      name: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YForSale['portaNuova'].label,
+      data: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YForSale['portaNuova'].values,
+      type: 'line',
+      areaStyle: {}
+    }, {
+      name: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YForSale['milano'].label,
+      data: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YForSale['milano'].values,
+      type: 'line',
+      areaStyle: {}
+    }];
   }
 
   getPriceTodayVsOvertime(): Array<any> {
@@ -154,6 +188,7 @@ export class DemandAndOfferComponent implements OnInit {
     options.shift();
     return options;
   }
+
   changePriceTodayVsOvertime(callbackEvent, chartInstance ): void {
     this.series.priceTodayVsOvertime = [{
       name: chartdataset.dossier1ChartsData.demandOffer.priceTodayVsOvertime[callbackEvent].label,
