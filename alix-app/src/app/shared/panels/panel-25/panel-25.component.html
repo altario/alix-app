@@ -1,43 +1,70 @@
 <app-report-selector></app-report-selector>
-<div style="border: 1px solid #FFFFFF">
-  <h6>Type of neighbourhood</h6> <!-- #HC -->
-  <h1><i class="icol ico-info-circle"></i> {{ config.modeTypeOfNeighborhood.value }}</h1>
-  <ul>
-    <li>
-      <span>Residential</span>
-      <span style="display: inline-block; background-color: #8FC0A9; width: 5px; height: 11px;"></span>
-      <span>{{config.residential.value | perc:0}} %</span> .
-      <span># {{config.absResidential.value | number:'1.0-0'}}</span><!-- #HC -->
-    </li>
-    <li>
-      <span>Retail</span>
-      <span style="display: inline-block; background-color: #E49D89; width: 5px; height: 11px;"></span>
-      <span>{{config.retail.value | perc:0}} %</span> .
-      <span># {{config.absRetail.value | number:'1.0-0'}}</span><!-- #HC -->
-    </li>
-    <li>
-      <span>Hospitality</span>
-      <span style="display: inline-block; background-color: #769A9F; width: 5px; height: 11px;"></span>
-      <span>{{config.hospitality.value | perc:0}} %</span> .
-      <span># {{config.absHospitality.value | number:'1.0-0'}}</span><!-- #HC -->
-    </li>
-    <li>
-      <span>Offices</span>
-      <span style="display: inline-block; background-color: #DB6C68; width: 5px; height: 11px;"></span>
-      <span>{{config.offices.value | perc:0}} %</span> .
-      <span># {{config.absOffices.value | number:'1.0-0'}}</span><!-- #HC -->
-    </li>
-    <li>
-      <span>Warehouses</span>
-      <span style="display: inline-block; background-color: #6BA5FC; width: 5px; height: 11px;"></span>
-      <span>{{config.warehouse.value | perc:0}} %</span> .
-      <span># {{config.absWarehouse.value | number:'1.0-0'}}</span><!-- #HC -->
-    </li>
-    <li>
-      <span>Factories</span>
-      <span style="display: inline-block; background-color: #91809B; width: 5px; height: 11px;"></span>
-      <span>{{config.factories.value | perc:0}} %</span> .
-      <span># {{config.absFactories.value | number:'1.0-0'}}</span><!-- #HC -->
-    </li>
-  </ul>
+<div class="box box--table">
+  <div class="box__header box__header--bg">
+    <div class="d-flex flex-row justify-content-between">
+      <div class="title--compound">
+        <div class="main__title">
+          <span class="u-strong u-uppercase">
+            Type of neighbourhood <!-- #HC -->
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="box__body box__body--bg">
+    <div class=" cell__wrapper cell__wrapper--bg-dark">
+      <div class="highlighted--big highlighted--color">
+
+        <small class="u-uppercase highlighted__small--color"></small>
+      </div><!-- #HC -->
+      <div class="highlighted--small highlighted--color">
+        {{ config.modeTypeOfNeighborhood.value }}
+      </div><!-- #HC -->
+    </div>
+    <div class=" cell__wrapper cell__wrapper--bg-dark">
+      <div class="table">
+        <div class="table-row">
+          <span>Residential</span>
+          <span><span class="square" style="background-color: #8FC0A9"></span></span>
+          <span>{{config.residential.value | perc:0}} %</span>
+          <span>.</span>
+          <span># {{config.absResidential.value | number:'1.0-0'}}</span><!-- #HC -->
+        </div>
+        <div class="table-row">
+          <span>Retail</span>
+          <span><span class="square" style="background-color: #E49D89"></span></span>
+          <span>{{config.retail.value | perc:0}} %</span>
+          <span>.</span>
+          <span># {{config.absRetail.value | number:'1.0-0'}}</span><!-- #HC -->
+        </div>
+        <div class="table-row">
+          <span>Hospitality</span>
+          <span><span class="square" style="background-color: #769A9F"></span></span>
+          <span>{{config.hospitality.value | perc:0}} %</span>
+          <span>.</span>
+          <span># {{config.absHospitality.value | number:'1.0-0'}}</span><!-- #HC -->
+        </div>
+        <div class="table-row">
+          <span>Offices</span>
+          <span><span class="square" style="background-color: #DB6C68"></span></span>
+          <span>{{config.offices.value | perc:0}} %</span>
+          <span>.</span>
+          <span># {{config.absOffices.value | number:'1.0-0'}}</span><!-- #HC -->
+        </div>
+        <div class="table-row">
+          <span>Warehouses</span>
+          <span><span class="square" style="background-color: #6BA5FC"></span></span>
+          <span>{{config.warehouse.value | perc:0}} %</span>
+          <span>.</span>
+          <span># {{config.absWarehouse.value | number:'1.0-0'}}</span><!-- #HC -->
+        </div>
+        <div class="table-row">
+          <span>Factories</span>
+          <span><span class="square" style="background-color: #91809B"></span></span>
+          <span>{{config.factories.value | perc:0}} %</span>
+          <span>.</span>
+          <span># {{config.absFactories.value | number:'1.0-0'}}</span><!-- #HC -->
+        </div>
+      </div>
+  </div>
 </div>

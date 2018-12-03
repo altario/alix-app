@@ -1,3 +1,28 @@
 :host {
   position: relative;
+  .table {
+    display: table;
+    font-size: 12px;
+    .table-row {
+      display: table-row;
+      & > span {
+        display: table-cell;
+        padding: 0;
+        border: 2px solid transparent;
+        vertical-align: middle;
+        &:first-child { 
+          padding-right: .8em;
+          text-align: right;
+          width: 75px;
+        }
+        .square {
+          display: inline-block;
+          min-width: 5px;
+          max-width: 5px;
+          height: 11px;
+          padding: 0;
+        }
+      }
+    }
+  }
 }
