@@ -1,70 +1,35 @@
 <app-report-selector></app-report-selector>
-<div style="border: 1px solid #FFFFFF">
-  <h5>Long term rent price</h5>
-
-  <div>
-    <div>
-        {{ config.population1.populationName.value }}
-    </div>
-    <div>
-      <span>
-        <div>{{ config.population1.priceSqmLongRent.value | curr:0 }}€</div>
-        <div>
-          {{ config.population1.priceSqmLongRent.label }}
+<div class="box box--table">
+  <div class="box__header box__header--bg">
+    <div class="d-flex flex-row justify-content-between">
+      <div class="title--compound">
+        <div class="main__title">
+          AVG Demand Rate
         </div>
-      </span>
-      <span>
-        <div>
-          {{ config.population1.pricePMonth.value }}€
+        <div class="secondary__title">
+          Long Term Rental Asset
+          <p>
+            Demand Rate >> Listed time percentile. It indicates of fast an asset gets out of the market. 
+          </p>
         </div>
-        <div>
-          {{ config.population1.pricePMonth.label }}
-        </div>
-      </span>
+      </div>
     </div>
   </div>
-
-  <div>
-    <div>
-        {{ config.population2.populationName.value }}
-    </div>
-    <div>
-      <span>
-        <div>{{ config.population2.priceSqmLongRent.value | curr:0 }}€</div>
-        <div>
-          {{ config.population2.priceSqmLongRent.label }}
-        </div>
-      </span>
-      <span>
-        <div>
-          {{ config.population2.pricePMonth.value }}€
-        </div>
-        <div>
-          {{ config.population2.pricePMonth.label }}
-        </div>
-      </span>
-    </div>
-  </div>
-
-  <div>
-    <div>
-        {{ config.population3.populationName.value }}
-    </div>
-    <div>
-      <span>
-        <div>{{ config.population3.priceSqmLongRent.value | curr:0 }}€</div>
-        <div>
-          {{ config.population3.priceSqmLongRent.label }}
-        </div>
-      </span>
-      <span>
-        <div>
-          {{ config.population3.pricePMonth.value }}€
-        </div>
-        <div>
-          {{ config.population3.pricePMonth.label }}
-        </div>
-      </span>
+  <div class="box__body box__body--bg">
+    <div class=" cell__wrapper cell__wrapper--bg-dark">
+      <div class="highlighted--huge highlighted--color">
+        {{config.demandRate.value | perc:1}}
+        <small class="u-uppercase highlighted__small--color">%</small>
+      </div>
+      <div class="highlighted--small highlighted--color">
+        <span>
+          {{ config.avgDaysFromListingToUnlisting.value | number:'1.0-0' }}
+        </span>
+        <small>
+          days average from listing to unlisting
+        </small>
+      </div>
+      <span style="display: block; height: 6px; background-color: #50BC85;" [style.width.%]="config.demandRate.value | perc:1"></span>
     </div>
   </div>
 </div>

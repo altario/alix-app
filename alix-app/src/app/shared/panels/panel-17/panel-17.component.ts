@@ -10,7 +10,7 @@ export class Panel17Component implements OnInit {
   @Input()
   public config: any;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
   }

@@ -63,8 +63,8 @@
 	<section class="page-section bg--light">
 		<div class="row">
 			<div class="col-4">
-				<app-dropdown [config]="getPopulationNames()" (callback)="changePopulationValue($event)"></app-dropdown>
-				<app-panel-17 [config]="population"></app-panel-17>
+        <app-dropdown [config]="getPopulationNames()" (callback)="changePopulationForSaleValue($event)"></app-dropdown>
+        <app-panel-17 [config]="populationForSale"></app-panel-17>
 			</div>
 			<div class="col-8">
 				<alix-area-stack></alix-area-stack>
@@ -96,12 +96,13 @@
 
 	<section class="page-section bg--dark">
 		<div class="row">
-			<div class="col-4">
-				<!-- <app-panel-20 [config]="config.demandAndOffer.longRent.populations"></app-panel-20> -->
-			</div>
-			<div class="col-8">
-				<alix-area-stack></alix-area-stack>
-			</div>
+      <div class="col-4">
+        <app-dropdown [config]="getPopulationNames()" (callback)="changePopulationLongRentValue($event)"></app-dropdown>
+        <app-panel-20 [config]="populationLongRent"></app-panel-20>
+      </div>
+      <div class="col-8">
+        <alix-area-stack></alix-area-stack>
+      </div>
 		</div>
 	</section>
 
