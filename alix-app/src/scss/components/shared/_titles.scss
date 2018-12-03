@@ -53,10 +53,19 @@
 .u-strong { font-weight: $font-weight--bold }
 .u-uppercase { text-transform: uppercase }
 .u-underline { text-decoration: underline }
+.u-none { text-decoration: none }
 
 .section-title {
   font-size: rem(36px);
   font-family: $font-family--primary;
   font-weight: $font-weight--light;
   margin: 40px 0 0 0;
+}
+
+.text-row {
+  display: flex;
+  font-size: rem(10px);
+  font-family: $font-family--secondary;
+  font-weight: $font-weight--light;
+  span { padding: .1em .2em }
 }

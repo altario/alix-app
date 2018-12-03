@@ -12,6 +12,9 @@ $color4: #8C8C8D;
   width: 100%;
   .box__header {
     .box__title { padding: $box-padding }
+    .title--compound { 
+      padding: $box-padding
+    }
     .icons {
       @include align(column);
       justify-content: space-around;

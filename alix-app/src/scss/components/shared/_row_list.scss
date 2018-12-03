@@ -33,7 +33,8 @@ $value: nth($size, 2);
 			width: $value;
 		}
 		.row-list__text {
-			width: calc(100% - #{$value})
+			width: calc(100% - #{$value});
+			margin: 0;
 		}
 	}
 

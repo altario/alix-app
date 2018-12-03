@@ -9,12 +9,11 @@
 
     .cell__wrapper {      
       padding: $box-padding/2 $box-padding;
-      width: 50%;
       display: flex;
+      width: 100%;
       flex-direction: column;
       justify-content: center;
-      &:first-child { padding-right: $box-padding/2 }
-      &:last-child { padding-left: $box-padding/2 }
+      &.cell__wrapper--half { width: 50% }
       .cell__wrapper__top {
         height: calc(#{$line-height__base} * #{$lines} * #{$font_size}) ;
         @include align(bottom);
