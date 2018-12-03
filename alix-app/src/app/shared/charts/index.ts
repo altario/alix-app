@@ -10,3 +10,4 @@ export * from './radar/radar.component';
 export * from './scatter/scatter.component';
 export * from './scatter-map/scatter-map.component';
 export * from './line/line.component';
+export * from './treemap/treemap.component';
