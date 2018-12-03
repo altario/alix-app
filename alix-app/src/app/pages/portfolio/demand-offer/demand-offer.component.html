@@ -2,7 +2,7 @@
 
   <div class="row">
     <div class="col-4">
-        <app-panel-14 [config]="config"></app-panel-14>
+        <app-panel-14 [config]="config.replacementIndicators"></app-panel-14>
     </div>
     <div class="col-8">
         <alix-line [series]="series.marketValue" [opts]="opts.marketValue"></alix-line>
@@ -43,7 +43,17 @@
 
   <div class="row">
     <div class="col-4">
-      <app-panel-15 [config]="config"></app-panel-15>
+      <app-panel-16 [config]="config"></app-panel-16>
+    </div>
+    <div class="col-8">
+      <alix-area-stack></alix-area-stack>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4">
+        <!-- <app-dropdown [config]="getSCTodayPopulationNames()" (callback)="changeSCPpsmValue($event)"></app-dropdown> -->
+      <!-- <app-panel-17 [config]="config"></app-panel-17> -->
     </div>
     <div class="col-8">
       <alix-area-stack></alix-area-stack>

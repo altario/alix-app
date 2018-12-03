@@ -74,7 +74,9 @@ import {
   Panel28Component,
   Panel29Component,
   Panel30Component,
-  Panel31Component
+  Panel31Component,
+  Panel16Component,
+  Panel17Component
 } from '@shared/panels/index';
 
 import { PortfolioLayoutComponent } from '@core/index';
@@ -134,6 +136,8 @@ import { PortfolioReportService } from '@services/portfolio-report.service';
     Panel13Component,
     Panel14Component,
     Panel15Component,
+    Panel16Component,
+    Panel17Component,
     Panel21Component,
     Panel22Component,
     Panel23Component,
