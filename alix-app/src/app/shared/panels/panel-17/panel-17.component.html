@@ -1,33 +1,4 @@
 <app-report-selector></app-report-selector>
 <div style="border: 1px solid #FFFFFF">
-  <div>
-    <h6><span>{{comparisonCriteria}}</span><span>Assets In</span></h6>
-    <h5>{{config.populationName.value}}</h5>
-  </div>
-  <div>
-    <div>
-      <div>
-        {{config.comparableGradeAssetsPerc.value | perc:1}}%
-      </div>
-      <div>
-        {{config.comparableGradeAssetsAbs.value | curr:1}}K out of {{config.totalAssetsInAndOutsideRange.value | curr:1}}K
-      </div>
-      <div style="width: 100%; height: 6px; background-color: #456087;">
-        <span style="display: block; height: 6px; background-color: #50BC85;" [style.width.%]="config.comparableGradeAssetsPerc.value | perc:1"></span>
-      </div>
-    </div>
-    <div>
-
-    </div>
-  </div>
-  <div>
-    <ul>
-      <li>
-        <span>{{config.growth1YPerc.value | perc:1 }}%</span><span> {{config.growth1YAbs.value }}</span><span> {{ config.growth1YAbs.label }}</span>
-      </li>
-      <li>
-        <span>{{config.growth5Y.value}}</span><span>{{config.growth5YAbs.value}}</span><span>{{config.growth5YAbs.label}}</span>
-      </li>
-    </ul>
-  </div>
+  
 </div>

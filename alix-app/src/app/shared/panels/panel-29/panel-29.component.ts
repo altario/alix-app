@@ -6,7 +6,6 @@ import { Component, OnInit, Input } from '@angular/core';
     styleUrls: ['./panel-29.component.scss']
 })
 export class Panel29Component implements OnInit {
-    @Input() public name: string;
     @Input() public config: any;
 
     constructor() {}

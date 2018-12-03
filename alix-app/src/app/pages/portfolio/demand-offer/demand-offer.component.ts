@@ -12,16 +12,18 @@ import * as chartdataset from '@data/charts-dataset';
     styleUrls: ['./demand-offer.component.scss']
 })
 export class DemandAndOfferComponent implements OnInit {
-    public config: object;
+    public config: any;
     public series: any;
     public opts: any;
+    public population: any;
     constructor(private route: ActivatedRoute) {}
 
     ngOnInit() {
         this.route.params.subscribe(params => {
             // console.log(params['id']);
-            this.config = dataset.dossiersMainData.dossier1.demandAndOffer;
-            console.log(this.config)
+            this.config = dataset.dossiersMainData.dossier1;
+            this.population = this.config.demandAndOffer.forSale.populations[Object.keys(this.config.demandAndOffer.forSale.populations)[0]]
+            console.log(this.config);
 
             this.opts = {
                 marketValue: {
@@ -56,8 +58,6 @@ export class DemandAndOfferComponent implements OnInit {
                     },
                 }
             };
-
-
 
             this.series = {
                 marketValue: [{
@@ -113,5 +113,15 @@ export class DemandAndOfferComponent implements OnInit {
 
             };
         });
+    }
+
+    getPopulationNames(): Array<any> {
+      return Object.keys(this.config.demandAndOffer.forSale.populations).map((population, i) => {
+        return { id: i, key: population, value: this.config.demandAndOffer.forSale.populations[population].populationName.value };
+      });
+    }
+
+    changePopulationValue(callbackEvent) {
+      this.population = this.config.demandAndOffer.forSale.populations[callbackEvent.value];
     }
 }
