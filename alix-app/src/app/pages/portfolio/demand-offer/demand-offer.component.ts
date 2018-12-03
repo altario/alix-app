@@ -20,6 +20,7 @@ export class DemandAndOfferComponent implements OnInit {
   public population: any;
   public populationForSale: any;
   public populationLongRent: any;
+  public populationShortRent: any;
 
   constructor(private route: ActivatedRoute) { }
 
@@ -30,7 +31,7 @@ export class DemandAndOfferComponent implements OnInit {
       console.log(this.config)
       this.populationForSale = this.config.demandAndOffer.forSale.populations.population1;
       this.populationLongRent = this.config.demandAndOffer.longRent.populations.population1;
-
+      this.populationShortRent = this.config.demandAndOffer.shortRent.populations.population1;
 
       this.opts = {
         sqm: {
@@ -121,6 +122,12 @@ export class DemandAndOfferComponent implements OnInit {
   changePopulationLongRentValue(callbackEvent) {
     this.populationLongRent = this.config.demandAndOffer.longRent.populations[callbackEvent];
   }
+
+  changePopulationShortRentValue(callbackEvent) {
+    this.populationShortRent = this.config.demandAndOffer.shortRent.populations[callbackEvent];
+  }
+
+
 
   /**
    * 

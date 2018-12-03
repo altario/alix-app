@@ -1,70 +1,45 @@
 <app-report-selector></app-report-selector>
-<div style="border: 1px solid #FFFFFF">
-  <h5>Long term rent price</h5>
-
-  <div>
-    <div>
-        {{ config.population1.populationName.value }}
-    </div>
-    <div>
-      <span>
-        <div>{{ config.population1.priceSqmLongRent.value | curr:0 }}€</div>
-        <div>
-          {{ config.population1.priceSqmLongRent.label }}
+<div class="box box--table">
+  <div class="box__header box__header--bg">
+    <div class="d-flex flex-row justify-content-between">
+      <div class="title--compound">
+        <div class="main__title">
+          AVG Occupancy Rate
         </div>
-      </span>
-      <span>
-        <div>
-          {{ config.population1.pricePMonth.value }}€
+        <div class="secondary__title">
+          Short Term Rental Assets
+          <p>
+            AirBnB Data
+          </p>
         </div>
-        <div>
-          {{ config.population1.pricePMonth.label }}
-        </div>
-      </span>
+      </div>
     </div>
   </div>
+  <div class="box__body box__body--bg">
+    <div class=" cell__wrapper cell__wrapper--bg-dark">
+      <div class="highlighted--huge highlighted--color">
+        {{config.avgOccupancyRate.value | perc:1}}
+        <small class="u-uppercase highlighted__small--color">%</small>
+      </div>
 
-  <div>
-    <div>
-        {{ config.population2.populationName.value }}
-    </div>
-    <div>
-      <span>
-        <div>{{ config.population2.priceSqmLongRent.value | curr:0 }}€</div>
-        <div>
-          {{ config.population2.priceSqmLongRent.label }}
-        </div>
-      </span>
-      <span>
-        <div>
-          {{ config.population2.pricePMonth.value }}€
-        </div>
-        <div>
-          {{ config.population2.pricePMonth.label }}
-        </div>
-      </span>
-    </div>
-  </div>
+      <span style="display: block; height: 6px; background-color: #50BC85;" [style.width.%]="config.avgOccupancyRate.value | perc:1"></span>
 
-  <div>
-    <div>
-        {{ config.population3.populationName.value }}
-    </div>
-    <div>
-      <span>
-        <div>{{ config.population3.priceSqmLongRent.value | curr:0 }}€</div>
-        <div>
-          {{ config.population3.priceSqmLongRent.label }}
-        </div>
-      </span>
-      <span>
-        <div>
-          {{ config.population3.pricePMonth.value }}€
-        </div>
-        <div>
-          {{ config.population3.pricePMonth.label }}
-        </div>
-      </span>
+      <div>
+        <span class="text--success">
+          {{config.growth1Y.value | perc:1 }}%
+        </span>
+        <small class="highlighted__small--color">
+          {{ config.growth1Y.label }}
+        </small>
+      </div>
+      <div>
+        <span class="text--success">
+          {{config.growth5Y.value | perc:1 }}%
+        </span>
+        <small class="highlighted__small--color">
+          {{config.growth5Y.label}}
+        </small>
+      </div>
     </div>
   </div>
 </div>
