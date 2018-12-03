@@ -112,7 +112,7 @@ export class DemandAndOfferComponent implements OnInit {
   }
 
   changePopulationValue(callbackEvent) {
-    this.population = this.config.demandAndOffer.forSale.populations[callbackEvent.value];
+    this.population = this.config.demandAndOffer.forSale.populations[callbackEvent];
   }
 
   /**
