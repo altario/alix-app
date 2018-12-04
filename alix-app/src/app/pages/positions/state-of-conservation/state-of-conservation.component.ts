@@ -54,6 +54,7 @@ export class StateOfConservationComponent implements OnInit {
 
   changeSCPpsmValue(callbackEvent): void {
     this.selectedStateOfConservationPSM = this.config.stateOfConservationPricePerSqm.populations[callbackEvent];
+    this.updatePriceEvolutionBySc(callbackEvent);
   }
 
   changeSOCAllAssetsValue(callbackEvent): void {
@@ -84,15 +85,11 @@ export class StateOfConservationComponent implements OnInit {
 
     this.opts.numbOfAssetsBySc = {
       legend: {
-        data: popSelected.map((line) => {
-          return  line.stateOfConservation;
-        })
+        data: popSelected.map(line => line.stateOfConservation)
       },
       xAxis: {
         type: 'category',
-        data: popSelected.map((line) => {
-          return line.stateOfConservation;
-        })
+        data: popSelected.map(line => line.stateOfConservation)
       },
       yAxis: {
         type: 'value'
@@ -120,28 +117,27 @@ export class StateOfConservationComponent implements OnInit {
 
     this.opts.priceEvolutionBySc = {
       legend: {
-        data: popSelected.map((line) => {
-          return line.stateOfConservation;
-        })
+        data: popSelected.map(line => line.stateOfConservation)
       },
       xAxis: {
         type: 'category',
-        data: popSelected.map((line) => {
-          return line.stateOfConservation;
-        })
+        data: popSelected.map(line => line.stateOfConservation)
       },
       yAxis: {
         type: 'value'
       },
     };
 
-    const series = popSelected.map((line: any) => {
-
-      return { name: line.stateOfConservation, data: line.values, type: 'line' };
-    });
+    const series = popSelected.map((line: any) => ({ name: line.stateOfConservation, data: line.values, type: 'line' }));
 
     console.log(series);
     return series;
+  }
+
+  updatePriceEvolutionBySc(population) {
+    this.chartInstance.priceEvolutionBySc.setOption({
+      series: this.getpriceEvolutionBySc(population)
+    });
   }
 
   onChartInit(chart, e) {
