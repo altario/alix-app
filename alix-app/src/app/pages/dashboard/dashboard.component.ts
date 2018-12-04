@@ -1,7 +1,7 @@
 import { Component, OnInit, Output } from '@angular/core';
 
 // dataset
-import * as dashboardDataset from '@data/dashboard-dataset';
+// import * as dashboardDataset from '@data/dashboard-dataset';
 import { EventEmitter } from 'events';
 
 @Component({
@@ -17,7 +17,7 @@ export class DashboardComponent implements OnInit {
 
   constructor() {
 
-    this.config = dashboardDataset;
+    // this.config = dashboardDataset;
   }
 
   ngOnInit() {
