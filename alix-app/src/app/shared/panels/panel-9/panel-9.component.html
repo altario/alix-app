@@ -37,8 +37,8 @@
       </div>
       <div class="perc-bar">
         <div class="perc-bar__percentage" [style.width.%]="config.comparableGradeAssetsPerc.value | perc:1">
-          <div class="perc-bar__percentage__5y" style="width: 9.7%"></div>
-          <div class="perc-bar__percentage__1y" style="width: 4.2%"></div>
+          <div class="perc-bar__percentage__5y" [style.width.%]="config.growth5Y.value | perc:1"></div>
+          <div class="perc-bar__percentage__1y" [style.width.%]="config.growth1YPerc.value | perc:1"></div>
         </div>
       </div>
     </div>

@@ -25,7 +25,7 @@ import { HeaderComponent } from './shared/header/header.component';
       BrowserModule,
       RouterModule.forRoot(
         AppRoutes,
-        { scrollPositionRestoration: 'enabled' }
+        // { scrollPositionRestoration: 'enabled' }
       ),
       NgbModule.forRoot(),
       HttpModule,

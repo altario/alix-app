@@ -1,8 +1,10 @@
 <app-report-selector></app-report-selector>
 <div class="col-12">
-  <div class="row p-color">
-    <img class="col-6" src="assets/images/{{config.assetImage.value}}"
-      alt="" />
+  <div class="row no-gutters p-color">
+    <!-- <img class="col-6" src="assets/images/{{config.assetImage.value}}" alt="" /> -->
+    <div class="col-6">
+      <div class="panel-8-image" style="background-image: url(assets/images/financial_collateral.png)"></div>
+    </div>
     <div class="col-3 lateral-wrapper">
       <div class="title">General</div> <!-- #HC -->
       <div class="sub-title u-underline">{{ config.neighborhood.value }}</div>
@@ -11,7 +13,7 @@
         <span class="row-list__text">{{ config.address.value }}</span>
       </div>
       <div class="row-list--medium">
-        <i class="icon--medium icol ico-home"></i>
+        <i class="icon--medium icol ico-landmark"></i>
         <span class="row-list__text">{{ config.typeOfNeighborhood.value }}</span>
       </div>
       <div class="row-list--medium">
@@ -28,9 +30,7 @@
       </div>
       <div>
         <span class="label__up label--color">{{ config.numberOfFloors.label }}</span>
-        <p class="highlighted--big highlighted--color">
-            {{ config.numberOfFloors.value }}
-        </p>
+        <p class="highlighted--big highlighted--color">{{ config.numberOfFloors.value }}</p>
       </div>
       <div>
         <span class="label__up label--color">{{ config.totalArea.label }}</span>

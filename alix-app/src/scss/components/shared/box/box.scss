@@ -8,11 +8,14 @@ $color3: #252B48;
 $color4: #8C8C8D;
 
 .box {
-  padding: 0;
   width: 100%;
+  padding: 0;
+  border-radius: $border-radius__default;
+  overflow: hidden;
+  // box-shadow: 0px 2px 4px rgba(black, .25);
   .box__header {
     .box__title { padding: $box-padding }
-    .title--compound { 
+    .title--compound {
       padding: $box-padding
     }
     .icons {

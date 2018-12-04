@@ -17,25 +17,24 @@
 @import '~src/scss/imports';
 
 %row-list {
-	display: flex;
+  display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
 @each $size in $row-list--size {
-$key: nth($size, 1);
-$value: nth($size, 2);
+  $key: nth($size, 1);
+  $value: nth($size, 2);
 
-	.row-list--#{$key} {
-		@extend %row-list;
-		& > i,
-		& > .bullet-point-row {
-			width: $value;
-		}
-		.row-list__text {
-			width: calc(100% - #{$value});
-			margin: 0;
-		}
-	}
-
+  .row-list--#{$key} {
+    @extend %row-list;
+    & > i,
+    & > .bullet-point-row {
+      width: $value;
+    }
+    .row-list__text {
+      width: calc(100% - #{$value});
+      margin: 0;
+    }
+  }
 }

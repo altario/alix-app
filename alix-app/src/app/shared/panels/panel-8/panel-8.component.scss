@@ -1,24 +1,65 @@
+@import '~src/scss/imports';
+
 :host {
-	background-color: #2D3035;
-   width: 100%;
-   position: relative;
-   display: flex;
-	.sub-title { text-transform: none }
-	.lateral-wrapper {
-		padding: 20px 0;
-		display: flex;
-		justify-content: space-between;
-		flex-direction: column;
-		& > div {
-			padding: 0 20px;
-		}
-	}
-	.p-color {
-		$margin: 20px;
-		margin: $margin 0 $margin 0;
-		.lateral-wrapper:last-child {
-			margin: -#{$margin} -#{$margin} -#{$margin} $margin;
-			background-color: #34363B;
-		}
-	}
+  width: 100%;
+  background: #2D3035;
+  position: relative;
+  display: flex;
+  padding: 20px;
+
+  > [class*="col-"] {
+    padding: 0;
+  }
+
+  .panel-8-image {
+    height: 350px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .sub-title {
+    text-transform: none;
+  }
+
+  .lateral-wrapper {
+    padding: 0 0 20px 0;
+    @include align(column);
+
+    & > div {
+      padding: 0 20px;
+      + div {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  .bullet-point-row {
+    padding-right: 10px;
+    margin-left: -18px;
+    @include align(right);
+    + .row-list__text {
+      font-size: rem(24px);
+    }
+  }
+
+  .p-color {
+    $margin: 20px;
+    // margin: $margin 0 $margin 0;
+
+    i {
+      width: 36px;
+      display: block;
+      text-align: center;
+      margin-right: 10px;
+    }
+
+    .lateral-wrapper {
+      &:last-child {
+        margin: -#{$margin} -#{$margin} -#{$margin} $margin;
+        padding: 20px 0;
+        background-color: #34363B;
+      }
+    }
+  }
 }
