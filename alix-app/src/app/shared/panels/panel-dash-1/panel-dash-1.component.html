@@ -1,3 +1,22 @@
-<p>
-  paneldash1 works!
-</p>
+<div class="list-kpis">
+    <div class="kpi-item">
+        <header>Total Exposure</header>
+        <div class="item-value">{{config.totalExposure.value | curr}}</div>
+    </div>
+    <div class="kpi-item">
+        <header>ROE</header>
+        <div class="item-value">{{config.roe.value | perc}}</div>
+    </div>
+    <div class="kpi-item">
+        <header>Expected Net Interest Margin</header>
+        <div class="item-value">{{config.expectedNetInterestMargin.value | curr}}</div>
+    </div>
+    <div class="kpi-item">
+        <header>Expected Loss</header>
+        <div class="item-value">{{config.expectedLoss.value | curr}}</div>
+    </div>
+    <div class="kpi-item">
+        <header>Var</header>
+        <div class="item-value">{{config.var.value | curr}}</div>
+    </div>
+</div>

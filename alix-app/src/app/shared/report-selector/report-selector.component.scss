@@ -1,5 +1,13 @@
 :host {
+  width: fit-content;
   position: absolute;
-  top: 1px;
-  right: 15px;
+  top: 0;
+  right: 0;
+  .box {
+    background: transparent;
+    i {
+      width: 100%;
+      padding: 6px;
+    }
+  }
 }

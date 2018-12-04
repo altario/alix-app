@@ -43,7 +43,9 @@ h1, h2, h3, h4 {
   font-weight: $font-weight--bold;
   line-height: $line-height--1;
   margin-top: $header__margin-top;
-  margin-bottom: $header__margin-bottom;
+  + h1, h2, h3, h4 {
+    margin-top: $header__margin-bottom;
+  }
 }
 h1 {
   font-size: $font-size--head-1;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-panel-dash-2',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./panel-dash-2.component.scss']
 })
 export class Paneldash2Component implements OnInit {
+
+    @Input()
+    public config: any;
 
   constructor() { }
 
