@@ -24,9 +24,12 @@
     font-weight: $font-weight--normal;
   }
   .secondary__title {
-    font-size: rem(16px);
+    font-size: rem(14px);
     font-family: $font-family--secondary;
     font-weight: $font-weight--bold;
+    p {
+      line-height: rem(14px);
+    }
   }
 }
 
