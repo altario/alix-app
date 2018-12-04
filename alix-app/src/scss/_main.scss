@@ -84,6 +84,9 @@
 @import 'components/shared/row_list';
 @import 'components/shared/list-simple';
 
+%app-panel {
+	flex: 1;
+}
 
 .container-fluid {
   padding: 0;
@@ -95,7 +98,13 @@
       padding: 0;
       margin: 0 auto;
       > * {
-        z-index: 1;
+				z-index: 1;
+				display: flex;
+				flex: 1;
+				flex-direction: column;
+				& > * {
+					display: flex;
+				}
       }
       @include pseudo {
         height: 200px;
@@ -108,4 +117,10 @@
       }
     }
   }
+}
+
+@for $i from 1 through 35 {
+	app-panel-#{$i} {
+		@extend %app-panel;
+	}
 }
