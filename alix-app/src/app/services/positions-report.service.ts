@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class PortfolioReportService {
+export class PositionsReportService {
 
   private reportSource = new BehaviorSubject<number>(0);
   data: any = this.reportSource.asObservable();

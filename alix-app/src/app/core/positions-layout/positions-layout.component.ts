@@ -5,11 +5,11 @@ import { ActivatedRoute } from '@angular/router';
 import * as dataset from '@data/dataset';
 
 @Component({
-    selector: 'app-portfolio-layout',
-    templateUrl: './portfolio-layout.component.html',
-    styleUrls: ['./portfolio-layout.component.scss']
+    selector: 'app-positions-layout',
+    templateUrl: './positions-layout.component.html',
+    styleUrls: ['./positions-layout.component.scss']
 })
-export class PortfolioLayoutComponent implements OnInit {
+export class PositionsLayoutComponent implements OnInit {
   public config: any;
 
   constructor(private route: ActivatedRoute) {}

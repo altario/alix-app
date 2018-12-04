@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PortfolioReportService } from '@services/portfolio-report.service';
+import { PositionsReportService } from '@app/services/positions-report.service';
 
 @Component({
   selector: 'app-report-selector',
@@ -9,12 +9,12 @@ import { PortfolioReportService } from '@services/portfolio-report.service';
 export class ReportSelectorComponent implements OnInit {
   public clicked = false;
 
-  constructor(private report: PortfolioReportService) { }
+  constructor(private report: PositionsReportService) { }
 
   ngOnInit() {
   }
 
-  updatePortfolioReport(data) {
+  updatePositionsReport(data) {
     this.clicked = true;
 
     this.report.update(data);
