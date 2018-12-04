@@ -8,27 +8,30 @@
       </div>
     </div>
   </div>
-  <div class="box-list">
-    <div class="titles">
-      <span>{{config.new.value | perc:0}} %</span>
-      <span class="square" style="background-color: #00B5E9; "></span>
-      <span>New</span> <!-- #HC -->
-    </div>
-    <div>
-      <span>{{config.inConstruction.value | perc:0}} %</span><span class="square" style="background-color: #7AC143; "></span><span>In Construction</span> <!-- #HC -->
-    </div>
-    <div>
-      <span>{{config.renovated.value | perc:0}} %</span><span class="square" style="background-color: #C7DA2C; "></span><span>Renovated</span> <!-- #HC -->
-    </div>
-    <div>
-      <span>{{config.used.value | perc:0}} %</span><span class="square" style="background-color: #F2E603; "></span><span>Used</span> <!-- #HC -->
-    </div>
-    <div>
-      <span>{{config.needsRenovation.value | perc:0}} %</span><span class="square" style="background-color: #FCB86B; "></span><span>Needs Renov.</span> <!-- #HC -->
-    </div>
-    <div>
-      <span>{{config.ruin.value | perc:0}} %</span><span class="square" style="background-color: #E9545C; "></span><span>Ruin</span> <!-- #HC -->
+  <div class="box__body box__body--bg">
+    <div class=" cell__wrapper cell__wrapper--bg-dark">
+      <div class="box-list">
+        <div class="titles">
+          <span>{{config.new.value | perc:0}} %</span>
+          <span class="square" style="background-color: #00B5E9; "></span>
+          <span>New</span> <!-- #HC -->
+        </div>
+        <div>
+          <span>{{config.inConstruction.value | perc:0}} %</span><span class="square" style="background-color: #7AC143; "></span><span>In Construction</span> <!-- #HC -->
+        </div>
+        <div>
+          <span>{{config.renovated.value | perc:0}} %</span><span class="square" style="background-color: #C7DA2C; "></span><span>Renovated</span> <!-- #HC -->
+        </div>
+        <div>
+          <span>{{config.used.value | perc:0}} %</span><span class="square" style="background-color: #F2E603; "></span><span>Used</span> <!-- #HC -->
+        </div>
+        <div>
+          <span>{{config.needsRenovation.value | perc:0}} %</span><span class="square" style="background-color: #FCB86B; "></span><span>Needs Renov.</span> <!-- #HC -->
+        </div>
+        <div>
+          <span>{{config.ruin.value | perc:0}} %</span><span class="square" style="background-color: #E9545C; "></span><span>Ruin</span> <!-- #HC -->
+        </div>
+      </div>
     </div>
   </div>
 </div>
-

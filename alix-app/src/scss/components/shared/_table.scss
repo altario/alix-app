@@ -4,9 +4,11 @@
 
 .table__simple {
   display: flex;
+  flex-direction: column;
   .table__row {
      display: flex;
-     .cell__title,
+     flex-direction: column;
+    .cell__title,
     .cell__information {
       font-size: rem(10px);
       color: $color__text_table;
