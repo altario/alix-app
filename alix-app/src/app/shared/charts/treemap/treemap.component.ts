@@ -152,6 +152,6 @@ export class TreemapComponent implements OnInit {
   }
 
   onChartClick(chartLine) {
-    console.log(chartLine);
+    this.chartClick.emit(chartLine);
   }
 }

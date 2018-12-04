@@ -2,7 +2,7 @@
   <div class="no-gutters">
     <div class="col">
       <h1>Dashboard</h1>
-      <alix-treemap [series]="config.dashboard1.portfolioTreeMap"></alix-treemap>
+      <alix-treemap [series]="config.dashboard1.portfolioTreeMap" (chartClick)="onChartClick($event)"></alix-treemap>
     </div>
   </div>
 
