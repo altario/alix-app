@@ -15,12 +15,17 @@ export class DashboardComponent implements OnInit {
 
   public config: any;
 
+  public kpis: any;
+
   constructor() {
 
     this.config = dashboardDataset;
+      this.kpis = this.config.dashboard1.mainKpis[0].industry1;
+    console.log(this.kpis);
   }
 
   ngOnInit() {
+
     this.opts = {
       tooltip: {
         trigger: 'axis',
