@@ -9,7 +9,6 @@ import { DemandAndOfferComponent } from './demand-offer/demand-offer.component';
 import { PortfolioListComponent } from './portfolio-list/portfolio-list.component';
 import { PortfolioLayoutComponent } from '@core/index';
 
-
 export const PortfolioRoutes: Routes = [
   {
     path: '',
@@ -38,26 +37,4 @@ export const PortfolioRoutes: Routes = [
       }
     ]
   }
-
-
-
-
-
-  /*,
-  {
-    path: 'financial',
-    component: FinancialComponent
-  },
-  {
-    path: 'state-of-conservation',
-    component: StateOfConservationComponent
-  },
-  {
-    path: 'demand-offer',
-    component: DemandAndOfferComponent
-  },
-  {
-    path: 'location',
-    component: LocationComponent
-  }*/
 ];

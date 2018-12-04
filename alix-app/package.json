@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "dev": "ng serve --open --port 4100",
     "start": "ng serve",
     "build": "ng build --prod --build-optimizer",
     "test": "ng test",
@@ -26,7 +27,6 @@
     "echarts": "^4.2.0-rc.2",
     "ng5-slider": "^1.1.7",
     "ngx-echarts": "^4.0.1",
-    "rxjs": "~6.3.3",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
@@ -48,6 +48,7 @@
     "karma-jasmine-html-reporter": "^1.4.0",
     "prettier": "^1.15.2",
     "protractor": "~5.4.1",
+    "rxjs": "^6.3.3",
     "ts-node": "~7.0.1",
     "tslint": "~5.11.0",
     "typescript": "~3.1.6"

@@ -1,0 +1,14 @@
+<nav class="navbar navbar--secondary fixed-top">
+  <div class="navbar__left">
+    <div class="back">
+      <a [routerLink]="['../']" class="btn btn-ghost-lightest btn--back"><i class="icor ico-chevron-left"></i>Back</a>
+      <span>Title</span>
+    </div>
+  </div>
+  <div class="navbar__right">
+    <a class="btn btn-ghost-lightest" [routerLink]="['financial']" routerLinkActive="active">Financial</a>
+    <a class="btn btn-ghost-lightest" [routerLink]="['state-of-conservation']" routerLinkActive="active">State of Conservation</a>
+    <a class="btn btn-ghost-lightest" [routerLink]="['demand-offer']" routerLinkActive="active">Demand & Offer</a>
+    <a class="btn btn-ghost-lightest" [routerLink]="['location']" routerLinkActive="active">Location</a>
+  </div>
+</nav>

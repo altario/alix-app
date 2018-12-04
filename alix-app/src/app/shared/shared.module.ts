@@ -1,3 +1,4 @@
+// angular
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -10,6 +11,7 @@ import { SliderRangeComponent } from '@shared/slider-range/slider-range.componen
 import { DropdownComponent } from '@shared/dropdown/dropdown.component';
 import { ReportSelectorComponent } from '@shared/report-selector/report-selector.component';
 import { ReportStickyComponent } from '@shared/report-sticky/report-sticky.component';
+import { SubheaderComponent } from '@shared/subheader/subheader.component';
 
 // pipes
 import {
@@ -76,7 +78,7 @@ import {
   imports: [
     CommonModule,
 
-    //plugins
+    // plugins
     NgxEchartsModule,
     Ng5SliderModule
   ],

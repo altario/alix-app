@@ -24,6 +24,11 @@ export const PagesRoutes: Routes = [
     loadChildren: './portfolio/portfolio.module#PortfolioModule'
   },
   {
+    path: 'positions',
+    component: BaseLayoutComponent,
+    loadChildren: './positions/positions.module#PositionsModule'
+  },
+  {
     path: 'reports',
     component: ReportsComponent
   },
