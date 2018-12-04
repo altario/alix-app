@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 
 // dataset
 import * as dataset from '@data/dataset';
+import * as chartdataset from '@data/charts-dataset';
 
 @Component({
   selector: 'app-location',
@@ -15,7 +16,7 @@ export class LocationComponent implements OnInit {
   public vehicleValues: Array<any>;
   public selectedVehicleYear: object;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -37,8 +38,52 @@ export class LocationComponent implements OnInit {
     // the array of years to populte the slider [1]
     return [
       Object.keys(this.config.vehicles.years)[
-        Object.keys(this.config.vehicles.years).length - 1],
+      Object.keys(this.config.vehicles.years).length - 1],
       Object.keys(this.config.vehicles.years)
     ];
+  }
+
+  getbreakdownAssetsInNeighborhoodOpts(): Object {
+
+    return {
+      legend: {
+        data: Object.keys(chartdataset.dossier1ChartsData.location.breakdownAssetsInNeighborhood).map((population, i) => {
+          return population;
+        }),
+        align: 'left'
+      },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'cross',
+          label: {
+            backgroundColor: '#6a7985'
+          }
+        }
+      },
+      xAxis: {
+        type: 'category',
+        data: chartdataset.dossier1ChartsData.location.breakdownAssetsInNeighborhood.year.values
+      }
+    };
+  }
+
+  getbreakdownAssetsInNeighborhoodSeries(): Array<any> {
+
+    return Object.keys(chartdataset.dossier1ChartsData.location.breakdownAssetsInNeighborhood).map((population, i) => {
+      if(population != 'year') {
+        return {
+          data: chartdataset.dossier1ChartsData.location.breakdownAssetsInNeighborhood[population].values,
+          type: 'bar',
+          stack: 'one',
+          label: {
+            normal: {
+              show: true,
+              position: 'insideRight'
+            }
+          } 
+        };
+      }
+    });
   }
 }

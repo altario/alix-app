@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'alix-line',
@@ -11,6 +11,9 @@ export class LineComponent implements OnInit {
 
   @Input()
   public opts: any = {};
+
+  @Output()
+  public chartInit = new EventEmitter();
 
   public options: any = {};
   public initOpts: any = {};
@@ -38,6 +41,10 @@ export class LineComponent implements OnInit {
     this.initOpts = {
       renderer: 'svg',
     };
+  }
+
+  onChartInit(e) {
+    this.chartInit.emit(e);
   }
 
 }
