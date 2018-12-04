@@ -1,7 +1,11 @@
 :host {
-    position: relative;
+  position: relative;
+  .cell__wrapper:first-child { width: 100% }
+  
+  .highlighted--big,
+  .highlighted--medium,
+  .highlighted--huge {
+    align-items: flex-end
+  }
 }
 
-.cell__wrapper:first-child {
-    width: 100%;
-}

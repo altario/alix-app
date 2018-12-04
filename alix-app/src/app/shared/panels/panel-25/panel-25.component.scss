@@ -1,16 +1,17 @@
 :host {
   position: relative;
   .table {
-    display: table;
+    display: flex;
+    flex-direction: column;
     font-size: 12px;
     .table-row {
-      display: table-row;
+      display: flex;
       & > span {
-        display: table-cell;
         padding: 0;
-        border: 2px solid transparent;
         vertical-align: middle;
-        &:first-child { 
+        width: 30px;
+        text-align: center;
+        &:first-child {
           padding-right: .8em;
           text-align: right;
           width: 75px;

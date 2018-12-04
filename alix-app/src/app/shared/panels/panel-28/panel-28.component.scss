@@ -1,11 +1,29 @@
 :host {
   position: relative;
-}
-
-ul {
-  padding: 0;
-
-  li {
-    list-style-type: none;
+  .table {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    .table-row {
+      display: flex;
+      & > span {
+        padding: 0.3em;
+        vertical-align: middle;
+        width: 40px;
+        text-align: center;
+        &:first-child {
+          padding-right: .8em;
+          text-align: right;
+          width: 60px;
+        }
+        .square {
+          display: inline-block;
+          min-width: 5px;
+          max-width: 5px;
+          height: 11px;
+          padding: 0;
+        }
+      }
+    }
   }
 }

@@ -1,24 +1,5 @@
 <div class="container-fluid">
-  <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0">
-    <ul class="secondary-nav navbar-nav px-3">
-      <li class="left-nav">
-        <a [routerLink]="['/']" class="back-btn"><i class="icor ico-chevron-left"></i>Back</a>
-        <span>mini title</span>
-      </li>
-      <li>
-        <a class="nav-link" [routerLink]="['.']" routerLinkActive="active">Financial</a>
-      </li>
-      <li>
-        <a class="nav-link" [routerLink]="['state-of-conservation']" routerLinkActive="active">State of Conservation</a>
-      </li>
-      <li>
-        <a class="nav-link" [routerLink]="['demand-offer']" routerLinkActive="active">Demand & Offer</a>
-      </li>
-      <li>
-        <a class="nav-link" [routerLink]="['location']" routerLinkActive="active">Location</a>
-      </li>
-    </ul>
-  </nav>
+  <app-subheader></app-subheader>
 
   <div class="no-gutters">
     <div class="col">

@@ -1,15 +1,35 @@
 <app-report-selector></app-report-selector>
-<div style="border: 1px solid #FFFFFF">
-  <h6>Architecture</h6> <!-- #HC -->
-  <h1>{{ config._19ThCentury.label }}</h1>
-
-  <div>
-    <div><span>< {{ config._19ThCentury.label }}</span><span> {{ config._19ThCentury.value | perc:0 }}%</span></div>
-    <div><span>{{ config._1900To1950.label }}</span><span> {{ config._1900To1950.value | perc:0 }}%</span></div>
-    <div><span>{{ config._1950To1970.label }}</span><span> {{ config._1950To1970.value | perc:0 }}%</span></div>
-    <div><span>{{ config._1970To1990.label }}</span><span> {{ config._1970To1990.value | perc:0 }}%</span></div>
-    <div><span>{{ config._1990To2000.label }}</span><span> {{ config._1990To2000.value | perc:0 }}%</span></div>
-    <div><span>{{ config.after2000.label }}</span><span> {{ config.after2000.value | perc:0 }}%</span></div>
+<div class="box box--table">
+  <div class="box__header box__header--bg">
+    <div class="d-flex flex-row justify-content-between">
+      <div class="title--compound">
+        <div class="main__title">
+          Architecture <!-- #HC -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="box__body box__body--bg">
+    <div class=" cell__wrapper cell__wrapper--bg-dark">
+      <span class="row-list__text ">{{ config._19ThCentury.label }}</span>
+    </div>
+    <div class=" cell__wrapper cell__wrapper--bg-dark">
+      <div class="table">
+          <div class="table-row">
+            <span>{{ config._1900To1950.label }}</span><span> {{ config._1900To1950.value | perc:0 }}%</span>
+          </div>
+          <div class="table-row">
+            <span>{{ config._1950To1970.label }}</span><span> {{ config._1950To1970.value | perc:0 }}%</span>
+          </div>
+          <div class="table-row">
+            <span>{{ config._1970To1990.label }}</span><span> {{ config._1970To1990.value | perc:0 }}%</span>
+          </div>
+          <div class="table-row">
+            <span>{{ config._1990To2000.label }}</span><span> {{ config._1990To2000.value | perc:0 }}%</span>
+          </div>
+          <div class="table-row">
+              <span>{{ config.after2000.label }}</span><span> {{ config.after2000.value | perc:0 }}%</span>
+          </div>
+        </div>
   </div>
 </div>
-  

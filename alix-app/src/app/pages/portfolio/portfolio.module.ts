@@ -11,14 +11,15 @@ import { LocationComponent } from './location/location.component';
 import { DemandAndOfferComponent } from './demand-offer/demand-offer.component';
 import { PortfolioListComponent } from './portfolio-list/portfolio-list.component';
 import { RowComponent } from './portfolio-list/row/row.component';
+import { SubheaderComponent } from './../../shared/subheader/subheader.component';
 
 // routes
 import { PortfolioRoutes } from './portfolio.routing';
 
-
-//Shared Module
+// modules
 import { SharedModule } from '@shared/shared.module';
 
+// layouts
 import { PortfolioLayoutComponent } from '@core/index';
 import { PortfolioReportService } from '@services/portfolio-report.service';
 
@@ -30,6 +31,7 @@ import { PortfolioReportService } from '@services/portfolio-report.service';
     SharedModule
   ],
   declarations: [
+    // layout
     PortfolioLayoutComponent,
 
     // pages
@@ -38,8 +40,8 @@ import { PortfolioReportService } from '@services/portfolio-report.service';
     LocationComponent,
     DemandAndOfferComponent,
     PortfolioListComponent,
-    RowComponent
-
+    RowComponent,
+    SubheaderComponent,
   ],
   providers: [PortfolioReportService]
 })

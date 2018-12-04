@@ -20,6 +20,8 @@ export class DemandAndOfferComponent implements OnInit {
   public population: any;
   public populationForSale: any;
   public populationLongRent: any;
+  public populationShortRent: any;
+  public populationShortRentDemand: any;
 
   constructor(private route: ActivatedRoute) { }
 
@@ -29,8 +31,9 @@ export class DemandAndOfferComponent implements OnInit {
       this.config = dataset.dossiersMainData.dossier1;
       console.log(this.config)
       this.populationForSale = this.config.demandAndOffer.forSale.populations.population1;
-      this.populationLongRent = this.config.demandAndOffer.forSale.populations.population1;
-
+      this.populationLongRent = this.config.demandAndOffer.longRent.populations.population1;
+      this.populationShortRent = this.config.demandAndOffer.shortRent.populations.population1;
+      this.populationShortRentDemand = this.config.demandAndOffer.shortRent.populations.population1;
 
       this.opts = {
         sqm: {
@@ -108,13 +111,23 @@ export class DemandAndOfferComponent implements OnInit {
     });
   }
 
-  changePopulationForSaleValue(callbackEvent) {
+  changePopulationForSaleValue(callbackEvent): void {
     this.populationForSale = this.config.demandAndOffer.forSale.populations[callbackEvent];
   }
 
-  changePopulationLongRentValue(callbackEvent) {
-    this.populationLongRent = this.config.demandAndOffer.forSale.populations[callbackEvent];
+  changePopulationLongRentValue(callbackEvent): void {
+    this.populationLongRent = this.config.demandAndOffer.longRent.populations[callbackEvent];
   }
+
+  changePopulationShortRentValue(callbackEvent): void {
+    this.populationShortRent = this.config.demandAndOffer.shortRent.populations[callbackEvent];
+  }
+
+  changePopulationShortRentDemandValue(callbackEvent): void {
+    this.populationShortRentDemand = this.config.demandAndOffer.shortRent.populations[callbackEvent];
+  }
+
+
 
   /**
    * 

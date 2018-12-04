@@ -1,46 +1,69 @@
 <app-report-selector></app-report-selector>
-<div style="border: 1px solid #FFFFFF">
-  <h6>Vehicles</h6> <!-- #HC -->
 
-  <div>
-    <h6>Average Vehicle price</h6> <!-- #HC-->
-    <div>
-      <span>{{ config.averagePrice.value | curr:0 }}</span>
-      <span>{{config.averagePriceVsMilanPerc.value | perc:0}}%</span>
-      <span> z{{config.averagePriceVsMilanPerc.label}}</span>
+<div class="box box--table">
+  <div class="box__header box__header--bg">
+    <div class="d-flex flex-row justify-content-between">
+      <div class="title--compound">
+        <div class="main__title">
+          Vehicles <!-- #HC -->
+        </div>
+      </div>
     </div>
   </div>
+  <div class="box__body box__body--bg">
+      <div  class=" cell__wrapper cell__wrapper--bg-dark">
+          <span  class="label__up label--color">
+              Average Vehicle price
+          </span>
+          <div  class="highlighted--big highlighted--color"> 
+              {{ config.averagePrice.value | curr:0 }}k
+            <small class="u-uppercase highlighted__small--color">
+              <span class="color--primary">{{config.averagePriceVsMilanPerc.value | perc:0}}%</span>
+              {{config.averagePriceVsMilanPerc.label}}
+            </small>
+          </div>
+        </div>
 
-  <div>
-    <div>
-      <span>{{ config.greater100K.label }}</span>
-      <span> {{ config.greater100KVsMilanPerc.value | perc:0 }}%</span>
-      <span> {{ config.greater100KVsMilanPerc.label }}</span>
-    </div>
-    <div>
-      <span>{{ config._80K.label }}</span>
-      <span> {{ config._80KVsMilanPerc.value | perc:0 }}%</span>
-      <span> {{ config._80KVsMilanPerc.label }}</span>
-    </div>
-    <div>
-      <span>{{ config._60K.label }}</span>
-      <span> {{ config._60KVsMilanPerc.value | perc:0 }}%</span>
-      <span> {{ config._60KVsMilanPerc.label }}</span>
-    </div>
-    <div>
-      <span>{{ config._40K.label }}</span>
-      <span> {{ config._40KVsMilanPerc.value | perc:0 }}%</span>
-      <span> {{ config._40KVsMilanPerc.label }}</span>
-    </div>
-    <div>
-      <span>{{ config._20K.label }}</span>
-      <span> {{ config._20KVsMilanPerc.value | perc:0 }}%</span>
-      <span> {{ config._20KVsMilanPerc.label }}</span>
-    </div>
-    <div>
-      <span>{{ config.smaller20K.label }}</span>
-      <span> {{ config.smaller20KVsMilanPerc.value | perc:0 }}%</span>
-      <span> {{ config.smaller20KVsMilanPerc.label }}</span>
+
+
+
+    <div class=" cell__wrapper cell__wrapper--bg-dark">
+      <div class="table">
+        <div class="table-row">
+          <span>{{ config.greater100K.label }}</span>
+          <span> {{ config.greater100KVsMilanPerc.value | perc:0 }}%</span>
+          <span class="color--secondary"> {{ config.greater100KVsMilanPerc.label }}</span>
+        </div>
+        <div class="table-row">
+          <span>{{ config._80K.label }}</span>
+          <span> {{ config._80KVsMilanPerc.value | perc:0 }}%</span>
+          <span class="color--secondary"> {{ config._80KVsMilanPerc.label }}</span>
+        </div>
+        <div class="table-row">
+          <span>{{ config._60K.label }}</span>
+          <span> {{ config._60KVsMilanPerc.value | perc:0 }}%</span>
+          <span class="color--secondary"> {{ config._60KVsMilanPerc.label }}</span>
+        </div>
+        <div class="table-row">
+          <span>{{ config._40K.label }}</span>
+          <span> {{ config._40KVsMilanPerc.value | perc:0 }}%</span>
+          <span class="color--secondary"> {{ config._40KVsMilanPerc.label }}</span>
+        </div>
+        <div class="table-row">
+          <span>{{ config._20K.label }}</span>
+          <span> {{ config._20KVsMilanPerc.value | perc:0 }}%</span>
+          <span class="color--secondary"> {{ config._20KVsMilanPerc.label }}</span>
+        </div>
+        <div class="table-row">
+          <span>{{ config.smaller20K.label }}</span>
+          <span> {{ config.smaller20KVsMilanPerc.value | perc:0 }}%</span>
+          <span class="color--secondary"> {{ config.smaller20KVsMilanPerc.label }}</span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+
+
+

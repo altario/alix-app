@@ -1,5 +1,8 @@
 // angular
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import * as dataset from '@data/dataset';
 
 @Component({
     selector: 'app-portfolio-layout',
@@ -7,7 +10,13 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./portfolio-layout.component.scss']
 })
 export class PortfolioLayoutComponent implements OnInit {
-    constructor() {}
+  public config: any;
 
-    ngOnInit() {}
+  constructor(private route: ActivatedRoute) {}
+
+  ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.config = dataset.dossiersMainData.dossier1;
+    })
+  }
 }
