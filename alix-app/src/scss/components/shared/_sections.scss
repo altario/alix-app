@@ -55,7 +55,7 @@ $box__body-bg--dark: #1C2038;
 }
 
 .box {
-	@include box--bg (#252B48, transparent, transparent)
+	@include box--bg (#252B48, transparent, transparent);
 	@include box--table--color;
 }
 

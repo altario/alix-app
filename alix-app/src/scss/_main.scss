@@ -86,14 +86,26 @@
 
 
 .container-fluid {
-	padding: 0;
-	.page-section {
-		> * {
-				padding-top: 20px;
-				padding-bottom: 20px;
-				margin: 0 auto;
-				min-width: 1024px;
-				max-width: 1260px;
-		}
-	}
+  padding: 0;
+  .page-section {
+    padding: 60px 0;
+    > * {
+      min-width: 1024px;
+      max-width: 1260px;
+      padding: 0;
+      margin: 0 auto;
+      > * {
+        z-index: 1;
+      }
+      @include pseudo {
+        height: 200px;
+        // background: linear-gradient(180deg, rgba(150, 125, 217, 0.15) 0%, rgba(31, 34, 40, 0) 100%);
+        background: linear-gradient(180deg, rgba(#967dd9, 0.07) 0%, rgba(#1f2228, 0) 100%);
+        z-index: 0;
+      }
+      + * {
+        margin-top: 40px;
+      }
+    }
+  }
 }
