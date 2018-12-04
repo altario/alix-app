@@ -24,7 +24,6 @@
   }
 }
 
-
 .highlighted--big {
   @extend %highlighted;
   font-size: $font-size__highlighted--big;
@@ -34,7 +33,7 @@
   small {
     font-weight: $font-weight--thin;
     font-size: $font-size__highlighted--big__small;
-    padding: 0 .2em;
+    padding: 0;
     line-height: $font-size__highlighted--big__small;
   }
 }
@@ -80,4 +79,15 @@
     color: $color__text_highlighted;
   }
 }
- 
+
+@media only screen and (max-width: 1140px) {
+  %highlighted .of { padding: 0 .15em }
+  .highlighted--big { font-size: rem(28px); }
+  .cell__wrapper { padding: 10px !important }
+}
+
+@media only screen and (min-width: 1141px ) and (max-width: 1260px) {
+  %highlighted .of { padding: 0 .15em }
+  .highlighted--big { font-size: rem(32px); }
+  .cell__wrapper { padding: 10px !important }
+}
