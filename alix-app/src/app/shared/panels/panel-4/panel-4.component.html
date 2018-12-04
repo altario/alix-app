@@ -15,7 +15,7 @@
           </span>
         </div>
         <div class="cell__wrapper__info">
-          <div [ngClass]="{ good: config.status.value === 'Performing' }" class="tag">
+          <div [ngClass]="{ 'tag--success': config.status.value === 'Performing' }" class="tag">
             {{config.status.value}}
           </div>
         </div>
