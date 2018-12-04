@@ -18,7 +18,11 @@ export const PositionsRoutes: Routes = [
     path: ':id',
     component: PositionsLayoutComponent,
     children: [
-      { path: '', redirectTo: 'financial', pathMatch: 'full' },
+      {
+        path: '',
+        redirectTo: 'financial',
+        pathMatch: 'full'
+      },
       {
         path: 'financial',
         component: FinancialComponent

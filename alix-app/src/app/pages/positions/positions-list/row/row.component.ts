@@ -14,6 +14,6 @@ export class RowComponent implements OnInit {
     ngOnInit() {}
 
     goToDashboard(id) {
-        this.router.navigate(['/portfolios', id]);
+        this.router.navigate(['/positions', id]);
     }
 }

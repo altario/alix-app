@@ -17,6 +17,6 @@ export class PositionsLayoutComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.config = dataset.dossiersMainData.dossier1;
-    })
+    });
   }
 }
