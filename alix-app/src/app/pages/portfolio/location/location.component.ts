@@ -43,27 +43,23 @@ export class LocationComponent implements OnInit {
     ];
   }
 
-  getbreakdownAssetsInNeighborhoodOpts(): Object {
+  getbreakdownAssetsInNeighborhoodOpts() {
 
     return {
       legend: {
         data: Object.keys(chartdataset.dossier1ChartsData.location.breakdownAssetsInNeighborhood).map((population, i) => {
-          return population;
+          if (population != 'year') {
+            return population;
+          }
         }),
         align: 'left'
-      },
-      tooltip: {
-        trigger: 'axis',
-        axisPointer: {
-          type: 'cross',
-          label: {
-            backgroundColor: '#6a7985'
-          }
-        }
       },
       xAxis: {
         type: 'category',
         data: chartdataset.dossier1ChartsData.location.breakdownAssetsInNeighborhood.year.values
+      },
+      yAxis: {
+        type: 'value'
       }
     };
   }
@@ -71,19 +67,82 @@ export class LocationComponent implements OnInit {
   getbreakdownAssetsInNeighborhoodSeries(): Array<any> {
 
     return Object.keys(chartdataset.dossier1ChartsData.location.breakdownAssetsInNeighborhood).map((population, i) => {
-      if(population != 'year') {
+      if ( population != 'year' ) {
         return {
-          data: chartdataset.dossier1ChartsData.location.breakdownAssetsInNeighborhood[population].values,
-          type: 'bar',
-          stack: 'one',
-          label: {
-            normal: {
-              show: true,
-              position: 'insideRight'
-            }
-          } 
+          name: population,
+            type: 'bar',
+            stack: 'one',
+            label: {
+                normal: {
+                    show: false,
+                    position: 'insideRight'
+                }
+            },
+            data: chartdataset.dossier1ChartsData.location.breakdownAssetsInNeighborhood[population].values
         };
       }
+    });
+  }
+
+  getpercentageAccommByPricePerRoomOpts() {
+
+    return {
+      color: ['#003366', '#006699', '#4cabce', '#e5323e'],
+      calculable: true,
+      legend: {
+        data: Object.keys(chartdataset.dossier1ChartsData.location.percentageAccommByPricePerRoom).map((population, i) => {
+            return population;
+        }),
+        align: 'left'
+      },
+      xAxis: {
+        type: 'category',
+        axisTick: { show: false },
+        data: Object.keys(chartdataset.dossier1ChartsData.location.percentageAccommByPricePerRoom).map((population, i) => {
+          return population;
+        })
+      },
+      yAxis: {
+        type: 'value'
+      }
+    };
+  }
+
+  getpercentageAccommByPricePerRoomSeries(): Array<any> {
+    const config = {
+      rotate: 90,
+      align: 'left',
+      verticalAlign: 'middle',
+      position: 'insideBottom',
+      distance: 15,
+    };
+    const labelOption = {
+      normal: {
+        show: true,
+        position: config.position,
+        distance: config.distance,
+        align: config.align,
+        verticalAlign: config.verticalAlign,
+        rotate: config.rotate,
+        formatter: '{c}  {name|{a}}',
+        fontSize: 16,
+        rich: {
+          name: {
+            textBorderColor: '#fff'
+          }
+        }
+      }
+    };
+    return Object.keys(chartdataset.dossier1ChartsData.location.percentageAccommByPricePerRoom).map((population, i) => {
+
+        return {
+          name: population,
+          barGap: 0,
+          type: 'bar',
+          label: labelOption,
+          data: chartdataset.dossier1ChartsData.location.percentageAccommByPricePerRoom[population].values
+        };
+
     });
   }
 }

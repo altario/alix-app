@@ -1,1 +1,6 @@
-<div echarts [options]="options" [initOpts]="initOpts" class="treemap-chart" (chartInit)="onChartInit($event)"></div>
+<div echarts 
+    [options]="options" 
+    [initOpts]="initOpts" 
+    class="treemap-chart" 
+    (chartInit)="onChartInit($event)"
+    (chartClick)="onChartClick($event)"></div>
