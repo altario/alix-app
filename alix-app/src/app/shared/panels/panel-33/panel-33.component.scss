@@ -1,11 +1,7 @@
 :host {
-  position: relative;
-}
-
-ul {
-  padding: 0;
-
-  li {
-    list-style-type: none;
+  .highlighted--big {
+    align-items: flex-end;
+    span { width: 65px }
   }
 }
+

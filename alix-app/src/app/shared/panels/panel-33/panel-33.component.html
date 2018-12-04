@@ -1,22 +1,56 @@
+
 <app-report-selector></app-report-selector>
-<div style="border: 1px solid #FFFFFF">
-  <h6>{{name}}</h6> <!-- #HC -->
-  <div>
-    <div>
-      <i class="icol ico-info-circle"></i>
-    </div>
-    <div>
-      <div>
-        <span>
-          <h1># {{ config.total }}</h1>
-        </span>
-        <span>Units in 200m Radius</span>
-      </div>
-      <div>
-        <span><i class="icol ico-info-circle"></i></span>
-        <span>{{ config.closest }} Min</span><span>{{ config.legend }}</span>
+
+<div class="box box--table">
+    <div class="box__header box__header--bg">
+      <div class="d-flex flex-row justify-content-between">
+        <div class="title--compound">
+          <div class="main__title">
+            <span class="u-strong u-uppercase">
+              <h6>{{name}}</h6> <!-- #HC -->
+            </span>
+          </div>
+        </div>
       </div>
     </div>
+    <div class="box__body box__body--bg">
+      <div class=" cell__wrapper cell__wrapper--bg-dark">
+        <div class="row-list--medium">
+          <i class="icon--medium icol ico-home"></i>
+          <div>
+            <div class="cell__wrapper">
+              <p class="highlighted--big highlighted--color">
+                <span># {{ config.total }}</span>
+                <small class="u-uppercase highlighted__small--color">
+                  Units in 200m Radius
+                </small>
+              </p>
+            </div>
+            <div class="cell__wrapper">
+              <div class="list-simple">
+                <div>
+                    <i class="icon--small icol ico-star"></i>
+                    <i class="icon--small icol ico-star"></i>
+                    <i class="icon--small icol ico-star"></i>
+                    <i class="icon--small icol ico-star"></i>
+                </div>
+              </div>
+            </div>
+            <div class="cell__wrapper">
+              <div class="list-simple">
+                <div>
+                  <span class="text--success">
+                    {{ config.closest }} Min
+                  </span>
+                  <span>
+                      {{ config.legend }}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
   </div>
 </div>
   

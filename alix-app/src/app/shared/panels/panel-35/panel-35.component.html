@@ -1,29 +1,40 @@
 <app-report-selector></app-report-selector>
-<div style="border: 1px solid #FFFFFF">
-  <div>
-    <h6>{{config.name}}</h6> <!-- #HC -->
-  </div>
-  <div>
-    <div>
-      <i class="icol ico-info-circle"></i>
-    </div>
-    <div>
-      <div>
-        <span><i class="icol ico-info-circle"></i></span>
-        <span>{{ config.pubTrans }} Min</span>
-        <span> Walk+Train</span>
-      </div>
-      <div>
-        <span><i class="icol ico-info-circle"></i></span>
-        <span>{{ config.taxi }} Min</span>
-        <span> Taxi</span>
-      </div>
-      <div *ngIf="config.walking">
-        <span><i class="icol ico-info-circle"></i></span>
-        <span>{{ config.walking }} Min</span>
-        <span> Walking</span>
+
+<div class="box box--table">
+    <div class="box__header box__header--bg">
+      <div class="d-flex flex-row justify-content-between">
+        <div class="title--compound">
+          <div class="main__title">
+            <span class="u-strong u-uppercase">
+              {{config.name}}
+            </span>
+          </div>
+        </div>
       </div>
     </div>
+    <div class="box__body box__body--bg">
+      <div class=" cell__wrapper cell__wrapper--bg-dark">
+        <div class="row-list--medium">
+          <i class="icol ico-info-circle"></i>
+          <div class="list-simple">
+            <div>
+              <span><i class="icol ico-info-circle"></i></span>
+              <span class="u-strong">{{ config.pubTrans }} Min</span>
+              <span> Walk+Train</span>
+            </div>
+            <div>
+              <span><i class="icol ico-info-circle"></i></span>
+              <span class="u-strong">{{ config.taxi }} Min</span>
+              <span> Taxi</span>
+            </div>
+            <div *ngIf="config.walking">
+              <span><i class="icol ico-info-circle"></i></span>
+              <span class="u-strong">{{ config.walking }} Min</span>
+              <span> Walking</span>
+            </div>
+          </div>
+        </div>
+      </div>
   </div>
 </div>
   

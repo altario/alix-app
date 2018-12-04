@@ -35,6 +35,7 @@ $color4: #8C8C8D;
   &__body {
     width: 100%;
     .cell__wrapper {
+      .cell__wrapper { padding-right: 0 !important }
       .cell__wrapper__top { margin-bottom: 5px }
       .cell__wrapper__info { margin: 5px 0 }
       .cell__wrapper__bottom { margin-top: 5px }
@@ -43,9 +44,20 @@ $color4: #8C8C8D;
 }
 
 
+
+
+
 app-panel-1,
 app-panel-2,
 app-panel-3,
+app-panel-4,
+app-panel-5,
+app-panel-6,
+app-panel-7,
+app-panel-8,
+app-panel-9,
+app-panel-10,
+app-panel-11,
 app-panel-4,
 app-panel-5,
 app-panel-6,

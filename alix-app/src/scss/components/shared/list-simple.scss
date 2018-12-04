@@ -1,6 +1,6 @@
 .list-simple {
   display: flex;
-  flex-direction: column;
+  flex-direction: column !important;
 
   div {
     padding: 0;

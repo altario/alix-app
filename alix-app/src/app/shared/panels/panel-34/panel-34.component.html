@@ -1,70 +1,78 @@
 <app-report-selector></app-report-selector>
-<div style="border: 1px solid #FFFFFF">
-  <div>
-    <h6>Metrostations</h6> <!-- #HC -->
-    <p>500m Radius</p> <!-- #HC -->
-  </div>
-  <div>
-    <div>
-      <i class="icol ico-info-circle"></i>
-    </div>
-    <div>
-      <div>
-        <span>
-          <span style="border-radius: 50px; display: block; height: 30px; width: 30px;" [style.backgroundColor]="config.metroGaribaldiLineColor.value"></span>
-        </span>
-        <span>
-          <div>
-            Garibaldi
-            <!-- #HC -->
+
+<div class="box box--table">
+    <div class="box__header box__header--bg">
+      <div class="d-flex flex-row justify-content-between">
+        <div class="title--compound">
+          <div class="main__title">
+            <span class="u-strong u-uppercase">
+              Metrostations
+            </span>
           </div>
-          <div>
-            <span>{{ config.metroGaribaldi.value }} Min</span> {{ config.legendForAll.value }} <i class="icol ico-info-circle"></i>
-          </div>
-        </span>
-      </div>
-      <div>
-        <span>
-          <span style="border-radius: 50px; display: block; height: 30px; width: 30px;" [style.backgroundColor]="config.metroGioiaLineColor.value"></span>
-        </span>
-        <span>
-          <div>
-            Gioia
-            <!-- #HC -->
-          </div>
-          <div>
-            <span>{{ config.metroGioia.value }} Min</span> {{ config.legendForAll.value }} <i class="icol ico-info-circle"></i>
-          </div>
-        </span>
-      </div>
-      <div>
-        <span>
-          <span style="border-radius: 50px; display: block; height: 30px; width: 30px;" [style.backgroundColor]="config.metroIsolaLineColor.value"></span>
-        </span>
-        <span>
-          <div>
-            Isola
-            <!-- #HC -->
-          </div>
-          <div>
-            <span>{{ config.metroIsola.value }} Min</span> {{ config.legendForAll.value }} <i class="icol ico-info-circle"></i>
-          </div>
-        </span>
-      </div>
-      <div>
-        <span>
-          <span style="border-radius: 50px; display: block; height: 30px; width: 30px; background-color: #EEEEEE;"></span>
-        </span>
-        <span>
-          <div>
-            Stazione Centrale
-            <!-- #HC -->
-          </div>
-          <div>
-            <span>{{ config.stazioneCentrale.value }} Min</span> {{ config.legendForAll.value }} <i class="icol ico-info-circle"></i>
-          </div>
-        </span>
+          <span class="secondary__title">
+            500m Radius
+          </span>
+        </div>
       </div>
     </div>
+    <div class="box__body box__body--bg">
+      <div class=" cell__wrapper cell__wrapper--bg-dark">
+        <div class="row-list--medium">
+          <i class="icon--medium icol ico-home"></i>
+          <div>
+            <div class="cell__wrapper">
+              <div class="list-simple">
+                <div class="row-list--medium">
+                  <span style="border-radius: 50px; display: block; height: 30px; width: 30px;" [style.backgroundColor]="config.metroGaribaldiLineColor.value"></span>
+                  <div class="list-simple">
+                    <span class="u-strong">
+                      Garibaldi
+                      <!-- #HC -->
+                    </span>
+                    <div>
+                      <span class="u-strong">{{ config.metroGaribaldi.value }} Min</span> {{ config.legendForAll.value }} <i class="icol ico-walking"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="row-list--medium">
+                  <span style="border-radius: 50px; display: block; height: 30px; width: 30px;" [style.backgroundColor]="config.metroGioiaLineColor.value"></span>
+                  <div class="list-simple">
+                    <span class="u-strong">
+                        Gioia
+                    <!-- #HC -->
+                    </span>
+                    <div>
+                      <span class="u-strong">{{ config.metroGioia.value }} Min</span> {{ config.legendForAll.value }} <i class="icol ico-walking"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row-list--medium">
+                    <span style="border-radius: 50px; display: block; height: 30px; width: 30px;" [style.backgroundColor]="config.metroIsolaLineColor.value"></span>
+                  <div class="list-simple">
+                    <span class="u-strong">
+                      Isola
+                    </span>
+                    <div>
+                      <span class="u-strong">{{ config.metroIsola.value }} Min</span> {{ config.legendForAll.value }} <i class="icol ico-walking"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="row-list--medium">
+                    <span style="border-radius: 50px; display: block; height: 30px; width: 30px; background-color: #EEEEEE;"></span>
+                    <div class="list-simple">
+                      <span class="u-strong">
+                        Stazione Centrale
+                      </span>
+                    <div>
+                      <span class="u-strong">{{ config.stazioneCentrale.value }} Min</span> {{ config.legendForAll.value }} <i class="icol ico-walking"></i>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
   </div>
 </div>
+  
