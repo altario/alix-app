@@ -18,50 +18,20 @@ export class BarComponent implements OnInit {
 
   ngOnInit() {
 
-    let xAxisData = [];
-    let data1 = [];
-    let data2 = [];
-    for (let i = 0; i < 100; i++) {
-      xAxisData.push('类目' + i);
-      data1.push((Math.sin(i / 5) * (i / 5 - 10) + i / 6) * 5);
-      data2.push((Math.cos(i / 5) * (i / 5 - 10) + i / 6) * 5);
-    }
-
     this.options = {
-      legend: {
-        data: ['bar', 'bar2'],
-        align: 'left'
-      },
-      
-      tooltip: {},
-      xAxis: {
-        data: xAxisData,
-        silent: false,
-        splitLine: {
-          show: false
-        }
-      },
-      yAxis: {
-      },
-      series: [{
-        name: 'bar',
-        type: 'bar',
-        data: data1,
-        animationDelay: function (idx) {
-          return idx * 10;
-        }
-      }, {
-        name: 'bar2',
-        type: 'bar',
-        data: data2,
-        animationDelay: function (idx) {
-          return idx * 10 + 100;
-        }
-      }],
-      animationEasing: 'elasticOut',
-      animationDelayUpdate: function (idx) {
-        return idx * 5;
-      }
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            }
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+      series: this.series
     };
 
 
