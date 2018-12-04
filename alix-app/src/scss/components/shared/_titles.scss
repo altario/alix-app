@@ -19,11 +19,12 @@
 .title--compound {
   .main__title {
     font-size: rem(16px);
-    color: #00A6D9;
+    color: white;
     font-family: $font-family--primary;
     font-weight: $font-weight--normal;
   }
   .secondary__title {
+    color: rgba(white, .5);
     font-size: rem(14px);
     font-family: $font-family--secondary;
     font-weight: $font-weight--bold;

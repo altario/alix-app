@@ -3,14 +3,10 @@
   <div class="box__header box__header--bg">
     <div class="d-flex flex-row justify-content-between">
       <div class="title--compound">
-        <div class="main__title">
-          AVG Demand Rate
-        </div>
+        <div class="main__title">AVG Demand Rate</div>
         <div class="secondary__title">
           Long Term Rental Asset
-          <p>
-            Demand Rate >> Listed time percentile. It indicates of fast an asset gets out of the market. 
-          </p>
+          <p>Demand Rate >> Listed time percentile. It indicates of fast an asset gets out of the market.</p>
         </div>
       </div>
     </div>
@@ -29,7 +25,12 @@
           days average from listing to unlisting
         </small>
       </div>
-      <span style="display: block; height: 6px; background-color: #50BC85;" [style.width.%]="config.demandRate.value | perc:1"></span>
+      <div class="perc-bar">
+        <div class="perc-bar__percentage" [style.width.%]="config.demandRate.value | perc:1">
+          <div class="perc-bar__percentage__5y" style="width: 9.7%"></div>
+          <div class="perc-bar__percentage__1y" style="width: 4.2%"></div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
