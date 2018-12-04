@@ -47,7 +47,17 @@ $box__body-bg--dark: #2D3035;
 	.box-list { span { background-color: $bg-color } }
 }
 
-.box { @include box--bg (green, transparent, transparent) }
+@mixin box--table--color ( $span-primary-color: $text__primary-color, $span-secondary-color: $text__secondary-color ) {
+	&.box--table {
+		.color--secondary {color: $span-secondary-color }
+		.color--primary {color: $span-primary-color}
+	}
+}
+
+.box {
+	@include box--bg (green, transparent, transparent)
+	@include box--table--color;
+}
 
 
 .bg--light {
