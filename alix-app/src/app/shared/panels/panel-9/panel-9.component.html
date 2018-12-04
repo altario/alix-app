@@ -35,7 +35,12 @@
           k
         </small>
       </div>
-      <span style="display: block; height: 6px; background-color: #50BC85;" [style.width.%]="config.comparableGradeAssetsPerc.value | perc:1"></span>
+      <div class="perc-bar">
+        <div class="perc-bar__percentage" [style.width.%]="config.comparableGradeAssetsPerc.value | perc:1">
+          <div class="perc-bar__percentage__5y" style="width: 9.7%"></div>
+          <div class="perc-bar__percentage__1y" style="width: 4.2%"></div>
+        </div>
+      </div>
     </div>
     <div class=" cell__wrapper cell__wrapper--bg-light list-simple">
       <div>

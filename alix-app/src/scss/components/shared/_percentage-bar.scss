@@ -1,0 +1,29 @@
+$perc-bar--color: #50BC85;
+
+.perc-bar {
+  width: 80%;
+  height: 6px;
+  display: block;
+  margin-top: 10px;
+  background: rgba(black, .3);
+  position: relative;
+  .perc-bar__percentage {
+    height: 100%;
+    position: absolute;
+    background: rgba($perc-bar--color, .66);
+  }
+  .perc-bar__percentage__5y {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgba($perc-bar--color, .66);
+  }
+  .perc-bar__percentage__1y {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgba($perc-bar--color, 1);
+  }
+}
