@@ -49,6 +49,7 @@ export class StateOfConservationComponent implements OnInit {
 
   changeSCTodayValue(callbackEvent): void {
     this.selectedStateOfConservationToday = this.config.stateOfConservationToday.populations[callbackEvent];
+    this.updateNumbOfAssetsBySc(callbackEvent);
   }
 
   changeSCPpsmValue(callbackEvent): void {
@@ -60,7 +61,6 @@ export class StateOfConservationComponent implements OnInit {
   }
 
   changeImageTransition(callbackEvent): void {
-    console.log(callbackEvent);
     this.imageTransitionValue = callbackEvent.value;
   }
 
@@ -99,13 +99,16 @@ export class StateOfConservationComponent implements OnInit {
       },
     };
 
-    const series = popSelected.map((line: any) => {
-
-      return {name: line.stateOfConservation, data: line.values, type:'line'};
-    });
+    const series = popSelected.map((line: any) => ({name: line.stateOfConservation, data: line.values, type: 'line'}));
 
     console.log(series);
     return series;
+  }
+
+  updateNumbOfAssetsBySc(population) {
+    this.chartInstance.numbOfAssetsBySc.setOption({
+      series: this.getnumbOfAssetsBySc(population)
+    });
   }
 
   getpriceEvolutionBySc(population = 'population1'): Array<any> {
