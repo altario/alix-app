@@ -2,7 +2,7 @@
   <div class="no-gutters">
     <div class="col">
       <h1>Dashboard</h1>
-      <p><alix-treemap [series]="config.dashboard1.portfolioTreeMap"></alix-treemap></p>
+      <alix-treemap [series]="config.dashboard1.portfolioTreeMap"></alix-treemap>
     </div>
   </div>
 
@@ -19,6 +19,8 @@
     <div class="col">
       <alix-boxplot></alix-boxplot>
     </div>
-    <div class="col"><alix-bar [opts]='opts'></alix-bar></div>
+    <div class="col">
+      <alix-bar [opts]='opts'></alix-bar>
+    </div>
   </div>
 </div>

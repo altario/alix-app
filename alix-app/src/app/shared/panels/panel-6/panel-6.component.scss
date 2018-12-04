@@ -1,7 +1,7 @@
 :host {
-    position: relative;
-}
-
-.cell__wrapper:first-child {
-    width: 100%;
-}
+    .cell__wrapper__info {
+      .table__simple {
+        margin-top: -15px;
+      }
+    }
+  }
