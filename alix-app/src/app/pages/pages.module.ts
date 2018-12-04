@@ -12,9 +12,10 @@ import { MonitoringComponent } from './monitoring/monitoring.component';
 import { ReportsComponent } from './reports/reports.component';
 import { CounterpartsComponent } from './counterparts/counterparts.component';
 
+// layouts
 import { BaseLayoutComponent } from '@core/index';
 
-//Shared Module
+// shared
 import { SharedModule } from '@shared/shared.module';
 
 @NgModule({
@@ -24,11 +25,14 @@ import { SharedModule } from '@shared/shared.module';
     SharedModule
   ],
   declarations: [
+    // layouts
+    BaseLayoutComponent,
+
+    // pages
     DashboardComponent,
     MonitoringComponent,
     ReportsComponent,
     CounterpartsComponent,
-    BaseLayoutComponent
   ]
 })
 export class PagesModule { }

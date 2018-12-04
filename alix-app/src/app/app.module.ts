@@ -13,11 +13,6 @@ import { AppRoutes } from './app.routing';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
 
-
-// import { BaseLayoutComponent } from './core/base-layout/base-layout.component';
-// import { PortfolioLayoutComponent } from './core/portfolio-layout/portfolio-layout.component';
-// import { DashboardComponent } from './pages/dashboard/dashboard.component';
-
 @NgModule({
     declarations: [
       // app
@@ -25,9 +20,6 @@ import { HeaderComponent } from './shared/header/header.component';
 
       // components
       HeaderComponent,
-      // BaseLayoutComponent,
-      // PortfolioLayoutComponent,
-      // DashboardComponent
     ],
     imports: [
       BrowserModule,
