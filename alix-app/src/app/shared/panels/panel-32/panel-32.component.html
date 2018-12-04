@@ -1,21 +1,40 @@
 <app-report-selector></app-report-selector>
-<div style="border: 1px solid #FFFFFF">
-  <h6>Time Shift</h6> <!-- #HC -->
-  <h1><i class="icol ico-info-circle"></i>Daily Life</h1> <!-- #HC -->
-  <ul>
-    <li>
-      <span>Daily Life</span> <!-- #HC -->
-      <span style="display: inline-block; background-color: #3A99D8; width: 5px; height: 11px;"></span>
-      <span>{{config.daylife.value | perc:0 }}%</span>
-      <span> {{config.daylifeGrowth3Y.value | perc:0 }}%</span>
-      <span> 3 Years</span> <!-- #HC -->
-    </li>
-    <li>
-      <span>Night Life</span> <!-- #HC -->
-      <span style="display: inline-block; background-color: #FC0D1B; width: 5px; height: 11px;"></span>
-      <span>{{config.nightlife.value | perc:0 }} %</span>
-      <span>{{config.nightlifeGrowth3Y.value | perc:0 }}% </span>
-      <span> 3 Years</span> <!-- #HC -->
-    </li>
-  </ul>
+
+<div class="box box--table">
+  <div class="box__header box__header--bg">
+    <div class="d-flex flex-row justify-content-between">
+      <div class="title--compound">
+        <div class="main__title">
+          <span class="u-strong u-uppercase">
+            Time Shift<!-- #HC -->
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="box__body box__body--bg">
+    <div class=" cell__wrapper cell__wrapper--bg-dark">
+      <div class="row-list--medium">
+        <i class="icon--medium icol ico-home"></i>
+        <span class="row-list__text ">Daily Life</span> <!-- #HC -->
+      </div>
+    </div>
+    <div class=" cell__wrapper cell__wrapper--bg-dark">
+      <div class="table">
+        <div class="table-row">
+          <span>Daily Life</span><!-- #HC -->
+          <span><span class="square" style="background-color: #3A99D8"></span></span>
+          <span>{{config.daylife.value | perc:0 }}%</span>
+          <span> {{config.daylifeGrowth3Y.value | perc:0 }}%</span>
+          <span> 3 Years</span> <!-- #HC -->
+        </div>
+        <div class="table-row"><!-- #HC -->
+          <span>Night Life</span>
+          <span><span class="square" style="background-color: #FC0D1B"></span></span>
+          <span>{{config.nightlife.value | perc:0 }} %</span>
+          <span>{{config.nightlifeGrowth3Y.value | perc:0 }}% </span>
+          <span> 3 Years</span> <!-- #HC -->
+        </div>
+      </div>
+  </div>
 </div>

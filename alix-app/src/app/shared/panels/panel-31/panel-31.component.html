@@ -1,52 +1,157 @@
 <app-report-selector></app-report-selector>
-<div style="border: 1px solid #FFFFFF">
-  <h6>Accomodation in Bera</h6> <!-- #HC-->
-  <div>
-    <div>
-      <span>
-        <div>Average Booking Night rate</div> <!-- #HC -->
-        <div>{{ config.averageBookingNightRate.value }}€</div>
-        <div>{{ config.averageBookingNightRateVsMilan.value | perc:0 }} Milano</div> <!-- #HC Milano-->
-      </span>
-      <span>
-        <div>Median Booking Night Rate</div> <!-- #HC -->
-        <div>{{ config.medianBookingNightRate.value }}€</div>
-        <div>{{ config.medianBookingNightRateVsMilan.value | perc:0 }} Milano</div> <!-- #HC Milano-->
-      </span>
+
+<div class="box box--table">
+  <div class="box__header box__header--bg">
+    <div class="d-flex flex-row justify-content-between">
+      <div class="box__title title--compound">
+        <h1 class="main__title">
+            Accomodation in Bera <!-- #HC-->
+        </h1>
+      </div>
     </div>
-    <div>
-      <span>
-        <div>Average AIRBNB night rate</div> <!-- #HC -->
-        <div>{{ config.averageAirbnbNightRate.value }}€</div>
-        <div>{{ config.averageAirbnbNightRateVsMilan.value | perc:0 }} Milano</div> <!-- #HC Milano-->
-      </span>
-      <span>
-        <div>Median AIRBNB night rate</div> <!-- #HC -->
-        <div>{{ config.medianAirbnbNightRate.value }}€</div>
-        <div>{{ config.medianAirbnbNightRateVsMilan.value | perc:0 }} Milano</div> <!-- #HC Milano-->
-      </span>
-    </div>
-    <div>
-      <div>
-        <span><i class="icol ico-info-circle"></i></span> <!-- #HC -->
-        <span>
-          <div>Brera</div> <!-- #HC -->
-          <div># {{ config.numberOfBookingsNeighborhood.value }}</div>
-        </span>
-        <span>
-          <div>Milano</div> <!-- #HC -->
-          <div># {{ config.numberOfBookingsMilan.value }}</div>
+  </div>
+  <div class="box__body box__body--bg">
+    <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-dark">
+      <div class="cell__wrapper__top">
+        <span class="label__up label--color">
+          Average Booking Night rate
         </span>
       </div>
-      <div>
-        <span><i class="icol ico-info-circle"></i></span> <!-- #HC -->
-        <span>
-          <div># {{ config.numberOfAirbnbNeighborhood.value }}</div>
-        </span>
-        <span>
-          <div># {{ config.numberOfAirbnbMilan.value }}</div>
+      <div class="cell__wrapper__info">
+        <p class="highlighted--big highlighted--color">
+            {{ config.averageBookingNightRate.value }}
+          <small class="u-uppercase highlighted__small--color">€</small>
+        </p>
+      </div>
+      <div class="cell__wrapper__down">
+        <span class="label__down label--color">
+          {{ config.averageBookingNightRateVsMilan.value | perc:0 }} Milano
         </span>
       </div>
     </div>
+
+
+    <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-dark">
+      <div class="cell__wrapper__top">
+        <span class="label__up label--color">
+          Median Booking Night Rate
+        </span>
+      </div>
+      <div class="cell__wrapper__info">
+        <p class="highlighted--big highlighted--color">
+          {{ config.medianBookingNightRate.value }}
+          <small class="u-uppercase highlighted__small--color">€</small>
+        </p>
+      </div>
+      <div class="cell__wrapper__down">
+          <span class="label__down label--color">
+            {{ config.medianBookingNightRateVsMilan.value | perc:0 }} Milano <!-- #HC Milano-->
+          </span>
+        </div>
+    </div>
+
+    <div class="w-100"></div>
+
+    <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-light">
+      <div class="cell__wrapper__top">
+        <span class="label__up label--color">
+          Average AIRBNB night rate
+        </span>
+      </div>
+      <div class="cell__wrapper__info">
+        <p class="highlighted--big highlighted--color">
+            {{ config.averageAirbnbNightRate.value }}
+          <small class="u-uppercase highlighted__small--color">€</small>
+        </p>
+      </div>
+      <div class="cell__wrapper__down">
+          <span class="label__down label--color">
+              {{ config.averageAirbnbNightRateVsMilan.value | perc:0 }} Milano <!-- #HC Milano-->
+          </span>
+        </div>
+    </div>
+
+    <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-light">
+      <div class="cell__wrapper__top">
+        <span class="label__up label--color">
+            Median AIRBNB night rate
+        </span>
+      </div>
+      <div class="cell__wrapper__info">
+        <p class="highlighted--big highlighted--color">
+            {{ config.medianAirbnbNightRate.value }}
+          <small class="u-uppercase highlighted__small--color">€</small>
+        </p>
+      </div>
+      <div class="cell__wrapper__down">
+        <span class="label__down label--color">
+            {{ config.medianAirbnbNightRateVsMilan.value | perc:0 }} Milano <!-- #HC Milano-->
+        </span>
+      </div>
+    </div>
+
+    <div class="w-100"></div>
+
+    <div class=" cell__wrapper cell__wrapper--third cell__wrapper cell__wrapper--bg-dark">
+      <div class="cell__wrapper__info">
+        <p class="highlighted--small highlighted--color">
+
+        </p>
+      </div>
+    </div>
+
+    <div class=" cell__wrapper cell__wrapper--third cell__wrapper cell__wrapper--bg-dark">
+      <div class="cell__wrapper__top">
+        <span class="label__up label--color">
+          Brera <!-- #HC -->
+        </span>
+      </div>
+      <div class="cell__wrapper__info">
+        <p class="highlighted--small highlighted--color">
+            # {{ config.numberOfBookingsNeighborhood.value }}
+        </p>
+      </div>
+    </div>
+
+    <div class=" cell__wrapper cell__wrapper--third cell__wrapper cell__wrapper--bg-dark">
+      <div class="cell__wrapper__top">
+        <span class="label__up label--color">
+          Milano <!-- #HC -->
+        </span>
+      </div>
+      <div class="cell__wrapper__info">
+        <p class="highlighted--small highlighted--color">
+          # {{ config.numberOfBookingsMilan.value }}
+        </p>
+      </div>
+    </div>
+
+    <div class="w-100"></div>
+
+    <div class=" cell__wrapper cell__wrapper--third cell__wrapper cell__wrapper--bg-dark">
+      <div class="cell__wrapper__info no-label">
+        <p class="highlighted--small highlighted--color">
+
+        </p>
+      </div>
+    </div>
+
+    <div class=" cell__wrapper cell__wrapper--third cell__wrapper cell__wrapper--bg-dark">
+      <div class="cell__wrapper__info no-label">
+        <p class="highlighted--small highlighted--color">
+          # {{ config.numberOfAirbnbNeighborhood.value }}
+        </p>
+      </div>
+    </div>
+
+    <div class=" cell__wrapper cell__wrapper--third cell__wrapper cell__wrapper--bg-dark">
+      <div class="cell__wrapper__info no-label">
+          <p class="highlighted--small highlighted--color">
+          # {{ config.numberOfAirbnbMilan.value }}
+        </p>
+      </div>
+    </div>
+
+
   </div>
 </div>
