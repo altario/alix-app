@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 
 // dataset
 import * as dataset from '@data/dataset';
+import * as chartdataset from '@data/charts-dataset';
 
 @Component({
   selector: 'app-state-of-conservation',
@@ -23,6 +24,9 @@ export class StateOfConservationComponent implements OnInit {
     '2015': 'assets/images/differencePerYear/asset2.jpg',
     '2018': 'assets/images/differencePerYear/asset1.jpg'
   }; // #HC
+
+  public opts: any = {};
+  public chartInstance: any = {};
 
   constructor(private route: ActivatedRoute) {}
   ngOnInit() {
@@ -71,5 +75,74 @@ export class StateOfConservationComponent implements OnInit {
     ];
   }
 
+  getnumbOfAssetsBySc(population = 'population1'): Array<any> {
+    const popSelected =  chartdataset.dossier1ChartsData.stateOfConservation.numbOfAssetsBySc.filter((line) => {
+      if (line.population === population) {
+        return line;
+      }
+    });
+
+    this.opts.numbOfAssetsBySc = {
+      legend: {
+        data: popSelected.map((line) => {
+          return  line.stateOfConservation;
+        })
+      },
+      xAxis: {
+        type: 'category',
+        data: popSelected.map((line) => {
+          return line.stateOfConservation;
+        })
+      },
+      yAxis: {
+        type: 'value'
+      },
+    };
+
+    const series = popSelected.map((line: any) => {
+
+      return {name: line.stateOfConservation, data: line.values, type:'line'};
+    });
+
+    console.log(series);
+    return series;
+  }
+
+  getpriceEvolutionBySc(population = 'population1'): Array<any> {
+    const popSelected = chartdataset.dossier1ChartsData.stateOfConservation.priceEvolutionBySc.filter((line) => {
+      if (line.population === population) {
+        return line;
+      }
+    });
+
+    this.opts.priceEvolutionBySc = {
+      legend: {
+        data: popSelected.map((line) => {
+          return line.stateOfConservation;
+        })
+      },
+      xAxis: {
+        type: 'category',
+        data: popSelected.map((line) => {
+          return line.stateOfConservation;
+        })
+      },
+      yAxis: {
+        type: 'value'
+      },
+    };
+
+    const series = popSelected.map((line: any) => {
+
+      return { name: line.stateOfConservation, data: line.values, type: 'line' };
+    });
+
+    console.log(series);
+    return series;
+  }
+
+  onChartInit(chart, e) {
+    this.chartInstance[chart] = e;
+  }
 }
 
