@@ -50,9 +50,11 @@ export class TreemapComponent implements OnInit {
                 '{budget|$ ' + format.addCommas(params.value[0]) + '}'
               ];
 
+            if (params.value[2] != null){
               arr.push(
                 '{household| ' + format.addCommas((+params.value[2].toFixed(2)) * 100) + '%}'
               );
+            }
 
               return arr.join('\n');
             },
@@ -152,6 +154,6 @@ export class TreemapComponent implements OnInit {
   }
 
   onChartClick(chartLine) {
-    console.log(chartLine);
+    this.chartClick.emit(chartLine);
   }
 }

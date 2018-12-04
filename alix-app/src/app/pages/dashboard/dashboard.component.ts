@@ -15,12 +15,16 @@ export class DashboardComponent implements OnInit {
 
   public config: any;
 
+  public kpis: any;
+
   constructor() {
 
     this.config = dashboardDataset;
+    this.kpis = this.config.dashboard1.mainKpis[0].industry1;
   }
 
   ngOnInit() {
+
     this.opts = {
       tooltip: {
         trigger: 'axis',
@@ -104,5 +108,22 @@ export class DashboardComponent implements OnInit {
         }
       ]
     };
+  }
+
+  onChartClick(chartLine) {
+
+    const key = chartLine.data.id;
+    const kpis = this.config.dashboard1.mainKpis.filter((line, i) =>{
+      const k = 'industry' + (i + 1);
+      if (line[k].population.id == key){
+        return true;
+      }
+    });
+
+    if (kpis.length) {
+      const data = kpis.shift();
+      this.kpis = data[Object.keys(data)[0]];
+    }
+
   }
 }

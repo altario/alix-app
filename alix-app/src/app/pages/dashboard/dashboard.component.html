@@ -2,16 +2,16 @@
   <div class="no-gutters">
     <div class="col">
       <h1>Dashboard</h1>
-      <alix-treemap [series]="config.dashboard1.portfolioTreeMap"></alix-treemap>
+      <alix-treemap [series]="config.dashboard1.portfolioTreeMap" (chartClick)="onChartClick($event)"></alix-treemap>
     </div>
   </div>
 
   <div class="row">
     <div class="col-3">
-      <app-panel-dash-1></app-panel-dash-1>
+      <app-panel-dash-1 [config]="kpis"></app-panel-dash-1>
     </div>
     <div class="col-9">
-      <app-panel-dash-2></app-panel-dash-2>
+      <app-panel-dash-2 [config]="kpis"></app-panel-dash-2>
     </div>
   </div>
 

@@ -1,3 +1,38 @@
-<p>
-  paneldash1 works!
-</p>
+<div class="list-kpis">
+    <div class="kpi-item">
+        <div class="item-label">Number of Dossiers</div>
+        <div class="item-value">{{config.numberOfDossiers.value}}</div>
+    </div>
+    <div class="kpi-item">
+        <div class="item-label">GBV</div>
+        <div class="item-value">{{config.gbv.value | curr}}</div>
+    </div>
+    <div class="kpi-item">
+        <div class="item-label">NBV</div>
+        <div class="item-value">{{config.nbv.value | curr}}</div>
+    </div>
+    <div class="kpi-item">
+        <div class="item-label">RAROC</div>
+        <div class="item-value">{{config.raroc.value | perc}}</div>
+    </div>
+    <div class="kpi-item">
+        <div class="item-label">Weighted average Internal Rating</div>
+        <div class="item-value">{{config.weightedAverageInternalRating.value}}</div>
+    </div>
+    <div class="kpi-item">
+        <div class="item-label">Weighted average Pricing</div>
+        <div class="item-value">{{config.weightedAveragePricing.value}}</div>
+    </div>
+    <div class="kpi-item">
+        <div class="item-label">Time to Weighted Average Duration</div>
+        <div class="item-value">{{config.timeToWeightedAverageDuration.value}}</div>
+    </div>
+    <div class="kpi-item">
+        <div class="item-label">Weighted Average Duration</div>
+        <div class="item-value">{{config.weightedAverageDuration.value}}</div>
+    </div>
+    <div class="kpi-item">
+        <div class="item-label">Regulatory Total Capital</div>
+        <div class="item-value">{{config.regulatoryTotalCapital.value | curr}}</div>
+    </div>
+</div>

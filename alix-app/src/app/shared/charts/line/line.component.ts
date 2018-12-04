@@ -46,7 +46,7 @@ export class LineComponent implements OnInit {
     };
 
     this.options = Object.assign(this.options, this.opts);
-
+console.log(this.options);
     this.initOpts = {
       renderer: 'svg',
     };
