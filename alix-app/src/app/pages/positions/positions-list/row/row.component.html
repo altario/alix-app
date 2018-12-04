@@ -6,12 +6,12 @@
         > {{ company?.dateEnd }}
     </div>
     <div class="position-row__state">
-        <span>{{ company?.state }}</span>
+        <span class="u-uppercase">{{ company?.state }}</span>
     </div>
     <ul class="position-row__info">
         <li *ngFor="let info of company?.infos">
             <div>{{ info?.title }}</div>
-            <div>{{ info?.data }}</div>
+            <div class="u-strong">{{ info?.data }}</div>
         </li>
     </ul>
     <div class="position-row__button" (click)="goToDashboard(company?.id)">
