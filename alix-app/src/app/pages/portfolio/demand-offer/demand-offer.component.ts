@@ -34,14 +34,8 @@ export class DemandAndOfferComponent implements OnInit {
 
       this.opts = {
         sqm: {
-          title: {
-            text: '# SQM / Asset Demand'
-          },
         },
         rooms: {
-          title: {
-            text: '# Rooms / Asset Demand'
-          },
           xAxis: [
             {
               type: 'value',
@@ -128,7 +122,7 @@ export class DemandAndOfferComponent implements OnInit {
 
   marketValue() {
 
-    this.opts.marketValue= {
+    this.opts.marketValue = {
       legend: {
         data: [
           chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost.marketValueSqm.label,

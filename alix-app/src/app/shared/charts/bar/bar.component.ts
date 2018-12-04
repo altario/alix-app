@@ -28,25 +28,11 @@ export class BarComponent implements OnInit {
     }
 
     this.options = {
-      title: {
-        text: '柱状图动画延迟'
-      },
       legend: {
         data: ['bar', 'bar2'],
         align: 'left'
       },
-      toolbox: {
-        // y: 'bottom',
-        feature: {
-          magicType: {
-            type: ['stack', 'tiled']
-          },
-          dataView: {},
-          saveAsImage: {
-            pixelRatio: 2
-          }
-        }
-      },
+      
       tooltip: {},
       xAxis: {
         data: xAxisData,

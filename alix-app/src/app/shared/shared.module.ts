@@ -69,7 +69,9 @@ import {
   Panel32Component,
   Panel33Component,
   Panel34Component,
-  Panel35Component
+  Panel35Component,
+  Paneldash1Component,
+  Paneldash2Component
 } from '@shared/panels/index';
 
 @NgModule({
@@ -135,12 +137,15 @@ import {
     Panel33Component,
     Panel34Component,
     Panel35Component,
+    Paneldash1Component,
+      Paneldash2Component,
 
     // components
     SliderRangeComponent,
     DropdownComponent,
     ReportSelectorComponent,
     ReportStickyComponent,
+    Paneldash1Component,
   ],
   providers: [
   ],
@@ -199,6 +204,8 @@ import {
     Panel33Component,
     Panel34Component,
     Panel35Component,
+    Paneldash1Component,
+      Paneldash2Component,
 
     // components
     SliderRangeComponent,

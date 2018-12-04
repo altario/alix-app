@@ -2,7 +2,23 @@
   <div class="no-gutters">
     <div class="col">
       <h1>Dashboard</h1>
-      <p>Code here...</p>
+      <p><alix-treemap></alix-treemap></p>
     </div>
+  </div>
+
+  <div class="row">
+    <div class="col-3">
+      <app-panel-dash-1></app-panel-dash-1>
+    </div>
+    <div class="col-9">
+      <app-panel-dash-2></app-panel-dash-2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <alix-boxplot></alix-boxplot>
+    </div>
+    <div class="col"><alix-bar [opts]='opts'></alix-bar></div>
   </div>
 </div>

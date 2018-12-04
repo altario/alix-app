@@ -33,4 +33,7 @@ export * from './panel-32/panel-32.component';
 export * from './panel-33/panel-33.component';
 export * from './panel-34/panel-34.component';
 export * from './panel-35/panel-35.component';
+export * from './panel-dash-1/panel-dash-1.component';
+export * from './panel-dash-2/panel-dash-2.component';
+
 
