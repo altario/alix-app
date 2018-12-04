@@ -58,7 +58,7 @@ $box__body-bg--dark: #1C2038;
 
 
 .bg--light {
-	background-color: #161D28;
+  background-color: #161D28;
 	.box { @include box--bg (#252B48, #1C2038, #252B48) }
 	@include lateral-wrapper--color;
 	@include box-list--color;

@@ -1,0 +1,9 @@
+@import '~src/scss/imports';
+
+alix-line {
+  background: #2D3035;
+  border-radius: $border-radius__default;
+  .bg--light & {
+    background: #252B48;
+  }
+}
