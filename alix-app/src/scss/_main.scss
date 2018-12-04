@@ -102,9 +102,9 @@
 				display: flex;
 				flex: 1;
 				flex-direction: column;
-				& > * {
-					display: flex;
-				}
+				// & > * {
+				// 	display: flex;
+				// }
       }
       @include pseudo {
         height: 200px;

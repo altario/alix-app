@@ -1,5 +1,6 @@
 :host {
- 	width: 100%;
+   width: 100%;
+   display: flex;
 	.sub-title { text-transform: none }
 	.lateral-wrapper {
 		padding: 20px 0;
@@ -11,4 +12,3 @@
 		}
 	}
 }
-

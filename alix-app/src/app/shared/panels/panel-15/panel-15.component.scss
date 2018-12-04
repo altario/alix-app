@@ -1,5 +1,6 @@
 :host {
   position: relative;
+  display: flex;
   .truncate {
     max-width: 1.8em;
     white-space: nowrap;
@@ -17,7 +18,7 @@
         padding: 0;
         border: 2px solid transparent;
         vertical-align: middle;
-        &:first-child { 
+        &:first-child {
           padding-right: .8em;
           text-align: right;
         }
