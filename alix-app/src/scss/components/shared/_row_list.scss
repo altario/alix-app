@@ -28,8 +28,8 @@ $value: nth($size, 2);
 
 	.row-list--#{$key} {
 		@extend %row-list;
-		i,
-		.bullet-point-row {
+		& > i,
+		& > .bullet-point-row {
 			width: $value;
 		}
 		.row-list__text {

@@ -1,0 +1,13 @@
+.list-simple {
+  display: flex;
+  flex-direction: column;
+
+  div {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    > * { padding: 0 2px }
+    .unit { padding: 0 2px 0 0}
+  }
+} 

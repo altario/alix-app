@@ -7,13 +7,14 @@
     flex-direction: row;
     flex-wrap: wrap;
 
-    .cell__wrapper {      
+    .cell__wrapper {
       padding: $box-padding/2 $box-padding;
       display: flex;
       width: 100%;
       flex-direction: column;
       justify-content: center;
       &.cell__wrapper--half { width: 50% }
+      &.cell__wrapper--third { width: calc(100%/3) }
       .cell__wrapper__top {
         height: calc(#{$line-height__base} * #{$lines} * #{$font_size}) ;
         @include align(bottom);
@@ -21,6 +22,8 @@
           margin-top: 0;
         }
       }
+      .no-label { margin-top: 0 !important }
+
       .cell__wrapper__info {
         height: rem(48px);
         align-items: flex-start;
