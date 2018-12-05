@@ -1,6 +1,8 @@
 const axisLineColor = '#5f6063';
 
 export const eChartsConfig = {
+
+  // xAxis
   xAxis: {
     axisLine: {
       lineStyle: {
@@ -16,6 +18,8 @@ export const eChartsConfig = {
       color: 'rgba(255, 255, 255, 1)'
     }
   },
+
+  // yAxis
   yAxis: {
     axisLine: {
       lineStyle: {
@@ -29,6 +33,15 @@ export const eChartsConfig = {
     },
     axisLabel: {
       color: 'rgba(255, 255, 255, 1)'
+    }
+  },
+
+  // series
+  series: {
+    symbol: 'circle',
+    symbolSize: 8,
+    lineStyle: {
+      width: 3
     }
   }
 };
