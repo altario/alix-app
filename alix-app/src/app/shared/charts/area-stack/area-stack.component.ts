@@ -1,5 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
+// graph color overrides
+import * as eChartsConfig from '@global/charts';
+
 @Component({
   selector: 'alix-area-stack',
   templateUrl: './area-stack.component.html',
@@ -51,7 +54,7 @@ export class AreaStackComponent implements OnInit {
           type: 'category',
           boundaryGap: false,
           data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
-        }
+        },
       ],
       yAxis: [
         {

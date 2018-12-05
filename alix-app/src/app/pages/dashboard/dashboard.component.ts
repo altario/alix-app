@@ -21,6 +21,8 @@ export class DashboardComponent implements OnInit {
   public kpis: any;
   public chartInstance: any = {};
   public series: any = {};
+  public droplist: any = [];
+  public dropvalue: any;
 
   constructor() {
 
@@ -65,6 +67,8 @@ export class DashboardComponent implements OnInit {
         data: ['AAA', 'AA+', 'AA', 'AA-', 'A+', 'A', 'A-', 'BBB+', 'BBB', 'BBB-', 'BB+', 'BB']
       }
     };
+
+    this.droplist = [{ name: 'All Industries', id: 'allIndustries' },{ name: 'Consumer Goods', id: 'consumerGoods' }, { name: 'Automotive & Industrials', id: 'automotiveIndustrials' }, { name: 'Transportation', id: 'transportation' }, { name: 'Telecom, Media and Technology', id: 'telecomMediaAndTechnology' }, { name: 'Energy and Basic Materials', id: 'energyAndBasicMaterials' }, { name: 'Infrastructure & Real Estate', id: 'infrastructureRealEstate' }, { name: 'Financial Institutions', id: 'financialInstitutions' }, { name: 'Public Finance', id: 'publicFinance' }, { name: 'Healthcare & Pharma', id: 'healthcarePharma' }, { name: 'Retail and Luxury', id: 'retailAndLuxury' }, { name: 'Hospitality', id: 'hospitality' }];
 
   }
 
@@ -186,10 +190,19 @@ export class DashboardComponent implements OnInit {
   }
 
   onChartClick(chartLine) {
+    this.dropvalue = chartLine.data.id;
+    this.updateAllComponents(chartLine);
+  }
 
+  onChange(val) {
+    console.log(val);
+    this.updateAllComponents({ data: { id: val}});
+  }
+
+  private updateAllComponents(chartLine ) {
     const key = chartLine.data.id;
     const kpis = this.config.dashboard1.mainKpis.filter((line, i) => {
-        const k: any = Object.keys(line);
+      const k: any = Object.keys(line);
       if (line[k].population.id === key) {
         return true;
       }
