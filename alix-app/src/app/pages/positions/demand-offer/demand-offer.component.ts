@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import * as dataset from '@data/dataset';
 import * as chartdataset from '@data/charts-dataset';
 
+import { eChartsConfig } from '@global/charts';
 
 @Component({
   selector: 'app-demand-offer',
@@ -137,13 +138,29 @@ export class DemandAndOfferComponent implements OnInit {
    */
 
   marketValue() {
+    const lineColors = ['#7AC143', '#F2E603'];
     this.opts.marketValue = {
+      title: {
+        text: 'Market Value -VS- Replacement Cost', // #HC
+        top: '17px',
+        left: '16px',
+        textStyle: eChartsConfig.title,
+      },
       legend: {
         data: [
-          chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost.marketValueSqm.label,
-          chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost.replacementCostSqm.label
-        ]
+          {name: chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost.marketValueSqm.label, icon: 'rect'},
+          {name: chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost.replacementCostSqm.label, icon: 'rect'}
+        ],
+        itemWidth: eChartsConfig.legend.itemWidth,
+        itemHeight: eChartsConfig.legend.itemHeight,
+        top: eChartsConfig.legend.top,
+        right: eChartsConfig.legend.right,
+        textStyle: {
+          fontSize: eChartsConfig.legend.fontSize,
+          color: eChartsConfig.legend.color
+        }
       },
+      grid: eChartsConfig.grid,
       tooltip: {
         trigger: 'axis',
           axisPointer: {
@@ -155,19 +172,34 @@ export class DemandAndOfferComponent implements OnInit {
       },
       xAxis: {
         type: 'category',
-          data: chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost.year.values
+        data: chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost.year.values,
+        splitLine: eChartsConfig.xAxis.splitLine,
+        axisLabel: eChartsConfig.xAxis.axisLabel,
+        axisLine: eChartsConfig.xAxis.axisLine
+      },
+      yAxis: {
+        type: 'value',
+        splitLine: eChartsConfig.yAxis.splitLine,
+        axisLabel: eChartsConfig.yAxis.axisLabel,
+        axisLine: eChartsConfig.yAxis.axisLine
       }
     };
 
-    this.series.marketValue = [{
-        name: chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost.marketValueSqm.label,
-        data: chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost.marketValueSqm.values,
-        type: 'line'
-      }, {
-        name: chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost.replacementCostSqm.label,
-        data: chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost.replacementCostSqm.values,
-        type: 'line'
-      }];
+    this.series.marketValue = Object.keys(chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost)
+      .reduce((prev, next, i) => {
+          if (next !== 'year') {
+            prev.push({
+              name: chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost[next].label,
+              data: chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost[next].values,
+              type: 'line',
+              symbol: eChartsConfig.series.symbol,
+              symbolSize: eChartsConfig.series.symbolSize,
+              lineStyle: {...eChartsConfig.series.lineStyle, color: lineColors[i] },
+              itemStyle: { color: lineColors[i] }
+            });
+          }
+        return prev;
+      }, []);
   }
 
   priceTodayVsOvertime() {
