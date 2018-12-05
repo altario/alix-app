@@ -7,7 +7,7 @@
     "hmr": "ng serve --configuration hmr --port 4100",
     "start": "ng serve",
     "build": "ng build --prod --build-optimizer",
-    "build-github": "ng build --prod --output-path ../docs --base-href \"/alix-isp-credit-value-chain/\"",
+    "build-github": "ng build --prod --output-path ../docs --base-href \"alix-isp-credit-value-chain\"",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
