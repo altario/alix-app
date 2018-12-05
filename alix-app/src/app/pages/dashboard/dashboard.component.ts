@@ -70,6 +70,22 @@ export class DashboardComponent implements OnInit {
 
   getexposurePerformanceBoxPlot(population= 'allIndustries'): Array<any> {
 
+    this.opts.exposurePerformanceBoxPlot = {
+      grid: {
+        left: 100
+      },
+      xAxis: {
+        splitLine: eChartsConfig.eChartsConfig.xAxis.splitLine,
+        axisLabel: eChartsConfig.eChartsConfig.xAxis.axisLabel,
+        axisLine: eChartsConfig.eChartsConfig.xAxis.axisLine
+      },
+      yAxis: {
+        splitLine: eChartsConfig.eChartsConfig.yAxis.splitLine,
+        axisLabel: eChartsConfig.eChartsConfig.yAxis.axisLabel,
+        axisLine: eChartsConfig.eChartsConfig.yAxis.axisLine
+      }
+    };
+
     const kpis = this.config.dashboard1.exposurePerformanceBoxPlot.filter((line, i) => {
       if (line.industry === population) {
         return true;
@@ -99,10 +115,15 @@ export class DashboardComponent implements OnInit {
       title: {
         text: 'UTP Exposure',
         subtext: 'Total UTP Exposure Waterfall Monthly Breakdown',
+        padding: 20,
         textStyle: {
           color: '#fff'
         }
         // sublink: 'http://e.weibo.com/1341556070/Aj1J2x5a5'
+      },
+      grid: {
+        top: 100,
+        left: 100
       },
       tooltip: {
         trigger: 'axis',

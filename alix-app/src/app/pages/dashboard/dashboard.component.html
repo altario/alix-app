@@ -28,7 +28,7 @@
   <section class="page-section bg--dark">
     <div class="row">
       <div class="col">
-        <alix-scatter [series]="getexposurePerformanceBoxPlot()" (chartInit)="onChartInit('exposurePerformanceBoxPlot',$event)"></alix-scatter>
+        <alix-scatter [series]="getexposurePerformanceBoxPlot()" [opts]='opts.exposurePerformanceBoxPlot' (chartInit)="onChartInit('exposurePerformanceBoxPlot',$event)"></alix-scatter>
       </div>
       <div class="col">
         <alix-bar [series]='getutpOutflowInflow()' [opts]='opts.utpOutflowInflow' (chartInit)="onChartInit('utpOutflowInflow',$event)"></alix-bar>
