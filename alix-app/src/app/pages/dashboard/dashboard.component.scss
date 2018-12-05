@@ -5,6 +5,9 @@
     &:first-child {
       height: 600px;
       padding: 0;
+      .row {
+        height: 100%;
+      }
     }
   }
 }

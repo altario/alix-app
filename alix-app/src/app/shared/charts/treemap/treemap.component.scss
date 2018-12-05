@@ -1,0 +1,9 @@
+:host {
+  height: 100%;
+  .treemap-chart {
+    height: 100%;
+    > div {
+      height: 100%;
+    }
+  }
+}
