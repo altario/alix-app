@@ -7,20 +7,23 @@
   </div>
 
   <div class="row">
-    <div class="col-3">
+    <div class="col-2">
       <app-panel-dash-1 [config]="kpis"></app-panel-dash-1>
     </div>
-    <div class="col-9">
+    <div class="col-4">
       <app-panel-dash-2 [config]="kpis"></app-panel-dash-2>
+    </div>
+    <div class="col-6">
+        <alix-bar [series]='getratingPerformance()' [opts]='opts' (chartInit)="onChartInit('ratingPerformance',$event)"></alix-bar>
     </div>
   </div>
 
   <div class="row">
     <div class="col">
-      <alix-boxplot></alix-boxplot>
+      <alix-scatter [series]="getexposurePerformanceBoxPlot()" (chartInit)="onChartInit('exposurePerformanceBoxPlot',$event)"></alix-scatter>
     </div>
     <div class="col">
-      <alix-bar [opts]='opts'></alix-bar>
+      
     </div>
   </div>
 </div>

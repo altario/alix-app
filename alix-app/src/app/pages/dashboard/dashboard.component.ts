@@ -14,13 +14,13 @@ export class DashboardComponent implements OnInit {
   opts: any;
 
   public config: any;
-
   public kpis: any;
+  public chartInstance: any = {};
 
   constructor() {
 
     this.config = dashboardDataset;
-    this.kpis = this.config.dashboard1.mainKpis[0].industry1;
+    this.kpis = this.config.dashboard1.mainKpis[0].allIndustries;
   }
 
   ngOnInit() {
@@ -43,79 +43,42 @@ export class DashboardComponent implements OnInit {
       },
       yAxis: {
         type: 'category',
-        data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+        data: ['AAA','AA+','AA','AA-','A+','A','A-','BBB+','BBB','BBB-','BB+','BB']
       },
-      series: [
-        {
-          name: '直接访问',
-          type: 'bar',
-          stack: '总量',
-          label: {
-            normal: {
-              show: true,
-              position: 'insideRight'
-            }
-          },
-          data: [320, 302, 301, 334, 390, 330, 320]
-        },
-        {
-          name: '邮件营销',
-          type: 'bar',
-          stack: '总量',
-          label: {
-            normal: {
-              show: true,
-              position: 'insideRight'
-            }
-          },
-          data: [120, 132, 101, 134, 90, 230, 210]
-        },
-        {
-          name: '联盟广告',
-          type: 'bar',
-          stack: '总量',
-          label: {
-            normal: {
-              show: true,
-              position: 'insideRight'
-            }
-          },
-          data: [220, 182, 191, 234, 290, 330, 310]
-        },
-        {
-          name: '视频广告',
-          type: 'bar',
-          stack: '总量',
-          label: {
-            normal: {
-              show: true,
-              position: 'insideRight'
-            }
-          },
-          data: [150, 212, 201, 154, 190, 330, 410]
-        },
-        {
-          name: '搜索引擎',
-          type: 'bar',
-          stack: '总量',
-          label: {
-            normal: {
-              show: true,
-              position: 'insideRight'
-            }
-          },
-          data: [820, 832, 901, 934, 1290, 1330, 1320]
-        }
-      ]
     };
   }
+
+  getexposurePerformanceBoxPlot(population= 'allIndustries'): Array<any>{
+
+    const kpis = this.config.dashboard1.exposurePerformanceBoxPlot.filter((line, i) => {
+      if (line.industry === population) {
+        return true;
+      }
+    });
+
+    const series = kpis.shift().series;
+    return series;
+  }
+
+  getratingPerformance(population = 'allIndustries'): Array<any> {
+
+    const kpis = this.config.dashboard1.ratingPerformance.filter((line, i) => {
+      if (line.industry === population) {
+        return true;
+      }
+    });
+
+    const series = kpis.shift().series;
+    return series;
+  }
+
 
   onChartClick(chartLine) {
 
     const key = chartLine.data.id;
     const kpis = this.config.dashboard1.mainKpis.filter((line, i) =>{
-      const k = 'industry' + (i + 1);
-      if (line[k].population.id == key){
+        const k = Object.keys(line);
+      if (line[k].population.id === key) {
         return true;
       }
     });
@@ -123,7 +86,19 @@ export class DashboardComponent implements OnInit {
     if (kpis.length) {
       const data = kpis.shift();
       this.kpis = data[Object.keys(data)[0]];
-    }
+      console.log(this.chartInstance);
+      this.chartInstance.exposurePerformanceBoxPlot.setOption({
+        series: this.getexposurePerformanceBoxPlot(key)
+      });
 
+      this.chartInstance.ratingPerformance.setOption({
+        series: this.getratingPerformance(key)
+      });
+    }
+  }
+
+  onChartInit(chart, e) {
+    console.log(this.chartInstance);
+    this.chartInstance[chart] = e;
   }
 }

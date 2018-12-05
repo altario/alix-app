@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 // dataset
 import * as dataset from '@data/dataset';
 import * as chartdataset from '@data/charts-dataset';
+import * as plotchartdataset from '@data/plotcharts-dataset';
 
 @Component({
   selector: 'app-state-of-conservation',
@@ -138,6 +139,22 @@ export class StateOfConservationComponent implements OnInit {
     this.chartInstance.priceEvolutionBySc.setOption({
       series: this.getpriceEvolutionBySc(population)
     });
+  }
+
+  getscpPriceEvo() {
+
+    const serie = plotchartdataset.dossier1PlotChartsData.stateOfConservation.scpPriceEvo.filter((line) => {
+      if ( line.population === 'population1' ) {
+        return {
+          type: 'scatter',
+          symbolSize: 1,
+          data: line
+        };
+      }
+    });
+
+
+    return serie;
   }
 
   onChartInit(chart, e) {

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'alix-scatter',
@@ -12,6 +12,9 @@ export class ScatterComponent implements OnInit {
   @Input()
   public opts: any = {};
 
+  @Output()
+  public chartInit = new EventEmitter();
+
   public options: any = {};
   public initOpts: any = {};
 
@@ -24,7 +27,7 @@ export class ScatterComponent implements OnInit {
     };
 
     this.options = Object.assign(this.options, this.opts);
-
+    console.log(this.options);
     this.initOpts = {
       renderer: 'svg',
     };
@@ -33,5 +36,7 @@ export class ScatterComponent implements OnInit {
 
   constructor() {
   }
-
+  onChartInit(e) {
+    this.chartInit.emit(e);
+  }
 }
