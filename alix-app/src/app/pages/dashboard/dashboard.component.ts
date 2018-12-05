@@ -99,6 +99,9 @@ export class DashboardComponent implements OnInit {
       title: {
         text: 'UTP Exposure',
         subtext: 'Total UTP Exposure Waterfall Monthly Breakdown',
+        textStyle: {
+          color: '#fff'
+        }
         // sublink: 'http://e.weibo.com/1341556070/Aj1J2x5a5'
       },
       tooltip: {
@@ -108,7 +111,7 @@ export class DashboardComponent implements OnInit {
         },
         formatter: function (params) {
           let tar;
-          if (params[1].value != '-') {
+          if (params[1].value !== '-') {
             tar = params[1];
           } else {
             tar = params[0];
@@ -117,21 +120,21 @@ export class DashboardComponent implements OnInit {
         }
       },
       legend: {
-        data: ['Increase', 'Decrease']
-      },
-      toolbox: {
-        show: true,
-        feature: {
-          mark: { show: true },
-          dataView: { show: true, readOnly: false },
-          restore: { show: true },
-          saveAsImage: { show: true }
-        }
+        data: ['Increase', 'Decrease'],
+        top: '10px',
+        right: '20px',
+        textStyle: {
+          color: '#fff'
+        },
       },
       xAxis: [
         {
           type: 'category',
-          splitLine: { show: false },
+          axisLine: eChartsConfig.eChartsConfig.xAxis.axisLine,
+          splitLine: {
+            show: false,
+            lineStyle: eChartsConfig.eChartsConfig.xAxis.splitLine.lineStyle,
+          },
           data: function () {
             const list = [];
             for (let i = 1; i <= 8; i++) {
@@ -140,6 +143,7 @@ export class DashboardComponent implements OnInit {
             return list;
           }(),
           axisLabel: {
+            color: eChartsConfig.eChartsConfig.xAxis.axisLabel.color,
             formatter: function (x, y) {
               return labels[x - 1];
             }
@@ -148,14 +152,16 @@ export class DashboardComponent implements OnInit {
       ],
       yAxis: [
         {
-          type: 'value'
+          type: 'value',
+          axisLine: eChartsConfig.eChartsConfig.xAxis.axisLine,
+          splitLine: eChartsConfig.eChartsConfig.xAxis.splitLine,
+          axisLabel: eChartsConfig.eChartsConfig.xAxis.axisLabel
         }
       ],
     };
 
     return this.config.dashboard1.utpOutflowInflow;
   }
-
 
   onChartClick(chartLine) {
 
