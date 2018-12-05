@@ -1,3 +1,4 @@
+// angular
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
@@ -14,7 +15,7 @@ export class BarComponent implements OnInit {
 
   public options: any = {};
   public initOpts: any = {};
-  
+
   @Output()
   public chartInit = new EventEmitter();
 

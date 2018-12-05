@@ -1,11 +1,17 @@
 const axisLineColor = '#5f6063';
 
-
 export const eChartsConfig = {
   axisLine: {
     lineStyle: {
-      // #A3A4A7 | rgb(163, 164, 167) | rgba(163, 164, 167, .5)
-      color: '#5f6063'
+      color: 'rgba(255, 255, 255, 0.3)'
     }
-  }
+  },
+  splitLine: {
+    lineStyle: {
+      color: 'rgba(255, 255, 255, 0.1)'
+    }
+  },
+  axisLabel: {
+    color: 'rgba(255, 255, 255, 1)'
+  },
 };

@@ -6,6 +6,7 @@
       "@app/*": ["src/app/*"],
       "@core/*": ["src/app/core/*"],
       "@data/*": ["src/app/data/*"],
+      "@global/*": ["src/app/global/*"],
       "@helpers/*": ["src/app/helpers/*"],
       "@pages/*": ["src/app/pages/*"],
       "@services/*": ["src/app/services/*"],

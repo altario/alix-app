@@ -48,7 +48,7 @@ export class LocationComponent implements OnInit {
     return {
       legend: {
         data: Object.keys(chartdataset.dossier1ChartsData.location.breakdownAssetsInNeighborhood).map((population, i) => {
-          if (population != 'year') {
+          if (population !== 'year') {
             return population;
           }
         }),
@@ -67,7 +67,7 @@ export class LocationComponent implements OnInit {
   getbreakdownAssetsInNeighborhoodSeries(): Array<any> {
 
     return Object.keys(chartdataset.dossier1ChartsData.location.breakdownAssetsInNeighborhood).map((population, i) => {
-      if ( population != 'year' ) {
+      if ( population !== 'year' ) {
         return {
           name: population,
             type: 'bar',

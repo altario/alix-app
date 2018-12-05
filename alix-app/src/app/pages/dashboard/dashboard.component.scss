@@ -3,6 +3,7 @@
 .container-fluid {
   .page-section {
     &:first-child {
+      height: 600px;
       padding: 0;
     }
   }

@@ -4,6 +4,9 @@ import { Component, OnInit, Output } from '@angular/core';
 import * as dashboardDataset from '@data/dashboard-dataset';
 import { EventEmitter } from 'events';
 
+// graph color overrides
+import * as eChartsConfig from '@global/charts';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -26,6 +29,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
 
     this.opts = {
+      color: ['#003366', '#006699', '#4cabce', '#e5323e'],
       tooltip: {
         trigger: 'axis',
         axisPointer: {            // 坐标轴指示器，坐标轴触发有效
@@ -38,17 +42,29 @@ export class DashboardComponent implements OnInit {
         bottom: '3%',
         containLabel: true
       },
+      legend: {
+        top: '20px',
+        textStyle: {
+          color: '#fff'
+        },
+        data: ['Bad Loan', 'Unlikely to Pay', 'Past Due Loan', 'Performing']
+      },
       xAxis: {
-        type: 'value'
+        splitLine: eChartsConfig.eChartsConfig.splitLine,
+        axisLabel: eChartsConfig.eChartsConfig.axisLabel,
+        axisLine: eChartsConfig.eChartsConfig.axisLine
       },
       yAxis: {
         type: 'category',
-        data: ['AAA','AA+','AA','AA-','A+','A','A-','BBB+','BBB','BBB-','BB+','BB']
-      },
+        splitLine: eChartsConfig.eChartsConfig.splitLine,
+        axisLabel: eChartsConfig.eChartsConfig.axisLabel,
+        axisLine: eChartsConfig.eChartsConfig.axisLine,
+        data: ['AAA', 'AA+', 'AA', 'AA-', 'A+', 'A', 'A-', 'BBB+', 'BBB', 'BBB-', 'BB+', 'BB']
+      }
     };
   }
 
-  getexposurePerformanceBoxPlot(population= 'allIndustries'): Array<any>{
+  getexposurePerformanceBoxPlot(population= 'allIndustries'): Array<any> {
 
     const kpis = this.config.dashboard1.exposurePerformanceBoxPlot.filter((line, i) => {
       if (line.industry === population) {
@@ -76,7 +92,7 @@ export class DashboardComponent implements OnInit {
   onChartClick(chartLine) {
 
     const key = chartLine.data.id;
-    const kpis = this.config.dashboard1.mainKpis.filter((line, i) =>{
+    const kpis = this.config.dashboard1.mainKpis.filter((line, i) => {
         const k = Object.keys(line);
       if (line[k].population.id === key) {
         return true;

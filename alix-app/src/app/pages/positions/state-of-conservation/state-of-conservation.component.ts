@@ -7,6 +7,9 @@ import * as dataset from '@data/dataset';
 import * as chartdataset from '@data/charts-dataset';
 import * as plotchartdataset from '@data/plotcharts-dataset';
 
+// graph color overrides
+import * as eChartsConfig from '@global/charts';
+
 @Component({
   selector: 'app-state-of-conservation',
   templateUrl: './state-of-conservation.component.html',
@@ -90,11 +93,13 @@ export class StateOfConservationComponent implements OnInit {
       },
       xAxis: {
         type: 'category',
+        axisLine: eChartsConfig.eChartsConfig.axisLine,
         data: popSelected.map(line => line.stateOfConservation)
       },
       yAxis: {
-        type: 'value'
-      },
+        type: 'value',
+        axisLine: eChartsConfig.eChartsConfig.axisLine,
+      }
     };
 
     const series = popSelected.map((line: any) => ({name: line.stateOfConservation, data: line.values, type: 'line'}));
