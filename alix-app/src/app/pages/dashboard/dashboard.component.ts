@@ -141,8 +141,9 @@ export class DashboardComponent implements OnInit {
           } else {
             tar = params[2];
           }
-          return labels[tar.dataIndex] + '<br/>' +
-                 tar.seriesName + ': ' + parseInt(tar.value / 1000000) + 'Mln';
+          // return labels[tar.dataIndex] + '<br/>' +
+          //        tar.seriesName + ': ' + parseInt(tar.value / 1000000) + 'Mln';
+          return labels[tar.dataIndex] + '<br/>' + tar.seriesName + ': ' + (parseInt(tar.value, 10) / 1000000) + 'Mln';
         }
       },
       legend: {

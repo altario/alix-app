@@ -1,0 +1,49 @@
+@import '~src/scss/imports';
+
+.row-col {
+  @include align(between);
+  .text-row {
+    @include align(column center);
+    font-size: rem(14px);
+    .u-strong {
+      font-size: rem(10px);
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.truncate {
+  margin: 0 10px;
+}
+
+.highlighted--color {
+  margin-bottom: 10px;
+}
+
+.text-color-2 {
+  color: $color__custom__gray--3;
+}
+
+.up {
+  color: #7AC143;
+  // @include icon();
+}
+.down {
+  color: #E9545C;
+  // @include
+}
+
+.square {
+  width: 3px;
+  height: 10px;
+  display: inline-block;
+  margin: 0 10px 0 0;
+}
+
+.text-row {
+  font-size: rem(14px);
+  margin-top: 10px;
+}

@@ -10,11 +10,15 @@ import { PortfolioRoutes } from './portfolio.routing';
 // components
 import { PortfolioListComponent } from './portfolio-list/portfolio-list.component';
 
+// shared
+import { SharedModule } from '@shared/shared.module';
+
 @NgModule({
   imports: [
     CommonModule,
     NgbModule,
     RouterModule.forChild(PortfolioRoutes),
+    SharedModule
   ],
   declarations: [
     PortfolioListComponent,

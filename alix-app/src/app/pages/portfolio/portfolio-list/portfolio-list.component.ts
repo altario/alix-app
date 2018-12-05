@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./portfolio-list.component.scss']
 })
 export class PortfolioListComponent implements OnInit {
-
   constructor() {}
 
   ngOnInit() {}
