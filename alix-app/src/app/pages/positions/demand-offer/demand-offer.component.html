@@ -89,7 +89,7 @@
 				<app-panel-19 [config]="config.demandAndOffer.longRent.populations"></app-panel-19>
 			</div>
 			<div class="col-8">
-				<alix-area-stack></alix-area-stack>
+				<alix-area-basic [series]="series.peerListedAssets5YLr" [opts]="opts.peerListedAssets5YLr"></alix-area-basic>
 			</div>
 		</div>
 	</section>
@@ -112,7 +112,7 @@
 				<app-panel-21 [config]="config.demandAndOffer.shortRent.populations"></app-panel-21>
 			</div>
 			<div class="col-8">
-				<alix-area-stack></alix-area-stack>
+				<alix-line [series]="" [opts]=""></alix-line>
 			</div>
 		</div>
 	</section>
@@ -123,7 +123,7 @@
 				<app-panel-22 [config]="config.demandAndOffer.shortRent.populations"></app-panel-22>
 			</div>
 			<div class="col-8">
-				<alix-area-stack></alix-area-stack>
+				<alix-area-basic [series]="series.peerListedAssets5YSr" [opts]="opts.peerListedAssets5YSr"></alix-area-basic>
 			</div>
 		</div>
 	</section>
