@@ -51,16 +51,17 @@ export class DashboardComponent implements OnInit {
         },
         data: ['Bad Loan', 'Unlikely to Pay', 'Past Due Loan', 'Performing']
       },
+
       xAxis: {
-        splitLine: eChartsConfig.eChartsConfig.splitLine,
-        axisLabel: eChartsConfig.eChartsConfig.axisLabel,
-        axisLine: eChartsConfig.eChartsConfig.axisLine
+        splitLine: eChartsConfig.eChartsConfig.xAxis.splitLine,
+        axisLabel: eChartsConfig.eChartsConfig.xAxis.axisLabel,
+        axisLine: eChartsConfig.eChartsConfig.xAxis.axisLine
       },
       yAxis: {
         type: 'category',
-        splitLine: eChartsConfig.eChartsConfig.splitLine,
-        axisLabel: eChartsConfig.eChartsConfig.axisLabel,
-        axisLine: eChartsConfig.eChartsConfig.axisLine,
+        splitLine: eChartsConfig.eChartsConfig.yAxis.splitLine,
+        axisLabel: eChartsConfig.eChartsConfig.yAxis.axisLabel,
+        axisLine: eChartsConfig.eChartsConfig.yAxis.axisLine,
         data: ['AAA', 'AA+', 'AA', 'AA-', 'A+', 'A', 'A-', 'BBB+', 'BBB', 'BBB-', 'BB+', 'BB']
       }
     };

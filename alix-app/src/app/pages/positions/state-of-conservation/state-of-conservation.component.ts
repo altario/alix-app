@@ -93,12 +93,12 @@ export class StateOfConservationComponent implements OnInit {
       },
       xAxis: {
         type: 'category',
-        axisLine: eChartsConfig.eChartsConfig.axisLine,
+        axisLine: eChartsConfig.eChartsConfig.xAxis.axisLine,
         data: popSelected.map(line => line.stateOfConservation)
       },
       yAxis: {
         type: 'value',
-        axisLine: eChartsConfig.eChartsConfig.axisLine,
+        axisLine: eChartsConfig.eChartsConfig.xAxis.axisLine,
       }
     };
 

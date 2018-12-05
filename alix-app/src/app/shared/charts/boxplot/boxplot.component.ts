@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import * as echarts from 'echarts';
 import { prepareBoxplotData } from 'echarts/extension/dataTool';
 
+// graph color overrides
+import * as eChartsConfig from '@global/charts';
 
 @Component({
   selector: 'alix-boxplot',
@@ -63,14 +65,17 @@ export class BoxplotComponent implements OnInit {
         data: data.axisData,
         boundaryGap: true,
         nameGap: 30,
+        axisLine: eChartsConfig.eChartsConfig.xAxis.axisLine,
         splitArea: {
           show: false
         },
         axisLabel: {
-          formatter: 'expr {value}'
+          formatter: 'expr {value}',
+          color: eChartsConfig.eChartsConfig.xAxis.axisLabel.color,
         },
         splitLine: {
-          show: false
+          show: false,
+          lineStyle: eChartsConfig.eChartsConfig.xAxis.splitLine.lineStyle,
         }
       },
       yAxis: {
