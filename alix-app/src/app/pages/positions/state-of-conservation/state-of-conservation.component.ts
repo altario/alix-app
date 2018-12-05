@@ -29,6 +29,9 @@ export class StateOfConservationComponent implements OnInit {
     '2018': 'assets/images/differencePerYear/asset1.jpg'
   }; // #HC
 
+  public numbOfAssetsBySc;
+  public priceEvolutionBySc;
+
   public opts: any = {};
   public chartInstance: any = {};
 
@@ -42,6 +45,8 @@ export class StateOfConservationComponent implements OnInit {
       this.selectedStateOfConservationPSM = this.config.stateOfConservationPricePerSqm.populations.population1;
       this.selectedSOCAllAssetsValues = this.initLastStateOfConservationAllAssets();
       this.selectedSOCAllAssets = this.config.panelFromMapStateOfConservationBreakdownAllAssets.years[this.selectedSOCAllAssetsValues[0]];
+      this.numbOfAssetsBySc = this.getnumbOfAssetsBySc();
+      this.priceEvolutionBySc = this.getpriceEvolutionBySc();
     });
   }
 
