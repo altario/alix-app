@@ -12,6 +12,9 @@ export class LineComponent implements OnInit {
   @Input()
   public opts: any = {};
 
+  @Input()
+  public init: any = [];
+
   @Output()
   public chartInit = new EventEmitter();
 
@@ -23,9 +26,6 @@ export class LineComponent implements OnInit {
   ngOnInit() {
     this.options = {
 
-      legend: {
-        data: ['Linha 1', 'Linha 2']
-      },
       tooltip: {
         trigger: 'axis',
         axisPointer: {
@@ -46,10 +46,13 @@ export class LineComponent implements OnInit {
     };
 
     this.options = Object.assign(this.options, this.opts);
-console.log(this.options);
+
     this.initOpts = {
       renderer: 'svg',
     };
+
+    this.initOpts = Object.assign(this.initOpts, this.init);
+
   }
 
   onChartInit(e) {

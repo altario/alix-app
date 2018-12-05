@@ -12,9 +12,12 @@ export class BarComponent implements OnInit {
   @Input()
   public opts: any = {};
 
+  @Input()
+  public init: any = [];
+
   public options: any = {};
   public initOpts: any = {};
-  
+
   @Output()
   public chartInit = new EventEmitter();
 
@@ -42,6 +45,8 @@ export class BarComponent implements OnInit {
     this.initOpts = {
       renderer: 'svg',
     };
+
+    this.initOpts = Object.assign(this.initOpts, this.init);
   }
 
   constructor() {

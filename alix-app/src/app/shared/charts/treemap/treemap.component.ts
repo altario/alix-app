@@ -37,7 +37,7 @@ export class TreemapComponent implements OnInit {
 
     this.options = {
       series: [{
-        name: 'INDUSTRIES BREAKDOWN',
+        name: 'CREDIT PORTFOLIO',
         type: 'treemap',
         visibleMin: 300,
         label: {
