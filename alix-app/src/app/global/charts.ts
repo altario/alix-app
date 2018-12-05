@@ -1,6 +1,23 @@
 const axisLineColor = '#5f6063';
 
 export const eChartsConfig = {
+  title: {
+    color: '#999999',
+    fontWeight: 'bold',
+  },
+
+  legend: {
+    itemWidth: 10,
+    itemHeight: 10,
+    top: '20px',
+    right: '20px',
+    color: '#EEEEEE',
+    fontSize: 9
+  },
+
+  grid: {
+    top: 100
+  },
 
   // xAxis
   xAxis: {
