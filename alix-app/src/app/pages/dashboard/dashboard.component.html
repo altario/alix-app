@@ -20,7 +20,7 @@
         </div>
       </div>
       <div class="col">
-        <alix-bar [opts]='opts'></alix-bar>
+        <alix-bar [series]='getratingPerformance()' [opts]='opts' (chartInit)="onChartInit('ratingPerformance',$event)"></alix-bar>
       </div>
     </div>
   </section>
@@ -28,7 +28,7 @@
   <section class="page-section bg--dark">
     <div class="row">
       <div class="col">
-        <alix-boxplot></alix-boxplot>
+        <alix-scatter [series]="getexposurePerformanceBoxPlot()" (chartInit)="onChartInit('exposurePerformanceBoxPlot',$event)"></alix-scatter>
       </div>
     </div>
   </section>

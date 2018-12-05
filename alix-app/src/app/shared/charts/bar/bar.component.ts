@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'alix-bar',
@@ -14,23 +14,25 @@ export class BarComponent implements OnInit {
 
   public options: any = {};
   public initOpts: any = {};
-
+  
+  @Output()
+  public chartInit = new EventEmitter();
 
   ngOnInit() {
 
     this.options = {
-        tooltip: {
-            trigger: 'axis',
-            axisPointer: {            // 坐标轴指示器，坐标轴触发有效
-                type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-            }
-        },
-        grid: {
-            left: '3%',
-            right: '4%',
-            bottom: '3%',
-            containLabel: true
-        },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+          type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+      },
+      grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+      },
       series: this.series
     };
 
@@ -44,5 +46,7 @@ export class BarComponent implements OnInit {
 
   constructor() {
   }
-
+  onChartInit(e) {
+    this.chartInit.emit(e);
+  }
 }
