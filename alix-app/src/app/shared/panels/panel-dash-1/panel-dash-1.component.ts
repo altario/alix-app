@@ -12,7 +12,6 @@ export class Paneldash1Component implements OnInit {
   constructor() { }
 
   ngOnInit() {
-      console.log(this.config)
+      console.log(this.config);
   }
-
 }

@@ -1,0 +1,26 @@
+@import '~src/scss/imports';
+
+.container-fluid {
+  .page-section {
+    &:first-child {
+      padding: 0;
+    }
+  }
+}
+
+
+.col--panels::ng-deep {
+  @include align;
+  .row {
+    > * {
+      display: flex;
+      .box {
+        flex: 1;
+        @include align(between);
+        .box__body {
+          flex: 1;
+        }
+      }
+    }
+  }
+}

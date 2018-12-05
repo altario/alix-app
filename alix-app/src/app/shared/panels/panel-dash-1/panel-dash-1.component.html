@@ -1,22 +1,66 @@
-<div class="list-kpis">
-    <div class="kpi-item">
-        <header>Total Exposure</header>
-        <div class="item-value">{{config.totalExposure.value | curr}}</div>
+<div class="box box--table">
+
+  <div class="box__body box__body--bg">
+
+    <div class="cell__wrapper cell__wrapper cell__wrapper--bg-dark">
+      <div class="cell__wrapper__top">
+        <span class="label__up label--color">Total Exposure</span>
+      </div>
+      <div class="cell__wrapper__info">
+        <p class="highlighted--big highlighted--color">
+          {{config.totalExposure.value | curr}}
+          <small class="u-uppercase highlighted__small--color">€</small>
+        </p>
+      </div>
     </div>
-    <div class="kpi-item">
-        <header>ROE</header>
-        <div class="item-value">{{config.roe.value | perc}}</div>
+
+    <div class="cell__wrapper cell__wrapper cell__wrapper--bg-light">
+      <div class="cell__wrapper__top">
+        <span class="label__up label--color">ROE</span>
+      </div>
+      <div class="cell__wrapper__info">
+        <p class="highlighted--big highlighted--color">
+          {{config.roe.value | perc}}
+          <small class="u-uppercase highlighted__small--color">%</small>
+        </p>
+      </div>
     </div>
-    <div class="kpi-item">
-        <header>Expected Net Interest Margin</header>
-        <div class="item-value">{{config.expectedNetInterestMargin.value | curr}}</div>
+
+    <div class="cell__wrapper cell__wrapper cell__wrapper--bg-dark">
+      <div class="cell__wrapper__top">
+        <span class="label__up label--color">Expected Net Interest Margin</span>
+      </div>
+      <div class="cell__wrapper__info">
+        <p class="highlighted--big highlighted--color">
+          {{config.expectedNetInterestMargin.value | curr}}
+          <small class="u-uppercase highlighted__small--color">Bln</small>
+        </p>
+      </div>
     </div>
-    <div class="kpi-item">
-        <header>Expected Loss</header>
-        <div class="item-value">{{config.expectedLoss.value | curr}}</div>
+
+    <div class="cell__wrapper cell__wrapper cell__wrapper--bg-light">
+      <div class="cell__wrapper__top">
+        <span class="label__up label--color">Expected Loss</span>
+      </div>
+      <div class="cell__wrapper__info">
+        <p class="highlighted--big highlighted--color">
+          {{config.expectedLoss.value | curr}}
+          <small class="u-uppercase highlighted__small--color">€</small>
+        </p>
+      </div>
     </div>
-    <div class="kpi-item">
-        <header>Var</header>
-        <div class="item-value">{{config.var.value | curr}}</div>
+
+    <div class="cell__wrapper cell__wrapper cell__wrapper--bg-dark">
+      <div class="cell__wrapper__top">
+        <span class="label__up label--color">Var</span>
+      </div>
+      <div class="cell__wrapper__info">
+        <p class="highlighted--big highlighted--color">
+          {{config.var.value | curr}}
+          <small class="u-uppercase highlighted__small--color">€</small>
+        </p>
+      </div>
     </div>
+
+  </div>
 </div>

@@ -1,50 +1,70 @@
 <div class="container-fluid">
-  <div class="no-gutters">
-    <div class="col">
-      <h1>Dashboard</h1>
-      <alix-treemap [series]="config.dashboard1.portfolioTreeMap" (chartClick)="onChartClick($event)"></alix-treemap>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-2">
-      <app-panel-dash-1 [config]="kpis"></app-panel-dash-1>
-    </div>
-    <div class="col-4">
-      <app-panel-dash-2 [config]="kpis"></app-panel-dash-2>
-    </div>
-    <div class="col-6">
-        <alix-bar [series]='getratingPerformance()' [opts]='opts' (chartInit)="onChartInit('ratingPerformance',$event)"></alix-bar>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col">
-      <alix-scatter [series]="getexposurePerformanceBoxPlot()" (chartInit)="onChartInit('exposurePerformanceBoxPlot',$event)"></alix-scatter>
-    </div>
-    <div class="col">
-      <alix-bar [series]='getutpOutflowInflow()' [opts]='opts.utpOutflowInflow' (chartInit)="onChartInit('utpOutflowInflow',$event)"></alix-bar>
-    </div>
-  </div>
-
-    <div class="row">
-      <div class="col" style="height:250px;">
-      <alix-line [series]='getexposure()' [opts]="opts.exposure" [init]="{height:'250px'}" (chartInit)="onChartInit('exposure',$event)"></alix-line>
+  <section class="page-section bg--dark">
+    <div class="row no-gutters">
+      <div class="col">
+        <alix-treemap [series]="config.dashboard1.portfolioTreeMap" (chartClick)="onChartClick($event)"></alix-treemap>
       </div>
     </div>
+  </section>
+
+  <section class="page-section bg--light">
     <div class="row">
-        <div class="col" style="height:250px;">
-        <alix-line [series]='getnetMargin()'  [opts]="opts.netMargin" [init]="{height:'250px'}" (chartInit)="onChartInit('netMargin',$event)"></alix-line>
+      <div class="col col--panels">
+        <div class="row no-gutters">
+          <div class="col-4">
+            <app-panel-dash-1 [config]="kpis"></app-panel-dash-1>
+          </div>
+          <div class="col-8">
+            <app-panel-dash-2 [config]="kpis"></app-panel-dash-2>
+          </div>
         </div>
+      </div>
+      <div class="col">
+        <alix-bar [series]='getratingPerformance()' [opts]='opts' (chartInit)="onChartInit('ratingPerformance',$event)"></alix-bar>
+      </div>
     </div>
+  </section>
+
+  <section class="page-section bg--dark">
     <div class="row">
-      <div class="col" style="height:250px;">
-        <alix-bar [series]='getperforming()'  [opts]="opts.performing" [init]="{height:'250px'}" (chartInit)="onChartInit('performing',$event)"></alix-bar>
-        </div>
+      <div class="col">
+        <alix-scatter [series]="getexposurePerformanceBoxPlot()" (chartInit)="onChartInit('exposurePerformanceBoxPlot',$event)"></alix-scatter>
+      </div>
+      <div class="col">
+        <alix-bar [series]='getutpOutflowInflow()' [opts]='opts.utpOutflowInflow' (chartInit)="onChartInit('utpOutflowInflow',$event)"></alix-bar>
+      </div>
     </div>
+  </section>
+
+  <section class="page-section bg--light">
     <div class="row">
-      <div class="col" style="height:250px;">
-        <alix-bar [series]='getnonPerforming()'  [opts]="opts.nonPerforming" [init]="{height:'250px'}" (chartInit)="onChartInit('nonPerforming',$event)"></alix-bar>
-        </div>
+      <div class="col">
+        <alix-line [series]='getexposure()' [opts]="opts.exposure" [init]="{height:'250px'}" (chartInit)="onChartInit('exposure',$event)"></alix-line>
+      </div>
     </div>
+  </section>
+
+  <section class="page-section bg--dark">
+    <div class="row">
+      <div class="col">
+        <alix-line [series]='getnetMargin()' [opts]="opts.netMargin" [init]="{height:'250px'}" (chartInit)="onChartInit('netMargin',$event)"></alix-line>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section bg--light">
+    <div class="row">
+      <div class="col">
+        <alix-bar [series]='getperforming()' [opts]="opts.performing" [init]="{height:'250px'}" (chartInit)="onChartInit('performing',$event)"></alix-bar>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section bg--dark">
+    <div class="row">
+      <div class="col">
+        <alix-bar [series]='getnonPerforming()' [opts]="opts.nonPerforming" [init]="{height:'250px'}" (chartInit)="onChartInit('nonPerforming',$event)"></alix-bar>
+      </div>
+    </div>
+  </section>
 </div>

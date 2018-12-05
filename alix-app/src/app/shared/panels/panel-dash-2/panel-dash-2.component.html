@@ -1,38 +1,107 @@
-<div class="list-kpis">
-    <div class="kpi-item">
-        <div class="item-label">Number of Dossiers</div>
-        <div class="item-value">{{config.numberOfDossiers.value}}</div>
+<div class="box box--table">
+  <div class="box__body box__body--bg">
+
+    <div class="cell__wrapper">
+      <div class="cell__wrapper__top">
+        <span class="label__up label--color">Number of Dossiers</span>
+      </div>
+      <div class="cell__wrapper__info">
+        <p class="highlighted--big highlighted--color">
+          {{config.numberOfDossiers.value | perc:0}}
+        </p>
+      </div>
     </div>
-    <div class="kpi-item">
-        <div class="item-label">GBV</div>
-        <div class="item-value">{{config.gbv.value | curr}}</div>
+
+    <div class="cell__wrapper">
+      <div class="cell__wrapper__top">
+        <span class="label__up label--color">GBV</span>
+      </div>
+      <div class="cell__wrapper__info">
+        <p class="highlighted--big highlighted--color">
+          {{config.gbv.value | curr}}B
+          <small class="u-uppercase highlighted__small--color">€</small>
+        </p>
+      </div>
     </div>
-    <div class="kpi-item">
-        <div class="item-label">NBV</div>
-        <div class="item-value">{{config.nbv.value | curr}}</div>
+
+    <div class="cell__wrapper">
+      <div class="cell__wrapper__top">
+        <span class="label__up label--color">NBV</span>
+      </div>
+      <div class="cell__wrapper__info">
+        <p class="highlighted--big highlighted--color">
+          {{config.nbv.value | curr}}B
+          <small class="u-uppercase highlighted__small--color">€</small>
+        </p>
+      </div>
     </div>
-    <div class="kpi-item">
-        <div class="item-label">RAROC</div>
-        <div class="item-value">{{config.raroc.value | perc}}</div>
+
+    <div class="cell__wrapper">
+      <div class="cell__wrapper__top">
+        <span class="label__up label--color">RAROC</span>
+      </div>
+      <div class="cell__wrapper__info">
+        <p class="highlighted--big highlighted--color">
+          {{config.raroc.value | perc}}
+        </p>
+      </div>
     </div>
-    <div class="kpi-item">
-        <div class="item-label">Weighted average Internal Rating</div>
-        <div class="item-value">{{config.weightedAverageInternalRating.value}}</div>
+
+    <div class="cell__wrapper">
+      <div class="cell__wrapper__top">
+        <span class="label__up label--color">Weighted average Internal Rating</span>
+      </div>
+      <div class="cell__wrapper__info">
+        <p class="highlighted--big highlighted--color">
+          {{config.weightedAverageInternalRating.value}}
+        </p>
+      </div>
     </div>
-    <div class="kpi-item">
-        <div class="item-label">Weighted average Pricing</div>
-        <div class="item-value">{{config.weightedAveragePricing.value}}</div>
+
+    <div class="cell__wrapper">
+      <div class="cell__wrapper__top">
+        <span class="label__up label--color">Weighted average Pricing</span>
+      </div>
+      <div class="cell__wrapper__info">
+        <p class="highlighted--big highlighted--color">
+          {{config.weightedAveragePricing.value | perc:1}}
+        </p>
+      </div>
     </div>
-    <div class="kpi-item">
-        <div class="item-label">Time to Weighted Average Duration</div>
-        <div class="item-value">{{config.timeToWeightedAverageDuration.value}}</div>
+
+    <div class="cell__wrapper">
+      <div class="cell__wrapper__top">
+        <span class="label__up label--color">Time to Weighted Average Duration</span>
+      </div>
+      <div class="cell__wrapper__info">
+        <p class="highlighted--big highlighted--color">
+          {{config.timeToWeightedAverageDuration.value | dec:0}}Y
+        </p>
+      </div>
     </div>
-    <div class="kpi-item">
-        <div class="item-label">Weighted Average Duration</div>
-        <div class="item-value">{{config.weightedAverageDuration.value}}</div>
+
+    <div class="cell__wrapper">
+      <div class="cell__wrapper__top">
+        <span class="label__up label--color">Weighted Average Duration</span>
+      </div>
+      <div class="cell__wrapper__info">
+        <p class="highlighted--big highlighted--color">
+          {{config.weightedAverageDuration.value | dec:0}}Y
+        </p>
+      </div>
     </div>
-    <div class="kpi-item">
-        <div class="item-label">Regulatory Total Capital</div>
-        <div class="item-value">{{config.regulatoryTotalCapital.value | curr}}</div>
+
+    <div class="cell__wrapper">
+      <div class="cell__wrapper__top">
+        <span class="label__up label--color">Regulatory Total Capital</span>
+      </div>
+      <div class="cell__wrapper__info">
+        <p class="highlighted--big highlighted--color">
+          {{config.regulatoryTotalCapital.value | curr}}M
+          <small class="u-uppercase highlighted__small--color">€</small>
+        </p>
+      </div>
     </div>
+
+  </div>
 </div>

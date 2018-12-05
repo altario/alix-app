@@ -3,69 +3,68 @@
   <div class="box__header box__header--bg">
     <div class="d-flex flex-row justify-content-between">
       <div class="box__title title--compound">
-        <h1 class="title">Key Financial<!-- #HC --></h1>
+        <h1 class="title">Key Financial</h1><!-- #HC -->
       </div>
     </div>
   </div>
   <div class="box__body box__body--bg">
-      <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-dark">
-        <div class="cell__wrapper__top">
-          <span class="label__up label--color">
-            {{ config.status.label }}
-          </span>
-        </div>
-        <div class="cell__wrapper__info">
-          <div [ngClass]="{ 'tag--success': config.status.value === 'Performing' }" class="tag">
-            {{config.status.value}}
-          </div>
+    <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-dark">
+      <div class="cell__wrapper__top">
+        <span class="label__up label--color">
+          {{ config.status.label }}
+        </span>
+      </div>
+      <div class="cell__wrapper__info">
+        <div [ngClass]="{ 'tag--success': config.status.value === 'Performing' }" class="tag">
+          {{config.status.value}}
         </div>
       </div>
-  
-      <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-dark">
-          <div class="cell__wrapper__top">
-            <span class="label__up label--color">
-              {{ config.raroc.label }}
-            </span>
-          </div>
-          <div class="cell__wrapper__info">
-              <p class="highlighted--big highlighted--color">
-                {{ config.raroc.value | perc:1}}
+    </div>
 
-                <small class="u-uppercase highlighted__small--color">%</small>
-              </p>
-          </div>
-        </div>
-  
-        <div class="w-100"></div>
+    <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-dark">
+      <div class="cell__wrapper__top">
+        <span class="label__up label--color">
+          {{ config.raroc.label }}
+        </span>
+      </div>
+      <div class="cell__wrapper__info">
+        <p class="highlighted--big highlighted--color">
+          {{ config.raroc.value | perc:1}}
 
-        <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-light">
-            <div class="cell__wrapper__top">
-              <span class="label__up label--color">
-                {{ config.absorbedRegulatoryCapital.label }}
-              </span>
-            </div>
-            <div class="cell__wrapper__info">
-                <p class="highlighted--big highlighted--color">
-                  {{ config.absorbedRegulatoryCapital.value | curr }}
-                  <small class="u-uppercase highlighted__small--color">m€</small>
-                </p>
-            </div>
-          </div>
-  
-          <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-light">
-              <div class="cell__wrapper__top">
-                <span class="label__up label--color">
-                  {{ config.expectedLoss.label }}
-                </span>
-              </div>
-              <div class="cell__wrapper__info">
-                  <p class="highlighted--big highlighted--color">
-                    {{ config.expectedLoss.value | curr }}
-                    <small class="u-uppercase highlighted__small--color">k€</small>
-                  </p>
-              </div>
-            </div>
-      
+          <small class="u-uppercase highlighted__small--color">%</small>
+        </p>
+      </div>
+    </div>
+
+    <div class="w-100"></div>
+
+    <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-light">
+      <div class="cell__wrapper__top">
+        <span class="label__up label--color">
+          {{ config.absorbedRegulatoryCapital.label }}
+        </span>
+      </div>
+      <div class="cell__wrapper__info">
+        <p class="highlighted--big highlighted--color">
+          {{ config.absorbedRegulatoryCapital.value | curr }}
+          <small class="u-uppercase highlighted__small--color">m€</small>
+        </p>
+      </div>
+    </div>
+
+    <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-light">
+      <div class="cell__wrapper__top">
+        <span class="label__up label--color">
+          {{ config.expectedLoss.label }}
+        </span>
+      </div>
+      <div class="cell__wrapper__info">
+        <p class="highlighted--big highlighted--color">
+          {{ config.expectedLoss.value | curr }}
+          <small class="u-uppercase highlighted__small--color">k€</small>
+        </p>
+      </div>
+    </div>
 
   </div>
 </div>

@@ -1,4 +1,69 @@
+// ------------------------------------------------------------------
+//
+// INDEX
+//
+//  #IMPORTS
+//
+//  #VARS
+//
+//  #STYLES
+//
+// ------------------------------------------------------------------
+
+
+// ------------------------------------------------------------------
+// #IMPORTS
+// ------------------------------------------------------------------
+
+// +/imports
+@import '~src/scss/imports';
+
+
+
+
+
+// ------------------------------------------------------------------
+// #VARS
+// ------------------------------------------------------------------
+
+// $size
+// $header__navbar--height: 50px;
+
+
+
+
+
+// ------------------------------------------------------------------
+// #STYLES
+// ------------------------------------------------------------------
+
+// :host
 :host {
-  position: relative;
   display: flex;
+  position: relative;
+  @include align(column);
+}
+
+// _styles
+.header {
+  width: 100%;
+  font-size: rem(16px);
+  font-family: $font-family--secondary;
+  font-weight: $font-weight--bold;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.box--table {
+  border-radius: $border-radius__default 0 0 $border-radius__default;
+}
+
+.cell__wrapper__top {
+  @include line-clamp(1);
+}
+
+.cell__wrapper__top,
+.cell__wrapper__info {
+  height: auto !important;
+  margin: 0 !important;
 }
