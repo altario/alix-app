@@ -13,6 +13,9 @@ export class BarComponent implements OnInit {
   @Input()
   public opts: any = {};
 
+  @Input()
+  public init: any = [];
+
   public options: any = {};
   public initOpts: any = {};
 
@@ -43,6 +46,8 @@ export class BarComponent implements OnInit {
     this.initOpts = {
       renderer: 'svg',
     };
+
+    this.initOpts = Object.assign(this.initOpts, this.init);
   }
 
   constructor() {
