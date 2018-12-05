@@ -17,7 +17,8 @@ import { SubheaderComponent } from '@shared/subheader/subheader.component';
 import {
   CustomCurrencyPipe,
   CustomPercentagePipe,
-  CustomDateConverterPipe
+  CustomDateConverterPipe,
+  CustomDecimalPipe
 } from '@helpers/index';
 
 // charts
@@ -89,6 +90,7 @@ import {
     CustomCurrencyPipe,
     CustomPercentagePipe,
     CustomDateConverterPipe,
+    CustomDecimalPipe,
 
     // charts
     AreaBasicComponent,

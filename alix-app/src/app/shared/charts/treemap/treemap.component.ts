@@ -36,9 +36,13 @@ export class TreemapComponent implements OnInit {
     const format = formatUtil;
 
     this.options = {
+      backgroundColor: 'transparent',
       series: [{
         name: 'INDUSTRIES BREAKDOWN',
         type: 'treemap',
+        width: '80%',
+        height: '80%',
+        roam: 'move',
         visibleMin: 300,
         label: {
           normal: {
@@ -50,7 +54,7 @@ export class TreemapComponent implements OnInit {
                 '{budget|$ ' + format.addCommas(params.value[0]) + '}'
               ];
 
-            if (params.value[2] != null){
+            if (params.value[2] != null) {
               arr.push(
                 '{household| ' + format.addCommas((+params.value[2].toFixed(2)) * 100) + '%}'
               );

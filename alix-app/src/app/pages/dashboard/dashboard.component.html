@@ -1,26 +1,35 @@
 <div class="container-fluid">
-  <div class="no-gutters">
-    <div class="col">
-      <h1>Dashboard</h1>
-      <alix-treemap [series]="config.dashboard1.portfolioTreeMap" (chartClick)="onChartClick($event)"></alix-treemap>
+  <section class="page-section bg--dark">
+    <div class="row no-gutters">
+      <div class="col">
+        <alix-treemap [series]="config.dashboard1.portfolioTreeMap" (chartClick)="onChartClick($event)"></alix-treemap>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="row">
-    <div class="col-3">
-      <app-panel-dash-1 [config]="kpis"></app-panel-dash-1>
+  <section class="page-section bg--light">
+    <div class="row">
+      <div class="col col--panels">
+        <div class="row no-gutters">
+          <div class="col-4">
+            <app-panel-dash-1 [config]="kpis"></app-panel-dash-1>
+          </div>
+          <div class="col-8">
+            <app-panel-dash-2 [config]="kpis"></app-panel-dash-2>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <alix-bar [opts]='opts'></alix-bar>
+      </div>
     </div>
-    <div class="col-9">
-      <app-panel-dash-2 [config]="kpis"></app-panel-dash-2>
-    </div>
-  </div>
+  </section>
 
-  <div class="row">
-    <div class="col">
-      <alix-boxplot></alix-boxplot>
+  <section class="page-section bg--dark">
+    <div class="row">
+      <div class="col">
+        <alix-boxplot></alix-boxplot>
+      </div>
     </div>
-    <div class="col">
-      <alix-bar [opts]='opts'></alix-bar>
-    </div>
-  </div>
+  </section>
 </div>

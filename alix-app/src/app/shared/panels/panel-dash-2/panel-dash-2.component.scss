@@ -1,4 +1,94 @@
+// ------------------------------------------------------------------
+//
+// INDEX
+//
+//  #IMPORTS
+//
+//  #VARS
+//
+//  #STYLES
+//
+// ------------------------------------------------------------------
+
+
+// ------------------------------------------------------------------
+// #IMPORTS
+// ------------------------------------------------------------------
+
+// +/imports
+@import '~src/scss/imports';
+
+
+
+
+
+// ------------------------------------------------------------------
+// #VARS
+// ------------------------------------------------------------------
+
+// $size
+// $header__navbar--height: 50px;
+
+
+
+
+
+// ------------------------------------------------------------------
+// #STYLES
+// ------------------------------------------------------------------
+
+// :host
 :host {
-  display: flex;position: relative;
+  position: relative;
   display: flex;
+  flex: 1;
+}
+
+.box--table {
+  border-radius: 0 $border-radius__default $border-radius__default 0;
+}
+
+.box__body {
+  @include align(column between stretch);
+  > .cell__wrapper {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    &:first-child {
+      padding-top: 0px !important;
+    }
+    &:last-child {
+      padding-bottom: 0px !important;
+    }
+  }
+  .cell__wrapper {
+    @include align(row middle between);
+  }
+}
+
+// _styles
+.header {
+  width: 100%;
+  font-size: rem(16px);
+  font-family: $font-family--secondary;
+  font-weight: $font-weight--bold;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.cell__wrapper__top {
+  @include line-clamp(1);
+}
+
+.cell__wrapper__top,
+.cell__wrapper__info {
+  height: auto !important;
+  margin: 0 !important;
+}
+
+.cell__wrapper {
+  .cell__wrapper__info {
+    .highlighted--big {
+      font-size: rem(16);
+    }
+  }
 }
