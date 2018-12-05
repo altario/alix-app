@@ -234,14 +234,15 @@ export class DemandAndOfferComponent implements OnInit {
   longTermRentEvolutionEurSqm() {
     this.opts.longTermRentEvolutionEurSqm = {
       legend: {
-        data: [
-          chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[0].radius1Km.label,
-          chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[0].portaNuova.label,
-          chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[0].milano.label,
-          chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[1].radius1Km.label,
-          chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[1].portaNuova.label,
-          chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[1].milano.label
-        ]
+        data: chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm
+        .reduce((prev, next, index) => {
+          Object.keys(next).map((data: any) => {
+            if (data !== 'year') {
+              prev.push(next[data].label);
+            }
+          });
+          return prev;
+        }, [])
       },
       tooltip: {
         trigger: 'axis',
@@ -258,37 +259,15 @@ export class DemandAndOfferComponent implements OnInit {
       }
     };
 
-    this.series.longTermRentEvolutionEurSqm = [{
-        name: chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[0].radius1Km.label,
-        data: chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[0].radius1Km.values,
-        type: 'line'
-      },
-      {
-        name: chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[0].portaNuova.label,
-        data: chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[0].portaNuova.values,
-        type: 'line'
-      },
-      {
-        name: chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[0].milano.label,
-        data: chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[0].milano.values,
-        type: 'line'
-      },
-      {
-        name: chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[1].radius1Km.label,
-        data: chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[1].radius1Km.values,
-        type: 'line'
-      },
-      {
-        name: chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[1].portaNuova.label,
-        data: chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[1].portaNuova.values,
-        type: 'line'
-      },
-      {
-        name: chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[1].milano.label,
-        data: chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[1].milano.values,
-        type: 'line'
-      }
-    ];
+    this.series.longTermRentEvolutionEurSqm = chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm
+      .reduce((prev, next, index) => {
+        Object.keys(next).map((data: any) => {
+          if (data !== 'year') {
+            prev.push({ name: next[data].label, data: next[data].values, type: 'line' });
+          }
+        });
+        return prev;
+      }, []);
   }
 
   peerListedAssets5YLr() {
