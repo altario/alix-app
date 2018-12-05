@@ -102,6 +102,7 @@ export class DemandAndOfferComponent implements OnInit {
     this.marketValue();
     this.priceTodayVsOvertime();
     this.peerListedAssets5YForSale();
+    this.longTermRentEvolutionEurSqm();
 
   }
 
@@ -134,7 +135,6 @@ export class DemandAndOfferComponent implements OnInit {
    */
 
   marketValue() {
-
     this.opts.marketValue = {
       legend: {
         data: [
@@ -229,8 +229,66 @@ export class DemandAndOfferComponent implements OnInit {
     }];
   }
 
-  longTermRentEvolutionEurSqm() {
+  peerAssetsDemandRateListingToUnlistingForSale() {}
 
+  longTermRentEvolutionEurSqm() {
+    this.opts.longTermRentEvolutionEurSqm = {
+      legend: {
+        data: [
+          chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[0].radius1Km.label,
+          chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[0].portaNuova.label,
+          chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[0].milano.label,
+          chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[1].radius1Km.label,
+          chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[1].portaNuova.label,
+          chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[1].milano.label
+        ]
+      },
+      tooltip: {
+        trigger: 'axis',
+          axisPointer: {
+          type: 'cross',
+            label: {
+            backgroundColor: '#6a7985'
+          }
+        }
+      },
+      xAxis: {
+        type: 'category',
+          data: chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[0].year.values
+      }
+    };
+
+    this.series.longTermRentEvolutionEurSqm = [{
+        name: chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[0].radius1Km.label,
+        data: chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[0].radius1Km.values,
+        type: 'line'
+      },
+      {
+        name: chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[0].portaNuova.label,
+        data: chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[0].portaNuova.values,
+        type: 'line'
+      },
+      {
+        name: chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[0].milano.label,
+        data: chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[0].milano.values,
+        type: 'line'
+      },
+      {
+        name: chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[1].radius1Km.label,
+        data: chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[1].radius1Km.values,
+        type: 'line'
+      },
+      {
+        name: chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[1].portaNuova.label,
+        data: chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[1].portaNuova.values,
+        type: 'line'
+      },
+      {
+        name: chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[1].milano.label,
+        data: chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[1].milano.values,
+        type: 'line'
+      }
+    ];
   }
 
   peerListedAssets5YLr() {
