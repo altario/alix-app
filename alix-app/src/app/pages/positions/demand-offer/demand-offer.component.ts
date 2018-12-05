@@ -102,6 +102,9 @@ export class DemandAndOfferComponent implements OnInit {
     this.marketValue();
     this.priceTodayVsOvertime();
     this.peerListedAssets5YForSale();
+    this.longTermRentEvolutionEurSqm();
+    this.peerListedAssets5YLr();
+    this.peerListedAssets5YSr();
 
   }
 
@@ -134,7 +137,6 @@ export class DemandAndOfferComponent implements OnInit {
    */
 
   marketValue() {
-
     this.opts.marketValue = {
       legend: {
         data: [
@@ -229,12 +231,85 @@ export class DemandAndOfferComponent implements OnInit {
     }];
   }
 
-  longTermRentEvolutionEurSqm() {
+  peerAssetsDemandRateListingToUnlistingForSale() {}
 
+  longTermRentEvolutionEurSqm() {
+    this.opts.longTermRentEvolutionEurSqm = {
+      legend: {
+        data: chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm
+        .reduce((prev, next, index) => {
+          Object.keys(next).map((data: any) => {
+            if (data !== 'year') {
+              prev.push(next[data].label);
+            }
+          });
+          return prev;
+        }, [])
+      },
+      tooltip: {
+        trigger: 'axis',
+          axisPointer: {
+          type: 'cross',
+            label: {
+            backgroundColor: '#6a7985'
+          }
+        }
+      },
+      xAxis: {
+        type: 'category',
+          data: chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[0].year.values
+      }
+    };
+
+    this.series.longTermRentEvolutionEurSqm = chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm
+      .reduce((prev, next, index) => {
+        Object.keys(next).map((data: any) => {
+          if (data !== 'year') {
+            prev.push({ name: next[data].label, data: next[data].values, type: 'line' });
+          }
+        });
+        return prev;
+      }, []);
   }
 
   peerListedAssets5YLr() {
+    this.opts.peerListedAssets5YLr = {
+      legend: {
+        data: Object.keys(chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YLr)
+          .reduce((prev, next, index) => {
+              if (next !== 'year') {
+                prev.push(chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YLr[next].label);
+              }
+            return prev;
+          }, [])
+      },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'cross',
+          label: {
+            backgroundColor: '#6a7985'
+          }
+        }
+      },
+      xAxis: {
+        type: 'category',
+        data: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YLr.year.values
+      }
+    };
 
+    this.series.peerListedAssets5YLr = Object.keys(chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YLr)
+      .reduce((prev, next, index) => {
+          if (next !== 'year') {
+            prev.push({
+              name: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YLr[next].label,
+              data: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YLr[next].values,
+              type: 'line',
+              areaStyle: {}
+            });
+          }
+        return prev;
+      }, []);
   }
 
   peerAssetsDemandRateListingToUnlistingLr() {
@@ -242,7 +317,43 @@ export class DemandAndOfferComponent implements OnInit {
   }
 
   peerListedAssets5YSr() {
+    this.opts.peerListedAssets5YSr = {
+      legend: {
+        data: Object.keys(chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YSr)
+          .reduce((prev, next, index) => {
+              if (next !== 'year') {
+                prev.push(chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YSr[next].label);
+              }
+            return prev;
+          }, [])
+      },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'cross',
+          label: {
+            backgroundColor: '#6a7985'
+          }
+        }
+      },
+      xAxis: {
+        type: 'category',
+        data: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YSr.year.values
+      }
+    };
 
+    this.series.peerListedAssets5YSr = Object.keys(chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YSr)
+      .reduce((prev, next, index) => {
+          if (next !== 'year') {
+            prev.push({
+              name: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YSr[next].label,
+              data: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YSr[next].values,
+              type: 'line',
+              areaStyle: {}
+            });
+          }
+        return prev;
+      }, []);
   }
 
   peerAssetsOccupancyRateSr() {
