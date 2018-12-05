@@ -25,7 +25,6 @@ export class LineComponent implements OnInit {
 
   ngOnInit() {
     this.options = {
-
       tooltip: {
         trigger: 'axis',
         axisPointer: {

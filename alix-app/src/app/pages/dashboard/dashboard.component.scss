@@ -28,3 +28,27 @@
     }
   }
 }
+
+:host::ng-deep {
+  .page-section {
+    .row {
+      .col--graphs {
+        height: auto;
+        $height: 180px !important;
+        > * {
+          height: $height;
+          border-radius: 0;
+          &:first-child {
+            border-radius: $border-radius__default $border-radius__default 0 0;
+          }
+          &:last-child {
+            border-radius: 0 0 $border-radius__default $border-radius__default;
+          }
+          > * {
+            height: $height;
+          }
+        }
+      }
+    }
+  }
+}

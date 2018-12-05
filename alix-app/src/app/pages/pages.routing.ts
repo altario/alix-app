@@ -7,6 +7,7 @@ import { MonitoringComponent } from './monitoring/monitoring.component';
 import { ReportsComponent } from './reports/reports.component';
 import { CounterpartsComponent } from './counterparts/counterparts.component';
 
+// layouts
 import { BaseLayoutComponent } from '@core/index';
 
 export const PagesRoutes: Routes = [

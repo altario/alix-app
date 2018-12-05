@@ -11,6 +11,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MonitoringComponent } from './monitoring/monitoring.component';
 import { ReportsComponent } from './reports/reports.component';
 import { CounterpartsComponent } from './counterparts/counterparts.component';
+import { SubheaderDashboardComponent } from '@shared/subheader-dashboard/subheader-dashboard.component';
 
 // layouts
 import { BaseLayoutComponent } from '@core/index';
@@ -33,6 +34,9 @@ import { SharedModule } from '@shared/shared.module';
     MonitoringComponent,
     ReportsComponent,
     CounterpartsComponent,
+
+    // components
+    SubheaderDashboardComponent
   ]
 })
 export class PagesModule { }
