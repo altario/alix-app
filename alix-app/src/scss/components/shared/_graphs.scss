@@ -5,6 +5,7 @@ alix-bar,
 alix-scatter {
   background: $color5;
   border-radius: $border-radius__default;
+  @include shadow(card);
   .bg--light & {
     background: $color1;
   }

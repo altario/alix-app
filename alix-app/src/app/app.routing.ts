@@ -8,11 +8,11 @@ export const AppRoutes: Routes = [
   {
     path: '',
     loadChildren: './pages/pages.module#PagesModule'
-  },
-  {
-    path: '**',
-    component: NotFoundComponent
   }
+  // {
+  //   path: '**',
+  //   component: NotFoundComponent
+  // }
   // {
   //   path: 'styling',
   //   loadChildren: './styling/styling.module#StylingModule'

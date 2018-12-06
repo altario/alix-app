@@ -41,14 +41,12 @@
 
     <section class="page-section bg--dark">
         <div class="row">
-            <div class="col-12">
-                <h1 class="section-title">State Of Conservation All Assets</h1>
-                <!-- #HC -->
+            <div class="col-4">
+                <app-slider-range [value]="selectedSOCAllAssetsValues[0]" [steps]="selectedSOCAllAssetsValues[1]" (callback)="changeSOCAllAssetsValue($event)"></app-slider-range>
             </div>
         </div>
         <div class="row">
             <div class="col-4">
-                <app-slider-range [value]="selectedSOCAllAssetsValues[0]" [steps]="selectedSOCAllAssetsValues[1]" (callback)="changeSOCAllAssetsValue($event)"></app-slider-range>
                 <app-panel-11 title="State Of Conservation All Assets" [config]="selectedSOCAllAssets"></app-panel-11>
             </div>
             <div class="col-8 in-c-state-c-all-assets">
@@ -80,14 +78,12 @@
 
     <section class="page-section bg--dark">
         <div class="row">
-            <div class="col-12">
-                <h1 class="section-title">IN Construction Satelite images</h1>
-                <!-- #HC -->
+            <div class="col-4">
+                <app-dropdown [config]="getSCTodayPopulationNames()" (callback)="changeSCPpsmValue($event)"></app-dropdown>
             </div>
         </div>
         <div class="row">
             <div class="col-4">
-                <app-dropdown [config]="getSCTodayPopulationNames()" (callback)="changeSCPpsmValue($event)"></app-dropdown>
                 <app-panel-12 [config]="selectedStateOfConservationPSM"></app-panel-12>
             </div>
             <div class="col-8">

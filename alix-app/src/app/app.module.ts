@@ -32,7 +32,7 @@ import { AgmCoreModule } from '@agm/core';
       BrowserModule,
       RouterModule.forRoot(
         AppRoutes,
-        // { scrollPositionRestoration: 'enabled' }
+        // { scrollPositionRestoration: 'enabled' } // 'disabled' | 'enabled' | 'top'
       ),
       NgbModule.forRoot(),
       HttpModule,

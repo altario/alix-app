@@ -102,6 +102,17 @@
         z-index: 0;
       }
     }
+
+    > .row {
+      > [class*="col"] {
+        > * {
+          + * {
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+
     > * {
       min-width: 1024px;
       max-width: 1260px;

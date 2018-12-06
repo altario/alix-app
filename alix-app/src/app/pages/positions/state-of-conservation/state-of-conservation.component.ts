@@ -95,7 +95,7 @@ export class StateOfConservationComponent implements OnInit {
 
     this.opts.numbOfAssetsBySc = {
       title: {
-        text: '# BBY STATE OF CONSERVATION', // #HC
+        text: '# BY STATE OF CONSERVATION', // #HC
         top: '17px',
         left: '16px',
         textStyle: eChartsConfig.title,
