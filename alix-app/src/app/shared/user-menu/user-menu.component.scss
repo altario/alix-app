@@ -1,0 +1,40 @@
+@import '~src/scss/imports';
+
+$user-menu__image--size: 30px;
+
+:host {
+  width: $user-menu__image--size + 20px;
+  display: block;
+  position: relative;
+  margin-left: 40px;
+}
+
+.nav-item {
+  .dropdown-toggle {
+    width: 100%;
+    height: $user-menu__image--size;
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 20px;
+    color: $color__custom__gray--15;
+    cursor: pointer;
+    @include align(middle);
+
+    &:hover {
+      color: #4078c0;
+      text-decoration: none;
+    }
+
+    img {
+      width: $user-menu__image--size;
+      height: 100%;
+      border-radius: 100%;
+    }
+
+    &:after {
+      color: white;
+      margin-left: 5px;
+    }
+  }
+}

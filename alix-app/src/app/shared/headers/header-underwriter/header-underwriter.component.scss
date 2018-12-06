@@ -1,0 +1,108 @@
+// ------------------------------------------------------------------
+//
+// INDEX
+//
+//  #IMPORTS
+//
+//  #VARS
+//
+//  #STYLES
+//
+// ------------------------------------------------------------------
+
+
+// ------------------------------------------------------------------
+// #IMPORTS
+// ------------------------------------------------------------------
+
+// +/imports
+@import '~src/scss/imports';
+
+
+
+
+
+// ------------------------------------------------------------------
+// #VARS
+// ------------------------------------------------------------------
+
+// $size
+$header__navbar--height: 50px;
+
+
+
+
+
+// ------------------------------------------------------------------
+// #STYLES
+// ------------------------------------------------------------------
+
+:host {
+  display: block;
+  height: $header__navbar--height;
+}
+
+.navbar {
+  height: $header__navbar--height;
+  padding: 0 60px 0 20px;
+  background: #151D28;
+  .navbar__left {
+    height: 100%;
+    @include align(middle);
+    .brand {
+      height: 30px;
+      display: block;
+      img {
+        height: 100%;
+      }
+    }
+    .environment {
+      margin-left: 40px;
+      font-family: $font-family--secondary;
+      font-weight: $font-weight--normal;
+      font-size: rem(14);
+    }
+  }
+
+  .navbar__right {
+    height: 100%;
+    @include align(middle);
+    .btn {
+      height: 100%;
+      position: relative;
+      font-size: rem(14);
+      font-family: $font-family--secondary;
+      font-weight: $font-weight--normal;
+      letter-spacing: 0;
+      text-transform: initial;
+      line-height: 1;
+      border: none;
+      border-radius: 0;
+      padding: 0;
+      @include anim();
+      @include align(middle);
+
+      &:after {
+        content: '';
+        width: 100%;
+        height: 4px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: transparent;
+      }
+
+      + .btn {
+        margin-left: 40px;
+      }
+
+      &.active {
+        font-weight: $font-weight--bold;
+        color: $color__brand--1 !important;
+        &:after {
+          background: $color__brand--1 !important;
+        }
+      }
+    }
+  }
+}

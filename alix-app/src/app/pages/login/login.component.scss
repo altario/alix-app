@@ -1,0 +1,18 @@
+@import '~src/scss/imports';
+
+:host {
+  display: block;
+  position: relative;
+}
+
+h1 {
+  @include align(center);
+}
+
+.row-sides {
+  height: 100vh;
+  @include align(middle center);
+  > .col {
+    @include align(middle center);
+  }
+}

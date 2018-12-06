@@ -11,15 +11,18 @@ import { AppRoutes } from './app.routing';
 
 // components
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './shared/header/header.component';
+
+// ngx-bootstrap
+import { BsDropdownModule } from 'ngx-bootstrap';
+
+// not-found
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
     declarations: [
       // app
       AppComponent,
-
-      // components
-      HeaderComponent,
+      NotFoundComponent
     ],
     imports: [
       BrowserModule,
@@ -29,7 +32,10 @@ import { HeaderComponent } from './shared/header/header.component';
       ),
       NgbModule.forRoot(),
       HttpModule,
-      HttpClientModule
+      HttpClientModule,
+
+      // ngx-bootstrap
+      BsDropdownModule.forRoot()
     ],
     providers: [],
     bootstrap: [AppComponent]
