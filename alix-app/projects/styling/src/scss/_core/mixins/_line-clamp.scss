@@ -30,15 +30,11 @@
     @if $fix-height == true {
       height: calc(#{$_line-height} * #{$_line-count} * #{$font_size}) ;
       max-height: calc(#{$_line-height} * #{$_line-count} * #{$font_size}) ;
-      background-color: red;
     }
-    @else { 
+    @else {
       max-height: calc(#{$_line-height} * #{$_line-count} * #{$font_size}) ;
-      background-color: green;
     }
   }
-
-  
 
   overflow: hidden;
   text-overflow: ellipsis;
