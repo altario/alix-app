@@ -208,15 +208,18 @@ export class StateOfConservationComponent implements OnInit {
   getscpPriceEvo(population = 'population1'): Array<any> {
 
     this.opts.scpPriceEvo = {
+      color: ['#333333', '#D291BC'],
       grid: {
         left: 100
       },
       xAxis: {
+        type: 'value',
         splitLine: eChartsConfig.xAxis.splitLine,
         axisLabel: eChartsConfig.xAxis.axisLabel,
         axisLine: eChartsConfig.xAxis.axisLine
       },
       yAxis: {
+        type: 'value',
         splitLine: eChartsConfig.yAxis.splitLine,
         axisLabel: eChartsConfig.yAxis.axisLabel,
         axisLine: eChartsConfig.yAxis.axisLine
