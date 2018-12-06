@@ -1,0 +1,8 @@
+@import '~src/scss/imports';
+
+agm-map {
+  display: block;
+  border-radius: $border-radius__default;
+  overflow: hidden;
+  @include shadow(card);
+}

@@ -1,8 +1,11 @@
 const axisLineColor = '#5f6063';
+const fontFamily = 'Lato';
 
 export const eChartsConfig = {
   title: {
-    color: '#999999',
+    color: '#fff',
+    fontFamily: fontFamily,
+    fontSize: 16,
     fontWeight: 'bold',
   },
 

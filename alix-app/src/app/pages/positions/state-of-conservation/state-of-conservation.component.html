@@ -34,7 +34,7 @@
                 <app-panel-10 [config]="selectedStateOfConservationToday"></app-panel-10>
             </div>
             <div class="col-8">
-                <alix-line [series]="numbOfAssetsBySc" [opts]="opts.numbOfAssetsBySc" (chartinit)="onChartInit('numbOfAssetsBySc',$event)"></alix-line>
+                <alix-line [series]="numbOfAssetsBySc" [opts]="opts.numbOfAssetsBySc" (chartinit)="onChartInit('numbOfAssetsBySc', $event)"></alix-line>
             </div>
         </div>
     </section>
@@ -50,10 +50,8 @@
                 <app-panel-11 title="State Of Conservation All Assets" [config]="selectedSOCAllAssets"></app-panel-11>
             </div>
             <div class="col-8 in-c-state-c-all-assets">
-                <agm-map [disableDefaultUI]="false" [latitude]="lat" [longitude]="lng" [zoom]="zoom">
-                  <agm-circle [latitude]="lat" [longitude]="lng" [radius]="radius" [fillColor]="'red'" [circleDraggable]="false"
-                    [editable]="false">
-                  </agm-circle>
+                <agm-map [disableDefaultUI]="false" [latitude]="lat" [longitude]="lng" [zoom]="zoom" [gestureHandling]="'none'" [zoomControl]="false" [streetViewControl]="false">
+                  <agm-circle [latitude]="lat" [longitude]="lng" [radius]="radius" [fillColor]="'red'" [circleDraggable]="false" [editable]="false"></agm-circle>
                 </agm-map>
             </div>
         </div>
@@ -68,7 +66,7 @@
         </div>
         <div class="row">
             <div class="col-12 in-c-satelite-image">
-                <agm-map [disableDefaultUI]="false" [latitude]="lat" [longitude]="lng" [zoom]="zoom" mapTypeId="hybrid">
+                <agm-map [disableDefaultUI]="false" [latitude]="lat" [longitude]="lng" [zoom]="zoom" mapTypeId="hybrid" [gestureHandling]="'none'" [zoomControl]="false" [streetViewControl]="false">
                   <agm-circle [latitude]="lat" [longitude]="lng" [radius]="radius" [fillColor]="'red'" [circleDraggable]="false" [editable]="false">
                   </agm-circle>
                 </agm-map>

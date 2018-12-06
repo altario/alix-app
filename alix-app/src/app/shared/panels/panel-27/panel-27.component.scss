@@ -1,10 +1,17 @@
+@import '~src/scss/imports';
+
 :host {
   position: relative;
   display: flex;
+  border-radius: $border-radius__default;
+  overflow: hidden;
+  @include shadow(card);
   .image {
-    display: flex;
     width: 100%;
-    background-size: contain;
     min-height: 290px;
+    display: flex;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
