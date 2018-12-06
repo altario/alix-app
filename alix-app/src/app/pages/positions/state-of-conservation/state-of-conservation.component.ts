@@ -8,7 +8,7 @@ import * as chartdataset from '@data/charts-dataset';
 import * as plotchartdataset from '@data/plotcharts-dataset';
 
 // graph color overrides
-import * as eChartsConfig from '@global/charts';
+import { eChartsConfig } from '@global/charts';
 
 @Component({
   selector: 'app-state-of-conservation',
@@ -29,6 +29,9 @@ export class StateOfConservationComponent implements OnInit {
     '2018': 'assets/images/differencePerYear/asset1.jpg'
   }; // #HC
 
+  public numbOfAssetsBySc;
+  public priceEvolutionBySc;
+
   public opts: any = {};
   public chartInstance: any = {};
 
@@ -42,6 +45,8 @@ export class StateOfConservationComponent implements OnInit {
       this.selectedStateOfConservationPSM = this.config.stateOfConservationPricePerSqm.populations.population1;
       this.selectedSOCAllAssetsValues = this.initLastStateOfConservationAllAssets();
       this.selectedSOCAllAssets = this.config.panelFromMapStateOfConservationBreakdownAllAssets.years[this.selectedSOCAllAssetsValues[0]];
+      this.numbOfAssetsBySc = this.getnumbOfAssetsBySc();
+      this.priceEvolutionBySc = this.getpriceEvolutionBySc();
     });
   }
 
@@ -81,28 +86,54 @@ export class StateOfConservationComponent implements OnInit {
   }
 
   getnumbOfAssetsBySc(population = 'population1'): Array<any> {
-    const popSelected =  chartdataset.dossier1ChartsData.stateOfConservation.numbOfAssetsBySc.filter((line) => {
-      if (line.population === population) {
-        return line;
-      }
-    });
+    const lineColors = ['#00B5E9', '#7AC143', '#C7DA2C', '#F2E603', '#FCB86B', '#E9545C'];
+    const popSelected =  chartdataset.dossier1ChartsData.stateOfConservation.numbOfAssetsBySc.filter(line => line.population === population);
 
     this.opts.numbOfAssetsBySc = {
-      legend: {
-        data: popSelected.map(line => line.stateOfConservation)
+      title: {
+        text: '# By State of conservation', // #HC
+        top: '17px',
+        left: '16px',
+        textStyle: eChartsConfig.title,
       },
+      legend: {
+        data: popSelected.map(line => ({name: line.stateOfConservation, icon: 'rect'})),
+        itemWidth: eChartsConfig.legend.itemWidth,
+        itemHeight: eChartsConfig.legend.itemHeight,
+        top: eChartsConfig.legend.top,
+        right: eChartsConfig.legend.right,
+        textStyle: {
+          fontSize: eChartsConfig.legend.fontSize,
+          color: eChartsConfig.legend.color
+        }
+      },
+      grid: eChartsConfig.grid,
       xAxis: {
         type: 'category',
-        axisLine: eChartsConfig.eChartsConfig.xAxis.axisLine,
-        data: popSelected.map(line => line.stateOfConservation)
+        data: popSelected.map(line => line.stateOfConservation),
+        splitLine: eChartsConfig.xAxis.splitLine,
+        axisLabel: eChartsConfig.xAxis.axisLabel,
+        axisLine: eChartsConfig.xAxis.axisLine
       },
       yAxis: {
         type: 'value',
-        axisLine: eChartsConfig.eChartsConfig.xAxis.axisLine,
+        splitLine: eChartsConfig.yAxis.splitLine,
+        axisLabel: eChartsConfig.yAxis.axisLabel,
+        axisLine: {
+          show: false
+        }
       }
     };
 
-    const series = popSelected.map((line: any) => ({name: line.stateOfConservation, data: line.values, type: 'line'}));
+    const series = popSelected.map((line: any, i) => ({
+      name: line.stateOfConservation,
+      data: line.values,
+      type: 'line',
+      symbol: eChartsConfig.series.symbol,
+      symbolSize: eChartsConfig.series.symbolSize,
+      lineStyle: {...eChartsConfig.series.lineStyle, color: lineColors[i] },
+      itemStyle: { color: lineColors[i] }
+    }));
 
     console.log(series);
     return series;
@@ -115,26 +146,54 @@ export class StateOfConservationComponent implements OnInit {
   }
 
   getpriceEvolutionBySc(population = 'population1'): Array<any> {
-    const popSelected = chartdataset.dossier1ChartsData.stateOfConservation.priceEvolutionBySc.filter((line) => {
-      if (line.population === population) {
-        return line;
-      }
-    });
+    const lineColors = ['#00B5E9', '#7AC143', '#C7DA2C', '#F2E603', '#FCB86B', '#E9545C'];
+    const popSelected = chartdataset.dossier1ChartsData.stateOfConservation.priceEvolutionBySc.filter(line => line.population === population);
 
     this.opts.priceEvolutionBySc = {
-      legend: {
-        data: popSelected.map(line => line.stateOfConservation)
+      title: {
+        text: 'PRICE EVOLUTION BY STATE OF CONSERVATION', // #HC
+        top: '17px',
+        left: '16px',
+        textStyle: eChartsConfig.title,
       },
+      legend: {
+        data: popSelected.map(line => ({name: line.stateOfConservation, icon: 'rect'})),
+        itemWidth: eChartsConfig.legend.itemWidth,
+        itemHeight: eChartsConfig.legend.itemHeight,
+        top: '55px',
+        right: eChartsConfig.legend.right,
+        textStyle: {
+          fontSize: eChartsConfig.legend.fontSize,
+          color: eChartsConfig.legend.color
+        }
+      },
+      grid: eChartsConfig.grid,
       xAxis: {
         type: 'category',
-        data: popSelected.map(line => line.stateOfConservation)
+        data: popSelected.map(line => line.stateOfConservation),
+        splitLine: eChartsConfig.xAxis.splitLine,
+        axisLabel: eChartsConfig.xAxis.axisLabel,
+        axisLine: eChartsConfig.xAxis.axisLine
       },
       yAxis: {
-        type: 'value'
-      },
+        type: 'value',
+        splitLine: eChartsConfig.yAxis.splitLine,
+        axisLabel: eChartsConfig.yAxis.axisLabel,
+        axisLine: {
+          show: false
+        }
+      }
     };
 
-    const series = popSelected.map((line: any) => ({ name: line.stateOfConservation, data: line.values, type: 'line' }));
+    const series = popSelected.map((line: any, i) => ({
+      name: line.stateOfConservation,
+      data: line.values,
+      type: 'line',
+      symbol: eChartsConfig.series.symbol,
+      symbolSize: eChartsConfig.series.symbolSize,
+      lineStyle: {...eChartsConfig.series.lineStyle, color: lineColors[i] },
+      itemStyle: { color: lineColors[i] }
+    }));
 
     console.log(series);
     return series;

@@ -78,7 +78,8 @@
 				<app-panel-18 [config]="config.demandAndOffer.longRent.populations"></app-panel-18>
 			</div>
 			<div class="col-8">
-					<alix-line [series]="series.longTermRentEvolutionEurSqm" [opts]="opts.longTermRentEvolutionEurSqm"></alix-line>
+				<app-dropdown [config]="getPopulationNames()" (callback)="changelongTermRentEvolutionEurSqmValue($event)"></app-dropdown>
+				<alix-line [series]="series.longTermRentEvolutionEurSqm" [opts]="opts.longTermRentEvolutionEurSqm" (chartInit)="onChartInit('longTermRentEvolutionEurSqm',$event)"></alix-line>
 			</div>
 		</div>
 	</section>
