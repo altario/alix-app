@@ -15,33 +15,39 @@
       </div>
       <div>
         <span>New</span>
+        <span class="square" style="background-color: #00B5E9"></span>
         <span>{{ config.new.value }}€</span>
-        <span>{{config.newVsLastYearPerc.value | perc:1}}</span> <!-- #HC -->
+        <span [outerHTML]="config.newVsLastYearPerc.value | perc:0:'icon'" ></span> <!-- #HC -->
       </div>
       <div>
         <span>In Construction</span>
+        <span class="square" style="background-color: #7AC143"></span>
         <span>{{ config.inConstruction.value }}€</span>
-        <span>{{config.inConstructionVsLastYearPerc.value | perc:1}}</span> <!-- #HC -->
+        <span [outerHTML]="config.inConstructionVsLastYearPerc.value | perc:0:'icon'" ></span> <!-- #HC -->
       </div>
       <div>
         <span>Renovated</span>
+        <span class="square" style="background-color: #C7DA2C"></span>
         <span>{{ config.renovated.value }}€</span>
-        <span>{{config.renovatedVsLastYearPerc.value | perc:1 }}</span> <!-- #HC -->
+        <span [outerHTML]="config.renovatedVsLastYearPerc.value | perc:0:'icon'" ></span> <!-- #HC -->
       </div>
       <div>
         <span>Used</span>
+        <span class="square" style="background-color: #F2E603"></span>
         <span>{{ config.used.value }}€</span>
-        <span>{{config.usedVsLastYearPerc.value | perc:1}}</span> <!-- #HC -->
+        <span [outerHTML]="config.usedVsLastYearPerc.value | perc:0:'icon'" ></span> <!-- #HC -->
       </div>
       <div>
         <span>Needs Renov.</span>
+        <span class="square" style="background-color: #FCB86B"></span>
         <span>{{ config.needsRenovation.value }}€</span>
-        <span>{{config.needsRenovationVsLastYearPerc.value | perc:1}}</span> <!-- #HC -->
+        <span [outerHTML]="config.needsRenovationVsLastYearPerc.value | perc:0:'icon'" ></span> <!-- #HC -->
       </div>
       <div>
         <span>Ruin</span>
+        <span class="square" style="background-color: #E9545C"></span>
         <span>{{ config.ruin.value }}€</span>
-        <span>{{config.ruinVsLastYearPerc.value | perc:1}}</span> <!-- #HC -->
+        <span [outerHTML]="config.ruinVsLastYearPerc.value | perc:0:'icon'" ></span> <!-- #HC -->
       </div>
     </div>
   </div>
