@@ -19,7 +19,8 @@ export const eChartsConfig = {
   },
 
   grid: {
-    top: 100
+    top: 100,
+    right: 40
   },
 
   // xAxis

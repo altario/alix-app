@@ -1,5 +1,10 @@
 @import '~src/scss/imports';
 
+.gmap {
+  display: block;
+  position: relative;
+}
+
 agm-map {
   display: block;
   border-radius: $border-radius__default;

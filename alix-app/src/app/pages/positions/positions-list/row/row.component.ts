@@ -1,3 +1,4 @@
+// angular
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
