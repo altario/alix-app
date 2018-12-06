@@ -1,4 +1,14 @@
 <div *ngIf="config" class="container-fluid">
+<style>
+
+  .in-c-state-c-all-assets agm-map {
+      height: 754px;
+  }
+
+.in-c-satelite-image agm-map {
+      height: 500px;
+  }
+</style>
     <section class="page-section bg--dark">
         <div class="row">
             <div class="col-4">
@@ -39,8 +49,12 @@
             <div class="col-4">
                 <app-panel-11 title="State Of Conservation All Assets" [config]="selectedSOCAllAssets"></app-panel-11>
             </div>
-            <div class="col-8">
-                <alix-line></alix-line>
+            <div class="col-8 in-c-state-c-all-assets">
+                <agm-map [disableDefaultUI]="false" [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+                  <agm-circle [latitude]="lat" [longitude]="lng" [radius]="radius" [fillColor]="'red'" [circleDraggable]="false"
+                    [editable]="false">
+                  </agm-circle>
+                </agm-map>
             </div>
         </div>
     </section>
@@ -53,8 +67,11 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12">
-                <alix-line></alix-line>
+            <div class="col-12 in-c-satelite-image">
+                <agm-map [disableDefaultUI]="false" [latitude]="lat" [longitude]="lng" [zoom]="zoom" mapTypeId="hybrid">
+                  <agm-circle [latitude]="lat" [longitude]="lng" [radius]="radius" [fillColor]="'red'" [circleDraggable]="false" [editable]="false">
+                  </agm-circle>
+                </agm-map>
             </div>
         </div>
     </section>

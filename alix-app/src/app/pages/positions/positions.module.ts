@@ -27,12 +27,16 @@ import { PositionsLayoutComponent } from '@core/index';
 // services
 import { PositionsReportService } from '@services/positions-report.service';
 
+//AGM
+import { AgmCoreModule } from '@agm/core';
+
 @NgModule({
   imports: [
     CommonModule,
     NgbModule,
     RouterModule.forChild(PositionsRoutes),
-    SharedModule
+    SharedModule,
+      AgmCoreModule
   ],
   declarations: [
     // layout

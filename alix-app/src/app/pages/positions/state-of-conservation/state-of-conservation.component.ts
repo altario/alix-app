@@ -34,6 +34,11 @@ export class StateOfConservationComponent implements OnInit {
   public opts: any = {};
   public chartInstance: any = {};
 
+  lat: number = 45.4758422;
+  lng: number = 9.1911364;
+  zoom = 14;
+  radius = 70;
+
   constructor(private route: ActivatedRoute) { }
   ngOnInit() {
     this.route.params.subscribe(params => {
