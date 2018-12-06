@@ -3,9 +3,9 @@
 alix-line,
 alix-bar,
 alix-scatter {
-  background: #2D3035;
+  background: $color5;
   border-radius: $border-radius__default;
   .bg--light & {
-    background: #252B48;
+    background: $color1;
   }
 }

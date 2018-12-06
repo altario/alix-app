@@ -5,10 +5,10 @@
   height: 30px;
   position: relative;
   border-radius: $border-radius__default;
-  background: #2D3035;
+  background: $color5;
   box-shadow: 0px 2px 4px rgba(black, .25);
   .bg--light & {
-    background: #252B48;
+    background: $color1;
   }
   @include align(middle);
 

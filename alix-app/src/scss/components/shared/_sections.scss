@@ -1,8 +1,9 @@
 $box--bg: transparent;
 $box__header--bg: transparent;
 $box__body--bg: transparent;
-$box__body-bg--light: #252B48;
-$box__body-bg--dark: #1C2038;
+$box__body-bg--light: $color1;
+$box__body-bg--dark: $color2;
+
 
 
 @mixin box--bg ($box--bg: transparent, $box__body-bg--dark: $box__body-bg--dark, $box__body-bg--light: $box__body-bg--light, $box__body--bg: transparent, $box__header--bg: transparent ){
@@ -52,21 +53,21 @@ $box__body-bg--dark: #1C2038;
 }
 
 .box {
-	@include box--bg (#252B48, transparent, transparent);
+	@include box--bg ($color1, transparent, transparent);
 	@include box--table--color;
 }
 
 
 .bg--light {
-  background-color: #161D28;
-	.box { @include box--bg (#252B48, #1C2038, #252B48) }
+  background-color: $section--bg--light;
+	.box { @include box--bg ($color1, $color2, $color1) }
 	@include lateral-wrapper--color;
 	@include box-list--color;
 }
 
 .bg--dark {
-	background-color: #1F2228 !important;
-	.box { @include box--bg (#2D3035, #34363B, #2D3035) }
+	background-color: $section--bg--dark !important;
+	.box { @include box--bg ($color5, $color6, $color5) }
 	@include lateral-wrapper--color;
 	@include box-list--color;
 }

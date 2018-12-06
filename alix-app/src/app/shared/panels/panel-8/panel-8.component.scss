@@ -2,7 +2,7 @@
 
 :host {
   width: 100%;
-  background: #2D3035;
+  background: $color5;
   position: relative;
   display: flex;
   padding: 20px;
@@ -58,7 +58,7 @@
       &:last-child {
         margin: -#{$margin} -#{$margin} -#{$margin} $margin;
         padding: 20px 0;
-        background-color: #34363B;
+        background-color: $color6
       }
     }
   }
