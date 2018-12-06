@@ -35,7 +35,7 @@ export class StateOfConservationComponent implements OnInit {
   public opts: any = {};
   public chartInstance: any = {};
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute) { }
   ngOnInit() {
     this.route.params.subscribe(params => {
       // this.config = dataset.dossiersMainData['dossier' + params['id']];
@@ -80,14 +80,14 @@ export class StateOfConservationComponent implements OnInit {
     // the array of years to populte the slider [1]
     return [
       Object.keys(this.config.panelFromMapStateOfConservationBreakdownAllAssets.years)[
-        Object.keys(this.config.panelFromMapStateOfConservationBreakdownAllAssets.years).length - 1],
+      Object.keys(this.config.panelFromMapStateOfConservationBreakdownAllAssets.years).length - 1],
       Object.keys(this.config.panelFromMapStateOfConservationBreakdownAllAssets.years)
     ];
   }
 
   getnumbOfAssetsBySc(population = 'population1'): Array<any> {
     const lineColors = ['#00B5E9', '#7AC143', '#C7DA2C', '#F2E603', '#FCB86B', '#E9545C'];
-    const popSelected =  chartdataset.dossier1ChartsData.stateOfConservation.numbOfAssetsBySc.filter(line => line.population === population);
+    const popSelected = chartdataset.dossier1ChartsData.stateOfConservation.numbOfAssetsBySc.filter(line => line.population === population);
 
     this.opts.numbOfAssetsBySc = {
       title: {
@@ -97,7 +97,7 @@ export class StateOfConservationComponent implements OnInit {
         textStyle: eChartsConfig.title,
       },
       legend: {
-        data: popSelected.map(line => ({name: line.stateOfConservation, icon: 'rect'})),
+        data: popSelected.map(line => ({ name: line.stateOfConservation, icon: 'rect' })),
         itemWidth: eChartsConfig.legend.itemWidth,
         itemHeight: eChartsConfig.legend.itemHeight,
         top: eChartsConfig.legend.top,
@@ -131,7 +131,7 @@ export class StateOfConservationComponent implements OnInit {
       type: 'line',
       symbol: eChartsConfig.series.symbol,
       symbolSize: eChartsConfig.series.symbolSize,
-      lineStyle: {...eChartsConfig.series.lineStyle, color: lineColors[i] },
+      lineStyle: { ...eChartsConfig.series.lineStyle, color: lineColors[i] },
       itemStyle: { color: lineColors[i] }
     }));
 
@@ -157,7 +157,7 @@ export class StateOfConservationComponent implements OnInit {
         textStyle: eChartsConfig.title,
       },
       legend: {
-        data: popSelected.map(line => ({name: line.stateOfConservation, icon: 'rect'})),
+        data: popSelected.map(line => ({ name: line.stateOfConservation, icon: 'rect' })),
         itemWidth: eChartsConfig.legend.itemWidth,
         itemHeight: eChartsConfig.legend.itemHeight,
         top: '55px',
@@ -191,7 +191,7 @@ export class StateOfConservationComponent implements OnInit {
       type: 'line',
       symbol: eChartsConfig.series.symbol,
       symbolSize: eChartsConfig.series.symbolSize,
-      lineStyle: {...eChartsConfig.series.lineStyle, color: lineColors[i] },
+      lineStyle: { ...eChartsConfig.series.lineStyle, color: lineColors[i] },
       itemStyle: { color: lineColors[i] }
     }));
 
@@ -205,20 +205,37 @@ export class StateOfConservationComponent implements OnInit {
     });
   }
 
-  getscpPriceEvo() {
+  getscpPriceEvo(population = 'population1'): Array<any> {
 
-    const serie = plotchartdataset.dossier1PlotChartsData.stateOfConservation.scpPriceEvo.filter((line) => {
-      if ( line.population === 'population1' ) {
-        return {
-          type: 'scatter',
-          symbolSize: 1,
-          data: line
-        };
+    this.opts.scpPriceEvo = {
+      color: ['#333333', '#D291BC'],
+      grid: {
+        left: 100
+      },
+      xAxis: {
+        type: 'value',
+        splitLine: eChartsConfig.xAxis.splitLine,
+        axisLabel: eChartsConfig.xAxis.axisLabel,
+        axisLine: eChartsConfig.xAxis.axisLine
+      },
+      yAxis: {
+        type: 'value',
+        splitLine: eChartsConfig.yAxis.splitLine,
+        axisLabel: eChartsConfig.yAxis.axisLabel,
+        axisLine: eChartsConfig.yAxis.axisLine
+      }
+    };
+
+    const series = plotchartdataset.dossier1PlotChartsData.stateOfConservation.scpPriceEvo.filter((line) => {
+      if (line.population === population) {
+        return line;
       }
     });
 
+    const x = series.map((line) => line.values).shift();
+    console.log(x);
 
-    return serie;
+    return x;
   }
 
   onChartInit(chart, e) {
