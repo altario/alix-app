@@ -439,7 +439,7 @@ export class DemandAndOfferComponent implements OnInit {
 
   changelongTermRentEvolutionEurSqmValue(callbackEvent): void {
     this.chartInstance.longTermRentEvolutionEurSqm.setOption({
-      series: this.longTermRentEvolutionEurSqm(callbackEvent);
+      series: this.longTermRentEvolutionEurSqm(callbackEvent)
     });
   }
 
