@@ -17,19 +17,29 @@
 // --------------------------------------------------
 
 // =line-clamp
-@mixin line-clamp($_line-count: 1, $font_size: $font-size--default , $_line-height: $line-height__base) {
+@mixin line-clamp($_line-count: 1, $font_size: $font-size--default , $_line-height: $line-height__base, $fix-height: false) {
   @if $_line-count == 1 {
     white-space: nowrap;
   }
   @else {
     line-height: $_line-height;
-    max-height: calc(#{$_line-height} * #{$_line-count} * #{$font_size}) ;
     display: block;
     display: -webkit-box;
     -webkit-line-clamp: $_line-count;
     -webkit-box-orient: vertical;
-
+    @if $fix-height == true {
+      height: calc(#{$_line-height} * #{$_line-count} * #{$font_size}) ;
+      max-height: calc(#{$_line-height} * #{$_line-count} * #{$font_size}) ;
+      background-color: red;
+    }
+    @else { 
+      max-height: calc(#{$_line-height} * #{$_line-count} * #{$font_size}) ;
+      background-color: green;
+    }
   }
+
+  
+
   overflow: hidden;
   text-overflow: ellipsis;
 }
