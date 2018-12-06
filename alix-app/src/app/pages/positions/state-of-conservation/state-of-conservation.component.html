@@ -86,13 +86,23 @@
             </div>
         </div>
         <div class="row">
+          <div class="col-4">
+            <app-slider-range [value]="selectedSOCAllAssetsValues[0]" [steps]="selectedSOCAllAssetsValues[1]"></app-slider-range>
+            <app-dropdown [config]="getSCTodayPopulationNames()"></app-dropdown>
+          </div>
+        </div>
+        <div class="row">
             <alix-scatter [series]="getscpPriceEvo()" [opts]="opts.scpPriceEvo"></alix-scatter>
         </div>
     </section>
     <section class="page-section bg--dark">
         <div class="row">
-            <div class="col-4">
-                <app-slider-range [value]="2018" [steps]="['2013', '2015', '2018']" (callback)="changeImageTransition($event)"></app-slider-range>
+          <div class="col-4">
+            <app-slider-range [value]="2018" [steps]="['2015', '2018']" (callback)="changeImageTransition($event)"></app-slider-range>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
                 <!-- #HC #Missing [steps]-->
                 <app-panel-13 [imagesObj]="imageTransitionObject" [config]="imageTransitionValue"></app-panel-13>
             </div>

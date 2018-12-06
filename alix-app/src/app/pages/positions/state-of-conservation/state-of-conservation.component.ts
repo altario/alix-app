@@ -24,9 +24,8 @@ export class StateOfConservationComponent implements OnInit {
   public selectedSOCAllAssets: object;
   public imageTransitionValue = '2018';
   public imageTransitionObject = {
-    '2013': 'assets/images/differencePerYear/asset1.jpg',
-    '2015': 'assets/images/differencePerYear/asset2.jpg',
-    '2018': 'assets/images/differencePerYear/asset1.jpg'
+    '2015': ['assets/images/differencePerYear/street-left2.png', 'assets/images/differencePerYear/street-right2.png'],
+    '2018': ['assets/images/differencePerYear/street-left1.png', 'assets/images/differencePerYear/street-right1.png']
   }; // #HC
 
   public numbOfAssetsBySc;
