@@ -24,9 +24,8 @@ export class StateOfConservationComponent implements OnInit {
   public selectedSOCAllAssets: object;
   public imageTransitionValue = '2018';
   public imageTransitionObject = {
-    '2013': 'assets/images/differencePerYear/asset1.jpg',
-    '2015': 'assets/images/differencePerYear/asset2.jpg',
-    '2018': 'assets/images/differencePerYear/asset1.jpg'
+    '2015': ['assets/images/differencePerYear/street-left2.png', 'assets/images/differencePerYear/street-right2.png'],
+    '2018': ['assets/images/differencePerYear/street-left1.png', 'assets/images/differencePerYear/street-right1.png']
   }; // #HC
 
   public numbOfAssetsBySc;
@@ -91,7 +90,7 @@ export class StateOfConservationComponent implements OnInit {
 
     this.opts.numbOfAssetsBySc = {
       title: {
-        text: '# By State of conservation', // #HC
+        text: '# BY STATE OF CONSERVATION', // #HC
         top: '17px',
         left: '16px',
         textStyle: eChartsConfig.title,
@@ -110,7 +109,7 @@ export class StateOfConservationComponent implements OnInit {
       grid: eChartsConfig.grid,
       xAxis: {
         type: 'category',
-        data: popSelected.map(line => line.stateOfConservation),
+        data: [2013, 2014, 2015, 2016, 2017, 2018],
         splitLine: eChartsConfig.xAxis.splitLine,
         axisLabel: eChartsConfig.xAxis.axisLabel,
         axisLine: eChartsConfig.xAxis.axisLine
@@ -170,7 +169,7 @@ export class StateOfConservationComponent implements OnInit {
       grid: eChartsConfig.grid,
       xAxis: {
         type: 'category',
-        data: popSelected.map(line => line.stateOfConservation),
+        data: [2013, 2014, 2015, 2016, 2017, 2018],
         splitLine: eChartsConfig.xAxis.splitLine,
         axisLabel: eChartsConfig.xAxis.axisLabel,
         axisLine: eChartsConfig.xAxis.axisLine
