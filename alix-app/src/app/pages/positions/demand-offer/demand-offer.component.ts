@@ -103,7 +103,7 @@ export class DemandAndOfferComponent implements OnInit {
     this.marketValue();
     this.priceTodayVsOvertime();
     this.peerListedAssets5YForSale();
-    this.longTermRentEvolutionEurSqm();
+    this.series.longTermRentEvolutionEurSqm = this.longTermRentEvolutionEurSqm();
     this.peerListedAssets5YLr();
     this.peerListedAssets5YSr();
 
@@ -181,7 +181,9 @@ export class DemandAndOfferComponent implements OnInit {
         type: 'value',
         splitLine: eChartsConfig.yAxis.splitLine,
         axisLabel: eChartsConfig.yAxis.axisLabel,
-        axisLine: eChartsConfig.yAxis.axisLine
+        axisLine: {
+          show: false
+        }
       }
     };
 
@@ -203,7 +205,6 @@ export class DemandAndOfferComponent implements OnInit {
   }
 
   priceTodayVsOvertime() {
-
     this.opts.priceTodayVsOvertime = {
       tooltip: {
         trigger: 'axis',
@@ -265,19 +266,21 @@ export class DemandAndOfferComponent implements OnInit {
 
   peerAssetsDemandRateListingToUnlistingForSale() {}
 
-  longTermRentEvolutionEurSqm() {
+  longTermRentEvolutionEurSqm(population = 'population1') {
+    const populationNames = {
+      population1: 'radius1Km',
+      population2: 'portaNuova',
+      population3: 'milano'
+    };
+
     this.opts.longTermRentEvolutionEurSqm = {
-      legend: {
-        data: chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm
-        .reduce((prev, next, index) => {
-          Object.keys(next).map((data: any) => {
-            if (data !== 'year') {
-              prev.push(next[data].label);
-            }
-          });
-          return prev;
-        }, [])
+      title: {
+        text: 'Long Term Rent € SQM Evolution', // #HC
+        top: '17px',
+        left: '16px',
+        textStyle: eChartsConfig.title,
       },
+      grid: eChartsConfig.grid,
       tooltip: {
         trigger: 'axis',
           axisPointer: {
@@ -289,17 +292,33 @@ export class DemandAndOfferComponent implements OnInit {
       },
       xAxis: {
         type: 'category',
-          data: chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[0].year.values
+        data: chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm[0].year.values,
+        splitLine: eChartsConfig.xAxis.splitLine,
+        axisLabel: eChartsConfig.xAxis.axisLabel,
+        axisLine: eChartsConfig.xAxis.axisLine
+      },
+      yAxis: {
+        type: 'value',
+        splitLine: eChartsConfig.yAxis.splitLine,
+        axisLabel: eChartsConfig.yAxis.axisLabel,
+        axisLine: {
+          show: false
+        }
       }
     };
 
-    this.series.longTermRentEvolutionEurSqm = chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm
-      .reduce((prev, next, index) => {
-        Object.keys(next).map((data: any) => {
-          if (data !== 'year') {
-            prev.push({ name: next[data].label, data: next[data].values, type: 'line' });
-          }
+    return chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm
+      .reduce((prev, next, i) => {
+        prev.push({
+          name: next[populationNames[population]].label,
+          data: next[populationNames[population]].values,
+          type: 'line',
+          symbol: eChartsConfig.series.symbol,
+          symbolSize: eChartsConfig.series.symbolSize,
+          lineStyle: {...eChartsConfig.series.lineStyle, color: '#79C14C' },
+          itemStyle: { color: '#79C14C' }
         });
+
         return prev;
       }, []);
   }
@@ -416,6 +435,12 @@ export class DemandAndOfferComponent implements OnInit {
     });
 
     console.log(this.series.priceTodayVsOvertime);
+  }
+
+  changelongTermRentEvolutionEurSqmValue(callbackEvent): void {
+    this.chartInstance.longTermRentEvolutionEurSqm.setOption({
+      series: this.longTermRentEvolutionEurSqm(callbackEvent);
+    });
   }
 
   onChartInit(chart, e) {

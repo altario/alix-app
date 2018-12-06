@@ -119,7 +119,9 @@ export class StateOfConservationComponent implements OnInit {
         type: 'value',
         splitLine: eChartsConfig.yAxis.splitLine,
         axisLabel: eChartsConfig.yAxis.axisLabel,
-        axisLine: eChartsConfig.yAxis.axisLine
+        axisLine: {
+          show: false
+        }
       }
     };
 
@@ -177,7 +179,9 @@ export class StateOfConservationComponent implements OnInit {
         type: 'value',
         splitLine: eChartsConfig.yAxis.splitLine,
         axisLabel: eChartsConfig.yAxis.axisLabel,
-        axisLine: eChartsConfig.yAxis.axisLine
+        axisLine: {
+          show: false
+        }
       }
     };
 
