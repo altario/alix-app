@@ -18,24 +18,24 @@ export class Panel11Component implements OnInit {
 
   ngOnInit() {
     this.opts = {
-      legend: {
-        data: [
-          { name: 'New', icon: 'rect' },
-          { name: 'In Construction', icon: 'rect' },
-          { name: 'Renovated', icon: 'rect' },
-          { name: 'Used', icon: 'rect' },
-          { name: 'Needs Renov.', icon: 'rect' },
-          { name: 'Ruin', icon: 'rect' }
-        ],
-        itemWidth: eChartsConfig.legend.itemWidth,
-        itemHeight: eChartsConfig.legend.itemHeight,
-        top: '0',
-        right: eChartsConfig.legend.right,
-        textStyle: {
-          fontSize: eChartsConfig.legend.fontSize,
-          color: eChartsConfig.legend.color
-        }
-      },
+    //   legend: {
+    //     data: [
+    //       { name: 'New', icon: 'rect' },
+    //       { name: 'In Construction', icon: 'rect' },
+    //       { name: 'Renovated', icon: 'rect' },
+    //       { name: 'Used', icon: 'rect' },
+    //       { name: 'Needs Renov.', icon: 'rect' },
+    //       { name: 'Ruin', icon: 'rect' }
+    //     ],
+    //     itemWidth: eChartsConfig.legend.itemWidth,
+    //     itemHeight: eChartsConfig.legend.itemHeight,
+    //     top: '0',
+    //     right: eChartsConfig.legend.right,
+    //     textStyle: {
+    //       fontSize: eChartsConfig.legend.fontSize,
+    //       color: eChartsConfig.legend.color
+    //     }
+    //   },
       color: ['#00B5E9', '#7AC143', '#C7DA2C', '#F2E603', '#FCB86B','#E9545C']
     };
 

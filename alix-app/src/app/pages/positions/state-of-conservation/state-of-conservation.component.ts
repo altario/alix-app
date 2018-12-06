@@ -90,7 +90,7 @@ export class StateOfConservationComponent implements OnInit {
 
     this.opts.numbOfAssetsBySc = {
       title: {
-        text: '# By State of conservation', // #HC
+        text: '# BBY STATE OF CONSERVATION', // #HC
         top: '17px',
         left: '16px',
         textStyle: eChartsConfig.title,
@@ -109,7 +109,7 @@ export class StateOfConservationComponent implements OnInit {
       grid: eChartsConfig.grid,
       xAxis: {
         type: 'category',
-        data: popSelected.map(line => line.stateOfConservation),
+        data: [2013, 2014, 2015, 2016, 2017, 2018],
         splitLine: eChartsConfig.xAxis.splitLine,
         axisLabel: eChartsConfig.xAxis.axisLabel,
         axisLine: eChartsConfig.xAxis.axisLine
@@ -169,7 +169,7 @@ export class StateOfConservationComponent implements OnInit {
       grid: eChartsConfig.grid,
       xAxis: {
         type: 'category',
-        data: popSelected.map(line => line.stateOfConservation),
+        data: [2013, 2014, 2015, 2016, 2017, 2018],
         splitLine: eChartsConfig.xAxis.splitLine,
         axisLabel: eChartsConfig.xAxis.axisLabel,
         axisLine: eChartsConfig.xAxis.axisLine
