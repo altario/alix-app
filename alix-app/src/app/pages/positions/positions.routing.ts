@@ -2,11 +2,13 @@
 import { Routes } from '@angular/router';
 
 // components
+import { PositionsListComponent } from './positions-list/positions-list.component';
 import { FinancialComponent } from './financial/financial.component';
 import { StateOfConservationComponent } from './state-of-conservation/state-of-conservation.component';
 import { LocationComponent } from './location/location.component';
 import { DemandAndOfferComponent } from './demand-offer/demand-offer.component';
-import { PositionsListComponent } from './positions-list/positions-list.component';
+
+// layouts
 import { PositionsLayoutComponent } from '@core/index';
 
 export const PositionsRoutes: Routes = [

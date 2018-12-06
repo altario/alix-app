@@ -1,0 +1,36 @@
+<div class="nav-item dropdown" dropdown placement="bottom right" container="body">
+  <a class="dropdown-toggle" dropdownToggle>
+    <img src="assets/images/users/user1.png">
+    <!-- <i class="icor ico-caret-down"></i> -->
+  </a>
+
+  <ul *dropdownMenu role="menu" aria-labelledby="single-button" class="dropdown-menu dropdown-menu-right">
+    <li role="menuitem">
+      <div class="dropdown-header">
+        Signed in as
+        <br>
+        <strong>name@email.com</strong>
+      </div>
+    </li>
+
+    <li class="divider dropdown-divider"></li>
+
+    <li role="menuitem">
+      <a class="dropdown-item">Your Profile</a>
+    </li>
+
+    <li role="menuitem">
+      <a class="dropdown-item" [routerLink]="['/organizations']">Organizations</a>
+    </li>
+
+    <li class="divider dropdown-divider"></li>
+
+    <li role="menuitem">
+      <a class="dropdown-item" [routerLink]="['/settings']">Settings</a>
+    </li>
+
+    <li role="menuitem">
+      <a class="dropdown-item" (click)="logout()">Log Out</a>
+    </li>
+  </ul>
+</div>

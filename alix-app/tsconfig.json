@@ -8,6 +8,7 @@
       "@data/*": ["src/app/data/*"],
       "@global/*": ["src/app/global/*"],
       "@helpers/*": ["src/app/helpers/*"],
+      "@layouts/*": ["src/app/layouts/*"],
       "@pages/*": ["src/app/pages/*"],
       "@services/*": ["src/app/services/*"],
       "@shared/*": ["src/app/shared/*"],

@@ -7,6 +7,16 @@ export const dossiers = [
   'dossier6'
 ];
 
+// portfolios
+export const portfolios = [
+  'portfolio1',
+  'portfolio2',
+  'portfolio3',
+  'portfolio4',
+  'portfolio5',
+  'portfolio6'
+];
+
 export const dossiersMainData = {
   dossier1: {
     client: {

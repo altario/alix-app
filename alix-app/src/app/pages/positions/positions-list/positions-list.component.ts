@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./positions-list.component.scss']
 })
 export class PositionsListComponent implements OnInit {
-  companies = [
+  positions = [
     {
       id: 1,
       name: 'ACME & Company',
@@ -15,7 +15,8 @@ export class PositionsListComponent implements OnInit {
       dataStart: '15 Nov 03',
       dateEnd: '14 Nov 21',
       state: 'Performing',
-      infos: [{
+      infos: [
+        {
           title: 'RAROC',
           data: '8.7%'
         },

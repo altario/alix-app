@@ -125,3 +125,21 @@
 		@extend %app-panel;
 	}
 }
+
+bs-dropdown-container {
+  z-index: 10000;
+  .dropdown {
+    ul.dropdown-menu {
+      li {
+        color: $color__custom__gray--15;
+        a {
+          cursor: pointer;
+          &:hover {
+            background: $color__brand--1;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}

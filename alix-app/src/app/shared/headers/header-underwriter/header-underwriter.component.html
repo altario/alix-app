@@ -1,0 +1,21 @@
+<nav class="navbar fixed-top">
+
+  <div class="navbar__left">
+    <!-- logo -->
+    <a class="brand" [routerLink]="['./']">
+      <img src="assets/images/bnl_logo-light.png" alt="logo">
+    </a>
+
+    <!-- environment -->
+    <div class="environment">Underwriter Environment</div>
+  </div>
+
+  <div class="navbar__right">
+    <a class="btn btn-ghost-lightest" [routerLink]="['/']" routerLinkActive="active">Dashboard</a>
+    <a class="btn btn-ghost-lightest" [routerLink]="['/simulations']" routerLinkActive="active">Simulations</a>
+    <a class="btn btn-ghost-lightest" [routerLink]="['/positions']" routerLinkActive="active">Positions</a>
+    <a class="btn btn-ghost-lightest" [routerLink]="['/counterparts']" routerLinkActive="active">Counterparts</a>
+    <app-user-menu></app-user-menu>
+  </div>
+
+</nav>

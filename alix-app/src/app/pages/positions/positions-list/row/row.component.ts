@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
     styleUrls: ['./row.component.scss']
 })
 export class RowComponent implements OnInit {
-    @Input() company: any = {};
+    @Input() position: any = {};
 
     constructor(private router: Router) {}
 

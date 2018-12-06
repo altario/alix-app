@@ -1,7 +1,7 @@
 <nav class="navbar navbar--secondary fixed-top">
   <div class="navbar__left">
     <div class="back">
-      <a [routerLink]="['../']" class="btn btn-ghost-lightest btn--back"><i class="icor ico-chevron-left"></i>Back</a>
+      <a (click)="goBack()" class="btn btn-ghost-lightest btn--back"><i class="icor ico-chevron-left"></i>Back</a>
       <span>{{ config.client.clientName.value }}</span>
     </div>
   </div>
