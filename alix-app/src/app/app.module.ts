@@ -18,6 +18,10 @@ import { BsDropdownModule } from 'ngx-bootstrap';
 // not-found
 import { NotFoundComponent } from './not-found/not-found.component';
 
+
+//AGM
+import { AgmCoreModule } from '@agm/core';
+
 @NgModule({
     declarations: [
       // app
@@ -35,7 +39,12 @@ import { NotFoundComponent } from './not-found/not-found.component';
       HttpClientModule,
 
       // ngx-bootstrap
-      BsDropdownModule.forRoot()
+      BsDropdownModule.forRoot(),
+
+        //AGM
+        AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyC_wMmBNunjK0XEu_HTlGrsOhVVHfyppN0'
+        })
     ],
     providers: [],
     bootstrap: [AppComponent]
