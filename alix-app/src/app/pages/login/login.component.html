@@ -4,10 +4,12 @@
       <h1>Login</h1>
       <div class="row row-sides">
         <div class="col">
-          <a [routerLink]="['/monitor']" class="btn btn-primary">Monitor</a>
+          <!-- <a [routerLink]="['/monitor']" role="button" class="btn btn-primary">Monitor</a> -->
+          <a role="button" class="btn btn-primary" (click)="goTo('monitor')">Monitor</a>
         </div>
         <div class="col">
-          <a [routerLink]="['/underwriter']" class="btn btn-secondary">Underwriter</a>
+          <!-- <a [routerLink]="['/underwriter']" role="button" class="btn btn-secondary">Underwriter</a> -->
+          <a role="button" class="btn btn-secondary" (click)="goTo('underwriter')">Underwriter</a>
         </div>
       </div>
     </div>

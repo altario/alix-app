@@ -18,6 +18,12 @@
   .row {
     > * {
       display: flex;
+      app-panel-dash-1 {
+        margin-right: 10px;
+      }
+      app-panel-dash-2 {
+        margin-left: 10px;
+      }
       .box {
         flex: 1;
         @include align(between);

@@ -28,7 +28,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
       BrowserModule,
       RouterModule.forRoot(
         AppRoutes,
-        // { scrollPositionRestoration: 'enabled' }
+        // { scrollPositionRestoration: 'enabled' } // 'disabled' | 'enabled' | 'top'
       ),
       NgbModule.forRoot(),
       HttpModule,

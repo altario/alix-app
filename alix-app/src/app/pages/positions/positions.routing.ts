@@ -17,7 +17,7 @@ export const PositionsRoutes: Routes = [
     component: PositionsListComponent,
   },
   {
-    path: ':id',
+    path: 'position/:id',
     component: PositionsLayoutComponent,
     children: [
       {
