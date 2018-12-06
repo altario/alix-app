@@ -10,6 +10,11 @@ export class CustomPercentagePipe implements PipeTransform {
       return !isNaN(val) ? `<span class="${ Math.sign(val) === 1 ?
         'text--success positive' : 'text--error negative' }">${ val }%</span>` : `<span>${ val }</span>`;
     }
+
+    if (icon === 'symbol') {
+      return !isNaN(val) ? `<span class="${ Math.sign(val) === 1 ?
+        'text--success' : 'text--error' }">${ Math.sign(val) === 1 ? '+' + val : '-' + val }%</span>` : `<span>${ val }</span>`;
+    }
     return val;
   }
 }
