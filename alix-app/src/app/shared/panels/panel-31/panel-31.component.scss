@@ -1,6 +1,11 @@
 :host {
   position: relative;
   display: flex;
+  .images {
+    justify-content: center;
+    display: flex;
+  }
+  .booking { height: 100% }
 }
 
 ul {
