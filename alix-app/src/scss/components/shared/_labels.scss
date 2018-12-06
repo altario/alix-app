@@ -16,13 +16,19 @@
 
 @import '~src/scss/imports';
 
+%label {
+  font-size: $font-size;
+  font-family: $font-family--primary;
+  font-weight: $font-weight--normal;
+  text-transform: uppercase;
+}
+
+.label,
 .label__up,
 .label__down {
-    font-size: $font-size;
-    color: $color__text_label;
-    font-family: $font-family--primary;
-    font-weight: $font-weight--normal;
-    text-transform: uppercase;
+  @extend %label;
   }
 
-  .label__up { @include line-clamp($lines, $font-size) }
+  .label__up {  @include line-clamp($lines, $font-size ) }
+  .label--fix-2-lines { @include line-clamp($lines, $font-size, $line-height__base, true ) }
+  .label--color { color: $color__text_label }
