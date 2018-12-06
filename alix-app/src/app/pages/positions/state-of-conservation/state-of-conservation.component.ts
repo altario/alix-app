@@ -83,8 +83,9 @@ export class StateOfConservationComponent implements OnInit {
     // &&
     // the array of years to populte the slider [1]
     return [
-      Object.keys(this.config.panelFromMapStateOfConservationBreakdownAllAssets.years)[
-      Object.keys(this.config.panelFromMapStateOfConservationBreakdownAllAssets.years).length - 1],
+      Object.keys(this.config.panelFromMapStateOfConservationBreakdownAllAssets.years) [
+        Object.keys(this.config.panelFromMapStateOfConservationBreakdownAllAssets.years).length - 1
+      ],
       Object.keys(this.config.panelFromMapStateOfConservationBreakdownAllAssets.years)
     ];
   }
