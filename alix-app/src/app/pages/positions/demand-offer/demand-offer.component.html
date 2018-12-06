@@ -25,13 +25,13 @@
   <section class="page-section bg--dark">
 		<div class="row">
 			<div class="col">
-				<h1 class="section-title"># SQM / Asset Demand</h1>
-				<div><alix-scatter [series]="series.sqm" [opts]="opts.sqm"></alix-scatter></div>
+				<div>
+					<alix-scatter [series]="assetDemand.sqm.series" [opts]="assetDemand.sqm.opts"></alix-scatter>
+				</div>
 			</div>
 			<div class="col">
-				<h1 class="section-title"># Rooms / Asset Demand</h1>
 				<div>
-					<alix-scatter [series]="series.rooms" [opts]="opts.rooms" ></alix-scatter>
+					<alix-scatter [series]="assetDemand.rooms.series" [opts]="assetDemand.rooms.opts"></alix-scatter>
 				</div>
 			</div>
 		</div>
