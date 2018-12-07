@@ -28,35 +28,35 @@ import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 
 @NgModule({
-    declarations: [
-      // app
-      AppComponent,
-      NotFoundComponent
-    ],
-    imports: [
-      BrowserModule,
-      RouterModule.forRoot(
-        AppRoutes,
-        // { scrollPositionRestoration: 'enabled' } // 'disabled' | 'enabled' | 'top'
-      ),
-      NgbModule.forRoot(),
-      HttpModule,
-      HttpClientModule,
-      BrowserAnimationsModule,
+  declarations: [
+    // app
+    AppComponent,
+    NotFoundComponent,
+  ],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(
+      AppRoutes
+      // { scrollPositionRestoration: 'enabled' } // 'disabled' | 'enabled' | 'top'
+    ),
+    NgbModule.forRoot(),
+    HttpModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
 
-      // ngx-bootstrap
-      BsDropdownModule.forRoot(),
+    // ngx-bootstrap
+    BsDropdownModule.forRoot(),
 
-      // plugins
-      LoadingBarRouterModule,
-      LoadingBarHttpClientModule,
+    // plugins
+    LoadingBarRouterModule,
+    LoadingBarHttpClientModule,
 
-      // plugins
-      AgmCoreModule.forRoot({
-        apiKey: 'AIzaSyC_wMmBNunjK0XEu_HTlGrsOhVVHfyppN0'
-      })
-    ],
-    providers: [LocaldataService],
-    bootstrap: [AppComponent]
+    // plugins
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyC_wMmBNunjK0XEu_HTlGrsOhVVHfyppN0',
+    }),
+  ],
+  providers: [LocaldataService],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

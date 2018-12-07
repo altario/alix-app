@@ -1,7 +1,11 @@
 {
   "bracketSpacing": true,
   "printWidth": 120,
-  "semi": false,
+  "tabs": false,
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": true,
+  "endOfLine": "lf",
   "singleQuote": true,
   "overrides": [
     {
