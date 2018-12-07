@@ -19,7 +19,6 @@
 %row-list {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
 }
 
 @each $size in $row-list--size {
