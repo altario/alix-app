@@ -1,18 +1,89 @@
 @import '~src/scss/imports';
 
 :host {
+  width: 100%;
+  height: 100vh;
   display: block;
   position: relative;
+  background: #34363B;
+  @include pseudo {
+    height: 220px;
+    background: linear-gradient(180deg, rgba(150, 125, 217, 0.15) 0%, rgba(31, 34, 40, 0) 100%);
+    z-index: 0;
+  }
 }
 
-h1 {
-  @include align(center);
+.container-fluid {
+  height: 100%;
+  > .row {
+    height: 100%;
+    > [class*="col"] {
+      height: 100%;
+      @include align(middle center);
+    }
+  }
+}
+
+.block {
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  background: #252B48;
+  border-radius: $border-radius__default;
+  overflow: hidden;
+  @include shadow(card);
 }
 
 .row-sides {
-  height: 100vh;
+  height: 100%;
   @include align(middle center);
-  > .col {
+  .col-image {
+    .image {
+      width: 100%;
+      height: 100%;
+      background-image: url('/assets/images/login.jpg');
+      // background-image: url('/assets/images/thug_daniel.jpg');
+      background-size: cover;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+    }
+  }
+  > [class*="col"] {
+    height: 100%;
+    @include align(column middle center);
+  }
+  .col-form {
+    position: relative;
+    padding: 20px 30px;
     @include align(middle center);
+
+    .form-group {
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+    }
+
+    form {
+      width: 100%;
+      margin-top: 20px;
+
+      .submit-btn {
+        margin-top: 30px;
+        @include align(right);
+      }
+    }
+  }
+}
+
+.form-check {
+  margin-top: 20px;
+  @include align(middle);
+  input {
+    margin-top: 0;
+    display: block;
   }
 }
