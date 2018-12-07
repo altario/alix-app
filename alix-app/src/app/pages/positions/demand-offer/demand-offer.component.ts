@@ -54,11 +54,16 @@ export class DemandAndOfferComponent implements OnInit {
               show: true,
               text: '# SQM / Asset Demand',
               top: '17px',
-              left: '16px',
+              left: '40px',
               textStyle: eChartsConfig.title
             },
             legend: {
-              data: ['Radius 1km', 'Puorta Nuova', 'Milano'],
+              data: [
+                { name: 'Radius 1km', icon: 'rect' },
+                { name: 'Puorta Nuova', icon: 'rect' },
+                { name: 'Milano', icon: 'rect' },
+                { name: 'BAAAAAH', icon: 'rect' }
+              ],
               itemWidth: eChartsConfig.legend.itemWidth,
               itemHeight: eChartsConfig.legend.itemHeight,
               top: '55px',
@@ -68,9 +73,18 @@ export class DemandAndOfferComponent implements OnInit {
                 color: eChartsConfig.legend.color
               }
             },
+            grid: {
+              left: '20%',
+              top: '20%'
+            },
             xAxis: {
               type: 'value',
               name: 'SQM',
+              nameTextStyle: {
+                color: '#FFFFFF',
+                padding: [10, 0, 0, 0]
+              },
+              nameLocation: 'center',
               splitLine: {
                 show: false
               },
@@ -82,9 +96,17 @@ export class DemandAndOfferComponent implements OnInit {
             yAxis: {
               type: 'value',
               name: 'Listed Time',
+              nameTextStyle: {
+                color: '#FFFFFF',
+                padding: [0, 100, 0, 0]
+              },
+              nameLocation: 'end',
               offset: 20,
               splitLine: eChartsConfig.yAxis.splitLine,
-              axisLabel: eChartsConfig.yAxis.axisLabel,
+              axisLabel: {
+                color: eChartsConfig.yAxis.axisLabel.color,
+                formatter: '{value} Days'
+              },
               axisLine: {
                 show: false
               }
@@ -97,24 +119,37 @@ export class DemandAndOfferComponent implements OnInit {
             title: {
               text: '# Rooms / Asset Demand',
               top: '17px',
-              left: '16px',
+              left: '40px',
               textStyle: eChartsConfig.title
             },
             legend: {
-              data: ['Radius 1km', 'Puorta Nuova', 'Milano', 'baaa'],
+              data: [
+                { name: 'Radius 1km', icon: 'rect' },
+                { name: 'Puorta Nuova', icon: 'rect' },
+                { name: 'Milano', icon: 'rect' },
+                { name: 'BAAAAAH', icon: 'rect' }
+              ],
               itemWidth: eChartsConfig.legend.itemWidth,
               itemHeight: eChartsConfig.legend.itemHeight,
               top: '55px',
-              right: eChartsConfig.legend.right,
+              right: 10,
               textStyle: {
                 fontSize: eChartsConfig.legend.fontSize,
                 color: eChartsConfig.legend.color
               }
             },
+            grid: {
+              left: '20%',
+              top: '20%'
+            },
             xAxis: {
               type: 'value',
               name: 'Rooms p Asset',
-              nameLocation: 'end',
+              nameTextStyle: {
+                color: '#FFFFFF',
+                padding: [10, 0, 0, 0],
+              },
+              nameLocation: 'center',
               splitLine: {
                 show: false
               },
@@ -126,13 +161,17 @@ export class DemandAndOfferComponent implements OnInit {
             yAxis: {
               type: 'value',
               name: 'Listed Time',
-              nameLocation: 'end',
               nameTextStyle: {
-                fontSize: 18
+                color: '#FFFFFF',
+                padding: [0, 100, 0, 0]
               },
+              nameLocation: 'end',
               offset: 20,
               splitLine: eChartsConfig.yAxis.splitLine,
-              axisLabel: eChartsConfig.yAxis.axisLabel,
+              axisLabel: {
+                color: eChartsConfig.yAxis.axisLabel.color,
+                formatter: '{value} Days'
+              },
               axisLine: {
                 show: false
               }
@@ -556,7 +595,7 @@ export class DemandAndOfferComponent implements OnInit {
 
     return dossier1PlotChartsData.demandOffer[type]
       .reduce((prev, next, i) => {
-        next.values.map((value, i) => {
+        next.values.map((value, idx) => {
           prev.push(value);
         });
 
