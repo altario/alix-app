@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class Panel33Component implements OnInit {
     @Input() public name: string;
     @Input() public config: any;
+    @Input() public icon: any;
 
     constructor() {}
 

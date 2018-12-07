@@ -15,20 +15,20 @@
     <div class="box__body box__body--bg">
       <div class=" cell__wrapper cell__wrapper--bg-dark">
         <div class="row-list--medium">
-          <i class="icol ico-info-circle"></i>
+          <i class="{{icon}}"></i>
           <div class="list-simple">
             <div>
-              <span><i class="icol ico-info-circle"></i></span>
+              <span><i class="icol ico-subway"></i></span>
               <span class="u-strong">{{ config.pubTrans }} Min</span>
               <span> Walk+Train</span>
             </div>
             <div>
-              <span><i class="icol ico-info-circle"></i></span>
+              <span><i class="icol ico-taxi"></i></span>
               <span class="u-strong">{{ config.taxi }} Min</span>
               <span> Taxi</span>
             </div>
             <div *ngIf="config.walking">
-              <span><i class="icol ico-info-circle"></i></span>
+              <span><i class="icol ico-walking"></i></span>
               <span class="u-strong">{{ config.walking }} Min</span>
               <span> Walking</span>
             </div>
