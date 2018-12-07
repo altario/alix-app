@@ -19,7 +19,6 @@
 %row-list {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
 }
 
 @each $size in $row-list--size {
@@ -31,10 +30,25 @@
     & > i,
     & > .bullet-point-row {
       width: $value;
+      margin-left: $value * .2;
+      margin-right: $value * .4;
     }
     .row-list__text {
       width: calc(100% - #{$value});
       margin: 0;
+    }
+  }
+}
+
+.row-list--medium {
+  div { margin: 5px 0 }
+  &.icon-title {
+    background-color: red;
+    i { font-size: 45px }
+  }
+  &.row-list__title {
+    .row-list__text {
+      font-size: 30px;
     }
   }
 }

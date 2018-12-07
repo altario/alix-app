@@ -1,17 +1,37 @@
 <div class="container-fluid">
-  <div class="no-gutters">
+  <div class="row no-gutters">
     <div class="col">
-      <h1>Login</h1>
-      <div class="row row-sides">
-        <div class="col">
-          <!-- <a [routerLink]="['/monitor']" role="button" class="btn btn-primary">Monitor</a> -->
-          <a role="button" class="btn btn-primary" (click)="goTo('monitor')">Monitor</a>
-        </div>
-        <div class="col">
-          <!-- <a [routerLink]="['/underwriter']" role="button" class="btn btn-secondary">Underwriter</a> -->
-          <a role="button" class="btn btn-secondary" (click)="goTo('underwriter')">Underwriter</a>
+
+      <div class="block">
+        <div class="row no-gutters row-sides">
+          <div class="col-5 col-image">
+            <div class="image"></div>
+          </div>
+          <div class="col-7 col-form">
+            <h1>Welcome</h1>
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email</label>
+                <input #inputEmail type="email" class="form-control" id="inputEmai" aria-describedby="emailHelp" placeholder="Enter email" (change)="checkValues(inputEmail.value)" (keyup)="onKey(inputEmail.value)" (keyup.enter)="goTo(pageType)">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="inputPassword" placeholder="Password" value="1234567890">
+              </div>
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" checked>
+                <label class="form-check-label" for="exampleCheck1">Remember me</label>
+              </div>
+              <div class="submit-btn">
+                <button type="submit" class="btn btn-primary" [disabled]="!canEnableSubmit" (click)="goTo(pageType)">Login</button>
+                <!-- <button type="submit" class="btn btn-medium btn-primary" (click)="goTo('monitor')">Monitor</button>
+                <button type="submit" class="btn btn-medium btn-secondary" (click)="goTo('underwriter')">Underwriter</button> -->
+              </div>
+            </form>
+          </div>
         </div>
       </div>
+
     </div>
   </div>
 </div>

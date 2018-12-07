@@ -44,7 +44,7 @@
 			</div>
 			<div class="col-8">
         <app-dropdown [config]="getPriceTodayVsOvertime()" (callback)="changePriceTodayVsOvertime($event)"></app-dropdown>
-        <alix-area-basic [series]="series.priceTodayVsOvertime" [opts]="opts.priceTodayVsOvertime" (chartInit)="onChartInit('priceTodayVsOvertime',$event)"></alix-area-basic>
+        <alix-line [series]="series.priceTodayVsOvertime" [opts]="opts.priceTodayVsOvertime" (chartInit)="onChartInit('priceTodayVsOvertime',$event)"></alix-line>
 			</div>
 		</div>
 	</section>
@@ -55,7 +55,7 @@
 				<app-panel-16 [config]="config.demandAndOffer.forSale.populations"></app-panel-16>
 			</div>
 			<div class="col-8">
-        <alix-area-basic [series]="series.peerListedAssets5YForSale" [opts]="opts.peerListedAssets5YForSale"></alix-area-basic>
+        <alix-line [series]="series.peerListedAssets5YForSale" [opts]="opts.peerListedAssets5YForSale"></alix-line>
 			</div>
 		</div>
 	</section>

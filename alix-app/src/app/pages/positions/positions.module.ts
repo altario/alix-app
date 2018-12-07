@@ -27,7 +27,7 @@ import { PositionsLayoutComponent } from '@core/index';
 // services
 import { PositionsReportService } from '@services/positions-report.service';
 
-//AGM
+// plugins
 import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
@@ -51,7 +51,7 @@ import { AgmCoreModule } from '@agm/core';
 
     // components
     RowComponent,
-    SubheaderComponent,
+    SubheaderComponent
   ],
   providers: [PositionsReportService]
 })

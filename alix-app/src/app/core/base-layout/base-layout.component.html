@@ -1,1 +1,3 @@
-<router-outlet></router-outlet>
+<div class="base-anim" [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''">
+  <router-outlet #o="outlet"></router-outlet>
+</div>
