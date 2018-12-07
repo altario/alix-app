@@ -409,7 +409,7 @@ export class DemandAndOfferComponent implements OnInit {
   peerListedAssets5YForSale() {
     this.opts.peerListedAssets5YForSale = {
       title: {
-        text: 'PRICE Sqm. TODAY VS RADIUS AVG OVER TIME', // #HC
+        text: 'Volume of RE Listed Assets > Last 5 Years', // #HC
         top: '17px',
         left: '16px',
         textStyle: eChartsConfig.title,
@@ -543,28 +543,55 @@ export class DemandAndOfferComponent implements OnInit {
   }
 
   peerListedAssets5YLr() {
+    const lineColors = {radius1Km: '#913BAF', portaNuova: '#F26D4F', milano: '#BF5E5E'};
     this.opts.peerListedAssets5YLr = {
+      title: {
+        text: 'Volume of RE Listed Assets > Last 5 Years', // #HC
+        top: '17px',
+        left: '16px',
+        textStyle: eChartsConfig.title,
+      },
       legend: {
         data: Object.keys(chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YLr)
           .reduce((prev, next, index) => {
               if (next !== 'year') {
-                prev.push(chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YLr[next].label);
+                prev.push({name: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YLr[next].label, icon: 'rect'});
               }
             return prev;
-          }, [])
+          }, []),
+        itemWidth: eChartsConfig.legend.itemWidth,
+        itemHeight: eChartsConfig.legend.itemHeight,
+        top: eChartsConfig.legend.top,
+        right: eChartsConfig.legend.right,
+        textStyle: {
+          fontSize: eChartsConfig.legend.fontSize,
+          color: eChartsConfig.legend.color
+        }
       },
+      grid: eChartsConfig.grid,
       tooltip: {
         trigger: 'axis',
-        axisPointer: {
+          axisPointer: {
           type: 'cross',
-          label: {
+            label: {
             backgroundColor: '#6a7985'
           }
         }
       },
       xAxis: {
         type: 'category',
-        data: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YLr.year.values
+        data: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YLr.year.values,
+        splitLine: eChartsConfig.xAxis.splitLine,
+        axisLabel: eChartsConfig.xAxis.axisLabel,
+        axisLine: eChartsConfig.xAxis.axisLine
+      },
+      yAxis: {
+        type: 'value',
+        splitLine: eChartsConfig.yAxis.splitLine,
+        axisLabel: eChartsConfig.yAxis.axisLabel,
+        axisLine: {
+          show: false
+        }
       }
     };
 
@@ -575,7 +602,10 @@ export class DemandAndOfferComponent implements OnInit {
               name: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YLr[next].label,
               data: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YLr[next].values,
               type: 'line',
-              areaStyle: {}
+              symbol: eChartsConfig.series.symbol,
+              symbolSize: eChartsConfig.series.symbolSize,
+              lineStyle: {...eChartsConfig.series.lineStyle, color: lineColors[next] },
+              itemStyle: { color: lineColors[next] }
             });
           }
         return prev;
@@ -587,28 +617,55 @@ export class DemandAndOfferComponent implements OnInit {
   }
 
   peerListedAssets5YSr() {
+    const lineColors = {radius1Km: '#913BAF', portaNuova: '#F26D4F', milano: '#BF5E5E'};
     this.opts.peerListedAssets5YSr = {
+      title: {
+        text: 'Volume of RE Listed Assets > Last 5 Years', // #HC
+        top: '17px',
+        left: '16px',
+        textStyle: eChartsConfig.title,
+      },
       legend: {
         data: Object.keys(chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YSr)
           .reduce((prev, next, index) => {
               if (next !== 'year') {
-                prev.push(chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YSr[next].label);
+                prev.push({name: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YSr[next].label, icon: 'rect'});
               }
             return prev;
-          }, [])
+          }, []),
+        itemWidth: eChartsConfig.legend.itemWidth,
+        itemHeight: eChartsConfig.legend.itemHeight,
+        top: eChartsConfig.legend.top,
+        right: eChartsConfig.legend.right,
+        textStyle: {
+          fontSize: eChartsConfig.legend.fontSize,
+          color: eChartsConfig.legend.color
+        }
       },
+      grid: eChartsConfig.grid,
       tooltip: {
         trigger: 'axis',
-        axisPointer: {
+          axisPointer: {
           type: 'cross',
-          label: {
+            label: {
             backgroundColor: '#6a7985'
           }
         }
       },
       xAxis: {
         type: 'category',
-        data: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YSr.year.values
+        data: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YSr.year.values,
+        splitLine: eChartsConfig.xAxis.splitLine,
+        axisLabel: eChartsConfig.xAxis.axisLabel,
+        axisLine: eChartsConfig.xAxis.axisLine
+      },
+      yAxis: {
+        type: 'value',
+        splitLine: eChartsConfig.yAxis.splitLine,
+        axisLabel: eChartsConfig.yAxis.axisLabel,
+        axisLine: {
+          show: false
+        }
       }
     };
 
@@ -619,7 +676,10 @@ export class DemandAndOfferComponent implements OnInit {
               name: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YSr[next].label,
               data: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YSr[next].values,
               type: 'line',
-              areaStyle: {}
+              symbol: eChartsConfig.series.symbol,
+              symbolSize: eChartsConfig.series.symbolSize,
+              lineStyle: {...eChartsConfig.series.lineStyle, color: lineColors[next] },
+              itemStyle: { color: lineColors[next] }
             });
           }
         return prev;
