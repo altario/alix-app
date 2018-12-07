@@ -9,6 +9,7 @@ import { PortfolioRoutes } from './portfolio.routing';
 
 // components
 import { PortfolioListComponent } from './portfolio-list/portfolio-list.component';
+import { PortfolioDetailComponent } from './portfolio-detail/portfolio-detail.component';
 
 // shared
 import { SharedModule } from '@shared/shared.module';
@@ -22,6 +23,7 @@ import { SharedModule } from '@shared/shared.module';
   ],
   declarations: [
     PortfolioListComponent,
+    PortfolioDetailComponent
   ],
   providers: []
 })

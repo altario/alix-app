@@ -29,19 +29,31 @@ export class MockapiService {
   }
 
   public getPortfoliosPopulated(): Observable<any> {
-    return combineLatest(this.getPortfolios(), this.getNotifications()).pipe(
-      map(([porfolios, notifications]) => {
+    return combineLatest(this.getPortfolios(), this.getNotifications(), this.getPositions()).pipe(
+      map(([porfolios, notifications, positions]) => {
         const notificationsHash = {};
+        const positionsHash = {};
 
         for (let i = 0; i < notifications.length; i++) {
           notificationsHash[notifications[i].id] = notifications[i];
         }
 
+        // for (let i = 0; i < positions.length; i++) {
+        //   positionsHash[positions[i].id] = positions[i];
+        // }
+
         for (let i = 0; i < porfolios.length; i++) {
-          porfolios[i].notifications = [];
+          porfolios[i].notificationsData = [];
+          // porfolios[i].positionsData = [];
+          porfolios[i].positionsData = positions;
+
           for (let z = 0; z < porfolios[i].notificationIds.length; z++) {
-            porfolios[i].notifications.push(notificationsHash[porfolios[i].notificationIds[z]]);
+            porfolios[i].notificationsData.push(notificationsHash[porfolios[i].notificationIds[z]]);
           }
+
+          // for (let z = 0; z < porfolios[i].positionIds.length; z++) {
+          //   porfolios[i].positionsData.push(positionsHash[porfolios[i].positionIds[z]]);
+          // }
         }
 
         return porfolios;
@@ -68,6 +80,46 @@ export class MockapiService {
 
         return notifications;
       })
+    );
+  }
+
+  public getPortfolioPopulated(id: string): Observable<any> {
+    return combineLatest(this.getPortfolios(), this.getNotifications(), this.getPositions()).pipe(
+      map(([porfolios, notifications, positions]) => {
+        let portfolio = porfolios.filter(a => parseInt(a.id, 10) === parseInt(id, 10));
+
+        if (!portfolio.length) {
+          return null;
+        }
+
+        const notificationsHash = {};
+        const positionsHash = {};
+
+        for (let i = 0; i < notifications.length; i++) {
+          notificationsHash[notifications[i].id] = notifications[i];
+        }
+
+        // for (let i = 0; i < positions.length; i++) {
+        //   positionsHash[positions[i].id] = positions[i];
+        // }
+
+        portfolio = portfolio[0];
+
+        portfolio.notificationsData = [];
+        // portfolio.positionsData = [];
+        portfolio.positionsData = positions;
+
+        for (let z = 0; z < portfolio.notificationIds.length; z++) {
+          portfolio.notificationsData.push(notificationsHash[portfolio.notificationIds[z]]);
+        }
+
+        // for (let z = 0; z < portfolio.positionIds.length; z++) {
+        //   portfolio.positionsData.push(positionsHash[portfolio.positionIds[z]]);
+        // }
+
+        return portfolio;
+      }),
+      tap(console.log)
     );
   }
 

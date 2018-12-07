@@ -3,7 +3,7 @@
   <section class="page-section bg--light">
     <div class="row">
 
-      <a *ngFor="let portfolio of (portfolios$ | async)" [routerLink]="['/positions', portfolio.id]"  class="col-3">
+      <a *ngFor="let portfolio of (portfolios$ | async)" [routerLink]="['./', portfolio.id]"  class="col-3">
 
         <div class="box box--bg box--table box--table--small">
           <div class="box__header box__header--bg">
@@ -52,7 +52,7 @@
               <div class="table">
                 <div class="highlighted--small highlighted--color">Last Unread Alerts</div>
 
-                <div *ngFor="let notification of portfolio.notifications" class="table-row">
+                <div *ngFor="let notification of portfolio.notificationsData" class="table-row">
                   <span><span class="square" style="background-color: #913BAF"></span></span>
                   <span class="text-color-2">{{ notification.family }}</span>
                   <span><span class="truncate {{ notification.positiveNegative }}">{{ notification.value }}%</span></span>

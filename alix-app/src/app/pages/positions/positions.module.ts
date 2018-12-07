@@ -12,7 +12,6 @@ import { DemandAndOfferComponent } from './demand-offer/demand-offer.component';
 import { PositionsListComponent } from './positions-list/positions-list.component';
 
 // components
-import { RowComponent } from './positions-list/row/row.component';
 import { SubheaderComponent } from '../../shared/subheader/subheader.component';
 
 // routes
@@ -50,7 +49,6 @@ import { AgmCoreModule } from '@agm/core';
     PositionsListComponent,
 
     // components
-    RowComponent,
     SubheaderComponent
   ],
   providers: [PositionsReportService]
