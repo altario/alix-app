@@ -14,9 +14,9 @@
 // ------------------------------------------------------------
 
 // =shadow
-@mixin shadow($_shadow) {
+@mixin shadow($_shadow, $_important: null) {
   @if (map-has-key($alt_shadow-map, $_shadow)) {
-    box-shadow: map-get($alt_shadow-map, $_shadow);
+    box-shadow: map-get($alt_shadow-map, $_shadow) $_important;
   }
   @else {
     box-shadow: $_shadow;

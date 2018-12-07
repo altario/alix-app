@@ -215,7 +215,8 @@ export class StateOfConservationComponent implements OnInit {
     this.opts.scpPriceEvo = {
       color: ['#333333', '#D291BC'],
       grid: {
-        left: 100
+        left: 100,
+        right: eChartsConfig.grid.right
       },
       xAxis: {
         type: 'value',

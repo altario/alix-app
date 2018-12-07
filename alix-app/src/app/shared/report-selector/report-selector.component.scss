@@ -1,11 +1,27 @@
+@import '~src/scss/imports';
+
 :host {
   width: fit-content;
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 10;
+
   .box {
     background: transparent;
     box-shadow: none !important;
+
+    &.box--bg {
+      display: block;
+      background: $color__custom__gray--10;
+      border-radius: 0 $border-radius__default 0 $border-radius__default;
+      @include shadow(card, !important);
+      i {
+        color: white;
+        padding: 6px 6px 8px 8px;
+      }
+    }
+
     i {
       width: 100%;
       padding: 6px;

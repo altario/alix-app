@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+// angular
+import { Component, OnInit, Input } from '@angular/core';
 import { PositionsReportService } from '@app/services/positions-report.service';
 
 @Component({
@@ -7,17 +8,16 @@ import { PositionsReportService } from '@app/services/positions-report.service';
   styleUrls: ['./report-selector.component.scss']
 })
 export class ReportSelectorComponent implements OnInit {
+  @Input() hasBg: any = false;
   public clicked = false;
 
-  constructor(private report: PositionsReportService) { }
+  constructor(private report: PositionsReportService) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   updatePositionsReport(data) {
     this.clicked = true;
 
     this.report.update(data);
   }
-
 }

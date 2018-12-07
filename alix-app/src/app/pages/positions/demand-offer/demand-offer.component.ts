@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 // dataset
 import * as dataset from '@data/dataset';
 import * as chartdataset from '@data/charts-dataset';
+import { dossier1PlotChartsData } from '@data/plotcharts-dataset';
 
 import { eChartsConfig } from '@global/charts';
 
@@ -23,6 +24,16 @@ export class DemandAndOfferComponent implements OnInit {
   public populationLongRent: any;
   public populationShortRent: any;
   public populationShortRentDemand: any;
+  public assetDemand: any = {
+    sqm: {
+      series: {},
+      opts: {}
+    },
+    rooms: {
+      series: {},
+      opts: {}
+    }
+  };
 
   constructor(private route: ActivatedRoute) { }
 
@@ -30,75 +41,148 @@ export class DemandAndOfferComponent implements OnInit {
     this.route.params.subscribe(params => {
       // console.log(params['id']);
       this.config = dataset.dossiersMainData.dossier1;
-      console.log(this.config)
+      console.log(this.config);
       this.populationForSale = this.config.demandAndOffer.forSale.populations.population1;
       this.populationLongRent = this.config.demandAndOffer.longRent.populations.population1;
       this.populationShortRent = this.config.demandAndOffer.shortRent.populations.population1;
       this.populationShortRentDemand = this.config.demandAndOffer.shortRent.populations.population1;
-
-      this.opts = {
+      this.assetDemand = {
         sqm: {
-        },
-        rooms: {
-          xAxis: [
-            {
+          series: this.getAssetDemands('scpSqmDemandEvolution'),
+          opts: {
+            title: {
+              show: true,
+              text: '# SQM / Asset Demand',
+              textStyle: {
+                color: '#FFFFFF'
+              }
+            },
+            legend: {
+              data: ['Radius 1km', 'Puorta Nuova', 'Milano'],
+              itemWidth: eChartsConfig.legend.itemWidth,
+              itemHeight: eChartsConfig.legend.itemHeight,
+              top: '55px',
+              right: eChartsConfig.legend.right,
+              textStyle: {
+                fontSize: eChartsConfig.legend.fontSize,
+                color: eChartsConfig.legend.color
+              }
+            },
+            xAxis: {
               type: 'value',
-              scale: true,
-              axisLabel: {
-                formatter: function(x, y) {
-                  return 'Label: ' + x;
-                }
+              splitLine: {
+                show: false
+              },
+              axisLabel: eChartsConfig.xAxis.axisLabel,
+              axisLine: {
+                show: false
+              }
+            },
+            yAxis: {
+              type: 'value',
+              offset: 20,
+              splitLine: eChartsConfig.yAxis.splitLine,
+              axisLabel: eChartsConfig.yAxis.axisLabel,
+              axisLine: {
+                show: false
               }
             }
-          ],
+          },
+        },
+        rooms: {
+          series: this.getAssetDemands('scpRoomsDemandEvolution'),
+          opts: {
+            title: {
+              show: true,
+              text: '# Rooms / Asset Demand',
+              textStyle: {
+                color: '#FFFFFF'
+              }
+            },
+            xAxis: {
+              type: 'value',
+              splitLine: {
+                show: false
+              },
+              axisLabel: eChartsConfig.xAxis.axisLabel,
+              axisLine: {
+                show: false
+              }
+            },
+            yAxis: {
+              type: 'value',
+              offset: 20,
+              splitLine: eChartsConfig.yAxis.splitLine,
+              axisLabel: eChartsConfig.yAxis.axisLabel,
+              axisLine: {
+                show: false
+              }
+            }
+          }
         }
       };
-
-
-
-      this.series = {
-
-        sqm: [{
-          symbolSize: 20,
-          data: [
-            [10.0, 8.04],
-            [8.0, 6.95],
-            [13.0, 7.58],
-            [9.0, 8.81],
-            [11.0, 8.33],
-            [14.0, 9.96],
-            [6.0, 7.24],
-            [4.0, 4.26],
-            [12.0, 10.84],
-            [7.0, 4.82],
-            [5.0, 5.68]
-          ],
-          type: 'scatter'
-        }],
-        rooms: [{
-          symbolSize: 20,
-          data: [
-            [6.0, 7.24],
-            [4.0, 4.26],
-            [12.0, 10.84],
-            [7.0, 4.82],
-            [5.0, 5.68],
-            [10.0, 8.04],
-            [8.0, 6.95],
-            [6.0, 7.24],
-            [4.0, 4.26],
-            [12.0, 10.84],
-            [7.0, 4.82],
-            [5.0, 5.68],
-            [13.0, 7.58],
-            [9.0, 8.81],
-            [11.0, 8.33],
-            [14.0, 9.96]
-          ],
-          type: 'scatter'
-        }],
-      };
     });
+
+    this.opts = {
+      sqm: {
+      },
+      rooms: {
+        xAxis: [
+          {
+            type: 'value',
+            scale: true,
+            axisLabel: {
+              formatter: function(x, y) {
+                return 'Label: ' + x;
+              }
+            }
+          }
+        ],
+      }
+    };
+
+    this.series = {
+      sqm: [{
+        symbolSize: 20,
+        data: [
+          [10.0, 8.04],
+          [8.0, 6.95],
+          [13.0, 7.58],
+          [9.0, 8.81],
+          [11.0, 8.33],
+          [14.0, 9.96],
+          [6.0, 7.24],
+          [4.0, 4.26],
+          [12.0, 10.84],
+          [7.0, 4.82],
+          [5.0, 5.68]
+        ],
+        type: 'scatter'
+      }],
+      rooms: [{
+        symbolSize: 20,
+        data: [
+          [6.0, 7.24],
+          [4.0, 4.26],
+          [12.0, 10.84],
+          [7.0, 4.82],
+          [5.0, 5.68],
+          [10.0, 8.04],
+          [8.0, 6.95],
+          [6.0, 7.24],
+          [4.0, 4.26],
+          [12.0, 10.84],
+          [7.0, 4.82],
+          [5.0, 5.68],
+          [13.0, 7.58],
+          [9.0, 8.81],
+          [11.0, 8.33],
+          [14.0, 9.96]
+        ],
+        type: 'scatter'
+      }],
+    };
+
 
     this.marketValue();
     this.priceTodayVsOvertime();
@@ -106,7 +190,6 @@ export class DemandAndOfferComponent implements OnInit {
     this.series.longTermRentEvolutionEurSqm = this.longTermRentEvolutionEurSqm();
     this.peerListedAssets5YLr();
     this.peerListedAssets5YSr();
-
   }
 
   getPopulationNames(): Array<any> {
@@ -134,11 +217,11 @@ export class DemandAndOfferComponent implements OnInit {
 
 
   /**
-   * 
+   *
    */
 
   marketValue() {
-    const lineColors = ['#7AC143', '#F2E603'];
+    const lineColors = ['#FFFFFF', '#00B5E9', '#7AC143'];
     this.opts.marketValue = {
       title: {
         text: 'Market Value -VS- Replacement Cost', // #HC
@@ -411,11 +494,11 @@ export class DemandAndOfferComponent implements OnInit {
 
   }
   /**
-   * 
+   *
    */
   getPriceTodayVsOvertime(): Array<any> {
     const options = Object.keys(chartdataset.dossier1ChartsData.demandOffer.priceTodayVsOvertime).map((population, i) => {
-        return { id: i-1, key: population, value: chartdataset.dossier1ChartsData.demandOffer.priceTodayVsOvertime[population].label };
+        return { id: i - 1, key: population, value: chartdataset.dossier1ChartsData.demandOffer.priceTodayVsOvertime[population].label };
     });
 
     options.shift();
@@ -448,4 +531,17 @@ export class DemandAndOfferComponent implements OnInit {
     console.log(this.chartInstance);
   }
 
+
+  getAssetDemands(type = null): Array<any> {
+    const colors = ['#913BAF', '#F26D4F', '#BF5E5E'];
+
+    return dossier1PlotChartsData.demandOffer[type]
+      .reduce((prev, next, i) => {
+        next.values.map((value, i) => {
+          prev.push(value);
+        });
+
+        return prev;
+      }, []);
+  }
 }
