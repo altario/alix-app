@@ -24,54 +24,54 @@
           <span>New</span>
           <span class="square" style="background-color: #00B5E9"></span>
           <span>{{config.new.value}}</span>
-          <span [outerHTML]="config.newVsLastYearPerc.value | perc:0:'icon'"></span>
+          <span [appPosNeg]="config.newVsLastYearPerc.value" icon="icon">{{config.newVsLastYearPerc.value | perc:0}}</span>
           <span>{{config.newComparables.value}}</span>
-          <span [outerHTML]="config.newComparablesVsLastYearPerc.value | perc:0:'icon'"></span>
+          <span [appPosNeg]="config.newComparablesVsLastYearPerc.value" icon="icon">{{config.newComparablesVsLastYearPerc.value | perc:0}}</span>
            <!-- #HC -->
         </div>
         <div>
           <span>In Construction</span>
           <span class="square" style="background-color: #7AC143"></span>
           <span>{{config.inConstruction.value}}</span>
-          <span [outerHTML]="config.inConstructionVsLastYearPerc.value | perc:0:'icon'"></span>
+          <span [appPosNeg]="config.inConstructionVsLastYearPerc.value" icon="icon">{{config.inConstructionVsLastYearPerc.value | perc:0}}</span>
           <span>{{config.inConstructionComparables.value}}</span>
-          <span [outerHTML]="config.inConstructionComparablesVsLastYearPerc.value | perc:0:'icon'"></span>
+          <span [appPosNeg]="config.inConstructionComparablesVsLastYearPerc.value" icon="icon">{{config.inConstructionComparablesVsLastYearPerc.value | perc:0}}</span>
            <!-- #HC -->
         </div>
         <div>
           <span>Renovated</span>
           <span class="square" style="background-color: #C7DA2C"></span>
           <span>{{config.renovated.value}}</span>
-          <span [outerHTML]="config.renovatedVsLastYearPerc.value | perc:0:'icon'"></span>
+          <span [appPosNeg]="config.renovatedVsLastYearPerc.value" icon="icon">{{config.renovatedVsLastYearPerc.value | perc:0}}</span>
           <span>{{config.renovatedComparables.value}}</span>
-          <span [outerHTML]="config.renovatedComparablesVsLastYearPerc.value | perc:0:'icon'"></span>
+          <span [appPosNeg]="config.renovatedComparablesVsLastYearPerc.value" icon="icon">{{config.renovatedComparablesVsLastYearPerc.value | perc:0}}</span>
            <!-- #HC -->
         </div>
         <div>
           <span>Used</span>
           <span class="square" style="background-color: #F2E603"></span>
           <span>{{config.used.value}}</span>
-          <span [outerHTML]="config.usedVsLastYearPerc.value | perc:0:'icon'"></span>
+          <span [appPosNeg]="config.usedVsLastYearPerc.value" icon="icon">{{config.usedVsLastYearPerc.value | perc:0}}</span>
           <span>{{config.usedComparables.value}}</span>
-          <span [outerHTML]="config.usedComparablesVsLastYearPerc.value | perc:0:'icon'"></span>
+          <span [appPosNeg]="config.usedComparablesVsLastYearPerc.value" icon="icon">{{config.usedComparablesVsLastYearPerc.value | perc:0}}</span>
            <!-- #HC -->
         </div>
         <div>
           <span>Needs Renov.</span>
           <span class="square" style="background-color: #FCB86B"></span>
           <span>{{config.needsRenovation.value}}</span>
-          <span [outerHTML]="config.needsRenovationVsLastYearPerc.value | perc:0:'icon'"></span>
+          <span [appPosNeg]="config.needsRenovationVsLastYearPerc.value" icon="icon">{{config.needsRenovationVsLastYearPerc.value | perc:0}}</span>
           <span>{{config.needsRenovationComparables.value}}</span>
-          <span [outerHTML]="config.needsRenovationComparablesVsLastYearPerc.value | perc:0:'icon'"></span>
+          <span [appPosNeg]="config.needsRenovationComparablesVsLastYearPerc.value" icon="icon">{{config.needsRenovationComparablesVsLastYearPerc.value | perc:0}}</span>
            <!-- #HC -->
         </div>
         <div>
           <span>Ruin</span>
           <span class="square" style="background-color: #E9545C"></span>
           <span>{{config.ruin.value}}</span>
-          <span [outerHTML]="config.ruinVsLastYearPerc.value | perc:0:'icon'"></span>
+          <span [appPosNeg]="config.ruinVsLastYearPerc.value" icon="icon">{{config.ruinVsLastYearPerc.value | perc:0}}</span>
           <span>{{config.ruinComparables.value}}</span>
-          <span [outerHTML]="config.ruinComparablesVsLastYearPerc.value | perc:0:'icon'"></span>
+          <span [appPosNeg]="config.ruinComparablesVsLastYearPerc.value" icon="icon">{{config.ruinComparablesVsLastYearPerc.value | perc:0}}</span>
            <!-- #HC -->
         </div>
       </div>

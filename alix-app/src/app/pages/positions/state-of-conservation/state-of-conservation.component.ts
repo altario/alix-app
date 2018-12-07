@@ -34,8 +34,8 @@ export class StateOfConservationComponent implements OnInit {
   public opts: any = {};
   public chartInstance: any = {};
 
-  lat: number = 45.4758422;
-  lng: number = 9.1911364;
+  lat = 45.4758422;
+  lng = 9.1911364;
   zoom = 14;
   radius = 70;
 
@@ -62,6 +62,7 @@ export class StateOfConservationComponent implements OnInit {
       this.markers = this.getMarkers();
     });
   }
+
   shuffle(a) {
     for (let i = a.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -183,7 +184,8 @@ export class StateOfConservationComponent implements OnInit {
 
   getpriceEvolutionBySc(population = 'population1'): Array<any> {
     const lineColors = ['#00B5E9', '#7AC143', '#C7DA2C', '#F2E603', '#FCB86B', '#E9545C'];
-    const popSelected = chartdataset.dossier1ChartsData.stateOfConservation.priceEvolutionBySc.filter(line => line.population === population);
+    const popSelected = chartdataset.dossier1ChartsData.stateOfConservation.priceEvolutionBySc
+      .filter(line => line.population === population);
 
     this.opts.priceEvolutionBySc = {
       title: {
