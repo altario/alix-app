@@ -67,7 +67,7 @@ export class AreaStackComponent implements OnInit {
     this.options = Object.assign(this.options, this.opts);
 
     this.initOpts = {
-      renderer: 'svg',
+      renderer: 'canvas', // canvas | svg
     };
 
   }

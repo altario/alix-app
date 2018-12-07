@@ -28,13 +28,11 @@ export class ScatterComponent implements OnInit {
     this.options = Object.assign(this.options, this.opts);
     console.log(this.options);
     this.initOpts = {
-      renderer: 'svg',
+      renderer: 'canvas' // canvas | svg
     };
-
   }
 
-  constructor() {
-  }
+  constructor() {}
   onChartInit(e) {
     this.chartInit.emit(e);
   }
