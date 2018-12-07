@@ -53,9 +53,9 @@ export class DemandAndOfferComponent implements OnInit {
             title: {
               show: true,
               text: '# SQM / Asset Demand',
-              textStyle: {
-                color: '#FFFFFF'
-              }
+              top: '17px',
+              left: '16px',
+              textStyle: eChartsConfig.title
             },
             legend: {
               data: ['Radius 1km', 'Puorta Nuova', 'Milano'],
@@ -70,6 +70,7 @@ export class DemandAndOfferComponent implements OnInit {
             },
             xAxis: {
               type: 'value',
+              name: 'SQM',
               splitLine: {
                 show: false
               },
@@ -80,6 +81,7 @@ export class DemandAndOfferComponent implements OnInit {
             },
             yAxis: {
               type: 'value',
+              name: 'Listed Time',
               offset: 20,
               splitLine: eChartsConfig.yAxis.splitLine,
               axisLabel: eChartsConfig.yAxis.axisLabel,
@@ -93,14 +95,26 @@ export class DemandAndOfferComponent implements OnInit {
           series: this.getAssetDemands('scpRoomsDemandEvolution'),
           opts: {
             title: {
-              show: true,
               text: '# Rooms / Asset Demand',
+              top: '17px',
+              left: '16px',
+              textStyle: eChartsConfig.title
+            },
+            legend: {
+              data: ['Radius 1km', 'Puorta Nuova', 'Milano', 'baaa'],
+              itemWidth: eChartsConfig.legend.itemWidth,
+              itemHeight: eChartsConfig.legend.itemHeight,
+              top: '55px',
+              right: eChartsConfig.legend.right,
               textStyle: {
-                color: '#FFFFFF'
+                fontSize: eChartsConfig.legend.fontSize,
+                color: eChartsConfig.legend.color
               }
             },
             xAxis: {
               type: 'value',
+              name: 'Rooms p Asset',
+              nameLocation: 'end',
               splitLine: {
                 show: false
               },
@@ -111,6 +125,11 @@ export class DemandAndOfferComponent implements OnInit {
             },
             yAxis: {
               type: 'value',
+              name: 'Listed Time',
+              nameLocation: 'end',
+              nameTextStyle: {
+                fontSize: 18
+              },
               offset: 20,
               splitLine: eChartsConfig.yAxis.splitLine,
               axisLabel: eChartsConfig.yAxis.axisLabel,
