@@ -47,4 +47,9 @@
     background-color: red;
     i { font-size: 45px }
   }
+  &.row-list__title {
+    .row-list__text {
+      font-size: 30px;
+    }
+  }
 }
