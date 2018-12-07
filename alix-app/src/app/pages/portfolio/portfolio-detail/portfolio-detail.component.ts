@@ -13,6 +13,7 @@ import { map, take, mergeMap } from 'rxjs/operators';
 })
 export class PortfolioDetailComponent implements OnInit {
   public portfolio$: Observable<any>;
+  public type$: Observable<any>;
 
   constructor(private apiService: MockapiService, private route: ActivatedRoute) {}
 
@@ -21,8 +22,6 @@ export class PortfolioDetailComponent implements OnInit {
       return this.apiService.getPortfolioPopulated(params.id);
     }));
 
-    this.route.queryParams.pipe(take(1), map(params => {
-      console.log(params);
-    }));
+    this.type$ = this.route.queryParams.pipe(map(params => params.type));
   }
 }

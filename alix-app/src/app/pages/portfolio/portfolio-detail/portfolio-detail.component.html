@@ -1,5 +1,17 @@
 <div class="container-fluid">
 
+    <section *ngIf="(type$ | async) === 'notification'" class="page--header">
+      notification
+    </section>
+
+    <section *ngIf="(type$ | async) === 'industry'" class="page--header">
+      industry
+    </section>
+
+    <section *ngIf="!(type$ | async)" class="page--header">
+      Custom
+    </section>
+
   <section class="page-section bg--light">
     <div class="row">
       <div class="col-12">
@@ -214,6 +226,17 @@
       </div>
     </div>
   </section>
+
+  <div class="row no-gutters">
+    <div class="col">
+      <!-- <h1 class="section-title">Notifications</h1> -->
+      <ul>
+        <li *ngFor="let notification of (portfolio$ | async)?.notificationsData">
+          <app-notification-row [notification]="notification"></app-notification-row>
+        </li>
+      </ul>
+    </div>
+  </div>
 
   <div class="row no-gutters">
     <div class="col">

@@ -15,6 +15,7 @@ import { ReportStickyComponent } from '@shared/report-sticky/report-sticky.compo
 // import { SubheaderDashboardComponent } from '@shared/subheader-dashboard/subheader-dashboard.component';
 
 import { PositionRowComponent } from './position/position.component';
+import { NotificationRowComponent } from './notification/notification.component';
 
 // pipes
 import {
@@ -155,7 +156,8 @@ import {
     ReportSelectorComponent,
     ReportStickyComponent,
     Paneldash1Component,
-    PositionRowComponent
+    PositionRowComponent,
+    NotificationRowComponent
   ],
   providers: [],
   exports: [
@@ -221,7 +223,8 @@ import {
     DropdownComponent,
     ReportSelectorComponent,
     ReportStickyComponent,
-    PositionRowComponent
+    PositionRowComponent,
+    NotificationRowComponent
   ]
 })
 export class SharedModule {}

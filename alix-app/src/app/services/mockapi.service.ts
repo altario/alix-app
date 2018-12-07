@@ -73,8 +73,8 @@ export class MockapiService {
 
         for (let i = 0; i < notifications.length; i++) {
           notifications[i].positions = [];
-          for (let z = 0; z < notifications[i].notificationIds.length; z++) {
-            notifications[i].positions.push(positionsHash[notifications[i].notificationIds[z]]);
+          for (let z = 0; z < notifications[i].positionsIds.length; z++) {
+            notifications[i].positions.push(positionsHash[notifications[i].positionsIds[z]]);
           }
         }
 
