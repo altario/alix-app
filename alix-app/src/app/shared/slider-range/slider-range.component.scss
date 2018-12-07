@@ -44,3 +44,78 @@
     background: orange;
   }
 }
+
+
+
+
+
+// @import '~src/scss/imports';
+
+// $slider-range__line--bg: $color__custom__gray--8;
+// $slider-range__line--selection: $color__custom__brand--1;
+
+// $slider-range__text--color: $color__custom__gray--4;
+
+// :host::ng-deep {
+//   .custom-slider {
+//     .ng5-slider {
+
+//       .ng5-slider-bar {
+//         height: 4px;
+//         border-radius: 100px;
+//         background: rgba($section--bg--dark, .7);
+//       }
+
+//       .ng5-slider-selection {
+//         background: $slider-range__line--bg;
+//       }
+
+//       .ng5-slider-pointer {
+//         width: 14px;
+//         height: 14px;
+//         top: auto; /* to remove the default positioning */
+//         bottom: -5px;
+//         background-color: $slider-range__line--selection;
+//         border-radius: 100px;
+//         // border-top-left-radius: 3px;
+//         // border-top-right-radius: 3px;
+
+//         &:after {
+//           display: none;
+//         }
+//       }
+
+//       .ng5-slider-bubble {
+//         bottom: 14px;
+//       }
+
+//       .ng5-slider-model-value {
+//         font-weight: bold;
+//         color: $slider-range__line--selection;
+//       }
+
+//       .ng5-slider-limit {
+//         color: $slider-range__text--color;
+//       }
+
+//       .ng5-slider-bar {
+//         background: $slider-range__line--bg;
+//       }
+
+//       .ng5-slider-ticks {
+//         .ng5-slider-tick {
+//           width: 10px;
+//           height: 10px;
+//           top: 0px;
+//           margin: 0;
+//           border-radius: 100px;
+//           background: $slider-range__line--bg;
+
+//           &.ng5-slider-selected {
+//             background: $slider-range__line--bg;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }

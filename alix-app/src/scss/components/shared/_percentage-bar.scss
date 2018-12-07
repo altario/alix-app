@@ -1,12 +1,21 @@
-$perc-bar--color: #50BC85;
+$perc-bar--color: $color__custom--green;
 
 .perc-bar {
   width: 80%;
-  height: 6px;
+  height: 10px;
   display: block;
   margin-top: 10px;
-  background: rgba(black, .3);
+  margin-bottom: 10px;
+  background: rgba($section--bg--dark, .7);
   position: relative;
+  border-radius: 100px;
+  overflow: hidden;
+  // @include pseudo {
+  //   border-radius: 100px;
+    // box-shadow: inset 0px 5px 10px rgba(black, 0.2);
+  //   z-index: 100;
+  // }
+
   .perc-bar__percentage {
     height: 100%;
     position: absolute;
@@ -18,6 +27,8 @@ $perc-bar--color: #50BC85;
     top: 0;
     right: 0;
     background: rgba($perc-bar--color, .66);
+    // border-left: 1px solid darken($color__custom--green, 20%);
+    // @include shadow(0px 4px 10px rgba(black, 0.25));
   }
   .perc-bar__percentage__1y {
     height: 100%;
@@ -25,5 +36,7 @@ $perc-bar--color: #50BC85;
     top: 0;
     right: 0;
     background: rgba($perc-bar--color, 1);
+    // border-left: 1px solid darken($color__custom--green, 20%);
+    // @include shadow(0px 4px 10px rgba(black, 0.25));
   }
 }
