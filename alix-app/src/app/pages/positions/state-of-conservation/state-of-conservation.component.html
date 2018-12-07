@@ -42,9 +42,9 @@
       <div class="col-8 in-c-state-c-all-assets">
         <div class="gmap">
           <app-report-selector [hasBg]="true"></app-report-selector>
-          <agm-map [disableDefaultUI]="false" [latitude]="lat" [longitude]="lng" [zoom]="zoom" [gestureHandling]="'none'" [zoomControl]="false" [streetViewControl]="false">
-          <agm-circle *ngFor="let marker of markers" [latitude]="marker.lat" [longitude]="marker.lng" [radius]="radius" [fillColor]="marker.color" [circleDraggable]="false" [editable]="false" fillOpacity="1"></agm-circle>
-        </agm-map>
+          <agm-map [disableDefaultUI]="false" [latitude]="lat" [longitude]="lng" [zoom]="zoom" [gestureHandling]="'none'" [zoomControl]="false" [streetViewControl]="false" [styles]="style1">
+            <agm-circle *ngFor="let marker of markers" [latitude]="marker.lat" [longitude]="marker.lng" [radius]="radius" [fillColor]="marker.color" [circleDraggable]="false" [editable]="false" fillOpacity="1"></agm-circle>
+          </agm-map>
       </div>
       </div>
     </div>
@@ -61,8 +61,9 @@
       <div class="col-12 in-c-satelite-image">
         <div class="gmap">
           <app-report-selector [hasBg]="true"></app-report-selector>
-          <agm-map [disableDefaultUI]="false" [latitude]="lat" [longitude]="lng" [zoom]="zoom" mapTypeId="hybrid" [gestureHandling]="'none'" [zoomControl]="false" [streetViewControl]="false">
-            <agm-circle [latitude]="lat" [longitude]="lng" [radius]="radius" [fillColor]="'red'" [circleDraggable]="false" [editable]="false">
+          <agm-map [disableDefaultUI]="false" [latitude]="lat" [longitude]="lng" [zoom]="zoom" [gestureHandling]="'none'" [zoomControl]="false" [streetViewControl]="false" [styles]="style2">
+            <agm-circle *ngFor="let marker of markers2" [latitude]="marker.lat" [longitude]="marker.lng" [radius]="radius" [fillColor]="marker.color" [circleDraggable]="false"
+            [editable]="false" fillOpacity="1">
             </agm-circle>
           </agm-map>
         </div>
