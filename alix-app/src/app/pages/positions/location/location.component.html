@@ -1,5 +1,4 @@
-<div *ngIf="config" class="container-fluid">
-
+<div *ngIf="config" class="container-fluid">>
   <section class="page-section bg--dark">
 
     <div class="row">
@@ -81,7 +80,7 @@
         <app-panel-31 [config]="config.accommodation"></app-panel-31>
       </div>
       <div class="col-8">
-        <alix-bar [series]="getpercentageAccommByPricePerRoomSeries()" [opts]="getpercentageAccommByPricePerRoomOpts()"></alix-bar>
+        <alix-bar [series]="getpercentageAccommByPricePerRoomSeries()" [opts]="getpercentageAccommByPricePerRoomOpts()" [init]="{height:'554px'}"></alix-bar>
       </div>
     </div>
   </section>
@@ -128,8 +127,13 @@
       <div class="col-4">
         <app-panel-34 [config]="config.publicTransportation500Radius"></app-panel-34>
       </div>
-      <div class="col-8">
-        Something here
+      <div class="col-8 in-METROSTATIONS">
+        <agm-map [disableDefaultUI]="false" [latitude]="lat" [longitude]="lng" [zoom]="zoom" 
+            [gestureHandling]="'none'" [zoomControl]="false" [streetViewControl]="false">
+            <agm-circle [latitude]="lat" [longitude]="lng" [radius]="radius" [fillColor]="'red'" [circleDraggable]="false"
+                [editable]="false">
+            </agm-circle>
+        </agm-map>
       </div>
     </div>
   </section>
