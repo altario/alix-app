@@ -181,8 +181,6 @@ export class StateOfConservationComponent implements OnInit {
   }
 
   updateNumbOfAssetsBySc(population) {
-    console.log('OUTPUT: ', population);
-
     this.chartInstance.numbOfAssetsBySc.setOption({
       series: this.getnumbOfAssetsBySc(population)
     });
