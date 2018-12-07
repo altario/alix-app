@@ -1,7 +1,7 @@
 // angular
 import { trigger, animate, transition, style, query } from '@angular/animations';
 
-const animTime = '0s';
+const animTime = '0.3s';
 
 export const fadeAnimation = trigger('fadeAnimation', [
   transition('* => *', [
