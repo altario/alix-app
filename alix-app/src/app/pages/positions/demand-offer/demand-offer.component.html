@@ -25,13 +25,13 @@
   <section class="page-section bg--dark">
 		<div class="row">
 			<div class="col">
-				<h1 class="section-title"># SQM / Asset Demand</h1>
-				<div><alix-scatter [series]="series.sqm" [opts]="opts.sqm"></alix-scatter></div>
+				<div>
+					<alix-scatter [series]="assetDemand.sqm.series" [opts]="assetDemand.sqm.opts"></alix-scatter>
+				</div>
 			</div>
 			<div class="col">
-				<h1 class="section-title"># Rooms / Asset Demand</h1>
 				<div>
-					<alix-scatter [series]="series.rooms" [opts]="opts.rooms" ></alix-scatter>
+					<alix-scatter [series]="assetDemand.rooms.series" [opts]="assetDemand.rooms.opts"></alix-scatter>
 				</div>
 			</div>
 		</div>
@@ -44,7 +44,7 @@
 			</div>
 			<div class="col-8">
         <app-dropdown [config]="getPriceTodayVsOvertime()" (callback)="changePriceTodayVsOvertime($event)"></app-dropdown>
-        <alix-area-basic [series]="series.priceTodayVsOvertime" [opts]="opts.priceTodayVsOvertime" (chartInit)="onChartInit('priceTodayVsOvertime',$event)"></alix-area-basic>
+        <alix-line [series]="series.priceTodayVsOvertime" [opts]="opts.priceTodayVsOvertime" (chartInit)="onChartInit('priceTodayVsOvertime',$event)"></alix-line>
 			</div>
 		</div>
 	</section>
@@ -55,7 +55,7 @@
 				<app-panel-16 [config]="config.demandAndOffer.forSale.populations"></app-panel-16>
 			</div>
 			<div class="col-8">
-        <alix-area-basic [series]="series.peerListedAssets5YForSale" [opts]="opts.peerListedAssets5YForSale"></alix-area-basic>
+        <alix-line [series]="series.peerListedAssets5YForSale" [opts]="opts.peerListedAssets5YForSale"></alix-line>
 			</div>
 		</div>
 	</section>

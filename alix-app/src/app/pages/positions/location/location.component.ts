@@ -6,6 +6,9 @@ import { ActivatedRoute } from '@angular/router';
 import * as dataset from '@data/dataset';
 import * as chartdataset from '@data/charts-dataset';
 
+// graph color overrides
+import { eChartsConfig } from '@global/charts';
+
 @Component({
   selector: 'app-location',
   templateUrl: './location.component.html',
@@ -16,6 +19,11 @@ export class LocationComponent implements OnInit {
   public vehicleValues: Array<any>;
   public selectedVehicleYear: object;
 
+  lat: number = 45.4758422;
+  lng: number = 9.1911364;
+  zoom = 14;
+  radius = 70;
+  
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -90,6 +98,7 @@ export class LocationComponent implements OnInit {
       color: ['#003366', '#006699', '#4cabce', '#e5323e'],
       calculable: true,
       legend: {
+          show:false,
         data: Object.keys(chartdataset.dossier1ChartsData.location.percentageAccommByPricePerRoom).map((population, i) => {
             return population;
         }),
@@ -97,13 +106,18 @@ export class LocationComponent implements OnInit {
       },
       xAxis: {
         type: 'category',
+        splitLine: eChartsConfig.xAxis.splitLine,
+        axisLabel: eChartsConfig.xAxis.axisLabel,
+        axisLine: eChartsConfig.xAxis.axisLine,
         axisTick: { show: false },
-        data: Object.keys(chartdataset.dossier1ChartsData.location.percentageAccommByPricePerRoom).map((population, i) => {
-          return population;
+        data: chartdataset.dossier1ChartsData.location.percentageAccommByPricePerRoom.pricePerNight.values.map((population, i) => {
+          return '>' +population + '€';
         })
       },
       yAxis: {
-        type: 'value'
+        type: 'value',
+          splitLine: eChartsConfig.yAxis.splitLine,
+          axisLabel: eChartsConfig.yAxis.axisLabel
       }
     };
   }
@@ -116,6 +130,7 @@ export class LocationComponent implements OnInit {
       position: 'insideBottom',
       distance: 15,
     };
+
     const labelOption = {
       normal: {
         show: true,
@@ -133,15 +148,17 @@ export class LocationComponent implements OnInit {
         }
       }
     };
-    return Object.keys(chartdataset.dossier1ChartsData.location.percentageAccommByPricePerRoom).map((population, i) => {
 
-        return {
-          name: population,
-          barGap: 0,
-          type: 'bar',
-          label: labelOption,
-          data: chartdataset.dossier1ChartsData.location.percentageAccommByPricePerRoom[population].values
-        };
+    return Object.keys(chartdataset.dossier1ChartsData.location.percentageAccommByPricePerRoom).map((population, i) => {
+        if (population != 'pricePerNight') {
+            return {
+            name: population,
+            barGap: 0,
+            type: 'bar',
+            label: labelOption,
+            data: chartdataset.dossier1ChartsData.location.percentageAccommByPricePerRoom[population].values
+            };
+        }
 
     });
   }

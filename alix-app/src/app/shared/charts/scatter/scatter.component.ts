@@ -19,7 +19,6 @@ export class ScatterComponent implements OnInit {
   public initOpts: any = {};
 
   ngOnInit() {
-
     this.options = {
       xAxis: {},
       yAxis: {},
