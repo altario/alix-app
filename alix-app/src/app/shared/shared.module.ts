@@ -154,8 +154,7 @@ import {
     ReportStickyComponent,
     Paneldash1Component
   ],
-  providers: [
-  ],
+  providers: [],
   exports: [
     // pipes
     CustomCurrencyPipe,
@@ -218,7 +217,7 @@ import {
     SliderRangeComponent,
     DropdownComponent,
     ReportSelectorComponent,
-    ReportStickyComponent,
+    ReportStickyComponent
   ]
 })
-export class SharedModule { }
+export class SharedModule {}
