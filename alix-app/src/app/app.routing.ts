@@ -2,7 +2,7 @@
 import { Routes } from '@angular/router';
 
 // not-found
-import { NotFoundComponent } from './not-found/not-found.component';
+import { NotFoundComponent } from '@pages/not-found/not-found.component';
 
 export const AppRoutes: Routes = [
   {

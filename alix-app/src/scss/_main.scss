@@ -88,6 +88,16 @@
 @import 'components/shared/graphs';
 @import 'components/shared/maps';
 
+
+// DO NOT REMOVE --------------------
+router-outlet ~ * {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+// DO NOT REMOVE --------------------
+
+
 %app-panel {
 	flex: 1;
 }

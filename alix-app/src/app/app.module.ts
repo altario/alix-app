@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // routes
 import { AppRoutes } from './app.routing';
@@ -16,10 +17,12 @@ import { AppComponent } from './app.component';
 import { BsDropdownModule } from 'ngx-bootstrap';
 
 // not-found
-import { NotFoundComponent } from './not-found/not-found.component';
+import { NotFoundComponent } from '@pages/not-found/not-found.component';
 
+// services
+import { LocaldataService } from '@services/localdata.service';
 
-//AGM
+// plugins
 import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
@@ -37,16 +40,17 @@ import { AgmCoreModule } from '@agm/core';
       NgbModule.forRoot(),
       HttpModule,
       HttpClientModule,
+      BrowserAnimationsModule,
 
       // ngx-bootstrap
       BsDropdownModule.forRoot(),
 
-        //AGM
-        AgmCoreModule.forRoot({
-            apiKey: 'AIzaSyC_wMmBNunjK0XEu_HTlGrsOhVVHfyppN0'
-        })
+      // plugins
+      AgmCoreModule.forRoot({
+        apiKey: 'AIzaSyC_wMmBNunjK0XEu_HTlGrsOhVVHfyppN0'
+      })
     ],
-    providers: [],
+    providers: [LocaldataService],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -255,7 +255,7 @@ $buttons-types: (
     // opacity: $btn-disabled-opacity;
     background: $color__gray--light !important;
     border-color: $color__gray--light !important;
-    color: $color__gray--medium !important;
+    color: $color__gray !important;
     @include box-shadow(none);
   }
 

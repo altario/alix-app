@@ -267,7 +267,7 @@ $input__padding-x:                    15px;
 $input__padding-y:                    0;
 $input__line-height:                  $line-height__base;
 $input__font-size:                    $font-size--small;
-$input__border-radius:                0px;
+$input__border-radius:                $border-radius__default;
 
 // $forms: input small
 $input__height-sm:                    20px;
@@ -275,7 +275,7 @@ $input__padding-x-sm:                 8px;
 $input__padding-y-sm:                 0;
 $input__line-height-sm:               $line-height__base;
 $input__font-size-sm:                 $font-size--tiny;
-$input__border-radius-sm:             0px;
+$input__border-radius-sm:             $border-radius__default;
 
 // $forms: input large
 $input__height-lg:                    60px;
@@ -283,7 +283,7 @@ $input__padding-x-lg:                 20px;
 $input__padding-y-lg:                 0;
 $input__line-height-lg:               $line-height__base;
 $input__font-size-lg:                 $font-size--default;
-$input__border-radius-lg:             0px;
+$input__border-radius-lg:             $border-radius__default;
 
 // $forms: base
 $input__bg:                           white;
@@ -313,7 +313,7 @@ $input__checkbox__size--inner:        10px;
 $input__checkbox__gutter:             25px; // left gutter fix
 $input__checkbox__margin--y:          0.3rem;
 $input__checkbox__margin--x:          0.25rem;
-$input__checkbox__color:              $color__gray--dark;
+$input__checkbox__color:              $color__brand--1;
 
 
 

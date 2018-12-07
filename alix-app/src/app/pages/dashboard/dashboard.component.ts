@@ -191,12 +191,18 @@ export class DashboardComponent implements OnInit {
   }
 
   onChartClick(chartLine) {
-    this.dropvalue = chartLine.data.id;
-    this.updateAllComponents(chartLine);
+    if (chartLine.selfType === 'breadcrumb') {
+      console.log('CLICKED ON BREADCRUMB');
+      console.log(chartLine);
+    } else {
+      console.log('CLICKED ON MAP');
+      this.dropvalue = chartLine.data.id;
+      this.updateAllComponents(chartLine);
+    }
   }
 
   onChange(val) {
-    console.log(val);
+    // console.log(val);
     this.updateAllComponents({ data: { id: val}});
   }
 
@@ -212,7 +218,7 @@ export class DashboardComponent implements OnInit {
     if (kpis.length) {
       const data = kpis.shift();
       this.kpis = data[Object.keys(data)[0]];
-      console.log(this.chartInstance);
+      // console.log(this.chartInstance);
       this.chartInstance.exposurePerformanceBoxPlot.setOption({
         series: this.getexposurePerformanceBoxPlot(key)
       });
@@ -437,13 +443,13 @@ export class DashboardComponent implements OnInit {
     console.log(this.chartInstance);
     this.chartInstance[chart] = e;
 
-    if(chart === 'nonPerforming'){
+    if (chart === 'nonPerforming') {
       echarts.connect([
         this.chartInstance.exposure,
         this.chartInstance.netMargin,
         this.chartInstance.performing,
         this.chartInstance.nonPerforming,
-      ])
+      ]);
     }
   }
 }

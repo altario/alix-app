@@ -2,12 +2,17 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+// anim
+import { fadeAnimation } from '@app/animations';
+
+// data
 import * as dataset from '@data/dataset';
 
 @Component({
     selector: 'app-positions-layout',
     templateUrl: './positions-layout.component.html',
-    styleUrls: ['./positions-layout.component.scss']
+    styleUrls: ['./positions-layout.component.scss'],
+    animations: [fadeAnimation]
 })
 export class PositionsLayoutComponent implements OnInit {
   public config: any;
