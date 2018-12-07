@@ -29,7 +29,7 @@
         <app-panel-28 [config]="selectedVehicleYear"></app-panel-28>
       </div>
       <div class="col-8">
-        Something here
+        <alix-scatter [series]="getscpVehiclesRad()" [opts]='opts.scpVehiclesRad' (chartInit)="onChartInit('scpVehiclesRad',$event)"></alix-scatter>
       </div>
     </div>
   </section>
