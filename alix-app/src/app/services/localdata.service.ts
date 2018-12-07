@@ -1,61 +1,73 @@
 // angular
 import { Injectable } from '@angular/core';
 
+// routes
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
+
 @Injectable({
   providedIn: 'root'
 })
 export class LocaldataService {
   pageType: any = 'monitor';
-  pageBrand: any = 'bnl';
+  pageBrand: any = 'alix';
+  pageEmail: any = 'john@email.com';
 
-  loginEmailValue: any = '';
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
-  constructor() {}
+  public setInitData() {
+    this.setLocalData(this.pageType, this.pageBrand, this.pageEmail);
 
-  setInitData() {
-    this.setLocalData(this.pageType, this.pageBrand);
+    this.checkAddressUrl();
   }
 
-  setLocalData(pt, pb) {
-    localStorage.setItem('pageType', pt);
-    localStorage.setItem('pageBrand', pb);
+  private setLocalData(pageType, pageBrand, pageEmail) {
+    if (!this.getPageType()) { this.setPageType(pageType); }
+    if (!this.getPageBrand()) { this.setPageBrand(pageBrand); }
+    if (!this.getPageEmail()) { this.setPageEmail(pageEmail); }
   }
 
-  checkValues(inputEmailValue) {
-    this.loginEmailValue = inputEmailValue;
-
-    if (this.loginEmailValue.includes('paolo@')) {
-      this.pageType = 'underwriter';
-      localStorage.setItem('pageType', this.pageType);
-      // console.log('MONITOR:', this.pageType);
-    }
-    if (this.loginEmailValue.includes('daniel@')) {
-      this.pageType = 'monitor';
-      localStorage.setItem('pageType', this.pageType);
-      // console.log('MONITOR:', this.pageType);
-    }
-
-    if (this.loginEmailValue.includes('@bnl')) {
-      this.pageBrand = 'bnl';
-      localStorage.setItem('pageBrand', 'bnl');
-      // console.log('PAGE_BRAND: bnl');
-    }
-    if (this.loginEmailValue.includes('@bpm')) {
-      this.pageBrand = 'bpm';
-      localStorage.setItem('pageBrand', 'bpm');
-      // console.log('PAGE_BRAND: bpm');
-    }
-    if (this.loginEmailValue.includes('@isp')) {
-      this.pageBrand = 'isp';
-      localStorage.setItem('pageBrand', 'isp');
-      // console.log('PAGE_BRAND: isp');
-    }
-
-    return this.validateEmail(this.loginEmailValue);
+  public checkAddressUrl() {
+    this.router.events.subscribe(event => {
+      const routeUrl = (event as NavigationEnd).url;
+      if (routeUrl) {
+        if (routeUrl.includes('monitor')) { this.setPageType('monitor'); }
+        if (routeUrl.includes('underwriter')) { this.setPageType('underwriter'); }
+      }
+    });
   }
 
-  validateEmail(email) {
-    const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(email);
+
+
+  // SET --------------------
+
+  public setPageType(pageType) {
+    localStorage.setItem('pageType', pageType);
+  }
+
+  public setPageBrand(pageBrand) {
+    localStorage.setItem('pageBrand', pageBrand);
+  }
+
+  public setPageEmail(pageEmail) {
+    localStorage.setItem('pageEmail', pageEmail);
+  }
+
+
+
+  // GET --------------------
+
+  public getPageType() {
+    return localStorage.getItem('pageType');
+  }
+
+  public getPageBrand() {
+    return localStorage.getItem('pageBrand');
+  }
+
+  public getPageEmail() {
+    return localStorage.getItem('pageEmail');
   }
 }

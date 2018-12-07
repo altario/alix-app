@@ -24,6 +24,8 @@ import { LocaldataService } from '@services/localdata.service';
 
 // plugins
 import { AgmCoreModule } from '@agm/core';
+import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
+import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 
 @NgModule({
     declarations: [
@@ -44,6 +46,10 @@ import { AgmCoreModule } from '@agm/core';
 
       // ngx-bootstrap
       BsDropdownModule.forRoot(),
+
+      // plugins
+      LoadingBarRouterModule,
+      LoadingBarHttpClientModule,
 
       // plugins
       AgmCoreModule.forRoot({
