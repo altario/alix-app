@@ -24,8 +24,7 @@ import { MonitorComponent } from '@layouts/index';
 import { UnderwriterComponent } from '@layouts/index';
 
 // modules
-import { HeaderMonitorModule } from '@shared/headers/header-monitor';
-import { HeaderUnderwriterModule } from '@shared/headers/header-underwriter';
+import { HeaderModule } from '@shared/header';
 
 // shared
 import { SharedModule } from '@shared/shared.module';
@@ -35,8 +34,7 @@ import { SharedModule } from '@shared/shared.module';
     CommonModule,
     RouterModule.forChild(PagesRoutes),
     SharedModule,
-    HeaderMonitorModule,
-    HeaderUnderwriterModule
+    HeaderModule
   ],
   declarations: [
     // layouts

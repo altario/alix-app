@@ -1,4 +1,7 @@
+// angular
 import { trigger, animate, transition, style, query } from '@angular/animations';
+
+const animTime = '0.15s';
 
 export const fadeAnimation = trigger('fadeAnimation', [
   transition('* => *', [
@@ -11,7 +14,7 @@ export const fadeAnimation = trigger('fadeAnimation', [
     query(':leave',
       [
         style({ opacity: 1 }),
-        animate('0s',
+        animate(animTime,
           style({ opacity: 0 })
         )
       ],
@@ -20,7 +23,7 @@ export const fadeAnimation = trigger('fadeAnimation', [
     query(':enter',
       [
         style({ opacity: 0 }),
-        animate('0s',
+        animate(animTime,
           style({ opacity: 1 })
         )
       ],

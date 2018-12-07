@@ -19,7 +19,8 @@ import {
   CustomCurrencyPipe,
   CustomPercentagePipe,
   CustomDateConverterPipe,
-  CustomDecimalPipe
+  CustomDecimalPipe,
+  PositiveNegativeDirective
 } from '@helpers/index';
 
 // charts
@@ -92,6 +93,7 @@ import {
     CustomPercentagePipe,
     CustomDateConverterPipe,
     CustomDecimalPipe,
+    PositiveNegativeDirective,
 
     // charts
     AreaBasicComponent,
@@ -143,14 +145,14 @@ import {
     Panel34Component,
     Panel35Component,
     Paneldash1Component,
-      Paneldash2Component,
+    Paneldash2Component,
 
     // components
     SliderRangeComponent,
     DropdownComponent,
     ReportSelectorComponent,
     ReportStickyComponent,
-    Paneldash1Component,
+    Paneldash1Component
   ],
   providers: [
   ],
@@ -210,7 +212,7 @@ import {
     Panel34Component,
     Panel35Component,
     Paneldash1Component,
-      Paneldash2Component,
+    Paneldash2Component,
 
     // components
     SliderRangeComponent,

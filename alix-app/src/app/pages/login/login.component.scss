@@ -28,6 +28,7 @@
   width: 100%;
   max-width: 600px;
   height: 400px;
+  margin: 0 20px;
   background: #252B48;
   border-radius: $border-radius__default;
   overflow: hidden;
@@ -67,7 +68,7 @@
       left: 30px;
     }
 
-    form {
+    .form {
       width: 100%;
       margin-top: 20px;
 

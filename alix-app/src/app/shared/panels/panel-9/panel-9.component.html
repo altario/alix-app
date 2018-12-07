@@ -44,7 +44,7 @@
     </div>
     <div class=" cell__wrapper cell__wrapper--bg-light list-simple">
       <div>
-        <span [outerHTML]="config.growth1YPerc.value | perc:1:'symbol'"></span>
+        <span [appPosNeg]="config.growth1YPerc.value" icon="symbol" >{{config.growth1YPerc.value | perc:1}}</span>
         <span>
           {{config.growth1YAbs.value }}
         </span>
@@ -54,7 +54,7 @@
         </small>
       </div>
       <div>
-        <span [outerHTML]="config.growth5Y.value | perc:1:'symbol'"></span>
+        <span [appPosNeg]="config.growth5Y.value" icon="symbol">{{config.growth5Y.value | perc:1}}</span>
         <span>
           {{ config.growth5YAbs.value }}
         </span>
