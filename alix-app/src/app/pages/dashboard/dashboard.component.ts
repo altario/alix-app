@@ -119,7 +119,7 @@ export class DashboardComponent implements OnInit {
   }
 
   getutpOutflowInflow(industry = 'allIndustries'): Array<any> {
-    const labels = ['Exposure 1Y Ago', 'To Performing', 'Collected', 'To Bad Loans', 'From Performing', 'From Non Performing', 'Exposure Today'];
+    const labels = ['Exposure 1Y Ago', 'To Performing', 'Collected', 'To Bad Loans', 'From Performing', 'From Non Performing', 'Others'];
 
     const axisLabel = JSON.parse(JSON.stringify(eChartsConfig.eChartsConfig.xAxis.axisLabel));
     axisLabel.formatter = function (value, index) {
