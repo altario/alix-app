@@ -1,18 +1,21 @@
 @import '~src/scss/imports';
 
-.tabs{
-  .tabs-nav {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    list-style: none;
-    li {
-      flex: 1;
+.nav-tabs {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  li {
+    flex: 1;
+    a {
       padding: 15px;
       text-align: left;
       text-decoration: none;
-      .title {
+      height: 100%;
+      display: block;
+      &.title {
         font-size: rem(12px);
+        color: #FFFFFF;
         &:active,
         &:hover {
           text-decoration: none;
@@ -23,16 +26,18 @@
         text-decoration: none;
       }
     }
-  }
+    }
 }
-.tabs-content {
-  .tabs-content-pane {
+
+.tab-content {
+  margin: 0 !important;
+  .tab-pane {
     padding: 45px;
     form {
       display: flex;
       flex-direction: column;
       height: 100%;
-      min-height: 70vh;
+      min-height: 60vh;
 
       .form-group {
         width: 360px;
