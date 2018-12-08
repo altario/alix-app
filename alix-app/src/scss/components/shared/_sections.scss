@@ -11,12 +11,12 @@ $box__body-bg--dark: $color2;
   &__header--bg { background-color: $box__header--bg }
   &__body--bg {
     background-color: $box__body--bg;
-    .cell__wrapper--bg-dark {
-      background-color: $box__body-bg--dark
-    }
-    .cell__wrapper--bg-light {
-      background-color: $box__body-bg--light
-    }
+  }
+  .cell__wrapper--bg-dark {
+    background-color: $box__body-bg--dark
+  }
+  .cell__wrapper--bg-light {
+    background-color: $box__body-bg--light
   }
 }
 
