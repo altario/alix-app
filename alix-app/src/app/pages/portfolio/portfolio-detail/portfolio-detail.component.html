@@ -43,7 +43,7 @@
               </div>
               <div class="cell__wrapper__info">
                 <p class="highlighted--big highlighted--color">
-                  {{ (portfolio$ | async)?.keyFinancialRegulatoryCapitalAbsorbed }} <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.keyFinancialRegulatoryCapitalAbsorbedUnit }}</small>
+                  {{ (portfolio$ | async)?.keyFinancialRegulatoryCapitalAbsorbed | round: 2 }} <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.keyFinancialRegulatoryCapitalAbsorbedUnit }}</small>
                 </p>
               </div>
             </div>
@@ -52,7 +52,7 @@
               <div class="cell__wrapper__top"><span class="label__up label--color">Expectedx Loss</span></div>
               <div class="cell__wrapper__info">
                 <p class="highlighted--big highlighted--color">
-                    {{ (portfolio$ | async)?.keyFinancialExpectedLoss }} <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.keyFinancialExpectedLossUnit }}</small>
+                    {{ (portfolio$ | async)?.keyFinancialExpectedLoss | round: 2 }} <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.keyFinancialExpectedLossUnit }}</small>
                 </p>
               </div>
             </div>
@@ -72,7 +72,7 @@
               <div class="cell__wrapper__top"><span class="label__up label--color">Loan Original Value</span></div>
               <div class="cell__wrapper__info">
                 <p class="highlighted--big highlighted--color">
-                  {{ (portfolio$ | async)?.positionLoanOriginalValue }} <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.positionLoanOriginalValueUnit }}</small>
+                  {{ (portfolio$ | async)?.positionLoanOriginalValue | round: 2 }} <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.positionLoanOriginalValueUnit }}</small>
                 </p>
               </div>
             </div>
@@ -81,7 +81,7 @@
               <div class="cell__wrapper__top"><span class="label__up label--color">Current Exposure</span></div>
               <div class="cell__wrapper__info">
                 <p class="highlighted--big highlighted--color">
-                  {{ (portfolio$ | async)?.positionCurrentExposure }} <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.positionCurrentExposureUnit }}</small>
+                  {{ (portfolio$ | async)?.positionCurrentExposure | round: 2 }} <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.positionCurrentExposureUnit }}</small>
                 </p>
               </div>
             </div>
@@ -125,7 +125,7 @@
               <div class="cell__wrapper__top"><span class="label__up label--color">Exposure Until Duration</span></div>
               <div class="cell__wrapper__info">
                 <p class="highlighted--big highlighted--color">
-                  {{ (portfolio$ | async)?.durationExposureUntilDuration }} <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.durationExposureUntilDurationUnit }}</small>
+                  {{ (portfolio$ | async)?.durationExposureUntilDuration | round: 2 }} <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.durationExposureUntilDurationUnit }}</small>
                 </p>
               </div>
             </div>
@@ -158,10 +158,10 @@
               <div class="cell__wrapper__info">
                 <div class="table__simple">
                   <div class="table__row">
-                    <span class="cell__title">Today</span> <span class="cell__information">{{ (portfolio$ | async)?.durationToday | cusdate }}</span>
+                    <span class="cell__title">Today</span> <span class="cell__information">{{ (portfolio$ | async)?.durationToday | cusdate | date: 'd MMM y' }}</span>
                   </div>
                   <div class="table__row">
-                    <span class="cell__title">Duration</span> <span class="cell__information">{{ (portfolio$ | async)?.durationDuration | cusdate }}</span>
+                    <span class="cell__title">Duration</span> <span class="cell__information">{{ (portfolio$ | async)?.durationDuration | cusdate | date: 'd MMM y' }}</span>
                   </div>
                 </div>
               </div>
@@ -182,7 +182,7 @@
                 <div class="cell__wrapper__top"><span class="label__up label--color">Evaluation in to</span></div>
                 <div class="cell__wrapper__info">
                   <p class="highlighted--big highlighted--color">
-                    {{ (portfolio$ | async)?.collateralEvaluationinT0 }} <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.collateralEvaluationinT0Unit }}</small>
+                    {{ (portfolio$ | async)?.collateralEvaluationinT0 | round: 2 }} <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.collateralEvaluationinT0Unit }}</small>
                   </p>
                 </div>
               </div>
@@ -203,7 +203,7 @@
 
                 <div class="cell__wrapper__info">
                   <p class="highlighted--big highlighted--color">
-                    {{ (portfolio$ | async)?.collateralCurrentEvaluationEstimation }} <small class="u-uppercase highlighted__small--color__exception">{{ (portfolio$ | async)?.collateralCurrentEvaluationEstimationUnit }}</small>
+                    {{ (portfolio$ | async)?.collateralCurrentEvaluationEstimation | round: 2 }} <small class="u-uppercase highlighted__small--color__exception">{{ (portfolio$ | async)?.collateralCurrentEvaluationEstimationUnit }}</small>
                   </p>
                 </div>
               </div>
@@ -213,7 +213,7 @@
 
                 <div class="cell__wrapper__info">
                   <p class="highlighted--big highlighted--color">
-                    {{ (portfolio$ | async)?.collateralAdjustedLoanToValue }} <small class="u-uppercase highlighted__small--color__exception">{{ (portfolio$ | async)?.collateralAdjustedLoanToValueUnit }}</small>
+                    {{ (portfolio$ | async)?.collateralAdjustedLoanToValue | round: 1 }} <small class="u-uppercase highlighted__small--color__exception">{{ (portfolio$ | async)?.collateralAdjustedLoanToValueUnit }}</small>
 
                     <span class="highlighted__small--color">{{ (portfolio$ | async)?.collateralAdjustedLoanToValuePerc }} <small class="highlighted__small--color u-uppercase">{{ (portfolio$ | async)?.collateralAdjustedLoanToValuePercUnit }}</small></span>
                   </p>

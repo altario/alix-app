@@ -28,7 +28,7 @@ export class PortfolioDetailComponent implements OnInit {
     this.type$ = this.route.queryParams.pipe(map(params => params.type));
     this.notification$ = this.route.queryParams.pipe(
       filter(params => !!params.id),
-      mergeMap(params => this.apiService.getPortfolioPopulated(params.id))
+      mergeMap(params => this.apiService.getNotificationPopulated(params.id))
     );
   }
 }
