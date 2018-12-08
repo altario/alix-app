@@ -53,7 +53,7 @@ $box__body-bg--dark: $color2;
 }
 
 @mixin tabs ($unselected--bg, $active--bg, $bg-color:$active--bg ) {
-	.nav-tabs--bg {
+	.nav-tabs {
 		background-color: $unselected--bg;
 		li a {
 			border: 0px hidden transparent;

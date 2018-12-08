@@ -1,103 +1,77 @@
 @import '~src/scss/imports';
 
-.nav-tabs {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  list-style: none;
-  li {
-    flex: 1;
-    a {
-      padding: 15px;
-      text-align: left;
-      text-decoration: none;
-      height: 100%;
-      display: block;
-      &.title {
-        font-size: rem(12px);
-        color: #FFFFFF;
-        &:active,
-        &:hover {
-          text-decoration: none;
+.tab-pane {
+  margin: 0 !important;
+  padding: 45px;
+  form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 60vh;
+
+    .form-group {
+      width: 360px;
+      label { font-size: rem(12px) }
+    }
+
+    .buttons-group {
+      display: flex;
+      justify-content: flex-end;
+      align-self: flex-end;
+      align-items: flex-end;
+      flex: 2;
+      .btn {
+        margin: 10px;
+        display: flex;
+        align-items: center;
+        &:last-child { margin-right: 0 }
+        &.btn-success i {
+          font-size: rem(20px);
+          padding: 0 0 0 5px;
         }
       }
-      &:active,
-      &:hover {
-        text-decoration: none;
-      }
     }
+    .btn--add {
+      margin: 10px 0;
+      padding: 0 10px;
+      width: 100px;
     }
+  }
 }
 
-.tab-content {
-  margin: 0 !important;
-  .tab-pane {
-    padding: 45px;
-    form {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      min-height: 60vh;
 
-      .form-group {
-        width: 360px;
-        label {
-          font-size: rem(12px);
+.form-joined {
+  $padding: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: $padding;
+  margin: 0 0 20px;
 
-        }
-      }
+  .form-joined-inputs {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-      .buttons-group {
-        display: flex;
-        justify-content: flex-end;
-        align-self: flex-end;
-        align-items: flex-end;
-        flex: 2;
-        .btn {
-          margin: 10px;
-          display: flex;
-          align-items: center;
-          &:last-child { margin-right: 0 }
-          &.btn-success i {
-            font-size: rem(20px);
-            padding: 0 0 0 5px;
-          }
-        }
-      }
+  .btn-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    margin: -#{$padding} -#{$padding} -#{$padding} #{$padding};
+    button {
+      border-radius: 0;
+      padding: 0 10px;
+    }
+  }
 
-      .form-joined {
-        $padding: 10px;
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        padding: $padding;
-
-        .form-joined-inputs {
-          display: flex;
-          flex-wrap: wrap;
-        }
-
-        .btn-group {
-          display: flex;
-          flex-direction: column;
-          justify-content: stretch;
-          margin: -#{$padding} -#{$padding} -#{$padding} #{$padding};
-          button {
-            border-radius: 0;
-          }
-        }
-
-        .select-styled {
-          margin: 5px;
-          select {
-            &:hover,
-            &:active,
-            &:focus {
-              background-color: rgba(250,250,250,.1);
-              color: white;
-            }
-          }
-        }
+  .select-styled {
+    margin: 5px;
+    select {
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: rgba(250,250,250,.1);
+        color: white;
       }
     }
   }
