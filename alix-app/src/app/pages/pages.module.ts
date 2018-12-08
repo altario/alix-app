@@ -16,6 +16,8 @@ import { ReportsComponent } from './reports/reports.component';
 import { CounterpartsComponent } from './counterparts/counterparts.component';
 import { SimulationsComponent } from './simulations/simulations.component';
 
+import { CreatePortfolioComponent } from './create-portfolio/create-portfolio.component';
+
 // headers
 import { SubheaderDashboardComponent } from '@shared/subheader-dashboard/subheader-dashboard.component';
 
@@ -50,6 +52,8 @@ import { SharedModule } from '@shared/shared.module';
     ReportsComponent,
     CounterpartsComponent,
     SimulationsComponent,
+
+    CreatePortfolioComponent,
 
     // components
     SubheaderDashboardComponent,
