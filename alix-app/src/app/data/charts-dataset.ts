@@ -50,7 +50,8 @@ export const dossier1ChartsData = {
         label: 'Replacement Cost Sqm'
       }
     },
-    numbOfAssetsBySc: [{
+    numbOfAssetsBySc: [
+      {
         population: 'population1',
         populationName: 'Radius 1km',
         stateOfConservation: '0',
@@ -747,7 +748,8 @@ export const dossier1ChartsData = {
         label: 'Milano'
       }
     },
-    longTermRentEvolutionEurSqm: [{
+    longTermRentEvolutionEurSqm: [
+      {
         year: {
           values: [
             2013,
