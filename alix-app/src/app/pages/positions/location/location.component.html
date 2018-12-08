@@ -6,7 +6,7 @@
         <app-panel-25 [config]="config.typeOfNeighborhood"></app-panel-25>
       </div>
       <div class="col-8">
-        <alix-bar [series]="getbreakdownAssetsInNeighborhoodSeries()" [opts]="getbreakdownAssetsInNeighborhoodOpts()"></alix-bar>
+        <alix-bar [series]="getbreakdownAssetsInNeighborhoodSeries()" [opts]="getbreakdownAssetsInNeighborhoodOpts()" style="height: 275px" [init]="{height: '275px'}"></alix-bar>
       </div>
     </div>
   </section>
@@ -29,7 +29,8 @@
         <app-panel-28 [config]="selectedVehicleYear"></app-panel-28>
       </div>
       <div class="col-8">
-        <alix-scatter [series]="getscpVehiclesRad()" [opts]='opts.scpVehiclesRad' (chartInit)="onChartInit('scpVehiclesRad',$event)"></alix-scatter>
+        <alix-scatter [series]="getscpVehiclesRad()" [opts]='opts.scpVehiclesRad'></alix-scatter>
+        <!-- <alix-scatter [series]="getscpVehiclesRad()" [opts]='opts.scpVehiclesRad' (chartInit)="onChartInit('scpVehiclesRad',$event)"></alix-scatter> -->
       </div>
     </div>
   </section>
@@ -40,7 +41,7 @@
         <app-panel-29 [config]="config.streetConditions"></app-panel-29>
       </div>
       <div class="col-8">
-        Something here
+        <alix-scatter [series]="streetConditionsTimeEvoRad()" [opts]='opts.streetConditionsTimeEvoRad'></alix-scatter>
       </div>
     </div>
   </section>
@@ -91,7 +92,7 @@
         <app-panel-32 [config]="config.timeShift"></app-panel-32>
       </div>
       <div class="col-8">
-        Something here
+        <alix-scatter [series]="daynightShiftRad()" [opts]='opts.daynightShiftRad'></alix-scatter>
       </div>
     </div>
   </section>
