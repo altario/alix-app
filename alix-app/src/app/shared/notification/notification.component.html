@@ -1,20 +1,49 @@
 <div class="notification-row__container {{type}}">
-    <div class="notification-row__title">{{ notification?.name }}</div>
-    <div class="notification-row__loan">{{ notification?.loanType }}</div>
-    <div class="notification-row__time">
-        {{ notification?.dateStart }} > {{ notification?.dateEnd }}
-        > {{ notification?.dateEnd }}
+  <div>
+    <div [ngClass]="{
+      'tag--success': notification?.notificationPriority === 'low',
+      'tag--warning': notification?.notificationPriority === 'mid',
+      'tag--error': notification?.notificationPriority === 'high',
+      'tag--error': notification?.notificationPriority === 'Veryhigh'
+    }">
+    O
     </div>
-    <div class="notification-row__state">
-        <span class="u-uppercase">{{ notification?.state }}</span>
+    <div>
+      ICON
     </div>
-    <ul class="notification-row__info">
-        <li *ngFor="let info of notification?.infos">
-            <div>{{ info?.title }}</div>
-            <div class="u-strong">{{ info?.data }}</div>
-        </li>
-    </ul>
-    <div class="notification-row__button" (click)="goToPortfolio(notification)">
-        View
+    <div>
+      Date
     </div>
+  </div>
+
+  <div>
+    industry
+  </div>
+  <div>
+    title
+  </div>
+  <div>
+    {{ notification?.family }}
+  </div>
+  <div>
+    btns
+  </div>
+  <div class="notification-row__title">{{ notification?.name }}</div>
+  <div class="notification-row__loan">{{ notification?.loanType }}</div>
+  <div class="notification-row__time">
+    {{ notification?.dateStart }} > {{ notification?.dateEnd }}
+    > {{ notification?.dateEnd }}
+  </div>
+  <div class="notification-row__state">
+    <span class="u-uppercase">{{ notification?.family }}</span>
+  </div>
+  <ul class="notification-row__info">
+    <li *ngFor="let info of notification?.infos">
+      <div>{{ info?.title }}</div>
+      <div class="u-strong">{{ info?.data }}</div>
+    </li>
+  </ul>
+  <div class="notification-row__button" (click)="goToPortfolio(notification)">
+    View
+  </div>
 </div>
