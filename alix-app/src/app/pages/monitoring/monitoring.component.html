@@ -1,8 +1,12 @@
 <div class="container-fluid">
-  <div class="no-gutters">
-    <div class="col">
-      <h1>Monitoring</h1>
-      <p>Code here...</p>
+    <div class="row no-gutters">
+      <div class="col">
+        <!-- <h1 class="section-title">Notifications</h1> -->
+        <ul>
+          <li *ngFor="let notification of notifications$ | async">
+            <app-notification-row [notification]="notification"></app-notification-row>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
-</div>

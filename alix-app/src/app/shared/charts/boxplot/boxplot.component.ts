@@ -114,7 +114,7 @@ export class BoxplotComponent implements OnInit {
     this.options = Object.assign(this.options, this.opts);
 
     this.initOpts = {
-      renderer: 'svg',
+      renderer: 'canvas', // canvas | svg
     };
   }
 

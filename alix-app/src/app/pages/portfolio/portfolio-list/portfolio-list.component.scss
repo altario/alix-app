@@ -15,6 +15,7 @@ a {
   color: white;
   cursor: pointer;
   text-decoration: none;
+  margin-bottom: 40px;
 }
 
 .truncate {
@@ -29,11 +30,11 @@ a {
   color: $color__custom__gray--3;
 }
 
-.up {
+.Positive {
   color: #7AC143;
   // @include icon();
 }
-.down {
+.Negative {
   color: #E9545C;
   // @include
 }

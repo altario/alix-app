@@ -1,78 +1,82 @@
 <div class="container-fluid">
 
   <section class="page-section bg--light">
-    <div *ngFor="let rowItem of [1, 2, 3, 4, 5, 6]" class="row">
+    <div class="row">
 
-      <a *ngFor="let colItem of [1, 2, 3, 4]" [routerLink]="['/positions']"  class="col-4">
+      <a *ngFor="let portfolio of (portfolios$ | async)" [routerLink]="['./', portfolio.id]"  class="col-3">
 
         <div class="box box--bg box--table box--table--small">
           <div class="box__header box__header--bg">
             <div class="d-flex flex-row justify-content-between">
               <div class="box__title title--compound">
-                <h1 class="title">Extell Development</h1> <!-- #HC -->
+                <h1 class="title">{{ portfolio.industry }}</h1> <!-- #HC -->
               </div>
             </div>
           </div>
           <div class="box__body box__body--bg">
             <div class=" cell__wrapper cell__wrapper--bg-dark">
-              <span class="label label--fix-2-lines label--color">Portoflio name can be this long or even longer</span>
+              <span class="label label--fix-2-lines label--color">{{ portfolio.name }}</span>
             </div>
 
             <div class=" cell__wrapper cell__wrapper--bg-light">
               <div class="text-row">
-                <span>237</span>
+                <span>{{ portfolio.positions }}</span>
                 <span class="u-strong">Positions in Portfolio</span>
               </div>
               <div class="text-row">
-                <span>79</span>
+                <span>{{ portfolio.clients }}</span>
                 <span class="u-strong">Clients in Portfolio</span>
               </div>
 
               <div class="row-col">
                 <div class="text-row">
                   <span class="u-strong">Total CE</span>
-                  <span>1.2B€</span>
+                  <span>{{ portfolio.totalExposure }}{{ portfolio.exposureUnit }}</span>
                 </div>
                 <div class="text-row">
                   <span class="u-strong">Avg. RAROC</span>
-                  <span>12.3%</span>
+                  <span>{{ portfolio.avgRaroc }}%</span>
                 </div>
                 <div class="text-row">
                   <span class="u-strong">Avg. Maturity</span>
-                  <span>21Y</span>
+                  <span>{{ portfolio.avgMaturity }}Y</span>
                 </div>
                 <div class="text-row">
                   <span class="u-strong">Avg. LOV</span>
-                  <span>30.1M€</span>
+                  <span>{{ portfolio.avgLov }}{{ portfolio.avgLovUnit }}</span>
                 </div>
               </div>
             </div>
 
             <div class="cell__wrapper cell__wrapper--bg-dark">
               <div class="table">
-                <div class="table-row">
-                  <div class="highlighted--small highlighted--color">Last Unread Alerts</div>
+                <div class="highlighted--small highlighted--color">Last Unread Alerts</div>
+
+                <div *ngFor="let notification of portfolio.notificationsData" class="table-row">
                   <span><span class="square" style="background-color: #913BAF"></span></span>
-                  <span class="text-color-2">KPI Name 1</span>
-                  <span><span class="truncate down">2.6%</span></span>
+                  <span class="text-color-2">{{ notification.family }}</span>
+                  <span><span class="truncate {{ notification.positiveNegative }}">{{ notification.value }}%</span></span>
                   <span class="text-color-2">in 1 Month</span> <!-- #HC -->
                 </div>
-                <div class="table-row">
-                  <span><span class="square" style="background-color: #F26D4F"></span></span>
-                  <span class="text-color-2">KPI Name 2</span>
-                  <span><span class="truncate up">2.3%</span></span>
-                  <span class="text-color-2">in 1 Year</span> <!-- #HC -->
-                </div>
-                <div class="table-row">
-                  <span><span class="square" style="background-color: #BF5E5E"></span></span>
-                  <span class="text-color-2">KPI Name 3</span>
-                  <span><span class="truncate down">0.5%</span></span>
-                  <span class="text-color-2">in 1 Year</span> <!-- #HC -->
-                </div>
+
+                <!-- <div class="table-row">
+                    <span><span class="square" style="background-color: #F26D4F"></span></span>
+                    <span class="text-color-2">KPI Name 2</span>
+                    <span><span class="truncate up">2.3%</span></span>
+                    <span class="text-color-2">in 1 Year</span>
+                  </div>
+
+                  <div class="table-row">
+                    <span><span class="square" style="background-color: #BF5E5E"></span></span>
+                    <span class="text-color-2">KPI Name 3</span>
+                    <span><span class="truncate down">0.5%</span></span>
+                    <span class="text-color-2">in 1 Year</span>
+                  </div> -->
               </div>
             </div>
+
             <div class="cell__wrapper cell__wrapper--bg-light">
-              <span class="label label--color">+ 7 Unread Alerts</span>
+              <span class="label label--color">+ {{ portfolio.extraUnreadAlerts }} Unread Alerts</span>
             </div>
           </div>
         </div>
