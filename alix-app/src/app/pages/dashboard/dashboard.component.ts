@@ -64,7 +64,7 @@ export class DashboardComponent implements OnInit {
         splitLine: eChartsConfig.eChartsConfig.yAxis.splitLine,
         axisLabel: eChartsConfig.eChartsConfig.yAxis.axisLabel,
         axisLine: eChartsConfig.eChartsConfig.yAxis.axisLine,
-        data: ['AAA', 'AA+', 'AA', 'AA-', 'A+', 'A', 'A-', 'BBB+', 'BBB', 'BBB-', 'BB+', 'BB']
+        data: ['AAA', 'AA+', 'AA', 'AA-', 'A+', 'A', 'A-', 'BBB+', 'BBB', 'BBB-', 'BB+', 'BB'].reverse()
       }
     };
 
@@ -73,6 +73,12 @@ export class DashboardComponent implements OnInit {
   }
 
   getexposurePerformanceBoxPlot(population= 'allIndustries'): Array<any> {
+    const labels = ['Performing', 'Past Due Loans', 'Unlikely to Pay', 'Bad Loans'];
+    const axisLabel = JSON.parse(JSON.stringify(eChartsConfig.eChartsConfig.xAxis.axisLabel));
+    axisLabel.formatter = function (value, index) {
+      return index==0 ? 0 : labels[index-1];
+    };
+
 
     this.opts.exposurePerformanceBoxPlot = {
       grid: {
@@ -80,7 +86,7 @@ export class DashboardComponent implements OnInit {
       },
       xAxis: {
         splitLine: eChartsConfig.eChartsConfig.xAxis.splitLine,
-        axisLabel: eChartsConfig.eChartsConfig.xAxis.axisLabel,
+        axisLabel: axisLabel,
         axisLine: eChartsConfig.eChartsConfig.xAxis.axisLine
       },
       yAxis: {
@@ -112,8 +118,13 @@ export class DashboardComponent implements OnInit {
     return series;
   }
 
-  getutpOutflowInflow(): Array<any> {
-    const labels = ['Exposure 1Y Ago', 'To Performing', 'Collected', 'To Bad Loans', 'From Performing', 'From Non Performing', 'Exposure Today'];
+  getutpOutflowInflow(industry = 'allIndustries'): Array<any> {
+    const labels = ['Exposure 1Y Ago', 'To Performing', 'Collected', 'To Bad Loans', 'From Performing', 'From Non Performing', 'Others'];
+
+    const axisLabel = JSON.parse(JSON.stringify(eChartsConfig.eChartsConfig.xAxis.axisLabel));
+    axisLabel.formatter = function (value, index) {
+      return (parseInt(value, 10) / 1000000) + ' Mln';
+    };
 
     this.opts.utpOutflowInflow = {
       title: {
@@ -170,6 +181,7 @@ export class DashboardComponent implements OnInit {
             return list;
           }(),
           axisLabel: {
+            show: false,
             color: eChartsConfig.eChartsConfig.xAxis.axisLabel.color,
             formatter: function (x, y) {
               return labels[x - 1];
@@ -182,12 +194,28 @@ export class DashboardComponent implements OnInit {
           type: 'value',
           axisLine: eChartsConfig.eChartsConfig.xAxis.axisLine,
           splitLine: eChartsConfig.eChartsConfig.xAxis.splitLine,
-          axisLabel: eChartsConfig.eChartsConfig.xAxis.axisLabel
+          axisLabel: axisLabel
         }
       ],
     };
 
-    return this.config.dashboard1.utpOutflowInflow;
+    //if (industry == 'allIndustries' ) {
+    //  console.log(this.config.dashboard1.utpOutflowInflow);
+      return this.config.dashboard1.utpOutflowInflow;
+    //}
+
+    /*const series = this.config.dashboard1.utpOutflowInflow.map((serie) => {
+      serie.data = serie.data.map((value) => {
+        if (value == '-' || value == 0)
+          return value;
+
+        return (value * (Math.floor(Math.random() * 1.2) + 1));
+      });
+
+      return serie;
+    });
+
+    return series;*/
   }
 
   onChartClick(chartLine) {
@@ -225,6 +253,10 @@ export class DashboardComponent implements OnInit {
 
       this.chartInstance.ratingPerformance.setOption({
         series: this.getratingPerformance(key)
+      });
+      console.log(key);
+      this.chartInstance.utpOutflowInflow.setOption({
+        series: this.getutpOutflowInflow(key)
       });
     }
   }

@@ -8,6 +8,7 @@ import * as chartdataset from '@data/charts-dataset';
 
 // graph color overrides
 import { eChartsConfig } from '@global/charts';
+import { dossier1PlotChartsData } from '@data/plotcharts-dataset';
 
 @Component({
   selector: 'app-location',
@@ -18,12 +19,14 @@ export class LocationComponent implements OnInit {
   public config: any;
   public vehicleValues: Array<any>;
   public selectedVehicleYear: object;
+  public chartInstance: any;
 
   lat: number = 45.4758422;
   lng: number = 9.1911364;
   zoom = 14;
   radius = 70;
-  
+  opts: any = {};
+
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -32,7 +35,6 @@ export class LocationComponent implements OnInit {
       this.config = dataset.dossiersMainData.dossier1.location;
       this.vehicleValues = this.initVehiclesValues();
       this.selectedVehicleYear = this.config.vehicles.years[this.vehicleValues[0]];
-      console.log(this.config);
     });
   }
 
@@ -55,19 +57,33 @@ export class LocationComponent implements OnInit {
 
     return {
       legend: {
-        data: Object.keys(chartdataset.dossier1ChartsData.location.breakdownAssetsInNeighborhood).map((population, i) => {
-          if (population !== 'year') {
-            return population;
-          }
-        }),
-        align: 'left'
+        show: false,
+        data: Object.keys(chartdataset.dossier1ChartsData.location.breakdownAssetsInNeighborhood)
+          .map((population, i) => population !== 'year' ?population : null),
+        itemWidth: eChartsConfig.legend.itemWidth,
+        itemHeight: eChartsConfig.legend.itemHeight,
+        top: '20px',
+        right: eChartsConfig.legend.right,
+        textStyle: {
+          fontSize: eChartsConfig.legend.fontSize,
+          color: eChartsConfig.legend.color
+        }
       },
       xAxis: {
         type: 'category',
-        data: chartdataset.dossier1ChartsData.location.breakdownAssetsInNeighborhood.year.values
+        data: chartdataset.dossier1ChartsData.location.breakdownAssetsInNeighborhood.year.values,
+        splitLine: eChartsConfig.xAxis.splitLine,
+        axisLabel: eChartsConfig.xAxis.axisLabel,
+        axisLine: eChartsConfig.xAxis.axisLine,
       },
       yAxis: {
-        type: 'value'
+        type: 'value',
+        splitLine: {
+          lineStyle: {
+            color: 'rgba(255, 255, 255, 0.4)',
+            type: 'dashed'
+          }
+        },
       }
     };
   }
@@ -75,18 +91,18 @@ export class LocationComponent implements OnInit {
   getbreakdownAssetsInNeighborhoodSeries(): Array<any> {
 
     return Object.keys(chartdataset.dossier1ChartsData.location.breakdownAssetsInNeighborhood).map((population, i) => {
-      if ( population !== 'year' ) {
+      if (population !== 'year') {
         return {
           name: population,
-            type: 'bar',
-            stack: 'one',
-            label: {
-                normal: {
-                    show: false,
-                    position: 'insideRight'
-                }
-            },
-            data: chartdataset.dossier1ChartsData.location.breakdownAssetsInNeighborhood[population].values
+          type: 'bar',
+          stack: 'one',
+          label: {
+            normal: {
+              show: false,
+              position: 'insideRight'
+            }
+          },
+          data: chartdataset.dossier1ChartsData.location.breakdownAssetsInNeighborhood[population].values
         };
       }
     });
@@ -98,9 +114,9 @@ export class LocationComponent implements OnInit {
       color: ['#003366', '#006699', '#4cabce', '#e5323e'],
       calculable: true,
       legend: {
-          show:false,
+        show: false,
         data: Object.keys(chartdataset.dossier1ChartsData.location.percentageAccommByPricePerRoom).map((population, i) => {
-            return population;
+          return population;
         }),
         align: 'left'
       },
@@ -111,13 +127,13 @@ export class LocationComponent implements OnInit {
         axisLine: eChartsConfig.xAxis.axisLine,
         axisTick: { show: false },
         data: chartdataset.dossier1ChartsData.location.percentageAccommByPricePerRoom.pricePerNight.values.map((population, i) => {
-          return '>' +population + '€';
+          return '>' + population + '€';
         })
       },
       yAxis: {
         type: 'value',
-          splitLine: eChartsConfig.yAxis.splitLine,
-          axisLabel: eChartsConfig.yAxis.axisLabel
+        splitLine: eChartsConfig.yAxis.splitLine,
+        axisLabel: eChartsConfig.yAxis.axisLabel
       }
     };
   }
@@ -150,16 +166,278 @@ export class LocationComponent implements OnInit {
     };
 
     return Object.keys(chartdataset.dossier1ChartsData.location.percentageAccommByPricePerRoom).map((population, i) => {
-        if (population != 'pricePerNight') {
-            return {
-            name: population,
-            barGap: 0,
-            type: 'bar',
-            label: labelOption,
-            data: chartdataset.dossier1ChartsData.location.percentageAccommByPricePerRoom[population].values
-            };
-        }
+      if (population != 'pricePerNight') {
+        return {
+          name: population,
+          barGap: 0,
+          type: 'bar',
+          label: labelOption,
+          data: chartdataset.dossier1ChartsData.location.percentageAccommByPricePerRoom[population].values
+        };
+      }
 
     });
+  }
+
+  getscpVehiclesRad() {
+    const labels = [
+      { name: 'Commercial', icon: 'rect' },
+      { name: 'Standard', icon: 'rect' },
+      { name: 'Family', icon: 'rect' },
+      { name: 'Mini', icon: 'rect' },
+      { name: 'Motorcycle', icon: 'rect' },
+      { name: 'Luxury', icon: 'rect' },
+      { name: 'Sport', icon: 'rect' }
+    ];
+
+
+    this.opts.scpVehiclesRad = {
+      // grid: {
+      //   left: 100,
+      //   right: eChartsConfig.grid.right
+      // },
+      grid: {
+        left: '20%',
+        top: '20%'
+      },
+      legend: {
+        data: labels,
+        itemWidth: eChartsConfig.legend.itemWidth,
+        itemHeight: eChartsConfig.legend.itemHeight,
+        top: '55px',
+        right: eChartsConfig.legend.right,
+        textStyle: {
+          fontSize: eChartsConfig.legend.fontSize,
+          color: eChartsConfig.legend.color
+        }
+      },
+      xAxis: {
+        type: 'value',
+        name: 'Year',
+        nameTextStyle: {
+          color: '#FFFFFF',
+          padding: [10, 0, 0, 0]
+        },
+        nameLocation: 'center',
+        splitLine: {
+          show: false
+        },
+        axisLabel: eChartsConfig.xAxis.axisLabel,
+        axisLine: {
+          show: false
+        }
+      },
+      yAxis: {
+        type: 'value',
+        name: 'Price Range',
+        nameTextStyle: {
+          color: '#FFFFFF',
+          padding: [0, 125, 0, 0]
+        },
+        nameLocation: 'end',
+        offset: 20,
+        splitLine: eChartsConfig.yAxis.splitLine,
+        axisLabel: {
+          color: eChartsConfig.yAxis.axisLabel.color,
+          formatter: (value, i) => {
+            // if(value)
+
+            return value;
+          }
+        },
+        axisLine: {
+          show: false
+        }
+      }
+    };
+
+    const series = dossier1PlotChartsData.location.scpVehiclesRad
+      .reduce((prev, next) => {
+        if (next.population === 'population1') {
+          next.values.map((value, idx) => {
+            prev.push(value);
+          });
+        }
+
+        return prev;
+      }, []);
+
+    return series;
+  }
+
+  streetConditionsTimeEvoRad() {
+    const labels = [
+      { name: 'Commercial', icon: 'rect' },
+      { name: 'Standard', icon: 'rect' },
+      { name: 'Family', icon: 'rect' },
+      { name: 'Mini', icon: 'rect' },
+      { name: 'Motorcycle', icon: 'rect' },
+      { name: 'Luxury', icon: 'rect' },
+      { name: 'Sport', icon: 'rect' }
+    ];
+
+
+    this.opts.streetConditionsTimeEvoRad = {
+      // grid: {
+      //   left: 100,
+      //   right: eChartsConfig.grid.right
+      // },
+      grid: {
+        left: '20%',
+        top: '20%'
+      },
+      legend: {
+        data: labels,
+        itemWidth: eChartsConfig.legend.itemWidth,
+        itemHeight: eChartsConfig.legend.itemHeight,
+        top: '55px',
+        right: eChartsConfig.legend.right,
+        textStyle: {
+          fontSize: eChartsConfig.legend.fontSize,
+          color: eChartsConfig.legend.color
+        }
+      },
+      xAxis: {
+        type: 'value',
+        name: 'Year',
+        nameTextStyle: {
+          color: '#FFFFFF',
+          padding: [10, 0, 0, 0]
+        },
+        nameLocation: 'center',
+        splitLine: {
+          show: false
+        },
+        axisLabel: eChartsConfig.xAxis.axisLabel,
+        axisLine: {
+          show: false
+        }
+      },
+      yAxis: {
+        type: 'value',
+        name: 'Price Range',
+        nameTextStyle: {
+          color: '#FFFFFF',
+          padding: [0, 125, 0, 0]
+        },
+        nameLocation: 'end',
+        offset: 20,
+        splitLine: eChartsConfig.yAxis.splitLine,
+        axisLabel: {
+          color: eChartsConfig.yAxis.axisLabel.color,
+          formatter: (value, i) => {
+            // if(value)
+
+            return value;
+          }
+        },
+        axisLine: {
+          show: false
+        }
+      }
+    };
+
+    const series = dossier1PlotChartsData.location.streetConditionsTimeEvoRad
+      .reduce((prev, next) => {
+        if (next.population === 'population1') {
+          next.values.map((value, idx) => {
+            prev.push(value);
+          });
+        }
+
+        return prev;
+      }, []);
+
+    return series;
+  }
+
+  daynightShiftRad() {
+    const labels = [
+      { name: 'Commercial', icon: 'rect' },
+      { name: 'Standard', icon: 'rect' },
+      { name: 'Family', icon: 'rect' },
+      { name: 'Mini', icon: 'rect' },
+      { name: 'Motorcycle', icon: 'rect' },
+      { name: 'Luxury', icon: 'rect' },
+      { name: 'Sport', icon: 'rect' }
+    ];
+
+
+    this.opts.daynightShiftRad = {
+      // grid: {
+      //   left: 100,
+      //   right: eChartsConfig.grid.right
+      // },
+      grid: {
+        left: '20%',
+        top: '20%'
+      },
+      legend: {
+        data: labels,
+        itemWidth: eChartsConfig.legend.itemWidth,
+        itemHeight: eChartsConfig.legend.itemHeight,
+        top: '55px',
+        right: eChartsConfig.legend.right,
+        textStyle: {
+          fontSize: eChartsConfig.legend.fontSize,
+          color: eChartsConfig.legend.color
+        }
+      },
+      xAxis: {
+        type: 'value',
+        name: 'Year',
+        nameTextStyle: {
+          color: '#FFFFFF',
+          padding: [10, 0, 0, 0]
+        },
+        nameLocation: 'center',
+        splitLine: {
+          show: false
+        },
+        axisLabel: eChartsConfig.xAxis.axisLabel,
+        axisLine: {
+          show: false
+        }
+      },
+      yAxis: {
+        type: 'value',
+        name: 'Price Range',
+        nameTextStyle: {
+          color: '#FFFFFF',
+          padding: [0, 125, 0, 0]
+        },
+        nameLocation: 'end',
+        offset: 20,
+        splitLine: eChartsConfig.yAxis.splitLine,
+        axisLabel: {
+          color: eChartsConfig.yAxis.axisLabel.color,
+          formatter: (value, i) => {
+            // if(value)
+
+            return value;
+          }
+        },
+        axisLine: {
+          show: false
+        }
+      }
+    };
+
+    const series = dossier1PlotChartsData.location.daynightShiftRad
+      .reduce((prev, next) => {
+        if (next.population === 'population1') {
+          next.values.map((value, idx) => {
+            prev.push(value);
+          });
+        }
+
+        return prev;
+      }, []);
+
+    return series;
+  }
+
+  onChartInit(chart, e) {
+    this.chartInstance[chart] = e;
   }
 }

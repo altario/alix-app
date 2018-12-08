@@ -1,7 +1,12 @@
 <nav class="navbar navbar--secondary fixed-top">
-  <div class="select-styled">
-    <select (change)="onChange($event)">
-      <option *ngFor="let option of droplist" [value]="option.id"  [selected]="dropvalue == option.id">{{option.name}}</option>
-    </select>
-  </div>
+    <div class="select-styled">
+        <select (change)="onChange($event)">
+            <option *ngFor="let option of droplist" [value]="option.id" [selected]="dropvalue == option.id">{{option.name}}</option>
+        </select>
+    </div>
+    <div class="select-styled" style="margin-left: 5px;">
+        <select>
+            <option >All Sub Industries</option>
+        </select>
+    </div>
 </nav>

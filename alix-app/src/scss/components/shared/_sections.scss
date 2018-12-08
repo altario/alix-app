@@ -52,6 +52,24 @@ $box__body-bg--dark: $color2;
 	}
 }
 
+@mixin tabs ($unselected--bg, $active--bg, $bg-color:$active--bg ) {
+	.tabs-nav--bg {
+		background-color: $unselected--bg;
+		li{
+			&:active,
+			&:hover {
+				background-color: $active--bg;
+			}
+		}
+	}
+  .tabs-content-pane { background-color: $active--bg }
+}
+
+@mixin form-joined ($form-joined--bg: transparent ){
+	.form-joined--bg { background-color: $form-joined--bg}
+}
+
+
 .box {
 	@include box--bg ($color1, transparent, transparent);
 	@include box--table--color;
@@ -63,6 +81,8 @@ $box__body-bg--dark: $color2;
 	.box { @include box--bg ($color1, $color2, $color1) }
 	@include lateral-wrapper--color;
 	@include box-list--color;
+	@include tabs($color2, $color1);
+	@include form-joined($color2);
 }
 
 .bg--dark {
@@ -70,4 +90,7 @@ $box__body-bg--dark: $color2;
 	.box { @include box--bg ($color5, $color6, $color5) }
 	@include lateral-wrapper--color;
 	@include box-list--color;
+	@include tabs($color6, $color5);
+	@include form-joined($color6);
+
 }

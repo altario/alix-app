@@ -2,6 +2,7 @@
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 
 // routes
 import { PagesRoutes } from './pages.routing';
@@ -36,7 +37,8 @@ import { SharedModule } from '@shared/shared.module';
     CommonModule,
     RouterModule.forChild(PagesRoutes),
     SharedModule,
-    HeaderModule
+    HeaderModule,
+    TabsModule.forRoot(),
   ],
   declarations: [
     // layouts

@@ -9,12 +9,16 @@ import { Router } from '@angular/router';
 })
 export class NotificationRowComponent implements OnInit {
   @Input() notification: any = {};
+  @Input() type = 'big';
+  @Input() inPortfolio = false;
 
   constructor(private router: Router) {}
 
   ngOnInit() {}
 
-  goToPortfolio(id) {
-    this.router.navigate(['monitor/portfolios', id], { queryParams: { type: 'notification'} });
+  goToPortfolio(notification: any) {
+    this.router.navigate(['monitor/portfolios', notification.portfolioId || 2], {
+      queryParams: { type: 'notification', id: notification.id }
+    });
   }
 }

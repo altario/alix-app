@@ -8964,7 +8964,10 @@ export const dashboard1 = {
         normal: {
           label: {
             show: true,
-            position: 'top'
+            position: 'top',
+            formatter: function(params) {
+                return (parseInt(params.value, 10) / 1000000).toFixed(2) + ' Mln';
+            }
           }
         }
       },
@@ -8980,7 +8983,10 @@ export const dashboard1 = {
         normal: {
           label: {
             show: true,
-            position: 'bottom'
+            position: 'bottom',
+            formatter: function(params) {
+                return (parseInt(params.value, 10) / 1000000).toFixed(2) + ' Mln';
+            }
           }
         }
       },
@@ -8996,7 +9002,10 @@ export const dashboard1 = {
         normal: {
           label: {
             show: true,
-            position: 'top'
+              position: 'top',
+              formatter: function (params) {
+                  return (parseInt(params.value, 10) / 1000000).toFixed(2) + ' Mln';
+              }
           }
         }
       },
