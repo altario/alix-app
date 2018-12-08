@@ -158,10 +158,10 @@
               <div class="cell__wrapper__info">
                 <div class="table__simple">
                   <div class="table__row">
-                    <span class="cell__title">Today</span> <span class="cell__information">{{ (portfolio$ | async)?.durationToday }}</span>
+                    <span class="cell__title">Today</span> <span class="cell__information">{{ (portfolio$ | async)?.durationToday | cusdate }}</span>
                   </div>
                   <div class="table__row">
-                    <span class="cell__title">Duration</span> <span class="cell__information">{{ (portfolio$ | async)?.durationDuration }}</span>
+                    <span class="cell__title">Duration</span> <span class="cell__information">{{ (portfolio$ | async)?.durationDuration | cusdate }}</span>
                   </div>
                 </div>
               </div>
