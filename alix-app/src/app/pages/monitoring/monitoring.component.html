@@ -1,5 +1,17 @@
 <div class="container-fluid">
-  <section class="page-section bg--light">
+
+    <div class="row no-gutters">
+      <div class="col">
+        <h1 class="section-title">Notifications</h1>
+        <ul>
+          <li *ngFor="let notification of notifications$ | async">
+            <app-notification-row [notification]="notification" [type]="'big'"></app-notification-row>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  <!-- <section class="page-section bg--light">
     <div class="row">
 
 
@@ -39,5 +51,5 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 </div>
