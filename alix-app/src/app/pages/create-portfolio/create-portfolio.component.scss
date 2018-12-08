@@ -64,7 +64,8 @@
     }
   }
 
-  .select-styled {
+  .select-styled,
+  .number {
     margin: 5px;
     select {
       &:hover,
@@ -74,6 +75,13 @@
         color: white;
       }
     }
+  }
+  .number {
+    width: 100px;
+  }
+  input,
+  select {
+    height: 30px !important;
   }
 }
 
