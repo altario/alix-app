@@ -81,16 +81,37 @@ $box__body-bg--dark: $color2;
 
 
 @mixin form-joined ($input-bg: transparent, $form-joined--bg: transparent ){
-	.form-joined--bg { background-color: $form-joined--bg }
-	input { 
-		background-color: $input-bg;
-		border: 1px solid darken($input-color, 20);
-		@if (lightness($input-color) > 50) {
-			@include placeholder ($color__custom__brand--1);
-			color: #000000;
-		} @else {
-			@include placeholder ($body__color__text);
-			color: $body__color__text;
+	.form-joined {
+		&.form-joined--bg { background-color: $form-joined--bg }
+		.select-styled,
+		input.number,
+		input.text {
+			background-color: $input-bg !important;
+			border: 1px solid darken($input-color, 20);
+			@if (lightness($input-color) > 50) {
+				@include placeholder ($color__custom__brand--1);
+				color: #000000;
+			} @else {
+				@include placeholder ($body__color__text);
+				color: $body__color__text;
+			}
+		}
+	}
+}
+
+@mixin select-styled ($color-light, $color-dark){
+	.cell__wrapper--bg-light {
+		.select-styled,
+		input.number,
+		input.text {
+			background-color: $color-light;
+		}
+	}
+	.cell__wrapper--bg-dark {
+		.select-styled,
+		input.number,
+		input.text {
+			background-color: $color-dark;
 		}
 	}
 }
@@ -110,6 +131,8 @@ $box__body-bg--dark: $color2;
 	@include box-list--color;
 	@include tabs($color2, $color1);
 	@include form-joined($color1, $color2);
+	@include select-styled  ($color2, $color1);
+
 }
 
 .bg--dark {
@@ -119,5 +142,5 @@ $box__body-bg--dark: $color2;
 	@include box-list--color;
 	@include tabs($color6, $color5);
 	@include form-joined($color5, $color6);
-
+	@include select-styled  ($color6, $color5);
 }
