@@ -1,0 +1,16 @@
+.container-fluid > .row {
+  min-width: 1024px;
+  max-width: 1260px;
+  padding: 0;
+  margin: 40px auto 20px;
+ }
+
+ul,
+h1 {
+  padding: 0 20px;
+}
+
+ul {
+  margin-top: 30px;
+  list-style: none;
+}

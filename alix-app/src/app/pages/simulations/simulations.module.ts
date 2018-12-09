@@ -9,18 +9,19 @@ import { FinancialComponent } from './financial/financial.component';
 import { StateOfConservationComponent } from './state-of-conservation/state-of-conservation.component';
 import { LocationComponent } from './location/location.component';
 import { DemandAndOfferComponent } from './demand-offer/demand-offer.component';
-import { PositionsListComponent } from './positions-list/positions-list.component';
+import { SimulationsListComponent } from './simulations-list/simulations-list.component';
+import { MatchComponent } from './match/match.component';
 
 // components
 
 // routes
-import { PositionsRoutes } from './positions.routing';
+import { SimulationsRoutes } from './simulations.routing';
 
 // modules
 import { SharedModule } from '@shared/shared.module';
 
 // layouts
-import { PositionsLayoutComponent } from '@core/index';
+import { SimulationsLayoutComponent } from '@core/index';
 
 // services
 import { PositionsReportService } from '@services/positions-report.service';
@@ -32,23 +33,24 @@ import { AgmCoreModule } from '@agm/core';
   imports: [
     CommonModule,
     NgbModule,
-    RouterModule.forChild(PositionsRoutes),
+    RouterModule.forChild(SimulationsRoutes),
     SharedModule,
       AgmCoreModule
   ],
   declarations: [
     // layout
-    PositionsLayoutComponent,
+    SimulationsLayoutComponent,
 
     // pages
     FinancialComponent,
     StateOfConservationComponent,
     LocationComponent,
     DemandAndOfferComponent,
-    PositionsListComponent,
+    SimulationsListComponent,
+    MatchComponent
 
     // components
   ],
   providers: [PositionsReportService]
 })
-export class PositionsModule { }
+export class SimulationsModule { }

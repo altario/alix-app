@@ -14,7 +14,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MonitoringComponent } from './monitoring/monitoring.component';
 import { ReportsComponent } from './reports/reports.component';
 import { CounterpartsComponent } from './counterparts/counterparts.component';
-import { SimulationsComponent } from './simulations/simulations.component';
 
 import { CreatePortfolioComponent } from './create-portfolio/create-portfolio.component';
 
@@ -51,7 +50,6 @@ import { SharedModule } from '@shared/shared.module';
     MonitoringComponent,
     ReportsComponent,
     CounterpartsComponent,
-    SimulationsComponent,
 
     CreatePortfolioComponent,
 

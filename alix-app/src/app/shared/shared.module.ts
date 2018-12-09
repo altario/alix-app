@@ -1,6 +1,7 @@
 // angular
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 // plugins
 import { Ng5SliderModule } from 'ng5-slider';
@@ -13,10 +14,11 @@ import { SliderRangeComponent } from '@shared/slider-range/slider-range.componen
 import { DropdownComponent } from '@shared/dropdown/dropdown.component';
 import { ReportSelectorComponent } from '@shared/report-selector/report-selector.component';
 import { ReportStickyComponent } from '@shared/report-sticky/report-sticky.component';
-// import { SubheaderComponent } from '@shared/subheader/subheader.component';
+import { SubheaderComponent } from '@shared/subheader/subheader.component';
 // import { SubheaderDashboardComponent } from '@shared/subheader-dashboard/subheader-dashboard.component';
 
 import { PositionRowComponent } from './position/position.component';
+import { SimulationRowComponent } from './simulation/simulation.component';
 import { NotificationRowComponent } from './notification/notification.component';
 
 // pipes
@@ -88,6 +90,7 @@ import {
 @NgModule({
   imports: [
     CommonModule,
+    RouterModule,
 
     // plugins
     NgxEchartsModule,
@@ -163,7 +166,9 @@ import {
     ReportStickyComponent,
     Paneldash1Component,
     PositionRowComponent,
-    NotificationRowComponent
+    NotificationRowComponent,
+    SimulationRowComponent,
+    SubheaderComponent
   ],
   providers: [],
   exports: [
@@ -230,7 +235,9 @@ import {
     ReportSelectorComponent,
     ReportStickyComponent,
     PositionRowComponent,
-    NotificationRowComponent
+    NotificationRowComponent,
+    SimulationRowComponent,
+    SubheaderComponent
   ]
 })
 export class SharedModule {}

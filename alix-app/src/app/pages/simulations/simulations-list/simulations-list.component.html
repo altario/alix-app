@@ -1,0 +1,12 @@
+<div class="container-fluid">
+  <div class="row no-gutters">
+    <div class="col">
+      <!-- <h1 class="section-title">Simulations</h1> -->
+      <ul>
+        <li *ngFor="let position of simulations$ | async">
+          <app-simulation-row [position]="position"></app-simulation-row>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
