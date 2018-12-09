@@ -10,6 +10,7 @@ export class NumericalValuesDirective implements OnInit {
   @Input() showUnit: boolean;
   @Input() unitClass: string;
   @Input() unitSmall: boolean;
+  @Input() hcUnit: string;
 
   processedValue: any;
 
@@ -32,11 +33,15 @@ export class NumericalValuesDirective implements OnInit {
         if (this.showUnit) {
           if (this.unitSmall) {
             this.el.nativeElement.insertAdjacentHTML('beforeend',
-              `<small class="appNum--unit-label ${ this.unitClass ? this.unitClass : ''}">${ this.processedValue.unitname }</small>`
+              `<small class="appNum--unit-label ${ this.unitClass ? this.unitClass : ''}">
+                ${ this.processedValue.unitname ? this.processedValue.unitname : this.hcUnit ? this.hcUnit : '' }€
+              </small>`
             );
           } else {
             this.el.nativeElement.insertAdjacentHTML('beforeend',
-              `<span class="appNum--unit-label ${ this.unitClass ? this.unitClass : ''}">${ this.processedValue.unitname }</span>`
+              `<span class="appNum--unit-label ${ this.unitClass ? this.unitClass : ''}">
+                ${ this.processedValue.unitname ? this.processedValue.unitname : this.hcUnit ? this.hcUnit : '' }€
+              </span>`
             );
           }
         }
@@ -55,6 +60,8 @@ export class NumericalValuesDirective implements OnInit {
       obj.scaledValue = (value / Number(('1e' + unit)));
       obj.round = this.autoRound(obj.scaledValue);
       obj.unitname = units[Math.floor(unit / 3) - 1];
+    } else {
+      obj.round = this.autoRound(value);
     }
 
     obj.percentualValue = this.autoRound(value * 100);

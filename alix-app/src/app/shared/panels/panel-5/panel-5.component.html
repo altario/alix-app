@@ -23,7 +23,7 @@
         </p>
       </div>
     </div>
-  
+
   <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-dark">
       <div class="cell__wrapper__top">
         <span class="label__up label--color">
@@ -31,11 +31,13 @@
       </span>
       </div>
       <div class="cell__wrapper__info">
-          <p class="highlighted--big highlighted--color">
-            {{config.currentExposure.value}}
-              {{ config.currentExposure.value | curr }}
-            <small class="u-uppercase highlighted__small--color">m€</small>
-          </p>
+        <p class="highlighted--big highlighted--color"
+          [appNum]="config.currentExposure.value"
+          [showUnit]="true"
+          [unitSmall]="true"
+          hcUnit="M"
+          unitClass="u-uppercase highlighted__small--color">
+        </p>
       </div>
     </div>
 
