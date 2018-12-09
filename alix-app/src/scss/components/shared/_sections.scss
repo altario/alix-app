@@ -70,8 +70,29 @@ $box__body-bg--dark: $color2;
   .tab-content { background-color: $active--bg }
 }
 
-@mixin form-joined ($form-joined--bg: transparent ){
-	.form-joined--bg { background-color: $form-joined--bg}
+
+@mixin placeholder ($color) {
+	&::-webkit-input-placeholder { color: $color }
+	&::-moz-placeholder { color: $color }
+	&:-ms-input-placeholder { color: $color }
+	&:-moz-placeholder { color: $color }
+}
+
+
+
+@mixin form-joined ($input-bg: transparent, $form-joined--bg: transparent ){
+	.form-joined--bg { background-color: $form-joined--bg }
+	input { 
+		background-color: $input-bg;
+		border: 1px solid darken($input-color, 20);
+		@if (lightness($input-color) > 50) {
+			@include placeholder ($color__custom__brand--1);
+			color: #000000;
+		} @else {
+			@include placeholder ($body__color__text);
+			color: $body__color__text;
+		}
+	}
 }
 
 
@@ -87,7 +108,7 @@ $box__body-bg--dark: $color2;
 	@include lateral-wrapper--color;
 	@include box-list--color;
 	@include tabs($color2, $color1);
-	@include form-joined($color2);
+	@include form-joined($color1, $color2);
 }
 
 .bg--dark {
@@ -96,6 +117,6 @@ $box__body-bg--dark: $color2;
 	@include lateral-wrapper--color;
 	@include box-list--color;
 	@include tabs($color6, $color5);
-	@include form-joined($color6);
+	@include form-joined($color5, $color6);
 
 }

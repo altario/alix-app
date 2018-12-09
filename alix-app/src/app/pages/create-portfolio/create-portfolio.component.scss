@@ -12,6 +12,7 @@
     .form-group {
       width: 360px;
       label { font-size: rem(12px) }
+      .select-styled--block {width: 100% }
     }
 
     .buttons-group {
@@ -56,9 +57,9 @@
   .btn-group {
     display: flex;
     flex-direction: column;
-    justify-content: stretch;
     margin: -#{$padding} -#{$padding} -#{$padding} #{$padding};
     button {
+      flex: 1;
       border-radius: 0;
       padding: 0 10px;
     }
@@ -78,10 +79,16 @@
   }
   .number {
     width: 100px;
+    padding: 0 5px 0 10px;
   }
   input,
   select {
     height: 30px !important;
+  }
+  .form-middle-text {
+    align-items: center;
+    display: flex;
+    padding: 0 .3em;
   }
 }
 
