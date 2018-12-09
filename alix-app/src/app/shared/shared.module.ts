@@ -25,7 +25,8 @@ import {
   CustomPercentagePipe,
   CustomDateConverterPipe,
   CustomDecimalPipe,
-  PositiveNegativeDirective
+  PositiveNegativeDirective,
+  NumericalValuesDirective
 } from '@helpers/index';
 
 // charts
@@ -101,6 +102,7 @@ import {
     CustomDateConverterPipe,
     CustomDecimalPipe,
     PositiveNegativeDirective,
+    NumericalValuesDirective,
 
     // charts
     AreaBasicComponent,

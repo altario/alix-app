@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class PositionsReportService {
 
-  private reportSource = new BehaviorSubject<number>(0);
+  private reportSource = new BehaviorSubject<number>(null);
   data: any = this.reportSource.asObservable();
 
   constructor() { }

@@ -8,10 +8,27 @@ import { PositionsReportService } from '@app/services/positions-report.service';
 })
 export class ReportStickyComponent implements OnInit {
   public counter = 0;
+  public isOpen: boolean;
 
-  constructor(private report: PositionsReportService) { }
+  constructor(private report: PositionsReportService) {
+    console.log(this.isOpen)
+  }
 
   ngOnInit() {
-    this.report.data.subscribe((data) => this.counter += data);
+    this.report.data.subscribe((data) => {
+      console.log(data)
+      this.counter += data;
+      this.isOpen = data ? true : false;
+    });
+
+    console.log(this.isOpen);
+  }
+
+  open() {
+    this.isOpen = true;
+  }
+
+  close() {
+    this.isOpen = false;
   }
 }

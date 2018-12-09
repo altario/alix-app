@@ -32,7 +32,8 @@
       </div>
       <div class="cell__wrapper__info">
           <p class="highlighted--big highlighted--color">
-              {{ config.currentExposure.value | curr:1}}
+            {{config.currentExposure.value}}
+              {{ config.currentExposure.value | curr }}
             <small class="u-uppercase highlighted__small--color">m€</small>
           </p>
       </div>
