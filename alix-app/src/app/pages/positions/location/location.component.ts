@@ -225,7 +225,8 @@ export class LocationComponent implements OnInit {
         axisLabel: eChartsConfig.xAxis.axisLabel,
         axisLine: {
           show: false
-        }
+        },
+        scale: true
       },
       yAxis: {
         type: 'value',
@@ -311,7 +312,8 @@ export class LocationComponent implements OnInit {
         axisLabel: eChartsConfig.xAxis.axisLabel,
         axisLine: {
           show: false
-        }
+        },
+        scale: true
       },
       yAxis: {
         type: 'value',
@@ -397,7 +399,8 @@ export class LocationComponent implements OnInit {
         axisLabel: eChartsConfig.xAxis.axisLabel,
         axisLine: {
           show: false
-        }
+        },
+        scale: true
       },
       yAxis: {
         type: 'value',
