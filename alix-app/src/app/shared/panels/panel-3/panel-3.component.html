@@ -8,11 +8,11 @@
           </span>
         </div>
         <div class="cell__wrapper__info">
-          <p class="highlighted--medium highlighted--color">
-              {{ config.openPositionsLoansOriginalValue.value | curr}}
-            <small class="u-uppercase highlighted__small--color">
-              b
-            </small>
+          <p class="highlighted--medium highlighted--color"
+            [appNum]="config.openPositionsLoansOriginalValue.value"
+            [showUnit]="true"
+            [unitSmall]="true"
+            unitClass="u-uppercase highlighted__small--color">
           </p>
         </div>
       </div>
