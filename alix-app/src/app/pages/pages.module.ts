@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TabsModule } from 'ngx-bootstrap/tabs';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 // routes
 import { PagesRoutes } from './pages.routing';
@@ -14,7 +15,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MonitoringComponent } from './monitoring/monitoring.component';
 import { ReportsComponent } from './reports/reports.component';
 import { CounterpartsComponent } from './counterparts/counterparts.component';
-import { SimulationsComponent } from './simulations/simulations.component';
 
 import { CreatePortfolioComponent } from './create-portfolio/create-portfolio.component';
 
@@ -32,6 +32,8 @@ import { HeaderModule } from '@shared/header';
 // shared
 import { SharedModule } from '@shared/shared.module';
 
+import { PositionsReportService } from '@services/reports.service';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -39,6 +41,7 @@ import { SharedModule } from '@shared/shared.module';
     SharedModule,
     HeaderModule,
     TabsModule.forRoot(),
+    ModalModule.forRoot()
   ],
   declarations: [
     // layouts
@@ -51,7 +54,6 @@ import { SharedModule } from '@shared/shared.module';
     MonitoringComponent,
     ReportsComponent,
     CounterpartsComponent,
-    SimulationsComponent,
 
     CreatePortfolioComponent,
 
@@ -59,6 +61,7 @@ import { SharedModule } from '@shared/shared.module';
     SubheaderDashboardComponent,
 
     LoginComponent
-  ]
+  ],
+  providers: [PositionsReportService]
 })
 export class PagesModule { }

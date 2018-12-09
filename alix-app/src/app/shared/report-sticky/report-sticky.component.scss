@@ -2,4 +2,154 @@
   position: fixed;
   right: 0;
   bottom: 5px;
+  z-index: 9999;
+  width: 900px;
+}
+
+ul {
+  padding: 0;
+
+  li {
+    list-style-type: none;
+  }
+}
+
+@import '~src/scss/imports';
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  & > span {
+    padding: 1rem;
+  }
+
+  & > div {
+    display: flex;
+    align-items: center;
+  }
+
+  .title-report {
+    width: 100%;
+    font-weight: bold;
+  }
+}
+
+.container-report {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  widows: 500px;
+  background-color: rgba(196, 196, 196, 0.2);
+
+  .top {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+    color: #000000;
+
+    .report-title {
+      font-weight: bold;
+    }
+
+    .right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .button {
+        background: #8C8E99;
+        color: #FFFFFF;
+      }
+    }
+  }
+
+  .container-list {
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+  }
+
+  .list {
+    background: #FFFFFF;
+    margin: 1rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 77px;
+
+    .left {
+      color: #000000;
+    }
+
+    .right {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      i {
+        color: #697094;
+        padding: 1rem;
+      }
+    }
+  }
+}
+
+.modal-body {
+  textarea#report-comment {
+    resize: none;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  textarea::-webkit-input-placeholder {
+    color: #555555;
+  }
+
+  textarea:-moz-placeholder { /* Firefox 18- */
+    color: #555555;
+  }
+
+  textarea::-moz-placeholder {  /* Firefox 19+ */
+    color: #555555;
+  }
+
+  textarea:-ms-input-placeholder {
+    color: #555555;
+  }
+
+  .buttons-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .button {
+      background: #697094;
+      color: #FFFFFF;
+      margin-left: 1rem !important;
+      width: 150px;
+    }
+  }
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #697094;
+  border-radius: $border-radius__default;
+  padding: .5rem;
+  cursor: pointer;
+  width: 100px;
+  margin-right: 1rem;
+  font-size: 12px;
+
+  &:hover {
+    background-color: #475FF2;
+  }
 }

@@ -34,7 +34,7 @@
 
 // =font-face
 @mixin font-face($_font-family, $_font--filename, $_weight: normal, $_style: normal) {
-  $font--path: $path__fonts + $_font--filename + '/' + $_font--filename;
+  $font--path: $path__fonts + $_font-family + $_font--filename + '/' + $_font--filename;
 
   @font-face {
     // src: url($font--path + '.eot?#iefix') format('embedded-opentype'),     // IE6-IE8

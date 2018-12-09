@@ -1,0 +1,28 @@
+@import '~src/scss/imports';
+
+:host {
+  display: block;
+}
+
+.in-c-state-c-all-assets {
+  agm-map {
+    height: 754px;
+  }
+}
+
+.in-c-satelite-image {
+  agm-map {
+    height: 500px;
+  }
+}
+
+.gmap{
+    position: relative;
+    .overlay-map{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}

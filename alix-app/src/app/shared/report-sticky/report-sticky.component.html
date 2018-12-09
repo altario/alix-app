@@ -1,13 +1,66 @@
-<div *ngIf="isOpen" class="box">
-  <span>{{counter}}</span>
-  <span>{{title}} added to Report</span>
-  <span>
-    <div>Add Comment</div>
-    <div (click)="maximize()">Maximize</div>
-    <div (click)="close()">Close</div>
-  </span>
+<div *ngIf="isOpen" class="bg--light">
+  <div class="box container">
+    <span class="cell__wrapper cell__wrapper cell__wrapper--bg-dark">{{counter}}</span>
+    <span>
+      <span class="title-report cell__wrapper cell__wrapper cell__wrapper--bg-light">{{title}}</span>
+      <span *ngIf="title"> added to Report</span>
+    </span>
+
+    <div>
+      <span class="button" (click)="openModal(template)">Add Comment</span>
+      <span *ngIf="!isMaximize" class="button" (click)="maximize()">Maximize</span>
+      <span *ngIf="isMaximize" class="button" (click)="maximize()">Minimize</span>
+      <span class="button" (click)="openClose()">Close</span>
+    </div>
+  </div>
 </div>
 
-<div *ngIf="isMaximize">
-  blaaaaaaaaa
+<div *ngIf="isMaximize" class="container-report">
+  <div class="top">
+    <div class="left">
+      <span class="report-title">
+        Untitled Report
+      </span>
+      <span class="report-date"> - {{ todaysDate | date:'d MMM y' }}</span>
+    </div>
+    <div class="right">
+      <div class="button">
+        preview Report
+      </div>
+      <div class="button">
+        Send Report
+      </div>
+    </div>
+  </div>
+  <ul *ngIf="reportList.length > 0" class="container-list">
+    <li class="list" *ngFor="let report of reportList" >
+      <div class="left">
+        <span class="list-title">
+          {{ report.title }}
+        </span>
+      </div>
+      <div class="right">
+        <div *ngIf="report.comment">
+          <i class="icon--big icol ico-file-alt"></i>
+        </div>
+        <div *ngIf="report.comment" class="button">Edit Note</div>
+        <div *ngIf="!report.comment" class="button">Add Note</div>
+        <div class="button">Remove</div>
+      </div>
+    </li>
+  </ul>
 </div>
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Add Comment to {{ reportList[reportList.length -1].title }}</h4>
+  </div>
+  <div class="modal-body">
+    <p>Comment:</p>
+    <textarea placeholder="Comment here" name="comment" id="report-comment" (input)="commentText = $event.target.value" cols="30" rows="10"></textarea>
+    <div class="buttons-container">
+      <button type="button" class="button" (click)="modalDecline()" >Cancel</button>
+      <button type="button" class="button" (click)="modalConfirm()" >Submit Comment</button>
+    </div>
+  </div>
+</ng-template>

@@ -1,7 +1,31 @@
+@import '~src/scss/imports';
+
 ul {
   padding: 0;
 
   li {
     list-style-type: none;
+  }
+}
+
+.row-justified {
+  margin: 3px 0;
+  &.active span {
+    font-weight: $font-weight--bold;
+  }
+  span {
+    font-size: rem(14px);
+  }
+}
+
+.custom-checkbox {
+  margin: 3px 0;
+  label {
+    margin-top: 3px;
+    font-size: rem(14px);
+    font-weight: $font-weight--normal;
+    &:before {
+      top: .1rem
+    }
   }
 }

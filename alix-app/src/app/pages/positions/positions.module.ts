@@ -12,7 +12,6 @@ import { DemandAndOfferComponent } from './demand-offer/demand-offer.component';
 import { PositionsListComponent } from './positions-list/positions-list.component';
 
 // components
-import { SubheaderComponent } from '../../shared/subheader/subheader.component';
 
 // routes
 import { PositionsRoutes } from './positions.routing';
@@ -22,9 +21,6 @@ import { SharedModule } from '@shared/shared.module';
 
 // layouts
 import { PositionsLayoutComponent } from '@core/index';
-
-// services
-import { PositionsReportService } from '@services/positions-report.service';
 
 // plugins
 import { AgmCoreModule } from '@agm/core';
@@ -49,8 +45,7 @@ import { AgmCoreModule } from '@agm/core';
     PositionsListComponent,
 
     // components
-    SubheaderComponent
-  ],
-  providers: [PositionsReportService]
+    // SubheaderComponent
+  ]
 })
 export class PositionsModule { }

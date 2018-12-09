@@ -1,3 +1,11 @@
+:host {
+  ul {
+    margin-top: -20px;
+    list-style: none;
+  }
+}
+
+
 .container-fluid > .row {
   min-width: 1024px;
   max-width: 1260px;
@@ -10,7 +18,9 @@ h1 {
   padding: 0 20px;
 }
 
-ul {
-  margin-top: 30px;
-  list-style: none;
+.form-group {
+  margin: 5px 0;
+  label {
+    padding: 0 0 3px 3px;
+  }
 }

@@ -1,0 +1,11 @@
+@import '~src/scss/imports';
+
+:host {
+  display: block;
+}
+
+.in-METROSTATIONS {
+  agm-map {
+    height: 500px;
+  }
+}

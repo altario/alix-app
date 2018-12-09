@@ -6,12 +6,12 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class PositionsReportService {
 
-  private reportSource = new BehaviorSubject<number>(null);
+  private reportSource = new BehaviorSubject<object>(null);
   data: any = this.reportSource.asObservable();
 
   constructor() { }
 
-  update(num: number) {
-    this.reportSource.next(num);
+  update(obj: object) {
+    this.reportSource.next(obj);
   }
 }

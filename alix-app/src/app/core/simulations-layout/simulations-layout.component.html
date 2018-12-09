@@ -1,0 +1,11 @@
+<div class="container-fluid">
+  <app-subheader></app-subheader>
+
+  <div class="no-gutters">
+    <div class="col">
+      <div class="base-anim" [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''">
+        <router-outlet #o="outlet"></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
