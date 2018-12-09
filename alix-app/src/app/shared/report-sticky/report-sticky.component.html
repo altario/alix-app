@@ -1,5 +1,13 @@
-<div class="box">
+<div *ngIf="isOpen" class="box">
   <span>{{counter}}</span>
-  <span>text</span>
-  <span>comment</span>
+  <span>{{title}} added to Report</span>
+  <span>
+    <div>Add Comment</div>
+    <div (click)="maximize()">Maximize</div>
+    <div (click)="close()">Close</div>
+  </span>
+</div>
+
+<div *ngIf="isMaximize">
+  blaaaaaaaaa
 </div>

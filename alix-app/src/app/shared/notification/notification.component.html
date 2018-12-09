@@ -40,7 +40,7 @@
         </div>
         <div class="cell__wrapper__top">
           <div class="label__up label--color">EXPOSURE</div>
-          <div class="cell__information">{{ notification?.portfolioExposure }} {{ notification?.exposureUnit}}</div>
+          <div class="cell__information">{{ notification?.portfolioExposure | curr }} {{ notification?.exposureUnit}}</div>
         </div>
       </div>
       <div>
@@ -91,7 +91,7 @@
       </div>
       <div>
         <div>EXPOSURE</div>
-        <div>{{ notification?.portfolioExposure }} {{ notification?.exposureUnit}}</div>
+        <div>{{ notification?.portfolioExposure | curr }} {{ notification?.exposureUnit}}</div>
       </div>
     </div>
   </div>

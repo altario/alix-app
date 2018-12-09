@@ -15,7 +15,6 @@ export class NotificationRowComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
-    console.log(this.notification)
   }
 
   goToPortfolio(notification: any) {
