@@ -16,11 +16,16 @@ export class SubheaderDashboardComponent implements OnInit {
   @Input()
   public droplist: any = [];
 
+  @Input()
+  public droplistids: any = {};
+
   @Output()
   changeValue: any = new EventEmitter();
 
   @Input()
   public dropvalue: any;
+
+
 
   constructor(private route: ActivatedRoute) { }
 
