@@ -3,11 +3,9 @@
 
     <div *ngIf="(type$ | async) === 'notification'" class="row page--header page--header-1">
       <div class="col">
-        <app-notification-row
-          *ngIf="(notification$ | async)"
-          [notification]="notification$ | async"
-          [inPortfolio]="true"></app-notification-row>
-        <alix-line *ngIf="(type$ | async) === 'notification' && (notification$ | async)?.type === 'kpi' && chart" [series]="chart.series" [opts]="chart.opts"></alix-line>
+        <app-notification-row *ngIf="(notification$ | async)" [notification]="notification$ | async" [inPortfolio]="true"></app-notification-row>
+        <alix-line *ngIf="(type$ | async) === 'notification' && (notification$ | async)?.type === 'kpi' && chart"
+          [series]="chart.series" [opts]="chart.opts"></alix-line>
       </div>
     </div>
 
@@ -41,15 +39,10 @@
                     <span class="label__up label--color">Status</span>
                   </div>
                   <div class="cell__wrapper__info">
-                    <div
-                      [class.green]="(portfolio$ | async)?.keyFinancialStatus === 'Performing'"
-                      [class.grey]="(portfolio$ | async)?.keyFinancialStatus === 'Fully Paid'"
-                      [class.yellow]="(portfolio$ | async)?.keyFinancialStatus === 'Past Due Loan'"
-                      [class.orange]="(portfolio$ | async)?.keyFinancialStatus === 'Unlikely To Pay'"
-                      [class.red]="(portfolio$ | async)?.keyFinancialStatus === 'Bad Loan'"
-                      class="tag"
-                    >
-                    {{ (portfolio$ | async)?.keyFinancialStatus }}
+                    <div [class.green]="(portfolio$ | async)?.keyFinancialStatus === 'Performing'" [class.grey]="(portfolio$ | async)?.keyFinancialStatus === 'Fully Paid'"
+                      [class.yellow]="(portfolio$ | async)?.keyFinancialStatus === 'Past Due Loan'" [class.orange]="(portfolio$ | async)?.keyFinancialStatus === 'Unlikely To Pay'"
+                      [class.red]="(portfolio$ | async)?.keyFinancialStatus === 'Bad Loan'" class="tag">
+                      {{ (portfolio$ | async)?.keyFinancialStatus }}
                     </div>
                   </div>
                 </div>
@@ -62,7 +55,8 @@
                     <p class="highlighted--big highlighted--color">
                       {{ (portfolio$ | async)?.keyFinancialRegulatoryCapitalAbsorbed | perc: 1 }}
 
-                      <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.keyFinancialRegulatoryCapitalAbsorbedUnit }}</small>
+                      <small class="u-uppercase highlighted__small--color">{{ (portfolio$ |
+                        async)?.keyFinancialRegulatoryCapitalAbsorbedUnit }}</small>
                     </p>
                   </div>
                 </div>
@@ -74,10 +68,12 @@
                     <span class="label__up label--color">Regulatory Capital Absorted</span>
                   </div>
                   <div class="cell__wrapper__info">
-                    <p class="highlighted--big highlighted--color">
-                      {{ (portfolio$ | async)?.keyFinancialRegulatoryCapitalAbsorbed | curr }}
-                      <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.keyFinancialRegulatoryCapitalAbsorbedUnit }}</small>
-                    </p>
+                    <p class="highlighted--big highlighted--color"
+                      [appNum]="(portfolio$ | async)?.keyFinancialRegulatoryCapitalAbsorbed"
+                      [showUnit]="true"
+                      [unitSmall]="true"
+                      
+                      unitClass="u-uppercase highlighted__small--color">
                   </div>
                 </div>
 
@@ -86,9 +82,12 @@
                     <span class="label__up label--color">Expected Loss</span>
                   </div>
                   <div class="cell__wrapper__info">
-                    <p class="highlighted--big highlighted--color">
-                      {{ (portfolio$ | async)?.keyFinancialExpectedLoss | curr }}
-                      <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.keyFinancialExpectedLossUnit }}</small>
+                    <p class="highlighted--big highlighted--color"
+                      [appNum]="(portfolio$ | async)?.keyFinancialExpectedLoss"
+                      [showUnit]="true"
+                      [unitSmall]="true"
+                      
+                      unitClass="u-uppercase highlighted__small--color">
                     </p>
                   </div>
                 </div>
@@ -113,54 +112,63 @@
                     <span class="label__up label--color">Loan Original Value</span>
                   </div>
                   <div class="cell__wrapper__info">
-                    <p class="highlighted--big highlighted--color">
-                      {{ (portfolio$ | async)?.positionLoanOriginalValue | curr }}
-                      <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.positionLoanOriginalValueUnit }}</small>
+                    <p class="highlighted--big highlighted--color"
+                      [appNum]="(portfolio$ | async)?.positionLoanOriginalValue"
+                      [showUnit]="true"
+                      [unitSmall]="true"
+                      
+                      unitClass="u-uppercase highlighted__small--color">
                     </p>
                   </div>
                 </div>
 
-              <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-dark">
+                <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-dark">
                   <div class="cell__wrapper__top">
                     <span class="label__up label--color">Current Exposure</span>
                   </div>
                   <div class="cell__wrapper__info">
-                      <p class="highlighted--big highlighted--color">
-                          {{ (portfolio$ | async)?.positionCurrentExposure | curr:1}}
-                        <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.positionCurrentExposureUnit }}</small>
-                      </p>
+                    <p class="highlighted--big highlighted--color"
+                      [appNum]="(portfolio$ | async)?.positionCurrentExposure"
+                      [showUnit]="true"
+                      [unitSmall]="true"
+                      
+                      unitClass="u-uppercase highlighted__small--color">
+                    </p>
                   </div>
                 </div>
 
-              <div class="w-100"></div>
+                <div class="w-100"></div>
 
-              <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-light">
+                <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-light">
                   <div class="cell__wrapper__top">
                     <span class="label__up label--color">Time to Maturity</span>
                   </div>
                   <div class="cell__wrapper__info">
                     <p class="highlighted--big highlighted--color">
                       {{ (portfolio$ | async)?.positionTimeToMaturity }}
-                      <small class="u-uppercase highlighted__small--color__exception">{{ (portfolio$ | async)?.positionTimeToMaturityUnit }}</small>
+                      <small class="u-uppercase highlighted__small--color__exception">{{ (portfolio$ |
+                        async)?.positionTimeToMaturityUnit }}</small>
                       <small class="highlighted__small--color of">AVG</small>
                     </p>
                   </div>
                 </div>
 
-              <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-light">
-                <div class="cell__wrapper__info">
-                  <div class="table__simple">
+                <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-light">
+                  <div class="cell__wrapper__info">
+                    <div class="table__simple">
                       <div class="table__row">
                         <span class="cell__title">Started:</span>
-                        <span class="cell__information">{{(portfolio$ | async)?.positionStarted | cusdate | date: 'd MMM y' }}</span>
+                        <span class="cell__information">{{(portfolio$ | async)?.positionStarted | cusdate | date: 'd
+                          MMM y' }}</span>
                       </div>
                       <div class="table__row">
                         <span class="cell__title">Ended:</span>
-                        <span class="cell__information">{{(portfolio$ | async)?.positionMaturity | cusdate | date: 'd MMM y' }}</span>
+                        <span class="cell__information">{{(portfolio$ | async)?.positionMaturity | cusdate | date: 'd
+                          MMM y' }}</span>
                       </div>
                     </div>
+                  </div>
                 </div>
-              </div>
               </div>
             </div>
           </div>
@@ -183,8 +191,9 @@
                   </div>
                   <div class="cell__wrapper__info">
                     <p class="highlighted--big highlighted--color">
-                        {{ (portfolio$ | async)?.durationExposureUntilDuration | round: 2 }}
-                      <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.durationExposureUntilDurationUnit }}</small>
+                      {{ (portfolio$ | async)?.durationExposureUntilDuration | round: 2 }}
+                      <small class="u-uppercase highlighted__small--color">{{ (portfolio$ |
+                        async)?.durationExposureUntilDurationUnit }}</small>
                     </p>
                   </div>
                 </div>
@@ -198,7 +207,8 @@
                   <div class="cell__wrapper__info">
                     <p class="highlighted--big highlighted--color">
                       {{ (portfolio$ | async)?.durationTimeToDurationDate | number:'1.0-0' }}
-                      <small class="u-uppercase highlighted__small--color__exception">{{ (portfolio$ | async)?.durationTimeToDurationDateUnit }}</small>
+                      <small class="u-uppercase highlighted__small--color__exception">{{ (portfolio$ |
+                        async)?.durationTimeToDurationDateUnit }}</small>
                       <small class="highlighted__small--color of">AVG</small>
                     </p>
                   </div>
@@ -207,15 +217,16 @@
                 <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-light">
                   <div class="cell__wrapper__info">
                     <div class="table__simple">
-                        <div class="table__row">
-                          <span class="cell__title">Today</span>
-                          <span class="cell__information">{{ (portfolio$ | async)?.durationToday | date: 'd MMM y' }}</span>
-                        </div>
-                        <div class="table__row">
-                          <span class="cell__title">Duration</span>
-                          <span class="cell__information">{{ (portfolio$ | async)?.durationToday | cusdate | date: 'd MMM y'}}</span>
-                        </div>
+                      <div class="table__row">
+                        <span class="cell__title">Today</span>
+                        <span class="cell__information">{{ (portfolio$ | async)?.durationToday | date: 'd MMM y' }}</span>
                       </div>
+                      <div class="table__row">
+                        <span class="cell__title">Duration</span>
+                        <span class="cell__information">{{ (portfolio$ | async)?.durationToday | cusdate | date: 'd MMM
+                          y'}}</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -237,9 +248,12 @@
                     <span class="label__up label--color">Evaluation in to</span>
                   </div>
                   <div class="cell__wrapper__info">
-                    <p class="highlighted--big highlighted--color">
-                      {{ (portfolio$ | async)?.collateralEvaluationinT0 | curr:1 }}
-                      <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.collateralEvaluationinT0Unit }}</small>
+                    <p class="highlighted--big highlighted--color"
+                      [appNum]="(portfolio$ | async)?.collateralEvaluationinT0"
+                      [showUnit]="true"
+                      [unitSmall]="true"
+
+                      unitClass="u-uppercase highlighted__small--color">
                     </p>
                   </div>
                 </div>
@@ -251,7 +265,8 @@
                   <div class="cell__wrapper__info">
                     <p class="highlighted--big highlighted--color">
                       {{ (portfolio$ | async)?.collateralLoanToValue | perc:1}}
-                      <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.collateralLoanToValueUnit }}</small>
+                      <small class="u-uppercase highlighted__small--color">{{ (portfolio$ |
+                        async)?.collateralLoanToValueUnit }}</small>
                     </p>
                   </div>
                 </div>
@@ -263,9 +278,11 @@
                     <span class="label__up label--color">Current evaluation Estimation</span>
                   </div>
                   <div class="cell__wrapper__info">
-                    <p class="highlighted--big highlighted--color">
-                      {{ (portfolio$ | async)?.collateralCurrentEvaluationEstimation | curr }}
-                      <small class="highlighted__small--color u-uppercase">{{ (portfolio$ | async)?.collateralCurrentEvaluationEstimationUnit }}</small>
+                    <p class="highlighted--big highlighted--color"
+                     [appNum]="(portfolio$ | async)?.collateralCurrentEvaluationEstimation"
+                      [showUnit]="true"
+                      [unitSmall]="true"
+                      unitClass="u-uppercase highlighted__small--color">
                     </p>
                   </div>
                 </div>
@@ -277,7 +294,8 @@
                   <div class="cell__wrapper__info">
                     <p class="highlighted--big highlighted--color">
                       {{ (portfolio$ | async)?.collateralAdjustedLoanToValuePerc | perc:1 }}
-                      <small class="highlighted__small--color u-uppercase">{{ (portfolio$ | async)?.collateralAdjustedLoanToValuePercUnit }}</small>
+                      <small class="highlighted__small--color u-uppercase">{{ (portfolio$ |
+                        async)?.collateralAdjustedLoanToValuePercUnit }}</small>
                     </p>
                   </div>
                 </div>

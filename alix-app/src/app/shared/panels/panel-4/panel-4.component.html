@@ -45,9 +45,11 @@
         </span>
       </div>
       <div class="cell__wrapper__info">
-        <p class="highlighted--big highlighted--color">
-          {{ config.absorbedRegulatoryCapital.value | curr }}
-          <small class="u-uppercase highlighted__small--color">m€</small>
+        <p class="highlighted--big highlighted--color"
+          [appNum]="config.absorbedRegulatoryCapital.value"
+          [showUnit]="true"
+          [unitSmall]="true"
+          unitClass="u-uppercase highlighted__small--color">
         </p>
       </div>
     </div>
@@ -59,9 +61,11 @@
         </span>
       </div>
       <div class="cell__wrapper__info">
-        <p class="highlighted--big highlighted--color">
-          {{ config.expectedLoss.value | curr }}
-          <small class="u-uppercase highlighted__small--color">k€</small>
+        <p class="highlighted--big highlighted--color"
+          [appNum]="config.expectedLoss.value"
+          [showUnit]="true"
+          [unitSmall]="true"
+          unitClass="u-uppercase highlighted__small--color">
         </p>
       </div>
     </div>

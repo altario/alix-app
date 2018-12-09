@@ -14,11 +14,12 @@
         <span class="label__up label--color">{{ config.population1.populationName.value }} </span>
       </div>
       <div class="cell__wrapper__info">
-        <p class="highlighted--big highlighted--color">
-          {{ config.population1.priceSqmLongRent.value | curr:0 }}
-          <small class="u-uppercase highlighted__small--color">
-            €
-          </small>
+        <p class="highlighted--big highlighted--color"
+          [appNum]="config.population1.priceSqmLongRent.value"
+          [showUnit]="true"
+          [unitSmall]="true"
+          
+          unitClass="u-uppercase highlighted__small--color">
         </p>
       </div>
       <span class="label__down label--color">
@@ -49,11 +50,12 @@
         </span>
       </div>
       <div class="cell__wrapper__info">
-        <p class="highlighted--big highlighted--color">
-          {{ config.population2.priceSqmLongRent.value | curr:0 }}
-          <small class="u-uppercase highlighted__small--color">
-            €
-          </small>
+        <p class="highlighted--big highlighted--color"
+            [appNum]="config.population2.priceSqmLongRent.value"
+          [showUnit]="true"
+          [unitSmall]="true"
+          
+          unitClass="u-uppercase highlighted__small--color">
         </p>
       </div>
       <div class="cell__wrapper__down">
@@ -64,11 +66,12 @@
       </div>
     <div class="cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-light">
       <div class="cell__wrapper__info">
-        <p class="highlighted--big highlighted--color">
-            {{ config.population2.pricePMonth.value }}
-          <small class="u-uppercase highlighted__small--color">
-            €
-          </small>
+        <p class="highlighted--big highlighted--color"
+            [appNum]="config.population2.pricePMonth.value"
+          [showUnit]="true"
+          [unitSmall]="true"
+          
+          unitClass="u-uppercase highlighted__small--color">
         </p>
       </div>
       <div class="cell__wrapper__down">
@@ -87,11 +90,13 @@
         </span>
       </div>
       <div class="cell__wrapper__info">
-        <p class="highlighted--big highlighted--color">
-            {{ config.population3.priceSqmLongRent.value | curr:0 }}
-          <small class="u-uppercase highlighted__small--color">
-            €
-          </small>
+        <p class="highlighted--big highlighted--color"
+        [appNum]="config.population3.priceSqmLongRent.value"
+          [showUnit]="true"
+          [unitSmall]="true"
+          
+          unitClass="u-uppercase highlighted__small--color">
+
         </p>
       </div>
       <div class="cell__wrapper__down">
@@ -102,11 +107,12 @@
       </div>
     <div class="cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-dark">
       <div class="cell__wrapper__info">
-        <p class="highlighted--big highlighted--color">
-          {{ config.population3.pricePMonth.value }}€
-          <small class="u-uppercase highlighted__small--color">
-            €
-          </small>
+        <p class="highlighted--big highlighted--color"
+         [appNum]="config.population3.pricePMonth.value"
+          [showUnit]="true"
+          [unitSmall]="true"
+          
+          unitClass="u-uppercase highlighted__small--color">
         </p>
       </div>
       <div class="cell__wrapper__down">
