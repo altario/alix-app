@@ -1,12 +1,84 @@
 <div class="container-fluid">
-  <div class="row no-gutters">
-    <div class="col">
-      <!-- <h1 class="section-title">Positions</h1> -->
-      <ul>
-        <li *ngFor="let position of positions$ | async">
-          <app-position-row [position]="position"></app-position-row>
-        </li>
-      </ul>
+  <section class="page-section bg--light">
+    <div class="row">
+      <div class="col-3">
+        <div class="box box--table">
+          <div class="box__header box__header--bg">
+            <div class="row-justified">
+              <div class="box__title title--compound">
+                <h1 class="title">Filter Positions</h1>
+              </div>
+            </div>
+          </div>
+          <div class="box__body box__body--bg">
+            <div class=" cell__wrapper cell__wrapper--bg-dark">
+              <div class="form-group">
+                <div class="row-justified">
+                  <input class="form-control" type="search" id="site-search" name="q" aria-label="Search" placeholder="Search">
+                  <button type="submit" class="btn btn--search">
+                    <i class="icol ico-search"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="label label--color" for="exampleFormControlSelect1">Industry</label>
+                <div class="select-styled styled--block">
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option>All Industries</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="label label--color" for="exampleFormControlSelect1">Position Performance Status</label>
+                <div class="select-styled styled--block">
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option>All Status</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="label label--color" for="exampleFormControlSelect1">Instrument Type</label>
+                <div class="select-styled styled--block">
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option>All Types</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="label label--color" for="exampleFormControlSelect1">Instrument</label>
+                <div class="select-styled styled--block">
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option>All Instruments</option>
+                  </select>
+                </div>
+              </div>
+
+            </div>
+            <div class=" cell__wrapper cell__wrapper--bg-light">
+              <div class="form-group">
+                <label class="label label--color" for="exampleFormControlSelect1">Client</label>
+                <div class="select-styled styled--block">
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option>All Clients</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-9">
+        <!-- <h1 class="section-title">Positions</h1> -->
+        <ul>
+          <li *ngFor="let position of positions$ | async">
+            <app-position-row [position]="position"></app-position-row>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
+  </section>
 </div>
