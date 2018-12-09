@@ -5,6 +5,7 @@
       [notification]="notification$ | async"
       [inPortfolio]="true"
     ></app-notification-row>
+    <alix-line *ngIf="(type$ | async) === 'notification' && (notification$ | async)?.type === 'kpi' && chart" [series]="chart.series" [opts]="chart.opts"></alix-line>
   </section>
 
   <section *ngIf="(type$ | async) === 'industry'" class="page--header">industry</section>
