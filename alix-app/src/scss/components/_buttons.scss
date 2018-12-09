@@ -485,3 +485,15 @@ input[type="button"] {
     width: 100%;
   }
 }
+
+
+// new buttons
+
+.btn--search {
+  padding: 0 15px;
+  height: 35px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: #252B48;
+  color: #FFFFFF;
+}

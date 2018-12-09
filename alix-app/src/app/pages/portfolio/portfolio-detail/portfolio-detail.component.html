@@ -1,304 +1,318 @@
 <div class="container-fluid">
-  <section *ngIf="(type$ | async) === 'notification'" class="page--header">
-    <app-notification-row
-      *ngIf="(notification$ | async)"
-      [notification]="notification$ | async"
-      [inPortfolio]="true"
-    ></app-notification-row>
-    <alix-line *ngIf="(type$ | async) === 'notification' && (notification$ | async)?.type === 'kpi' && chart" [series]="chart.series" [opts]="chart.opts"></alix-line>
+  <section class="page-section bg--light">
+
+    <div *ngIf="(type$ | async) === 'notification'" class="row page--header page--header-1">
+      <div class="col">
+        <app-notification-row
+          *ngIf="(notification$ | async)"
+          [notification]="notification$ | async"
+          [inPortfolio]="true"></app-notification-row>
+        <alix-line *ngIf="(type$ | async) === 'notification' && (notification$ | async)?.type === 'kpi' && chart" [series]="chart.series" [opts]="chart.opts"></alix-line>
+      </div>
+    </div>
+
+    <div *ngIf="(type$ | async) === 'industry'" class="row page--header page--header-2">industry</div>
+
+    <div *ngIf="!(type$ | async)" class="row page--header page--header-3">
+      <div class="col-9">
+        <h1 class="section-title">{{ (portfolio$ | async)?.name }}</h1>
+      </div>
+      <div class="col-3">
+        <a [routerLink]="['/monitor', 'create-portfolio']" class="btn btn-primary btn--edit">Edit Portfolio</a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="row">
+          <div class="col-3">
+            <div class="box box--table">
+              <div class="box__header box__header--bg">
+                <div class="d-flex flex-row justify-content-between">
+                  <div class="box__title title--compound">
+                    <h1 class="title">Key Financial</h1>
+                    <!-- #HC -->
+                  </div>
+                </div>
+              </div>
+              <div class="box__body box__body--bg">
+                <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-dark">
+                  <div class="cell__wrapper__top">
+                    <span class="label__up label--color">Status</span>
+                  </div>
+                  <div class="cell__wrapper__info">
+                    <div
+                      [class.green]="(portfolio$ | async)?.keyFinancialStatus === 'Performing'"
+                      [class.grey]="(portfolio$ | async)?.keyFinancialStatus === 'Fully Paid'"
+                      [class.yellow]="(portfolio$ | async)?.keyFinancialStatus === 'Past Due Loan'"
+                      [class.orange]="(portfolio$ | async)?.keyFinancialStatus === 'Unlikely To Pay'"
+                      [class.red]="(portfolio$ | async)?.keyFinancialStatus === 'Bad Loan'"
+                      class="tag"
+                    >
+                    {{ (portfolio$ | async)?.keyFinancialStatus }}
+                    </div>
+                  </div>
+                </div>
+
+                <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-dark">
+                  <div class="cell__wrapper__top">
+                    <span class="label__up label--color">Regulatory Capital Absorted</span>
+                  </div>
+                  <div class="cell__wrapper__info">
+                    <p class="highlighted--big highlighted--color">
+                      {{ (portfolio$ | async)?.keyFinancialRegulatoryCapitalAbsorbed | perc: 1 }}
+
+                      <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.keyFinancialRegulatoryCapitalAbsorbedUnit }}</small>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="w-100"></div>
+
+                <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-light">
+                  <div class="cell__wrapper__top">
+                    <span class="label__up label--color">Regulatory Capital Absorted</span>
+                  </div>
+                  <div class="cell__wrapper__info">
+                    <p class="highlighted--big highlighted--color">
+                      {{ (portfolio$ | async)?.keyFinancialRegulatoryCapitalAbsorbed | curr }}
+                      <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.keyFinancialRegulatoryCapitalAbsorbedUnit }}</small>
+                    </p>
+                  </div>
+                </div>
+
+                <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-light">
+                  <div class="cell__wrapper__top">
+                    <span class="label__up label--color">Expected Loss</span>
+                  </div>
+                  <div class="cell__wrapper__info">
+                    <p class="highlighted--big highlighted--color">
+                      {{ (portfolio$ | async)?.keyFinancialExpectedLoss | curr }}
+                      <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.keyFinancialExpectedLossUnit }}</small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-3">
+            <div class="box box--table">
+              <div class="box__header box__header--bg">
+                <div class="d-flex flex-row justify-content-between">
+                  <div class="box__title title--compound">
+                    <h1 class="title">
+                      Position
+                    </h1>
+                  </div>
+                </div>
+              </div>
+              <div class="box__body box__body--bg">
+                <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-dark">
+                  <div class="cell__wrapper__top">
+                    <span class="label__up label--color">Loan Original Value</span>
+                  </div>
+                  <div class="cell__wrapper__info">
+                    <p class="highlighted--big highlighted--color">
+                      {{ (portfolio$ | async)?.positionLoanOriginalValue | curr }}
+                      <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.positionLoanOriginalValueUnit }}</small>
+                    </p>
+                  </div>
+                </div>
+
+              <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-dark">
+                  <div class="cell__wrapper__top">
+                    <span class="label__up label--color">Current Exposure</span>
+                  </div>
+                  <div class="cell__wrapper__info">
+                      <p class="highlighted--big highlighted--color">
+                          {{ (portfolio$ | async)?.positionCurrentExposure | curr:1}}
+                        <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.positionCurrentExposureUnit }}</small>
+                      </p>
+                  </div>
+                </div>
+
+              <div class="w-100"></div>
+
+              <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-light">
+                  <div class="cell__wrapper__top">
+                    <span class="label__up label--color">Time to Maturity</span>
+                  </div>
+                  <div class="cell__wrapper__info">
+                    <p class="highlighted--big highlighted--color">
+                      {{ (portfolio$ | async)?.positionTimeToMaturity }}
+                      <small class="u-uppercase highlighted__small--color__exception">{{ (portfolio$ | async)?.positionTimeToMaturityUnit }}</small>
+                      <small class="highlighted__small--color of">AVG</small>
+                    </p>
+                  </div>
+                </div>
+
+              <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-light">
+                <div class="cell__wrapper__info">
+                  <div class="table__simple">
+                      <div class="table__row">
+                        <span class="cell__title">Started:</span>
+                        <span class="cell__information">{{(portfolio$ | async)?.positionStarted | cusdate | date: 'd MMM y' }}</span>
+                      </div>
+                      <div class="table__row">
+                        <span class="cell__title">Ended:</span>
+                        <span class="cell__information">{{(portfolio$ | async)?.positionMaturity | cusdate | date: 'd MMM y' }}</span>
+                      </div>
+                    </div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-3">
+            <div class="box box--table">
+              <div class="box__header box__header--bg">
+                <div class="d-flex flex-row justify-content-between">
+                  <div class="box__title title--compound">
+                    <h1 class="title">
+                      Duration
+                    </h1>
+                  </div>
+                </div>
+              </div>
+              <div class="box__body box__body--bg">
+                <div class=" cell__wrapper cell__wrapper cell__wrapper--bg-dark">
+                  <div class="cell__wrapper__top">
+                    <span class="label__up label--color">Exposure Until Duration</span>
+                  </div>
+                  <div class="cell__wrapper__info">
+                    <p class="highlighted--big highlighted--color">
+                        {{ (portfolio$ | async)?.durationExposureUntilDuration | round: 2 }}
+                      <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.durationExposureUntilDurationUnit }}</small>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="w-100"></div>
+
+                <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-light">
+                  <div class="cell__wrapper__top">
+                    <span class="label__up label--color">Time to Duration Date</span>
+                  </div>
+                  <div class="cell__wrapper__info">
+                    <p class="highlighted--big highlighted--color">
+                      {{ (portfolio$ | async)?.durationTimeToDurationDate | number:'1.0-0' }}
+                      <small class="u-uppercase highlighted__small--color__exception">{{ (portfolio$ | async)?.durationTimeToDurationDateUnit }}</small>
+                      <small class="highlighted__small--color of">AVG</small>
+                    </p>
+                  </div>
+                </div>
+
+                <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-light">
+                  <div class="cell__wrapper__info">
+                    <div class="table__simple">
+                        <div class="table__row">
+                          <span class="cell__title">Today</span>
+                          <span class="cell__information">{{ (portfolio$ | async)?.durationToday | date: 'd MMM y' }}</span>
+                        </div>
+                        <div class="table__row">
+                          <span class="cell__title">Duration</span>
+                          <span class="cell__information">{{ (portfolio$ | async)?.durationToday | cusdate | date: 'd MMM y'}}</span>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-3">
+            <div class="box box--table">
+              <div class="box__header box__header--bg">
+                <div class="d-flex flex-row justify-content-between">
+                  <div class="box__title title--compound">
+                    <h1 class="title">Collateral</h1>
+                  </div>
+                </div>
+              </div>
+              <div class="box__body box__body--bg">
+                <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-dark">
+                  <div class="cell__wrapper__top">
+                    <span class="label__up label--color">Evaluation in to</span>
+                  </div>
+                  <div class="cell__wrapper__info">
+                    <p class="highlighted--big highlighted--color">
+                      {{ (portfolio$ | async)?.collateralEvaluationinT0 | curr:1 }}
+                      <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.collateralEvaluationinT0Unit }}</small>
+                    </p>
+                  </div>
+                </div>
+
+                <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-dark">
+                  <div class="cell__wrapper__top">
+                    <span class="label__up label--color">Loan to value</span>
+                  </div>
+                  <div class="cell__wrapper__info">
+                    <p class="highlighted--big highlighted--color">
+                      {{ (portfolio$ | async)?.collateralLoanToValue | perc:1}}
+                      <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.collateralLoanToValueUnit }}</small>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="w-100"></div>
+
+                <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-light">
+                  <div class="cell__wrapper__top">
+                    <span class="label__up label--color">Current evaluation Estimation</span>
+                  </div>
+                  <div class="cell__wrapper__info">
+                    <p class="highlighted--big highlighted--color">
+                      {{ (portfolio$ | async)?.collateralCurrentEvaluationEstimation | curr }}
+                      <small class="highlighted__small--color u-uppercase">{{ (portfolio$ | async)?.collateralCurrentEvaluationEstimationUnit }}</small>
+                    </p>
+                  </div>
+                </div>
+
+                <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-light">
+                  <div class="cell__wrapper__top">
+                    <span class="label__up label--color">Adjusted loan to value</span>
+                  </div>
+                  <div class="cell__wrapper__info">
+                    <p class="highlighted--big highlighted--color">
+                      {{ (portfolio$ | async)?.collateralAdjustedLoanToValuePerc | perc:1 }}
+                      <small class="highlighted__small--color u-uppercase">{{ (portfolio$ | async)?.collateralAdjustedLoanToValuePercUnit }}</small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </section>
 
-  <section *ngIf="(type$ | async) === 'industry'" class="page--header">industry</section>
-
-  <section *ngIf="!(type$ | async)" class="page--header">
-    <h1 class="section-title">{{ (portfolio$ | async)?.name }}</h1>
-
-    <a [routerLink]="['/monitor', 'create-portfolio']" class="btn btn-default float-right">Edit Portfolio</a>
+  <section class="page-section bg--dark">
+    <div class="row">
+      <div class="col">
+        <ul>
+          <li *ngFor="let notification of (portfolio$ | async)?.notificationsData">
+            <app-notification-row [notification]="notification" [type]="'small'" [inPortfolio]="true"></app-notification-row>
+          </li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section class="page-section bg--light">
-    <div class="row">
-      <div class="col-3">
-        <div class="box box--table">
-          <div class="box__header box__header--bg">
-            <div class="d-flex flex-row justify-content-between">
-              <div class="box__title title--compound">
-                <h1 class="title">Key Financial</h1>
-                <!-- #HC -->
-              </div>
-            </div>
-          </div>
-          <div class="box__body box__body--bg">
-            <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-dark">
-              <div class="cell__wrapper__top">
-                <span class="label__up label--color">Status</span>
-              </div>
-              <div class="cell__wrapper__info">
-                <div
-                  [class.green]="(portfolio$ | async)?.keyFinancialStatus === 'Performing'"
-                  [class.grey]="(portfolio$ | async)?.keyFinancialStatus === 'Fully Paid'"
-                  [class.yellow]="(portfolio$ | async)?.keyFinancialStatus === 'Past Due Loan'"
-                  [class.orange]="(portfolio$ | async)?.keyFinancialStatus === 'Unlikely To Pay'"
-                  [class.red]="(portfolio$ | async)?.keyFinancialStatus === 'Bad Loan'"
-                  class="tag"
-                >
-                {{ (portfolio$ | async)?.keyFinancialStatus }}
-                </div>
-              </div>
-            </div>
-
-            <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-dark">
-              <div class="cell__wrapper__top">
-                <span class="label__up label--color">Regulatory Capital Absorted</span>
-              </div>
-              <div class="cell__wrapper__info">
-                <p class="highlighted--big highlighted--color">
-                  {{ (portfolio$ | async)?.keyFinancialRegulatoryCapitalAbsorbed | perc: 1 }}
-
-                  <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.keyFinancialRegulatoryCapitalAbsorbedUnit }}</small>
-                </p>
-              </div>
-            </div>
-
-            <div class="w-100"></div>
-
-            <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-light">
-              <div class="cell__wrapper__top">
-                <span class="label__up label--color">Regulatory Capital Absorted</span>
-              </div>
-              <div class="cell__wrapper__info">
-                <p class="highlighted--big highlighted--color">
-                  {{ (portfolio$ | async)?.keyFinancialRegulatoryCapitalAbsorbed | curr }}
-                  <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.keyFinancialRegulatoryCapitalAbsorbedUnit }}</small>
-                </p>
-              </div>
-            </div>
-
-            <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-light">
-              <div class="cell__wrapper__top">
-                <span class="label__up label--color">Expected Loss</span>
-              </div>
-              <div class="cell__wrapper__info">
-                <p class="highlighted--big highlighted--color">
-                  {{ (portfolio$ | async)?.keyFinancialExpectedLoss | curr }}
-                  <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.keyFinancialExpectedLossUnit }}</small>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-3">
-        <div class="box box--table">
-          <div class="box__header box__header--bg">
-            <div class="d-flex flex-row justify-content-between">
-              <div class="box__title title--compound">
-                <h1 class="title">
-                  Position
-                </h1>
-              </div>
-            </div>
-          </div>
-          <div class="box__body box__body--bg">
-            <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-dark">
-              <div class="cell__wrapper__top">
-                <span class="label__up label--color">Loan Original Value</span>
-              </div>
-              <div class="cell__wrapper__info">
-                <p class="highlighted--big highlighted--color">
-                  {{ (portfolio$ | async)?.positionLoanOriginalValue | curr }}
-                  <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.positionLoanOriginalValueUnit }}</small>
-                </p>
-              </div>
-            </div>
-
-          <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-dark">
-              <div class="cell__wrapper__top">
-                <span class="label__up label--color">Current Exposure</span>
-              </div>
-              <div class="cell__wrapper__info">
-                  <p class="highlighted--big highlighted--color">
-                      {{ (portfolio$ | async)?.positionCurrentExposure | curr:1}}
-                    <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.positionCurrentExposureUnit }}</small>
-                  </p>
-              </div>
-            </div>
-
-          <div class="w-100"></div>
-
-          <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-light">
-              <div class="cell__wrapper__top">
-                <span class="label__up label--color">Time to Maturity</span>
-              </div>
-              <div class="cell__wrapper__info">
-                <p class="highlighted--big highlighted--color">
-                  {{ (portfolio$ | async)?.positionTimeToMaturity }}
-                  <small class="u-uppercase highlighted__small--color__exception">{{ (portfolio$ | async)?.positionTimeToMaturityUnit }}</small>
-                  <small class="highlighted__small--color of">AVG</small>
-                </p>
-              </div>
-            </div>
-
-          <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-light">
-            <div class="cell__wrapper__info">
-              <div class="table__simple">
-                  <div class="table__row">
-                    <span class="cell__title">Started:</span>
-                    <span class="cell__information">{{(portfolio$ | async)?.positionStarted | cusdate | date: 'd MMM y' }}</span>
-                  </div>
-                  <div class="table__row">
-                    <span class="cell__title">Ended:</span>
-                    <span class="cell__information">{{(portfolio$ | async)?.positionMaturity | cusdate | date: 'd MMM y' }}</span>
-                  </div>
-                </div>
-            </div>
-          </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-3">
-        <div class="box box--table">
-          <div class="box__header box__header--bg">
-            <div class="d-flex flex-row justify-content-between">
-              <div class="box__title title--compound">
-                <h1 class="title">
-                  Duration
-                </h1>
-              </div>
-            </div>
-          </div>
-          <div class="box__body box__body--bg">
-            <div class=" cell__wrapper cell__wrapper cell__wrapper--bg-dark">
-              <div class="cell__wrapper__top">
-                <span class="label__up label--color">Exposure Until Duration</span>
-              </div>
-              <div class="cell__wrapper__info">
-                <p class="highlighted--big highlighted--color">
-                    {{ (portfolio$ | async)?.durationExposureUntilDuration | round: 2 }}
-                  <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.durationExposureUntilDurationUnit }}</small>
-                </p>
-              </div>
-            </div>
-
-            <div class="w-100"></div>
-
-            <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-light">
-              <div class="cell__wrapper__top">
-                <span class="label__up label--color">Time to Duration Date</span>
-              </div>
-              <div class="cell__wrapper__info">
-                <p class="highlighted--big highlighted--color">
-                  {{ (portfolio$ | async)?.durationTimeToDurationDate | number:'1.0-0' }}
-                  <small class="u-uppercase highlighted__small--color__exception">{{ (portfolio$ | async)?.durationTimeToDurationDateUnit }}</small>
-                  <small class="highlighted__small--color of">AVG</small>
-                </p>
-              </div>
-            </div>
-
-            <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-light">
-              <div class="cell__wrapper__info">
-                <div class="table__simple">
-                    <div class="table__row">
-                      <span class="cell__title">Today</span>
-                      <span class="cell__information">{{ (portfolio$ | async)?.durationToday | date: 'd MMM y' }}</span>
-                    </div>
-                    <div class="table__row">
-                      <span class="cell__title">Duration</span>
-                      <span class="cell__information">{{ (portfolio$ | async)?.durationToday | cusdate | date: 'd MMM y'}}</span>
-                    </div>
-                  </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-3">
-        <div class="box box--table">
-          <div class="box__header box__header--bg">
-            <div class="d-flex flex-row justify-content-between">
-              <div class="box__title title--compound">
-                <h1 class="title">Collateral</h1>
-              </div>
-            </div>
-          </div>
-          <div class="box__body box__body--bg">
-            <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-dark">
-              <div class="cell__wrapper__top">
-                <span class="label__up label--color">Evaluation in to</span>
-              </div>
-              <div class="cell__wrapper__info">
-                <p class="highlighted--big highlighted--color">
-                  {{ (portfolio$ | async)?.collateralEvaluationinT0 | curr:1 }}
-                  <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.collateralEvaluationinT0Unit }}</small>
-                </p>
-              </div>
-            </div>
-
-            <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-dark">
-              <div class="cell__wrapper__top">
-                <span class="label__up label--color">Loan to value</span>
-              </div>
-              <div class="cell__wrapper__info">
-                <p class="highlighted--big highlighted--color">
-                  {{ (portfolio$ | async)?.collateralLoanToValue | perc:1}}
-                  <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.collateralLoanToValueUnit }}</small>
-                </p>
-              </div>
-            </div>
-
-            <div class="w-100"></div>
-
-            <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-light">
-              <div class="cell__wrapper__top">
-                <span class="label__up label--color">Current evaluation Estimation</span>
-              </div>
-              <div class="cell__wrapper__info">
-                <p class="highlighted--big highlighted--color">
-                  {{ (portfolio$ | async)?.collateralCurrentEvaluationEstimation | curr }}
-                  <small class="highlighted__small--color u-uppercase">{{ (portfolio$ | async)?.collateralCurrentEvaluationEstimationUnit }}</small>
-                </p>
-              </div>
-            </div>
-
-            <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-light">
-              <div class="cell__wrapper__top">
-                <span class="label__up label--color">Adjusted loan to value</span>
-              </div>
-              <div class="cell__wrapper__info">
-                <p class="highlighted--big highlighted--color">
-                  {{ (portfolio$ | async)?.collateralAdjustedLoanToValuePerc | perc:1 }}
-                  <small class="highlighted__small--color u-uppercase">{{ (portfolio$ | async)?.collateralAdjustedLoanToValuePercUnit }}</small>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="row no-gutters">
+      <div class="col">
+        <!-- <h1 class="section-title">Positions</h1> -->
+        <ul>
+          <li *ngFor="let position of (portfolio$ | async)?.positionsData">
+            <app-position-row [position]="position"></app-position-row>
+          </li>
+        </ul>
       </div>
     </div>
+
   </section>
-
-  <div class="row no-gutters">
-    <div class="col">
-      <!-- <h1 class="section-title">Notifications</h1> -->
-      <ul>
-        <li *ngFor="let notification of (portfolio$ | async)?.notificationsData">
-          <app-notification-row [notification]="notification" [type]="'small'" [inPortfolio]="true"></app-notification-row>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="row no-gutters">
-    <div class="col">
-      <!-- <h1 class="section-title">Positions</h1> -->
-      <ul>
-        <li *ngFor="let position of (portfolio$ | async)?.positionsData">
-          <app-position-row [position]="position"></app-position-row>
-        </li>
-      </ul>
-    </div>
-  </div>
 </div>
