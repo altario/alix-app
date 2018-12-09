@@ -1,6 +1,5 @@
 {
    "index": "index.html",
-   "error": "index.html",
    "region": "eu-west-1",
    "uploadDir": "./s3website/",
    "prefix": "",
@@ -8,6 +7,7 @@
    "corsConfiguration": [],
    "enableCloudfront": false,
    "retries": 20,
-   "domain": "alix-isp.altar.io",
+   "error": "index.html",
+   "domain": "alix-cvc.altar.io",
    "configFile": ".s3-website.json"
 }

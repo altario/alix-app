@@ -16,6 +16,116 @@ a {
   cursor: pointer;
   text-decoration: none;
   margin-bottom: 40px;
+  @include align(column);
+
+  .box {
+    flex: 1;
+    @include align(column);
+    .box__header {
+      flex: 0 0 60px;
+      height: auto;
+      background: $color2;
+      .flex-row {
+        height: 100%;
+        .box__title {
+          padding-top: 0;
+          padding-bottom: 0;
+          @include align(middle);
+          .title {
+            font-size: rem(13);
+            font-weight: $font-weight--normal;
+          }
+        }
+      }
+    }
+    .box__body {
+      flex: 1;
+      @include align(column);
+
+      .portfolio-name {
+        flex: 1;
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
+        span {
+          font-family: $font-family--secondary;
+          font-weight: $font-weight--bold;
+          font-size: rem(16);
+          color: white;
+        }
+      }
+
+      .portfolio-positions {
+        flex: 0 0 110px !important;
+        > * {
+          margin: 0;
+          + * {
+            margin-top: 10px;
+          }
+        }
+      }
+
+      .portfolio-alerts {
+        flex: 1 !important;
+        .table {
+          > .table-row {
+            + .table-row {
+              margin-top: 5px;
+            }
+          }
+          .highlighted--small {
+            font-size: rem(8);
+            color: #979797 !important;
+            text-transform: uppercase;
+          }
+        }
+
+        .table-row {
+          @include align(middle);
+        }
+
+        .square {
+          flex: 0 0 5px;
+          display: block;
+          align-self: flex-start;
+          margin-top: 4px;
+          &.mid {
+            background: #979797;
+          }
+          &.high {
+            background: $color__custom--yellow;
+            &.very {
+              background: $color__custom--red;
+            }
+          }
+        }
+
+        .labels {
+          flex: 1;
+          // @include align(wrap);
+          line-height: 1;
+          .label-up {
+            font-size: rem(12);
+            // white-space: pre;
+            color: white;
+          }
+          .truncate {
+            font-size: rem(12);
+            // white-space: pre;
+          }
+          .label-down {
+            font-size: rem(12);
+            // white-space: pre;
+            font-weight: $font-weight--light;
+            color: #DBDBDE;
+          }
+        }
+      }
+
+      .portfolio-unread {
+        flex: 0 0 24px;
+      }
+    }
+  }
 }
 
 .truncate {

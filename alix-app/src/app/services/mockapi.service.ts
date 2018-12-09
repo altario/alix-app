@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of, combineLatest } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { map, tap, publishReplay, refCount } from 'rxjs/operators';
 
 import { lists } from '../data/data';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class MockapiService {
   constructor(private http: HttpClient) {}
@@ -17,15 +17,27 @@ export class MockapiService {
   }
 
   public getPositions(): Observable<any> {
-    return this.getJSON().pipe(map(data => data.positionsList));
+    return this.getJSON().pipe(
+      map(data => data.positionsList),
+      publishReplay(1),
+      refCount()
+    );
   }
 
   public getPortfolios(): Observable<any> {
-    return this.getJSON().pipe(map(data => data.portfoliosList));
+    return this.getJSON().pipe(
+      map(data => data.portfoliosList),
+      publishReplay(1),
+      refCount()
+    );
   }
 
   public getNotifications(): Observable<any> {
-    return this.getJSON().pipe(map(data => data.notificationsList));
+    return this.getJSON().pipe(
+      map(data => data.notificationsList),
+      publishReplay(1),
+      refCount()
+    );
   }
 
   public getPortfoliosPopulated(): Observable<any> {
@@ -58,6 +70,8 @@ export class MockapiService {
 
         return portfolios;
       }),
+      publishReplay(1),
+      refCount(),
       tap(console.log)
     );
   }
@@ -79,7 +93,9 @@ export class MockapiService {
         }
 
         return notifications;
-      })
+      }),
+      publishReplay(1),
+      refCount()
     );
   }
 
@@ -119,6 +135,8 @@ export class MockapiService {
 
         return portfolio;
       }),
+      publishReplay(1),
+      refCount(),
       tap(console.log)
     );
   }
@@ -149,15 +167,15 @@ export class MockapiService {
         // notification.positionsData = [];
         // // notification.positionsData = positions;
 
-
         // for (let z = 0; z < notification.positionsIds.length; z++) {
         //   notification.positionsData.push(positionsHash[notification.positionsIds[z]]);
         // }
 
         return notification;
       }),
+      publishReplay(1),
+      refCount(),
       tap(console.log)
     );
   }
-
 }

@@ -1,9 +1,22 @@
+@import '~src/scss/imports';
+
+:host {
+  display: block;
+  position: relative;
+}
+
 .container-fluid > .row {
   min-width: 1024px;
   max-width: 1260px;
   padding: 0;
   margin: 40px auto 20px;
- }
+}
+
+.btn--edit {
+  width: fit-content;
+  padding: 0 10px !important;
+  align-self: flex-end;
+}
 
 ul,
 h1 {
