@@ -1,4 +1,4 @@
-<div class="notification-row__container box {{type}}">
+<div *ngIf="type === 'big'" class="notification-row__container box {{type}}">
   <div class="notification-row__icon cell__wrapper cell__wrapper cell__wrapper--bg-dark">
     <span class="bullet-point--big" [ngClass]="{
       'bullet-point--success': notification?.notificationPriority === 'Low',
@@ -58,24 +58,54 @@
   <div class="notification-row__btns">
     <div class="notification-row__button" (click)="goToPortfolio(notification)">Add to Report</div>
     <div class="notification-row__button" (click)="goToPortfolio(notification)">Mark as Read</div>
-    <div class="notification-row__button" (click)="goToPortfolio(notification)">See Portfolio</div>
+    <div *ngIf="!inPortfolio" class="notification-row__button" (click)="goToPortfolio(notification)">See Portfolio</div>
   </div>
 </div>
 
-<!-- 
+<div *ngIf="type === 'small'" class="notification-row__container-small box {{type}}">
+    <div class="notification-row__left cell__wrapper cell__wrapper cell__wrapper--bg-dark">
+      <div>
+        <span class="bullet-point--small" [ngClass]="{
+          'bullet-point--success': notification?.notificationPriority === 'Low',
+          'bullet-point--warning': notification?.notificationPriority === 'Mid',
+          'bullet-point--past': notification?.notificationPriority === 'High',
+          'bullet-point--danger': notification?.notificationPriority === 'Veryhigh'
+        }">
+        </span>
+      </div>
+      <div>
+        <span>
+          <i *ngIf="notification?.type === 'kpi'" class="icon--small icol ico-chart-line"></i>
+          <i *ngIf="notification?.type === 'news'" class="icon--small icol ico-newspaper"></i>
+        </span>
+      </div>
+      <div>
+        <span class="cell__wrapper cell__wrapper cell__wrapper--bg-light">{{ notification?.title }}</span>
+      </div>
+      <div>
+        <span [appPosNeg]="notification?.value" icon="symbol">{{ notification?.value | perc:1}}</span>
+      </div>
+      <div>
+        <span>{{ notification?.time }}</span>
+      </div>
+    </div>
 
-<div class="notification-row__title">{{ notification?.name }}</div>
-<div class="notification-row__loan">{{ notification?.loanType }}</div>
-<div class="notification-row__time">
-  {{ notification?.dateStart }} > {{ notification?.dateEnd }}
-  > {{ notification?.dateEnd }}
-</div>
-<div class="notification-row__state">
-  <span class="u-uppercase">{{ notification?.family }}</span>
-</div>
-<ul class="notification-row__info">
-  <li *ngFor="let info of notification?.infos">
-    <div>{{ info?.title }}</div>
-    <div class="u-strong">{{ info?.data }}</div>
-  </li>
-</ul> -->
+    <div class="notification-row__right notification-row__position-exposure">
+      <span>
+        <div>
+          POSITIONS
+        </div>
+        <div>
+          {{ notification?.positionsInPortfolio }}
+        </div>
+      </span>
+      <span>
+        <div>
+          EXPOSURE
+        </div>
+        <div>
+          {{ notification?.portfolioExposure }} {{ notification?.exposureUnit}}
+        </div>
+      </span>
+    </div>
+  </div>

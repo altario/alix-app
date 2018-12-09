@@ -1,4 +1,5 @@
 :host {
+  display: block;
   margin-bottom: 1rem;
 }
 
@@ -72,6 +73,34 @@ $row_padding: 10px;
       &:hover {
         background: rgb(189, 189, 189);
       }
+    }
+  }
+}
+
+.notification-row__container-small {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .notification-row__left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+
+    & div {
+      padding: .5rem
+    }
+  }
+
+  .notification-row__right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+
+    & div {
+      padding: .5rem
     }
   }
 }
