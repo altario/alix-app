@@ -57,41 +57,41 @@
 </div>
 
 <div *ngIf="type === 'small'" class="notification-row__container-small box {{type}}">
-    <div class="notification-row__left cell__wrapper cell__wrapper--bg-dark">
-      <div>
-        <div class="bullet-point--small" [ngClass]="{
-          'bullet-point--success': notification?.notificationPriority === 'Low',
-          'bullet-point--warning': notification?.notificationPriority === 'Mid',
-          'bullet-point--past': notification?.notificationPriority === 'High',
-          'bullet-point--danger': notification?.notificationPriority === 'Veryhigh'
-        }">
-        </div>
-      </div>
-      <div>
-        <div>
-          <i *ngIf="notification?.type === 'kpi'" class="icon--small icol ico-chart-line"></i>
-          <i *ngIf="notification?.type === 'news'" class="icon--small icol ico-newspaper"></i>
-        </div>
-      </div>
-      <div>
-        <div class="cell__wrapper cell__wrapper--bg-light">{{ notification?.title }}</div>
-      </div>
-      <div>
-        <div [appPosNeg]="notification?.value" icon="symbol">{{ notification?.value | perc:1}}</div>
-      </div>
-      <div>
-        <div>{{ notification?.time }}</div>
+  <div class="notification-row__left cell__wrapper cell__wrapper--bg-dark">
+    <div>
+      <div class="bullet-point--small" [ngClass]="{
+        'bullet-point--success': notification?.notificationPriority === 'Low',
+        'bullet-point--warning': notification?.notificationPriority === 'Mid',
+        'bullet-point--past': notification?.notificationPriority === 'High',
+        'bullet-point--danger': notification?.notificationPriority === 'Veryhigh'
+      }">
       </div>
     </div>
-
-    <div class="notification-row__right notification-row__position-exposure">
+    <div>
       <div>
-        <div>POSITIONS</div>
-        <div>{{ notification?.positionsInPortfolio }}</div>
+        <i *ngIf="notification?.type === 'kpi'" class="icon--small icol ico-chart-line"></i>
+        <i *ngIf="notification?.type === 'news'" class="icon--small icol ico-newspaper"></i>
       </div>
-      <div>
-        <div>EXPOSURE</div>
-        <div>{{ notification?.portfolioExposure | curr }} {{ notification?.exposureUnit}}</div>
-      </div>
+    </div>
+    <div>
+      <div class="cell__wrapper cell__wrapper--bg-light">{{ notification?.title }}</div>
+    </div>
+    <div>
+      <div [appPosNeg]="notification?.value" icon="symbol">{{ notification?.value | perc:1}}</div>
+    </div>
+    <div>
+      <div>{{ notification?.time }}</div>
     </div>
   </div>
+
+  <div class="notification-row__right notification-row__position-exposure">
+    <div>
+      <div>POSITIONS</div>
+      <div>{{ notification?.positionsInPortfolio }}</div>
+    </div>
+    <div>
+      <div>EXPOSURE</div>
+      <div>{{ notification?.portfolioExposure | curr }} {{ notification?.exposureUnit}}</div>
+    </div>
+  </div>
+</div>
