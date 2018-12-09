@@ -48,8 +48,9 @@
         <div>
           EXPOSURE
         </div>
-        <div>
-          {{ notification?.portfolioExposure | curr }}
+        <div [appNum]="notification?.portfolioExposure"
+          [showUnit]="false"
+          [unitSmall]="false">
         </div>
       </span>
     </div>
@@ -103,8 +104,9 @@
         <div>
           EXPOSURE
         </div>
-        <div>
-          {{ notification?.portfolioExposure | curr }} {{ notification?.exposureUnit}}
+        <div [appNum]="notification?.portfolioExposure"
+          [showUnit]="true"
+          [unitSmall]="false">
         </div>
       </span>
     </div>

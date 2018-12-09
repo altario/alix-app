@@ -15,12 +15,11 @@
           <span  class="label__up label--color">
               Average Vehicle price
           </span>
-          <div  class="highlighted--big highlighted--color"> 
-              {{ config.averagePrice.value | curr:0 }}k
-            <small class="u-uppercase highlighted__small--color">
-              <span class="color--primary">{{config.averagePriceVsMilanPerc.value | perc:0}}%</span>
-              {{config.averagePriceVsMilanPerc.label}}
-            </small>
+          <div  class="highlighted--big highlighted--color"
+          [appNum]="config.averagePrice.value"
+          [showUnit]="true"
+          [unitSmall]="true"
+          unitClass="u-uppercase highlighted__small--color">
           </div>
         </div>
 

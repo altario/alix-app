@@ -171,7 +171,7 @@ import {
     CustomCurrencyPipe,
     CustomPercentagePipe,
     CustomDateConverterPipe,
-
+      NumericalValuesDirective,
     // charts
     AreaBasicComponent,
     AreaStackComponent,

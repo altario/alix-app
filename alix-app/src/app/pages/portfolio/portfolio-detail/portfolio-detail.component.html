@@ -67,10 +67,12 @@
                 <span class="label__up label--color">Regulatory Capital Absorted</span>
               </div>
               <div class="cell__wrapper__info">
-                <p class="highlighted--big highlighted--color">
-                  {{ (portfolio$ | async)?.keyFinancialRegulatoryCapitalAbsorbed | curr }}
-                  <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.keyFinancialRegulatoryCapitalAbsorbedUnit }}</small>
-                </p>
+                <p class="highlighted--big highlighted--color"
+                    [appNum]="(portfolio$ | async)?.keyFinancialRegulatoryCapitalAbsorbed"
+                    [showUnit]="true"
+                    [unitSmall]="true"
+                    unitClass="u-uppercase highlighted__small--color">
+                 </p>
               </div>
             </div>
 
@@ -79,9 +81,11 @@
                 <span class="label__up label--color">Expected Loss</span>
               </div>
               <div class="cell__wrapper__info">
-                <p class="highlighted--big highlighted--color">
-                  {{ (portfolio$ | async)?.keyFinancialExpectedLoss | curr }}
-                  <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.keyFinancialExpectedLossUnit }}</small>
+                <p class="highlighted--big highlighted--color"
+                    [appNum]="(portfolio$ | async)?.keyFinancialExpectedLoss"
+                    [showUnit]="true"
+                    [unitSmall]="true"
+                    unitClass="u-uppercase highlighted__small--color">
                 </p>
               </div>
             </div>
@@ -106,9 +110,11 @@
                 <span class="label__up label--color">Loan Original Value</span>
               </div>
               <div class="cell__wrapper__info">
-                <p class="highlighted--big highlighted--color">
-                  {{ (portfolio$ | async)?.positionLoanOriginalValue | curr }}
-                  <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.positionLoanOriginalValueUnit }}</small>
+                <p class="highlighted--big highlighted--color"
+                    [appNum]="(portfolio$ | async)?.positionLoanOriginalValue"
+                    [showUnit]="true"
+                    [unitSmall]="true"
+                    unitClass="u-uppercase highlighted__small--color">
                 </p>
               </div>
             </div>
@@ -118,9 +124,11 @@
                 <span class="label__up label--color">Current Exposure</span>
               </div>
               <div class="cell__wrapper__info">
-                  <p class="highlighted--big highlighted--color">
-                      {{ (portfolio$ | async)?.positionCurrentExposure | curr:1}}
-                    <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.positionCurrentExposureUnit }}</small>
+                  <p class="highlighted--big highlighted--color"
+                    [appNum]="(portfolio$ | async)?.positionCurrentExposure"
+                    [showUnit]="true"
+                    [unitSmall]="true"
+                    unitClass="u-uppercase highlighted__small--color">
                   </p>
               </div>
             </div>
@@ -230,9 +238,11 @@
                 <span class="label__up label--color">Evaluation in to</span>
               </div>
               <div class="cell__wrapper__info">
-                <p class="highlighted--big highlighted--color">
-                  {{ (portfolio$ | async)?.collateralEvaluationinT0 | curr:1 }}
-                  <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.collateralEvaluationinT0Unit }}</small>
+                <p class="highlighted--big highlighted--color"
+                    [appNum]="(portfolio$ | async)?.collateralEvaluationinT0"
+                    [showUnit]="true"
+                    [unitSmall]="true"
+                    unitClass="u-uppercase highlighted__small--color">
                 </p>
               </div>
             </div>
@@ -256,9 +266,11 @@
                 <span class="label__up label--color">Current evaluation Estimation</span>
               </div>
               <div class="cell__wrapper__info">
-                <p class="highlighted--big highlighted--color">
-                  {{ (portfolio$ | async)?.collateralCurrentEvaluationEstimation | curr }}
-                  <small class="highlighted__small--color u-uppercase">{{ (portfolio$ | async)?.collateralCurrentEvaluationEstimationUnit }}</small>
+                <p class="highlighted--big highlighted--color"
+                    [appNum]="(portfolio$ | async)?.collateralCurrentEvaluationEstimation"
+                    [showUnit]="true"
+                    [unitSmall]="true"
+                    unitClass="u-uppercase highlighted__small--color">
                 </p>
               </div>
             </div>

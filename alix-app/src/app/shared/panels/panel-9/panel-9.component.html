@@ -22,18 +22,17 @@
         <small class="u-uppercase highlighted__small--color">%</small>
       </div>
       <div class="highlighted--small highlighted--color">
-        <span>
-          {{config.comparableGradeAssetsAbs.value | curr:1}}
+        <span [appNum]="config.comparableGradeAssetsAbs.value"
+          [showUnit]="true"
+          [unitSmall]="true">
         </span>
         <small>
-          K out of
+          out of
         </small>
-        <span>
-          {{config.totalAssetsInAndOutsideRange.value | curr:1}}
+        <span [appNum]="config.totalAssetsInAndOutsideRange.value"
+          [showUnit]="true"
+          [unitSmall]="true">
         </span>
-        <small>
-          k
-        </small>
       </div>
       <div class="perc-bar">
         <div class="perc-bar__percentage" [style.width.%]="config.comparableGradeAssetsPerc.value | perc:1">

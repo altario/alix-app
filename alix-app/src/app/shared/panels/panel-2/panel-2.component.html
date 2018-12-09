@@ -8,11 +8,12 @@
           </span>
         </div>
         <div class="cell__wrapper__info">
-          <p class="highlighted--medium highlighted--color">
-              {{ config.totalLoansOriginalValue.value | curr }}
-            <small class="u-uppercase highlighted__small--color">
-                M€
-            </small>
+          <p class="highlighted--medium highlighted--color"
+          [appNum]="config.totalLoansOriginalValue.value"
+          [showUnit]="true"
+          [unitSmall]="true"
+          
+          unitClass="u-uppercase highlighted__small--color">
           </p>
         </div>
       </div>
@@ -24,11 +25,12 @@
           </span>
         </div>
         <div class="cell__wrapper__info">
-            <p class="highlighted--medium highlighted--color">
-                {{ config.currentClientsExposure.value | curr}}
-                <small class="u-uppercase highlighted__small--color">
-                M€
-              </small>
+            <p class="highlighted--medium highlighted--color"
+                [appNum]="config.currentClientsExposure.value"
+          [showUnit]="true"
+          [unitSmall]="true"
+          
+          unitClass="u-uppercase highlighted__small--color">
             </p>
           </div>
       </div>
