@@ -52,7 +52,7 @@
     </div>
 
     <div class="notification-row__btns cell__wrapper cell__wrapper--bg-light">
-        <button class="btn btn-light--1 notification-row__button" (click)="goToPortfolio(notification)">Add to Report</button>
+        <button class="btn btn-light--1 notification-row__button" (click)="addToReport(notification?.title)">Add to Report</button>
         <button class="btn btn-light--1 notification-row__button" (click)="goToPortfolio(notification)">Mark as Read</button>
         <button *ngIf="!inPortfolio" class="btn btn-light--2 notification-row__button" (click)="goToPortfolio(notification)">See Portfolio</button>
     </div>
