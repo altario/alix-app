@@ -10,7 +10,7 @@
   <section *ngIf="(type$ | async) === 'industry'" class="page--header">industry</section>
 
   <section *ngIf="!(type$ | async)" class="page--header">
-    <h1 class="section-title">Extell Development</h1>
+    <h1 class="section-title">{{ (portfolio$ | async)?.name }}</h1>
 
     <a [routerLink]="['/monitor', 'create-portfolio']" class="btn btn-default float-right">Edit Portfolio</a>
   </section>
@@ -35,8 +35,9 @@
               <div class="cell__wrapper__info">
                 <div
                   [class.green]="(portfolio$ | async)?.keyFinancialStatus === 'Performing'"
-                  [class.grey]="(portfolio$ | async)?.keyFinancialStatus === 'Past Due Loan'"
-                  [class.yellow]="(portfolio$ | async)?.keyFinancialStatus === 'Unlikely To Pay'"
+                  [class.grey]="(portfolio$ | async)?.keyFinancialStatus === 'Fully Paid'"
+                  [class.yellow]="(portfolio$ | async)?.keyFinancialStatus === 'Past Due Loan'"
+                  [class.orange]="(portfolio$ | async)?.keyFinancialStatus === 'Unlikely To Pay'"
                   [class.red]="(portfolio$ | async)?.keyFinancialStatus === 'Bad Loan'"
                   class="tag"
                 >
@@ -133,9 +134,7 @@
                 <p class="highlighted--big highlighted--color">
                   {{ (portfolio$ | async)?.positionTimeToMaturity }}
                   <small class="u-uppercase highlighted__small--color__exception">{{ (portfolio$ | async)?.positionTimeToMaturityUnit }}</small>
-                  <small class="highlighted__small--color of">of</small>
-                  <span class="highlighted__small--color">{{ (portfolio$ | async)?.positionTimeToMaturity | number:'1.0-0' }}</span>
-                  <small class="highlighted__small--color u-uppercase">y</small>
+                  <small class="highlighted__small--color of">AVG</small>
                 </p>
               </div>
             </div>
@@ -192,11 +191,7 @@
                 <p class="highlighted--big highlighted--color">
                   {{ (portfolio$ | async)?.durationTimeToDurationDate | number:'1.0-0' }}
                   <small class="u-uppercase highlighted__small--color__exception">{{ (portfolio$ | async)?.durationTimeToDurationDateUnit }}</small>
-                  <small class="highlighted__small--color of">of</small>
-                  <span class="highlighted__small--color">
-                      {{ (portfolio$ | async)?.durationTimeToDurationDate | number:'1.0-0' }}
-                  </span>
-                  <small class="highlighted__small--color u-uppercase">y</small>
+                  <small class="highlighted__small--color of">AVG</small>
                 </p>
               </div>
             </div>

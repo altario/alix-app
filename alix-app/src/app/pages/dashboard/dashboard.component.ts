@@ -33,7 +33,7 @@ export class DashboardComponent implements OnInit {
     allIndustries: 27,
     consumerGoods: 16,
     automotiveIndustrials: 17,
-    Transportation: 18,
+    transportation: 18,
     telecomMediaAndTechnology: 19,
     energyAndBasicMaterials: 20,
     infrastructureRealEstate: 26,

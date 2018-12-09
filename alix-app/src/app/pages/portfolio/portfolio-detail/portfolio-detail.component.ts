@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { MockapiService } from '../../../services/mockapi.service';
 import { Observable } from 'rxjs';
-import { map, take, mergeMap, filter } from 'rxjs/operators';
+import { map, tap, mergeMap, filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-portfolio-detail',

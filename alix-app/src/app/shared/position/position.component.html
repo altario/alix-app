@@ -7,8 +7,9 @@
 
     <div class="position-row__state"
       [class.green]="position?.state === 'Performing'"
-      [class.grey]="position?.state === 'Past Due Loan'"
-      [class.yellow]="position?.state === 'Unlikely To Pay'"
+      [class.grey]="position?.state === 'Fully Paid'"
+      [class.yellow]="position?.state === 'Past Due Loan'"
+      [class.orange]="position?.state === 'Unlikely To Pay'"
       [class.red]="position?.state === 'Bad Loan'"
       >{{ position?.state }}</div>
 
