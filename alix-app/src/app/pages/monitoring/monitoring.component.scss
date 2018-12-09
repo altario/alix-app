@@ -1,5 +1,14 @@
 @import '~src/scss/imports';
 
+ul {
+  padding: 0;
+
+  li {
+    list-style-type: none;
+    margin-bottom: 1rem;
+  }
+}
+
 .tabs{
   .tabs-nav {
     margin: 0;

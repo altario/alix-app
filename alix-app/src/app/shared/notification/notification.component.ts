@@ -14,7 +14,9 @@ export class NotificationRowComponent implements OnInit {
 
   constructor(private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.notification)
+  }
 
   goToPortfolio(notification: any) {
     this.router.navigate(['monitor/portfolios', notification.portfolioId || 2], {
