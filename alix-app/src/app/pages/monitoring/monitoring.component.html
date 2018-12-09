@@ -1,12 +1,64 @@
 <div class="container-fluid">
-  <div class="row no-gutters">
-    <div class="col">
-      <h1 class="section-title">Notifications</h1>
-      <ul>
-        <li *ngFor="let notification of notifications$ | async">
-          <app-notification-row [notification]="notification" [type]="'big'"></app-notification-row>
-        </li>
-      </ul>
+  <section class="page-section bg--light">
+    <div class="row">
+      <div class="col-3">
+        <div class="box box--table">
+          <div class="box__header box__header--bg">
+            <div class="row-justified">
+              <div class="box__title title--compound">
+                <h1 class="title">Filter notifications</h1>
+              </div>
+            </div>
+          </div>
+          <div class="box__body box__body--bg">
+            <div class=" cell__wrapper cell__wrapper--bg-dark">
+              <div class="select-styled styled--block">
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>Search</option>
+                </select>
+              </div>
+            </div>
+            <div class=" cell__wrapper cell__wrapper--bg-light">
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                <label class="custom-control-label" for="customCheck1">KPIs</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck2">
+                  <label class="custom-control-label" for="customCheck2">News</label>
+                </div>
+            </div>
+            <div class=" cell__wrapper cell__wrapper--bg-dark">
+              <div class="row-justified active">
+                <span>All unread</span>
+                <span>23</span>
+              </div>
+              <div class="row-justified">
+                <span>Reported</span>
+                <span>406</span>
+              </div>
+              <div class="row-justified">
+                  <span>Read</span>
+                <span>2324</span>
+              </div>
+            </div>
+            <div class=" cell__wrapper cell__wrapper--bg-light">
+              <div class="select-styled styled--block">
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>All Industries</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-9">
+        <ul>
+          <li *ngFor="let notification of notifications$ | async">
+            <app-notification-row [notification]="notification" [type]="'big'"></app-notification-row>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
+  </section>
 </div>
