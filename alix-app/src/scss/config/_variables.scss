@@ -30,7 +30,7 @@ $grid__vertical-gutters:              false;
 $body__color__background:             black;
 $body__color__text:                   #FFFFFF;
 $body__color__highlight--background:  $color__brand--1;
-$body__color__highlight--text:        #FFFFFF;
+$body__color__highlight--text:        $body__color__text;
 
 
 
