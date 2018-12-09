@@ -248,6 +248,9 @@ export class DemandAndOfferComponent implements OnInit {
     this.series.longTermRentEvolutionEurSqm = this.longTermRentEvolutionEurSqm();
     this.peerListedAssets5YLr();
     this.peerListedAssets5YSr();
+    this.peerAssetsDemandRateListingToUnlistingForSale();
+    this.peerAssetsDemandRateListingToUnlistingLr();
+    this.peerAssetsOccupancyRateSr();
   }
 
   getPopulationNames(): Array<any> {
@@ -483,7 +486,66 @@ export class DemandAndOfferComponent implements OnInit {
     }];
   }
 
-  peerAssetsDemandRateListingToUnlistingForSale() {}
+  peerAssetsDemandRateListingToUnlistingForSale() {
+    this.opts.peerAssetsDemandRateListingToUnlistingForSale = {
+      title: {
+        text: 'AVG Demand Rate Growth (Sale)', // #HC
+        top: '17px',
+        left: '16px',
+        textStyle: eChartsConfig.title,
+      },
+
+      calculable: true,
+      legend: {
+        data: Object.keys(chartdataset.dossier1ChartsData.demandOffer.peerAssetsDemandRateListingToUnlistingForSale)
+          .map(population => population !== 'year' ?
+            chartdataset.dossier1ChartsData.demandOffer.peerAssetsDemandRateListingToUnlistingForSale[population].label :
+            null
+          ),
+        itemWidth: eChartsConfig.legend.itemWidth,
+        itemHeight: eChartsConfig.legend.itemHeight,
+        top: eChartsConfig.legend.top,
+        right: eChartsConfig.legend.right,
+        textStyle: {
+          fontSize: eChartsConfig.legend.fontSize,
+          color: eChartsConfig.legend.color
+        }
+      },
+      xAxis: {
+        type: 'category',
+        splitLine: eChartsConfig.xAxis.splitLine,
+        axisLabel: eChartsConfig.xAxis.axisLabel,
+        axisLine: eChartsConfig.xAxis.axisLine,
+        axisTick: { show: false },
+        data: chartdataset.dossier1ChartsData.demandOffer.peerAssetsDemandRateListingToUnlistingForSale.year.values
+      },
+      yAxis: {
+        type: 'value',
+        splitLine: eChartsConfig.yAxis.splitLine,
+        axisLabel: eChartsConfig.yAxis.axisLabel,
+        axisLine: {
+          show: false
+        }
+      }
+    };
+
+    const lineColors = {radius1Km: '#913BAF', portaNuova: '#F26D4F', milano: '#BF5E5E'};
+
+    this.series.peerAssetsDemandRateListingToUnlistingForSale =
+      Object.keys(chartdataset.dossier1ChartsData.demandOffer.peerAssetsDemandRateListingToUnlistingForSale).reduce((prev, next, i) => {
+        if (next !== 'year') {
+          prev.push({
+            name: chartdataset.dossier1ChartsData.demandOffer.peerAssetsDemandRateListingToUnlistingForSale[next].label,
+            data: chartdataset.dossier1ChartsData.demandOffer.peerAssetsDemandRateListingToUnlistingForSale[next].values,
+            type: 'bar',
+            barGap: 0,
+            color: lineColors[next]
+          });
+        }
+
+        return prev;
+      }, []);
+  }
 
   longTermRentEvolutionEurSqm(population = 'population1') {
     const populationNames = {
@@ -613,7 +675,64 @@ export class DemandAndOfferComponent implements OnInit {
   }
 
   peerAssetsDemandRateListingToUnlistingLr() {
+    this.opts.peerAssetsDemandRateListingToUnlistingLr = {
+      title: {
+        text: 'AVG Demand Rate Growth (LTR)', // #HC
+        top: '17px',
+        left: '16px',
+        textStyle: eChartsConfig.title,
+      },
 
+      calculable: true,
+      legend: {
+        data: Object.keys(chartdataset.dossier1ChartsData.demandOffer.peerAssetsDemandRateListingToUnlistingLr)
+          .map(population => population !== 'year' ?
+            chartdataset.dossier1ChartsData.demandOffer.peerAssetsDemandRateListingToUnlistingLr[population].label :
+            null
+          ),
+        itemWidth: eChartsConfig.legend.itemWidth,
+        itemHeight: eChartsConfig.legend.itemHeight,
+        top: eChartsConfig.legend.top,
+        right: eChartsConfig.legend.right,
+        textStyle: {
+          fontSize: eChartsConfig.legend.fontSize,
+          color: eChartsConfig.legend.color
+        }
+      },
+      xAxis: {
+        type: 'category',
+        splitLine: eChartsConfig.xAxis.splitLine,
+        axisLabel: eChartsConfig.xAxis.axisLabel,
+        axisLine: eChartsConfig.xAxis.axisLine,
+        axisTick: { show: false },
+        data: chartdataset.dossier1ChartsData.demandOffer.peerAssetsDemandRateListingToUnlistingLr.year.values
+      },
+      yAxis: {
+        type: 'value',
+        splitLine: eChartsConfig.yAxis.splitLine,
+        axisLabel: eChartsConfig.yAxis.axisLabel,
+        axisLine: {
+          show: false
+        }
+      }
+    };
+
+    const lineColors = {radius1Km: '#913BAF', portaNuova: '#F26D4F', milano: '#BF5E5E'};
+
+    this.series.peerAssetsDemandRateListingToUnlistingLr =
+      Object.keys(chartdataset.dossier1ChartsData.demandOffer.peerAssetsDemandRateListingToUnlistingLr).reduce((prev, next, i) => {
+        if (next !== 'year') {
+          prev.push({
+            name: chartdataset.dossier1ChartsData.demandOffer.peerAssetsDemandRateListingToUnlistingLr[next].label,
+            data: chartdataset.dossier1ChartsData.demandOffer.peerAssetsDemandRateListingToUnlistingLr[next].values,
+            type: 'bar',
+            barGap: 0,
+            color: lineColors[next]
+          });
+        }
+
+        return prev;
+      }, []);
   }
 
   peerListedAssets5YSr() {
@@ -687,7 +806,65 @@ export class DemandAndOfferComponent implements OnInit {
   }
 
   peerAssetsOccupancyRateSr() {
+    this.opts.peerAssetsOccupancyRateSr = {
+      title: {
+        text: 'AVG Demand Rate Growth (STR)', // #HC
+        top: '17px',
+        left: '16px',
+        textStyle: eChartsConfig.title,
+      },
 
+      calculable: true,
+      legend: {
+        show: true,
+        data: Object.keys(chartdataset.dossier1ChartsData.demandOffer.peerAssetsOccupancyRateSr)
+          .map(population => population !== 'year' ?
+            chartdataset.dossier1ChartsData.demandOffer.peerAssetsOccupancyRateSr[population].label :
+            null
+          ),
+        itemWidth: eChartsConfig.legend.itemWidth,
+        itemHeight: eChartsConfig.legend.itemHeight,
+        top: eChartsConfig.legend.top,
+        right: eChartsConfig.legend.right,
+        textStyle: {
+          fontSize: eChartsConfig.legend.fontSize,
+          color: eChartsConfig.legend.color
+        }
+      },
+      xAxis: {
+        type: 'category',
+        splitLine: eChartsConfig.xAxis.splitLine,
+        axisLabel: eChartsConfig.xAxis.axisLabel,
+        axisLine: eChartsConfig.xAxis.axisLine,
+        axisTick: { show: false },
+        data: chartdataset.dossier1ChartsData.demandOffer.peerAssetsOccupancyRateSr.year.values
+      },
+      yAxis: {
+        type: 'value',
+        splitLine: eChartsConfig.yAxis.splitLine,
+        axisLabel: eChartsConfig.yAxis.axisLabel,
+        axisLine: {
+          show: false
+        }
+      }
+    };
+
+    const lineColors = {radius1Km: '#913BAF', portaNuova: '#F26D4F', milano: '#BF5E5E'};
+
+    this.series.peerAssetsOccupancyRateSr =
+      Object.keys(chartdataset.dossier1ChartsData.demandOffer.peerAssetsOccupancyRateSr).reduce((prev, next, i) => {
+        if (next !== 'year') {
+          prev.push({
+            name: chartdataset.dossier1ChartsData.demandOffer.peerAssetsOccupancyRateSr[next].label,
+            data: chartdataset.dossier1ChartsData.demandOffer.peerAssetsOccupancyRateSr[next].values,
+            type: 'bar',
+            barGap: 0,
+            color: lineColors[next]
+          });
+        }
+
+        return prev;
+      }, []);
   }
   /**
    *

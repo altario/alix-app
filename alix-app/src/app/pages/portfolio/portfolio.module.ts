@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { MomentModule } from 'ngx-moment';
+import { NgPipesModule } from 'ngx-pipes';
 // routes
 import { PortfolioRoutes } from './portfolio.routing';
 
@@ -19,7 +21,9 @@ import { SharedModule } from '@shared/shared.module';
     CommonModule,
     NgbModule,
     RouterModule.forChild(PortfolioRoutes),
-    SharedModule
+    SharedModule,
+    MomentModule,
+    NgPipesModule
   ],
   declarations: [
     PortfolioListComponent,

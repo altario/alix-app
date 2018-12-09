@@ -27,6 +27,7 @@ export class SubheaderDashboardComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.config = dataset.dossiersMainData.dossier1;
+        this.dropvalue = this.droplist[0].id;
     });
   }
 

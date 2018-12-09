@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of, combineLatest } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 
-import { lists } from './data';
+import { lists } from '../data/data';
 
 @Injectable({
     providedIn: 'root'
@@ -30,7 +30,7 @@ export class MockapiService {
 
   public getPortfoliosPopulated(): Observable<any> {
     return combineLatest(this.getPortfolios(), this.getNotifications(), this.getPositions()).pipe(
-      map(([porfolios, notifications, positions]) => {
+      map(([portfolios, notifications, positions]) => {
         const notificationsHash = {};
         const positionsHash = {};
 
@@ -38,25 +38,25 @@ export class MockapiService {
           notificationsHash[notifications[i].id] = notifications[i];
         }
 
-        // for (let i = 0; i < positions.length; i++) {
-        //   positionsHash[positions[i].id] = positions[i];
-        // }
-
-        for (let i = 0; i < porfolios.length; i++) {
-          porfolios[i].notificationsData = [];
-          // porfolios[i].positionsData = [];
-          porfolios[i].positionsData = positions;
-
-          for (let z = 0; z < porfolios[i].notificationIds.length; z++) {
-            porfolios[i].notificationsData.push(notificationsHash[porfolios[i].notificationIds[z]]);
-          }
-
-          // for (let z = 0; z < porfolios[i].positionIds.length; z++) {
-          //   porfolios[i].positionsData.push(positionsHash[porfolios[i].positionIds[z]]);
-          // }
+        for (let i = 0; i < positions.length; i++) {
+          positionsHash[positions[i].id] = positions[i];
         }
 
-        return porfolios;
+        for (let i = 0; i < portfolios.length; i++) {
+          portfolios[i].notificationsData = [];
+          portfolios[i].positionsData = [];
+          // portfolios[i].positionsData = positions;
+
+          for (let z = 0; z < portfolios[i].notificationIds.length; z++) {
+            portfolios[i].notificationsData.push(notificationsHash[portfolios[i].notificationIds[z]]);
+          }
+
+          for (let z = 0; z < portfolios[i].positionsIds.length; z++) {
+            portfolios[i].positionsData.push(positionsHash[portfolios[i].positionsIds[z]]);
+          }
+        }
+
+        return portfolios;
       }),
       tap(console.log)
     );
@@ -85,8 +85,8 @@ export class MockapiService {
 
   public getPortfolioPopulated(id: string): Observable<any> {
     return combineLatest(this.getPortfolios(), this.getNotifications(), this.getPositions()).pipe(
-      map(([porfolios, notifications, positions]) => {
-        let portfolio = porfolios.filter(a => parseInt(a.id, 10) === parseInt(id, 10));
+      map(([portfolios, notifications, positions]) => {
+        let portfolio = portfolios.filter(a => parseInt(a.id, 10) === parseInt(id, 10));
 
         if (!portfolio.length) {
           return null;
@@ -99,25 +99,65 @@ export class MockapiService {
           notificationsHash[notifications[i].id] = notifications[i];
         }
 
-        // for (let i = 0; i < positions.length; i++) {
-        //   positionsHash[positions[i].id] = positions[i];
-        // }
+        for (let i = 0; i < positions.length; i++) {
+          positionsHash[positions[i].id] = positions[i];
+        }
 
         portfolio = portfolio[0];
 
         portfolio.notificationsData = [];
-        // portfolio.positionsData = [];
-        portfolio.positionsData = positions;
+        portfolio.positionsData = [];
+        // portfolio.positionsData = positions;
 
         for (let z = 0; z < portfolio.notificationIds.length; z++) {
           portfolio.notificationsData.push(notificationsHash[portfolio.notificationIds[z]]);
         }
 
-        // for (let z = 0; z < portfolio.positionIds.length; z++) {
-        //   portfolio.positionsData.push(positionsHash[portfolio.positionIds[z]]);
-        // }
+        for (let z = 0; z < portfolio.positionsIds.length; z++) {
+          portfolio.positionsData.push(positionsHash[portfolio.positionsIds[z]]);
+        }
 
         return portfolio;
+      }),
+      tap(console.log)
+    );
+  }
+
+  public getNotificationPopulated(id: string): Observable<any> {
+    return combineLatest(this.getNotifications(), this.getPositions()).pipe(
+      map(([notifications, positions]) => {
+        let notification = notifications.filter(a => parseInt(a.id, 10) === parseInt(id, 10));
+
+        if (!notification.length) {
+          return null;
+        }
+
+        const notificationsHash = {};
+        const positionsHash = {};
+
+        for (let i = 0; i < notifications.length; i++) {
+          notificationsHash[notifications[i].id] = notifications[i];
+        }
+
+        for (let i = 0; i < positions.length; i++) {
+          positionsHash[positions[i].id] = positions[i];
+        }
+
+        notification = notification[0];
+
+        notification.notificationsData = [];
+        notification.positionsData = [];
+        // notification.positionsData = positions;
+
+        for (let z = 0; z < notification.notificationIds.length; z++) {
+          notification.notificationsData.push(notificationsHash[notification.notificationIds[z]]);
+        }
+
+        for (let z = 0; z < notification.positionsIds.length; z++) {
+          notification.positionsData.push(positionsHash[notification.positionsIds[z]]);
+        }
+
+        return notification;
       }),
       tap(console.log)
     );

@@ -1,9 +1,9 @@
-export const lists = {
+export const  lists = {
   positionsList: [{
       id: 4,
       type: 'retail',
       positionType: 'Retail and Luxury',
-      clickable: true,
+      clickable: false,
       person: 'Corporate',
       name: 'Donati-Guerra SPA',
       loanType: 'Loan PAD8516',
@@ -16,7 +16,7 @@ export const lists = {
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '0.455362715576239',
+          data: '0.454886394744046',
           label: 'Mln €'
       }, {
           info: 'RAROC',
@@ -44,7 +44,7 @@ export const lists = {
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '43.3705928372339',
+          data: '43.3631035274709',
           label: 'Mln €'
       }, {
           info: 'RAROC',
@@ -72,7 +72,7 @@ export const lists = {
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '0.798258869908016',
+          data: '0.798155935173018',
           label: 'Mln €'
       }, {
           info: 'RAROC',
@@ -96,15 +96,15 @@ export const lists = {
       state: 'Unlikely To Pay',
       infos: [{
           info: 'Loan Original Value',
-          data: '57.785026',
+          data: '57.943242',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '41.7634396245238',
+          data: '41.87089035',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 7.8,
+          data: 7.43,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -124,15 +124,15 @@ export const lists = {
       state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '40.499798',
+          data: '17.054401',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '28.0997284415243',
+          data: '11.8308837423346',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 5.68,
+          data: 6.94,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -152,15 +152,15 @@ export const lists = {
       state: 'Past Due Loan',
       infos: [{
           info: 'Loan Original Value',
-          data: '38.653727',
+          data: '34.53973',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '10.6176052445702',
+          data: '9.4812472933017',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 7.65,
+          data: 6.88,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -180,15 +180,15 @@ export const lists = {
       state: 'Bad Loan',
       infos: [{
           info: 'Loan Original Value',
-          data: '9.741302',
+          data: '69.638012',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '7.01427084462697',
+          data: '50.1336488854209',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 7.21,
+          data: 6.86,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -205,18 +205,18 @@ export const lists = {
       loanType: 'Loan PAD2806',
       dateStart: '42694',
       dateEnd: '51094',
-      state: 'Past Due Loan',
+      state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '69.943514',
+          data: '14.519954',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '63.7235372192857',
+          data: '13.226986667619',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 6.76,
+          data: 6.77,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -236,15 +236,15 @@ export const lists = {
       state: 'Bad Loan',
       infos: [{
           info: 'Loan Original Value',
-          data: '56.577976',
+          data: '39.8805',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '13.766920238193',
+          data: '9.69715785420945',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 6.1,
+          data: 8.08,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -264,15 +264,15 @@ export const lists = {
       state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '39.372166',
+          data: '24.551783',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '10.0604183975178',
+          data: '6.26901705000913',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 8.46,
+          data: 5.59,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -292,15 +292,15 @@ export const lists = {
       state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '32.308172',
+          data: '71.373635',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '13.5100646224521',
+          data: '29.8349177030727',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 7.56,
+          data: 7.26,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -320,15 +320,15 @@ export const lists = {
       state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '24.084177',
+          data: '45.782963',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '15.5088252714579',
+          data: '29.4753285405886',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 6.58,
+          data: 7.64,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -348,15 +348,15 @@ export const lists = {
       state: 'Fully Paid',
       infos: [{
           info: 'Loan Original Value',
-          data: '22.62427',
+          data: '57.612659',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '14.8089687764808',
+          data: '37.702707093097',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 5.33,
+          data: 6.89,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -373,18 +373,18 @@ export const lists = {
       loanType: 'Loan PAD1150',
       dateStart: '39474',
       dateEnd: '44953',
-      state: 'Past Due Loan',
+      state: 'Unlikely To Pay',
       infos: [{
           info: 'Loan Original Value',
-          data: '18.297624',
+          data: '3.556874',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '5.04946294725315',
+          data: '0.980915607592626',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 5.67,
+          data: 5.78,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -404,15 +404,15 @@ export const lists = {
       state: 'Unlikely To Pay',
       infos: [{
           info: 'Loan Original Value',
-          data: '39.513489',
+          data: '18.037183',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '28.7526108717579',
+          data: '13.1224404851585',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 5.92,
+          data: 8.79,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -432,15 +432,15 @@ export const lists = {
       state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '25.627836',
+          data: '69.785128',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '11.1332398372881',
+          data: '30.3069441157758',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 8.63,
+          data: 7.44,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -457,18 +457,18 @@ export const lists = {
       loanType: 'Loan PAD5623',
       dateStart: '41932',
       dateEnd: '47411',
-      state: 'Past Due Loan',
+      state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '34.048233',
+          data: '60.824507',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '24.670831357912',
+          data: '44.0614105280161',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 6.82,
+          data: 6.73,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -485,18 +485,18 @@ export const lists = {
       loanType: 'Loan PAD7616',
       dateStart: '41733',
       dateEnd: '49038',
-      state: 'Past Due Loan',
+      state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '30.277774',
+          data: '60.543032',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '23.1984532618754',
+          data: '46.3790290310746',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 7.06,
+          data: 9.4,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -516,15 +516,15 @@ export const lists = {
       state: 'Bad Loan',
       infos: [{
           info: 'Loan Original Value',
-          data: '2.298538',
+          data: '47.780418',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '1.85030458325282',
+          data: '38.4551576753623',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 6.66,
+          data: 8.2,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -541,18 +541,18 @@ export const lists = {
       loanType: 'Loan PAD8987',
       dateStart: '38808',
       dateEnd: '47574',
-      state: 'Fully Paid',
+      state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '71.116624',
+          data: '66.539413',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '33.5301171562857',
+          data: '31.3644597896418',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 9.09,
+          data: 9.07,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -572,15 +572,15 @@ export const lists = {
       state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '62.360599',
+          data: '63.750234',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '24.3722806495551',
+          data: '24.9044805308008',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 5.21,
+          data: 8.89,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -600,15 +600,15 @@ export const lists = {
       state: 'Unlikely To Pay',
       infos: [{
           info: 'Loan Original Value',
-          data: '81.733958',
+          data: '4.55705',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '60.9401802720403',
+          data: '3.39720067352973',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 7.56,
+          data: 5.83,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -628,15 +628,15 @@ export const lists = {
       state: 'Bad Loan',
       infos: [{
           info: 'Loan Original Value',
-          data: '8.740778',
+          data: '25.159739',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '3.77809808829569',
+          data: '10.870694896475',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 7.21,
+          data: 5.51,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -656,15 +656,15 @@ export const lists = {
       state: 'Past Due Loan',
       infos: [{
           info: 'Loan Original Value',
-          data: '83.357165',
+          data: '56.764286',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '58.9145380871758',
+          data: '40.1112476288184',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 9.42,
+          data: 9,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -684,15 +684,15 @@ export const lists = {
       state: 'Past Due Loan',
       infos: [{
           info: 'Loan Original Value',
-          data: '7.064619',
+          data: '9.092196',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '5.78199364841499',
+          data: '7.44014136657061',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 7.86,
+          data: 9.38,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -712,15 +712,15 @@ export const lists = {
       state: 'Bad Loan',
       infos: [{
           info: 'Loan Original Value',
-          data: '52.054482',
+          data: '21.461818',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '38.7184901968709',
+          data: '15.960653177575',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 8.52,
+          data: 5.33,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -740,15 +740,15 @@ export const lists = {
       state: 'Unlikely To Pay',
       infos: [{
           info: 'Loan Original Value',
-          data: '9.794667',
+          data: '38.213281',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '4.49801515129151',
+          data: '17.544176266754',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 8.21,
+          data: 9.12,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -768,15 +768,15 @@ export const lists = {
       state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '2.915046',
+          data: '49.851736',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '1.99344263424062',
+          data: '34.0828828023836',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 7.13,
+          data: 5.97,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -796,15 +796,15 @@ export const lists = {
       state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '15.33963',
+          data: '56.370929',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '10.3960642679981',
+          data: '38.1949586572717',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 7.71,
+          data: 9.36,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -824,15 +824,15 @@ export const lists = {
       state: 'Unlikely To Pay',
       infos: [{
           info: 'Loan Original Value',
-          data: '32.900726',
+          data: '52.798134',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '19.8732995859001',
+          data: '31.8830620954825',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 8.8,
+          data: 6.25,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -852,15 +852,15 @@ export const lists = {
       state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '9.120589',
+          data: '76.321675',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '0.951473680936726',
+          data: '7.96017469863732',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 5.84,
+          data: 7.29,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -880,15 +880,15 @@ export const lists = {
       state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '79.802395',
+          data: '18.79034',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '8.46634757021521',
+          data: '1.9930038596217',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 7.91,
+          data: 5.87,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -908,15 +908,15 @@ export const lists = {
       state: 'Fully Paid',
       infos: [{
           info: 'Loan Original Value',
-          data: '7.827346',
+          data: '64.268813',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '0.103561620805282',
+          data: '0.848653713290531',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 9.02,
+          data: 8.43,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -936,15 +936,15 @@ export const lists = {
       state: 'Unlikely To Pay',
       infos: [{
           info: 'Loan Original Value',
-          data: '70.705357',
+          data: '52.42089',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '4.66773677899747',
+          data: '3.45931463652414',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 9.05,
+          data: 9.4,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -964,15 +964,15 @@ export const lists = {
       state: 'Past Due Loan',
       infos: [{
           info: 'Loan Original Value',
-          data: '63.249929',
+          data: '47.741139',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '4.5872854740114',
+          data: '3.46131207343908',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 8.14,
+          data: 9.44,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -992,15 +992,15 @@ export const lists = {
       state: 'Fully Paid',
       infos: [{
           info: 'Loan Original Value',
-          data: '27.075298',
+          data: '64.150806',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '4.14890097557998',
+          data: '9.82862409875458',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 8.36,
+          data: 6.05,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -1020,15 +1020,15 @@ export const lists = {
       state: 'Unlikely To Pay',
       infos: [{
           info: 'Loan Original Value',
-          data: '41.706481',
+          data: '20.793508',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '2.13023545110233',
+          data: '1.06153680448579',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 9.17,
+          data: 5.41,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -1045,18 +1045,18 @@ export const lists = {
       loanType: 'Loan PAD8088',
       dateStart: '40264',
       dateEnd: '49395',
-      state: 'Past Due Loan',
+      state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '72.01694',
+          data: '40.954571',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '10.6494352463739',
+          data: '6.05510036665508',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 6.83,
+          data: 8.6,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -1076,15 +1076,15 @@ export const lists = {
       state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '63.709345',
+          data: '64.072575',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '6.24514511119641',
+          data: '6.27921380118993',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 7.1,
+          data: 6.76,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -1104,15 +1104,15 @@ export const lists = {
       state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '60.932944',
+          data: '31.616398',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '9.20220071373982',
+          data: '4.77401381520423',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 6.33,
+          data: 8.26,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -1132,15 +1132,15 @@ export const lists = {
       state: 'Bad Loan',
       infos: [{
           info: 'Loan Original Value',
-          data: '73.61619',
+          data: '22.962388',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '8.19791254609878',
+          data: '2.55654229450189',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 7.81,
+          data: 6.79,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -1160,15 +1160,15 @@ export const lists = {
       state: 'Past Due Loan',
       infos: [{
           info: 'Loan Original Value',
-          data: '67.720273',
+          data: '67.987959',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '7.31127920167437',
+          data: '7.33853432454209',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 7.79,
+          data: 9.2,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -1188,15 +1188,15 @@ export const lists = {
       state: 'Bad Loan',
       infos: [{
           info: 'Loan Original Value',
-          data: '45.102293',
+          data: '21.305344',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '4.3308464368594',
+          data: '2.04527540973959',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 5.94,
+          data: 5.19,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -1213,18 +1213,18 @@ export const lists = {
       loanType: 'Loan PAD4291',
       dateStart: '39381',
       dateEnd: '47782',
-      state: 'Bad Loan',
+      state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '25.785206',
+          data: '39.415678',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '2.8423244520454',
+          data: '4.34382170386735',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 9.21,
+          data: 6.27,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -1234,25 +1234,25 @@ export const lists = {
   }, {
       id: 43,
       type: 'n/a',
-      positionType: 'Transportation',
+      positionType: 'Hospitality',
       clickable: false,
       person: 'Corporate',
       name: 'Rinaldi-Bernardi SPA',
       loanType: 'Loan PAD5214',
       dateStart: '40480',
       dateEnd: '47055',
-      state: 'Performing',
+      state: 'Unlikely To Pay',
       infos: [{
           info: 'Loan Original Value',
-          data: '43.863929',
+          data: '15.08407',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '3.91611263354743',
+          data: '1.34631286833004',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 9.25,
+          data: 8.78,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -1272,15 +1272,15 @@ export const lists = {
       state: 'Unlikely To Pay',
       infos: [{
           info: 'Loan Original Value',
-          data: '51.036699',
+          data: '45.803029',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '4.43404181018893',
+          data: '3.97814972396091',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 5.35,
+          data: 7.06,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -1300,15 +1300,15 @@ export const lists = {
       state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '30.520835',
+          data: '32.949382',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '1.53230958136687',
+          data: '1.65339509666063',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 8.02,
+          data: 9.72,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -1328,15 +1328,15 @@ export const lists = {
       state: 'Past Due Loan',
       infos: [{
           info: 'Loan Original Value',
-          data: '4.630511',
+          data: '52.889991',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '0.501328944333649',
+          data: '5.72489257919928',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 6.75,
+          data: 6.58,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -1346,7 +1346,7 @@ export const lists = {
   }, {
       id: 47,
       type: 'n/a',
-      positionType: 'Energy and Basic Materials',
+      positionType: 'Hospitality',
       clickable: false,
       person: 'Corporate',
       name: 'Lockman, Miller and Gutmann',
@@ -1356,15 +1356,15 @@ export const lists = {
       state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '55.228234',
+          data: '16.588288',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '3.38065371055271',
+          data: '1.01498256608626',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 8.2,
+          data: 7.88,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -1384,15 +1384,15 @@ export const lists = {
       state: 'Fully Paid',
       infos: [{
           info: 'Loan Original Value',
-          data: '44.583724',
+          data: '23.807862',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '3.13206935459385',
+          data: '1.67192938011666',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 7.02,
+          data: 6.39,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -1412,15 +1412,15 @@ export const lists = {
       state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '33.035788',
+          data: '35.144346',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '5.71038090549662',
+          data: '6.07400714739634',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 8.8,
+          data: 5.91,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -1440,15 +1440,15 @@ export const lists = {
       state: 'Past Due Loan',
       infos: [{
           info: 'Loan Original Value',
-          data: '74.460789',
+          data: '4.303088',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '6.30468241711125',
+          data: '0.364241720565458',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 6.11,
+          data: 5.58,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -1465,18 +1465,18 @@ export const lists = {
       loanType: 'Loan PAD2402',
       dateStart: '42311',
       dateEnd: '51443',
-      state: 'Past Due Loan',
+      state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '23.041995',
+          data: '4.730229',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '4.35778034057337',
+          data: '0.89448517475361',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 5.8,
+          data: 7.82,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -1493,18 +1493,18 @@ export const lists = {
       loanType: 'Loan PAD8916',
       dateStart: '40260',
       dateEnd: '46835',
-      state: 'Fully Paid',
+      state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '70.64822',
+          data: '74.218604',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '5.95578883954297',
+          data: '6.25493600029806',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 6.64,
+          data: 8.6,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -1524,15 +1524,15 @@ export const lists = {
       state: 'Unlikely To Pay',
       infos: [{
           info: 'Loan Original Value',
-          data: '17.888264',
+          data: '77.509452',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '0.290195222970872',
+          data: '1.25540083704779',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 6.29,
+          data: 9.39,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -1549,18 +1549,18 @@ export const lists = {
       loanType: 'Loan PAD1268',
       dateStart: '39639',
       dateEnd: '48039',
-      state: 'Performing',
+      state: 'Past Due Loan',
       infos: [{
           info: 'Loan Original Value',
-          data: '60.285252',
+          data: '56.375355',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '6.99290064572769',
+          data: '6.53794260538863',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 5.4,
+          data: 5.44,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -1580,15 +1580,15 @@ export const lists = {
       state: 'Bad Loan',
       infos: [{
           info: 'Loan Original Value',
-          data: '31.116766',
+          data: '57.870531',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '3.52132924526601',
+          data: '6.54746990599639',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 6.75,
+          data: 8.22,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -1608,15 +1608,15 @@ export const lists = {
       state: 'Past Due Loan',
       infos: [{
           info: 'Loan Original Value',
-          data: '53.702528',
+          data: '65.910293',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '8.87656600829875',
+          data: '10.8928506679083',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 6.32,
+          data: 8.35,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -1633,18 +1633,18 @@ export const lists = {
       loanType: 'Loan PAD395',
       dateStart: '39866',
       dateEnd: '48997',
-      state: 'Past Due Loan',
+      state: 'Unlikely To Pay',
       infos: [{
           info: 'Loan Original Value',
-          data: '68.38063',
+          data: '78.872662',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '9.52999499021723',
+          data: '10.9902583005569',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 8.8,
+          data: 7.03,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -1664,15 +1664,15 @@ export const lists = {
       state: 'Past Due Loan',
       infos: [{
           info: 'Loan Original Value',
-          data: '78.739889',
+          data: '44.400007',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '11.0677054652048',
+          data: '6.23982403470009',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 5.81,
+          data: 6.77,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -1692,15 +1692,15 @@ export const lists = {
       state: 'Past Due Loan',
       infos: [{
           info: 'Loan Original Value',
-          data: '60.443659',
+          data: '49.907095',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '6.15969901785087',
+          data: '5.08468469771529',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 9.76,
+          data: 5.44,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -1720,15 +1720,15 @@ export const lists = {
       state: 'Past Due Loan',
       infos: [{
           info: 'Loan Original Value',
-          data: '39.067745',
+          data: '41.731561',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '6.13691835130824',
+          data: '6.55436773366188',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 8,
+          data: 7.62,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -1748,15 +1748,15 @@ export const lists = {
       state: 'Past Due Loan',
       infos: [{
           info: 'Loan Original Value',
-          data: '17.339967',
+          data: '18.892927',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '2.16823813179394',
+          data: '2.36196247485446',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 6.69,
+          data: 6.82,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -1776,15 +1776,15 @@ export const lists = {
       state: 'Fully Paid',
       infos: [{
           info: 'Loan Original Value',
-          data: '11.124364',
+          data: '75.173745',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '0.341174194011976',
+          data: '2.30355370645665',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 5.64,
+          data: 6.13,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -1804,15 +1804,15 @@ export const lists = {
       state: 'Unlikely To Pay',
       infos: [{
           info: 'Loan Original Value',
-          data: '32.981348',
+          data: '44.309911',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '24.7526960052375',
+          data: '33.2495749248899',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 9.18,
+          data: 5.32,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -1832,15 +1832,15 @@ export const lists = {
       state: 'Bad Loan',
       infos: [{
           info: 'Loan Original Value',
-          data: '47.003478',
+          data: '14.953067',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '19.0529343927816',
+          data: '6.05938844455507',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 6.66,
+          data: 5.59,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -1860,15 +1860,15 @@ export const lists = {
       state: 'Unlikely To Pay',
       infos: [{
           info: 'Loan Original Value',
-          data: '81.402031',
+          data: '54.464128',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '22.1975148188912',
+          data: '14.8443639764545',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 5.27,
+          data: 6.69,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -1888,15 +1888,15 @@ export const lists = {
       state: 'Bad Loan',
       infos: [{
           info: 'Loan Original Value',
-          data: '74.58323',
+          data: '23.349224',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '24.0563944750403',
+          data: '7.52739878389694',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 9.19,
+          data: 7.36,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -1913,18 +1913,18 @@ export const lists = {
       loanType: 'Loan PAD460',
       dateStart: '39013',
       dateEnd: '46318',
-      state: 'Fully Paid',
+      state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '48.216776',
+          data: '52.085039',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '18.9896871392197',
+          data: '20.5060331504449',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 8.51,
+          data: 7.24,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -1941,18 +1941,18 @@ export const lists = {
       loanType: 'Loan PAD6973',
       dateStart: '40692',
       dateEnd: '47632',
-      state: 'Fully Paid',
+      state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '71.378408',
+          data: '25.394632',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '43.1047417763689',
+          data: '15.3319175907781',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 9.43,
+          data: 7.93,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -1972,15 +1972,15 @@ export const lists = {
       state: 'Past Due Loan',
       infos: [{
           info: 'Loan Original Value',
-          data: '48.238805',
+          data: '70.664393',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '15.2409530376454',
+          data: '22.3165988570842',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 8.89,
+          data: 5.27,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -2000,15 +2000,15 @@ export const lists = {
       state: 'Unlikely To Pay',
       infos: [{
           info: 'Loan Original Value',
-          data: '5.02313',
+          data: '28.691811',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '1.2184230279248',
+          data: '6.95432104544625',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 5.57,
+          data: 7.22,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -2028,15 +2028,15 @@ export const lists = {
       state: 'Fully Paid',
       infos: [{
           info: 'Loan Original Value',
-          data: '43.059059',
+          data: '9.868929',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '25.9599298866499',
+          data: '5.94881012112584',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 5.79,
+          data: 6.64,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -2056,15 +2056,15 @@ export const lists = {
       state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '84.950899',
+          data: '64.150953',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '15.3359340254962',
+          data: '11.5700041858316',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 8.3,
+          data: 9.56,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -2084,15 +2084,15 @@ export const lists = {
       state: 'Bad Loan',
       infos: [{
           info: 'Loan Original Value',
-          data: '15.227665',
+          data: '33.889473',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '10.8142231101695',
+          data: '24.0628513634941',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 9.59,
+          data: 9.61,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -2109,18 +2109,18 @@ export const lists = {
       loanType: 'Loan PAD6642',
       dateStart: '38848',
       dateEnd: '47614',
-      state: 'Past Due Loan',
+      state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '64.232908',
+          data: '27.098006',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '30.5776779698836',
+          data: '12.8967466383755',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 7.95,
+          data: 8.01,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -2140,15 +2140,15 @@ export const lists = {
       state: 'Unlikely To Pay',
       infos: [{
           info: 'Loan Original Value',
-          data: '0.844879',
+          data: '0.488976',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '0.346433436114733',
+          data: '0.200435533767927',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 9.45,
+          data: 6.57,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -2168,15 +2168,15 @@ export const lists = {
       state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '0.454874',
+          data: '1.29963',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '0.257014707049966',
+          data: '0.734173826146475',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 7.03,
+          data: 9.6,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -2193,18 +2193,18 @@ export const lists = {
       loanType: 'Mortgage DCR8257',
       dateStart: '41826',
       dateEnd: '48035',
-      state: 'Fully Paid',
+      state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '0.49836',
+          data: '0.627953',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '0.368733425672411',
+          data: '0.464517334353358',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 6.74,
+          data: 9.22,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -2221,18 +2221,18 @@ export const lists = {
       loanType: 'Mortgage DCR883',
       dateStart: '41781',
       dateEnd: '47625',
-      state: 'Bad Loan',
+      state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '0.313756',
+          data: '0.793112',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '0.22463297467488',
+          data: '0.567691221081451',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 9.06,
+          data: 6.24,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -2252,15 +2252,15 @@ export const lists = {
       state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '0.942782',
+          data: '1.311762',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '0.478028578617992',
+          data: '0.66494532672751',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 5.19,
+          data: 8.55,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -2277,18 +2277,18 @@ export const lists = {
       loanType: 'Mortgage DCR9779',
       dateStart: '39085',
       dateEnd: '47851',
-      state: 'Past Due Loan',
+      state: 'Unlikely To Pay',
       infos: [{
           info: 'Loan Original Value',
-          data: '0.608681',
+          data: '1.026173',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '0.306215287474333',
+          data: '0.516130134268766',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 9.42,
+          data: 8.97,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -2305,18 +2305,18 @@ export const lists = {
       loanType: 'Mortgage DCR4170',
       dateStart: '42626',
       dateEnd: '48470',
-      state: 'Past Due Loan',
+      state: 'Unlikely To Pay',
       infos: [{
           info: 'Loan Original Value',
-          data: '0.527986',
+          data: '1.092881',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '0.454353455509925',
+          data: '0.940281599589322',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 7.04,
+          data: 7.4,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -2333,18 +2333,18 @@ export const lists = {
       loanType: 'Mortgage DCR1037',
       dateStart: '40582',
       dateEnd: '48252',
-      state: 'Bad Loan',
+      state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '0.409867',
+          data: '1.150862',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '0.257088674967405',
+          data: '0.721727016949153',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 5.82,
+          data: 8.12,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -2364,15 +2364,15 @@ export const lists = {
       state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '1.008464',
+          data: '1.062081',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '0.52639520121673',
+          data: '0.55422051878327',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 8.91,
+          data: 5.22,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -2389,18 +2389,18 @@ export const lists = {
       loanType: 'Mortgage DCR9891',
       dateStart: '40872',
       dateEnd: '48177',
-      state: 'Performing',
+      state: 'Unlikely To Pay',
       infos: [{
           info: 'Loan Original Value',
-          data: '1.312615',
+          data: '0.244944',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '0.850998581793292',
+          data: '0.158769314168378',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 6.7,
+          data: 9.67,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -2420,15 +2420,15 @@ export const lists = {
       state: 'Fully Paid',
       infos: [{
           info: 'Loan Original Value',
-          data: '0.594721',
+          data: '0.841618',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '0.497025558521561',
+          data: '0.703268520419804',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 5.84,
+          data: 9.39,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -2445,18 +2445,18 @@ export const lists = {
       loanType: 'Mortgage DCR2978',
       dateStart: '39573',
       dateEnd: '45417',
-      state: 'Past Due Loan',
+      state: 'Unlikely To Pay',
       infos: [{
           info: 'Loan Original Value',
-          data: '0.47907',
+          data: '0.945708',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '0.161985338809035',
+          data: '0.319605287474333',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 6.78,
+          data: 5.16,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -2476,15 +2476,15 @@ export const lists = {
       state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '1.132593',
+          data: '0.481029',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '0.68778668989547',
+          data: '0.292053321428571',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 8.27,
+          data: 7.36,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -2504,15 +2504,15 @@ export const lists = {
       state: 'Bad Loan',
       infos: [{
           info: 'Loan Original Value',
-          data: '0.397858',
+          data: '1.337073',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '0.152953301014656',
+          data: '0.513811592526977',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 7.88,
+          data: 9.76,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -2532,15 +2532,15 @@ export const lists = {
       state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '0.614213',
+          data: '1.190672',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '0.377786994201965',
+          data: '0.732160685456595',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 7.69,
+          data: 5.32,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -2557,18 +2557,18 @@ export const lists = {
       loanType: 'Mortgage DCR233',
       dateStart: '40420',
       dateEnd: '48456',
-      state: 'Performing',
+      state: 'Unlikely To Pay',
       infos: [{
           info: 'Loan Original Value',
-          data: '0.985486',
+          data: '0.52792',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '0.615008995769039',
+          data: '0.329391597809856',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 6.33,
+          data: 5.88,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -2585,18 +2585,18 @@ export const lists = {
       loanType: 'Mortgage DCR3898',
       dateStart: '41013',
       dateEnd: '49779',
-      state: 'Past Due Loan',
+      state: 'Unlikely To Pay',
       infos: [{
           info: 'Loan Original Value',
-          data: '0.379042',
+          data: '1.118583',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '0.274055235683322',
+          data: '0.808631128336756',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 8.83,
+          data: 7.63,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -2616,15 +2616,15 @@ export const lists = {
       state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '1.155459',
+          data: '0.998487',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '0.23548112063655',
+          data: '0.203319563655031',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 9.77,
+          data: 5.98,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -2644,15 +2644,15 @@ export const lists = {
       state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '0.500212',
+          data: '1.221245',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '0.199667956666667',
+          data: '0.48733490952381',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 6.42,
+          data: 9.72,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -2669,18 +2669,18 @@ export const lists = {
       loanType: 'Mortgage DCR4594',
       dateStart: '41299',
       dateEnd: '47143',
-      state: 'Bad Loan',
+      state: 'Unlikely To Pay',
       infos: [{
           info: 'Loan Original Value',
-          data: '0.560243',
+          data: '1.190379',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '0.354897259753594',
+          data: '0.753865961498973',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 8.29,
+          data: 9.39,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -2697,18 +2697,18 @@ export const lists = {
       loanType: 'Mortgage DCR467',
       dateStart: '39200',
       dateEnd: '47601',
-      state: 'Unlikely To Pay',
+      state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '1.200497',
+          data: '0.768652',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '0.594461078443042',
+          data: '0.38052894512558',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 8.15,
+          data: 8.92,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -2728,15 +2728,15 @@ export const lists = {
       state: 'Fully Paid',
       infos: [{
           info: 'Loan Original Value',
-          data: '1.05761',
+          data: '0.564061',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '0.914187171062113',
+          data: '0.487487219628189',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 8.2,
+          data: 5.26,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -2756,15 +2756,15 @@ export const lists = {
       state: 'Past Due Loan',
       infos: [{
           info: 'Loan Original Value',
-          data: '0.653472',
+          data: '0.918473',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '0.305024075659532',
+          data: '0.428605494026879',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 7.95,
+          data: 8.5,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -2781,18 +2781,18 @@ export const lists = {
       loanType: 'Mortgage DCR941',
       dateStart: '42223',
       dateEnd: '50624',
-      state: 'Past Due Loan',
+      state: 'Performing',
       infos: [{
           info: 'Loan Original Value',
-          data: '0.516466',
+          data: '0.975766',
           label: 'Mln €'
       }, {
           info: 'Current Exposure',
-          data: '0.441587344125699',
+          data: '0.834180622783002',
           label: 'Mln €'
       }, {
           info: 'RAROC',
-          data: 6.51,
+          data: 6.82,
           label: '%'
       }, {
           info: 'Time to Maturity',
@@ -2803,213 +2803,663 @@ export const lists = {
   portfoliosList: [{
       id: 1,
       industry: 'Consumer Goods',
-      name: 'Milano - Commercial Mortgages - Exposure > 20 Mln €',
+      name: 'Milano - Commercial Mortgages - Exposure > 10 Mln €',
       positions: 35,
       clients: 21,
-      totalExposure: 1.0535,
-      exposureUnit: 'B €',
+      totalExposure: 1053.5,
+      exposureUnit: 'Mln €',
       avgRaroc: 9.96,
       avgMaturity: 21,
       avgLov: 30.1,
       avgLovUnit: 'M €',
       notificationIds: [],
-      extraUnreadAlerts: '4'
+      extraUnreadAlerts: '3',
+      keyFinancialStatus: 'Performing',
+      keyFinancialRegulatoryCapitalAbsorbed: 29.498,
+      keyFinancialRegulatoryCapitalAbsorbedUnit: 'Mln €',
+      keyFinancialExpectedLoss: 11.999365,
+      keyFinancialExpectedLossUnit: 'Mln €',
+      positionLoanOriginalValue: 1356.21769050017,
+      positionLoanOriginalValueUnit: 'Mln €',
+      positionCurrentExposure: 1053.5,
+      positionCurrentExposureUnit: 'Mln €',
+      positionTimeToMaturity: 16,
+      positionTimeToMaturityUnit: 'y',
+      positionStarted: 41730,
+      positionMaturity: 49400,
+      durationExposureUntilDuration: 200.804109589041,
+      durationExposureUntilDurationUnit: 'Mln €',
+      durationTimeToDurationDate: 12,
+      durationTimeToDurationDateUnit: 'y',
+      durationToday: 43442,
+      durationDuration: 47939,
+      collateralEvaluationinT0: 1443.15068493151,
+      collateralEvaluationinT0Unit: 'Mln €',
+      collateralLoanToValue: 73,
+      collateralLoanToValueUnit: '%',
+      collateralCurrentEvaluationEstimation: 1356.56164383562,
+      collateralCurrentEvaluationEstimationUnit: 'Mln €',
+      collateralAdjustedLoanToValue: 78,
+      collateralAdjustedLoanToValueUnit: '%',
+      collateralAdjustedLoanToValuePerc: 6.84931506849316,
+      collateralAdjustedLoanToValuePercUnit: '%',
+      positionsIds: [1, 6, 15, 21, 73, 63, 50, 36, 3, 52, 38, 92, 80, 81, 25, 84, 87, 94, 88, 54, 100, 5, 15, 51, 47, 20, 100, 31, 41, 53]
   }, {
       id: 2,
       industry: 'Infrastructure & Real Estate',
       name: 'Torino - Retail Mortgage - Exposure <1 Mln €',
       positions: 2480,
       clients: 1984,
-      totalExposure: 0.8432,
-      exposureUnit: 'B €',
+      totalExposure: 843.2,
+      exposureUnit: 'Mln €',
       avgRaroc: 8.93,
       avgMaturity: 18,
       avgLov: 0.34,
       avgLovUnit: 'M €',
       notificationIds: [7,11,12],
-      extraUnreadAlerts: '8'
+      extraUnreadAlerts: '3',
+      keyFinancialStatus: 'Unlikely To Pay',
+      keyFinancialRegulatoryCapitalAbsorbed: 23.6096,
+      keyFinancialRegulatoryCapitalAbsorbedUnit: 'Mln €',
+      keyFinancialExpectedLoss: 9.376384,
+      keyFinancialExpectedLossUnit: 'Mln €',
+      positionLoanOriginalValue: 1160.39288256228,
+      positionLoanOriginalValueUnit: 'Mln €',
+      positionCurrentExposure: 843.2,
+      positionCurrentExposureUnit: 'Mln €',
+      positionTimeToMaturity: 13,
+      positionTimeToMaturityUnit: 'y',
+      positionStarted: 41645,
+      positionMaturity: 48219,
+      durationExposureUntilDuration: 93.6888888888889,
+      durationExposureUntilDurationUnit: 'Mln €',
+      durationTimeToDurationDate: 11,
+      durationTimeToDurationDateUnit: 'y',
+      durationToday: 43442,
+      durationDuration: 47489,
+      collateralEvaluationinT0: 1171.11111111111,
+      collateralEvaluationinT0Unit: 'Mln €',
+      collateralLoanToValue: 72,
+      collateralLoanToValueUnit: '%',
+      collateralCurrentEvaluationEstimation: 1089.13333333333,
+      collateralCurrentEvaluationEstimationUnit: 'Mln €',
+      collateralAdjustedLoanToValue: 77,
+      collateralAdjustedLoanToValueUnit: '%',
+      collateralAdjustedLoanToValuePerc: 6.94444444444444,
+      collateralAdjustedLoanToValuePercUnit: '%',
+      positionsIds: [76, 81, 82, 85, 25, 33, 68, 93, 85, 50, 90, 43, 9, 90, 8, 35, 1, 13, 92, 96, 43, 20, 17, 19, 97, 63, 53, 38, 93]
   }, {
       id: 3,
       industry: 'Infrastructure & Real Estate',
       name: 'Milano - Retail Mortgage - UTP Status',
       positions: 2180,
       clients: 2100,
-      totalExposure: 0.6322,
-      exposureUnit: 'B €',
+      totalExposure: 632.2,
+      exposureUnit: 'Mln €',
       avgRaroc: 8.31,
       avgMaturity: 22,
       avgLov: 0.29,
       avgLovUnit: 'M €',
       notificationIds: [1,2,6],
-      extraUnreadAlerts: '10'
+      extraUnreadAlerts: '3',
+      keyFinancialStatus: 'Unlikely To Pay',
+      keyFinancialRegulatoryCapitalAbsorbed: 17.7016,
+      keyFinancialRegulatoryCapitalAbsorbedUnit: 'Mln €',
+      keyFinancialExpectedLoss: 6.89098,
+      keyFinancialExpectedLossUnit: 'Mln €',
+      positionLoanOriginalValue: 780.752912248348,
+      positionLoanOriginalValueUnit: 'Mln €',
+      positionCurrentExposure: 632.2,
+      positionCurrentExposureUnit: 'Mln €',
+      positionTimeToMaturity: 18,
+      positionTimeToMaturityUnit: 'y',
+      positionStarted: 41913,
+      positionMaturity: 49949,
+      durationExposureUntilDuration: 86.2878206724782,
+      durationExposureUntilDurationUnit: 'Mln €',
+      durationTimeToDurationDate: 15,
+      durationTimeToDurationDateUnit: 'y',
+      durationToday: 43442,
+      durationDuration: 48853,
+      collateralEvaluationinT0: 866.027397260274,
+      collateralEvaluationinT0Unit: 'Mln €',
+      collateralLoanToValue: 73,
+      collateralLoanToValueUnit: '%',
+      collateralCurrentEvaluationEstimation: 762.104109589041,
+      collateralCurrentEvaluationEstimationUnit: 'Mln €',
+      collateralAdjustedLoanToValue: 83,
+      collateralAdjustedLoanToValueUnit: '%',
+      collateralAdjustedLoanToValuePerc: 13.6986301369863,
+      collateralAdjustedLoanToValuePercUnit: '%',
+      positionsIds: [87, 91, 93, 96, 14, 37, 18, 14, 29, 51, 15, 7, 17, 99, 70, 75, 49, 40, 49, 35, 93, 84, 75, 19, 97, 25, 100, 50, 44]
   }, {
       id: 4,
       industry: 'Retail and Luxury',
       name: 'Italia - Tier 1 Luxury Brands Commercial Loans',
       positions: 163,
       clients: 45,
-      totalExposure: 0.49878,
-      exposureUnit: 'B €',
+      totalExposure: 498.78,
+      exposureUnit: 'Mln €',
       avgRaroc: 8.05,
       avgMaturity: 23,
       avgLov: 3.06,
       avgLovUnit: 'M €',
       notificationIds: [],
-      extraUnreadAlerts: '2'
+      extraUnreadAlerts: '6',
+      keyFinancialStatus: 'Performing',
+      keyFinancialRegulatoryCapitalAbsorbed: 13.96584,
+      keyFinancialRegulatoryCapitalAbsorbedUnit: 'Mln €',
+      keyFinancialExpectedLoss: 4.7932758,
+      keyFinancialExpectedLossUnit: 'Mln €',
+      positionLoanOriginalValue: 587.692956521739,
+      positionLoanOriginalValueUnit: 'Mln €',
+      positionCurrentExposure: 498.78,
+      positionCurrentExposureUnit: 'Mln €',
+      positionTimeToMaturity: 20,
+      positionTimeToMaturityUnit: 'y',
+      positionStarted: 42171,
+      positionMaturity: 50572,
+      durationExposureUntilDuration: 86.8037617629541,
+      durationExposureUntilDurationUnit: 'Mln €',
+      durationTimeToDurationDate: 16,
+      durationTimeToDurationDateUnit: 'y',
+      durationToday: 43442,
+      durationDuration: 49111,
+      collateralEvaluationinT0: 683.260273972603,
+      collateralEvaluationinT0Unit: 'Mln €',
+      collateralLoanToValue: 73,
+      collateralLoanToValueUnit: '%',
+      collateralCurrentEvaluationEstimation: 649.097260273973,
+      collateralCurrentEvaluationEstimationUnit: 'Mln €',
+      collateralAdjustedLoanToValue: 77,
+      collateralAdjustedLoanToValueUnit: '%',
+      collateralAdjustedLoanToValuePerc: 5.47945205479452,
+      collateralAdjustedLoanToValuePercUnit: '%',
+      positionsIds: [4, 26, 37, 42, 51, 56, 7, 56, 76, 57, 79, 21, 39, 87, 100, 20, 38, 48, 75, 20, 60, 52, 60, 20, 51, 3, 71, 14, 2, 82, 63]
   }, {
       id: 5,
       industry: 'Hospitality',
       name: 'Milano - Working Capital Financing - Independent Hotels',
       positions: 34,
       clients: 28,
-      totalExposure: 0.00918,
-      exposureUnit: 'B €',
+      totalExposure: 9.18,
+      exposureUnit: 'Mln €',
       avgRaroc: 9.21,
-      avgMaturity: 6.7,
+      avgMaturity: 9,
       avgLov: 0.27,
       avgLovUnit: 'M €',
       notificationIds: [],
-      extraUnreadAlerts: '2'
+      extraUnreadAlerts: '5',
+      keyFinancialStatus: 'Performing',
+      keyFinancialRegulatoryCapitalAbsorbed: 0.25704,
+      keyFinancialRegulatoryCapitalAbsorbedUnit: 'Mln €',
+      keyFinancialExpectedLoss: 0.0998784,
+      keyFinancialExpectedLossUnit: 'Mln €',
+      positionLoanOriginalValue: 11.3780769230769,
+      positionLoanOriginalValueUnit: 'Mln €',
+      positionCurrentExposure: 9.18,
+      positionCurrentExposureUnit: 'Mln €',
+      positionTimeToMaturity: 7,
+      positionTimeToMaturityUnit: 'y',
+      positionStarted: 42807,
+      positionMaturity: 46094,
+      durationExposureUntilDuration: 2.04,
+      durationExposureUntilDurationUnit: 'Mln €',
+      durationTimeToDurationDate: 5,
+      durationTimeToDurationDateUnit: 'y',
+      durationToday: 43442,
+      durationDuration: 45364,
+      collateralEvaluationinT0: 13.7014925373134,
+      collateralEvaluationinT0Unit: 'Mln €',
+      collateralLoanToValue: 67,
+      collateralLoanToValueUnit: '%',
+      collateralCurrentEvaluationEstimation: 12.3313432835821,
+      collateralCurrentEvaluationEstimationUnit: 'Mln €',
+      collateralAdjustedLoanToValue: 74,
+      collateralAdjustedLoanToValueUnit: '%',
+      collateralAdjustedLoanToValuePerc: 10.4477611940299,
+      collateralAdjustedLoanToValuePercUnit: '%',
+      positionsIds: [8, 36, 45, 29, 51, 29, 28, 31, 87, 76, 93, 26, 84, 10, 66, 45, 16, 50, 61, 10, 3, 4, 19, 64, 65, 87, 22, 57]
   }, {
       id: 6,
       industry: 'Telecom, Media and Technology',
       name: 'Italia - Software Companies - Revenues < 10 Mln €',
       positions: 867,
       clients: 788,
-      totalExposure: 0.30345,
-      exposureUnit: 'B €',
+      totalExposure: 303.45,
+      exposureUnit: 'Mln €',
       avgRaroc: 8.59,
       avgMaturity: 23,
       avgLov: 0.35,
       avgLovUnit: 'M €',
       notificationIds: [5],
-      extraUnreadAlerts: '2'
+      extraUnreadAlerts: '6',
+      keyFinancialStatus: 'Performing',
+      keyFinancialRegulatoryCapitalAbsorbed: 8.4966,
+      keyFinancialRegulatoryCapitalAbsorbedUnit: 'Mln €',
+      keyFinancialExpectedLoss: 3.4259505,
+      keyFinancialExpectedLossUnit: 'Mln €',
+      positionLoanOriginalValue: 403.559197403831,
+      positionLoanOriginalValueUnit: 'Mln €',
+      positionCurrentExposure: 303.45,
+      positionCurrentExposureUnit: 'Mln €',
+      positionTimeToMaturity: 17,
+      positionTimeToMaturityUnit: 'y',
+      positionStarted: 41358,
+      positionMaturity: 49759,
+      durationExposureUntilDuration: 52.8100595592615,
+      durationExposureUntilDurationUnit: 'Mln €',
+      durationTimeToDurationDate: 13,
+      durationTimeToDurationDateUnit: 'y',
+      durationToday: 43442,
+      durationDuration: 48298,
+      collateralEvaluationinT0: 379.3125,
+      collateralEvaluationinT0Unit: 'Mln €',
+      collateralLoanToValue: 80,
+      collateralLoanToValueUnit: '%',
+      collateralCurrentEvaluationEstimation: 352.760625,
+      collateralCurrentEvaluationEstimationUnit: 'Mln €',
+      collateralAdjustedLoanToValue: 86,
+      collateralAdjustedLoanToValueUnit: '%',
+      collateralAdjustedLoanToValuePerc: 7.5,
+      collateralAdjustedLoanToValuePercUnit: '%',
+      positionsIds: [19, 31, 44, 53, 11, 21, 40, 80, 96, 55, 70, 79, 96, 50, 5, 5, 89, 45, 97, 20, 88, 61, 31, 76, 53, 44, 24, 8, 98]
   }, {
       id: 7,
       industry: 'Infrastructure & Real Estate',
       name: 'Bologna - Retail Mortgage - Exposure <1 Mln €',
       positions: 1045,
       clients: 1001,
-      totalExposure: 0.21945,
-      exposureUnit: 'B €',
+      totalExposure: 219.45,
+      exposureUnit: 'Mln €',
       avgRaroc: 11.45,
       avgMaturity: 13,
       avgLov: 0.21,
       avgLovUnit: 'M €',
       notificationIds: [10],
-      extraUnreadAlerts: '9'
+      extraUnreadAlerts: '4',
+      keyFinancialStatus: 'Performing',
+      keyFinancialRegulatoryCapitalAbsorbed: 6.1446,
+      keyFinancialRegulatoryCapitalAbsorbedUnit: 'Mln €',
+      keyFinancialExpectedLoss: 2.0825805,
+      keyFinancialExpectedLossUnit: 'Mln €',
+      positionLoanOriginalValue: 249.568526946108,
+      positionLoanOriginalValueUnit: 'Mln €',
+      positionCurrentExposure: 219.45,
+      positionCurrentExposureUnit: 'Mln €',
+      positionTimeToMaturity: 11,
+      positionTimeToMaturityUnit: 'y',
+      positionStarted: 42869,
+      positionMaturity: 47617,
+      durationExposureUntilDuration: 33.7615384615385,
+      durationExposureUntilDurationUnit: 'Mln €',
+      durationTimeToDurationDate: 9,
+      durationTimeToDurationDateUnit: 'y',
+      durationToday: 43442,
+      durationDuration: 46887,
+      collateralEvaluationinT0: 309.084507042254,
+      collateralEvaluationinT0Unit: 'Mln €',
+      collateralLoanToValue: 71,
+      collateralLoanToValueUnit: '%',
+      collateralCurrentEvaluationEstimation: 336.902112676056,
+      collateralCurrentEvaluationEstimationUnit: 'Mln €',
+      collateralAdjustedLoanToValue: 65,
+      collateralAdjustedLoanToValueUnit: '%',
+      collateralAdjustedLoanToValuePerc: -8.45070422535211,
+      collateralAdjustedLoanToValuePercUnit: '%',
+      positionsIds: [94, 95, 100, 24, 32, 80, 96, 65, 71, 44, 34, 15, 65, 31, 51, 47, 45, 100, 73, 19, 80, 31, 65, 73, 26, 3, 6, 10]
   }, {
       id: 8,
       industry: 'Retail and Luxury',
       name: 'Firenze - Working Capital Financing - Bar & Restaurants',
       positions: 3110,
       clients: 2780,
-      totalExposure: 0.2799,
-      exposureUnit: 'B €',
+      totalExposure: 279.9,
+      exposureUnit: 'Mln €',
       avgRaroc: 9.4,
-      avgMaturity: 3.5,
+      avgMaturity: 8,
       avgLov: 0.09,
       avgLovUnit: 'M €',
       notificationIds: [3,13,14],
-      extraUnreadAlerts: '5'
+      extraUnreadAlerts: '6',
+      keyFinancialStatus: 'Performing',
+      keyFinancialRegulatoryCapitalAbsorbed: 7.8372,
+      keyFinancialRegulatoryCapitalAbsorbedUnit: 'Mln €',
+      keyFinancialExpectedLoss: 2.924955,
+      keyFinancialExpectedLossUnit: 'Mln €',
+      positionLoanOriginalValue: 736.817837837838,
+      positionLoanOriginalValueUnit: 'Mln €',
+      positionCurrentExposure: 279.9,
+      positionCurrentExposureUnit: 'Mln €',
+      positionTimeToMaturity: 3,
+      positionTimeToMaturityUnit: 'y',
+      positionStarted: 41630,
+      positionMaturity: 44552,
+      durationExposureUntilDuration: 34.9875,
+      durationExposureUntilDurationUnit: 'Mln €',
+      durationTimeToDurationDate: 2,
+      durationTimeToDurationDateUnit: 'y',
+      durationToday: 43442,
+      durationDuration: 44187,
+      collateralEvaluationinT0: 363.506493506494,
+      collateralEvaluationinT0Unit: 'Mln €',
+      collateralLoanToValue: 77,
+      collateralLoanToValueUnit: '%',
+      collateralCurrentEvaluationEstimation: 407.127272727273,
+      collateralCurrentEvaluationEstimationUnit: 'Mln €',
+      collateralAdjustedLoanToValue: 69,
+      collateralAdjustedLoanToValueUnit: '%',
+      collateralAdjustedLoanToValuePerc: -10.3896103896104,
+      collateralAdjustedLoanToValuePercUnit: '%',
+      positionsIds: [47, 68, 75, 33, 72, 92, 77, 100, 81, 9, 62, 57, 30, 31, 76, 63, 77, 47, 95, 63, 11, 6, 79, 13, 63, 26, 13, 94]
   }, {
       id: 9,
       industry: 'Infrastructure & Real Estate',
       name: 'Italia - Infrastructures Developers - Revenues > 100 Mln €',
       positions: 10,
       clients: 6,
-      totalExposure: 0.98,
-      exposureUnit: 'B €',
+      totalExposure: 980,
+      exposureUnit: 'Mln €',
       avgRaroc: 8.63,
       avgMaturity: 21,
       avgLov: 98,
       avgLovUnit: 'M €',
       notificationIds: [4],
-      extraUnreadAlerts: '0'
+      extraUnreadAlerts: '10',
+      keyFinancialStatus: 'Performing',
+      keyFinancialRegulatoryCapitalAbsorbed: 27.44,
+      keyFinancialRegulatoryCapitalAbsorbedUnit: 'Mln €',
+      keyFinancialExpectedLoss: 11.1034,
+      keyFinancialExpectedLossUnit: 'Mln €',
+      positionLoanOriginalValue: 1456.89534883721,
+      positionLoanOriginalValueUnit: 'Mln €',
+      positionCurrentExposure: 980,
+      positionCurrentExposureUnit: 'Mln €',
+      positionTimeToMaturity: 14,
+      positionTimeToMaturityUnit: 'y',
+      positionStarted: 40931,
+      positionMaturity: 48602,
+      durationExposureUntilDuration: 140.127853881279,
+      durationExposureUntilDurationUnit: 'Mln €',
+      durationTimeToDurationDate: 11,
+      durationTimeToDurationDateUnit: 'y',
+      durationToday: 43442,
+      durationDuration: 47506,
+      collateralEvaluationinT0: 1462.68656716418,
+      collateralEvaluationinT0Unit: 'Mln €',
+      collateralLoanToValue: 67,
+      collateralLoanToValueUnit: '%',
+      collateralCurrentEvaluationEstimation: 1579.70149253731,
+      collateralCurrentEvaluationEstimationUnit: 'Mln €',
+      collateralAdjustedLoanToValue: 62,
+      collateralAdjustedLoanToValueUnit: '%',
+      collateralAdjustedLoanToValuePerc: -7.46268656716418,
+      collateralAdjustedLoanToValuePercUnit: '%',
+      positionsIds: [71, 11, 17, 32, 90, 33, 19, 7, 3, 83, 11, 77, 37, 58, 63, 16, 94, 17, 8, 63, 41, 99, 18, 69, 17, 21, 35, 87]
   }, {
       id: 10,
       industry: 'Infrastructure & Real Estate',
       name: 'Firenze - Retail Mortgage for Investment - Exposure < 1 Mln €',
       positions: 1255,
       clients: 1021,
-      totalExposure: 0.56475,
-      exposureUnit: 'B €',
+      totalExposure: 564.75,
+      exposureUnit: 'Mln €',
       avgRaroc: 5.92,
       avgMaturity: 19,
       avgLov: 0.45,
       avgLovUnit: 'M €',
       notificationIds: [3,13,14],
-      extraUnreadAlerts: '4'
+      extraUnreadAlerts: '5',
+      keyFinancialStatus: 'Performing',
+      keyFinancialRegulatoryCapitalAbsorbed: 15.813,
+      keyFinancialRegulatoryCapitalAbsorbedUnit: 'Mln €',
+      keyFinancialExpectedLoss: 5.48937,
+      keyFinancialExpectedLossUnit: 'Mln €',
+      positionLoanOriginalValue: 641.060076885326,
+      positionLoanOriginalValueUnit: 'Mln €',
+      positionCurrentExposure: 564.75,
+      positionCurrentExposureUnit: 'Mln €',
+      positionTimeToMaturity: 17,
+      positionTimeToMaturityUnit: 'y',
+      positionStarted: 42616,
+      positionMaturity: 49555,
+      durationExposureUntilDuration: 89.171052631579,
+      durationExposureUntilDurationUnit: 'Mln €',
+      durationTimeToDurationDate: 14,
+      durationTimeToDurationDateUnit: 'y',
+      durationToday: 43442,
+      durationDuration: 48460,
+      collateralEvaluationinT0: 763.175675675676,
+      collateralEvaluationinT0Unit: 'Mln €',
+      collateralLoanToValue: 74,
+      collateralLoanToValueUnit: '%',
+      collateralCurrentEvaluationEstimation: 847.125,
+      collateralCurrentEvaluationEstimationUnit: 'Mln €',
+      collateralAdjustedLoanToValue: 67,
+      collateralAdjustedLoanToValueUnit: '%',
+      collateralAdjustedLoanToValuePerc: -9.45945945945946,
+      collateralAdjustedLoanToValuePercUnit: '%',
+      positionsIds: [84, 88, 90, 37, 67, 45, 93, 70, 85, 38, 80, 100, 20, 98, 71, 86, 30, 21, 66, 74, 40, 66, 68, 27, 65, 17, 93, 54]
   }, {
       id: 11,
       industry: 'Automotive & Industrials',
-      name: 'Italia - Automotive - Unsecured Commercial Loans - UTP',
+      name: 'Italia - Automotive - Unsecured Commercial Loans',
       positions: 67,
       clients: 40,
-      totalExposure: 1.82307,
-      exposureUnit: 'B €',
+      totalExposure: 1823.07,
+      exposureUnit: 'Mln €',
       avgRaroc: 9.67,
       avgMaturity: 24,
       avgLov: 27.21,
       avgLovUnit: 'M €',
       notificationIds: [5],
-      extraUnreadAlerts: '6'
+      extraUnreadAlerts: '9',
+      keyFinancialStatus: 'Performing',
+      keyFinancialRegulatoryCapitalAbsorbed: 51.04596,
+      keyFinancialRegulatoryCapitalAbsorbedUnit: 'Mln €',
+      keyFinancialExpectedLoss: 20.1084621,
+      keyFinancialExpectedLossUnit: 'Mln €',
+      positionLoanOriginalValue: 1935.68696947674,
+      positionLoanOriginalValueUnit: 'Mln €',
+      positionCurrentExposure: 1823.07,
+      positionCurrentExposureUnit: 'Mln €',
+      positionTimeToMaturity: 23,
+      positionTimeToMaturityUnit: 'y',
+      positionStarted: 42932,
+      positionMaturity: 51698,
+      durationExposureUntilDuration: 304.053113013699,
+      durationExposureUntilDurationUnit: 'Mln €',
+      durationTimeToDurationDate: 19,
+      durationTimeToDurationDateUnit: 'y',
+      durationToday: 43442,
+      durationDuration: 50237,
+      collateralEvaluationinT0: 2680.98529411765,
+      collateralEvaluationinT0Unit: 'Mln €',
+      collateralLoanToValue: 68,
+      collateralLoanToValueUnit: '%',
+      collateralCurrentEvaluationEstimation: 2868.65426470588,
+      collateralCurrentEvaluationEstimationUnit: 'Mln €',
+      collateralAdjustedLoanToValue: 64,
+      collateralAdjustedLoanToValueUnit: '%',
+      collateralAdjustedLoanToValuePerc: -5.88235294117647,
+      collateralAdjustedLoanToValuePercUnit: '%',
+      positionsIds: [7, 16, 18, 27, 52, 54, 67, 79, 24, 96, 37, 57, 28, 92, 13, 36, 11, 34, 21, 35, 74, 80, 21, 76, 1, 93, 17, 19, 7, 98, 97, 32]
   }, {
       id: 12,
       industry: 'Telecom, Media and Technology',
       name: 'Italia - IoT Producers - Revenues < 20 Mln €',
       positions: 294,
       clients: 201,
-      totalExposure: 0.41748,
-      exposureUnit: 'B €',
+      totalExposure: 417.48,
+      exposureUnit: 'Mln €',
       avgRaroc: 9.74,
       avgMaturity: 16,
       avgLov: 1.42,
       avgLovUnit: 'M €',
       notificationIds: [5],
-      extraUnreadAlerts: '1'
+      extraUnreadAlerts: '4',
+      keyFinancialStatus: 'Performing',
+      keyFinancialRegulatoryCapitalAbsorbed: 11.68944,
+      keyFinancialRegulatoryCapitalAbsorbedUnit: 'Mln €',
+      keyFinancialExpectedLoss: 3.8282916,
+      keyFinancialExpectedLossUnit: 'Mln €',
+      positionLoanOriginalValue: 554.741500682128,
+      positionLoanOriginalValueUnit: 'Mln €',
+      positionCurrentExposure: 417.48,
+      positionCurrentExposureUnit: 'Mln €',
+      positionTimeToMaturity: 12,
+      positionTimeToMaturityUnit: 'y',
+      positionStarted: 41996,
+      positionMaturity: 47840,
+      durationExposureUntilDuration: 52.185,
+      durationExposureUntilDurationUnit: 'Mln €',
+      durationTimeToDurationDate: 10,
+      durationTimeToDurationDateUnit: 'y',
+      durationToday: 43442,
+      durationDuration: 47110,
+      collateralEvaluationinT0: 623.10447761194,
+      collateralEvaluationinT0Unit: 'Mln €',
+      collateralLoanToValue: 67,
+      collateralLoanToValueUnit: '%',
+      collateralCurrentEvaluationEstimation: 697.877014925373,
+      collateralCurrentEvaluationEstimationUnit: 'Mln €',
+      collateralAdjustedLoanToValue: 60,
+      collateralAdjustedLoanToValueUnit: '%',
+      collateralAdjustedLoanToValuePerc: -10.4477611940298,
+      collateralAdjustedLoanToValuePercUnit: '%',
+      positionsIds: [62, 70, 74, 96, 26, 21, 17, 25, 78, 34, 29, 12, 12, 41, 54, 86, 82, 44, 39, 52, 60, 55, 73, 50, 20, 60, 56, 54]
   }, {
       id: 13,
       industry: 'Infrastructure & Real Estate',
       name: 'Puglia - Retail Mortgage - Exposure <1 Mln €',
       positions: 2345,
       clients: 2171,
-      totalExposure: 0.715225,
-      exposureUnit: 'B €',
+      totalExposure: 715.225,
+      exposureUnit: 'Mln €',
       avgRaroc: 7.67,
       avgMaturity: 19,
       avgLov: 0.305,
       avgLovUnit: 'M €',
       notificationIds: [9],
-      extraUnreadAlerts: '3'
+      extraUnreadAlerts: '5',
+      keyFinancialStatus: 'Performing',
+      keyFinancialRegulatoryCapitalAbsorbed: 20.0263,
+      keyFinancialRegulatoryCapitalAbsorbedUnit: 'Mln €',
+      keyFinancialExpectedLoss: 7.58853725,
+      keyFinancialExpectedLossUnit: 'Mln €',
+      positionLoanOriginalValue: 1022.80269936122,
+      positionLoanOriginalValueUnit: 'Mln €',
+      positionCurrentExposure: 715.225,
+      positionCurrentExposureUnit: 'Mln €',
+      positionTimeToMaturity: 13,
+      positionTimeToMaturityUnit: 'y',
+      positionStarted: 41355,
+      positionMaturity: 48295,
+      durationExposureUntilDuration: 75.3899747656813,
+      durationExposureUntilDurationUnit: 'Mln €',
+      durationTimeToDurationDate: 11,
+      durationTimeToDurationDateUnit: 'y',
+      durationToday: 43442,
+      durationDuration: 47564,
+      collateralEvaluationinT0: 1036.55797101449,
+      collateralEvaluationinT0Unit: 'Mln €',
+      collateralLoanToValue: 69,
+      collateralLoanToValueUnit: '%',
+      collateralCurrentEvaluationEstimation: 1129.8481884058,
+      collateralCurrentEvaluationEstimationUnit: 'Mln €',
+      collateralAdjustedLoanToValue: 63,
+      collateralAdjustedLoanToValueUnit: '%',
+      collateralAdjustedLoanToValuePerc: -8.69565217391305,
+      collateralAdjustedLoanToValuePercUnit: '%',
+      positionsIds: [80, 83, 97, 59, 90, 6, 46, 17, 39, 46, 87, 56, 39, 27, 52, 50, 8, 26, 69, 28, 11, 36, 46, 63, 3, 34, 5, 12]
   }, {
       id: 14,
       industry: 'Retail and Luxury',
       name: 'Costa Adriatica - Working Capital Financing - Bars & Restaurants',
       positions: 878,
       clients: 611,
-      totalExposure: 0.100092,
-      exposureUnit: 'B €',
+      totalExposure: 100.092,
+      exposureUnit: 'Mln €',
       avgRaroc: 6.68,
-      avgMaturity: 6,
+      avgMaturity: 8,
       avgLov: 0.114,
       avgLovUnit: 'M €',
       notificationIds: [8],
-      extraUnreadAlerts: '8'
+      extraUnreadAlerts: '6',
+      keyFinancialStatus: 'Unlikely To Pay',
+      keyFinancialRegulatoryCapitalAbsorbed: 2.802576,
+      keyFinancialRegulatoryCapitalAbsorbedUnit: 'Mln €',
+      keyFinancialExpectedLoss: 0.9558786,
+      keyFinancialExpectedLossUnit: 'Mln €',
+      positionLoanOriginalValue: 124.720180810235,
+      positionLoanOriginalValueUnit: 'Mln €',
+      positionCurrentExposure: 100.092,
+      positionCurrentExposureUnit: 'Mln €',
+      positionTimeToMaturity: 6,
+      positionTimeToMaturityUnit: 'y',
+      positionStarted: 42865,
+      positionMaturity: 45787,
+      durationExposureUntilDuration: 25.0572780821918,
+      durationExposureUntilDurationUnit: 'Mln €',
+      durationTimeToDurationDate: 4,
+      durationTimeToDurationDateUnit: 'y',
+      durationToday: 43442,
+      durationDuration: 45056,
+      collateralEvaluationinT0: 147.194117647059,
+      collateralEvaluationinT0Unit: 'Mln €',
+      collateralLoanToValue: 68,
+      collateralLoanToValueUnit: '%',
+      collateralCurrentEvaluationEstimation: 166.329352941176,
+      collateralCurrentEvaluationEstimationUnit: 'Mln €',
+      collateralAdjustedLoanToValue: 60,
+      collateralAdjustedLoanToValueUnit: '%',
+      collateralAdjustedLoanToValuePerc: -11.7647058823529,
+      collateralAdjustedLoanToValuePercUnit: '%',
+      positionsIds: [12, 43, 57, 41, 46, 82, 66, 31, 87, 25, 31, 27, 58, 79, 25, 92, 27, 19, 86, 80, 93, 55, 24, 90, 23, 1, 6, 77]
   }, {
       id: 15,
       industry: 'Infrastructure & Real Estate',
       name: 'Milan Porta Nuova - Retail Mortgage - Exposure <1 Mln €',
       positions: 210,
       clients: 187,
-      totalExposure: 0.14238,
-      exposureUnit: 'B €',
+      totalExposure: 142.38,
+      exposureUnit: 'Mln €',
       avgRaroc: 8.78,
       avgMaturity: 19,
       avgLov: 0.678,
       avgLovUnit: 'M €',
       notificationIds: [1,2,6],
-      extraUnreadAlerts: '6'
+      extraUnreadAlerts: '3',
+      keyFinancialStatus: 'Performing',
+      keyFinancialRegulatoryCapitalAbsorbed: 3.98664,
+      keyFinancialRegulatoryCapitalAbsorbedUnit: 'Mln €',
+      keyFinancialExpectedLoss: 1.331253,
+      keyFinancialExpectedLossUnit: 'Mln €',
+      positionLoanOriginalValue: 212.148340133133,
+      positionLoanOriginalValueUnit: 'Mln €',
+      positionCurrentExposure: 142.38,
+      positionCurrentExposureUnit: 'Mln €',
+      positionTimeToMaturity: 13,
+      positionTimeToMaturityUnit: 'y',
+      positionStarted: 41160,
+      positionMaturity: 48099,
+      durationExposureUntilDuration: 14.9873684210526,
+      durationExposureUntilDurationUnit: 'Mln €',
+      durationTimeToDurationDate: 11,
+      durationTimeToDurationDateUnit: 'y',
+      durationToday: 43442,
+      durationDuration: 47369,
+      collateralEvaluationinT0: 180.227848101266,
+      collateralEvaluationinT0Unit: 'Mln €',
+      collateralLoanToValue: 79,
+      collateralLoanToValueUnit: '%',
+      collateralCurrentEvaluationEstimation: 205.459746835443,
+      collateralCurrentEvaluationEstimationUnit: 'Mln €',
+      collateralAdjustedLoanToValue: 69,
+      collateralAdjustedLoanToValueUnit: '%',
+      collateralAdjustedLoanToValuePerc: -12.6582278481013,
+      collateralAdjustedLoanToValuePercUnit: '%',
+      positionsIds: [92, 77, 78, 79, 96, 58, 69, 25, 86, 31, 78, 36, 20, 69, 68, 42, 60, 77, 90, 77, 38, 91, 45, 4, 7, 39, 79, 70, 38, 21]
   }],
   notificationsList: [{
       id: 1,
@@ -3031,7 +3481,7 @@ export const lists = {
       chartType: 'n/a',
       chartSlider: 'n/a',
       chartName: 'n/a',
-      positionsIds: [17,39,56,98,53,48],
+      positionsIds: [48,87,53,43,1,81],
   }, {
       id: 2,
       type: 'news',
@@ -3052,7 +3502,7 @@ export const lists = {
       chartType: 'n/a',
       chartSlider: 'n/a',
       chartName: 'n/a',
-      positionsIds: [21,41,35,52,84,15],
+      positionsIds: [59,47,43,98,94,34],
   }, {
       id: 3,
       type: 'news',
@@ -3073,7 +3523,7 @@ export const lists = {
       chartType: 'n/a',
       chartSlider: 'n/a',
       chartName: 'n/a',
-      positionsIds: [89,66,70,32,48,77],
+      positionsIds: [58,12,85,70,19,39],
   }, {
       id: 4,
       type: 'news',
@@ -3094,7 +3544,7 @@ export const lists = {
       chartType: 'n/a',
       chartSlider: 'n/a',
       chartName: 'n/a',
-      positionsIds: [20,56,18,62,79,71],
+      positionsIds: [7,75,79,6,94,81],
   }, {
       id: 5,
       type: 'news',
@@ -3115,7 +3565,7 @@ export const lists = {
       chartType: 'n/a',
       chartSlider: 'n/a',
       chartName: 'n/a',
-      positionsIds: [6,43,48,20,36,35],
+      positionsIds: [44,22,44,9,41,75],
   }, {
       id: 6,
       type: 'news',
@@ -3136,7 +3586,7 @@ export const lists = {
       chartType: 'n/a',
       chartSlider: 'n/a',
       chartName: 'n/a',
-      positionsIds: [49,68,70,21,30,36],
+      positionsIds: [92,74,78,99,42,21],
   }, {
       id: 7,
       type: 'kpi',
@@ -3159,7 +3609,7 @@ export const lists = {
       chartName: 'turinCustomerDecreasing',
       chartLabels: ['2015 Q1', '2015 Q2', '2015 Q3', '2015 Q4', '2016 Q1', '2016 Q2', '2016 Q3', '2016 Q4', '2017 Q1', '2017 Q2', '2017 Q3', '2017 Q4', '2018 Q1', '2018 Q2', '2018 Q3', '2018 Q4'],
       chartValues: [1276, 1174, 1233, 1184, 1172, 1195, 1279, 1189, 1248, 1086, 934, 757, 674, 775, 636, 867.68],
-      positionsIds: [27,42,41,42,100,81],
+      positionsIds: [84,33,2,61,59,91],
   }, {
       id: 8,
       type: 'kpi',
@@ -3181,8 +3631,8 @@ export const lists = {
       chartSlider: 'false',
       chartName: 'anconaCustomerDecreasing',
       chartLabels: ['Dec 2017', 'Jan 2018', 'Feb 2018', 'Mar 2018', 'Apr 2018', 'May 2018', 'Jun 2018', 'Jul 2018', 'Aug 2018', 'Sep 2018', 'Oct 2018', 'Nov 2018', 'Dec 2018'],
-      chartValues: [0.314, 0.32342, 0.3104832, 0.322902528, 0.3293605786, 0.2865437033, 0.3008708885, 0.2828186352, 0.2460522126, 0.2288285577, 0.2288285577, 0.1945042741, 0.211322],
-      positionsIds: [6,7,100,49,49,85],
+      chartValues: [0.314, 0.27632, 0.2707936, 0.24371424, 0.24371424, 0.2364028128, 0.2529510097, 0.2175378683, 0.2175378683, 0.2284147618, 0.2124257284, 0.1890588983, 0.211322],
+      positionsIds: [31,8,84,62,49,50],
   }, {
       id: 9,
       type: 'kpi',
@@ -3204,8 +3654,8 @@ export const lists = {
       chartSlider: 'false',
       chartName: 'bariDevelopmentsIncreasing',
       chartLabels: ['2015 Q1', '2015 Q2', '2015 Q3', '2015 Q4', '2016 Q1', '2016 Q2', '2016 Q3', '2016 Q4', '2017 Q1', '2017 Q2', '2017 Q3', '2017 Q4', '2018 Q1', '2018 Q2', '2018 Q3', '2018 Q4'],
-      chartValues: [2059, 2080, 2122, 2143, 2207, 2251, 2319, 2342, 2365, 2436, 2509, 2559, 2610, 2662, 2742, 2862.01],
-      positionsIds: [42,6,23,83,29,43],
+      chartValues: [2059, 2121, 2163, 2206, 2228, 2250, 2295, 2318, 2341, 2411, 2435, 2459, 2533, 2609, 2687, 2862.01],
+      positionsIds: [74,69,26,43,38,4],
   }, {
       id: 10,
       type: 'kpi',
@@ -3228,7 +3678,7 @@ export const lists = {
       chartName: 'bolognaTransactionSpeed2bIncreased',
       chartLabels: '?',
       chartValues: '?',
-      positionsIds: [72,13,59,3,76,42],
+      positionsIds: [41,27,37,90,99,80],
   }, {
       id: 11,
       type: 'kpi',
@@ -3251,7 +3701,7 @@ export const lists = {
       chartName: 'torinoHospitalityDecreased',
       chartLabels: ['2015 Q1', '2015 Q2', '2015 Q3', '2015 Q4', '2016 Q1', '2016 Q2', '2016 Q3', '2016 Q4', '2017 Q1', '2017 Q2', '2017 Q3', '2017 Q4', '2018 Q1', '2018 Q2', '2018 Q3', '2018 Q4'],
       chartValues: [475, 466, 457, 448, 439, 430, 426, 426, 430, 430, 430, 434, 417, 400, 384, 390],
-      positionsIds: [36,72,68,93,10,51],
+      positionsIds: [39,68,86,12,27,56],
   }, {
       id: 12,
       type: 'kpi',
@@ -3274,7 +3724,7 @@ export const lists = {
       chartName: 'torinoStreetConditionDecreased',
       chartLabels: '?',
       chartValues: '?',
-      positionsIds: [36,13,31,90,29,95],
+      positionsIds: [1,17,55,13,96,63],
   }, {
       id: 13,
       type: 'kpi',
@@ -3296,8 +3746,8 @@ export const lists = {
       chartSlider: 'false',
       chartName: 'firenzeVehiclesPriceIncreased',
       chartLabels: ['2015 Q1', '2015 Q2', '2015 Q3', '2015 Q4', '2016 Q1', '2016 Q2', '2016 Q3', '2016 Q4', '2017 Q1', '2017 Q2', '2017 Q3', '2017 Q4', '2018 Q1', '2018 Q2', '2018 Q3', '2018 Q4'],
-      chartValues: [18440, 18827.24, 19203.7848, 19587.8605, 19822.91482, 20219.37312, 20522.66372, 20912.59433, 21435.40918, 21864.11737, 22410.7203, 22814.11327, 23133.51085, 23457.38, 23903.07022, 23972],
-      positionsIds: [70,67,18,69,5,99],
+      chartValues: [18440, 18864.12, 19297.99476, 19683.95466, 19979.21398, 20198.98533, 20421.17417, 20809.17648, 21266.97836, 21543.44908, 21823.51392, 22085.39608, 22306.25004, 22774.68129, 23070.75215, 23972],
+      positionsIds: [99,98,60,48,100,92],
   }, {
       id: 14,
       type: 'kpi',
@@ -3319,7 +3769,7 @@ export const lists = {
       chartSlider: 'false',
       chartName: 'toscanaShorRentPropertiesIncreased',
       chartLabels: ['Dec 2017', 'Jan 2018', 'Feb 2018', 'Mar 2018', 'Apr 2018', 'May 2018', 'Jun 2018', 'Jul 2018', 'Aug 2018', 'Sep 2018', 'Oct 2018', 'Nov 2018', 'Dec 2018'],
-      chartValues: [1.02, 1.07202, 1.11811686, 1.17849517, 1.232705948, 1.284479598, 1.367970772, 1.3994341, 1.440017689, 1.483218219, 1.564795221, 1.602350307, 1.734],
-      positionsIds: [41,86,79,12,51,71],
+      chartValues: [1.02, 1.071, 1.105272, 1.130693256, 1.175920986, 1.224133747, 1.287788702, 1.334149095, 1.420868786, 1.493333094, 1.567999749, 1.663647733, 1.734],
+      positionsIds: [30,71,98,55,3,19],
   }]
 }

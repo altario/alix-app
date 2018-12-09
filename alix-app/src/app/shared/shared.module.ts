@@ -5,6 +5,8 @@ import { CommonModule } from '@angular/common';
 // plugins
 import { Ng5SliderModule } from 'ng5-slider';
 import { NgxEchartsModule } from 'ngx-echarts';
+import { MomentModule } from 'ngx-moment';
+import { NgPipesModule } from 'ngx-pipes';
 
 // components
 import { SliderRangeComponent } from '@shared/slider-range/slider-range.component';
@@ -88,7 +90,9 @@ import {
 
     // plugins
     NgxEchartsModule,
-    Ng5SliderModule
+    Ng5SliderModule,
+    MomentModule,
+    NgPipesModule
   ],
   declarations: [
     // pipes
