@@ -45,7 +45,7 @@ import { AgmCoreModule } from '@agm/core';
     PositionsListComponent,
 
     // components
-    SubheaderComponent
+    // SubheaderComponent
   ]
 })
 export class PositionsModule { }

@@ -24,7 +24,7 @@ import { SharedModule } from '@shared/shared.module';
 import { SimulationsLayoutComponent } from '@core/index';
 
 // services
-import { PositionsReportService } from '@services/positions-report.service';
+import { PositionsReportService } from '@services/reports.service';
 
 // plugins
 import { AgmCoreModule } from '@agm/core';

@@ -32,7 +32,7 @@ import { HeaderModule } from '@shared/header';
 // shared
 import { SharedModule } from '@shared/shared.module';
 
-import { PositionsReportService } from '@app/services/reports.service';
+import { PositionsReportService } from '@services/reports.service';
 
 @NgModule({
   imports: [
