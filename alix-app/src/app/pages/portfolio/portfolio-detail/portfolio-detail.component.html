@@ -289,7 +289,7 @@
       <!-- <h1 class="section-title">Notifications</h1> -->
       <ul>
         <li *ngFor="let notification of (portfolio$ | async)?.notificationsData">
-          <app-notification-row [notification]="notification" [type]="'small'"></app-notification-row>
+          <app-notification-row [notification]="notification" [type]="'small'" [inPortfolio]="true"></app-notification-row>
         </li>
       </ul>
     </div>

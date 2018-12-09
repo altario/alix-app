@@ -50,3 +50,31 @@ a {
   font-size: rem(14px);
   margin-top: 10px;
 }
+
+.box {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  .box__header {
+    height: 80px;
+  }
+  .box__body {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    & > * {
+    display: flex;
+    flex: 1;
+    }
+  }
+}
+
+.flex-3 {
+  flex: 4 !important;
+  min-height: 130px;
+}
+.flex-4 {
+  flex: 6 !important;
+  min-height: 181px;
+  justify-content: flex-start !important;
+}

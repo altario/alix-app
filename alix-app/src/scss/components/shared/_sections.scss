@@ -11,12 +11,12 @@ $box__body-bg--dark: $color2;
   &__header--bg { background-color: $box__header--bg }
   &__body--bg {
     background-color: $box__body--bg;
-    .cell__wrapper--bg-dark {
-      background-color: $box__body-bg--dark
-    }
-    .cell__wrapper--bg-light {
-      background-color: $box__body-bg--light
-    }
+  }
+  .cell__wrapper--bg-dark {
+    background-color: $box__body-bg--dark
+  }
+  .cell__wrapper--bg-light {
+    background-color: $box__body-bg--light
   }
 }
 
@@ -53,16 +53,21 @@ $box__body-bg--dark: $color2;
 }
 
 @mixin tabs ($unselected--bg, $active--bg, $bg-color:$active--bg ) {
-	.tabs-nav--bg {
+	.nav-tabs {
 		background-color: $unselected--bg;
-		li{
-			&:active,
+		li a {
+			border: 0px hidden transparent;
+			background-color: $unselected--bg !important;
+			&.active,
+			&:active{
+				background-color: $active--bg !important;
+			}
 			&:hover {
-				background-color: $active--bg;
+				background-color: darken($active--bg, 10) !important ;
 			}
 		}
 	}
-  .tabs-content-pane { background-color: $active--bg }
+  .tab-content { background-color: $active--bg }
 }
 
 @mixin form-joined ($form-joined--bg: transparent ){
