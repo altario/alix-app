@@ -105,6 +105,7 @@ $box__body-bg--dark: $color2;
 .bg--light {
   background-color: $section--bg--light;
 	.box { @include box--bg ($color1, $color2, $color1) }
+	.box.inverse { @include box--bg ($color2, $color2, $color1) }
 	@include lateral-wrapper--color;
 	@include box-list--color;
 	@include tabs($color2, $color1);
