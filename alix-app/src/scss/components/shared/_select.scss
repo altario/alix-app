@@ -1,11 +1,12 @@
 @import '~src/scss/imports';
 
-.select-styled,
-input {
-  .bg--light & {
-    background: $color2;
-  }
-}
+// .select-styled,
+// input {
+//   .bg--light & {
+//     background: $color2;
+//     border-color: $color1;
+//   }
+// }
 
 .select-styled {
   width: fit-content;

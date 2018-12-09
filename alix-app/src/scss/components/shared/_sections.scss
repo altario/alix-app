@@ -5,7 +5,6 @@ $box__body-bg--light: $color1;
 $box__body-bg--dark: $color2;
 
 
-
 @mixin box--bg ($box--bg: transparent, $box__body-bg--dark: $box__body-bg--dark, $box__body-bg--light: $box__body-bg--light, $box__body--bg: transparent, $box__header--bg: transparent ){
   & { background-color: $box--bg }
   &__header--bg { background-color: $box__header--bg }
@@ -52,7 +51,7 @@ $box__body-bg--dark: $color2;
 	}
 }
 
-@mixin tabs ($unselected--bg, $active--bg, $bg-color:$active--bg ) {
+@mixin tabs ($unselected--bg, $active--bg, $color-input--bg, $color-input--border ) {
 	.nav-tabs {
 		background-color: $unselected--bg;
 		li a {
@@ -67,9 +66,15 @@ $box__body-bg--dark: $color2;
 			}
 		}
 	}
-  .tab-content { background-color: $active--bg }
+  .tab-content {
+		background-color: $active--bg;
+		.select-styled,
+		input {
+			background-color: $color-input--bg;
+			border-color: $color-input--border;
+		}
+	}
 }
-
 
 @mixin placeholder ($color) {
 	&::-webkit-input-placeholder { color: $color }
@@ -77,8 +82,6 @@ $box__body-bg--dark: $color2;
 	&:-ms-input-placeholder { color: $color }
 	&:-moz-placeholder { color: $color }
 }
-
-
 
 @mixin form-joined ($input-bg: transparent, $form-joined--bg: transparent ){
 	.form-joined {
@@ -102,16 +105,16 @@ $box__body-bg--dark: $color2;
 @mixin select-styled ($color-light, $color-dark){
 	.cell__wrapper--bg-light {
 		.select-styled,
-		input.number,
-		input.text {
+		input {
 			background-color: $color-light;
+			border-color: $color-dark;
 		}
 	}
 	.cell__wrapper--bg-dark {
 		.select-styled,
-		input.number,
-		input.text {
+		input {
 			background-color: $color-dark;
+			border-color: $color-light;
 		}
 	}
 }
@@ -122,14 +125,13 @@ $box__body-bg--dark: $color2;
 	@include box--table--color;
 }
 
-
 .bg--light {
   background-color: $section--bg--light;
 	.box { @include box--bg ($color1, $color2, $color1) }
 	.box.inverse { @include box--bg ($color2, $color2, $color1) }
 	@include lateral-wrapper--color;
 	@include box-list--color;
-	@include tabs($color2, $color1);
+	@include tabs($color2, $color1, $color2, $color2);
 	@include form-joined($color1, $color2);
 	@include select-styled  ($color2, $color1);
 
@@ -140,7 +142,7 @@ $box__body-bg--dark: $color2;
 	.box { @include box--bg ($color5, $color6, $color5) }
 	@include lateral-wrapper--color;
 	@include box-list--color;
-	@include tabs($color6, $color5);
+	@include tabs($color6, $color5, $color6, $color6);
 	@include form-joined($color5, $color6);
 	@include select-styled  ($color6, $color5);
 }

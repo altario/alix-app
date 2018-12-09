@@ -51,7 +51,7 @@ a {
   margin-top: 10px;
 }
 
-.box {
+.box--portefolio {
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -77,4 +77,14 @@ a {
   flex: 6 !important;
   min-height: 181px;
   justify-content: flex-start !important;
+}
+
+.box {
+  .form-group {
+    margin: 10px 0;
+  }
+
+  .cell__wrapper > .form-group:first-child {
+    margin-top: 0;
+  }
 }
