@@ -206,4 +206,11 @@ a {
   max-width: 290px;
 }
 
+.section-title {
+  position: fixed;
+  top: 100px;
+}
 
+.container-fluid .page-section > * + * {
+  margin-top: 80px;
+}
