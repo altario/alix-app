@@ -22,9 +22,6 @@ import { SharedModule } from '@shared/shared.module';
 // layouts
 import { PositionsLayoutComponent } from '@core/index';
 
-// services
-import { PositionsReportService } from '@services/positions-report.service';
-
 // plugins
 import { AgmCoreModule } from '@agm/core';
 
@@ -48,7 +45,7 @@ import { AgmCoreModule } from '@agm/core';
     PositionsListComponent,
 
     // components
-  ],
-  providers: [PositionsReportService]
+    SubheaderComponent
+  ]
 })
 export class PositionsModule { }
