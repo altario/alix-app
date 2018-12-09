@@ -1,111 +1,97 @@
 <div *ngIf="type === 'big'" class="notification-row__container box {{type}}">
-  <div class="notification-row__icon cell__wrapper cell__wrapper cell__wrapper--bg-dark">
-    <span class="bullet-point--big" [ngClass]="{
+  <div class="notification-row__icon cell__wrapper cell__wrapper--bg-dark">
+    <div class="notif-icon">
+      <i *ngIf="notification?.type === 'kpi'" class="icon--medium icol ico-chart-line"></i>
+      <i *ngIf="notification?.type === 'news'" class="icon--medium icol ico-newspaper"></i>
+    </div>
+    <div class="bullet-point--big" [ngClass]="{
       'bullet-point--success': notification?.notificationPriority === 'Low',
       'bullet-point--warning': notification?.notificationPriority === 'Mid',
       'bullet-point--past': notification?.notificationPriority === 'High',
       'bullet-point--danger': notification?.notificationPriority === 'Veryhigh'
-    }"></span>
-    <div>
-      <i *ngIf="notification?.type === 'kpi'" class="icon--big icol ico-chart-line"></i>
-      <i *ngIf="notification?.type === 'news'" class="icon--big icol ico-newspaper"></i>
-    </div>
-    <div>
-      <span>{{ notification?.date | cusdate | date: 'd MMM y' }}</span>
+    }"></div>
+    <div class="date-holder">{{ notification?.date | cusdate | date: 'd MMM y' }}</div>
+  </div>
+
+  <div class="notification-row__title cell__wrapper cell__wrapper--bg-light">
+    <div class="notif-title">{{ notification?.family !== 'n/a' ? notification?.family : '' }}</div>
+    <div class="notif-subtitle">{{ notification?.title }}</div>
+    <div class="source-holder">
+      <div *ngIf="notification?.sourceName !== 'n/a'" class="source-label">Source:</div>
+      <a *ngIf="notification?.sourceName !== 'n/a'" href="{{notification?.sourceUrl}}" target="_blank" class="source-link">{{ notification?.sourceName }}</a>
     </div>
   </div>
 
-  <div class="notification-row__title cell__wrapper cell__wrapper cell__wrapper--bg-light">
-    <div></div>
-    <div>
-      {{ notification?.title }}
-    </div>
-    <div>
-      SOURCE: {{ notification?.sourceName }}
-    </div>
-  </div>
-
-  <div class="notification-row__info cell__wrapper cell__wrapper cell__wrapper--bg-dark">
-    <div class="notification-row__family">
-      {{ notification?.family }}
-    </div>
-    <div *ngIf="notification?.type === 'kpi'">
-      <div>
-        {{ notification?.labelUp }}
+  <div class="notification-row__info cell__wrapper cell__wrapper--bg-dark">
+    <div class="notification-row__info-holder" *ngIf="notification?.type === 'kpi'">
+      <div class="label-up-down">{{ notification?.labelUp }}</div>
+      <div class="info-holder">
+        <div [appPosNeg]="notification?.value" icon="symbol">{{ notification?.value | perc:1}}</div>
+        <div class="symbol-time"> in {{ notification?.time }}</div>
       </div>
-      <span [appPosNeg]="notification?.value" icon="symbol">{{ notification?.value | perc:1}}</span><span> in {{ notification?.time }}</span>
+      <div class="label-up-down">{{ notification?.labelDown }}</div>
     </div>
+
     <div class="notification-row__position-exposure">
-      <span>
-        <div>
-          POSITIONS
+      <div class="exposure-inner">
+        <div class="cell__wrapper__top">
+          <div class="label__up label--color">POSITIONS</div>
+          <div class="cell__information">{{ notification?.positionsInPortfolio }}</div>
         </div>
-        <div>
-          {{ notification?.positionsInPortfolio }}
+        <div class="cell__wrapper__top">
+          <div class="label__up label--color">EXPOSURE</div>
+          <div class="cell__information">{{ notification?.portfolioExposure }} {{ notification?.exposureUnit}}</div>
         </div>
-      </span>
-      <span>
-        <div>
-          EXPOSURE
-        </div>
-        <div>
-          {{ notification?.portfolioExposure }} {{ notification?.exposureUnit}}
-        </div>
-      </span>
+      </div>
+      <div>
+        <div *ngIf="notification?.labelDown !== 'n/a' && notification?.type !== 'kpi'" class="label-up-down">{{ notification?.labelDown }}</div>
+      </div>
     </div>
   </div>
 
-  <div class="notification-row__btns">
-    <div class="notification-row__button" (click)="goToPortfolio(notification)">Add to Report</div>
-    <div class="notification-row__button" (click)="goToPortfolio(notification)">Mark as Read</div>
-    <div *ngIf="!inPortfolio" class="notification-row__button" (click)="goToPortfolio(notification)">See Portfolio</div>
+  <div class="notification-row__btns cell__wrapper cell__wrapper--bg-light">
+    <button class="btn btn-light--1 notification-row__button" (click)="goToPortfolio(notification)">Add to Report</button>
+    <button class="btn btn-light--1 notification-row__button" (click)="goToPortfolio(notification)">Mark as Read</button>
+    <button *ngIf="!inPortfolio" class="btn btn-light--2 notification-row__button" (click)="goToPortfolio(notification)">See Portfolio</button>
   </div>
 </div>
 
 <div *ngIf="type === 'small'" class="notification-row__container-small box {{type}}">
-    <div class="notification-row__left cell__wrapper cell__wrapper cell__wrapper--bg-dark">
+    <div class="notification-row__left cell__wrapper cell__wrapper--bg-dark">
       <div>
-        <span class="bullet-point--small" [ngClass]="{
+        <div class="bullet-point--small" [ngClass]="{
           'bullet-point--success': notification?.notificationPriority === 'Low',
           'bullet-point--warning': notification?.notificationPriority === 'Mid',
           'bullet-point--past': notification?.notificationPriority === 'High',
           'bullet-point--danger': notification?.notificationPriority === 'Veryhigh'
         }">
-        </span>
+        </div>
       </div>
       <div>
-        <span>
+        <div>
           <i *ngIf="notification?.type === 'kpi'" class="icon--small icol ico-chart-line"></i>
           <i *ngIf="notification?.type === 'news'" class="icon--small icol ico-newspaper"></i>
-        </span>
+        </div>
       </div>
       <div>
-        <span class="cell__wrapper cell__wrapper cell__wrapper--bg-light">{{ notification?.title }}</span>
+        <div class="cell__wrapper cell__wrapper--bg-light">{{ notification?.title }}</div>
       </div>
       <div>
-        <span [appPosNeg]="notification?.value" icon="symbol">{{ notification?.value | perc:1}}</span>
+        <div [appPosNeg]="notification?.value" icon="symbol">{{ notification?.value | perc:1}}</div>
       </div>
       <div>
-        <span>{{ notification?.time }}</span>
+        <div>{{ notification?.time }}</div>
       </div>
     </div>
 
     <div class="notification-row__right notification-row__position-exposure">
-      <span>
-        <div>
-          POSITIONS
-        </div>
-        <div>
-          {{ notification?.positionsInPortfolio }}
-        </div>
-      </span>
-      <span>
-        <div>
-          EXPOSURE
-        </div>
-        <div>
-          {{ notification?.portfolioExposure }} {{ notification?.exposureUnit}}
-        </div>
-      </span>
+      <div>
+        <div>POSITIONS</div>
+        <div>{{ notification?.positionsInPortfolio }}</div>
+      </div>
+      <div>
+        <div>EXPOSURE</div>
+        <div>{{ notification?.portfolioExposure }} {{ notification?.exposureUnit}}</div>
+      </div>
     </div>
   </div>
