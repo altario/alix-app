@@ -1,5 +1,6 @@
 // angular
 import { Directive, ElementRef, Input, OnInit, HostBinding } from '@angular/core';
+import { numericalValues } from './numerical-values.lib';
 
 @Directive({
   selector: '[appNum]'
@@ -18,8 +19,8 @@ export class NumericalValuesDirective implements OnInit {
 
   ngOnInit() {
     if (!isNaN(this.value)) {
-      this.processedValue = this.process(this.value);
-      console.log(this.processedValue)
+      this.processedValue = numericalValues(this.value);
+
       if (this.isPercent) {
         this.el.nativeElement.insertAdjacentHTML('afterbegin',
           `<span class="appNum--percent-value">${this.processedValue.percentualValue}</span>
@@ -49,41 +50,4 @@ export class NumericalValuesDirective implements OnInit {
 
     }
   }
-
-  process(value) {
-    const obj: any = {};
-    obj.fullValue = value;
-
-    if (value >= 1e3 || value <= -1e3) {
-      const units = ['k', 'M', 'B', 'T'];
-      const unit = Math.floor((Number(value).toFixed(0).length - 1) / 3) * 3;
-      obj.scaledValue = (value / Number(('1e' + unit)));
-      obj.round = this.autoRound(obj.scaledValue);
-      obj.unitname = units[Math.floor(unit / 3) - 1];
-    } else {
-      obj.round = this.autoRound(value);
-    }
-
-    obj.percentualValue = this.autoRound(value * 100);
-
-    return obj;
-  }
-
-  autoRound(value) {
-    if (value >= 1e2 || value <= -1e2) {
-      return this.roundTo(value, 0);
-    }
-    if (value >= 1e1 || value <= -1e1) {
-      return this.roundTo(value, 1);
-    }
-    if (value >= 1e0 || value <= -1e0) {
-      return this.roundTo(value, 2);
-    }
-    if (value < 1 && value > -1) {
-      return this.roundTo(value, 2);
-    }
-  }
-
-  roundTo = (num, scale) => +(Math.round(Number(num + 'e+' + scale))  + 'e-' + scale);
-
 }
