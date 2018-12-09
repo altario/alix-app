@@ -49,15 +49,15 @@ export class PortfolioDetailComponent implements OnInit {
         title: {
           text: res.chartName,
           top: '17px',
-          left: '125',
+          left: '125px',
           textStyle: eChartsConfig.title,
         },
         legend: {
-          data: [res.chartName],
+          data: [{name: res.chartName, icon: 'rect'}],
           itemWidth: eChartsConfig.legend.itemWidth,
           itemHeight: eChartsConfig.legend.itemHeight,
           top: eChartsConfig.legend.top,
-          right: eChartsConfig.legend.right,
+          right: '150px',
           textStyle: {
             fontSize: eChartsConfig.legend.fontSize,
             color: eChartsConfig.legend.color
