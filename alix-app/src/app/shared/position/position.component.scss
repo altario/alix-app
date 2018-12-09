@@ -1,6 +1,6 @@
 @import '~src/scss/imports';
 
-$row_padding: 10px;
+$row_padding: 10px 15px;
 
 .position-row__container {
   color: #828282;
@@ -16,8 +16,9 @@ $row_padding: 10px;
   padding: $row_padding;
 
   .position-row__title {
-    flex: 2;
-    padding-right: $row_padding;
+    flex: 1;
+    padding-right: 10px;
+    color: #828282;
   }
 
   .position-row__loan,
@@ -25,7 +26,8 @@ $row_padding: 10px;
   .position-row__stat,
   .position-row__button {
     flex: 1;
-    padding: 0 $row_padding;
+    padding: 0 10px;
+    color: #828282;
   }
 
   .position-row__title,
@@ -51,6 +53,27 @@ $row_padding: 10px;
     min-width: $size;
     max-width: $size;
     text-align: center;
+    color: white;
+    font-size: 0.9em;
+    border-radius: 2px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+
+    &.green {
+      background: #43D17F;
+    }
+    &.grey {
+      background: #B2B2B2;
+    }
+    &.yellow {
+      background: #E6DE35;
+    }
+    &.orange {
+      background: #F6B611;
+    }
+    &.red {
+      background: #EE1B1B;
+    }
   }
 
   .position-row__button {
@@ -80,13 +103,13 @@ $row_padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #475FF2;
+    background-color: #d0cdcd;
     height: 26px;
     border-radius: $border-radius__default;
     cursor: pointer;
 
     &:hover {
-      background: rgb(189, 189, 189);
+      background: white;
     }
   }
 }

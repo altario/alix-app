@@ -16,17 +16,23 @@ export class SubheaderDashboardComponent implements OnInit {
   @Input()
   public droplist: any = [];
 
+  @Input()
+  public droplistids: any = {};
+
   @Output()
   changeValue: any = new EventEmitter();
 
   @Input()
   public dropvalue: any;
 
+
+
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.config = dataset.dossiersMainData.dossier1;
+        this.dropvalue = this.droplist[0].id;
     });
   }
 

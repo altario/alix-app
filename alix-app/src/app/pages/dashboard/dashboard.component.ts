@@ -8,10 +8,15 @@ import { EventEmitter } from 'events';
 // graph color overrides
 import * as eChartsConfig from '@global/charts';
 
+//Pipe
+import { CustomCurrencyPipe } from '@helpers/index';
+import { ShufflePipe } from 'ngx-pipes';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
+  providers: [CustomCurrencyPipe, ShufflePipe]
 })
 export class DashboardComponent implements OnInit {
 
@@ -24,13 +29,32 @@ export class DashboardComponent implements OnInit {
   public droplist: any = [];
   public dropvalue: any;
 
-  constructor() {
+  public mockIndustryIds = {
+    allIndustries: 27,
+    consumerGoods: 16,
+    automotiveIndustrials: 17,
+    transportation: 18,
+    telecomMediaAndTechnology: 19,
+    energyAndBasicMaterials: 20,
+    infrastructureRealEstate: 26,
+    financialInstitutions: 21,
+    publicFinance: 22,
+    healthcarePharma: 23,
+    retailAndLuxury: 24,
+    hospitality: 25
+  };
+
+  constructor(private currencyPipe: CustomCurrencyPipe, private shufflePipe: ShufflePipe) {
 
     this.config = dashboardDataset;
     this.kpis = this.config.dashboard1.mainKpis[0].allIndustries;
   }
 
   ngOnInit() {
+    const axisLabel = JSON.parse(JSON.stringify(eChartsConfig.eChartsConfig.xAxis.axisLabel));
+    axisLabel.formatter = (value, index) => {
+      return this.currencyPipe.transform(value) ;
+    };
 
     this.opts = {
       color: ['#003366', '#006699', '#4cabce', '#e5323e'],
@@ -38,6 +62,16 @@ export class DashboardComponent implements OnInit {
         trigger: 'axis',
         axisPointer: {
           type: 'shadow'
+        },
+        formatter: (params) => {
+          const colorSpan = color => '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' + color + '"></span>';
+          let rez = params[0].axisValue + '<br>';
+          params.forEach(item => {
+            const xx = colorSpan(item.color) + ' ' + item.seriesName + ': ' + this.currencyPipe.transform(item.data ) + '<br />';
+            rez += xx;
+          });
+
+          return rez;
         }
       },
       grid: {
@@ -56,7 +90,7 @@ export class DashboardComponent implements OnInit {
 
       xAxis: {
         splitLine: eChartsConfig.eChartsConfig.xAxis.splitLine,
-        axisLabel: eChartsConfig.eChartsConfig.xAxis.axisLabel,
+        axisLabel: axisLabel,
         axisLine: eChartsConfig.eChartsConfig.xAxis.axisLine
       },
       yAxis: {
@@ -68,15 +102,19 @@ export class DashboardComponent implements OnInit {
       }
     };
 
-    this.droplist = [{ name: 'All Industries', id: 'allIndustries' },{ name: 'Consumer Goods', id: 'consumerGoods' }, { name: 'Automotive & Industrials', id: 'automotiveIndustrials' }, { name: 'Transportation', id: 'transportation' }, { name: 'Telecom, Media and Technology', id: 'telecomMediaAndTechnology' }, { name: 'Energy and Basic Materials', id: 'energyAndBasicMaterials' }, { name: 'Infrastructure & Real Estate', id: 'infrastructureRealEstate' }, { name: 'Financial Institutions', id: 'financialInstitutions' }, { name: 'Public Finance', id: 'publicFinance' }, { name: 'Healthcare & Pharma', id: 'healthcarePharma' }, { name: 'Retail and Luxury', id: 'retailAndLuxury' }, { name: 'Hospitality', id: 'hospitality' }];
+    this.droplist = [{ name: 'All Industries', id: 'allIndustries' }, { name: 'Consumer Goods', id: 'consumerGoods' }, { name: 'Automotive & Industrials', id: 'automotiveIndustrials' }, { name: 'Transportation', id: 'transportation' }, { name: 'Telecom, Media and Technology', id: 'telecomMediaAndTechnology' }, { name: 'Energy and Basic Materials', id: 'energyAndBasicMaterials' }, { name: 'Infrastructure & Real Estate', id: 'infrastructureRealEstate' }, { name: 'Financial Institutions', id: 'financialInstitutions' }, { name: 'Public Finance', id: 'publicFinance' }, { name: 'Healthcare & Pharma', id: 'healthcarePharma' }, { name: 'Retail and Luxury', id: 'retailAndLuxury' }, { name: 'Hospitality', id: 'hospitality' }];
 
   }
 
-  getexposurePerformanceBoxPlot(population= 'allIndustries'): Array<any> {
+  private convertToMilion(value) {
+    return (parseInt(value, 10) / 1000000);
+  }
+
+  getexposurePerformanceBoxPlot(population = 'allIndustries'): Array<any> {
     const labels = ['Performing', 'Past Due Loans', 'Unlikely to Pay', 'Bad Loans'];
     const axisLabel = JSON.parse(JSON.stringify(eChartsConfig.eChartsConfig.xAxis.axisLabel));
-    axisLabel.formatter = function (value, index) {
-      return index==0 ? 0 : labels[index-1];
+    axisLabel.formatter =  (value, index) => {
+      return index == 0 ? 0 : labels[index - 1];
     };
 
 
@@ -145,7 +183,7 @@ export class DashboardComponent implements OnInit {
         axisPointer: {
           type: 'shadow'
         },
-        formatter: function (params) {
+        formatter: (params) => {
           let tar;
           if (params[1].value !== '-') {
             tar = params[1];
@@ -154,7 +192,7 @@ export class DashboardComponent implements OnInit {
           }
           // return labels[tar.dataIndex] + '<br/>' +
           //        tar.seriesName + ': ' + parseInt(tar.value / 1000000) + 'Mln';
-          return labels[tar.dataIndex] + '<br/>' + tar.seriesName + ': ' + (parseInt(tar.value, 10) / 1000000) + 'Mln';
+          return labels[tar.dataIndex] + '<br/>' + tar.seriesName + ': ' + this.convertToMilion(tar.value).toFixed(2) + 'Mln';
         }
       },
       legend: {
@@ -176,7 +214,7 @@ export class DashboardComponent implements OnInit {
           data: function () {
             const list = [];
             for (let i = 1; i <= 8; i++) {
-              list.push( i );
+              list.push(i);
             }
             return list;
           }(),
@@ -199,23 +237,49 @@ export class DashboardComponent implements OnInit {
       ],
     };
 
-    //if (industry == 'allIndustries' ) {
-    //  console.log(this.config.dashboard1.utpOutflowInflow);
-      return this.config.dashboard1.utpOutflowInflow;
-    //}
+    const series = JSON.parse(JSON.stringify(this.config.dashboard1.utpOutflowInflow));
+    if (industry == 'allIndustries' ) {
 
-    /*const series = this.config.dashboard1.utpOutflowInflow.map((serie) => {
-      serie.data = serie.data.map((value) => {
-        if (value == '-' || value == 0)
-          return value;
+      return series.map((serie) => {
+        serie.data = serie.data[0];
+        if (serie.id == 'alpha'){
+          return serie;
+        }
 
-        return (value * (Math.floor(Math.random() * 1.2) + 1));
+        serie.itemStyle = {
+          normal: {
+            label: {
+              show: true,
+                position: serie.itemStyle.normal.label.position,
+                formatter: function (params) {
+                  return (parseInt(params.value, 10) / 1000000).toFixed(2) + ' Mln';
+                }
+            }
+          }
+        };
+        return serie;
       });
+    }
 
+    return series.map((serie) => {
+      serie.data = this.shufflePipe.transform(serie.data).shift();
+      if (serie.id == 'alpha') {
+        return serie;
+      }
+
+      serie.itemStyle = {
+        normal: {
+          label: {
+            show: true,
+            position: serie.itemStyle.normal.label.position,
+            formatter: function (params) {
+              return (parseInt(params.value, 10) / 1000000).toFixed(2) + ' Mln';
+            }
+          }
+        }
+      };
       return serie;
     });
-
-    return series;*/
   }
 
   onChartClick(chartLine) {
@@ -231,10 +295,10 @@ export class DashboardComponent implements OnInit {
 
   onChange(val) {
     // console.log(val);
-    this.updateAllComponents({ data: { id: val}});
+    this.updateAllComponents({ data: { id: val } });
   }
 
-  private updateAllComponents(chartLine ) {
+  private updateAllComponents(chartLine) {
     const key = chartLine.data.id;
     const kpis = this.config.dashboard1.mainKpis.filter((line, i) => {
       const k: any = Object.keys(line);
@@ -373,7 +437,7 @@ export class DashboardComponent implements OnInit {
 
   getperforming() {
     this.opts.performing = {
-      color: ['#5CB85C'],
+      color: ['#5CB85C', '#D9534F'],
       grid: {
         height: 'auto',
         top: 20,
@@ -392,7 +456,7 @@ export class DashboardComponent implements OnInit {
       },
       xAxis: {
         type: 'category',
-        show: false,
+        show: true,
         axisLine: eChartsConfig.eChartsConfig.xAxis.axisLine,
         splitLine: eChartsConfig.eChartsConfig.xAxis.splitLine,
         axisLabel: eChartsConfig.eChartsConfig.xAxis.axisLabel,
@@ -415,9 +479,29 @@ export class DashboardComponent implements OnInit {
       },
     };
 
-    return[{
+    return [{
+      name: 'nonPerforming',
+      type: 'bar',
+      color: '#D9534F',
+      stack: 'A',
+      label: {
+        normal: {
+          show: false,
+          position: 'insideRight'
+        }
+      },
+      data: this.config.dashboard1.tenYearsInWeeks.nonPerforming.reverse()
+    },{
       name: 'performing',
       type: 'bar',
+      color: '#5CB85C',
+      stack: 'A',
+      label: {
+        normal: {
+          show: false,
+          position: 'insideRight'
+        }
+      },
       data: this.config.dashboard1.tenYearsInWeeks.performing.reverse()
     }];
   }
@@ -475,12 +559,11 @@ export class DashboardComponent implements OnInit {
     console.log(this.chartInstance);
     this.chartInstance[chart] = e;
 
-    if (chart === 'nonPerforming') {
+    if (chart === 'performing') {
       echarts.connect([
         this.chartInstance.exposure,
         this.chartInstance.netMargin,
-        this.chartInstance.performing,
-        this.chartInstance.nonPerforming,
+        this.chartInstance.performing
       ]);
     }
   }

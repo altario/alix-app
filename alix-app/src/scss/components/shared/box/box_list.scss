@@ -56,8 +56,9 @@ $box-list-font-size--small: rem(9px);
 }
 
 .text--success {
+	color: $color__custom--green !important;
+
   &.positive {
-    color: $color__custom--green !important;
     @include icon(caret-up) {
       font-weight: $font-weight--bold;
       margin-right: 3px;
@@ -65,8 +66,9 @@ $box-list-font-size--small: rem(9px);
   }
 }
 .text--error {
+	color: $color__custom--red !important;
+
   &.negative {
-    color: $color__custom--red !important;
     @include icon(caret-down) {
       font-weight: $font-weight--bold;
       margin-right: 3px;

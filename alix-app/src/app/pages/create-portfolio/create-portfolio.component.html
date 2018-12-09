@@ -1,43 +1,236 @@
-<div class="container-fluid">
-  <section class="page-section bg--light">
+<section class="page-section bg--light">
     <div class="row">
-
-
-
-        <div>
-            <tabset>
-              <tab heading="Basic title" id="tab1">Basic content</tab>
-              <tab heading="Basic Title 1">Basic content 1</tab>
-              <tab heading="Basic Title 2">Basic content 2</tab>
-            </tabset>
-          </div>
-
-
-
       <div class="col-8">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
-          </li>
-        </ul>
-        <div class="tab-content" id="myTabContent">
-          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-          <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
-        </div>
+        <tabset>
+          <tab heading="1. Name & Industry" id="tab1">
+            <form>
+                <div class="form-group">
+                  <label class="label label--color" for="exampleFormControlInput1">Portfolio Name</label>
+                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Portfolio Name Here">
+                </div>
+                <div class="form-group">
+                  <label class="label label--color" for="exampleFormControlSelect1">Industry</label>
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option>Infrastructure & Real State</option>
+                  </select>
+                </div>
+                <div class="buttons-group">
+                  <button type="submit" class="btn btn-outline-light btn-sm">Cancel</button>
+                  <button type="submit" class="btn btn-success btn-sm">
+                    Next
+                    <i class="icol ico-angle-right"></i>
+                  </button>
+                </div>
+
+              </form>
+            </tab>
+
+            <tab heading="2. Segment Creation">
+
+              <form>
+
+                <div class="form-joined form-joined--bg">
+                    <div class="form-joined-inputs">
+                      <div class="select-styled">
+                        <select class="form-control" id="exampleFormControlSelect1">
+                          <option>Asset</option>
+                        </select>
+                      </div>
+
+                      <div class="select-styled">
+                        <select class="form-control" id="exampleFormControlSelect1">
+                          <option>Location</option>
+                        </select>
+                      </div>
+
+                      <div class="select-styled">
+                        <select class="form-control" id="exampleFormControlSelect1">
+                          <option>City</option>
+                        </select>
+                      </div>
+
+                      <div class="select-styled">
+                        <select class="form-control" id="exampleFormControlSelect1">
+                          <option>Milano</option>
+                        </select>
+                      </div>
+
+                    </div>
+
+                    <div class="btn-group">
+                      <button type="" class="btn btn-danger">delete</button>
+                      <button type="" class="btn btn-duplicate">duplicate</button>
+                    </div>
+
+</div>
+
+
+                  <div class="form-joined form-joined--bg">
+                      <div class="form-joined-inputs">
+                        <div class="select-styled">
+                          <select class="form-control" id="exampleFormControlSelect1">
+                            <option>Asset</option>
+                          </select>
+                        </div>
+
+                        <div class="select-styled">
+                          <select class="form-control" id="exampleFormControlSelect1">
+                            <option>Type</option>
+                          </select>
+                        </div>
+
+                        <div class="select-styled">
+                          <select class="form-control" id="exampleFormControlSelect1">
+                            <option>Comercial</option>
+                          </select>
+                        </div>
+
+                      </div>
+                      <div class="btn-group">
+                        <button type="" class="btn btn-danger">delete</button>
+                        <button type="" class="btn btn-duplicate">duplicate</button>
+                      </div>
+
+                    </div>
+
+                    <div class="form-joined form-joined--bg">
+                        <div class="form-joined-inputs">
+                          <div class="select-styled">
+                            <select class="form-control" id="exampleFormControlSelect1">
+                              <option>Instrument</option>
+                            </select>
+                          </div>
+
+                          <div class="select-styled">
+                            <select class="form-control" id="exampleFormControlSelect1">
+                              <option>Loan</option>
+                            </select>
+                          </div>
+
+                          <div class="select-styled">
+                            <select class="form-control" id="exampleFormControlSelect1">
+                              <option>Loan XYZ II Beta</option>
+                            </select>
+                          </div>
+
+                          <div class="select-styled">
+                            <select class="form-control" id="exampleFormControlSelect1">
+                              <option>LOV</option>
+                            </select>
+                          </div>
+
+                          <div class="select-styled">
+                            <select class="form-control" id="exampleFormControlSelect1">
+                              <option>>=</option>
+                            </select>
+                          </div>
+
+                          <input class="number" type="number" name="tentacles">
+
+                          <div class="select-styled">
+                            <select class="form-control" id="exampleFormControlSelect1">
+                              <option>Milion</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="btn-group">
+                          <button type="" class="btn btn-danger">delete</button>
+                          <button type="" class="btn btn-duplicate">duplicate</button>
+                        </div>
+
+                      </div>
+
+
+                      <div class="form-joined form-joined--bg">
+                        <div class="form-joined-inputs">
+                          <div class="select-styled">
+                            <select class="form-control" id="exampleFormControlSelect1">
+                              <option>Position</option>
+                            </select>
+                          </div>
+
+                          <div class="select-styled">
+                            <select class="form-control" id="exampleFormControlSelect1">
+                              <option>Status</option>
+                            </select>
+                          </div>
+
+                          <div class="select-styled">
+                            <select class="form-control" id="exampleFormControlSelect1">
+                              <option>Unlikely to pay</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="btn-group">
+                          <button type="" class="btn btn-danger">delete</button>
+                          <button type="" class="btn btn-duplicate">duplicate</button>
+                        </div>
+                      </div>
+
+
+                      <div class="form-joined form-joined--bg">
+                          <div class="form-joined-inputs">
+
+                            <div class="select-styled">
+                              <select class="form-control" id="exampleFormControlSelect1">
+                                <option>Client</option>
+                              </select>
+                            </div>
+
+                            <div class="select-styled">
+                              <select class="form-control" id="exampleFormControlSelect1">
+                                <option>Financial</option>
+                              </select>
+                            </div>
+
+                            <div class="select-styled">
+                              <select class="form-control" id="exampleFormControlSelect1">
+                                <option>TCE</option>
+                              </select>
+                            </div>
+
+                            <div class="select-styled">
+                              <select class="form-control" id="exampleFormControlSelect1">
+                                <option>>=</option>
+                              </select>
+                            </div>
+
+                            <div class="select-styled">
+                              <select class="form-control" id="exampleFormControlSelect1">
+                                <option>Milion</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="btn-group">
+                            <button type="" class="btn btn-danger">delete</button>
+                            <button type="" class="btn btn-duplicate">duplicate</button>
+                          </div>
+
+                        </div>
+
+                  <button type="" class="btn btn-outline-light btn--add">Add rule</button>
+
+                  <div class="buttons-group">
+                    <button type="submit" class="btn btn-outline-light">Cancel</button>
+                    <button type="submit" class="btn btn-success">
+                      Next
+                      <i class="icol ico-angle-right"></i>
+                    </button>
+                  </div>
+
+              </form>
+            </tab>
+          <tab heading="3. Monitoring Parameters"></tab>
+        </tabset>
       </div>
 
       <div class="col-4">
         <div class="box">
-          teste
+
         </div>
       </div>
     </div>
   </section>
-</div>

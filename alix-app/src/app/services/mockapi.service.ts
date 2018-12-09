@@ -132,30 +132,27 @@ export class MockapiService {
           return null;
         }
 
-        const notificationsHash = {};
-        const positionsHash = {};
+        // const notificationsHash = {};
+        // const positionsHash = {};
 
-        for (let i = 0; i < notifications.length; i++) {
-          notificationsHash[notifications[i].id] = notifications[i];
-        }
+        // for (let i = 0; i < notifications.length; i++) {
+        //   notificationsHash[notifications[i].id] = notifications[i];
+        // }
 
-        for (let i = 0; i < positions.length; i++) {
-          positionsHash[positions[i].id] = positions[i];
-        }
+        // for (let i = 0; i < positions.length; i++) {
+        //   positionsHash[positions[i].id] = positions[i];
+        // }
 
         notification = notification[0];
 
-        notification.notificationsData = [];
-        notification.positionsData = [];
-        // notification.positionsData = positions;
+        // notification.notificationsData = [];
+        // notification.positionsData = [];
+        // // notification.positionsData = positions;
 
-        for (let z = 0; z < notification.notificationIds.length; z++) {
-          notification.notificationsData.push(notificationsHash[notification.notificationIds[z]]);
-        }
 
-        for (let z = 0; z < notification.positionsIds.length; z++) {
-          notification.positionsData.push(positionsHash[notification.positionsIds[z]]);
-        }
+        // for (let z = 0; z < notification.positionsIds.length; z++) {
+        //   notification.positionsData.push(positionsHash[notification.positionsIds[z]]);
+        // }
 
         return notification;
       }),

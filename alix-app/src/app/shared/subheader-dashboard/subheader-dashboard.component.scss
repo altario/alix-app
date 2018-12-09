@@ -51,3 +51,36 @@ $subheader__navbar--height: 40px;
   box-shadow: 0px 2px 4px rgba(black, .25);
   @include align(middle center);
 }
+
+ .subheader-row__button {
+  flex: 1;
+  padding: 0 10px;
+  color: #828282;
+  margin-left: 5px;
+}
+
+.subheader-row__button {
+  font-size: 14px;
+  @include line-clamp(2, 14px, 1.1);
+}
+
+.subheader-row__button {
+  max-width: 165px;
+  min-width: 165px;
+}
+
+.subheader-row__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d0cdcd;
+  height: 26px;
+  border-radius: $border-radius__default;
+  cursor: pointer;
+
+  &:hover {
+    background: white;
+  }
+}
+
+

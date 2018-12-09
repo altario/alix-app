@@ -30,7 +30,7 @@ export class PositiveNegativeDirective implements OnInit {
   ngOnInit() {
     if (!isNaN(this.value)) {
       if (this.icon === 'symbol' && Math.sign(this.value) !== 0) {
-        this.el.nativeElement.insertAdjacentHTML('afterbegin', Math.sign(this.value) === 1 ? '+' : '-');
+        this.el.nativeElement.insertAdjacentHTML('afterbegin', Math.sign(this.value) === 1 ? '+' : '');
       }
       this.el.nativeElement.insertAdjacentHTML('beforeend', '%');
     }
