@@ -53,16 +53,21 @@ $box__body-bg--dark: $color2;
 }
 
 @mixin tabs ($unselected--bg, $active--bg, $bg-color:$active--bg ) {
-	.tabs-nav--bg {
+	.nav-tabs {
 		background-color: $unselected--bg;
-		li{
-			&:active,
+		li a {
+			border: 0px hidden transparent;
+			background-color: $unselected--bg !important;
+			&.active,
+			&:active{
+				background-color: $active--bg !important;
+			}
 			&:hover {
-				background-color: $active--bg;
+				background-color: darken($active--bg, 10) !important ;
 			}
 		}
 	}
-  .tabs-content-pane { background-color: $active--bg }
+  .tab-content { background-color: $active--bg }
 }
 
 @mixin form-joined ($form-joined--bg: transparent ){

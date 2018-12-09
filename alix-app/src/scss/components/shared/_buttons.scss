@@ -1,0 +1,14 @@
+@mixin btn-alix ($name, $color:transparent, $bg-color:transparent ) {
+  .btn-#{$name} {
+    background-color: $bg-color;
+    color: $color;
+  }
+}
+
+.bg--light {
+  @include btn-alix (duplicate, $body__color__text, $color3);
+}
+
+.bg--dark {
+  @include btn-alix (duplicate, $body__color__text, $color6);
+}

@@ -1,0 +1,25 @@
+.nav-tabs {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  .nav-item {
+    flex: 1;
+    a {
+      padding: 15px;
+      text-align: left;
+      text-decoration: none;
+      height: 100%;
+      display: block;
+      font-size: rem(14px);
+      color: #FFFFFF;
+      &.active,
+      &:active,
+      &:hover {
+        text-decoration: none;
+        color: #FFFFFF;
+      }
+    }
+  }
+  
+}
