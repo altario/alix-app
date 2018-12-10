@@ -52,7 +52,7 @@ export class ReportStickyComponent implements OnInit {
   }
 
   modalConfirm(): void {
-    this.reportList[this.reportList.length - 1].comment = this.commentText;
+    this.reportList[0].comment = this.commentText;
     this.commentText = '';
     this.modalRef.hide();
   }
