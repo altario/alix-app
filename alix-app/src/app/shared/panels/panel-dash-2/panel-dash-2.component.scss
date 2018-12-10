@@ -60,7 +60,7 @@
     .cell__wrapper__info {
       flex: 0 0 100px;
       @include align(middle center);
-      p {
+      p::ng-deep {
         width: 100%;
         height: 30px;
         text-align: center;
@@ -68,6 +68,9 @@
         background: $color__custom--green;
         font-weight: $font-weight--bold;
         @include align(middle center);
+        * {
+          color: white !important;
+        }
         small {
           margin-left: 5px;
           font-weight: $font-weight--bold;

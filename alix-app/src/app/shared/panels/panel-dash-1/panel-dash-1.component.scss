@@ -39,6 +39,7 @@
 
 // :host
 :host {
+  width: 100%;
   display: flex;
   position: relative;
   @include align(column);
