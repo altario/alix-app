@@ -1,4 +1,5 @@
-<div *ngIf="isOpen" class="report-sticky-container bg--light {{isOpen ? 'is-open' : ''}}">
+<!-- <div *ngIf="isOpen" class="report-sticky-container bg--light {{isOpen ? 'is-open' : ''}}"> -->
+<div class="report-sticky-container bg--light {{isOpen ? 'is-open' : ''}}">
   <div class="box container">
     <div class="cell__wrapper cell__wrapper cell__wrapper--bg-dark report-counter">{{counter}}</div>
     <div class="report-title">
@@ -15,7 +16,8 @@
   </div>
 </div>
 
-<div *ngIf="isMaximize" class="container-report">
+<!-- <div *ngIf="isMaximize" class="container-report {{isMaximize ? 'is-maximize' : ''}}"> -->
+<div class="container-report {{isMaximize ? 'is-maximize' : ''}}">
   <div class="top">
     <div class="left">
       <span class="report-title">Untitled Report</span>

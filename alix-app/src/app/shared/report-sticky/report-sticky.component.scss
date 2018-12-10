@@ -7,7 +7,7 @@
   bottom: 20px;
   z-index: 9999;
   border-radius: $border-radius__default;
-  box-shadow: 0px 4px 30px 10px rgba(black, 0.25);
+  pointer-events: none;
 }
 
 ul {
@@ -19,37 +19,51 @@ ul {
 }
 
 .report-sticky-container {
+  min-height: 54px;
   border-radius: $border-radius__default;
-  overflow: hidden;
+  // overflow: hidden;
+  transform: translateX(100%);
+  box-shadow: 0px 4px 30px 10px rgba(black, 0.25);
+  pointer-events: all;
+  @include align(stretch);
+  @include anim(all);
 
   &.is-open {
+    transform: translateX(0);
     border-bottom-left-radius: 0 !important;
   }
 }
 
 .container {
   padding-right: 20px;
+  box-shadow: 0px 4px 30px 10px rgba(black, 0.25);
   @include align(middle between);
 
   .report-counter {
-    flex: 0 0 30px;
+    flex: 0 0 40px;
+    font-weight: $font-weight--bold;
+    align-self: stretch;
+    @include align(middle center);
   }
   .report-title {
     flex: 1;
     height: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
     padding-left: 20px;
     @include align(middle);
 
     .title-report {
-      flex: 1;
+      // flex: 1;
       height: 100%;
       padding: 0 !important;
       font-weight: bold;
     }
 
     .title-added {
-      flex: 1;
+      // flex: 1;
       height: 100%;
+      margin-left: 15px;
     }
   }
 
@@ -68,11 +82,18 @@ ul {
 }
 
 .container-report {
-  height: 500px;
-  display: flex;
-  flex-direction: column;
+  height: 0;
   background-color: $color2;
   border-radius: 0 0 $border-radius__default $border-radius__default;
+  pointer-events: all;
+  box-shadow: 0px 4px 30px 10px rgba(black, 0.25);
+  overflow: hidden;
+  @include align(column);
+  @include anim(all);
+
+  &.is-maximize {
+    height: 500px;
+  }
 
   .top {
     padding: 20px;

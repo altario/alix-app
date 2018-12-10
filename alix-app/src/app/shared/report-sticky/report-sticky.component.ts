@@ -25,13 +25,13 @@ export class ReportStickyComponent implements OnInit {
     this.report.data.subscribe((data) => {
       if (data) {
         this.counter += 1;
-        this.title = data.title;
+        this.title = data.title || 'Position';
         this.reportList.push(data);
         this.isOpen = true;
       }
     });
 
-    console.log(this.isOpen);
+    // console.log(this.isOpen);
   }
 
   openClose() {
