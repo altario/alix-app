@@ -400,7 +400,7 @@ export class LocationComponent implements OnInit {
       },
       yAxis: {
         type: 'value',
-        name: 'Price Range',
+        name: 'Time Range',
         nameTextStyle: {
           color: '#FFFFFF',
           padding: [0, 125, 0, 0]
