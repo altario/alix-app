@@ -261,7 +261,7 @@ export class StateOfConservationComponent implements OnInit {
       showSymbol: true,
       symbol: eChartsConfig.series.symbol,
       symbolSize: eChartsConfig.series.symbolSize,
-      lineStyle: { ...eChartsConfig.series.lineStyle, color: lineColors[i] },
+      lineStyle: { ...eChartsConfig.series.lineStyle, color: lineColors[i], type: 'solid' },
       itemStyle: { color: lineColors[i] }
     }));
 
@@ -272,7 +272,7 @@ export class StateOfConservationComponent implements OnInit {
       showSymbol: false,
       symbol: 'none',
       symbolSize: 0,
-      lineStyle: { ...eChartsConfig.series.lineStyle, color: '#FF0000' },
+      lineStyle: { ...eChartsConfig.series.lineStyle, color: '#FF0000', type: 'dotted' },
       itemStyle: { color: '#FF0000' }
     });
 
@@ -324,7 +324,7 @@ export class StateOfConservationComponent implements OnInit {
 
     x.push({
       type: 'effectScatter',
-      color: '##FF0000',
+      color: '#FF0000',
       symbolSize: 20,
       data: [dataComparison.sqmPricePerStateOfConservationBarPlot.values]
     });

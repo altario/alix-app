@@ -355,7 +355,7 @@ export class DemandAndOfferComponent implements OnInit {
       showSymbol: false,
       symbol: 'none',
       symbolSize: 0,
-      lineStyle: { ...eChartsConfig.series.lineStyle, color: '#FF0000' },
+      lineStyle: { ...eChartsConfig.series.lineStyle, color: '#FF0000', type: 'dotted' },
       itemStyle: { color: '#FF0000' }
     });
   }
@@ -426,7 +426,7 @@ export class DemandAndOfferComponent implements OnInit {
       showSymbol: false,
       symbol: 'none',
       symbolSize: 0,
-      lineStyle: { ...eChartsConfig.series.lineStyle, color: '#FF0000' },
+      lineStyle: { ...eChartsConfig.series.lineStyle, color: '#FF0000', type: 'dotted' },
       itemStyle: { color: '#FF0000' }
     });
 

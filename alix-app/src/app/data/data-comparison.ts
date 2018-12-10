@@ -1,22 +1,22 @@
 export const dataComparison = {
   priceEvolutionBySc: {
     page: 'State of Conservation',
-    name: 'Price Evolution by State of Conservation',
+    name: 'Asset position today',
     values: [10150, 10150, 10150, 10150, 10150, 10150]
   },
   sqmPricePerStateOfConservationBarPlot: {
     page: 'State of Conservation',
-    name: 'SQM Price per State of Conservation bar plot',
+    name: 'Asset position today',
     values: [1, 10150]
   },
   neighborhoodMktValueVsReplacementCost: {
     page: 'Demand & Offer',
-    name: 'Market Value vs. Replacement Cost',
+    name: 'Asset position today',
     values: [10150, 10150, 10150, 10150, 10150, 10150, 10150, 10150, 10150, 10150, 10150]
   },
   priceSqmTodayVsOvertimeForSale: {
     page: 'Demand & Offer',
-    name: 'Price Sqm Today vs Radius Average over Time',
+    name: 'Asset position today',
     values: [10150, 10150, 10150, 10150, 10150, 10150]
   }
 }
