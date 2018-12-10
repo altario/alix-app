@@ -17,9 +17,11 @@
         <span class="label__up label--color">GBV</span>
       </div>
       <div class="cell__wrapper__info">
-        <p class="highlighted--big highlighted--color">
-          {{config.gbv.value | curr}} B
-          <small class="u-uppercase highlighted__small--color">€</small>
+        <p class="highlighted--big highlighted--color"
+          [appNum]="config.gbv.value"
+          [showUnit]="true"
+          [unitSmall]="false"
+          unitClass="u-uppercase highlighted__small--color">
         </p>
       </div>
     </div>
@@ -29,9 +31,11 @@
         <span class="label__up label--color">NBV</span>
       </div>
       <div class="cell__wrapper__info">
-        <p class="highlighted--big highlighted--color">
-          {{config.nbv.value | curr}} B
-          <small class="u-uppercase highlighted__small--color">€</small>
+        <p class="highlighted--big highlighted--color"
+          [appNum]="config.nbv.value"
+          [showUnit]="true"
+          [unitSmall]="false"
+          unitClass="u-uppercase highlighted__small--color">
         </p>
       </div>
     </div>
@@ -42,7 +46,7 @@
       </div>
       <div class="cell__wrapper__info">
         <p class="highlighted--big highlighted--color">
-          {{config.raroc.value | perc}}
+          {{config.raroc.value | perc:1}} %
         </p>
       </div>
     </div>
@@ -64,7 +68,7 @@
       </div>
       <div class="cell__wrapper__info">
         <p class="highlighted--big highlighted--color">
-          {{config.weightedAveragePricing.value | perc:1}}
+          {{config.weightedAveragePricing.value | perc:1}} %
         </p>
       </div>
     </div>
@@ -96,9 +100,11 @@
         <span class="label__up label--color">Regulatory Total Capital</span>
       </div>
       <div class="cell__wrapper__info">
-        <p class="highlighted--big highlighted--color">
-          {{config.regulatoryTotalCapital.value | curr}} M
-          <small class="u-uppercase highlighted__small--color">€</small>
+        <p class="highlighted--big highlighted--color"
+            [appNum]="config.regulatoryTotalCapital.value"
+          [showUnit]="true"
+          [unitSmall]="false"
+          unitClass="u-uppercase highlighted__small--color">
         </p>
       </div>
     </div>

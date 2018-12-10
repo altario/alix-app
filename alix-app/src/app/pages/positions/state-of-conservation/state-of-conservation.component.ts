@@ -11,6 +11,7 @@ import * as mapLatLng from '@data/map-dataset';
 // graph color overrides
 import { eChartsConfig } from '@global/charts';
 import { mapStyle } from '@global/map';
+import { dataComparison } from '@app/data/data-comparison';
 
 @Component({
   selector: 'app-state-of-conservation',
@@ -26,8 +27,8 @@ export class StateOfConservationComponent implements OnInit {
   public selectedSOCAllAssets: object;
   public imageTransitionValue = '2018';
   public imageTransitionObject = {
-    '2015': ['assets/images/differencePerYear/street-left2.png', 'assets/images/differencePerYear/street-right2.png'],
-    '2018': ['assets/images/differencePerYear/street-left1.png', 'assets/images/differencePerYear/street-right1.png']
+    '2015': ['assets/images/differencePerYear/street-left2.jpg', 'assets/images/differencePerYear/street-right2.jpg'],
+    '2018': ['assets/images/differencePerYear/street-left1.jpg', 'assets/images/differencePerYear/street-right1.jpg']
   }; // #HC
 
   public numbOfAssetsBySc;
@@ -54,6 +55,9 @@ export class StateOfConservationComponent implements OnInit {
   style1 = mapStyle;
   style2 = mapStyle;
   markers2: any[];
+  dots: any[];
+  dotimage: any;
+  showImage: boolean;
 
   constructor(private route: ActivatedRoute) { }
 
@@ -69,7 +73,8 @@ export class StateOfConservationComponent implements OnInit {
       this.numbOfAssetsBySc = this.getnumbOfAssetsBySc();
       this.priceEvolutionBySc = this.getpriceEvolutionBySc();
 
-      this.markers = this.getMarkers(); this.markers2 = this.getMarkers2();
+      this.markers = this.getMarkers();
+      this.dots = this.generateDots();
     });
   }
 
@@ -193,6 +198,7 @@ export class StateOfConservationComponent implements OnInit {
       name: line.stateOfConservation,
       data: line.values,
       type: 'line',
+      showSymbol: true,
       symbol: eChartsConfig.series.symbol,
       symbolSize: eChartsConfig.series.symbolSize,
       lineStyle: { ...eChartsConfig.series.lineStyle, color: lineColors[i] },
@@ -256,11 +262,23 @@ export class StateOfConservationComponent implements OnInit {
       name: line.stateOfConservation,
       data: line.values,
       type: 'line',
+      showSymbol: true,
       symbol: eChartsConfig.series.symbol,
       symbolSize: eChartsConfig.series.symbolSize,
-      lineStyle: { ...eChartsConfig.series.lineStyle, color: lineColors[i] },
+      lineStyle: { ...eChartsConfig.series.lineStyle, color: lineColors[i], type: 'solid' },
       itemStyle: { color: lineColors[i] }
     }));
+
+    series.push({
+      name: dataComparison.priceEvolutionBySc.name,
+      data: dataComparison.priceEvolutionBySc.values,
+      type: 'line',
+      showSymbol: false,
+      symbol: 'none',
+      symbolSize: 0,
+      lineStyle: { ...eChartsConfig.series.lineStyle, color: '#FF0000', type: 'dotted' },
+      itemStyle: { color: '#FF0000' }
+    });
 
     return series;
   }
@@ -308,11 +326,70 @@ export class StateOfConservationComponent implements OnInit {
 
     const x = series.map((line) => line.values).shift();
 
+    x.push({
+      type: 'effectScatter',
+      color: '#FF0000',
+      symbolSize: 20,
+      data: [dataComparison.sqmPricePerStateOfConservationBarPlot.values]
+    });
+
     return x;
   }
 
   onChartInit(chart, e) {
     this.chartInstance[chart] = e;
+  }
+
+  generateDots() {
+    const bubbleSize = 10;
+    const divMargin = 20;
+
+    const dotsColors = [
+        '#7AC143',
+    ];
+
+    const dots = [];
+    const imgs = [
+      'img_map_01.jpg',
+      'img_map_02.jpg',
+      'img_map_03.jpg',
+      'img_map_04.jpg',
+      'img_map_05.jpg',
+      'img_map_06.jpg',
+      'img_map_07.jpg',
+      'img_map_08.jpg',
+      'img_map_09.jpg',
+      'img_map_10.jpg',
+      'img_map_11.jpg',
+      'img_map_12.jpg'
+    ];
+
+    for (let i = 0; i < 12; i++) {
+      dots.push({
+        lat: Math.floor(Math.random() * 85) + 15,
+        lng: Math.floor(Math.random() * 85) + 15,
+        img: '/assets/images/soc_map/' + imgs.shift(),
+        color: '#7AC143'
+      });
+    }
+
+    return dots;
+  }
+
+  onShowLightbox( evt, dot ): void {
+
+    if(evt) {
+      evt.stopPropagation();
+    }
+
+
+    this.dotimage = JSON.parse(JSON.stringify(dot));
+    this.dotimage.lat+= 3;
+    this.dotimage.lng-= 5;
+    this.showImage = true;
+  }
+  hideLightbox(){
+    this.showImage = false;
   }
 }
 

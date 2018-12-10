@@ -6,6 +6,15 @@
   top: 0;
   right: 0;
   z-index: 10;
+  cursor: pointer;
+  @include anim;
+
+  &:hover {
+    i {
+      @include anim;
+      color: white;
+    }
+  }
 
   .box {
     background: transparent;

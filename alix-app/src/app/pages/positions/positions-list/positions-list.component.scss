@@ -1,3 +1,11 @@
+:host {
+  ul {
+    margin-top: -20px;
+    list-style: none;
+  }
+}
+
+
 .container-fluid > .row {
   min-width: 1024px;
   max-width: 1260px;
@@ -5,12 +13,30 @@
   margin: 40px auto 20px;
  }
 
-ul,
-h1 {
+ul {
   padding: 0 20px;
 }
 
-ul {
-  margin-top: 30px;
-  list-style: none;
+.form-group {
+  margin: 5px 0;
+  label {
+    padding: 0 0 3px 3px;
+  }
+}
+
+.sidebar {
+  width: 22%;
+  min-width: 230px;
+  max-width: 290px;
+  position: fixed;
+  top: 190px;
+}
+
+.section-title {
+  top: 100px;
+  position: fixed;
+}
+
+.container-fluid .page-section > * + * {
+  margin-top: 80px;
 }

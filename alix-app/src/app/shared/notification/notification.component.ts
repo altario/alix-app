@@ -1,6 +1,7 @@
 // angular
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { PositionsReportService } from '@app/services/reports.service';
 
 @Component({
   selector: 'app-notification-row',
@@ -12,15 +13,18 @@ export class NotificationRowComponent implements OnInit {
   @Input() type = 'big';
   @Input() inPortfolio = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private report: PositionsReportService) {}
 
   ngOnInit() {
-    console.log(this.notification)
   }
 
   goToPortfolio(notification: any) {
     this.router.navigate(['monitor/portfolios', notification.portfolioId || 2], {
       queryParams: { type: 'notification', id: notification.id }
     });
+  }
+  
+  addToReport(title) {
+    this.report.update({title: title});
   }
 }

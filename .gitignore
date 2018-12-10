@@ -50,3 +50,4 @@ charts/*.tgz
 _site
 _book
 /documentation/_book
+/s3website

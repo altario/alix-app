@@ -2,7 +2,7 @@
 
 <div class="box box--table">
   <div class="box__header box__header--bg">
-    <div class="d-flex flex-row justify-content-between">
+    <div class="row-justified">
       <div class="title--compound">
         <div class="main__title">
           <span class="u-strong u-uppercase">Replacement Indicators</span>
@@ -27,17 +27,29 @@
     <div class=" cell__wrapper cell__wrapper--bg-dark">
       <div class="text-row">
         <span>{{ config.replacementCost.label }}</span>
-        <span class="u-strong"> {{ config.replacementCost.value | curr:0 }}k</span>
+        <span class="u-strong"
+          [appNum]="config.replacementCost.value"
+          [showUnit]="true"
+          [unitSmall]="false"></span>
         /
-        <span class="u-strong">{{ config.replacementCostSqm.value | curr:0 }}k</span>
+        <span class="u-strong"
+          [appNum]="config.replacementCostSqm.value"
+          [showUnit]="true"
+          [unitSmall]="false"></span>
         <span> {{ config.replacementCostSqm.label }}</span>
       </div>
 
       <div class="text-row">
         <span>Market Price:</span>
-        <span class="u-strong">{{ config.marketPrice.value | curr:0 }}</span>
+        <span class="u-strong"
+          [appNum]="config.marketPrice.value"
+          [showUnit]="true"
+          [unitSmall]="false"></span>
        /
-        <span class="u-strong">{{ config.marketPriceSqmForSale.value | curr:0 }}</span>
+        <span class="u-strong"
+          [appNum]="config.marketPriceSqmForSale.value"
+          [showUnit]="true"
+          [unitSmall]="false"></span>
         <span> per SQM</span>
       </div>
 
@@ -47,12 +59,18 @@
       </div>
       <div class="text-row">
         <span>Exposure:</span>
-        <span class="u-strong">{{ config.exposure.value | curr:0 }}k</span>
+        <span class="u-strong"
+          [appNum]="config.exposure.value"
+          [showUnit]="true"
+          [unitSmall]="false"></span>
       </div>
 
       <div class="text-row">
         <span>{{ config.exposureAfterReplacementAbs.label }}</span>
-        <span class="u-strong">{{ config.exposureAfterReplacementAbs.value | curr:0 }}k</span>
+        <span class="u-strong"
+          [appNum]="config.exposureAfterReplacementAbs.value"
+          [showUnit]="true"
+          [unitSmall]="false"></span>
       </div>
       <div class="text-row">
         <span>{{ config.exposureAfterReplacementPerc.label }}</span>
@@ -61,11 +79,14 @@
 
       <div class="text-row">
         <span>{{ config.monthlyInstallment.label }}</span>
-        <span class="u-strong">{{ config.monthlyInstallment.value | curr:1}}k</span>
+        <span class="u-strong"
+          [appNum]="config.monthlyInstallment.value"
+          [showUnit]="true"
+          [unitSmall]="false"></span>
       </div>
       <div class="text-row">
         <span>{{ config.timeReplacementIsFulfilled.label }}</span>
-        <span class="u-strong"> {{ config.timeReplacementIsFulfilled.value | number:'1.0-0'}}</span>
+        <span class="u-strong"> {{ config.timeReplacementIsFulfilled.value | number:'1.0-0'}}Y</span>
       </div>
     </div>
   </div>

@@ -58,7 +58,7 @@
       </div>
       <div class="col-4">
         <app-panel-30 [config]="{
-          name: 'Museums & Art Galeries',
+          name: 'Museums & Art Galleries',
           total: config.retailersBreakdown.museumArtGalleries.value,
           rating: config.retailersBreakdown.growth2YMuseumArtGalleries.value,
           growth: config.retailersBreakdown.growthGrowth2YMuseumArtGalleries.value
@@ -130,7 +130,7 @@
       </div>
       <div class="col-8 in-METROSTATIONS">
         <agm-map [disableDefaultUI]="false" [latitude]="lat" [longitude]="lng" [zoom]="zoom" 
-            [gestureHandling]="'none'" [zoomControl]="false" [streetViewControl]="false">
+            [gestureHandling]="'none'" [zoomControl]="false" [streetViewControl]="false" [styles]="style1">
             <agm-circle [latitude]="lat" [longitude]="lng" [radius]="radius" [fillColor]="'red'" [circleDraggable]="false"
                 [editable]="false">
             </agm-circle>
@@ -143,14 +143,14 @@
     <div class="row">
       <div class="col-4">
         <app-panel-35 [config]="{
-          name: 'Malapensa Airport',
+          name: 'Malpensa Airport',
           taxi: config.distanceToKeyPoints.linateAirportsTaxi.value,
           pubTrans: config.distanceToKeyPoints.linateAirportsPublicTransportation.value
         }" icon="icon--big icol ico-plane-departure"></app-panel-35>
       </div>
       <div class="col-4">
         <app-panel-35 [config]="{
-          name: 'Mangiagalli Hospital',
+          name: 'Fatebenefratelli Hospital',
           taxi: config.distanceToKeyPoints.fatebenefratelliHospitalTaxi.value,
           walking: config.distanceToKeyPoints.fatebenefratelliHospitalWalking.value,
           pubTrans: config.distanceToKeyPoints.fatebenefratelliHospitalpublicTransportation.value

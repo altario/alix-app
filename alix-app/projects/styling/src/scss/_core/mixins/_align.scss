@@ -211,7 +211,7 @@
   }
 
   // space: evenly
-  @if index($map, space-evenly) {
+  @if index($map, evenly) {
     justify-content: space-evenly;
   }
 

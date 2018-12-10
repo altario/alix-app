@@ -1,6 +1,7 @@
 @import '~src/scss/imports';
 
 .box--table {
+  flex-direction: column;
   .box__body {
     padding: 0;
     display: flex;

@@ -4,7 +4,7 @@ const fontFamily = 'Lato';
 export const eChartsConfig = {
   title: {
     color: '#fff',
-    fontFamily: fontFamily,
+    //fontFamily: fontFamily,
     fontSize: 16,
     fontWeight: 'bold',
   },

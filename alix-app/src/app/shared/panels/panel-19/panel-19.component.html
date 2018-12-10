@@ -2,7 +2,7 @@
 
 <div class="box box--table">
   <div class="box__header box__header--bg">
-    <div class="d-flex flex-row justify-content-between">
+    <div class="row-justified">
       <div class="box__title title--compound">
         <h1 class="title"># Peer Assets Last 5 Years</h1>
       </div>
@@ -14,8 +14,10 @@
         <span class="label__up label--color">{{ config.population1.populationName.value }} </span>
       </div>
       <div class="cell__wrapper__info">
-        <p class="highlighted--big highlighted--color">
-          {{ config.population1.absPeerAssetsLuxuryLongRent5Y.value }}
+        <p class="highlighted--big highlighted--color"
+          [appNum]="config.population1.absPeerAssetsLuxuryLongRent5Y.value"
+          [showUnit]="false"
+          [unitSmall]="false">
         </p>
       </div>
     </div>
@@ -25,8 +27,10 @@
         <span class="label__up label--color">{{ config.population2.populationName.value }} </span>
       </div>
       <div class="cell__wrapper__info">
-        <p class="highlighted--big highlighted--color">
-          {{ config.population2.absPeerAssetsLuxuryLongRent5Y.value }}
+        <p class="highlighted--big highlighted--color"
+          [appNum]="config.population2.absPeerAssetsLuxuryLongRent5Y.value"
+          [showUnit]="false"
+          [unitSmall]="false">
         </p>
       </div>
     </div>
@@ -36,8 +40,10 @@
         <span class="label__up label--color">{{ config.population3.populationName.value }} </span>
       </div>
       <div class="cell__wrapper__info">
-        <p class="highlighted--big highlighted--color">
-          {{ config.population3.absPeerAssetsLuxuryLongRent5Y.value }}
+        <p class="highlighted--big highlighted--color"
+          [appNum]="config.population3.absPeerAssetsLuxuryLongRent5Y.value"
+          [showUnit]="false"
+          [unitSmall]="false">
         </p>
       </div>
     </div>

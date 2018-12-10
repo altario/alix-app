@@ -3,7 +3,7 @@
 
 <div class="box box--table">
   <div class="box__header box__header--bg">
-    <div class="d-flex flex-row justify-content-between">
+    <div class="row-justified">
       <div class="title--compound">
         <div class="main__title">
           <span class="u-strong u-uppercase">{{comparisonCriteria}}</span>
@@ -22,18 +22,17 @@
         <small class="u-uppercase highlighted__small--color">%</small>
       </div>
       <div class="highlighted--small highlighted--color">
-        <span>
-          {{config.comparableGradeAssetsAbs.value | curr:1}}
+        <span [appNum]="config.comparableGradeAssetsAbs.value"
+          [showUnit]="true"
+          [unitSmall]="true">
         </span>
         <small>
-          K out of
+          out of
         </small>
-        <span>
-          {{config.totalAssetsInAndOutsideRange.value | curr:1}}
+        <span [appNum]="config.totalAssetsInAndOutsideRange.value"
+          [showUnit]="true"
+          [unitSmall]="true">
         </span>
-        <small>
-          k
-        </small>
       </div>
       <div class="perc-bar">
         <div class="perc-bar__percentage" [style.width.%]="config.comparableGradeAssetsPerc.value | perc:1">
@@ -48,7 +47,7 @@
         <span>
           {{config.growth1YAbs.value }}
         </span>
-        <small class="unit">k</small>
+        <small class="unit"></small>
         <small class="highlighted__small--color">
           {{ config.growth1YAbs.label }}
         </small>
@@ -58,7 +57,7 @@
         <span>
           {{ config.growth5YAbs.value }}
         </span>
-        <small class="unit">k</small>
+        <small class="unit"></small>
         <small class="highlighted__small--color">
           {{config.growth5YAbs.label}}
         </small>

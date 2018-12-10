@@ -36,8 +36,8 @@ import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
   imports: [
     BrowserModule,
     RouterModule.forRoot(
-      AppRoutes
-      // { scrollPositionRestoration: 'enabled' } // 'disabled' | 'enabled' | 'top'
+      AppRoutes,
+      { scrollPositionRestoration: 'enabled' } // 'disabled' | 'enabled' | 'top'
     ),
     NgbModule.forRoot(),
     HttpModule,

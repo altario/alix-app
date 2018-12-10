@@ -5,8 +5,11 @@ import { ActivatedRoute } from '@angular/router';
 import * as dataset from '@data/dataset';
 import * as chartdataset from '@data/charts-dataset';
 import { dossier1PlotChartsData } from '@data/plotcharts-dataset';
+import * as extrachartdataset from '@data/extra-charts-dataset';
 
 import { eChartsConfig } from '@global/charts';
+import { numericalValues } from '@helpers/numerical-values.lib';
+import { dataComparison } from '@app/data/data-comparison';
 
 @Component({
   selector: 'app-demand-offer',
@@ -190,7 +193,7 @@ export class DemandAndOfferComponent implements OnInit {
             type: 'value',
             scale: true,
             axisLabel: {
-              formatter: function(x, y) {
+              formatter: function (x, y) {
                 return 'Label: ' + x;
               }
             }
@@ -241,6 +244,83 @@ export class DemandAndOfferComponent implements OnInit {
       }],
     };
 
+    const lineColors = { radius1Km: '#913BAF', portaNuova: '#F26D4F', milano: '#BF5E5E' };
+    const axisyLabel = JSON.parse(JSON.stringify(eChartsConfig.yAxis.axisLabel));
+    axisyLabel.formatter = function (value, index) {
+      const processedValue = numericalValues(value);
+      return processedValue.round + ' ' + (processedValue.unitname ? processedValue.unitname + '€' : '');
+    };
+
+    this.opts.shortTermRentEvolutionEurSqm = {
+      legend: {
+        data: [
+
+          { name: extrachartdataset.extra.shortTermRentEvolutionEurSqm.radius1Km.label, icon: 'rect' },
+          { name: extrachartdataset.extra.shortTermRentEvolutionEurSqm.portaNuova.label, icon: 'rect' },
+          { name: extrachartdataset.extra.shortTermRentEvolutionEurSqm.milano.label, icon: 'rect' },
+        ],
+        itemWidth: eChartsConfig.legend.itemWidth,
+        itemHeight: eChartsConfig.legend.itemHeight,
+        top: eChartsConfig.legend.top,
+        right: eChartsConfig.legend.right,
+        textStyle: {
+          fontSize: eChartsConfig.legend.fontSize,
+          color: eChartsConfig.legend.color
+        }
+      },
+      grid: eChartsConfig.grid,
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'cross',
+          label: {
+            backgroundColor: '#6a7985'
+          }
+        },
+        formatter: (params) => {
+          const colorSpan = color => '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' + color + '"></span>';
+          let rez = params[0].axisValue + '<br>';
+          params.forEach(item => {
+            const processedValue = numericalValues(item.data);
+            rez += colorSpan(item.color) + ' ' + item.seriesName + ': ' + processedValue.round + ' ' + (processedValue.unitname ? processedValue.unitname + '€' : '') + '<br />';
+          });
+
+          return rez;
+        }
+      },
+      xAxis: {
+        type: 'category',
+        data: extrachartdataset.extra.shortTermRentEvolutionEurSqm.year.values,
+        splitLine: eChartsConfig.xAxis.splitLine,
+        axisLabel: eChartsConfig.xAxis.axisLabel,
+        axisLine: eChartsConfig.xAxis.axisLine
+      },
+      yAxis: {
+        type: 'value',
+        splitLine: eChartsConfig.yAxis.splitLine,
+        axisLabel: axisyLabel,
+        axisLine: {
+          show: false
+        }
+      }
+    };
+
+    this.series.shortTermRentEvolutionEurSqm = Object.keys(extrachartdataset.extra.shortTermRentEvolutionEurSqm)
+      .reduce((prev, next, i) => {
+        if (next !== 'year') {
+          prev.push({
+            name: extrachartdataset.extra.shortTermRentEvolutionEurSqm[next].label,
+            data: extrachartdataset.extra.shortTermRentEvolutionEurSqm[next].values,
+            type: 'line',
+            symbol: eChartsConfig.series.symbol,
+            symbolSize: eChartsConfig.series.symbolSize,
+            lineStyle: { ...eChartsConfig.series.lineStyle, color: lineColors[next] },
+            itemStyle: { color: lineColors[next] }
+          });
+        }
+        return prev;
+      }, []);
+
 
     this.marketValue();
     this.priceTodayVsOvertime();
@@ -251,6 +331,7 @@ export class DemandAndOfferComponent implements OnInit {
     this.peerAssetsDemandRateListingToUnlistingForSale();
     this.peerAssetsDemandRateListingToUnlistingLr();
     this.peerAssetsOccupancyRateSr();
+    this.assetViewsVsTopOccupancySr();
   }
 
   getPopulationNames(): Array<any> {
@@ -283,6 +364,12 @@ export class DemandAndOfferComponent implements OnInit {
 
   marketValue() {
     const lineColors = ['#FFFFFF', '#00B5E9', '#7AC143'];
+    const axisyLabel = JSON.parse(JSON.stringify(eChartsConfig.yAxis.axisLabel));
+    axisyLabel.formatter = function (value, index) {
+      const processedValue = numericalValues(value);
+      return processedValue.round + ' ' + (processedValue.unitname ? processedValue.unitname + '€' : '');
+    };
+
     this.opts.marketValue = {
       title: {
         text: 'Market Value -VS- Replacement Cost', // #HC
@@ -292,8 +379,8 @@ export class DemandAndOfferComponent implements OnInit {
       },
       legend: {
         data: [
-          {name: chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost.marketValueSqm.label, icon: 'rect'},
-          {name: chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost.replacementCostSqm.label, icon: 'rect'}
+          { name: chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost.marketValueSqm.label, icon: 'rect' },
+          { name: chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost.replacementCostSqm.label, icon: 'rect' }
         ],
         itemWidth: eChartsConfig.legend.itemWidth,
         itemHeight: eChartsConfig.legend.itemHeight,
@@ -307,11 +394,21 @@ export class DemandAndOfferComponent implements OnInit {
       grid: eChartsConfig.grid,
       tooltip: {
         trigger: 'axis',
-          axisPointer: {
+        axisPointer: {
           type: 'cross',
-            label: {
+          label: {
             backgroundColor: '#6a7985'
           }
+        },
+        formatter: (params) => {
+          const colorSpan = color => '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' + color + '"></span>';
+          let rez = params[0].axisValue + '<br>';
+          params.forEach(item => {
+            const processedValue = numericalValues(item.data);
+            rez += colorSpan(item.color) + ' ' + item.seriesName + ': ' + processedValue.round + ' ' + (processedValue.unitname ? processedValue.unitname + '€' : '') + '<br />';
+          });
+
+          return rez;
         }
       },
       xAxis: {
@@ -324,7 +421,7 @@ export class DemandAndOfferComponent implements OnInit {
       yAxis: {
         type: 'value',
         splitLine: eChartsConfig.yAxis.splitLine,
-        axisLabel: eChartsConfig.yAxis.axisLabel,
+        axisLabel: axisyLabel,
         axisLine: {
           show: false
         }
@@ -333,23 +430,116 @@ export class DemandAndOfferComponent implements OnInit {
 
     this.series.marketValue = Object.keys(chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost)
       .reduce((prev, next, i) => {
-          if (next !== 'year') {
-            prev.push({
-              name: chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost[next].label,
-              data: chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost[next].values,
-              type: 'line',
-              symbol: eChartsConfig.series.symbol,
-              symbolSize: eChartsConfig.series.symbolSize,
-              lineStyle: {...eChartsConfig.series.lineStyle, color: lineColors[i] },
-              itemStyle: { color: lineColors[i] }
-            });
-          }
+        if (next !== 'year') {
+          prev.push({
+            name: chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost[next].label,
+            data: chartdataset.dossier1ChartsData.demandOffer.neighborhoodMktValueVsReplacementCost[next].values,
+            type: 'line',
+            symbol: eChartsConfig.series.symbol,
+            symbolSize: eChartsConfig.series.symbolSize,
+            lineStyle: { ...eChartsConfig.series.lineStyle, color: lineColors[i] },
+            itemStyle: { color: lineColors[i] }
+          });
+        }
         return prev;
       }, []);
+
+    this.series.marketValue.push({
+      name: dataComparison.neighborhoodMktValueVsReplacementCost.name,
+      data: dataComparison.neighborhoodMktValueVsReplacementCost.values,
+      type: 'line',
+      showSymbol: false,
+      symbol: 'none',
+      symbolSize: 0,
+      lineStyle: { ...eChartsConfig.series.lineStyle, color: '#FF0000', type: 'dotted' },
+      itemStyle: { color: '#FF0000' }
+    });
+  }
+
+  assetViewsVsTopOccupancySr(population = 'population1') {
+
+    const lineColors = ['#913BAF', '#F26D4F', '#BF5E5E' ];
+    const axisyLabel = JSON.parse(JSON.stringify(eChartsConfig.yAxis.axisLabel));
+    axisyLabel.formatter = function (value, index) {
+      const processedValue = numericalValues(value);
+      return processedValue.round + ' ' + (processedValue.unitname ? processedValue.unitname + '€' : '');
+    };
+    const series = extrachartdataset.extra.assetViewsVsTopOccupancySr.filter((row) => row.population === population);
+
+    this.opts.assetViewsVsTopOccupancySr = {
+
+      legend: {
+        data: series.map((row) => {
+          return { name: row.stateOfConservation, icon: 'rect' };
+        }),
+        itemWidth: eChartsConfig.legend.itemWidth,
+        itemHeight: eChartsConfig.legend.itemHeight,
+        top: eChartsConfig.legend.top,
+        right: eChartsConfig.legend.right,
+        textStyle: {
+          fontSize: eChartsConfig.legend.fontSize,
+          color: eChartsConfig.legend.color
+        }
+      },
+      grid: eChartsConfig.grid,
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'cross',
+          label: {
+            backgroundColor: '#6a7985'
+          }
+        },
+        formatter: (params) => {
+          const colorSpan = color => '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' + color + '"></span>';
+          let rez = params[0].axisValue + '<br>';
+          params.forEach(item => {
+            const processedValue = numericalValues(item.data);
+            rez += colorSpan(item.color) + ' ' + item.seriesName + ': ' + processedValue.round + ' ' + (processedValue.unitname ? processedValue.unitname + '€' : '') + '<br />';
+          });
+
+          return rez;
+        }
+      },
+      xAxis: {
+        type: 'category',
+        data: [2013,2014,2015,2016,2017,2018],
+        splitLine: eChartsConfig.xAxis.splitLine,
+        axisLabel: eChartsConfig.xAxis.axisLabel,
+        axisLine: eChartsConfig.xAxis.axisLine
+      },
+      yAxis: {
+        type: 'value',
+        splitLine: eChartsConfig.yAxis.splitLine,
+        axisLabel: axisyLabel,
+        axisLine: {
+          show: false
+        }
+      }
+    };
+
+    this.series.assetViewsVsTopOccupancySr = series.map((row,i) => {
+      return {
+        name: row.stateOfConservation,
+        data: row.values,
+        type: 'line',
+        symbol: eChartsConfig.series.symbol,
+        symbolSize: eChartsConfig.series.symbolSize,
+        lineStyle: { ...eChartsConfig.series.lineStyle, color: lineColors[i] },
+        itemStyle: { color: lineColors[i] }
+      }
+    });
+
   }
 
   priceTodayVsOvertime(population = 'radius1Km') {
-    const lineColors = {radius1Km: '#913BAF', portaNuova: '#F26D4F', milano: '#BF5E5E'};
+    const lineColors = { radius1Km: '#913BAF', portaNuova: '#F26D4F', milano: '#BF5E5E' };
+    const axisyLabel = JSON.parse(JSON.stringify(eChartsConfig.yAxis.axisLabel));
+    axisyLabel.formatter = function (value, index) {
+      const processedValue = numericalValues(value);
+      return processedValue.round + ' ' + (processedValue.unitname ? processedValue.unitname + '€' : '');
+    };
+
     this.opts.priceTodayVsOvertime = {
       title: {
         text: 'PRICE Sqm. TODAY VS RADIUS AVG OVER TIME', // #HC
@@ -359,7 +549,7 @@ export class DemandAndOfferComponent implements OnInit {
       },
       legend: {
         data: [
-          {name: chartdataset.dossier1ChartsData.demandOffer.priceTodayVsOvertime[population].label, icon: 'rect'},
+          { name: chartdataset.dossier1ChartsData.demandOffer.priceTodayVsOvertime[population].label, icon: 'rect' },
         ],
         itemWidth: eChartsConfig.legend.itemWidth,
         itemHeight: eChartsConfig.legend.itemHeight,
@@ -373,11 +563,21 @@ export class DemandAndOfferComponent implements OnInit {
       grid: eChartsConfig.grid,
       tooltip: {
         trigger: 'axis',
-          axisPointer: {
+        axisPointer: {
           type: 'cross',
-            label: {
+          label: {
             backgroundColor: '#6a7985'
           }
+        },
+        formatter: (params) => {
+          const colorSpan = color => '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' + color + '"></span>';
+          let rez = params[0].axisValue + '<br>';
+          params.forEach(item => {
+            const processedValue = numericalValues(item.data);
+            rez += colorSpan(item.color) + ' ' + item.seriesName + ': ' + processedValue.round + ' ' + (processedValue.unitname ? processedValue.unitname + '€' : '') + '<br />';
+          });
+
+          return rez;
         }
       },
       xAxis: {
@@ -390,7 +590,7 @@ export class DemandAndOfferComponent implements OnInit {
       yAxis: {
         type: 'value',
         splitLine: eChartsConfig.yAxis.splitLine,
-        axisLabel: eChartsConfig.yAxis.axisLabel,
+        axisLabel: axisyLabel,
         axisLine: {
           show: false
         }
@@ -403,9 +603,20 @@ export class DemandAndOfferComponent implements OnInit {
       type: 'line',
       symbol: eChartsConfig.series.symbol,
       symbolSize: eChartsConfig.series.symbolSize,
-      lineStyle: {...eChartsConfig.series.lineStyle, color: lineColors[population] },
+      lineStyle: { ...eChartsConfig.series.lineStyle, color: lineColors[population] },
       itemStyle: { color: lineColors[population] }
     }];
+
+    this.series.priceTodayVsOvertime.push({
+      name: dataComparison.priceSqmTodayVsOvertimeForSale.name,
+      data: dataComparison.priceSqmTodayVsOvertimeForSale.values,
+      type: 'line',
+      showSymbol: false,
+      symbol: 'none',
+      symbolSize: 0,
+      lineStyle: { ...eChartsConfig.series.lineStyle, color: '#FF0000', type: 'dotted' },
+      itemStyle: { color: '#FF0000' }
+    });
 
   }
 
@@ -419,9 +630,9 @@ export class DemandAndOfferComponent implements OnInit {
       },
       legend: {
         data: [
-          {name: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YForSale['radius1Km'].label, icon: 'rect'},
-          {name: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YForSale['portaNuova'].label, icon: 'rect'},
-          {name: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YForSale['milano'].label, icon: 'rect'},
+          { name: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YForSale['radius1Km'].label, icon: 'rect' },
+          { name: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YForSale['portaNuova'].label, icon: 'rect' },
+          { name: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YForSale['milano'].label, icon: 'rect' },
         ],
         itemWidth: eChartsConfig.legend.itemWidth,
         itemHeight: eChartsConfig.legend.itemHeight,
@@ -435,9 +646,9 @@ export class DemandAndOfferComponent implements OnInit {
       grid: eChartsConfig.grid,
       tooltip: {
         trigger: 'axis',
-          axisPointer: {
+        axisPointer: {
           type: 'cross',
-            label: {
+          label: {
             backgroundColor: '#6a7985'
           }
         }
@@ -451,6 +662,12 @@ export class DemandAndOfferComponent implements OnInit {
       },
       yAxis: {
         type: 'value',
+        name: 'Num of Assets',
+        nameTextStyle: {
+          color: '#FFFFFF',
+          padding: [0, 100, 0, 0]
+        },
+        nameLocation: 'end',
         splitLine: eChartsConfig.yAxis.splitLine,
         axisLabel: eChartsConfig.yAxis.axisLabel,
         axisLine: {
@@ -465,7 +682,7 @@ export class DemandAndOfferComponent implements OnInit {
       type: 'line',
       symbol: eChartsConfig.series.symbol,
       symbolSize: eChartsConfig.series.symbolSize,
-      lineStyle: {...eChartsConfig.series.lineStyle, color: '#913BAF' },
+      lineStyle: { ...eChartsConfig.series.lineStyle, color: '#913BAF' },
       itemStyle: { color: '#913BAF' }
     }, {
       name: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YForSale['portaNuova'].label,
@@ -473,7 +690,7 @@ export class DemandAndOfferComponent implements OnInit {
       type: 'line',
       symbol: eChartsConfig.series.symbol,
       symbolSize: eChartsConfig.series.symbolSize,
-      lineStyle: {...eChartsConfig.series.lineStyle, color: '#F26D4F' },
+      lineStyle: { ...eChartsConfig.series.lineStyle, color: '#F26D4F' },
       itemStyle: { color: '#F26D4F' }
     }, {
       name: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YForSale['milano'].label,
@@ -481,7 +698,7 @@ export class DemandAndOfferComponent implements OnInit {
       type: 'line',
       symbol: eChartsConfig.series.symbol,
       symbolSize: eChartsConfig.series.symbolSize,
-      lineStyle: {...eChartsConfig.series.lineStyle, color: '#BF5E5E' },
+      lineStyle: { ...eChartsConfig.series.lineStyle, color: '#BF5E5E' },
       itemStyle: { color: '#BF5E5E' }
     }];
   }
@@ -529,7 +746,7 @@ export class DemandAndOfferComponent implements OnInit {
       }
     };
 
-    const lineColors = {radius1Km: '#913BAF', portaNuova: '#F26D4F', milano: '#BF5E5E'};
+    const lineColors = { radius1Km: '#913BAF', portaNuova: '#F26D4F', milano: '#BF5E5E' };
 
     this.series.peerAssetsDemandRateListingToUnlistingForSale =
       Object.keys(chartdataset.dossier1ChartsData.demandOffer.peerAssetsDemandRateListingToUnlistingForSale).reduce((prev, next, i) => {
@@ -547,7 +764,7 @@ export class DemandAndOfferComponent implements OnInit {
       }, []);
   }
 
-  longTermRentEvolutionEurSqm(population = 'population1') {
+  longTermRentEvolutionEurSqm(population = 'population1') {
     const populationNames = {
       population1: 'radius1Km',
       population2: 'portaNuova',
@@ -564,9 +781,9 @@ export class DemandAndOfferComponent implements OnInit {
       grid: eChartsConfig.grid,
       tooltip: {
         trigger: 'axis',
-          axisPointer: {
+        axisPointer: {
           type: 'cross',
-            label: {
+          label: {
             backgroundColor: '#6a7985'
           }
         }
@@ -596,7 +813,7 @@ export class DemandAndOfferComponent implements OnInit {
           type: 'line',
           symbol: eChartsConfig.series.symbol,
           symbolSize: eChartsConfig.series.symbolSize,
-          lineStyle: {...eChartsConfig.series.lineStyle, color: '#79C14C' },
+          lineStyle: { ...eChartsConfig.series.lineStyle, color: '#79C14C' },
           itemStyle: { color: '#79C14C' }
         });
 
@@ -605,7 +822,7 @@ export class DemandAndOfferComponent implements OnInit {
   }
 
   peerListedAssets5YLr() {
-    const lineColors = {radius1Km: '#913BAF', portaNuova: '#F26D4F', milano: '#BF5E5E'};
+    const lineColors = { radius1Km: '#913BAF', portaNuova: '#F26D4F', milano: '#BF5E5E' };
     this.opts.peerListedAssets5YLr = {
       title: {
         text: 'Volume of RE Listed Assets > Last 5 Years', // #HC
@@ -616,9 +833,9 @@ export class DemandAndOfferComponent implements OnInit {
       legend: {
         data: Object.keys(chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YLr)
           .reduce((prev, next, index) => {
-              if (next !== 'year') {
-                prev.push({name: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YLr[next].label, icon: 'rect'});
-              }
+            if (next !== 'year') {
+              prev.push({ name: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YLr[next].label, icon: 'rect' });
+            }
             return prev;
           }, []),
         itemWidth: eChartsConfig.legend.itemWidth,
@@ -633,9 +850,9 @@ export class DemandAndOfferComponent implements OnInit {
       grid: eChartsConfig.grid,
       tooltip: {
         trigger: 'axis',
-          axisPointer: {
+        axisPointer: {
           type: 'cross',
-            label: {
+          label: {
             backgroundColor: '#6a7985'
           }
         }
@@ -649,6 +866,11 @@ export class DemandAndOfferComponent implements OnInit {
       },
       yAxis: {
         type: 'value',
+        name: 'Num of Assets',
+        nameTextStyle: {
+          color: '#FFFFFF',
+          padding: [0, 100, 0, 0]
+        },
         splitLine: eChartsConfig.yAxis.splitLine,
         axisLabel: eChartsConfig.yAxis.axisLabel,
         axisLine: {
@@ -659,17 +881,17 @@ export class DemandAndOfferComponent implements OnInit {
 
     this.series.peerListedAssets5YLr = Object.keys(chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YLr)
       .reduce((prev, next, index) => {
-          if (next !== 'year') {
-            prev.push({
-              name: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YLr[next].label,
-              data: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YLr[next].values,
-              type: 'line',
-              symbol: eChartsConfig.series.symbol,
-              symbolSize: eChartsConfig.series.symbolSize,
-              lineStyle: {...eChartsConfig.series.lineStyle, color: lineColors[next] },
-              itemStyle: { color: lineColors[next] }
-            });
-          }
+        if (next !== 'year') {
+          prev.push({
+            name: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YLr[next].label,
+            data: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YLr[next].values,
+            type: 'line',
+            symbol: eChartsConfig.series.symbol,
+            symbolSize: eChartsConfig.series.symbolSize,
+            lineStyle: { ...eChartsConfig.series.lineStyle, color: lineColors[next] },
+            itemStyle: { color: lineColors[next] }
+          });
+        }
         return prev;
       }, []);
   }
@@ -717,7 +939,7 @@ export class DemandAndOfferComponent implements OnInit {
       }
     };
 
-    const lineColors = {radius1Km: '#913BAF', portaNuova: '#F26D4F', milano: '#BF5E5E'};
+    const lineColors = { radius1Km: '#913BAF', portaNuova: '#F26D4F', milano: '#BF5E5E' };
 
     this.series.peerAssetsDemandRateListingToUnlistingLr =
       Object.keys(chartdataset.dossier1ChartsData.demandOffer.peerAssetsDemandRateListingToUnlistingLr).reduce((prev, next, i) => {
@@ -736,7 +958,7 @@ export class DemandAndOfferComponent implements OnInit {
   }
 
   peerListedAssets5YSr() {
-    const lineColors = {radius1Km: '#913BAF', portaNuova: '#F26D4F', milano: '#BF5E5E'};
+    const lineColors = { radius1Km: '#913BAF', portaNuova: '#F26D4F', milano: '#BF5E5E' };
     this.opts.peerListedAssets5YSr = {
       title: {
         text: 'Volume of RE Listed Assets > Last 5 Years', // #HC
@@ -747,9 +969,9 @@ export class DemandAndOfferComponent implements OnInit {
       legend: {
         data: Object.keys(chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YSr)
           .reduce((prev, next, index) => {
-              if (next !== 'year') {
-                prev.push({name: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YSr[next].label, icon: 'rect'});
-              }
+            if (next !== 'year') {
+              prev.push({ name: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YSr[next].label, icon: 'rect' });
+            }
             return prev;
           }, []),
         itemWidth: eChartsConfig.legend.itemWidth,
@@ -764,9 +986,9 @@ export class DemandAndOfferComponent implements OnInit {
       grid: eChartsConfig.grid,
       tooltip: {
         trigger: 'axis',
-          axisPointer: {
+        axisPointer: {
           type: 'cross',
-            label: {
+          label: {
             backgroundColor: '#6a7985'
           }
         }
@@ -790,17 +1012,17 @@ export class DemandAndOfferComponent implements OnInit {
 
     this.series.peerListedAssets5YSr = Object.keys(chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YSr)
       .reduce((prev, next, index) => {
-          if (next !== 'year') {
-            prev.push({
-              name: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YSr[next].label,
-              data: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YSr[next].values,
-              type: 'line',
-              symbol: eChartsConfig.series.symbol,
-              symbolSize: eChartsConfig.series.symbolSize,
-              lineStyle: {...eChartsConfig.series.lineStyle, color: lineColors[next] },
-              itemStyle: { color: lineColors[next] }
-            });
-          }
+        if (next !== 'year') {
+          prev.push({
+            name: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YSr[next].label,
+            data: chartdataset.dossier1ChartsData.demandOffer.peerListedAssets5YSr[next].values,
+            type: 'line',
+            symbol: eChartsConfig.series.symbol,
+            symbolSize: eChartsConfig.series.symbolSize,
+            lineStyle: { ...eChartsConfig.series.lineStyle, color: lineColors[next] },
+            itemStyle: { color: lineColors[next] }
+          });
+        }
         return prev;
       }, []);
   }
@@ -849,7 +1071,7 @@ export class DemandAndOfferComponent implements OnInit {
       }
     };
 
-    const lineColors = {radius1Km: '#913BAF', portaNuova: '#F26D4F', milano: '#BF5E5E'};
+    const lineColors = { radius1Km: '#913BAF', portaNuova: '#F26D4F', milano: '#BF5E5E' };
 
     this.series.peerAssetsOccupancyRateSr =
       Object.keys(chartdataset.dossier1ChartsData.demandOffer.peerAssetsOccupancyRateSr).reduce((prev, next, i) => {
@@ -871,14 +1093,14 @@ export class DemandAndOfferComponent implements OnInit {
    */
   getPriceTodayVsOvertime(): Array<any> {
     const options = Object.keys(chartdataset.dossier1ChartsData.demandOffer.priceTodayVsOvertime).map((population, i) => {
-        return { id: i-2, key: population, value: chartdataset.dossier1ChartsData.demandOffer.priceTodayVsOvertime[population].label };
+      return { id: i - 2, key: population, value: chartdataset.dossier1ChartsData.demandOffer.priceTodayVsOvertime[population].label };
     });
 
     options.splice(0, 2);
     return options;
   }
 
-  changePriceTodayVsOvertime(callbackEvent, chartInstance ): void {
+  changePriceTodayVsOvertime(callbackEvent, chartInstance): void {
     this.priceTodayVsOvertime(callbackEvent);
     this.chartInstance.priceTodayVsOvertime.setOption({
       series: this.series.priceTodayVsOvertime

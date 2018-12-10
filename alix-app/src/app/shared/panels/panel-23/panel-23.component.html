@@ -1,7 +1,7 @@
 <app-report-selector></app-report-selector>
 <div class="box box--table">
   <div class="box__header box__header--bg">
-    <div class="d-flex flex-row justify-content-between">
+    <div class="row-justified">
       <div class="title--compound">
         <div class="main__title">
           AVG Occupancy Rate
@@ -20,11 +20,11 @@
       <div class="highlighted--huge highlighted--color">
         {{config.avgOccupancyRate.value | perc:1}}
         <small class="u-uppercase highlighted__small--color">%</small>
-        <div class="perc-bar">
-          <div class="perc-bar__percentage" [style.width.%]="config.avgOccupancyRate.value | perc:1">
-            <div class="perc-bar__percentage__5y" style="width: 9.7%"></div>
-            <div class="perc-bar__percentage__1y" style="width: 4.2%"></div>
-          </div>
+      </div>
+      <div class="perc-bar">
+        <div class="perc-bar__percentage" [style.width.%]="config.avgOccupancyRate.value | perc:1">
+          <div class="perc-bar__percentage__5y" style="width: 9.7%"></div>
+          <div class="perc-bar__percentage__1y" style="width: 4.2%"></div>
         </div>
       </div>
     </div>

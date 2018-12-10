@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of, combineLatest } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { map, tap, publishReplay, refCount } from 'rxjs/operators';
 
 import { lists } from '../data/data';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class MockapiService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   public getJSON(jsonFile?): Observable<any> {
     // return this.http.get(`./assets/${jsonFile}.js`);
@@ -17,15 +17,27 @@ export class MockapiService {
   }
 
   public getPositions(): Observable<any> {
-    return this.getJSON().pipe(map(data => data.positionsList));
+    return this.getJSON().pipe(
+      map(data => data.positionsList),
+      publishReplay(1),
+      refCount()
+    );
   }
 
   public getPortfolios(): Observable<any> {
-    return this.getJSON().pipe(map(data => data.portfoliosList));
+    return this.getJSON().pipe(
+      map(data => data.portfoliosList),
+      publishReplay(1),
+      refCount()
+    );
   }
 
   public getNotifications(): Observable<any> {
-    return this.getJSON().pipe(map(data => data.notificationsList));
+    return this.getJSON().pipe(
+      map(data => data.notificationsList),
+      publishReplay(1),
+      refCount()
+    );
   }
 
   public getPortfoliosPopulated(): Observable<any> {
@@ -48,16 +60,22 @@ export class MockapiService {
           // portfolios[i].positionsData = positions;
 
           for (let z = 0; z < portfolios[i].notificationIds.length; z++) {
-            portfolios[i].notificationsData.push(notificationsHash[portfolios[i].notificationIds[z]]);
+            if (typeof notificationsHash[portfolios[i].notificationIds[z]] != 'undefined') {
+              portfolios[i].notificationsData.push(notificationsHash[portfolios[i].notificationIds[z]]);
+            }
           }
 
           for (let z = 0; z < portfolios[i].positionsIds.length; z++) {
-            portfolios[i].positionsData.push(positionsHash[portfolios[i].positionsIds[z]]);
+            if (typeof positionsHash[portfolios[i].positionsIds[z]] != 'undefined') {
+              portfolios[i].positionsData.push(positionsHash[portfolios[i].positionsIds[z]]);
+            }
           }
         }
 
         return portfolios;
       }),
+      publishReplay(1),
+      refCount(),
       tap(console.log)
     );
   }
@@ -79,7 +97,9 @@ export class MockapiService {
         }
 
         return notifications;
-      })
+      }),
+      publishReplay(1),
+      refCount()
     );
   }
 
@@ -110,15 +130,22 @@ export class MockapiService {
         // portfolio.positionsData = positions;
 
         for (let z = 0; z < portfolio.notificationIds.length; z++) {
-          portfolio.notificationsData.push(notificationsHash[portfolio.notificationIds[z]]);
+
+          if (typeof notificationsHash[portfolio.notificationIds[z]] != 'undefined') {
+            portfolio.notificationsData.push(notificationsHash[portfolio.notificationIds[z]]);
+          }
         }
 
         for (let z = 0; z < portfolio.positionsIds.length; z++) {
-          portfolio.positionsData.push(positionsHash[portfolio.positionsIds[z]]);
+          if (typeof positionsHash[portfolio.positionsIds[z]] != 'undefined') {
+            portfolio.positionsData.push(positionsHash[portfolio.positionsIds[z]]);
+          }
         }
 
         return portfolio;
       }),
+      publishReplay(1),
+      refCount(),
       tap(console.log)
     );
   }
@@ -149,15 +176,15 @@ export class MockapiService {
         // notification.positionsData = [];
         // // notification.positionsData = positions;
 
-
         // for (let z = 0; z < notification.positionsIds.length; z++) {
         //   notification.positionsData.push(positionsHash[notification.positionsIds[z]]);
         // }
 
         return notification;
       }),
+      publishReplay(1),
+      refCount(),
       tap(console.log)
     );
   }
-
 }

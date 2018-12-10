@@ -1,7 +1,7 @@
-<app-report-selector></app-report-selector>
+<app-report-selector title="Loan XYZ Alpha II - Collateral"></app-report-selector>
 <div class="box box--table">
   <div class="box__header box__header--bg">
-    <div class="d-flex flex-row justify-content-between">
+    <div class="row-justified">
       <div class="box__title title--compound">
         <h1 class="title">
           Collateral
@@ -18,9 +18,11 @@
         </span>
       </div>
       <div class="cell__wrapper__info">
-        <p class="highlighted--big highlighted--color">
-          {{ config.valuationAtT0.value | curr:1 }}
-          <small class="u-uppercase highlighted__small--color">M€</small>
+        <p class="highlighted--big highlighted--color"
+        [appNum]="config.valuationAtT0.value"
+          [showUnit]="true"
+          [unitSmall]="true"
+          unitClass="u-uppercase highlighted__small--color">
         </p>
       </div>
     </div>
@@ -48,9 +50,12 @@
         </span>
       </div>
       <div class="cell__wrapper__info">
-        <p class="highlighted--big highlighted--color">
-          {{ config.adjustedCollateralValuation.value | curr }}
-          <small class="highlighted__small--color u-uppercase">€</small>
+        <p class="highlighted--big highlighted--color"
+        [appNum]="config.adjustedCollateralValuation.value"
+          [showUnit]="true"
+          [unitSmall]="true"
+          unitClass="u-uppercase highlighted__small--color">
+          
         </p>
       </div>
     </div>

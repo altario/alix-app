@@ -5,7 +5,6 @@ $box__body-bg--light: $color1;
 $box__body-bg--dark: $color2;
 
 
-
 @mixin box--bg ($box--bg: transparent, $box__body-bg--dark: $box__body-bg--dark, $box__body-bg--light: $box__body-bg--light, $box__body--bg: transparent, $box__header--bg: transparent ){
   & { background-color: $box--bg }
   &__header--bg { background-color: $box__header--bg }
@@ -52,7 +51,7 @@ $box__body-bg--dark: $color2;
 	}
 }
 
-@mixin tabs ($unselected--bg, $active--bg, $bg-color:$active--bg ) {
+@mixin tabs ($unselected--bg, $active--bg, $color-input--bg, $color-input--border ) {
 	.nav-tabs {
 		background-color: $unselected--bg;
 		li a {
@@ -67,11 +66,57 @@ $box__body-bg--dark: $color2;
 			}
 		}
 	}
-  .tab-content { background-color: $active--bg }
+  .tab-content {
+		background-color: $active--bg;
+		.select-styled,
+		input {
+			background-color: $color-input--bg;
+			border-color: $color-input--border;
+		}
+	}
 }
 
-@mixin form-joined ($form-joined--bg: transparent ){
-	.form-joined--bg { background-color: $form-joined--bg}
+@mixin placeholder ($color) {
+	&::-webkit-input-placeholder { color: $color }
+	&::-moz-placeholder { color: $color }
+	&:-ms-input-placeholder { color: $color }
+	&:-moz-placeholder { color: $color }
+}
+
+@mixin form-joined ($input-bg: transparent, $form-joined--bg: transparent ){
+	.form-joined {
+		&.form-joined--bg { background-color: $form-joined--bg }
+		.select-styled,
+		input.number,
+		input.text {
+			background-color: $input-bg !important;
+			border: 1px solid darken($input-color, 20);
+			@if (lightness($input-color) > 50) {
+				@include placeholder ($color__custom__brand--1);
+				color: #000000;
+			} @else {
+				@include placeholder ($body__color__text);
+				color: $body__color__text;
+			}
+		}
+	}
+}
+
+@mixin select-styled ($color-light, $color-dark){
+	.cell__wrapper--bg-light {
+		.select-styled,
+		input {
+			background-color: $color-light;
+			border-color: $color-dark;
+		}
+	}
+	.cell__wrapper--bg-dark {
+		.select-styled,
+		input {
+			background-color: $color-dark;
+			border-color: $color-light;
+		}
+	}
 }
 
 
@@ -80,14 +125,16 @@ $box__body-bg--dark: $color2;
 	@include box--table--color;
 }
 
-
 .bg--light {
   background-color: $section--bg--light;
 	.box { @include box--bg ($color1, $color2, $color1) }
+	.box.inverse { @include box--bg ($color2, $color2, $color1) }
 	@include lateral-wrapper--color;
 	@include box-list--color;
-	@include tabs($color2, $color1);
-	@include form-joined($color2);
+	@include tabs($color2, $color1, $color2, $color2);
+	@include form-joined($color1, $color2);
+	@include select-styled  ($color2, $color1);
+
 }
 
 .bg--dark {
@@ -95,7 +142,7 @@ $box__body-bg--dark: $color2;
 	.box { @include box--bg ($color5, $color6, $color5) }
 	@include lateral-wrapper--color;
 	@include box-list--color;
-	@include tabs($color6, $color5);
-	@include form-joined($color6);
-
+	@include tabs($color6, $color5, $color6, $color6);
+	@include form-joined($color5, $color6);
+	@include select-styled  ($color6, $color5);
 }

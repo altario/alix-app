@@ -6,18 +6,18 @@
   .nav-item {
     flex: 1;
     a {
-      padding: 15px;
+      padding: 20px;
       text-align: left;
       text-decoration: none;
       height: 100%;
       display: block;
       font-size: rem(14px);
-      color: #FFFFFF;
+      color: $body__color__text;
       &.active,
       &:active,
       &:hover {
         text-decoration: none;
-        color: #FFFFFF;
+        color: $body__color__text;
       }
     }
   }

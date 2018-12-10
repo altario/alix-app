@@ -1,0 +1,119 @@
+@import '~src/scss/imports';
+
+$row_padding: 10px 15px;
+
+.position-row__container {
+  color: #828282;
+  background-color: $color1;
+  color: white;
+  height: 44px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: $border-radius__default;
+  padding: $row_padding;
+
+  .position-row__title {
+    flex: 1;
+    padding-right: 10px;
+    color: #828282;
+  }
+
+  .position-row__loan,
+  .position-row__time,
+  .position-row__stat,
+  .position-row__button {
+    flex: 1;
+    padding: 0 10px;
+    color: #828282;
+  }
+  .position-spacer {
+    flex: 1;
+  }
+
+  .position-row__title,
+  .position-row__loan,
+  .position-row__stat,
+  .position-row__button {
+    font-size: 14px;
+    @include line-clamp(2, 14px, 1.1);
+  }
+
+  .position-row__time {
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    @include line-clamp(2, 12px, 1.1);
+    text-align: center;
+    $size: 150px;
+    min-width: $size;
+    max-width: $size;
+  }
+
+  .position-row__state {
+    $size: 110px;
+    min-width: $size;
+    max-width: $size;
+    text-align: center;
+    color: white;
+    font-size: 0.9em;
+    border-radius: 2px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+
+    &.green {
+      background: #43D17F;
+    }
+    &.grey {
+      background: #B2B2B2;
+    }
+    &.yellow {
+      background: #E6DE35;
+    }
+    &.orange {
+      background: #F6B611;
+    }
+    &.red {
+      background: #EE1B1B;
+    }
+  }
+
+  .position-row__button {
+    max-width: 80px;
+    min-width: 60px;
+    margin-left: 30px;
+  }
+
+  ul.position-row__info {
+    padding: 0 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex: 3;
+
+    li {
+      list-style: none;
+      font-size: 10px;
+
+      div:nth-child(2) {
+        font-size: rem(14px);
+      }
+    }
+  }
+
+  .position-row__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d0cdcd;
+    height: 26px;
+    border-radius: $border-radius__default;
+    cursor: pointer;
+
+    &:hover {
+      background: white;
+    }
+  }
+}
