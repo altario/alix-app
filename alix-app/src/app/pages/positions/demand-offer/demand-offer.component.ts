@@ -6,10 +6,12 @@ import * as dataset from '@data/dataset';
 import * as chartdataset from '@data/charts-dataset';
 import { dossier1PlotChartsData } from '@data/plotcharts-dataset';
 import * as extrachartdataset from '@data/extra-charts-dataset';
+import * as  chartsOverride from '@data/charts-override-dataset';
 
 import { eChartsConfig } from '@global/charts';
 import { numericalValues } from '@helpers/numerical-values.lib';
 import { dataComparison } from '@app/data/data-comparison';
+
 
 @Component({
   selector: 'app-demand-offer',
@@ -51,7 +53,7 @@ export class DemandAndOfferComponent implements OnInit {
       this.populationShortRentDemand = this.config.demandAndOffer.shortRent.populations.population1;
       this.assetDemand = {
         sqm: {
-          series: this.getAssetDemands('scpSqmDemandEvolution'),
+            series: this.getAssetDemands('sqmDemandVsDays'),
           opts: {
             title: {
               show: true,
@@ -116,8 +118,9 @@ export class DemandAndOfferComponent implements OnInit {
             }
           },
         },
+
         rooms: {
-          series: this.getAssetDemands('scpRoomsDemandEvolution'),
+            series: this.getAssetDemands('roomDemandVsDays'),
           opts: {
             title: {
               text: '# Rooms / Asset Demand',
@@ -1122,7 +1125,7 @@ export class DemandAndOfferComponent implements OnInit {
 
 
   getAssetDemands(type = null): Array<any> {
-    const colors = ['#913BAF', '#F26D4F', '#BF5E5E'];
+    /*const colors = ['#913BAF', '#F26D4F', '#BF5E5E'];
 
     return dossier1PlotChartsData.demandOffer[type]
       .reduce((prev, next, i) => {
@@ -1132,5 +1135,8 @@ export class DemandAndOfferComponent implements OnInit {
 
         return prev;
       }, []);
-  }
+      */
+
+    return chartsOverride.chartsOverride[type];
+    }
 }

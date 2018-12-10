@@ -7,6 +7,7 @@ import * as dataset from '@data/dataset';
 import * as chartdataset from '@data/charts-dataset';
 import * as plotchartdataset from '@data/plotcharts-dataset';
 import * as mapLatLng from '@data/map-dataset';
+import * as  chartsOverride from '@data/charts-override-dataset';
 
 // graph color overrides
 import { eChartsConfig } from '@global/charts';
@@ -318,22 +319,24 @@ export class StateOfConservationComponent implements OnInit {
       }
     };
 
-    const series = plotchartdataset.dossier1PlotChartsData.stateOfConservation.scpPriceEvo.filter((line) => {
+  /*  let series = plotchartdataset.dossier1PlotChartsData.stateOfConservation.scpPriceEvo.filter((line) => {
       if (line.population === population) {
         return line;
       }
-    });
+    }); */
 
-    const x = series.map((line) => line.values).shift();
+      const series = JSON.parse(JSON.stringify(chartsOverride.chartsOverride.stateOfConservation));
 
-    x.push({
+    //const x = series;
+
+    series.push({
       type: 'effectScatter',
       color: '#E9545C',
       symbolSize: 5,
       data: [dataComparison.sqmPricePerStateOfConservationBarPlot.values]
     });
 
-    return x;
+      return series;
   }
 
   onChartInit(chart, e) {
