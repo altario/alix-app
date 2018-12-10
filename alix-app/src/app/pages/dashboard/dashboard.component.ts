@@ -176,7 +176,7 @@ export class DashboardComponent implements OnInit {
     this.opts.utpOutflowInflow = {
       title: {
         text: 'UTP Exposure',
-        subtext: 'Total UTP Exposure Waterfall Monthly Breakdown',
+        subtext: 'UTP Exposure 1 Year Inflow & Outflow',
         padding: 20,
         textStyle: {
           color: '#fff'
