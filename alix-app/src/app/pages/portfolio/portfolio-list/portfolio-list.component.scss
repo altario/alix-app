@@ -199,7 +199,8 @@ a {
 
 .sidebar {
   width: 22%;
-  max-width: 230px;
+  min-width: 230px;
+  max-width: 280px;
   position: fixed;
   top: 190px;
 }
