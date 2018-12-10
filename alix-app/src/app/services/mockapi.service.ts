@@ -132,9 +132,9 @@ export class MockapiService {
         // portfolio.positionsData = positions;
 
         for (let z = 0; z < portfolio.notificationIds.length; z++) {
-
-          if (typeof notificationsHash[portfolio.notificationIds[z]] != 'undefined') {
-            portfolio.notificationsData.push(notificationsHash[portfolio.notificationIds[z]]);
+            const notIdArray = portfolio.notificationIds.replace('[', '').replace(']', '').split(',');
+            if (typeof notificationsHash[notIdArray[z]] != 'undefined') {
+                portfolio.notificationsData.push(notificationsHash[notIdArray[z]]);
           }
         }
 
