@@ -26,7 +26,7 @@ export class ScatterComponent implements OnInit {
     };
 
     this.options = Object.assign(this.options, this.opts);
-    console.log(this.options);
+    
     this.initOpts = {
       renderer: 'canvas' // canvas | svg
     };
