@@ -14,12 +14,18 @@
   <div class="box__body box__body--bg">
     <div class=" cell__wrapper cell__wrapper--bg-dark">
       <div class="highlighted--big highlighted--color">
-        {{ config.demandAndOffer.replacementIndicators.marketPriceSqmForSale.value }}
-        <small class="u-uppercase highlighted__small--color">€/sqm</small>
+        <span
+        [appNum]="config.demandAndOffer.replacementIndicators.marketPriceSqmForSale.value"
+        [showUnit]="true"
+        [unitSmall]="true"
+        unitClass="u-uppercase highlighted__small--color"></span>
+        <small class="u-uppercase highlighted__small--color">/sqm</small>
       </div><!-- #HC -->
-      <div class="highlighted--small highlighted--color">
-        {{ config.financial.collateral.valuationAtT0.value | number:'1.0-0' }}
-        <small class="u-uppercase highlighted__small--color">€</small>
+      <div class="highlighted--small highlighted--color"
+        [appNum]="config.financial.collateral.valuationAtT0.value"
+        [showUnit]="true"
+        [unitSmall]="true"
+        unitClass="u-uppercase highlighted__small--color" >
       </div><!-- #HC -->
     </div>
     <div class=" cell__wrapper cell__wrapper--bg-dark">
@@ -27,7 +33,7 @@
         <div class="table-row">
           <span>{{ config.demandAndOffer.forSale.populations.population1.populationName.value }} </span>
           <span><span class="square" style="background-color: #913BAF"></span></span>
-          <span> {{ config.demandAndOffer.forSale.populations.population1.priceSqmForSale.value }}k sqm</span>
+          <span> {{ config.demandAndOffer.forSale.populations.population1.priceSqmForSale.value }}€ sqm</span>
           <span>
             <span [appPosNeg]="config.demandAndOffer.forSale.populations.population1.demandRate.value" icon="icon">
               {{ config.demandAndOffer.forSale.populations.population1.demandRate.value | perc:0 }}
@@ -39,7 +45,7 @@
         <div class="table-row">
           <span>{{ config.demandAndOffer.forSale.populations.population2.populationName.value }}</span>
           <span><span class="square" style="background-color: #F26D4F"></span></span>
-          <span>{{ config.demandAndOffer.forSale.populations.population2.priceSqmForSale.value }}k sqm</span>
+          <span>{{ config.demandAndOffer.forSale.populations.population2.priceSqmForSale.value }}€ sqm</span>
           <span>
             <span [appPosNeg]="config.demandAndOffer.forSale.populations.population2.demandRate.value" icon="icon">
               {{ config.demandAndOffer.forSale.populations.population2.demandRate.value | perc:0 }}
@@ -51,7 +57,7 @@
         <div class="table-row">
           <span>{{ config.demandAndOffer.forSale.populations.population3.populationName.value }}</span>
           <span><span class="square" style="background-color: #BF5E5E"></span></span>
-          <span>{{ config.demandAndOffer.forSale.populations.population3.priceSqmForSale.value }}k sqm</span>
+          <span>{{ config.demandAndOffer.forSale.populations.population3.priceSqmForSale.value }}€ sqm</span>
           <span>
               <span [appPosNeg]="config.demandAndOffer.forSale.populations.population3.demandRate.value" icon="icon">
                 {{ config.demandAndOffer.forSale.populations.population3.demandRate.value | perc:0 }}

@@ -53,8 +53,9 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     const axisLabel = JSON.parse(JSON.stringify(eChartsConfig.eChartsConfig.xAxis.axisLabel));
-    axisLabel.formatter = (value, index) => {
-      return this.currencyPipe.transform(value) ;
+    axisLabel.formatter = function (value, index) {
+        const processedValue = numericalValues(value);
+        return processedValue.round + ' ' + (processedValue.unitname ? processedValue.unitname : '');
     };
 
     this.opts = {
@@ -360,6 +361,16 @@ export class DashboardComponent implements OnInit {
           label: {
             backgroundColor: '#6a7985'
           }
+        },
+        formatter: (params) => {
+          const colorSpan = color => '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' + color + '"></span>';
+          let rez = params[0].axisValue + '<br>';
+          params.forEach(item => {
+            const processedValue = numericalValues(item.data);
+            rez += colorSpan(item.color) + ' ' + item.seriesName + ': ' + processedValue.round + ' ' + (processedValue.unitname ? processedValue.unitname : '') + '<br />';
+          });
+
+          return rez;
         }
       },
       xAxis: {
@@ -423,6 +434,16 @@ export class DashboardComponent implements OnInit {
           label: {
             backgroundColor: '#6a7985'
           }
+        },
+        formatter: (params) => {
+          const colorSpan = color => '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' + color + '"></span>';
+          let rez = params[0].axisValue + '<br>';
+          params.forEach(item => {
+            const processedValue = numericalValues(item.data);
+            rez += colorSpan(item.color) + ' ' + item.seriesName + ': ' + processedValue.round + ' ' + (processedValue.unitname ? processedValue.unitname : '') + '<br />';
+          });
+
+          return rez;
         }
       },
       xAxis: {
@@ -483,6 +504,16 @@ export class DashboardComponent implements OnInit {
           label: {
             backgroundColor: '#6a7985'
           }
+        },
+        formatter: (params) => {
+          const colorSpan = color => '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' + color + '"></span>';
+          let rez = params[0].axisValue + '<br>';
+          params.forEach(item => {
+            const processedValue = numericalValues(item.data);
+            rez += colorSpan(item.color) + ' ' + item.seriesName + ': ' + processedValue.round + ' ' + (processedValue.unitname ? processedValue.unitname : '') + '<br />';
+          });
+
+          return rez;
         }
       },
       xAxis: {
@@ -560,6 +591,16 @@ export class DashboardComponent implements OnInit {
           label: {
             backgroundColor: '#6a7985'
           }
+        },
+        formatter: (params) => {
+          const colorSpan = color => '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' + color + '"></span>';
+          let rez = params[0].axisValue + '<br>';
+          params.forEach(item => {
+              const processedValue = numericalValues(item.data);
+            rez += colorSpan(item.color) + ' ' + item.seriesName + ': ' + processedValue.round + ' ' + (processedValue.unitname ? processedValue.unitname : '') + '<br />';
+          });
+
+          return rez;
         }
       },
       xAxis: {

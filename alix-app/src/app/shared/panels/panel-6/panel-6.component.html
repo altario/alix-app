@@ -13,13 +13,13 @@
     <div class=" cell__wrapper cell__wrapper cell__wrapper--bg-dark">
       <div class="cell__wrapper__top">
         <span class="label__up label--color">
-          {{ config }} <!-- #Missing -->
+        Exposure Until Duration
       </span>
       </div>
       <div class="cell__wrapper__info">
         <p class="highlighted--big highlighted--color">
-          {{ config }} <!-- #Missing -->
-          <small class="u-uppercase highlighted__small--color">m€</small>
+            {{ config.totalDuration.value | number:'1.0-0' }} <!-- #Missing -->
+          <small class="u-uppercase highlighted__small--color">Y</small>
         </p>
       </div>
     </div>

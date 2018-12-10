@@ -18,7 +18,7 @@ export class ReportSelectorComponent implements OnInit {
   ngOnInit() {
   }
 
-  updatePositionsReport(data) {
+  updatePositionsReport() {
     this.clicked = true;
 
     this.report.update({title: this.title});

@@ -11,6 +11,7 @@ import * as mapLatLng from '@data/map-dataset';
 // graph color overrides
 import { eChartsConfig } from '@global/charts';
 import { mapStyle } from '@global/map';
+import { dataComparison } from '@app/data/data-comparison';
 
 @Component({
   selector: 'app-state-of-conservation',
@@ -193,6 +194,7 @@ export class StateOfConservationComponent implements OnInit {
       name: line.stateOfConservation,
       data: line.values,
       type: 'line',
+      showSymbol: true,
       symbol: eChartsConfig.series.symbol,
       symbolSize: eChartsConfig.series.symbolSize,
       lineStyle: { ...eChartsConfig.series.lineStyle, color: lineColors[i] },
@@ -256,11 +258,23 @@ export class StateOfConservationComponent implements OnInit {
       name: line.stateOfConservation,
       data: line.values,
       type: 'line',
+      showSymbol: true,
       symbol: eChartsConfig.series.symbol,
       symbolSize: eChartsConfig.series.symbolSize,
-      lineStyle: { ...eChartsConfig.series.lineStyle, color: lineColors[i] },
+      lineStyle: { ...eChartsConfig.series.lineStyle, color: lineColors[i], type: 'solid' },
       itemStyle: { color: lineColors[i] }
     }));
+
+    series.push({
+      name: dataComparison.priceEvolutionBySc.name,
+      data: dataComparison.priceEvolutionBySc.values,
+      type: 'line',
+      showSymbol: false,
+      symbol: 'none',
+      symbolSize: 0,
+      lineStyle: { ...eChartsConfig.series.lineStyle, color: '#FF0000', type: 'dotted' },
+      itemStyle: { color: '#FF0000' }
+    });
 
     return series;
   }
@@ -307,6 +321,13 @@ export class StateOfConservationComponent implements OnInit {
     });
 
     const x = series.map((line) => line.values).shift();
+
+    x.push({
+      type: 'effectScatter',
+      color: '#FF0000',
+      symbolSize: 20,
+      data: [dataComparison.sqmPricePerStateOfConservationBarPlot.values]
+    });
 
     return x;
   }

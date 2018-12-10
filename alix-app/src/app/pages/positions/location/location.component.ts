@@ -10,6 +10,7 @@ import * as chartdataset from '@data/charts-dataset';
 import { eChartsConfig } from '@global/charts';
 import { dossier1PlotChartsData } from '@data/plotcharts-dataset';
 import { mapStyle } from '@global/map';
+import { numericalValues } from '@helpers/numerical-values.lib';
 
 @Component({
   selector: 'app-location',
@@ -61,7 +62,7 @@ export class LocationComponent implements OnInit {
       legend: {
         show: false,
         data: Object.keys(chartdataset.dossier1ChartsData.location.breakdownAssetsInNeighborhood)
-          .map((population, i) => population !== 'year' ?population : null),
+          .map((population, i) => population !== 'year' ? population : null),
         itemWidth: eChartsConfig.legend.itemWidth,
         itemHeight: eChartsConfig.legend.itemHeight,
         top: '20px',
@@ -242,10 +243,9 @@ export class LocationComponent implements OnInit {
         splitLine: eChartsConfig.yAxis.splitLine,
         axisLabel: {
           color: eChartsConfig.yAxis.axisLabel.color,
-          formatter: (value, i) => {
-            // if(value)
-
-            return value;
+          formatter: function (value, index) {
+            const processedValue = numericalValues(value);
+            return processedValue.round + ' ' + (processedValue.unitname ? processedValue.unitname +'€' : '');
           }
         },
         axisLine: {
@@ -279,6 +279,7 @@ export class LocationComponent implements OnInit {
       { name: 'Sport', icon: 'rect' }
     ];
 
+    const yLabels = ['Bad', 'Needs Renovation', 'Renovated', 'Excellent'];
 
     this.opts.streetConditionsTimeEvoRad = {
       // grid: {
@@ -319,20 +320,12 @@ export class LocationComponent implements OnInit {
       },
       yAxis: {
         type: 'value',
-        name: 'Price Range',
-        nameTextStyle: {
-          color: '#FFFFFF',
-          padding: [0, 125, 0, 0]
-        },
-        nameLocation: 'end',
         offset: 20,
         splitLine: eChartsConfig.yAxis.splitLine,
         axisLabel: {
           color: eChartsConfig.yAxis.axisLabel.color,
-          formatter: (value, i) => {
-            // if(value)
-
-            return value;
+          formatter: (value, index) => {
+            return index == 0 ? 0 : yLabels[index - 1];
           }
         },
         axisLine: {
@@ -366,6 +359,7 @@ export class LocationComponent implements OnInit {
       { name: 'Sport', icon: 'rect' }
     ];
 
+    const yLabels = ['6 AM', '1 PM', '9 PM', '12 AM','5 AM'];
 
     this.opts.daynightShiftRad = {
       // grid: {
@@ -416,10 +410,8 @@ export class LocationComponent implements OnInit {
         splitLine: eChartsConfig.yAxis.splitLine,
         axisLabel: {
           color: eChartsConfig.yAxis.axisLabel.color,
-          formatter: (value, i) => {
-            // if(value)
-
-            return value;
+          formatter: (value, index) => {
+            return index == 0 ? 0 : yLabels[index - 1];
           }
         },
         axisLine: {

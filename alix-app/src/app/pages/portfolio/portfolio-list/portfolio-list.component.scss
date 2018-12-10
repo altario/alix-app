@@ -200,14 +200,9 @@ a {
 .sidebar {
   width: 22%;
   min-width: 230px;
-  max-width: 280px;
+  max-width: 290px;
   position: fixed;
   top: 190px;
-}
-
-.form--search {
-  border-radius: $border-radius__default 0 0 $border-radius__default;
-  border-top: none;
 }
 
 .section-title {

@@ -6,4 +6,11 @@
 }
 
 
+.bg--dark {
+  @include btn-alix (duplicate, $body__color__text, $color6);
+}
 
+.form--search {
+  border-radius: $border-radius__default 0 0 $border-radius__default;
+  border-top: none;
+}
