@@ -101,20 +101,18 @@ a {
 
         .labels {
           flex: 1;
-          // @include align(wrap);
           line-height: 1;
+          @include line-clamp(2, 12px, 1em);
           .label-up {
             font-size: rem(12);
-            // white-space: pre;
             color: white;
           }
           .truncate {
             font-size: rem(12);
-            // white-space: pre;
+            white-space: nowrap;
           }
           .label-down {
             font-size: rem(12);
-            // white-space: pre;
             font-weight: $font-weight--light;
             color: #DBDBDE;
           }
@@ -200,15 +198,20 @@ a {
 }
 
 .sidebar {
-  position: fixed;
-  top: 200px;
   width: 22%;
   max-width: 290px;
+  position: fixed;
+  top: 190px;
+}
+
+.form--search {
+  border-radius: $border-radius__default 0 0 $border-radius__default;
+  border-top: none;
 }
 
 .section-title {
-  position: fixed;
   top: 100px;
+  position: fixed;
 }
 
 .container-fluid .page-section > * + * {
