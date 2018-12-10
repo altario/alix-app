@@ -9,6 +9,7 @@ import * as chartdataset from '@data/charts-dataset';
 // graph color overrides
 import { eChartsConfig } from '@global/charts';
 import { dossier1PlotChartsData } from '@data/plotcharts-dataset';
+import { mapStyle } from '@global/map';
 
 @Component({
   selector: 'app-location',
@@ -26,6 +27,7 @@ export class LocationComponent implements OnInit {
   zoom = 14;
   radius = 70;
   opts: any = {};
+  style1 = mapStyle;
 
   constructor(private route: ActivatedRoute) { }
 

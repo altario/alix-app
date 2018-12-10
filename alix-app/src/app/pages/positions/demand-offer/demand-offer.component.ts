@@ -7,6 +7,7 @@ import * as chartdataset from '@data/charts-dataset';
 import { dossier1PlotChartsData } from '@data/plotcharts-dataset';
 
 import { eChartsConfig } from '@global/charts';
+import { dataComparison } from '@app/data/data-comparison';
 
 @Component({
   selector: 'app-demand-offer',
@@ -346,6 +347,17 @@ export class DemandAndOfferComponent implements OnInit {
           }
         return prev;
       }, []);
+
+    this.series.marketValue.push({
+      name: dataComparison.neighborhoodMktValueVsReplacementCost.name,
+      data: dataComparison.neighborhoodMktValueVsReplacementCost.values,
+      type: 'line',
+      showSymbol: false,
+      symbol: 'none',
+      symbolSize: 0,
+      lineStyle: { ...eChartsConfig.series.lineStyle, color: '#FF0000', type: 'dotted' },
+      itemStyle: { color: '#FF0000' }
+    });
   }
 
   priceTodayVsOvertime(population = 'radius1Km') {
@@ -406,6 +418,17 @@ export class DemandAndOfferComponent implements OnInit {
       lineStyle: {...eChartsConfig.series.lineStyle, color: lineColors[population] },
       itemStyle: { color: lineColors[population] }
     }];
+
+    this.series.priceTodayVsOvertime.push({
+      name: dataComparison.priceSqmTodayVsOvertimeForSale.name,
+      data: dataComparison.priceSqmTodayVsOvertimeForSale.values,
+      type: 'line',
+      showSymbol: false,
+      symbol: 'none',
+      symbolSize: 0,
+      lineStyle: { ...eChartsConfig.series.lineStyle, color: '#FF0000', type: 'dotted' },
+      itemStyle: { color: '#FF0000' }
+    });
 
   }
 

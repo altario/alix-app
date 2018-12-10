@@ -53,11 +53,11 @@
                     <span class="label__up label--color">Regulatory Capital Absorted</span>
                   </div>
                   <div class="cell__wrapper__info">
-                    <p class="highlighted--big highlighted--color">
-                      {{ (portfolio$ | async)?.keyFinancialRegulatoryCapitalAbsorbed | perc: 1 }}
-
-                      <small class="u-uppercase highlighted__small--color">{{ (portfolio$ |
-                        async)?.keyFinancialRegulatoryCapitalAbsorbedUnit }}</small>
+                    <p class="highlighted--big highlighted--color"
+                      [appNum]="(portfolio$ | async)?.keyFinancialRegulatoryCapitalAbsorbed"
+                      [showUnit]="true"
+                      [unitSmall]="true"
+                      unitClass="u-uppercase highlighted__small--color">
                     </p>
                   </div>
                 </div>
@@ -140,9 +140,10 @@
                   </div>
                   <div class="cell__wrapper__info">
                     <p class="highlighted--big highlighted--color">
-                      {{ (portfolio$ | async)?.positionTimeToMaturity }}
-                      <small class="u-uppercase highlighted__small--color__exception">{{ (portfolio$ |
-                        async)?.positionTimeToMaturityUnit }}</small>
+                      <span [appNum]="(portfolio$ | async)?.positionTimeToMaturity"
+                      [showUnit]="true"
+                      [unitSmall]="true"
+                      unitClass="u-uppercase highlighted__small--color__exception"></span>
                       <small class="highlighted__small--color of">AVG</small>
                     </p>
                   </div>
@@ -181,10 +182,12 @@
                     <span class="label__up label--color">Exposure Until Duration</span>
                   </div>
                   <div class="cell__wrapper__info">
-                    <p class="highlighted--big highlighted--color">
-                      {{ (portfolio$ | async)?.durationExposureUntilDuration | round: 2 }}
-                      <small class="u-uppercase highlighted__small--color">{{ (portfolio$ |
-                        async)?.durationExposureUntilDurationUnit }}</small>
+                    <p class="highlighted--big highlighted--color"
+                      [appNum]="(portfolio$ | async)?.durationExposureUntilDuration"
+                      [showUnit]="true"
+                      [unitSmall]="true"
+                      unitClass="u-uppercase highlighted__small--color">
+
                     </p>
                   </div>
                 </div>
