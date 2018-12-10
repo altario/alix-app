@@ -96,8 +96,8 @@
       <div class="cell__information" [appNum]="notification?.portfolioExposure" [showUnit]="true" [unitSmall]="false"></div>
     </div>
     <div class="btns-holder">
-      <button class="btn btn-light--1" (click)="addToReport(notification?.title)">Add to Report</button>
       <button class="btn btn-light--1" (click)="markAsRead($event)">Mark as Read</button>
+      <button class="btn btn-light--2" (click)="addToReport(notification?.title)">Add to Report</button>
     </div>
   </div>
 </div>
