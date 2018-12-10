@@ -53,7 +53,7 @@
   <section class="page-section bg--light">
     <div class="row">
       <div class="col-12">
-        <h1 class="section-title">IN Construction Satelite images</h1>
+        <h1 class="section-title">IN Construction Satellite images</h1>
         <!-- #HC -->
       </div>
     </div>
@@ -63,9 +63,9 @@
           <app-report-selector [hasBg]="true"></app-report-selector>
           <div class="overlay-map"></div>
           <agm-map [disableDefaultUI]="false" [latitude]="lat" [longitude]="lng" [zoom]="zoom" [gestureHandling]="'none'" [zoomControl]="false" [streetViewControl]="false" [styles]="style2">
-            <agm-circle *ngFor="let marker of markers2" [latitude]="marker.lat" [longitude]="marker.lng" [radius]="radius" [fillColor]="marker.color" [circleDraggable]="false"
-            [editable]="false" fillOpacity="1">
-            </agm-circle>
+ <!--           <agm-circle *ngFor="let marker of markers2" [latitude]="marker.lat" [longitude]="marker.lng" [radius]="radius" [fillColor]="marker.color" [circleDraggable]="false"
+            [editable]="false" fillOpacity="1"> 
+            </agm-circle>-->
           </agm-map>
         </div>
       </div>
