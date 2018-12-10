@@ -83,7 +83,7 @@ $box__body-bg--dark: $color2;
 	&:-moz-placeholder { color: $color }
 }
 
-@mixin form-joined ($input-bg: transparent, $form-joined--bg: transparent ){
+@mixin form-joined ($input-bg: transparent, $form-joined--bg: transparent ) {
 	.form-joined {
 		&.form-joined--bg { background-color: $form-joined--bg }
 		.select-styled,

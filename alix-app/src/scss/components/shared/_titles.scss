@@ -68,6 +68,14 @@
   font-family: $font-family--primary;
   font-weight: $font-weight--light;
   margin: 0;
+
+  i {
+    margin: 0 20px;
+  }
+}
+
+.section-title-image {
+  width: 200px;
 }
 
 .text-row {

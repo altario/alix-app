@@ -228,5 +228,11 @@ a {
 }
 
 .container-fluid .page-section > * + * {
-  margin-top: 80px;
+  margin-top: 0px;
+}
+
+.btn--edit {
+  width: fit-content;
+  padding: 0 10px !important;
+  align-self: flex-end;
 }
