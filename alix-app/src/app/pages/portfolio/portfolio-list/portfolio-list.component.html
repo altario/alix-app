@@ -94,7 +94,10 @@
                   <div class="row-col">
                     <div class="text-row">
                       <span class="u-strong">Total CE</span>
-                      <span>{{ portfolio.totalExposure }}{{ portfolio.exposureUnit }}</span>
+                      <span
+                        [appNum]="portfolio.totalExposure"
+                        [showUnit]="true"
+                        [unitSmall]="false"></span>
                     </div>
                     <div class="text-row">
                       <span class="u-strong">Avg. RAROC</span>
@@ -106,7 +109,10 @@
                     </div>
                     <div class="text-row">
                       <span class="u-strong">Avg. LOV</span>
-                      <span>{{ portfolio.avgLov }}{{ portfolio.avgLovUnit }}</span>
+                      <span
+                        [appNum]="portfolio.avgLov"
+                        [showUnit]="true"
+                        [unitSmall]="false"></span>
                     </div>
                   </div>
                 </div>
@@ -114,14 +120,14 @@
                 <div class="cell__wrapper cell__wrapper--bg-light flex-4 portfolio-alerts">
                   <div class="table">
                     <div class="highlighted--small highlighted--color">Last Unread Alerts</div>
-                    <div *ngFor="let notification of portfolio.notificationsData" class="table-row">
-                      <div class="square {{ notification.notificationPriority | lowercase }}"></div>
-                      <div class="labels" *ngIf="notification.type === 'kpi'">
+                    <div *ngFor="let notification of portfolio.notificationsData; let i = index;" class="table-row">
+                      <div class="square {{ notification.notificationPriority | lowercase }}" *ngIf="i < 3"></div>
+                      <div class="labels" *ngIf="notification.type === 'kpi' && i < 3">
                         <span class="label-up">{{ notification.labelUp }}</span>
                         <span class="truncate {{ notification.positiveNegative }}">{{ notification.value }}%</span>
                         <span class="label-down">{{ notification.labelDown }}</span>
                       </div>
-                      <div class="labels" *ngIf="notification.type === 'news'">
+                      <div class="labels" *ngIf="notification.type === 'news' && i < 3">
                         <span class="label-up">{{ notification.title }}</span>
                       </div>
                     </div>

@@ -130,7 +130,7 @@
       </div>
       <div class="col-8 in-METROSTATIONS">
         <agm-map [disableDefaultUI]="false" [latitude]="lat" [longitude]="lng" [zoom]="zoom" 
-            [gestureHandling]="'none'" [zoomControl]="false" [streetViewControl]="false">
+            [gestureHandling]="'none'" [zoomControl]="false" [streetViewControl]="false" [styles]="style1">
             <agm-circle [latitude]="lat" [longitude]="lng" [radius]="radius" [fillColor]="'red'" [circleDraggable]="false"
                 [editable]="false">
             </agm-circle>

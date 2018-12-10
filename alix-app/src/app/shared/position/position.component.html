@@ -14,9 +14,15 @@
       >{{ position?.state }}</div>
 
     <ul class="position-row__info">
-        <li *ngFor="let info of position?.infos">
+        <li *ngFor="let info of position?.infos; index as i;">
             <div>{{ info?.info }}</div>
-            <div class="u-strong">{{ info?.data | round: 2 }} <small>{{ info?.label }}</small></div>
+            <div class="u-strong" *ngIf="i<2">
+              <span [appNum]="info?.data" [showUnit]="true" [unitSmall]="false"></span>
+            </div>
+
+            <div class="u-strong" *ngIf="i>1">
+              {{ info?.data | round: 2}} <small>{{ info?.label }}</small>
+            </div>
         </li>
     </ul>
 

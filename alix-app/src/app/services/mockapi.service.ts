@@ -9,7 +9,7 @@ import { lists } from '../data/data';
   providedIn: 'root'
 })
 export class MockapiService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   public getJSON(jsonFile?): Observable<any> {
     // return this.http.get(`./assets/${jsonFile}.js`);
@@ -60,11 +60,15 @@ export class MockapiService {
           // portfolios[i].positionsData = positions;
 
           for (let z = 0; z < portfolios[i].notificationIds.length; z++) {
-            portfolios[i].notificationsData.push(notificationsHash[portfolios[i].notificationIds[z]]);
+            if (typeof notificationsHash[portfolios[i].notificationIds[z]] != 'undefined') {
+              portfolios[i].notificationsData.push(notificationsHash[portfolios[i].notificationIds[z]]);
+            }
           }
 
           for (let z = 0; z < portfolios[i].positionsIds.length; z++) {
-            portfolios[i].positionsData.push(positionsHash[portfolios[i].positionsIds[z]]);
+            if (typeof positionsHash[portfolios[i].positionsIds[z]] != 'undefined') {
+              portfolios[i].positionsData.push(positionsHash[portfolios[i].positionsIds[z]]);
+            }
           }
         }
 
@@ -126,11 +130,16 @@ export class MockapiService {
         // portfolio.positionsData = positions;
 
         for (let z = 0; z < portfolio.notificationIds.length; z++) {
-          portfolio.notificationsData.push(notificationsHash[portfolio.notificationIds[z]]);
+
+          if (typeof notificationsHash[portfolio.notificationIds[z]] != 'undefined') {
+            portfolio.notificationsData.push(notificationsHash[portfolio.notificationIds[z]]);
+          }
         }
 
         for (let z = 0; z < portfolio.positionsIds.length; z++) {
-          portfolio.positionsData.push(positionsHash[portfolio.positionsIds[z]]);
+          if (typeof positionsHash[portfolio.positionsIds[z]] != 'undefined') {
+            portfolio.positionsData.push(positionsHash[portfolio.positionsIds[z]]);
+          }
         }
 
         return portfolio;

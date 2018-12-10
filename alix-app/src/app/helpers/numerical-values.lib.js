@@ -7,7 +7,7 @@ const process = value => {
   obj.fullValue = value;
 
   if (value >= 1e3 || value <= -1e3) {
-    const units = ['k', 'M', 'B', 'T'];
+    const units = ['K', 'M', 'B', 'T'];
     const unit = Math.floor((Number(value).toFixed(0).length - 1) / 3) * 3;
     obj.scaledValue = (value / Number(('1e' + unit)));
     obj.round = autoRound(obj.scaledValue);
