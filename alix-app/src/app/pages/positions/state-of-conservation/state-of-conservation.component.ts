@@ -73,7 +73,7 @@ export class StateOfConservationComponent implements OnInit {
       this.numbOfAssetsBySc = this.getnumbOfAssetsBySc();
       this.priceEvolutionBySc = this.getpriceEvolutionBySc();
 
-      this.markers = this.getMarkers(); this.markers2 = this.getMarkers2();
+      this.markers = this.getMarkers();
       this.dots = this.generateDots();
     });
   }
@@ -350,18 +350,18 @@ export class StateOfConservationComponent implements OnInit {
 
     const dots = [];
     const imgs = [
-      'img_map_00001.jpg',
-      'img_map_00002.png',
-      'img_map_00003.png',
-      'img_map_00004.png',
-      'img_map_00005.png',
-      'img_map_00006.png',
-      'img_map_00007.png',
-      'img_map_00008.png',
-      'img_map_00009.png',
-      'img_map_00010.png',
-      'img_map_00011.png',
-      'img_map_00012.png'
+      'img_map_01.jpg',
+      'img_map_02.jpg',
+      'img_map_03.jpg',
+      'img_map_04.jpg',
+      'img_map_05.jpg',
+      'img_map_06.jpg',
+      'img_map_07.jpg',
+      'img_map_08.jpg',
+      'img_map_09.jpg',
+      'img_map_10.jpg',
+      'img_map_11.jpg',
+      'img_map_12.jpg'
     ];
 
     for (let i = 0; i < 12; i++) {
