@@ -31,11 +31,11 @@ ul {
 }
 
 .sidebar {
-  position: fixed;
-  top: 190px;
   width: 22%;
   max-width: 290px;
-  min-width: 230px;
+  max-width: 230px;
+  position: fixed;
+  top: 190px;
 }
 
 .section-title {

@@ -25,9 +25,18 @@ ul {
 }
 
 .sidebar {
-  position: fixed;
-  top: 110px;
   width: 22%;
-  max-width: 290px;
   min-width: 230px;
+  max-width: 290px;
+  position: fixed;
+  top: 190px;
+}
+
+.section-title {
+  top: 100px;
+  position: fixed;
+}
+
+.container-fluid .page-section > * + * {
+  margin-top: 80px;
 }
