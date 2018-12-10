@@ -55,6 +55,9 @@ export class StateOfConservationComponent implements OnInit {
   style1 = mapStyle;
   style2 = mapStyle;
   markers2: any[];
+  dots: any[];
+  dotimage: any;
+  showImage: boolean;
 
   constructor(private route: ActivatedRoute) { }
 
@@ -71,6 +74,7 @@ export class StateOfConservationComponent implements OnInit {
       this.priceEvolutionBySc = this.getpriceEvolutionBySc();
 
       this.markers = this.getMarkers(); this.markers2 = this.getMarkers2();
+      this.dots = this.generateDots();
     });
   }
 
@@ -334,6 +338,58 @@ export class StateOfConservationComponent implements OnInit {
 
   onChartInit(chart, e) {
     this.chartInstance[chart] = e;
+  }
+
+  generateDots() {
+    const bubbleSize = 10;
+    const divMargin = 20;
+
+    const dotsColors = [
+        '#7AC143',
+    ];
+
+    const dots = [];
+    const imgs = [
+      'img_map_00001.jpg',
+      'img_map_00002.png',
+      'img_map_00003.png',
+      'img_map_00004.png',
+      'img_map_00005.png',
+      'img_map_00006.png',
+      'img_map_00007.png',
+      'img_map_00008.png',
+      'img_map_00009.png',
+      'img_map_00010.png',
+      'img_map_00011.png',
+      'img_map_00012.png'
+    ];
+
+    for (let i = 0; i < 12; i++) {
+      dots.push({
+        lat: Math.floor(Math.random() * 85) + 15,
+        lng: Math.floor(Math.random() * 85) + 15,
+        img: '/assets/images/soc_map/' + imgs.shift(),
+        color: '#7AC143'
+      });
+    }
+
+    return dots;
+  }
+
+  onShowLightbox( evt, dot ): void {
+
+    if(evt) {
+      evt.stopPropagation();
+    }
+
+
+    this.dotimage = JSON.parse(JSON.stringify(dot));
+    this.dotimage.lat+= 3;
+    this.dotimage.lng-= 5;
+    this.showImage = true;
+  }
+  hideLightbox(){
+    this.showImage = false;
   }
 }
 

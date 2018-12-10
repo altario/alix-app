@@ -61,7 +61,10 @@
       <div class="col-12 in-c-satelite-image">
         <div class="gmap">
           <app-report-selector [hasBg]="true"></app-report-selector>
-          <div class="overlay-map"></div>
+          <div class="overlay-map" (click)="hideLightbox()">
+            <div *ngFor="let dot of dots" class="dots" [ngStyle]="{'top': dot.lng +'%', 'left': dot.lat +'%',background:dot.color}" (click)="onShowLightbox($event, dot)"></div>
+            <div *ngIf="showImage" class="dots-lightbox"   [ngStyle]="{'top': 'calc(' + dotimage.lng + '% - 142px)' , 'left': dotimage.lat +'%', 'background':'url('+ dotimage.img +')'}"></div>
+          </div>
           <agm-map [disableDefaultUI]="false" [latitude]="lat" [longitude]="lng" [zoom]="zoom" [gestureHandling]="'none'" [zoomControl]="false" [streetViewControl]="false" [styles]="style2">
  <!--           <agm-circle *ngFor="let marker of markers2" [latitude]="marker.lat" [longitude]="marker.lng" [radius]="radius" [fillColor]="marker.color" [circleDraggable]="false"
             [editable]="false" fillOpacity="1"> 
