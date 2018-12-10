@@ -60,8 +60,10 @@ export class MockapiService {
           // portfolios[i].positionsData = positions;
 
           for (let z = 0; z < portfolios[i].notificationIds.length; z++) {
-            if (typeof notificationsHash[portfolios[i].notificationIds[z]] != 'undefined') {
-              portfolios[i].notificationsData.push(notificationsHash[portfolios[i].notificationIds[z]]);
+            const notIdArray = portfolios[i].notificationIds.replace('[', '').replace(']', '').split(',');
+
+              if (typeof notificationsHash[notIdArray[z]] != 'undefined') {
+                  portfolios[i].notificationsData.push(notificationsHash[notIdArray[z]]);
             }
           }
 
