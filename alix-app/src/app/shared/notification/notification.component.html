@@ -95,5 +95,9 @@
       <div class="label__up label--color">EXPOSURE</div>
       <div class="cell__information" [appNum]="notification?.portfolioExposure" [showUnit]="true" [unitSmall]="false"></div>
     </div>
+    <div class="btns-holder">
+      <button class="btn btn-light--1" (click)="addToReport(notification?.title)">Add to Report</button>
+      <button class="btn btn-light--1" (click)="markAsRead($event)">Mark as Read</button>
+    </div>
   </div>
 </div>

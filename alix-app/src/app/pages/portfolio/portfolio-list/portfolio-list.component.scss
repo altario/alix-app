@@ -6,6 +6,7 @@
     @include align(column center);
     font-size: rem(14px);
     .u-strong {
+      white-space: nowrap;
       font-size: rem(10px);
     }
   }
@@ -56,6 +57,22 @@ a {
 
       .portfolio-positions {
         flex: 0 0 110px !important;
+
+        > .text-row {
+        }
+        > .row-col {
+          > .text-row {
+            span::ng-deep {
+              @include align(middle);
+              &:first-child {
+                padding-right: 0 !important;
+              }
+              &:last-child {
+                padding-left: 0 !important;
+              }
+            }
+          }
+        }
         > * {
           margin: 0;
           + * {

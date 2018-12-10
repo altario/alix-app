@@ -23,8 +23,13 @@ export class NotificationRowComponent implements OnInit {
       queryParams: { type: 'notification', id: notification.id }
     });
   }
-  
+
   addToReport(title) {
     this.report.update({title: title});
+  }
+
+  markAsRead(event) {
+    const readDiv = event.target.closest('li');
+    readDiv.style.display = 'none';
   }
 }

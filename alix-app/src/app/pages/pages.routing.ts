@@ -71,7 +71,7 @@ export const PagesRoutes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'dashboard',
+        redirectTo: 'simulations',
         pathMatch: 'full'
       },
       {

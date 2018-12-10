@@ -1,12 +1,18 @@
 <div class="container-fluid">
-  <div class="row no-gutters">
-    <div class="col">
-      <!-- <h1 class="section-title">Simulations</h1> -->
-      <ul>
-        <li *ngFor="let position of simulations$ | async">
-          <app-simulation-row [position]="position"></app-simulation-row>
-        </li>
-      </ul>
+  <section class="page-section bg--dark">
+    <div class="row">
+      <div class="col">
+        <h1 class="section-title">Simulations</h1>
+      </div>
     </div>
-  </div>
+    <div class="row">
+      <div class="col">
+        <ul>
+          <li *ngFor="let position of simulations$ | async">
+            <app-simulation-row [position]="position"></app-simulation-row>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
 </div>

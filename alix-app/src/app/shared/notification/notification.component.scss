@@ -4,6 +4,7 @@
   height: auto;
   display: block;
   margin-bottom: 1rem;
+  @include anim(all);
 }
 
 [class*="bullet-point"] {
@@ -189,9 +190,9 @@
   }
 
   .notification-row__right {
-    flex: 0 0 160px;
+    flex: 0 0 400px;
     height: 100%;
-    padding: 0 20px 0 0 !important;
+    padding: 0 10px 0 0 !important;
     background: $color5;
     @include align(middle);
 
@@ -205,6 +206,20 @@
 
       .cell__information {
         font-size: rem(14);
+      }
+    }
+
+    .btns-holder {
+      @include align;
+      .btn {
+        height: 32px;
+        line-height: 32px;
+        padding: 0 10px;
+        font-size: rem(10);
+        text-transform: initial;
+        margin-left: 20px;
+        // + .btn {
+        // }
       }
     }
   }
