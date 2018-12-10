@@ -1,16 +1,16 @@
-<div *ngIf="isOpen" class="bg--light">
+<div *ngIf="isOpen" class="report-sticky-container bg--light {{isOpen ? 'is-open' : ''}}">
   <div class="box container">
-    <span class="cell__wrapper cell__wrapper cell__wrapper--bg-dark">{{counter}}</span>
-    <span>
-      <span class="title-report cell__wrapper cell__wrapper cell__wrapper--bg-light">{{title}}</span>
-      <span *ngIf="title"> added to Report</span>
-    </span>
+    <div class="cell__wrapper cell__wrapper cell__wrapper--bg-dark report-counter">{{counter}}</div>
+    <div class="report-title">
+      <div class="title-report cell__wrapper cell__wrapper cell__wrapper--bg-light">{{title}}</div>
+      <div class="title-added" *ngIf="title">added to Report</div>
+    </div>
 
-    <div>
-      <span class="button" (click)="openModal(template)">Add Comment</span>
-      <span *ngIf="!isMaximize" class="button" (click)="maximize()">Maximize</span>
-      <span *ngIf="isMaximize" class="button" (click)="maximize()">Minimize</span>
-      <span class="button" (click)="openClose()">Close</span>
+    <div class="btns-holder">
+      <button class="btn btn-light--2" (click)="openModal(template)">Add Comment</button>
+      <button *ngIf="!isMaximize" class="btn btn-light--2" (click)="maximize()">Maximize</button>
+      <button *ngIf="isMaximize" class="btn btn-light--2" (click)="maximize()">Minimize</button>
+      <button class="btn btn-light--1" (click)="openClose()">Close</button>
     </div>
   </div>
 </div>
@@ -18,22 +18,16 @@
 <div *ngIf="isMaximize" class="container-report">
   <div class="top">
     <div class="left">
-      <span class="report-title">
-        Untitled Report
-      </span>
+      <span class="report-title">Untitled Report</span>
       <span class="report-date"> - {{ todaysDate | date:'d MMM y' }}</span>
     </div>
     <div class="right">
-      <div class="button">
-        preview Report
-      </div>
-      <div class="button">
-        Send Report
-      </div>
+      <button class="btn btn-small btn-outline-light--1">Preview Report</button>
+      <button class="btn btn-small btn-outline-light--1">Send Report</button>
     </div>
   </div>
   <ul *ngIf="reportList.length > 0" class="container-list">
-    <li class="list" *ngFor="let report of reportList | reverse" >
+    <li class="list box" *ngFor="let report of reportList | reverse" >
       <div class="left">
         <span class="list-title">
           {{ report.title }}
@@ -43,9 +37,9 @@
         <div *ngIf="report.comment">
           <i class="icon--big icol ico-file-alt"></i>
         </div>
-        <div *ngIf="report.comment" class="button">Edit Note</div>
-        <div *ngIf="!report.comment" class="button">Add Note</div>
-        <div class="button">Remove</div>
+        <button *ngIf="report.comment" class="btn btn-light--2">Edit Note</button>
+        <button *ngIf="!report.comment" class="btn btn-light--2">Add Note</button>
+        <button class="btn btn-danger">Remove</button>
       </div>
     </li>
   </ul>
@@ -56,11 +50,11 @@
     <h4 class="modal-title pull-left">Add Comment to {{ reportList[reportList.length -1].title }}</h4>
   </div>
   <div class="modal-body">
-    <p>Comment:</p>
+    <p class="textarea-label">Comment:</p>
     <textarea placeholder="Comment here" name="comment" id="report-comment" (input)="commentText = $event.target.value" cols="30" rows="10"></textarea>
     <div class="buttons-container">
-      <button type="button" class="button" (click)="modalDecline()" >Cancel</button>
-      <button type="button" class="button" (click)="modalConfirm()" >Submit Comment</button>
+      <button type="button" class="btn btn-danger" (click)="modalDecline()">Cancel</button>
+      <button type="button" class="btn btn-light--2" (click)="modalConfirm()">Submit Comment</button>
     </div>
   </div>
 </ng-template>
