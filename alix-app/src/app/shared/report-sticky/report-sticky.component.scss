@@ -126,11 +126,15 @@ ul {
     height: 100%;
     padding: 20px;
     overflow: scroll;
+
+    @include align(column-reverse top);
   }
 
   .list {
     height: 60px;
     padding: 0 20px;
+    margin-top: 20px;
+
     @include align(middle between);
 
     .btn {
@@ -154,7 +158,7 @@ ul {
       align-items: center;
 
       i {
-        color: #697094;
+        color: #FFFFFF;
         padding: 1rem;
       }
     }

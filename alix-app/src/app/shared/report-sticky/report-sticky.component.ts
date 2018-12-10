@@ -24,8 +24,10 @@ export class ReportStickyComponent implements OnInit {
     this.todaysDate = new Date();
     this.report.data.subscribe((data) => {
       if (data) {
+        console.log(data);
+        data.title = data.title !== '' ? data.title : 'Position';
         this.counter += 1;
-        this.title = data.title || 'Position';
+        this.title = data.title;
         this.reportList.push(data);
         this.isOpen = true;
       }

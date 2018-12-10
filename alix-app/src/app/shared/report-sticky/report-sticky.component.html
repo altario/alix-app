@@ -29,7 +29,7 @@
     </div>
   </div>
   <ul *ngIf="reportList.length > 0" class="container-list">
-    <li class="list box" *ngFor="let report of reportList | reverse" >
+    <li class="list box" *ngFor="let report of reportList" >
       <div class="left">
         <span class="list-title">
           {{ report.title }}
@@ -37,7 +37,7 @@
       </div>
       <div class="right">
         <div *ngIf="report.comment">
-          <i class="icon--big icol ico-file-alt"></i>
+          <i class="icon--small icol ico-file-alt"></i>
         </div>
         <button *ngIf="report.comment" class="btn btn-light--2">Edit Note</button>
         <button *ngIf="!report.comment" class="btn btn-light--2">Add Note</button>
