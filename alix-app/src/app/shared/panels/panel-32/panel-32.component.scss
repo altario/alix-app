@@ -1,4 +1,4 @@
-:host {
+:host::ng-deep {
   position: relative;
   display: flex;
   .table {
@@ -27,5 +27,10 @@
         }
       }
     }
+  }
+
+  alix-bar {
+    box-shadow: none !important;
+    background: transparent !important;
   }
 }

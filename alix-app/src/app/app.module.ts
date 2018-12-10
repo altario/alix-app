@@ -15,6 +15,7 @@ import { AppComponent } from './app.component';
 
 // ngx-bootstrap
 import { BsDropdownModule } from 'ngx-bootstrap';
+import { RatingModule } from 'ngx-bootstrap';
 
 // not-found
 import { NotFoundComponent } from '@pages/not-found/not-found.component';
@@ -46,6 +47,7 @@ import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 
     // ngx-bootstrap
     BsDropdownModule.forRoot(),
+    RatingModule.forRoot(),
 
     // plugins
     LoadingBarRouterModule,
