@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
+export interface ReportObj {
+  title: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,7 +15,8 @@ export class PositionsReportService {
 
   constructor() { }
 
-  update(obj: object) {
-    this.reportSource.next(obj === undefined ? {title: ' '} : obj);
+  update(obj: ReportObj) {
+    console.log(obj)
+    this.reportSource.next(obj.title === undefined ? {title: ''} : obj);
   }
 }

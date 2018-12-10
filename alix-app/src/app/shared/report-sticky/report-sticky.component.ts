@@ -24,10 +24,14 @@ export class ReportStickyComponent implements OnInit {
     this.todaysDate = new Date();
     this.report.data.subscribe((data) => {
       if (data) {
+        data.title = data.title !== '' ? data.title : 'Position';
         this.counter += 1;
-        this.title = data.title || 'Position';
-        this.reportList.push(data);
+        this.title = data.title;
+        this.reportList.unshift(data);
         this.isOpen = true;
+
+        console.log(this.reportList);
+
       }
     });
 
@@ -48,7 +52,7 @@ export class ReportStickyComponent implements OnInit {
   }
 
   modalConfirm(): void {
-    this.reportList[this.reportList.length - 1].comment = this.commentText;
+    this.reportList[0].comment = this.commentText;
     this.commentText = '';
     this.modalRef.hide();
   }
