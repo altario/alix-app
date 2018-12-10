@@ -103,6 +103,10 @@ $box__body-bg--dark: $color2;
 }
 
 @mixin select-styled ($color-light, $color-dark){
+	.select-styled {
+		background-color: $color-light;
+		border-color: $color-dark;
+	}
 	.cell__wrapper--bg-light {
 		.select-styled,
 		input {
