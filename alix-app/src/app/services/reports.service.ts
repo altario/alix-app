@@ -12,6 +12,6 @@ export class PositionsReportService {
   constructor() { }
 
   update(obj: object) {
-    this.reportSource.next(obj);
+    this.reportSource.next(obj === undefined ? {title: ' '} : obj);
   }
 }
