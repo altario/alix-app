@@ -5,10 +5,5 @@
   }
 }
 
-.bg--light {
-  @include btn-alix (duplicate, $body__color__text, $color3);
-}
 
-.bg--dark {
-  @include btn-alix (duplicate, $body__color__text, $color6);
-}
+
