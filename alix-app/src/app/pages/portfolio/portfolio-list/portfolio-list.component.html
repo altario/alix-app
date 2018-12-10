@@ -5,6 +5,7 @@
         <h1 class="section-title">Portfolios</h1>
       </div>
     </div>
+
     <div class="row">
       <div class="col-3">
         <div class="sidebar box box--table">
@@ -19,7 +20,7 @@
             <div class=" cell__wrapper cell__wrapper--bg-dark">
               <div class="row-justified">
                 <input class="form-control form--search" type="search" id="site-search" name="q" aria-label="Search" placeholder="Search">
-                <button type="submit" class="btn btn-search btn--search">
+                <button type="submit" class="btn btn-search">
                   <i class="icol ico-search"></i>
                 </button>
               </div>
@@ -101,7 +102,11 @@
                     </div>
                     <div class="text-row">
                       <span class="u-strong">Avg. RAROC</span>
-                      <span>{{ portfolio.avgRaroc }}%</span>
+                      <!-- <span>{{ portfolio.avgRaroc }}%</span> -->
+                      <span
+                        [appNum]="portfolio.avgRaroc"
+                        [showUnit]="false"
+                        [unitSmall]="false">%</span>
                     </div>
                     <div class="text-row">
                       <span class="u-strong">Avg. Maturity</span>

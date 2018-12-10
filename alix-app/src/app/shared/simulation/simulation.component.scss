@@ -17,8 +17,9 @@ $row_padding: 10px 15px;
 
   .position-row__title {
     flex: 1;
-    padding-right: 10px;
-    color: #828282;
+    padding: 0 20px;
+    font-weight: bold;
+    color: white;
   }
 
   .position-row__loan,
@@ -57,6 +58,7 @@ $row_padding: 10px 15px;
     max-width: $size;
     text-align: center;
     color: white;
+    font-weight: $font-weight--bold;
     font-size: 0.9em;
     border-radius: 2px;
     padding-top: 2px;
@@ -103,17 +105,17 @@ $row_padding: 10px 15px;
     }
   }
 
-  .position-row__button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #d0cdcd;
-    height: 26px;
-    border-radius: $border-radius__default;
-    cursor: pointer;
-
-    &:hover {
-      background: white;
+  .btns-holder {
+    @include align;
+    .btn {
+      height: 32px;
+      line-height: 32px;
+      padding: 0 10px;
+      font-size: rem(10);
+      text-transform: initial;
+      margin-left: 20px;
+      // + .btn {
+      // }
     }
   }
 }

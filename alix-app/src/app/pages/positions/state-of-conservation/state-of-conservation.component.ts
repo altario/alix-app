@@ -27,8 +27,8 @@ export class StateOfConservationComponent implements OnInit {
   public selectedSOCAllAssets: object;
   public imageTransitionValue = '2018';
   public imageTransitionObject = {
-    '2015': ['assets/images/differencePerYear/street-left2.jpg', 'assets/images/differencePerYear/street-right2.jpg'],
-    '2018': ['assets/images/differencePerYear/street-left1.jpg', 'assets/images/differencePerYear/street-right1.jpg']
+    '2015': ['./assets/images/differencePerYear/street-left2.jpg', './assets/images/differencePerYear/street-right2.jpg'],
+    '2018': ['./assets/images/differencePerYear/street-left1.jpg', './assets/images/differencePerYear/street-right1.jpg']
   }; // #HC
 
   public numbOfAssetsBySc;
@@ -293,7 +293,7 @@ export class StateOfConservationComponent implements OnInit {
     const labels = ['New', 'In Construction', 'Renovated', 'Used', 'Needs Renovation', 'Ruin'];
     const axisLabel = JSON.parse(JSON.stringify(eChartsConfig.xAxis.axisLabel));
     axisLabel.formatter = function (value, index) {
-      return index == 0 ? 0 : labels[index - 1];
+      return index === 0 ? 0 : labels[index - 1];
     };
 
     const axisYLabel = JSON.parse(JSON.stringify(eChartsConfig.yAxis.axisLabel));
@@ -328,8 +328,8 @@ export class StateOfConservationComponent implements OnInit {
 
     x.push({
       type: 'effectScatter',
-      color: '#FF0000',
-      symbolSize: 20,
+      color: '#E9545C',
+      symbolSize: 5,
       data: [dataComparison.sqmPricePerStateOfConservationBarPlot.values]
     });
 
