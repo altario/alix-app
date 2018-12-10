@@ -1,12 +1,17 @@
 @import '~src/scss/imports';
 
 :host {
-  height: 190px;
+  height: auto;
   display: block;
   margin-bottom: 1rem;
 }
 
+[class*="bullet-point"] {
+  border-radius: 100px;
+}
+
 .notification-row__container {
+  height: 190px !important;
   height: 100%;
   @include align;
 
@@ -118,7 +123,7 @@
 
   .notification-row__btns {
     flex: 0 0 160px;
-    @include align(column middle center stretch between);
+    @include align(column middle center stretch around);
     padding: 20px;
 
 
@@ -132,10 +137,10 @@
   }
 }
 
+
 .notification-row__container-small {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  height: 44px !important;
+  @include align(between middle);
 
   .notification-row__left {
     display: flex;
