@@ -79,10 +79,10 @@
       <div class="cell__wrapper cell__wrapper--bg-light">{{ notification?.title }}</div>
     </div>
     <div>
-      <div [appPosNeg]="notification?.value" icon="symbol">{{ notification?.value | perc: 1 }}</div>
+      <div *ngIf="notification?.type === 'kpi'" [appPosNeg]="notification?.value" icon="symbol">{{ notification?.value | perc: 1 }}</div>
     </div>
     <div>
-      <div>{{ notification?.time }}</div>
+      <div *ngIf="notification?.type === 'kpi'">{{ notification?.time }}</div>
     </div>
   </div>
 
