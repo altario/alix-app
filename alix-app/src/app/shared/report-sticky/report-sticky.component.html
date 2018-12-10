@@ -33,7 +33,7 @@
     </div>
   </div>
   <ul *ngIf="reportList.length > 0" class="container-list">
-    <li class="list" *ngFor="let report of reportList" >
+    <li class="list" *ngFor="let report of reportList | reverse" >
       <div class="left">
         <span class="list-title">
           {{ report.title }}
