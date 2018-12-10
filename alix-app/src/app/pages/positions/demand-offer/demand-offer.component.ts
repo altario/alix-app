@@ -256,7 +256,7 @@ export class DemandAndOfferComponent implements OnInit {
         data: [
 
           { name: extrachartdataset.extra.shortTermRentEvolutionEurSqm.radius1Km.label, icon: 'rect' },
-            { name: extrachartdataset.extra.shortTermRentEvolutionEurSqm.portaNuova.label, icon: 'rect' },
+          { name: extrachartdataset.extra.shortTermRentEvolutionEurSqm.portaNuova.label, icon: 'rect' },
           { name: extrachartdataset.extra.shortTermRentEvolutionEurSqm.milano.label, icon: 'rect' },
         ],
         itemWidth: eChartsConfig.legend.itemWidth,
@@ -331,6 +331,7 @@ export class DemandAndOfferComponent implements OnInit {
     this.peerAssetsDemandRateListingToUnlistingForSale();
     this.peerAssetsDemandRateListingToUnlistingLr();
     this.peerAssetsOccupancyRateSr();
+    this.assetViewsVsTopOccupancySr();
   }
 
   getPopulationNames(): Array<any> {
@@ -453,6 +454,82 @@ export class DemandAndOfferComponent implements OnInit {
       lineStyle: { ...eChartsConfig.series.lineStyle, color: '#FF0000', type: 'dotted' },
       itemStyle: { color: '#FF0000' }
     });
+  }
+
+  assetViewsVsTopOccupancySr(population = 'population1') {
+
+    const lineColors = ['#913BAF', '#F26D4F', '#BF5E5E' ];
+    const axisyLabel = JSON.parse(JSON.stringify(eChartsConfig.yAxis.axisLabel));
+    axisyLabel.formatter = function (value, index) {
+      const processedValue = numericalValues(value);
+      return processedValue.round + ' ' + (processedValue.unitname ? processedValue.unitname + '€' : '');
+    };
+    const series = extrachartdataset.extra.assetViewsVsTopOccupancySr.filter((row) => row.population === population);
+
+    this.opts.assetViewsVsTopOccupancySr = {
+
+      legend: {
+        data: series.map((row) => {
+          return { name: row.stateOfConservation, icon: 'rect' };
+        }),
+        itemWidth: eChartsConfig.legend.itemWidth,
+        itemHeight: eChartsConfig.legend.itemHeight,
+        top: eChartsConfig.legend.top,
+        right: eChartsConfig.legend.right,
+        textStyle: {
+          fontSize: eChartsConfig.legend.fontSize,
+          color: eChartsConfig.legend.color
+        }
+      },
+      grid: eChartsConfig.grid,
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'cross',
+          label: {
+            backgroundColor: '#6a7985'
+          }
+        },
+        formatter: (params) => {
+          const colorSpan = color => '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' + color + '"></span>';
+          let rez = params[0].axisValue + '<br>';
+          params.forEach(item => {
+            const processedValue = numericalValues(item.data);
+            rez += colorSpan(item.color) + ' ' + item.seriesName + ': ' + processedValue.round + ' ' + (processedValue.unitname ? processedValue.unitname + '€' : '') + '<br />';
+          });
+
+          return rez;
+        }
+      },
+      xAxis: {
+        type: 'category',
+        data: [2013,2014,2015,2016,2017,2018],
+        splitLine: eChartsConfig.xAxis.splitLine,
+        axisLabel: eChartsConfig.xAxis.axisLabel,
+        axisLine: eChartsConfig.xAxis.axisLine
+      },
+      yAxis: {
+        type: 'value',
+        splitLine: eChartsConfig.yAxis.splitLine,
+        axisLabel: axisyLabel,
+        axisLine: {
+          show: false
+        }
+      }
+    };
+
+    this.series.assetViewsVsTopOccupancySr = series.map((row,i) => {
+      return {
+        name: row.stateOfConservation,
+        data: row.values,
+        type: 'line',
+        symbol: eChartsConfig.series.symbol,
+        symbolSize: eChartsConfig.series.symbolSize,
+        lineStyle: { ...eChartsConfig.series.lineStyle, color: lineColors[i] },
+        itemStyle: { color: lineColors[i] }
+      }
+    });
+
   }
 
   priceTodayVsOvertime(population = 'radius1Km') {
