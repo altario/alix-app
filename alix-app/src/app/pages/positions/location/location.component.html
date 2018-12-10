@@ -2,6 +2,14 @@
   <section class="page-section bg--dark">
 
     <div class="row">
+      <div class="col">
+        <h1 class="section-title">Neighbourhood
+          <!-- <i class="icor ico-chevron-right">{{ config.neighborhood.value }}</i> -->
+        </h1>
+        {{config.neighborhood | json}}
+      </div>
+    </div>
+    <div class="row">
       <div class="col-4">
         <app-panel-25 [config]="config.typeOfNeighborhood"></app-panel-25>
       </div>
@@ -129,7 +137,7 @@
         <app-panel-34 [config]="config.publicTransportation500Radius"></app-panel-34>
       </div>
       <div class="col-8 in-METROSTATIONS">
-        <agm-map [disableDefaultUI]="false" [latitude]="lat" [longitude]="lng" [zoom]="zoom" 
+        <agm-map [disableDefaultUI]="false" [latitude]="lat" [longitude]="lng" [zoom]="zoom"
             [gestureHandling]="'none'" [zoomControl]="false" [streetViewControl]="false" [styles]="style1">
             <agm-circle [latitude]="lat" [longitude]="lng" [radius]="radius" [fillColor]="'red'" [circleDraggable]="false"
                 [editable]="false">

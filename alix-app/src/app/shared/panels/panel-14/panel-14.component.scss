@@ -1,4 +1,12 @@
+@import '~src/scss/imports';
+
 :host {
   position: relative;
   display: flex;
+}
+
+.text-row {
+  * {
+    font-size: rem(12);
+  }
 }
