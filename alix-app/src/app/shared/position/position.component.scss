@@ -1,24 +1,28 @@
 @import '~src/scss/imports';
 
-$row_padding: 10px 15px;
+:host {
+  display: block;
+  position: relative;
+  margin-top: 20px;
+}
 
 .position-row__container {
-  color: #828282;
+  height: 64px;
   background-color: $color1;
   color: white;
-  height: 44px;
-  margin-top: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  @include align(around middle);
   border-radius: $border-radius__default;
-  padding: $row_padding;
+  padding: 0 20px;
 
   .position-row__title {
     flex: 1;
     padding-right: 10px;
-    color: #828282;
+    font-size: rem(20);
+    color: white;
+  }
+
+  .position-row__loan {
+    color: white;
   }
 
   .position-row__loan,
@@ -34,7 +38,7 @@ $row_padding: 10px 15px;
   .position-row__loan,
   .position-row__stat,
   .position-row__button {
-    font-size: 14px;
+    font-size: rem(14);
     @include line-clamp(2, 14px, 1.1);
   }
 
@@ -49,15 +53,17 @@ $row_padding: 10px 15px;
   }
 
   .position-row__state {
-    $size: 110px;
-    min-width: $size;
-    max-width: $size;
+    // $size: 110px;
+    // min-width: $size;
+    // max-width: $size;
+    width: 100px;
+    height: 32px;
+    line-height: 32px;
     text-align: center;
+    font-weight: $font-weight--bold;
     color: white;
-    font-size: 0.9em;
-    border-radius: 2px;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    font-size: rem(12);
+    border-radius: $border-radius__default;
 
     &.green {
       background: #43D17F;
@@ -100,16 +106,15 @@ $row_padding: 10px 15px;
   }
 
   .position-row__button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #d0cdcd;
-    height: 26px;
-    border-radius: $border-radius__default;
-    cursor: pointer;
-
-    &:hover {
-      background: white;
+    flex: 0 0 115px;
+    height: 32px;
+    padding: 0;
+    @include align(stretch);
+    .btn {
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      color: white;
     }
   }
 }

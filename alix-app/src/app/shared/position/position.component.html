@@ -1,32 +1,31 @@
-<div class="position-row__container">
-    <div class="position-row__title">{{ position?.name }}</div>
-    <div class="position-row__loan">{{ position?.loanType }}</div>
-    <!-- <div class="position-row__time">
-        {{ position?.dateStart | cusdate | date: 'd MMM yy' }} > {{ position?.dateEnd | cusdate | date: 'd MMM yy' }}
-    </div> -->
+<div class="box position-row__container">
+  <div class="position-row__title">{{ position?.name }}</div>
+  <div class="position-row__loan">{{ position?.loanType }}</div>
+  <!-- <div class="position-row__time">
+      {{ position?.dateStart | cusdate | date: 'd MMM yy' }} > {{ position?.dateEnd | cusdate | date: 'd MMM yy' }}
+  </div> -->
 
-    <div class="position-row__state"
-      [class.green]="position?.state === 'Performing'"
-      [class.grey]="position?.state === 'Fully Paid'"
-      [class.yellow]="position?.state === 'Past Due Loan'"
-      [class.orange]="position?.state === 'Unlikely To Pay'"
-      [class.red]="position?.state === 'Bad Loan'"
-      >{{ position?.state }}</div>
+  <div class="position-row__state"
+    [class.green]="position?.state === 'Performing'"
+    [class.grey]="position?.state === 'Fully Paid'"
+    [class.yellow]="position?.state === 'Past Due Loan'"
+    [class.orange]="position?.state === 'Unlikely To Pay'"
+    [class.red]="position?.state === 'Bad Loan'">{{ position?.state }}</div>
 
-    <ul class="position-row__info">
-        <li *ngFor="let info of position?.infos; index as i;">
-            <div>{{ info?.info }}</div>
-            <div class="u-strong" *ngIf="i<2">
-              <span [appNum]="info?.data" [showUnit]="true" [unitSmall]="false"></span>
-            </div>
+  <ul class="position-row__info">
+    <li *ngFor="let info of position?.infos; index as i;">
+      <div>{{ info?.info }}</div>
+      <div class="u-strong" *ngIf="i<2">
+        <span [appNum]="info?.data" [showUnit]="true" [unitSmall]="false"></span>
+      </div>
 
-            <div class="u-strong" *ngIf="i>1">
-              {{ info?.data | round: 2}} <small>{{ info?.label }}</small>
-            </div>
-        </li>
-    </ul>
+      <div class="u-strong" *ngIf="i>1">
+        {{ info?.data | round: 2}} <small>{{ info?.label }}</small>
+      </div>
+    </li>
+  </ul>
 
-    <div class="position-row__button" (click)="goToDashboard(position?.id)">
-        View
-    </div>
+  <div class="position-row__button">
+    <button class="btn btn-primary btn-small" (click)="goToDashboard(position?.id)">View</button>
+  </div>
 </div>

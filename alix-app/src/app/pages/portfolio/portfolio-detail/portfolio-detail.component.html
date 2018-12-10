@@ -23,6 +23,7 @@
     <div class="row">
       <div class="col">
         <div class="row">
+
           <div class="col-3">
             <div class="box box--table">
               <div class="box__header box__header--bg">
@@ -85,7 +86,6 @@
                       [appNum]="(portfolio$ | async)?.keyFinancialExpectedLoss"
                       [showUnit]="true"
                       [unitSmall]="true"
-
                       unitClass="u-uppercase highlighted__small--color">
                     </p>
                   </div>
@@ -99,9 +99,7 @@
               <div class="box__header box__header--bg">
                 <div class="d-flex flex-row justify-content-between">
                   <div class="box__title title--compound">
-                    <h1 class="title">
-                      Position
-                    </h1>
+                    <h1 class="title">Position</h1>
                   </div>
                 </div>
               </div>
@@ -293,6 +291,7 @@
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>
@@ -314,7 +313,6 @@
   <section class="page-section bg--light">
     <div class="row no-gutters">
       <div class="col">
-        <!-- <h1 class="section-title">Positions</h1> -->
         <ul>
           <li *ngFor="let position of (portfolio$ | async)?.positionsData">
             <app-position-row [position]="position"></app-position-row>
