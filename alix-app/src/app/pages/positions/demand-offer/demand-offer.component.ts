@@ -804,9 +804,9 @@ export class DemandAndOfferComponent implements OnInit {
         }
       }
     };
-
-    return chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm
+    const series = chartdataset.dossier1ChartsData.demandOffer.longTermRentEvolutionEurSqm
       .reduce((prev, next, i) => {
+
         prev.push({
           name: next[populationNames[population]].label,
           data: next[populationNames[population]].values,
@@ -816,9 +816,12 @@ export class DemandAndOfferComponent implements OnInit {
           lineStyle: { ...eChartsConfig.series.lineStyle, color: '#79C14C' },
           itemStyle: { color: '#79C14C' }
         });
-
+          console.log(prev);
         return prev;
       }, []);
+
+      console.log(series);
+      return series;
   }
 
   peerListedAssets5YLr() {

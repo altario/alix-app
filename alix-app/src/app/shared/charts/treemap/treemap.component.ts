@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import * as echarts from 'echarts';
 import * as formatUtil from 'echarts/lib/util/format';
-
+import { numericalValues } from '@helpers/numerical-values.lib';
 
 @Component({
   selector: 'alix-treemap',
@@ -48,17 +48,18 @@ export class TreemapComponent implements OnInit {
           normal: {
             position: 'insideTopLeft',
             formatter: function (params) {
+              const processedValue = numericalValues(params.value[0]);
               const arr = [
                 '{name|' + params.name + '}',
                 '{hr|}',
-                '{budget|$ ' + format.addCommas(params.value[0]) + '}'
+                '{budget| ' + processedValue.round + ' ' + (processedValue.unitname ? processedValue.unitname : '') + '}'
               ];
 
-            if (params.value[2] != null) {
-              arr.push(
-                '{household| ' + format.addCommas((+params.value[2].toFixed(2)) * 100) + '%}'
-              );
-            }
+              if (params.value[2] != null) {
+                arr.push(
+                  '{household| ' + format.addCommas((+params.value[2].toFixed(2)) * 100) + '%}'
+                );
+              }
 
               return arr.join('\n');
             },

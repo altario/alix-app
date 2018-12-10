@@ -794,52 +794,6 @@ export const dossier1ChartsData = {
           ],
           label: 'Milano'
         }
-      },
-      {
-        year: {
-          values: [
-            2013,
-            2014,
-            2015,
-            2016,
-            2017,
-            2018
-          ],
-          label: 'Year'
-        },
-        radius1Km: {
-          values: [
-            21.66,
-            23.83,
-            31.7,
-            44.06,
-            45.38,
-            47.65
-          ],
-          label: 'Radius 1km'
-        },
-        portaNuova: {
-          values: [
-            22.32,
-            25.22,
-            30.27,
-            32.08,
-            33.69,
-            37.73
-          ],
-          label: 'Porta Nuova'
-        },
-        milano: {
-          values: [
-            19.14,
-            21.44,
-            24.87,
-            25.87,
-            27.68,
-            34.59
-          ],
-          label: 'Milano'
-        }
       }
     ],
     peerListedAssets5YLr: {
