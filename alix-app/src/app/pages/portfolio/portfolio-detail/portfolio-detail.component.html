@@ -85,7 +85,7 @@
                       [appNum]="(portfolio$ | async)?.keyFinancialExpectedLoss"
                       [showUnit]="true"
                       [unitSmall]="true"
-                      
+
                       unitClass="u-uppercase highlighted__small--color">
                     </p>
                   </div>
@@ -156,13 +156,11 @@
                     <div class="table__simple">
                       <div class="table__row">
                         <span class="cell__title">Started:</span>
-                        <span class="cell__information">{{(portfolio$ | async)?.positionStarted | cusdate | date: 'd
-                          MMM y' }}</span>
+                        <span class="cell__information">{{(portfolio$ | async)?.positionStarted | cusdate | date: 'd MMM y' }}</span>
                       </div>
                       <div class="table__row">
                         <span class="cell__title">Ended:</span>
-                        <span class="cell__information">{{(portfolio$ | async)?.positionMaturity | cusdate | date: 'd
-                          MMM y' }}</span>
+                        <span class="cell__information">{{(portfolio$ | async)?.positionMaturity | cusdate | date: 'd MMM y' }}</span>
                       </div>
                     </div>
                   </div>
@@ -176,9 +174,7 @@
               <div class="box__header box__header--bg">
                 <div class="d-flex flex-row justify-content-between">
                   <div class="box__title title--compound">
-                    <h1 class="title">
-                      Duration
-                    </h1>
+                    <h1 class="title">Duration</h1>
                   </div>
                 </div>
               </div>
@@ -207,8 +203,7 @@
                   <div class="cell__wrapper__info">
                     <p class="highlighted--big highlighted--color">
                       {{ (portfolio$ | async)?.durationTimeToDurationDate | number:'1.0-0' }}
-                      <small class="u-uppercase highlighted__small--color__exception">{{ (portfolio$ |
-                        async)?.durationTimeToDurationDateUnit }}</small>
+                      <small class="u-uppercase highlighted__small--color__exception">{{ (portfolio$ | async)?.durationTimeToDurationDateUnit }}</small>
                       <small class="highlighted__small--color of">AVG</small>
                     </p>
                   </div>
@@ -223,8 +218,7 @@
                       </div>
                       <div class="table__row">
                         <span class="cell__title">Duration</span>
-                        <span class="cell__information">{{ (portfolio$ | async)?.durationToday | cusdate | date: 'd MMM
-                          y'}}</span>
+                        <span class="cell__information">{{ (portfolio$ | async)?.durationToday | cusdate | date: 'd MMM y'}}</span>
                       </div>
                     </div>
                   </div>
@@ -252,7 +246,6 @@
                       [appNum]="(portfolio$ | async)?.collateralEvaluationinT0"
                       [showUnit]="true"
                       [unitSmall]="true"
-
                       unitClass="u-uppercase highlighted__small--color">
                     </p>
                   </div>
@@ -265,8 +258,7 @@
                   <div class="cell__wrapper__info">
                     <p class="highlighted--big highlighted--color">
                       {{ (portfolio$ | async)?.collateralLoanToValue | perc:1}}
-                      <small class="u-uppercase highlighted__small--color">{{ (portfolio$ |
-                        async)?.collateralLoanToValueUnit }}</small>
+                      <small class="u-uppercase highlighted__small--color">{{ (portfolio$ | async)?.collateralLoanToValueUnit }}</small>
                     </p>
                   </div>
                 </div>
@@ -279,7 +271,7 @@
                   </div>
                   <div class="cell__wrapper__info">
                     <p class="highlighted--big highlighted--color"
-                     [appNum]="(portfolio$ | async)?.collateralCurrentEvaluationEstimation"
+                      [appNum]="(portfolio$ | async)?.collateralCurrentEvaluationEstimation"
                       [showUnit]="true"
                       [unitSmall]="true"
                       unitClass="u-uppercase highlighted__small--color">
@@ -294,8 +286,7 @@
                   <div class="cell__wrapper__info">
                     <p class="highlighted--big highlighted--color">
                       {{ (portfolio$ | async)?.collateralAdjustedLoanToValuePerc | perc:1 }}
-                      <small class="highlighted__small--color u-uppercase">{{ (portfolio$ |
-                        async)?.collateralAdjustedLoanToValuePercUnit }}</small>
+                      <small class="highlighted__small--color u-uppercase">{{ (portfolio$ | async)?.collateralAdjustedLoanToValuePercUnit }}</small>
                     </p>
                   </div>
                 </div>
