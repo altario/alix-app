@@ -11,6 +11,7 @@ import * as eChartsConfig from '@global/charts';
 //Pipe
 import { CustomCurrencyPipe } from '@helpers/index';
 import { ShufflePipe } from 'ngx-pipes';
+import { numericalValues } from '@helpers/numerical-values.lib';
 
 @Component({
   selector: 'app-dashboard',
@@ -67,8 +68,8 @@ export class DashboardComponent implements OnInit {
           const colorSpan = color => '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' + color + '"></span>';
           let rez = params[0].axisValue + '<br>';
           params.forEach(item => {
-            const xx = colorSpan(item.color) + ' ' + item.seriesName + ': ' + this.currencyPipe.transform(item.data ) + '<br />';
-            rez += xx;
+            const processedValue = numericalValues(item.data);
+            rez += colorSpan(item.color) + ' ' + item.seriesName + ': ' + processedValue.round + '<br />';
           });
 
           return rez;
@@ -117,6 +118,12 @@ export class DashboardComponent implements OnInit {
       return index == 0 ? 0 : labels[index - 1];
     };
 
+    const axisyLabel = JSON.parse(JSON.stringify(eChartsConfig.eChartsConfig.yAxis.axisLabel));
+    axisyLabel.formatter = function (value, index) {
+      const processedValue = numericalValues(value);
+      return processedValue.round + ' ' + (processedValue.unitname ? processedValue.unitname : '');
+    };
+
 
     this.opts.exposurePerformanceBoxPlot = {
       grid: {
@@ -129,7 +136,7 @@ export class DashboardComponent implements OnInit {
       },
       yAxis: {
         splitLine: eChartsConfig.eChartsConfig.yAxis.splitLine,
-        axisLabel: eChartsConfig.eChartsConfig.yAxis.axisLabel,
+        axisLabel: axisyLabel,
         axisLine: eChartsConfig.eChartsConfig.yAxis.axisLine
       }
     };
@@ -161,7 +168,8 @@ export class DashboardComponent implements OnInit {
 
     const axisLabel = JSON.parse(JSON.stringify(eChartsConfig.eChartsConfig.xAxis.axisLabel));
     axisLabel.formatter = function (value, index) {
-      return (parseInt(value, 10) / 1000000) + ' Mln';
+      const processedValue = numericalValues(value);
+      return processedValue.round + ' ' + (processedValue.unitname ? processedValue.unitname : '');
     };
 
     this.opts.utpOutflowInflow = {
@@ -192,7 +200,8 @@ export class DashboardComponent implements OnInit {
           }
           // return labels[tar.dataIndex] + '<br/>' +
           //        tar.seriesName + ': ' + parseInt(tar.value / 1000000) + 'Mln';
-          return labels[tar.dataIndex] + '<br/>' + tar.seriesName + ': ' + this.convertToMilion(tar.value).toFixed(2) + 'Mln';
+          const processedValue = numericalValues(tar.value);
+          return labels[tar.dataIndex] + '<br/>' + tar.seriesName + ': ' + processedValue.round + ' ' + (processedValue.unitname ? processedValue.unitname : '');
         }
       },
       legend: {
@@ -252,7 +261,8 @@ export class DashboardComponent implements OnInit {
               show: true,
                 position: serie.itemStyle.normal.label.position,
                 formatter: function (params) {
-                  return (parseInt(params.value, 10) / 1000000).toFixed(2) + ' Mln';
+                  const processedValue = numericalValues(params.value);
+                  return processedValue.round + ' ' + (processedValue.unitname ? processedValue.unitname : '');
                 }
             }
           }
@@ -273,7 +283,8 @@ export class DashboardComponent implements OnInit {
             show: true,
             position: serie.itemStyle.normal.label.position,
             formatter: function (params) {
-              return (parseInt(params.value, 10) / 1000000).toFixed(2) + ' Mln';
+              const processedValue = numericalValues(params.value);
+              return processedValue.round + ' ' + processedValue.unitname;
             }
           }
         }
@@ -327,6 +338,12 @@ export class DashboardComponent implements OnInit {
 
   getexposure() {
 
+    const axisyLabel = JSON.parse(JSON.stringify(eChartsConfig.eChartsConfig.xAxis.axisLabel));
+    axisyLabel.formatter = function (value, index) {
+      const processedValue = numericalValues(value);
+      return processedValue.round + ' ' + (processedValue.unitname ? processedValue.unitname : '');
+    };
+
     this.opts.exposure = {
       color: ['#D9534F'],
       grid: {
@@ -359,7 +376,7 @@ export class DashboardComponent implements OnInit {
         scale: true,
         axisLine: eChartsConfig.eChartsConfig.xAxis.axisLine,
         splitLine: eChartsConfig.eChartsConfig.xAxis.splitLine,
-        axisLabel: eChartsConfig.eChartsConfig.xAxis.axisLabel,
+        axisLabel: axisyLabel,
         type: 'value'
       },
       dataZoom: {
@@ -382,6 +399,14 @@ export class DashboardComponent implements OnInit {
   }
 
   getnetMargin() {
+
+    const axisyLabel = JSON.parse(JSON.stringify(eChartsConfig.eChartsConfig.xAxis.axisLabel));
+    axisyLabel.formatter = function (value, index) {
+      const processedValue = numericalValues(value);
+      return processedValue.round + ' ' + (processedValue.unitname ? processedValue.unitname : '');
+    };
+
+
     this.opts.netMargin = {
       color: ['#5CB85C'],
       grid: {
@@ -414,7 +439,7 @@ export class DashboardComponent implements OnInit {
         scale: true,
         axisLine: eChartsConfig.eChartsConfig.xAxis.axisLine,
         splitLine: eChartsConfig.eChartsConfig.xAxis.splitLine,
-        axisLabel: eChartsConfig.eChartsConfig.xAxis.axisLabel,
+        axisLabel: axisyLabel,
         type: 'value'
       },
       dataZoom: {
@@ -436,6 +461,12 @@ export class DashboardComponent implements OnInit {
   }
 
   getperforming() {
+    const axisyLabel = JSON.parse(JSON.stringify(eChartsConfig.eChartsConfig.xAxis.axisLabel));
+    axisyLabel.formatter = function (value, index) {
+      const processedValue = numericalValues(value);
+      return processedValue.round + ' ' + (processedValue.unitname ? processedValue.unitname : '');
+    };
+
     this.opts.performing = {
       color: ['#5CB85C', '#D9534F'],
       grid: {
@@ -467,7 +498,7 @@ export class DashboardComponent implements OnInit {
         scale: true,
         axisLine: eChartsConfig.eChartsConfig.xAxis.axisLine,
         splitLine: eChartsConfig.eChartsConfig.xAxis.splitLine,
-        axisLabel: eChartsConfig.eChartsConfig.xAxis.axisLabel,
+        axisLabel: axisyLabel,
         type: 'value'
       },
       dataZoom: {
@@ -507,6 +538,12 @@ export class DashboardComponent implements OnInit {
   }
 
   getnonPerforming() {
+    const axisyLabel = JSON.parse(JSON.stringify(eChartsConfig.eChartsConfig.xAxis.axisLabel));
+    axisyLabel.formatter = function (value, index) {
+      const processedValue = numericalValues(value);
+      return processedValue.round + ' ' + (processedValue.unitname ? processedValue.unitname : '');
+    };
+
     this.opts.nonPerforming = {
       color: ['#D9534F'],
       grid: {
@@ -537,7 +574,7 @@ export class DashboardComponent implements OnInit {
         scale: true,
         axisLine: eChartsConfig.eChartsConfig.xAxis.axisLine,
         splitLine: eChartsConfig.eChartsConfig.xAxis.splitLine,
-        axisLabel: eChartsConfig.eChartsConfig.xAxis.axisLabel,
+        axisLabel: axisyLabel,
         type: 'value'
       },
       dataZoom: {
