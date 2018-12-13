@@ -43,6 +43,30 @@ $subheader__navbar--height: 40px;
   position: relative;
 }
 
+
+.left-container {
+  background: #1C2037;
+  
+  .title {
+    font-size: 18px;
+    padding: 25px 0 25px 20px;
+  }
+
+  .select-styled {
+    width: 100%;
+    margin-bottom: 20px;
+
+    select {
+      background: #252B47;
+      border-radius: 4px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
 .navbar {
   height: $subheader__navbar--height;
   padding: 0 60px;

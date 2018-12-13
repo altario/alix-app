@@ -1,29 +1,53 @@
 <!-- <nav class="navbar navbar--secondary fixed-top"> -->
-<div>
+<div class="left-container">
   <div class="title">FILTER OPTIONS</div>
-  <div>
+  <div class="accordion-container">
     <accordion>
       <accordion-group heading="COUNTERPARTS" [isOpen]="true">
         <div class="select-styled">
           <select (change)="onChange($event)">
             <option *ngFor="let option of droplist" [value]="option.id" [selected]="dropvalue == option.id">{{option.name}}</option>
           </select>
-          <app-dropdown [config]="[{id: 0, value: 'All GBV Sizes'}]"></app-dropdown>
         </div>
-        <div class="select-styled" style="margin-left: 15px;">
+        <div class="select-styled">
           <select>
             <option>All Sub Industries</option>
           </select>
         </div>
+        <div class="select-styled">
+          <select>
+            <option>All GBV Sizes</option>
+          </select>
+        </div>
       </accordion-group>
       <accordion-group heading="GEOGRAPHY" [isOpen]="true">
-        <app-dropdown [config]="[{id: 0, value: 'All Macro Regions'}]"></app-dropdown>
-        <app-dropdown [config]="[{id: 1, value: 'All Regions'}]"></app-dropdown>
-        <app-dropdown [config]="[{id: 2, value: 'All Provinces'}]"></app-dropdown>
-        <app-dropdown [config]="[{id: 3, value: 'All City'}]"></app-dropdown>
+        <div class="select-styled">
+          <select>
+            <option>All Macro Regions</option>
+          </select>
+        </div>
+        <div class="select-styled">
+          <select>
+            <option>All Regions</option>
+          </select>
+        </div>
+        <div class="select-styled">
+          <select>
+            <option>All Provinces</option>
+          </select>
+        </div>
+        <div class="select-styled">
+          <select>
+            <option>All City</option>
+          </select>
+        </div>
       </accordion-group>
       <accordion-group heading="POSITIONS" [isOpen]="true">
-        <app-dropdown [config]="[{id: 0, value: 'All Positions Sizes'}]"></app-dropdown>
+        <div class="select-styled">
+          <select>
+            <option>All Positions Sizes</option>
+          </select>
+        </div>
       </accordion-group>
     </accordion>
   </div>
