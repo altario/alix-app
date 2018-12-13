@@ -38,9 +38,41 @@ $subheader__navbar--height: 40px;
 // ------------------------------------------------------------------
 
 :host {
-  height: $subheader__navbar--height;
+  // height: $subheader__navbar--height;
   display: block;
   position: relative;
+}
+
+
+.left-container {
+  background: #1C2037;
+  
+  .title {
+    font-size: 18px;
+    padding: 25px 0 25px 20px;
+  }
+
+  .select-styled {
+    width: 100%;
+    margin-bottom: 20px;
+
+    select {
+      background: #252B47;
+      border-radius: 4px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+
+  &.fixed {
+    position: fixed;
+    top: 60px;
+    bottom: 0;
+    width: 263.33px;
+  }
 }
 
 .navbar {

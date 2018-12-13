@@ -161,3 +161,38 @@
 .accordion {
   @include alt_accordion;
 }
+
+
+.accordion-container {
+  display: block;
+  width: 100%;
+
+  accordion-group {
+    .card {
+      border: none ;
+      background: transparent;
+
+      .card-header{
+        background: rgba(255, 255, 255, 0.05);
+        padding: 0 1.25rem;
+
+        .panel-title {
+          button {
+            padding: 0;
+            color: #A4B3FF;
+          }
+
+          span {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+
+            i {
+              color: #A4B3FF;
+            }
+          }
+        }
+      }
+    }
+  }
+}
