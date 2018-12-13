@@ -31,6 +31,13 @@
   <section class="page-section bg--dark">
     <div class="row">
       <div class="col">
+      </div>
+      <div class="col">
+        <app-dropdown [config]="[{id: 0, value: 'UTP'}]"></app-dropdown>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
         <alix-scatter [series]="getexposurePerformanceBoxPlot()" [opts]='opts.exposurePerformanceBoxPlot' (chartInit)="onChartInit('exposurePerformanceBoxPlot',$event)"></alix-scatter>
       </div>
       <div class="col">
@@ -40,6 +47,11 @@
   </section>
 
   <section class="page-section bg--light">
+    <div class="row">
+      <div class="col-2">
+        <app-dropdown [config]="[{id: 0, value: 'ALL STATUS'}]"></app-dropdown>
+      </div>
+    </div>
     <div class="row">
       <div class="col col--graphs">
         <alix-line [series]='getexposure()' [opts]="opts.exposure" (chartInit)="onChartInit('exposure',$event)"></alix-line>
