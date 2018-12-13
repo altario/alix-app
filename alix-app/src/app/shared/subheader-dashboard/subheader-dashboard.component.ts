@@ -1,9 +1,10 @@
 // angular
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, HostListener, Inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 // data
 import * as dataset from '@data/dataset';
+import { DOCUMENT } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-subheader-dashboard',
@@ -12,6 +13,7 @@ import * as dataset from '@data/dataset';
 })
 export class SubheaderDashboardComponent implements OnInit {
   public config: any;
+  public leftContainerIsfixed: boolean;
 
   @Input()
   public droplist: any = [];
@@ -26,8 +28,19 @@ export class SubheaderDashboardComponent implements OnInit {
   public dropvalue: any;
 
 
+  constructor(private route: ActivatedRoute, @Inject(DOCUMENT) private document: Document) { }
 
-  constructor(private route: ActivatedRoute) { }
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+     const num = this.document.documentElement.scrollTop;
+     if ( num > 30 ) {
+         this.leftContainerIsfixed = true;
+     } else if (this.leftContainerIsfixed && num < 30) {
+         this.leftContainerIsfixed = false;
+     }
+
+     console.log(this.leftContainerIsfixed);
+  }
 
   ngOnInit() {
     this.route.params.subscribe(params => {

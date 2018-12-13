@@ -1,9 +1,10 @@
 <!-- <nav class="navbar navbar--secondary fixed-top"> -->
-<div class="left-container">
+<div class="left-container" [class.fixed]="leftContainerIsfixed">
   <div class="title">FILTER OPTIONS</div>
   <div class="accordion-container">
     <accordion>
-      <accordion-group heading="COUNTERPARTS" [isOpen]="true">
+      <accordion-group #group1 heading="COUNTERPARTS" [isOpen]="true">
+        <span accordion-heading><i class="icol" [ngClass]="!group1?.isOpen ? 'ico-chevron-down': 'ico-chevron-up'"></i></span>
         <div class="select-styled">
           <select (change)="onChange($event)">
             <option *ngFor="let option of droplist" [value]="option.id" [selected]="dropvalue == option.id">{{option.name}}</option>
@@ -20,7 +21,8 @@
           </select>
         </div>
       </accordion-group>
-      <accordion-group heading="GEOGRAPHY" [isOpen]="true">
+      <accordion-group #group2 heading="GEOGRAPHY" [isOpen]="true">
+        <span accordion-heading><i class="icol" [ngClass]="!group2?.isOpen ? 'ico-chevron-down': 'ico-chevron-up'"></i></span>
         <div class="select-styled">
           <select>
             <option>All Macro Regions</option>
@@ -42,7 +44,8 @@
           </select>
         </div>
       </accordion-group>
-      <accordion-group heading="POSITIONS" [isOpen]="true">
+      <accordion-group #group3 heading="POSITIONS" [isOpen]="true">
+        <span accordion-heading><i class="icol" [ngClass]="!group3?.isOpen ? 'ico-chevron-down': 'ico-chevron-up'"></i></span>
         <div class="select-styled">
           <select>
             <option>All Positions Sizes</option>

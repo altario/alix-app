@@ -38,7 +38,7 @@ $subheader__navbar--height: 40px;
 // ------------------------------------------------------------------
 
 :host {
-  height: $subheader__navbar--height;
+  // height: $subheader__navbar--height;
   display: block;
   position: relative;
 }
@@ -64,6 +64,14 @@ $subheader__navbar--height: 40px;
     &:last-child {
       margin-bottom: 0;
     }
+  }
+
+
+  &.fixed {
+    position: fixed;
+    top: 60px;
+    bottom: 0;
+    width: 263.33px;
   }
 }
 
