@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
 
 // routes
 import { PagesRoutes } from './pages.routing';
@@ -43,7 +44,8 @@ import { AgmCoreModule } from '@agm/core';
     HeaderModule,
     TabsModule.forRoot(),
     ModalModule.forRoot(),
-    AgmCoreModule
+    AgmCoreModule,
+    AccordionModule.forRoot()
   ],
   declarations: [
     // layouts

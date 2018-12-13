@@ -1,58 +1,80 @@
-<app-subheader-dashboard [droplist]="droplist" [droplistids]="mockIndustryIds" (changeValue)="onChange($event)" [dropvalue]="dropvalue"></app-subheader-dashboard>
 
 <div class="container-fluid">
-
-  <section class="page-section bg--dark">
-    <div class="row no-gutters">
-      <div class="col-6">
-        <alix-treemap [series]="config.dashboard1.portfolioTreeMap" (chartClick)="onChartClick($event)"></alix-treemap>
-      </div>
-      <div class="col-6">
-        <agm-map [disableDefaultUI]="false" [latitude]="lat" [longitude]="lng" [zoom]="zoom" [gestureHandling]="'none'"
-            [zoomControl]="false" [streetViewControl]="false" [styles]="mapStyle">
-            <agm-circle *ngFor="let marker of mapDataset.populations.Industry1.allIndustries" [latitude]="marker.value[0]" [longitude]="marker.value[1]" [radius]="dotSizeRandom()"
-                fillColor="#00B5E9" [circleDraggable]="false" [editable]="false" fillOpacity="1"></agm-circle>
-        </agm-map>
-      </div>
+  <div class="row">
+    <div class="col-2">
+      <app-subheader-dashboard [droplist]="droplist" [droplistids]="mockIndustryIds" (changeValue)="onChange($event)" [dropvalue]="dropvalue"></app-subheader-dashboard>
     </div>
-  </section>
-
-  <section class="page-section bg--light">
-    <div class="row">
-      <div class="col col--panels">
+    <div class="col">
+      <section class="page-section bg--dark">
         <div class="row no-gutters">
-          <div class="col-4">
-            <app-panel-dash-1 [config]="kpis"></app-panel-dash-1>
+          <div class="col">
+            <alix-treemap [series]="config.dashboard1.portfolioTreeMap" (chartClick)="onChartClick($event)"></alix-treemap>
           </div>
-          <div class="col-8">
-            <app-panel-dash-2 [config]="kpis"></app-panel-dash-2>
+          <div class="col">
+            <div class="row">
+                <app-dropdown [config]="[{id: 0, value: 'UTP'}]"></app-dropdown>
+               
+                <agm-map [disableDefaultUI]="false" [latitude]="lat" [longitude]="lng" [zoom]="zoom" [gestureHandling]="'none'"
+                    [zoomControl]="false" [streetViewControl]="false" [styles]="mapStyle">
+                    <agm-circle *ngFor="let marker of mapDataset.populations.Industry1.allIndustries" [latitude]="marker.value[0]"
+                        [longitude]="marker.value[1]" [radius]="dotSizeRandom()" fillColor="#c2863d" [circleDraggable]="false"
+                        [editable]="false" fillOpacity=".7"></agm-circle>
+                </agm-map>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col">
-        <alix-bar [series]='getratingPerformance()' [opts]='opts' (chartInit)="onChartInit('ratingPerformance',$event)"></alix-bar>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <section class="page-section bg--dark">
-    <div class="row">
-      <div class="col">
-        <alix-scatter [series]="getexposurePerformanceBoxPlot()" [opts]='opts.exposurePerformanceBoxPlot' (chartInit)="onChartInit('exposurePerformanceBoxPlot',$event)"></alix-scatter>
-      </div>
-      <div class="col">
-        <alix-bar [series]='getutpOutflowInflow()' [opts]='opts.utpOutflowInflow' (chartInit)="onChartInit('utpOutflowInflow',$event)"></alix-bar>
-      </div>
-    </div>
-  </section>
+      <section class="page-section bg--light">
+        <div class="row">
+          <div class="col col--panels">
+            <div class="row no-gutters">
+              <div class="col-4">
+                <app-panel-dash-1 [config]="kpis"></app-panel-dash-1>
+              </div>
+              <div class="col-8">
+                <app-panel-dash-2 [config]="kpis"></app-panel-dash-2>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <alix-bar [series]='getratingPerformance()' [opts]='opts' (chartInit)="onChartInit('ratingPerformance',$event)"></alix-bar>
+          </div>
+        </div>
+      </section>
 
-  <section class="page-section bg--light">
-    <div class="row">
-      <div class="col col--graphs">
-        <alix-line [series]='getexposure()' [opts]="opts.exposure" (chartInit)="onChartInit('exposure',$event)"></alix-line>
-        <alix-line [series]='getnetMargin()' [opts]="opts.netMargin" (chartInit)="onChartInit('netMargin',$event)"></alix-line>
-        <alix-bar [series]='getperforming()' [opts]="opts.performing" (chartInit)="onChartInit('performing',$event)"></alix-bar>
-      </div>
+      <section class="page-section bg--dark">
+        <div class="row">
+          <div class="col">
+          </div>
+          <div class="col">
+            <app-dropdown [config]="[{id: 0, value: 'UTP'}]"></app-dropdown>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <alix-scatter [series]="getexposurePerformanceBoxPlot()" [opts]='opts.exposurePerformanceBoxPlot' (chartInit)="onChartInit('exposurePerformanceBoxPlot',$event)"></alix-scatter>
+          </div>
+          <div class="col">
+            <alix-bar [series]='getutpOutflowInflow()' [opts]='opts.utpOutflowInflow' (chartInit)="onChartInit('utpOutflowInflow',$event)"></alix-bar>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-section bg--light">
+        <div class="row">
+          <div class="col-2">
+            <app-dropdown [config]="[{id: 0, value: 'ALL STATUS'}]"></app-dropdown>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col--graphs">
+            <alix-line [series]='getexposure()' [opts]="opts.exposure" (chartInit)="onChartInit('exposure',$event)"></alix-line>
+            <alix-line [series]='getnetMargin()' [opts]="opts.netMargin" (chartInit)="onChartInit('netMargin',$event)"></alix-line>
+            <alix-bar [series]='getperforming()' [opts]="opts.performing" (chartInit)="onChartInit('performing',$event)"></alix-bar>
+          </div>
+        </div>
+      </section>
     </div>
-  </section>
+  </div>
 </div>

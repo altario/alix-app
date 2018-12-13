@@ -1,13 +1,36 @@
-<nav class="navbar navbar--secondary fixed-top">
-    <div class="select-styled">
-        <select (change)="onChange($event)">
+<!-- <nav class="navbar navbar--secondary fixed-top"> -->
+<div>
+  <div class="title">FILTER OPTIONS</div>
+  <div>
+    <accordion>
+      <accordion-group heading="COUNTERPARTS" [isOpen]="true">
+        <div class="select-styled">
+          <select (change)="onChange($event)">
             <option *ngFor="let option of droplist" [value]="option.id" [selected]="dropvalue == option.id">{{option.name}}</option>
-        </select>
-    </div>
-    <div class="select-styled" style="margin-left: 15px;">
-        <select>
-            <option >All Sub Industries</option>
-        </select>
-    </div>
-    <a [routerLink]="['/monitor/portfolios',droplistids[dropvalue]]" [queryParams]="{type: 'industry'}" class="subheader-row__button">See Industry Portfolio</a>
-</nav>
+          </select>
+          <app-dropdown [config]="[{id: 0, value: 'All GBV Sizes'}]"></app-dropdown>
+        </div>
+        <div class="select-styled" style="margin-left: 15px;">
+          <select>
+            <option>All Sub Industries</option>
+          </select>
+        </div>
+      </accordion-group>
+      <accordion-group heading="GEOGRAPHY" [isOpen]="true">
+        <app-dropdown [config]="[{id: 0, value: 'All Macro Regions'}]"></app-dropdown>
+        <app-dropdown [config]="[{id: 1, value: 'All Regions'}]"></app-dropdown>
+        <app-dropdown [config]="[{id: 2, value: 'All Provinces'}]"></app-dropdown>
+        <app-dropdown [config]="[{id: 3, value: 'All City'}]"></app-dropdown>
+      </accordion-group>
+      <accordion-group heading="POSITIONS" [isOpen]="true">
+        <app-dropdown [config]="[{id: 0, value: 'All Positions Sizes'}]"></app-dropdown>
+      </accordion-group>
+    </accordion>
+  </div>
+</div>
+
+
+
+<!-- 
+<a [routerLink]="['/monitor/portfolios',droplistids[dropvalue]]" [queryParams]="{type: 'industry'}" class="subheader-row__button">See
+  Industry Portfolio</a> -->

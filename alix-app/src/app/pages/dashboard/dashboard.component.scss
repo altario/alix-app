@@ -10,11 +10,12 @@
       }
     }
   }
-    agm-map {
-    height: 500px;
-  }
+  
 }
-
+agm-map {
+    height: 450px;
+    width: 100%;
+  }
 
 .col--panels::ng-deep {
   @include align;
@@ -38,6 +39,9 @@
   }
 }
 
+:host {
+  margin-top: 40px;
+}
 :host::ng-deep {
   .page-section {
     .row {

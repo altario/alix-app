@@ -50,16 +50,16 @@ export class DashboardComponent implements OnInit {
 
     lat = 41.87194;
     lng = 12.56738;
-    zoom = 5;
+    zoom = 5.5;
     mapStyle = mapStyle;
 
     mapDataset = dashboardMapDataset.dashMap;
 
-  constructor(private currencyPipe: CustomCurrencyPipe, private shufflePipe: ShufflePipe) {
+    constructor(private currencyPipe: CustomCurrencyPipe, private shufflePipe: ShufflePipe) {
 
-    this.config = dashboardDataset;
-    this.kpis = this.config.dashboard1.mainKpis[0].allIndustries;
-  }
+        this.config = dashboardDataset;
+        this.kpis = this.config.dashboard1.mainKpis[0].allIndustries;
+    }
 
   ngOnInit() {
     const axisLabel = JSON.parse(JSON.stringify(eChartsConfig.eChartsConfig.xAxis.axisLabel));
@@ -123,7 +123,7 @@ export class DashboardComponent implements OnInit {
   }
 
   dotSizeRandom( ){
-      return Math.floor(Math.random() * (24000 - 2000 + 1) + 2000);
+      return Math.floor(Math.random() * (52000 - 2000 + 1) + 2000);
   }
 
   getexposurePerformanceBoxPlot(population = 'allIndustries'): Array<any> {
