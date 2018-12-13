@@ -50,16 +50,18 @@ export class DashboardComponent implements OnInit {
 
     lat = 41.87194;
     lng = 12.56738;
-    zoom = 5.5;
+    zoom = 5;
     mapStyle = mapStyle;
 
     mapDataset = dashboardMapDataset.dashMap;
-
+  dots =[];
     constructor(private currencyPipe: CustomCurrencyPipe, private shufflePipe: ShufflePipe) {
 
         this.config = dashboardDataset;
         this.kpis = this.config.dashboard1.mainKpis[0].allIndustries;
     }
+
+
 
   ngOnInit() {
     const axisLabel = JSON.parse(JSON.stringify(eChartsConfig.eChartsConfig.xAxis.axisLabel));
@@ -116,14 +118,17 @@ export class DashboardComponent implements OnInit {
 
     this.droplist = [{ name: 'All Industries', id: 'allIndustries' }, { name: 'Consumer Goods', id: 'consumerGoods' }, { name: 'Automotive & Industrials', id: 'automotiveIndustrials' }, { name: 'Transportation', id: 'transportation' }, { name: 'Telecom, Media and Technology', id: 'telecomMediaAndTechnology' }, { name: 'Energy and Basic Materials', id: 'energyAndBasicMaterials' }, { name: 'Infrastructure & Real Estate', id: 'infrastructureRealEstate' }, { name: 'Financial Institutions', id: 'financialInstitutions' }, { name: 'Public Finance', id: 'publicFinance' }, { name: 'Healthcare & Pharma', id: 'healthcarePharma' }, { name: 'Retail and Luxury', id: 'retailAndLuxury' }, { name: 'Hospitality', id: 'hospitality' }];
 
+      this.dots = this.dotSizeRandom();
   }
 
   private convertToMilion(value) {
     return (parseInt(value, 10) / 1000000);
   }
 
-  dotSizeRandom( ){
-      return Math.floor(Math.random() * (52000 - 2000 + 1) + 2000);
+  dotSizeRandom( ) {
+      return this.mapDataset.populations.Industry1.allIndustries.map((row) => {
+          return { lat: row.value[0], lng: row.value[1], radius: Math.floor(Math.random() * (52000 - 2000 + 1) + 2000) };
+      });
   }
 
   getexposurePerformanceBoxPlot(population = 'allIndustries'): Array<any> {
@@ -349,6 +354,8 @@ export class DashboardComponent implements OnInit {
         series: this.getutpOutflowInflow(key)
       });
     }
+
+      this.dots = this.dotSizeRandom();
   }
 
   getexposure() {
