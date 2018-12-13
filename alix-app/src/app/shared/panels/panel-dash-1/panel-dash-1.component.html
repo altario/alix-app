@@ -13,6 +13,7 @@
           [unitSmall]="true"
           unitClass="u-uppercase highlighted__small--color">
         </p>
+        <span class="chart-line"><img src="assets/images/line-chart.svg" /></span>
       </div>
     </div>
 
@@ -23,8 +24,9 @@
       <div class="cell__wrapper__info">
         <p class="highlighted--big highlighted--color">
           {{config.roe.value | perc}}
-          <small class="u-uppercase highlighted__small--color">%</small>
+          <small class="u-uppercase" style="color: #8D8C8D !important;">%</small>
         </p>
+        <span class="chart-line"><img src="assets/images/line-chart.svg" /></span>
       </div>
     </div>
 
@@ -36,8 +38,10 @@
         <p class="highlighted--big highlighted--color"
           [appNum]="config.expectedNetInterestMargin.value"
           [showUnit]="true"
-          [unitSmall]="false">
+          [unitSmall]="true"
+          unitClass="u-uppercase highlighted__small--color">
         </p>
+        <span class="chart-line"><img src="assets/images/line-chart.svg" /></span>
       </div>
     </div>
 
@@ -49,9 +53,10 @@
         <p class="highlighted--big highlighted--color"
           [appNum]="config.expectedLoss.value"
           [showUnit]="true"
-          [unitSmall]="false"
+          [unitSmall]="true"
           unitClass="u-uppercase highlighted__small--color">
         </p>
+        <span class="chart-line"><img src="assets/images/line-chart.svg" /></span>
       </div>
     </div>
 
@@ -63,11 +68,22 @@
         <p class="highlighted--big highlighted--color"
           [appNum]="config.var.value"
           [showUnit]="true"
-          [unitSmall]="false"
+          [unitSmall]="true"
           unitClass="u-uppercase highlighted__small--color">
         </p>
+        <span class="chart-line" (click)="showModalLineChart(template)"><img src="assets/images/line-chart.svg" /></span>
       </div>
     </div>
 
   </div>
 </div>
+
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">VAR</h4>
+  </div>
+  <div class="modal-body">
+    <alix-line *ngIf="chart.opts" [series]="chart.series" [opts]="chart.opts"></alix-line>
+  </div>
+</ng-template>

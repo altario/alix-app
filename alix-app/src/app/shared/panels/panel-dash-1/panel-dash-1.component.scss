@@ -60,6 +60,10 @@
     // .cell__wrapper__top {
     // }
     .cell__wrapper__info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
       p {
         font-weight: $font-weight--bold;
         font-size: rem(30);
@@ -70,6 +74,12 @@
           font-weight: $font-weight--bold;
           color: inherit !important;
         }
+      }
+
+      .chart-line {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 0px 5px;
+        cursor: pointer;
       }
     }
 
