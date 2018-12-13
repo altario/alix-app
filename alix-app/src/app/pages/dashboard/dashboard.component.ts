@@ -4,9 +4,11 @@ import * as echarts from 'echarts';
 // dataset
 import * as dashboardDataset from '@data/dashboard-dataset';
 import { EventEmitter } from 'events';
+import * as dashboardMapDataset from '@data/map-dashboard-dataset';
 
 // graph color overrides
 import * as eChartsConfig from '@global/charts';
+import { mapStyle } from '@global/map';
 
 //Pipe
 import { CustomCurrencyPipe } from '@helpers/index';
@@ -45,11 +47,19 @@ export class DashboardComponent implements OnInit {
     hospitality: 25
   };
 
-  constructor(private currencyPipe: CustomCurrencyPipe, private shufflePipe: ShufflePipe) {
 
-    this.config = dashboardDataset;
-    this.kpis = this.config.dashboard1.mainKpis[0].allIndustries;
-  }
+    lat = 41.87194;
+    lng = 12.56738;
+    zoom = 5.5;
+    mapStyle = mapStyle;
+
+    mapDataset = dashboardMapDataset.dashMap;
+
+    constructor(private currencyPipe: CustomCurrencyPipe, private shufflePipe: ShufflePipe) {
+
+        this.config = dashboardDataset;
+        this.kpis = this.config.dashboard1.mainKpis[0].allIndustries;
+    }
 
   ngOnInit() {
     const axisLabel = JSON.parse(JSON.stringify(eChartsConfig.eChartsConfig.xAxis.axisLabel));
@@ -110,6 +120,10 @@ export class DashboardComponent implements OnInit {
 
   private convertToMilion(value) {
     return (parseInt(value, 10) / 1000000);
+  }
+
+  dotSizeRandom( ){
+      return Math.floor(Math.random() * (52000 - 2000 + 1) + 2000);
   }
 
   getexposurePerformanceBoxPlot(population = 'allIndustries'): Array<any> {
