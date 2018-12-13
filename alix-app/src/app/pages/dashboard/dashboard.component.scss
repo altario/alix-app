@@ -35,6 +35,9 @@
   }
 }
 
+:host {
+  margin-top: 40px;
+}
 :host::ng-deep {
   .page-section {
     .row {
