@@ -33,7 +33,8 @@ import { HeaderModule } from '@shared/header';
 import { SharedModule } from '@shared/shared.module';
 
 import { PositionsReportService } from '@services/reports.service';
-
+// plugins
+import { AgmCoreModule } from '@agm/core';
 @NgModule({
   imports: [
     CommonModule,
@@ -41,7 +42,8 @@ import { PositionsReportService } from '@services/reports.service';
     SharedModule,
     HeaderModule,
     TabsModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    AgmCoreModule
   ],
   declarations: [
     // layouts

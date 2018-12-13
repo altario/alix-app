@@ -4,8 +4,15 @@
 
   <section class="page-section bg--dark">
     <div class="row no-gutters">
-      <div class="col">
+      <div class="col-6">
         <alix-treemap [series]="config.dashboard1.portfolioTreeMap" (chartClick)="onChartClick($event)"></alix-treemap>
+      </div>
+      <div class="col-6">
+        <agm-map [disableDefaultUI]="false" [latitude]="lat" [longitude]="lng" [zoom]="zoom" [gestureHandling]="'none'"
+            [zoomControl]="false" [streetViewControl]="false" [styles]="mapStyle">
+            <agm-circle *ngFor="let marker of mapDataset.populations.Industry1.allIndustries" [latitude]="marker.value[0]" [longitude]="marker.value[1]" [radius]="dotSizeRandom()"
+                fillColor="#00B5E9" [circleDraggable]="false" [editable]="false" fillOpacity="1"></agm-circle>
+        </agm-map>
       </div>
     </div>
   </section>
