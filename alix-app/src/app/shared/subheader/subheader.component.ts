@@ -30,6 +30,9 @@ export class SubheaderComponent implements OnInit {
     if ((this.route as any)._routerState.snapshot.url.indexOf('/retail/') !== -1) {
       // console.log('RETAIL');
       this.isRetail = true;
+    } else {
+      // console.log('REAL_ESTATE');
+      this.isRealEstate = true;
     }
     this.route.params.subscribe(params => {
       this.config = dataset.dossier1MainData;
