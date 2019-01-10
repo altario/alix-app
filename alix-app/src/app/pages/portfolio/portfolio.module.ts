@@ -4,8 +4,10 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+// plugins
 import { MomentModule } from 'ngx-moment';
 import { NgPipesModule } from 'ngx-pipes';
+
 // routes
 import { PortfolioRoutes } from './portfolio.routing';
 

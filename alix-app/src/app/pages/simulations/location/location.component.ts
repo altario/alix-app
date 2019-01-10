@@ -3,12 +3,12 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 // dataset
-import * as dataset from '@data/dataset';
-import * as chartdataset from '@data/charts-dataset';
+import * as dataset from '@data/dossier1/dataset';
+import * as chartdataset from '@data/dossier1/charts-dataset';
 
 // graph color overrides
 import { eChartsConfig } from '@global/charts';
-import { dossier1PlotChartsData } from '@data/plotcharts-dataset';
+import { dossier1PlotChartsData } from '@data/dossier1/plotcharts-dataset';
 
 @Component({
   selector: 'app-location',
@@ -21,8 +21,8 @@ export class LocationComponent implements OnInit {
   public selectedVehicleYear: object;
   public chartInstance: any;
 
-  lat: number = 45.4758422;
-  lng: number = 9.1911364;
+  lat = 45.4758422;
+  lng = 9.1911364;
   zoom = 14;
   radius = 70;
   opts: any = {};
@@ -32,7 +32,7 @@ export class LocationComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       // this.config = dataset.dossiersMainData['dossier' + params['id']];
-      this.config = dataset.dossiersMainData.dossier1.location;
+      this.config = dataset.dossier1MainData.location;
       this.vehicleValues = this.initVehiclesValues();
       this.selectedVehicleYear = this.config.vehicles.years[this.vehicleValues[0]];
     });
@@ -59,7 +59,7 @@ export class LocationComponent implements OnInit {
       legend: {
         show: false,
         data: Object.keys(chartdataset.dossier1ChartsData.location.breakdownAssetsInNeighborhood)
-          .map((population, i) => population !== 'year' ?population : null),
+          .map((population, i) => population !== 'year' ? population : null),
         itemWidth: eChartsConfig.legend.itemWidth,
         itemHeight: eChartsConfig.legend.itemHeight,
         top: '20px',
@@ -166,7 +166,7 @@ export class LocationComponent implements OnInit {
     };
 
     return Object.keys(chartdataset.dossier1ChartsData.location.percentageAccommByPricePerRoom).map((population, i) => {
-      if (population != 'pricePerNight') {
+      if (population !== 'pricePerNight') {
         return {
           name: population,
           barGap: 0,

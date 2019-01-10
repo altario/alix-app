@@ -9,8 +9,10 @@
   </div>
 
   <div class="navbar__right">
+
     <div *ngIf="pageType == 'monitor'" class="navbar-btns">
-      <a class="btn btn-ghost-lightest" routerLink="dashboard" routerLinkActive="active">Dashboard</a>
+      <a class="btn btn-ghost-lightest" routerLink="dashboard" routerLinkActive="active">Global Portfolio</a>
+      <a class="btn btn-ghost-lightest" routerLink="restructuring" routerLinkActive="active">Restructuring</a>
       <a class="btn btn-ghost-lightest" routerLink="monitoring" routerLinkActive="active">Monitoring</a>
       <a class="btn btn-ghost-lightest" routerLink="portfolios" routerLinkActive="active">Portfolios</a>
       <a class="btn btn-ghost-lightest" routerLink="positions" routerLinkActive="active">Positions</a>
@@ -19,10 +21,15 @@
     </div>
 
     <div *ngIf="pageType == 'underwriter'" class="navbar-btns">
-      <a class="btn btn-ghost-lightest" routerLink="dashboard" routerLinkActive="active">Dashboard</a>
+      <a class="btn btn-ghost-lightest" routerLink="dashboard" routerLinkActive="active">Global Portfolio</a>
       <a class="btn btn-ghost-lightest" routerLink="simulations" routerLinkActive="active">Simulations</a>
       <a class="btn btn-ghost-lightest" routerLink="positions" routerLinkActive="active">Positions</a>
       <a class="btn btn-ghost-lightest" routerLink="counterparts" routerLinkActive="active">Counterparts</a>
+    </div>
+
+    <div *ngIf="pageType == 'underwriter-g'" class="navbar-btns">
+      <a class="btn btn-ghost-lightest" routerLink="simulations" routerLinkActive="active">Simulations</a>
+      <a class="btn btn-ghost-lightest" routerLink="positions" routerLinkActive="active">Positions</a>
     </div>
 
     <app-user-menu></app-user-menu>

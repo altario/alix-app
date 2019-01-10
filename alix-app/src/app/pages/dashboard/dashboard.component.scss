@@ -1,67 +1,84 @@
 @import '~src/scss/imports';
 
-.container-fluid {
-  .page-section {
-    &:first-child {
-      height: 600px;
-      padding: 0;
-      .row {
-        height: 100%;
-      }
-    }
-  }
-  
-}
-agm-map {
-    height: 450px;
-    width: 100%;
-  }
+$sidebar-width: 250px;
 
-.col--panels::ng-deep {
-  @include align;
-  .row {
-    > * {
-      display: flex;
-      app-panel-dash-1 {
-        margin-right: 20px;
-      }
-      app-panel-dash-2 {
-        margin-left: 20px;
-      }
-      .box {
-        flex: 1;
-        @include align(between);
-        .box__body {
-          flex: 1;
-        }
-      }
-    }
-  }
-}
 
-:host {
-  margin-top: 40px;
-}
 :host::ng-deep {
-  .page-section {
-    .row {
-      .col--graphs {
-        height: auto;
-        $height: 180px !important;
-        > * {
-          height: $height;
-          border-radius: 0;
-          &:first-child {
-            border-radius: $border-radius__default $border-radius__default 0 0;
-          }
-          &:last-child {
-            border-radius: 0 0 $border-radius__default $border-radius__default;
-          }
-          > * {
-            height: $height;
-          }
-        }
+  app-subheader-dashboard {
+    flex: 1;
+  }
+  .sidebar {
+    width: 100%;
+    max-width: 290px;
+    max-width: 230px;
+    position: fixed;
+    top: 100px;
+  }
+
+  app-panel-dash-2 {
+    .box__body {
+      height: 100%;
+    }
+  }
+
+  app-dropdown {
+    @include align(center);
+  }
+
+  .panel-heading {
+    border-radius: 0;
+  }
+
+  .card-block {
+    background: #1C2038;
+    .select-styled {
+      width: 100%;
+      select {
+        background: #252b47;
+      }
+      + .select-styled {
+        margin-top: 20px;
       }
     }
   }
+
+  .col--graphs {
+    > * {
+      height: 180px!important;
+      // border-radius: 0;
+      > * {
+        height: 180px!important;
+      }
+
+      + * {
+        margin-top: 20px;
+      }
+    }
+
+    // &:first-child {
+    //   border-radius: $border-radius__default $border-radius__default 0 0;
+    // }
+    // &:last-child {
+    //   border-radius: 0 0 $border-radius__default $border-radius__default;
+    // }
+  }
+}
+
+.col-3 {
+  flex: 0 0 $sidebar-width;
+  max-width: $sidebar-width;
+}
+
+.col-9 {
+  flex: 0 0 calc(100% - #{$sidebar-width});
+  max-width: calc(100% - #{$sidebar-width});
+}
+
+agm-map {
+  height: 450px;
+  width: 100%;
+}
+
+.col--hidden {
+  visibility: hidden;
 }

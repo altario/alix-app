@@ -45,6 +45,7 @@ export class LoginComponent implements OnInit {
     // page type
     if (this.loginEmailValue.includes('paolo@')) { this.localData.setPageType('underwriter'); }
     if (this.loginEmailValue.includes('daniel@')) { this.localData.setPageType('monitor'); }
+    if (this.loginEmailValue.includes('gianleone@')) { this.localData.setPageType('underwriter'); }
 
     // page brand
     for (const brand of this.brands) {

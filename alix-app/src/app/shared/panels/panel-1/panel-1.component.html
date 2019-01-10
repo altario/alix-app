@@ -4,12 +4,12 @@
     <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-dark">
       <div class="cell__wrapper__top">
         <span class="label__up label--color">
-          {{ config.clientPortfolioDuration.label }}
+          {{ config?.clientPortfolioDuration.label }}
         </span>
       </div>
       <div class="cell__wrapper__info">
         <p class="highlighted--medium highlighted--color">
-          {{ config.clientPortfolioDuration.value }}
+          {{ config?.clientPortfolioDuration.value }}
           <small class="u-uppercase highlighted__small--color">
             y
           </small>
@@ -20,12 +20,12 @@
     <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-dark">
         <div class="cell__wrapper__top">
           <span class="label__up label--color">
-              {{ config.clientCreditRating.label }}
+              {{ config?.clientCreditRating.label }}
           </span>
         </div>
         <div class="cell__wrapper__info">
-          <div [ngClass]="{'tag--success': config.clientCreditRating.value === 'Baa'}" class="tag">
-              {{ config.clientCreditRating.value }}
+          <div [ngClass]="{'tag--success': config?.clientCreditRating.value === 'Baa'}" class="tag">
+              {{ config?.clientCreditRating.value }}
             </div>
         </div>
       </div>
@@ -35,13 +35,13 @@
       <div class=" cell__wrapper cell__wrapper--half cell__wrapper cell__wrapper--bg-light">
         <div class="cell__wrapper__top">
           <span class="label__up label--color">
-              {{ config.probabilityOfDefaultInT0.label }}
+              {{ config?.probabilityOfDefaultInT0.label }}
           </span>
         </div>
         <div class="cell__wrapper__info">
           <p class="highlighted--medium highlighted--color">
             <small class="u-uppercase highlighted__small--color"> T0 </small>
-            {{ config.probabilityOfDefaultInT0.value | perc }}
+            {{ config?.probabilityOfDefaultInT0.value | perc }}
             <small class="u-uppercase highlighted__small--color">%</small>
           </p>
         </div>
@@ -51,7 +51,7 @@
         <div class="cell__wrapper__info">
           <p class="highlighted--medium highlighted--color">
             <small class="u-uppercase highlighted__small--color"> TCD </small>
-            {{config.probabilityOfDefaultToday.value | perc:1 }}
+            {{config?.probabilityOfDefaultToday.value | perc:1 }}
             <small class="u-uppercase highlighted__small--color">%</small>
           </p>
       </div>

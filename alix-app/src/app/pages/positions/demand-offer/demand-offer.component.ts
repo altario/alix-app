@@ -2,15 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 // dataset
-import * as dataset from '@data/dataset';
-import * as chartdataset from '@data/charts-dataset';
-import { dossier1PlotChartsData } from '@data/plotcharts-dataset';
-import * as extrachartdataset from '@data/extra-charts-dataset';
-import * as  chartsOverride from '@data/charts-override-dataset';
+import * as dataset from '@data/dossier1/dataset';
+import * as chartdataset from '@data/dossier1/charts-dataset';
+// import { dossier1PlotChartsData } from '@data/dossier1/plotcharts-dataset';
+import * as extrachartdataset from '@data/dossier1/extra-charts-dataset';
+import * as  chartsOverride from '@data/dossier1/charts-override-dataset';
 
 import { eChartsConfig } from '@global/charts';
 import { numericalValues } from '@helpers/numerical-values.lib';
-import { dataComparison } from '@app/data/data-comparison';
+import { dossier1dataComparison } from '@app/data/dossier1/charts-override-dataset';
 
 
 @Component({
@@ -45,8 +45,8 @@ export class DemandAndOfferComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       // console.log(params['id']);
-      this.config = dataset.dossiersMainData.dossier1;
-      console.log(this.config);
+      this.config = dataset.dossier1MainData;
+      // console.log(this.config);
       this.populationForSale = this.config.demandAndOffer.forSale.populations.population1;
       this.populationLongRent = this.config.demandAndOffer.longRent.populations.population1;
       this.populationShortRent = this.config.demandAndOffer.shortRent.populations.population1;
@@ -257,10 +257,9 @@ export class DemandAndOfferComponent implements OnInit {
     this.opts.shortTermRentEvolutionEurSqm = {
       legend: {
         data: [
-
-          { name: extrachartdataset.extra.shortTermRentEvolutionEurSqm.radius1Km.label, icon: 'rect' },
-          { name: extrachartdataset.extra.shortTermRentEvolutionEurSqm.portaNuova.label, icon: 'rect' },
-          { name: extrachartdataset.extra.shortTermRentEvolutionEurSqm.milano.label, icon: 'rect' },
+          { name: extrachartdataset.dossier1Extra.shortTermRentEvolutionEurSqm.radius1Km.label, icon: 'rect' },
+          { name: extrachartdataset.dossier1Extra.shortTermRentEvolutionEurSqm.portaNuova.label, icon: 'rect' },
+          { name: extrachartdataset.dossier1Extra.shortTermRentEvolutionEurSqm.milano.label, icon: 'rect' },
         ],
         itemWidth: eChartsConfig.legend.itemWidth,
         itemHeight: eChartsConfig.legend.itemHeight,
@@ -281,10 +280,12 @@ export class DemandAndOfferComponent implements OnInit {
           }
         },
         formatter: (params) => {
+          // tslint:disable-next-line:max-line-length
           const colorSpan = color => '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' + color + '"></span>';
           let rez = params[0].axisValue + '<br>';
           params.forEach(item => {
             const processedValue = numericalValues(item.data);
+            // tslint:disable-next-line:max-line-length
             rez += colorSpan(item.color) + ' ' + item.seriesName + ': ' + processedValue.round + ' ' + (processedValue.unitname ? processedValue.unitname + '€' : '') + '<br />';
           });
 
@@ -293,7 +294,7 @@ export class DemandAndOfferComponent implements OnInit {
       },
       xAxis: {
         type: 'category',
-        data: extrachartdataset.extra.shortTermRentEvolutionEurSqm.year.values,
+        data: extrachartdataset.dossier1Extra.shortTermRentEvolutionEurSqm.year.values,
         splitLine: eChartsConfig.xAxis.splitLine,
         axisLabel: eChartsConfig.xAxis.axisLabel,
         axisLine: eChartsConfig.xAxis.axisLine
@@ -308,12 +309,12 @@ export class DemandAndOfferComponent implements OnInit {
       }
     };
 
-    this.series.shortTermRentEvolutionEurSqm = Object.keys(extrachartdataset.extra.shortTermRentEvolutionEurSqm)
+    this.series.shortTermRentEvolutionEurSqm = Object.keys(extrachartdataset.dossier1Extra.shortTermRentEvolutionEurSqm)
       .reduce((prev, next, i) => {
         if (next !== 'year') {
           prev.push({
-            name: extrachartdataset.extra.shortTermRentEvolutionEurSqm[next].label,
-            data: extrachartdataset.extra.shortTermRentEvolutionEurSqm[next].values,
+            name: extrachartdataset.dossier1Extra.shortTermRentEvolutionEurSqm[next].label,
+            data: extrachartdataset.dossier1Extra.shortTermRentEvolutionEurSqm[next].values,
             type: 'line',
             symbol: eChartsConfig.series.symbol,
             symbolSize: eChartsConfig.series.symbolSize,
@@ -404,10 +405,12 @@ export class DemandAndOfferComponent implements OnInit {
           }
         },
         formatter: (params) => {
+          // tslint:disable-next-line:max-line-length
           const colorSpan = color => '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' + color + '"></span>';
           let rez = params[0].axisValue + '<br>';
           params.forEach(item => {
             const processedValue = numericalValues(item.data);
+            // tslint:disable-next-line:max-line-length
             rez += colorSpan(item.color) + ' ' + item.seriesName + ': ' + processedValue.round + ' ' + (processedValue.unitname ? processedValue.unitname + '€' : '') + '<br />';
           });
 
@@ -448,8 +451,8 @@ export class DemandAndOfferComponent implements OnInit {
       }, []);
 
     this.series.marketValue.push({
-      name: dataComparison.neighborhoodMktValueVsReplacementCost.name,
-      data: dataComparison.neighborhoodMktValueVsReplacementCost.values,
+      name: dossier1dataComparison.neighborhoodMktValueVsReplacementCost.name,
+      data: dossier1dataComparison.neighborhoodMktValueVsReplacementCost.values,
       type: 'line',
       showSymbol: false,
       symbol: 'none',
@@ -467,7 +470,7 @@ export class DemandAndOfferComponent implements OnInit {
       const processedValue = numericalValues(value);
       return processedValue.round + ' ' + (processedValue.unitname ? processedValue.unitname + '€' : '');
     };
-    const series = extrachartdataset.extra.assetViewsVsTopOccupancySr.filter((row) => row.population === population);
+    const series = extrachartdataset.dossier1Extra.assetViewsVsTopOccupancySr.filter((row) => row.population === population);
 
     this.opts.assetViewsVsTopOccupancySr = {
 
@@ -494,10 +497,12 @@ export class DemandAndOfferComponent implements OnInit {
           }
         },
         formatter: (params) => {
+          // tslint:disable-next-line:max-line-length
           const colorSpan = color => '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' + color + '"></span>';
           let rez = params[0].axisValue + '<br>';
           params.forEach(item => {
             const processedValue = numericalValues(item.data);
+            // tslint:disable-next-line:max-line-length
             rez += colorSpan(item.color) + ' ' + item.seriesName + ': ' + processedValue.round + ' ' + (processedValue.unitname ? processedValue.unitname + '€' : '') + '<br />';
           });
 
@@ -506,7 +511,7 @@ export class DemandAndOfferComponent implements OnInit {
       },
       xAxis: {
         type: 'category',
-        data: [2013,2014,2015,2016,2017,2018],
+        data: [2013, 2014, 2015, 2016, 2017, 2018],
         splitLine: eChartsConfig.xAxis.splitLine,
         axisLabel: eChartsConfig.xAxis.axisLabel,
         axisLine: eChartsConfig.xAxis.axisLine
@@ -521,7 +526,7 @@ export class DemandAndOfferComponent implements OnInit {
       }
     };
 
-    this.series.assetViewsVsTopOccupancySr = series.map((row,i) => {
+    this.series.assetViewsVsTopOccupancySr = series.map((row, i) => {
       return {
         name: row.stateOfConservation,
         data: row.values,
@@ -530,7 +535,7 @@ export class DemandAndOfferComponent implements OnInit {
         symbolSize: eChartsConfig.series.symbolSize,
         lineStyle: { ...eChartsConfig.series.lineStyle, color: lineColors[i] },
         itemStyle: { color: lineColors[i] }
-      }
+      };
     });
 
   }
@@ -573,10 +578,12 @@ export class DemandAndOfferComponent implements OnInit {
           }
         },
         formatter: (params) => {
+          // tslint:disable-next-line:max-line-length
           const colorSpan = color => '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' + color + '"></span>';
           let rez = params[0].axisValue + '<br>';
           params.forEach(item => {
             const processedValue = numericalValues(item.data);
+            // tslint:disable-next-line:max-line-length
             rez += colorSpan(item.color) + ' ' + item.seriesName + ': ' + processedValue.round + ' ' + (processedValue.unitname ? processedValue.unitname + '€' : '') + '<br />';
           });
 
@@ -611,8 +618,8 @@ export class DemandAndOfferComponent implements OnInit {
     }];
 
     this.series.priceTodayVsOvertime.push({
-      name: dataComparison.priceSqmTodayVsOvertimeForSale.name,
-      data: dataComparison.priceSqmTodayVsOvertimeForSale.values,
+      name: dossier1dataComparison.priceSqmTodayVsOvertimeForSale.name,
+      data: dossier1dataComparison.priceSqmTodayVsOvertimeForSale.values,
       type: 'line',
       showSymbol: false,
       symbol: 'none',
@@ -819,11 +826,11 @@ export class DemandAndOfferComponent implements OnInit {
           lineStyle: { ...eChartsConfig.series.lineStyle, color: '#79C14C' },
           itemStyle: { color: '#79C14C' }
         });
-          console.log(prev);
+          // console.log(prev);
         return prev;
       }, []);
 
-      console.log(series);
+      // console.log(series);
       return series;
   }
 
@@ -1137,6 +1144,6 @@ export class DemandAndOfferComponent implements OnInit {
       }, []);
       */
 
-    return chartsOverride.chartsOverride[type];
+    return chartsOverride.dossier1ChartsOverride[type];
     }
 }

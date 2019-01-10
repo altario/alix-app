@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 // data
-import * as dataset from '@data/dataset';
+import * as dataset from '@data/dossier1/dataset';
 
 @Component({
   selector: 'app-subheader',
@@ -14,6 +14,8 @@ import * as dataset from '@data/dataset';
 export class SubheaderComponent implements OnInit {
   public config: any;
   public isSimulation = false;
+  public isRealEstate = false;
+  public isRetail = false;
 
   constructor(private route: ActivatedRoute, private location: Location) { }
 
@@ -21,8 +23,16 @@ export class SubheaderComponent implements OnInit {
     if ((this.route as any)._routerState.snapshot.url.indexOf('underwriter') !== -1) {
       this.isSimulation = true;
     }
+    if ((this.route as any)._routerState.snapshot.url.indexOf('/re/') !== -1) {
+      // console.log('REAL_ESTATE');
+      this.isRealEstate = true;
+    }
+    if ((this.route as any)._routerState.snapshot.url.indexOf('/retail/') !== -1) {
+      // console.log('RETAIL');
+      this.isRetail = true;
+    }
     this.route.params.subscribe(params => {
-      this.config = dataset.dossiersMainData.dossier1;
+      this.config = dataset.dossier1MainData;
     });
   }
 

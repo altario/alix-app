@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MockapiService } from '../../services/mockapi.service';
+import { MonitorListsService } from '../../services/monitorLists.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -14,7 +14,7 @@ const filterSortArray = []; // [2, 1, ...]
 export class MonitoringComponent implements OnInit {
   public notifications$: Observable<any>;
 
-  constructor(private apiService: MockapiService) {
+  constructor(private apiService: MonitorListsService) {
     this.notifications$ = this.apiService.getNotificationsPopulated().pipe(
       map(notifications => {
         if (!filterSortArray.length) {

@@ -23,6 +23,8 @@ export class UserMenuComponent implements OnInit {
       this.user = 'daniel';
     } else if (this.localData.getPageEmail().includes('paolo@')) {
       this.user = 'paolo';
+    } else if (this.localData.getPageEmail().includes('gianleone@')) {
+      this.user = 'gianleone';
     } else {
       this.user = 'andre';
     }

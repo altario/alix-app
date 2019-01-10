@@ -1,6 +1,11 @@
-<!-- <nav class="navbar navbar--secondary fixed-top"> -->
-<div class="left-container" [class.fixed]="leftContainerIsfixed">
-  <div class="title">FILTER OPTIONS</div>
+<div class="sidebar box box--table">
+  <div class="box__header box__header--bg">
+    <div class="row-justified">
+      <div class="box__title title--compound">
+        <h1 class="title">Filter notifications</h1>
+      </div>
+    </div>
+  </div>
   <div class="accordion-container">
     <accordion>
       <accordion-group #group1 heading="COUNTERPARTS" [isOpen]="true">
@@ -55,9 +60,3 @@
     </accordion>
   </div>
 </div>
-
-
-
-<!-- 
-<a [routerLink]="['/monitor/portfolios',droplistids[dropvalue]]" [queryParams]="{type: 'industry'}" class="subheader-row__button">See
-  Industry Portfolio</a> -->

@@ -16,6 +16,7 @@
       justify-content: center;
       &.cell__wrapper--half { width: 50% }
       &.cell__wrapper--third { width: calc(100%/3) }
+      &.cell__wrapper--two-thirds { width: calc((100%/3)*2) }
       .cell__wrapper__top {
         height: calc(#{$line-height__base} * #{$lines} * #{$font_size}) ;
         @include align(bottom);

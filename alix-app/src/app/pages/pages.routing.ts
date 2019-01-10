@@ -4,6 +4,7 @@ import { Routes } from '@angular/router';
 // pages
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+// import { RestructuringListComponent } from './restructuring/restructuring-list/restructuring-list.component';
 import { MonitoringComponent } from './monitoring/monitoring.component';
 import { ReportsComponent } from './reports/reports.component';
 import { CounterpartsComponent } from './counterparts/counterparts.component';
@@ -36,6 +37,11 @@ export const PagesRoutes: Routes = [
       {
         path: 'dashboard',
         component: DashboardComponent
+      },
+      {
+        path: 'restructuring',
+        component: BaseLayoutComponent,
+        loadChildren: './restructuring/restructuring.module#RestructuringModule'
       },
       {
         path: 'monitoring',

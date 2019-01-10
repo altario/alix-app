@@ -6,6 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // pages
 import { FinancialComponent } from './financial/financial.component';
+import { PerformanceComponent } from './performance/performance.component';
 import { StateOfConservationComponent } from './state-of-conservation/state-of-conservation.component';
 import { LocationComponent } from './location/location.component';
 import { DemandAndOfferComponent } from './demand-offer/demand-offer.component';
@@ -39,6 +40,7 @@ import { AgmCoreModule } from '@agm/core';
 
     // pages
     FinancialComponent,
+    PerformanceComponent,
     StateOfConservationComponent,
     LocationComponent,
     DemandAndOfferComponent,

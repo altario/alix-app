@@ -14,7 +14,7 @@ export class PositionRowComponent implements OnInit {
 
   ngOnInit() {}
 
-  goToDashboard(id) {
-    this.router.navigate(['monitor/positions/position', id]);
+  goToDashboard(id, type) {
+    this.router.navigate(['monitor/positions/position', id, type]);
   }
 }

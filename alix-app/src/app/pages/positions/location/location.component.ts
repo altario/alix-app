@@ -3,12 +3,12 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 // dataset
-import * as dataset from '@data/dataset';
-import * as chartdataset from '@data/charts-dataset';
+import * as dataset from '@data/dossier1/dataset';
+import * as chartdataset from '@data/dossier1/charts-dataset';
 
 // graph color overrides
 import { eChartsConfig } from '@global/charts';
-import { dossier1PlotChartsData } from '@data/plotcharts-dataset';
+import { dossier1PlotChartsData } from '@data/dossier1/plotcharts-dataset';
 import { mapStyle } from '@global/map';
 import { numericalValues } from '@helpers/numerical-values.lib';
 
@@ -23,8 +23,8 @@ export class LocationComponent implements OnInit {
   public selectedVehicleYear: object;
   public chartInstance: any;
 
-  lat: number = 45.4758422;
-  lng: number = 9.1911364;
+  lat = 45.4758422;
+  lng = 9.1911364;
   zoom = 14;
   radius = 70;
   opts: any = {};
@@ -35,7 +35,7 @@ export class LocationComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       // this.config = dataset.dossiersMainData['dossier' + params['id']];
-      this.config = dataset.dossiersMainData.dossier1.location;
+      this.config = dataset.dossier1MainData.location;
       this.vehicleValues = this.initVehiclesValues();
       this.selectedVehicleYear = this.config.vehicles.years[this.vehicleValues[0]];
     });
@@ -169,7 +169,7 @@ export class LocationComponent implements OnInit {
     };
 
     return Object.keys(chartdataset.dossier1ChartsData.location.percentageAccommByPricePerRoom).map((population, i) => {
-      if (population != 'pricePerNight') {
+      if (population !== 'pricePerNight') {
         return {
           name: population,
           barGap: 0,
@@ -245,7 +245,7 @@ export class LocationComponent implements OnInit {
           color: eChartsConfig.yAxis.axisLabel.color,
           formatter: function (value, index) {
             const processedValue = numericalValues(value);
-            return processedValue.round + ' ' + (processedValue.unitname ? processedValue.unitname +'€' : '');
+            return processedValue.round + ' ' + (processedValue.unitname ? processedValue.unitname + '€' : '');
           }
         },
         axisLine: {
@@ -325,7 +325,7 @@ export class LocationComponent implements OnInit {
         axisLabel: {
           color: eChartsConfig.yAxis.axisLabel.color,
           formatter: (value, index) => {
-            return index == 0 ? 0 : yLabels[index - 1];
+            return index === 0 ? 0 : yLabels[index - 1];
           }
         },
         axisLine: {
@@ -359,7 +359,7 @@ export class LocationComponent implements OnInit {
       { name: 'Sport', icon: 'rect' }
     ];
 
-    const yLabels = ['6 AM', '1 PM', '9 PM', '12 AM','5 AM'];
+    const yLabels = ['6 AM', '1 PM', '9 PM', '12 AM', '5 AM'];
 
     this.opts.daynightShiftRad = {
       // grid: {
@@ -411,7 +411,7 @@ export class LocationComponent implements OnInit {
         axisLabel: {
           color: eChartsConfig.yAxis.axisLabel.color,
           formatter: (value, index) => {
-            return index == 0 ? 0 : yLabels[index - 1];
+            return index === 0 ? 0 : yLabels[index - 1];
           }
         },
         axisLine: {

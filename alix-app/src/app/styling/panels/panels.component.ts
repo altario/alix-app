@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 // dataset
-import * as dataset from '@data/dataset';
+import * as dataset from '@data/dossier1/dataset';
 
 @Component({
   selector: 'app-panels',
@@ -11,11 +11,10 @@ import * as dataset from '@data/dataset';
 export class PanelsComponent implements OnInit {
   public config: any;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
-    this.config = dataset.dossiersMainData['dossier1'];
-    console.log(this.config);
+    this.config = dataset.dossier1MainData;
+    // console.log(this.config);
   }
-
 }

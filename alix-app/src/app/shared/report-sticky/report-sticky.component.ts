@@ -30,7 +30,7 @@ export class ReportStickyComponent implements OnInit {
         this.reportList.unshift(data);
         this.isOpen = true;
 
-        console.log(this.reportList);
+        // console.log(this.reportList);
 
       }
     });

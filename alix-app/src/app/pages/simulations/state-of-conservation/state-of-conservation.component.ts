@@ -3,10 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 // dataset
-import * as dataset from '@data/dataset';
-import * as chartdataset from '@data/charts-dataset';
-import * as plotchartdataset from '@data/plotcharts-dataset';
-import * as mapLatLng from '@data/map-dataset';
+import * as dataset from '@data/dossier1/dataset';
+import * as chartdataset from '@data/dossier1/charts-dataset';
+import * as plotchartdataset from '@data/dossier1/plotcharts-dataset';
+import * as mapLatLng from '@data/dossier1/map-dataset';
 
 // graph color overrides
 import { eChartsConfig } from '@global/charts';
@@ -43,12 +43,12 @@ export class StateOfConservationComponent implements OnInit {
   radius = 8;
 
   // tslint:disable-next-line:max-line-length
-  marketsLat = mapLatLng.MapLatLng.lat;
+  marketsLat = mapLatLng.dossier1MapLatLng.lat;
 
   // tslint:disable-next-line:max-line-length
-  marketsLng = mapLatLng.MapLatLng.lng;
+  marketsLng = mapLatLng.dossier1MapLatLng.lng;
 
-  colors = mapLatLng.MapLatLng.colors;
+  colors = mapLatLng.dossier1MapLatLng.colors;
 
   markers: any;
   style1 = mapStyle;
@@ -60,7 +60,7 @@ export class StateOfConservationComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       // this.config = dataset.dossiersMainData['dossier' + params['id']];
-      this.config = dataset.dossiersMainData.dossier1.stateOfConservation;
+      this.config = dataset.dossier1MainData.stateOfConservation;
 
       this.selectedStateOfConservationToday = this.config.stateOfConservationToday.populations.population1;
       this.selectedStateOfConservationPSM = this.config.stateOfConservationPricePerSqm.populations.population1;
@@ -275,7 +275,7 @@ export class StateOfConservationComponent implements OnInit {
     const labels = ['New', 'In Construction', 'Renovated', 'Used', 'Needs Renovation', 'Ruin'];
     const axisLabel = JSON.parse(JSON.stringify(eChartsConfig.xAxis.axisLabel));
     axisLabel.formatter = function (value, index) {
-      return index == 0 ? 0 : labels[index - 1];
+      return index === 0 ? 0 : labels[index - 1];
     };
 
     const axisYLabel = JSON.parse(JSON.stringify(eChartsConfig.yAxis.axisLabel));

@@ -1,0 +1,38 @@
+<div class="box restructuring-row__container">
+  <div class="restructuring-row__id">{{ restructuring?.id }}</div>
+
+  <div class="restructuring-row__title">{{ restructuring?.counterpart }}</div>
+  <div class="restructuring-row__position">{{ restructuring?.position }}</div>
+
+  <div class="restructuring-row__status"
+    [class.yellow]="restructuring?.status === 'PDL'"
+    [class.orange]="restructuring?.status === 'UTP'">{{ restructuring?.status }}</div>
+
+  <div class="restructuring-row__current-exposure">
+    <div class="val">{{ getValue(restructuring?.currentExposure, 'value') }}</div>
+    <div class="small">{{ getValue(restructuring?.currentExposure, 'small') }}</div>
+  </div>
+  <div class="restructuring-row__business-plan-recovery">
+    <div class="val">{{ getValue(restructuring?.businessPlanRecovery, 'value') }}</div>
+    <div class="small">{{ getValue(restructuring?.businessPlanRecovery, 'small') }}</div>
+  </div>
+  <div class="restructuring-row__adjusted-recovery">
+    <div class="val">{{ getValue(restructuring?.adjustedRecovery, 'value') }}</div>
+    <div class="small">{{ getValue(restructuring?.adjustedRecovery, 'small') }}</div>
+  </div>
+  <div [class.negative]="restructuring?.adjustedNetMargin.startsWith('-')" class="restructuring-row__adjusted-net-margin">
+    <div class="val">{{ getValue(restructuring?.adjustedNetMargin, 'value') }}</div>
+    <div class="small">{{ getValue(restructuring?.adjustedNetMargin, 'small') }}</div>
+  </div>
+
+  <div class="restructuring-row__expected-vs-adjusted-net-margin"
+    [class.green]="getValue(restructuring?.expectedVsAdjustedNetMargin, 'value') > 100"
+    [class.orange]="getValue(restructuring?.expectedVsAdjustedNetMargin, 'value') <= 100"
+    [class.yellow]="getValue(restructuring?.expectedVsAdjustedNetMargin, 'value') <= 70"
+    [class.grey]="getValue(restructuring?.expectedVsAdjustedNetMargin, 'value') === 0"
+    [class.red]="getValue(restructuring?.expectedVsAdjustedNetMargin, 'value') < 0">{{ restructuring?.expectedVsAdjustedNetMargin }}</div>
+
+  <div class="restructuring-row__button">
+    <button class="btn btn-primary btn-small" (click)="goToDetail()">View</button>
+  </div>
+</div>

@@ -18,6 +18,7 @@ import { SubheaderComponent } from '@shared/subheader/subheader.component';
 // import { SubheaderDashboardComponent } from '@shared/subheader-dashboard/subheader-dashboard.component';
 
 import { PositionRowComponent } from './position/position.component';
+import { RestructuringRowComponent } from './restructuring/restructuring.component';
 import { SimulationRowComponent } from './simulation/simulation.component';
 import { NotificationRowComponent } from './notification/notification.component';
 
@@ -166,6 +167,7 @@ import {
     ReportStickyComponent,
     Paneldash1Component,
     PositionRowComponent,
+    RestructuringRowComponent,
     NotificationRowComponent,
     SimulationRowComponent,
     SubheaderComponent
@@ -237,6 +239,7 @@ import {
     ReportSelectorComponent,
     ReportStickyComponent,
     PositionRowComponent,
+    RestructuringRowComponent,
     NotificationRowComponent,
     SimulationRowComponent,
     SubheaderComponent

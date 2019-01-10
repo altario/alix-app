@@ -3,17 +3,17 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of, combineLatest } from 'rxjs';
 import { map, tap, publishReplay, refCount } from 'rxjs/operators';
 
-import { lists } from '../data/data';
+import { monitorLists } from '@data/lists/monitoring-data';
 
 @Injectable({
   providedIn: 'root'
 })
-export class MockapiService {
-  constructor(private http: HttpClient) { }
+export class MonitorListsService {
+  constructor(private http: HttpClient) {}
 
   public getJSON(jsonFile?): Observable<any> {
     // return this.http.get(`./assets/${jsonFile}.js`);
-    return of(lists);
+    return of(monitorLists);
   }
 
   public getPositions(): Observable<any> {
@@ -60,15 +60,18 @@ export class MockapiService {
           // portfolios[i].positionsData = positions;
 
           for (let z = 0; z < portfolios[i].notificationIds.length; z++) {
-            const notIdArray = portfolios[i].notificationIds.replace('[', '').replace(']', '').split(',');
+            const notIdArray = portfolios[i].notificationIds
+              .replace('[', '')
+              .replace(']', '')
+              .split(',');
 
-              if (typeof notificationsHash[notIdArray[z]] != 'undefined') {
-                  portfolios[i].notificationsData.push(notificationsHash[notIdArray[z]]);
+            if (typeof notificationsHash[notIdArray[z]] !== 'undefined') {
+              portfolios[i].notificationsData.push(notificationsHash[notIdArray[z]]);
             }
           }
 
           for (let z = 0; z < portfolios[i].positionsIds.length; z++) {
-            if (typeof positionsHash[portfolios[i].positionsIds[z]] != 'undefined') {
+            if (typeof positionsHash[portfolios[i].positionsIds[z]] !== 'undefined') {
               portfolios[i].positionsData.push(positionsHash[portfolios[i].positionsIds[z]]);
             }
           }
@@ -132,14 +135,17 @@ export class MockapiService {
         // portfolio.positionsData = positions;
 
         for (let z = 0; z < portfolio.notificationIds.length; z++) {
-            const notIdArray = portfolio.notificationIds.replace('[', '').replace(']', '').split(',');
-            if (typeof notificationsHash[notIdArray[z]] != 'undefined') {
-                portfolio.notificationsData.push(notificationsHash[notIdArray[z]]);
+          const notIdArray = portfolio.notificationIds
+            .replace('[', '')
+            .replace(']', '')
+            .split(',');
+          if (typeof notificationsHash[notIdArray[z]] !== 'undefined') {
+            portfolio.notificationsData.push(notificationsHash[notIdArray[z]]);
           }
         }
 
         for (let z = 0; z < portfolio.positionsIds.length; z++) {
-          if (typeof positionsHash[portfolio.positionsIds[z]] != 'undefined') {
+          if (typeof positionsHash[portfolio.positionsIds[z]] !== 'undefined') {
             portfolio.positionsData.push(positionsHash[portfolio.positionsIds[z]]);
           }
         }

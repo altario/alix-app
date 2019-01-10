@@ -82,6 +82,7 @@
 @import 'components/shared/bullet_points';
 @import 'components/shared/icons';
 @import 'components/shared/row_list';
+@import 'components/shared/line-values';
 @import 'components/shared/list-simple';
 @import 'components/shared/percentage-bar';
 @import 'components/shared/select';
@@ -141,6 +142,15 @@ router-outlet ~ * {
       }
       + * {
         margin-top: 40px;
+      }
+    }
+  }
+
+  &.container-fluid--large {
+    .page-section {
+      > * {
+        min-width: 90%;
+        max-width: 1380px;
       }
     }
   }

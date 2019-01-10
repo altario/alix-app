@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { MockapiService } from '../../../services/mockapi.service';
+import { MonitorListsService } from '../../../services/monitorLists.service';
 import { Observable } from 'rxjs';
 import { map, tap, mergeMap, filter } from 'rxjs/operators';
 import { eChartsConfig } from '@app/global/charts';
@@ -18,7 +18,7 @@ export class PortfolioDetailComponent implements OnInit {
   public notification$: Observable<any>;
   public chart: any;
 
-  constructor(private apiService: MockapiService, private route: ActivatedRoute) {}
+  constructor(private apiService: MonitorListsService, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.portfolio$ = this.route.params.pipe(

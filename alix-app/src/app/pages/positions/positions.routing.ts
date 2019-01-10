@@ -4,6 +4,7 @@ import { Routes } from '@angular/router';
 // components
 import { PositionsListComponent } from './positions-list/positions-list.component';
 import { FinancialComponent } from './financial/financial.component';
+import { PerformanceComponent } from './performance/performance.component';
 import { StateOfConservationComponent } from './state-of-conservation/state-of-conservation.component';
 import { LocationComponent } from './location/location.component';
 import { DemandAndOfferComponent } from './demand-offer/demand-offer.component';
@@ -17,7 +18,7 @@ export const PositionsRoutes: Routes = [
     component: PositionsListComponent,
   },
   {
-    path: 'position/:id',
+    path: 'position/:id/:type',
     component: PositionsLayoutComponent,
     children: [
       {
@@ -28,6 +29,10 @@ export const PositionsRoutes: Routes = [
       {
         path: 'financial',
         component: FinancialComponent
+      },
+      {
+        path: 'performance',
+        component: PerformanceComponent
       },
       {
         path: 'state-of-conservation',

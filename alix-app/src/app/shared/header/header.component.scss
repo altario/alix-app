@@ -43,15 +43,19 @@ $header__navbar--height: 50px;
 }
 
 .navbar {
+  width: 100%;
   height: $header__navbar--height;
   padding: 0 60px 0 20px;
   background: #151D28;
+  @include align;
   .navbar__left {
+    flex: 0;
     height: 100%;
     @include align(middle);
     .environment {
       // border-radius: $border-radius__default;
       // padding: 4px 10px;
+      white-space: nowrap;
       opacity: .5;
       margin-left: 40px;
       font-family: $font-family--secondary;
@@ -69,10 +73,20 @@ $header__navbar--height: 50px;
   }
 
   .navbar__right {
+    flex: 1;
     height: 100%;
-    @include align(middle);
+    @include align(middle right);
+    overflow: hidden;
     .navbar-btns {
+      // flex: 1;
       height: 100%;
+      margin-left: 40px;
+      overflow: auto;
+      -ms-overflow-style: none;  // IE 10+
+      overflow: -moz-scrollbars-none;  // Firefox
+      &::-webkit-scrollbar {
+        display: none;  // Safari and Chrome
+      }
       @include align(middle);
       .btn {
         height: 100%;

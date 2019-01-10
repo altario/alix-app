@@ -1,0 +1,270 @@
+<div class="container-fluid container-fluid--large">
+  <section class="page-section bg--light">
+    <div class="row">
+      <div class="col-3">
+
+        <div class="sidebar box box--table">
+          <div class="box__header box__header--bg">
+            <div class="row-justified">
+              <div class="box__title title--compound">
+                <h1 class="title">Filter Positions</h1>
+              </div>
+            </div>
+          </div>
+          <div class="box__body box__body--bg">
+            <div class="cell__wrapper cell__wrapper--bg-dark">
+              <div class="row-justified">
+                <input class="form-control form--search" type="search" id="site-search" name="q" aria-label="Search" placeholder="Search">
+                <button type="submit" class="btn btn-search">
+                  <i class="icol ico-search"></i>
+                </button>
+              </div>
+              <div class="form-group">
+                <label class="label label--color" for="exampleFormControlSelect1">Client</label>
+                <div class="select-styled styled--block">
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option>All Clients</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class=" cell__wrapper cell__wrapper--bg-light">
+              <div class="form-group">
+                <label class="label label--color" for="exampleFormControlSelect1">Industry</label>
+                <div class="select-styled styled--block">
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option>Infrastructure & Real Estate</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="label label--color" for="exampleFormControlSelect1">Instrument Type</label>
+                <div class="select-styled styled--block">
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option>Corporate RE Developers</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="label label--color" for="exampleFormControlSelect1">Instrument</label>
+                <div class="select-styled styled--block">
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option>All Instruments</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-9">
+        <div class="row d-flex align-items-stretch">
+
+          <div class="col">
+
+            <div class="box box--table">
+              <div class="box__header box__header--bg">
+                <div class="d-flex flex-row justify-content-between">
+                  <div class="box__title title--compound title--two-lines">
+                    <h1 class="title">Total Exposure</h1>
+                  </div>
+                </div>
+              </div>
+              <div class="box__body box__body--bg">
+                <div class=" cell__wrapper cell__wrapper--third cell__wrapper cell__wrapper--bg-dark">
+                  <div class="cell__wrapper__info">
+                    <p class="highlighted--big highlighted--color"
+                      [appNum]="2340000000"
+                      [showUnit]="true"
+                      [unitSmall]="true"
+                      unitClass="u-uppercase highlighted__small--color">
+                  </div>
+                </div>
+
+                <div class=" cell__wrapper cell__wrapper--two-thirds cell__wrapper cell__wrapper--bg-dark">
+                  <div class="cell__wrapper__info">
+
+                    <div class="line-values-holder">
+
+                      <div class="left">
+                        <div class="line-values">
+                          <div class="trigram">PDL</div>
+                          <div class="value">1.47 B€</div>
+                          <div class="value-icon-tri down success"></div>
+                          <div class="subvalue">134M€</div>
+                        </div>
+
+                        <div class="line-values">
+                          <div class="trigram">UTP</div>
+                          <div class="value">873 M€</div>
+                          <div class="value-icon-tri up danger"></div>
+                          <div class="subvalue">127M€</div>
+                        </div>
+                      </div>
+
+                      <div class="right">
+                        <span class="chart-line">
+                          <img src="assets/images/line-chart.svg">
+                        </span>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class=" cell__wrapper cell__wrapper cell__wrapper--bg-light"></div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col">
+
+            <div class="box box--table">
+              <div class="box__header box__header--bg">
+                <div class="d-flex flex-row justify-content-between">
+                  <div class="box__title title--compound title--two-lines">
+                    <h1 class="title">Total Adjusted Net Margin</h1>
+                  </div>
+                </div>
+              </div>
+              <div class="box__body box__body--bg">
+                <div class=" cell__wrapper cell__wrapper--third cell__wrapper cell__wrapper--bg-dark">
+                  <div class="cell__wrapper__info">
+                    <p class="highlighted--big highlighted--color"
+                      [appNum]="117000000"
+                      [showUnit]="true"
+                      [unitSmall]="true"
+                      unitClass="u-uppercase highlighted__small--color">
+                  </div>
+                </div>
+
+                <div class=" cell__wrapper cell__wrapper--two-thirds cell__wrapper cell__wrapper--bg-dark">
+                  <div class="cell__wrapper__info">
+
+                    <div class="line-values-holder">
+
+                      <div class="left">
+                        <div class="line-values">
+                          <div class="trigram">PDL</div>
+                          <div class="value">84.8 M€</div>
+                          <div class="value-icon-tri down danger"></div>
+                          <div class="subvalue">89K€</div>
+                        </div>
+
+                        <div class="line-values">
+                          <div class="trigram">UTP</div>
+                          <div class="value">32.1 M€</div>
+                          <div class="value-icon-tri up success"></div>
+                          <div class="subvalue">142M€</div>
+                        </div>
+                      </div>
+
+                      <div class="right">
+                        <span class="chart-line">
+                          <img src="assets/images/line-chart.svg">
+                        </span>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class=" cell__wrapper cell__wrapper cell__wrapper--bg-light"></div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col">
+
+            <div class="box box--table">
+              <div class="box__header box__header--bg">
+                <div class="d-flex flex-row justify-content-between">
+                  <div class="box__title title--compound title--two-lines">
+                    <h1 class="title">Total Expected-Vs-Adjusted Net Margin</h1>
+                  </div>
+                </div>
+              </div>
+              <div class="box__body box__body--bg">
+                <div class=" cell__wrapper cell__wrapper--third cell__wrapper cell__wrapper--bg-dark">
+                  <div class="cell__wrapper__info">
+                    <p class="highlighted--big highlighted--color">
+                      <span class="appNum--unit-value">34.1</span>
+                      <small class="appNum--unit-label u-uppercase highlighted__small--color">%</small>
+                    </p>
+                    <div class="extra-nums">
+                      <div class="goal">Goal</div>
+                      <div class="perc">33%</div>
+                      <div class="perc-positive">+1.1%</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class=" cell__wrapper cell__wrapper--two-thirds cell__wrapper cell__wrapper--bg-dark">
+                  <div class="cell__wrapper__info">
+
+                    <div class="line-values-holder">
+
+                      <div class="left">
+                        <div class="line-values">
+                          <div class="trigram">PDL</div>
+                          <div class="value">31%</div>
+                        </div>
+
+                        <div class="line-values">
+                          <div class="trigram">UTP</div>
+                          <div class="value">39%</div>
+                        </div>
+                      </div>
+
+                      <div class="right">
+                        <span class="chart-line">
+                          <img src="assets/images/line-chart.svg">
+                        </span>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class=" cell__wrapper cell__wrapper cell__wrapper--bg-light"></div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div class="restructuring-list">
+              <div class="list-header">
+                <div class="counterpart">counterpart</div>
+                <div class="position">position</div>
+                <div class="status">status</div>
+                <div class="current-exposure">current-exposure</div>
+                <div class="businessplan-recovery">businessplan-recovery</div>
+                <div class="adjusted-recovery">adjusted-recovery</div>
+                <div class="adjusted-net-margin">adjusted-net-margin</div>
+                <div class="expected-vs-net-margin">expected-vs-net-margin</div>
+              </div>
+              <div class="list-content">
+                <div *ngFor="let restructuring of restructuringList">
+                  <app-restructuring-row [restructuring]="restructuring"></app-restructuring-row>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -3,8 +3,8 @@
 $user-menu__image--size: 30px;
 
 :host {
-  width: $user-menu__image--size + 20px;
-  display: block;
+  flex: 0 0 $user-menu__image--size + 20px;
+  display: flex;
   position: relative;
   margin-left: 40px;
 }

@@ -35,6 +35,7 @@ export class LocaldataService {
       if (routeUrl) {
         if (routeUrl.includes('monitor')) { this.setPageType('monitor'); }
         if (routeUrl.includes('underwriter')) { this.setPageType('underwriter'); }
+        if (routeUrl.includes('underwriter') && this.getPageEmail().includes('gianleone')) { this.setPageType('underwriter-g'); }
       }
     });
   }

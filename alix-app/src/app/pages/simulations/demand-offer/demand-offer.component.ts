@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 // dataset
-import * as dataset from '@data/dataset';
-import * as chartdataset from '@data/charts-dataset';
-import { dossier1PlotChartsData } from '@data/plotcharts-dataset';
+import * as dataset from '@data/dossier1/dataset';
+import * as chartdataset from '@data/dossier1/charts-dataset';
+import { dossier1PlotChartsData } from '@data/dossier1/plotcharts-dataset';
 
 import { eChartsConfig } from '@global/charts';
 
@@ -40,8 +40,8 @@ export class DemandAndOfferComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       // console.log(params['id']);
-      this.config = dataset.dossiersMainData.dossier1;
-      console.log(this.config);
+      this.config = dataset.dossier1MainData;
+      // console.log(this.config);
       this.populationForSale = this.config.demandAndOffer.forSale.populations.population1;
       this.populationLongRent = this.config.demandAndOffer.longRent.populations.population1;
       this.populationShortRent = this.config.demandAndOffer.shortRent.populations.population1;
@@ -871,7 +871,7 @@ export class DemandAndOfferComponent implements OnInit {
    */
   getPriceTodayVsOvertime(): Array<any> {
     const options = Object.keys(chartdataset.dossier1ChartsData.demandOffer.priceTodayVsOvertime).map((population, i) => {
-        return { id: i-2, key: population, value: chartdataset.dossier1ChartsData.demandOffer.priceTodayVsOvertime[population].label };
+        return { id: i - 2, key: population, value: chartdataset.dossier1ChartsData.demandOffer.priceTodayVsOvertime[population].label };
     });
 
     options.splice(0, 2);

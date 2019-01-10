@@ -3,7 +3,7 @@ import { Component, OnInit, Input, Output, EventEmitter, HostListener, Inject } 
 import { ActivatedRoute } from '@angular/router';
 
 // data
-import * as dataset from '@data/dataset';
+import * as dataset from '@data/dossier1/dataset';
 import { DOCUMENT } from '@angular/platform-browser';
 
 @Component({
@@ -27,32 +27,29 @@ export class SubheaderDashboardComponent implements OnInit {
   @Input()
   public dropvalue: any;
 
-
-  constructor(private route: ActivatedRoute, @Inject(DOCUMENT) private document: Document) { }
+  constructor(private route: ActivatedRoute, @Inject(DOCUMENT) private document: Document) {}
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-     const num = this.document.documentElement.scrollTop;
-     if ( num > 30 ) {
-         this.leftContainerIsfixed = true;
-     } else if (this.leftContainerIsfixed && num < 30) {
-         this.leftContainerIsfixed = false;
-     }
+    const num = this.document.documentElement.scrollTop;
+    if (num > 30) {
+      this.leftContainerIsfixed = true;
+    } else if (this.leftContainerIsfixed && num < 30) {
+      this.leftContainerIsfixed = false;
+    }
 
-     console.log(this.leftContainerIsfixed);
+    //  console.log(this.leftContainerIsfixed);
   }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.config = dataset.dossiersMainData.dossier1;
-        this.dropvalue = this.droplist[0].id;
+      this.config = dataset.dossier1MainData;
+      this.dropvalue = this.droplist[0].id;
     });
   }
 
   onChange(event) {
-
     this.dropvalue = event.target.value;
     this.changeValue.emit(event.target.value);
   }
-
 }

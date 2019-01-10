@@ -11,7 +11,11 @@
   .box__header {
     .box__title { padding: $box-padding }
     .title--compound {
-      padding: $box-padding
+      padding: $box-padding;
+    }
+    .title--two-lines {
+      height: 84px;
+      @include align(middle);
     }
     .icons {
       @include align(column);

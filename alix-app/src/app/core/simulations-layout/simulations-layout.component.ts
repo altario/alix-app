@@ -6,7 +6,11 @@ import { ActivatedRoute } from '@angular/router';
 import { fadeAnimation } from '@app/animations';
 
 // data
-import * as dataset from '@data/dataset';
+import * as dataset from '@data/lists/underwriter-data';
+
+// services
+import { DossiersCommunicationService } from '@services/dossiers-communication.service';
+
 
 @Component({
     selector: 'app-simulations-layout',
@@ -17,11 +21,19 @@ import * as dataset from '@data/dataset';
 export class SimulationsLayoutComponent implements OnInit {
   public config: any;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private dossierCommService: DossiersCommunicationService) {}
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.config = dataset.dossiersMainData.dossier1;
+      // console.log(params.id);
+
+      this.dossierCommService.emitChange(params.id);
+
+      // this.config = dataset.dossier1MainData;
+    });
+
+    this.route.params.subscribe(params => {
+      this.config = dataset.underwriterLists;
     });
   }
 }

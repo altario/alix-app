@@ -1,7 +1,8 @@
 // angular
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
-import { MockapiService } from '../../../services/mockapi.service';
+import { UnderwriterListsService } from '../../../services/underwriterLists.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -15,7 +16,7 @@ const filterSortArray = []; // [2, 1, ...]
 export class SimulationsListComponent implements OnInit {
   public simulations$: Observable<any>;
 
-  constructor(private apiService: MockapiService) {
+  constructor(private apiService: UnderwriterListsService) {
     this.simulations$ = this.apiService.getPositions().pipe(
       map(notifications => {
         if (!filterSortArray.length) {

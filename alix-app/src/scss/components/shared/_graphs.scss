@@ -5,6 +5,7 @@ alix-bar,
 alix-area-basic,
 alix-scatter {
   flex: 1;
+  display: block;
   background: $color5;
   border-radius: $border-radius__default;
   @include shadow(card);
