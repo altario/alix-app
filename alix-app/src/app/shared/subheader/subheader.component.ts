@@ -23,6 +23,9 @@ export class SubheaderComponent implements OnInit {
     if ((this.route as any)._routerState.snapshot.url.indexOf('underwriter') !== -1) {
       this.isSimulation = true;
     }
+    if ((this.route as any)._routerState.snapshot.url.indexOf('/positions/') !== -1) {
+      this.isSimulation = false;
+    }
     if ((this.route as any)._routerState.snapshot.url.indexOf('/re/') !== -1) {
       // console.log('REAL_ESTATE');
       this.isRealEstate = true;

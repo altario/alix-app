@@ -21,19 +21,7 @@ export class FinancialComponent implements OnInit {
   public isRealEstate = false;
   public isRetail = false;
 
-  constructor(private route: ActivatedRoute, private dossierCommService: DossiersCommunicationService) {
-    // this.dossierCommService.changeEmitted$.subscribe(data => {
-    //   // console.log(typeof data);
-    //   console.log('01', data);
-
-    //   // if (data === '4') {
-    //   //   this.dossier = dataset2.dossier2MainData;
-    //   // } else {
-    //   //   this.dossier = dataset1.dossier1MainData;
-    //   // }
-    //   this.dossier = dataset1.dossier1MainData;
-    // });
-  }
+  constructor(private route: ActivatedRoute, private dossierCommService: DossiersCommunicationService) {}
 
   ngOnInit() {
     this.route.params.subscribe(params => {
