@@ -55,6 +55,12 @@ $box-list-font-size--small: rem(9px);
   }
 }
 
+.text--neutral {
+  color: rgba(white, .5);
+}
+.text--neutral--hard {
+  color: white !important;
+}
 .text--success {
 	color: $color__custom--green !important;
 

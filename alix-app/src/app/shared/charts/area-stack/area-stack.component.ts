@@ -38,11 +38,11 @@ export class AreaStackComponent implements OnInit {
       legend: {
         data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
       },
-      toolbox: {
-        feature: {
-          saveAsImage: {}
-        }
-      },
+      // toolbox: {
+      //   feature: {
+      //     saveAsImage: {}
+      //   }
+      // },
       grid: {
         left: '3%',
         right: '4%',

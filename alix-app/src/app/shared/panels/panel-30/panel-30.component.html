@@ -1,48 +1,42 @@
 <app-report-selector></app-report-selector>
-
 <div class="box box--table">
-    <div class="box__header box__header--bg">
-      <div class="row-justified">
-        <div class="title--compound">
-          <div class="main__title">
-            <span class="u-strong u-uppercase">
-                {{config.name}}
-            </span>
+  <div class="box__header box__header--bg">
+    <div class="row-justified">
+      <div class="title--compound">
+        <div class="main__title">
+          <span class="u-strong u-uppercase"> {{ config.name }} </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="box__body box__body--bg">
+    <div class=" cell__wrapper cell__wrapper--bg-dark">
+      <div class="row-list--medium">
+        <i class="{{ icon }}"></i>
+        <div>
+          <div class="list-simple">
+            <p class="highlighted--big highlighted--color">
+              {{ config.rating }}
+              <small class="u-uppercase highlighted__small--color" style="padding-left:10px;">
+                {{ config.total | number: '1.0-0' }} places
+              </small>
+            </p>
+          </div>
+          <div class="list-simple">
+            <div>
+              <i class="icon--small icos ico-star"></i> <i class="icon--small icos ico-star"></i>
+              <i class="icon--small icos ico-star"></i> <i class="icon--small icos ico-star"></i>
+              <i class="icon--small icol ico-star"></i>
+            </div>
+          </div>
+
+          <div class="list-simple">
+            <div>
+              <span class="text--success">{{ config.growth }} stars</span> <span>2 years ago</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="box__body box__body--bg">
-      <div class=" cell__wrapper cell__wrapper--bg-dark">
-        <div class="row-list--medium">
-          <i class="{{icon}}"></i>
-          <div>
-            <div class="list-simple">
-              <p class="highlighted--big highlighted--color"> {{config.rating}}
-                <small class="u-uppercase highlighted__small--color" style="padding-left:10px;">
-                  {{config.total | number: '1.0-0'}} places
-                </small>
-              </p>
-            </div>
-            <div class="list-simple">
-              <div>
-                <i class="icon--small icos ico-star"></i>
-                <i class="icon--small icos ico-star"></i>
-                <i class="icon--small icos ico-star"></i>
-                <i class="icon--small icos ico-star"></i>
-                <i class="icon--small icol ico-star"></i>
-              </div>
-            </div>
-
-            <div class="list-simple">
-              <div>
-                <span class="text--success">{{config.growth}} stars</span>
-                <span>2 years ago</span>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
   </div>
 </div>

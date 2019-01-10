@@ -1,0 +1,107 @@
+@import '~src/scss/imports';
+
+:hosts {
+  display: block;
+}
+
+.row-lines {
+  width: 100%;
+  padding: 20px;
+  .row-line {
+    width: 100%;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid rgba(white, .3);
+    @include align(middle);
+    .key {
+      flex: 1;
+      color: rgba(white, .3);
+    }
+    .val {
+      flex: 1;
+      color: white;
+      text-align: right;
+      font-weight: $font-weight--light;
+    }
+  }
+}
+
+.list-simple--rows {
+  .row-lines {
+    padding: 0;
+    display: flex !important;
+    @include align(column);
+
+    .row-line {
+      @include align;
+      span {
+        flex: 1;
+        padding: 2px;
+        font-size: rem(14);
+        &:nth-child(1) {
+          text-align: right;
+        }
+        &:nth-child(2) {
+          text-align: left;
+        }
+        &:nth-child(3) {
+          text-align: right;
+        }
+        &:nth-child(4) {
+          text-align: left;
+        }
+        &:nth-child(5) {
+          flex: 1.5;
+          text-align: right;
+        }
+      }
+    }
+  }
+}
+
+.box {
+  flex: 1;
+  position: relative;
+  @include align(column);
+
+  // .box__body {
+  //   flex: 1;
+  // }
+}
+
+.list-simple--pad {
+  padding-left: 0 !important;
+}
+
+.icon--big {
+  @include align(middle);
+  font-size: 60px;
+}
+
+.box--one {
+  .box__body {
+    flex: 1;
+    @include align(column);
+
+    .cell__wrapper {
+      flex: 1;
+      &:first-child {
+        justify-content: flex-end;
+      }
+      &:last-child {
+        justify-content: flex-start;
+      }
+    }
+  }
+}
+
+.box--weather {
+  .box__body {
+    flex: 1;
+    @include align(column);
+    .cell__wrapper {
+      flex: 1;
+      background: transparent;
+    }
+  }
+}
