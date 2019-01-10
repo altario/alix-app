@@ -120,7 +120,20 @@ export class DashboardComponent implements OnInit {
     };
 
     // tslint:disable-next-line:max-line-length
-    this.droplist = [{ name: 'All Industries', id: 'allIndustries' }, { name: 'Consumer Goods', id: 'consumerGoods' }, { name: 'Automotive & Industrials', id: 'automotiveIndustrials' }, { name: 'Transportation', id: 'transportation' }, { name: 'Telecom, Media and Technology', id: 'telecomMediaAndTechnology' }, { name: 'Energy and Basic Materials', id: 'energyAndBasicMaterials' }, { name: 'Infrastructure & Real Estate', id: 'infrastructureRealEstate' }, { name: 'Financial Institutions', id: 'financialInstitutions' }, { name: 'Public Finance', id: 'publicFinance' }, { name: 'Healthcare & Pharma', id: 'healthcarePharma' }, { name: 'Retail and Luxury', id: 'retailAndLuxury' }, { name: 'Hospitality', id: 'hospitality' }];
+    this.droplist = [
+      { name: 'All Industries', id: 'allIndustries' },
+      { name: 'Consumer Goods', id: 'consumerGoods' },
+      { name: 'Automotive & Industrials', id: 'automotiveIndustrials' },
+      { name: 'Transportation', id: 'transportation' },
+      { name: 'Telecom, Media and Technology', id: 'telecomMediaAndTechnology' },
+      { name: 'Energy and Basic Materials', id: 'energyAndBasicMaterials' },
+      { name: 'Infrastructure & Real Estate', id: 'infrastructureRealEstate' },
+      { name: 'Financial Institutions', id: 'financialInstitutions' },
+      { name: 'Public Finance', id: 'publicFinance' },
+      { name: 'Healthcare & Pharma', id: 'healthcarePharma' },
+      { name: 'Retail and Luxury', id: 'retailAndLuxury' },
+      { name: 'Hospitality', id: 'hospitality' }
+    ];
     this.dots = this.dotSizeRandom();
   }
 
@@ -345,6 +358,9 @@ export class DashboardComponent implements OnInit {
     if (kpis.length) {
       const data = kpis.shift();
       this.kpis = data[Object.keys(data)[0]];
+
+      // console.log(this.kpis);
+
       // console.log(this.chartInstance);
       this.chartInstance.exposurePerformanceBoxPlot.setOption({
         series: this.getexposurePerformanceBoxPlot(key)
@@ -359,7 +375,7 @@ export class DashboardComponent implements OnInit {
       });
     }
 
-      this.dots = this.dotSizeRandom();
+    this.dots = this.dotSizeRandom();
   }
 
   getexposure() {

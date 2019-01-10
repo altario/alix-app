@@ -2,15 +2,15 @@
   <div class="navbar__left">
     <div class="back">
       <a (click)="goBack()" class="btn btn-ghost-lightest btn--back"><i class="icor ico-chevron-left"></i>Back</a>
-      <span>{{ config.client.clientName.value }}</span>
+      <span *ngIf="!isUnderwriter">{{ config.client.clientName.value }}</span>
     </div>
   </div>
   <div class="navbar__right">
-    <a *ngIf="isSimulation" class="btn btn-ghost-lightest" [routerLink]="['match']" routerLinkActive="active">Match</a>
-    <a class="btn btn-ghost-lightest" [routerLink]="['financial']" routerLinkActive="active">Financial</a>
-    <a *ngIf="isRetail" class="btn btn-ghost-lightest" [routerLink]="['performance']" routerLinkActive="active">Performance</a>
-    <a *ngIf="isRealEstate" class="btn btn-ghost-lightest" [routerLink]="['state-of-conservation']" routerLinkActive="active">State of Conservation</a>
-    <a *ngIf="isRealEstate" class="btn btn-ghost-lightest" [routerLink]="['demand-offer']" routerLinkActive="active">Demand & Offer</a>
-    <a class="btn btn-ghost-lightest" [routerLink]="['location']" routerLinkActive="active">Location</a>
+    <!-- <a *ngIf="!isUnderwriter && !isSimulation" class="btn btn-ghost-lightest" [routerLink]="['match']" routerLinkActive="active">Match</a> -->
+    <a *ngIf="!isSimulation" class="btn btn-ghost-lightest" [routerLink]="['financial']" routerLinkActive="active">Financial</a>
+    <a *ngIf="isUnderwriter && !isSimulation" class="btn btn-ghost-lightest" [routerLink]="['performance']" routerLinkActive="active">Performance</a>
+    <a *ngIf="isRealEstate && !isUnderwriter && !isSimulation" class="btn btn-ghost-lightest" [routerLink]="['state-of-conservation']" routerLinkActive="active">State of Conservation</a>
+    <a *ngIf="isRealEstate && !isUnderwriter && !isSimulation" class="btn btn-ghost-lightest" [routerLink]="['demand-offer']" routerLinkActive="active">Demand & Offer</a>
+    <a *ngIf="!isSimulation" class="btn btn-ghost-lightest" [routerLink]="['location']" routerLinkActive="active">Location</a>
   </div>
 </nav>

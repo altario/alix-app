@@ -13,29 +13,42 @@ import * as dataset from '@data/dossier1/dataset';
 })
 export class SubheaderComponent implements OnInit {
   public config: any;
+  public isMonitor = false;
+  public isUnderwriter = false;
   public isSimulation = false;
+  public isPositions = false;
   public isRealEstate = false;
   public isRetail = false;
 
   constructor(private route: ActivatedRoute, private location: Location) { }
 
   ngOnInit() {
-    if ((this.route as any)._routerState.snapshot.url.indexOf('underwriter') !== -1) {
+    if ((this.route as any)._routerState.snapshot.url.indexOf('/monitor/') !== -1) {
+      this.isMonitor = true;
+      // console.log('isMonitor:', this.isMonitor);
+    }
+    if ((this.route as any)._routerState.snapshot.url.indexOf('/underwriter/') !== -1) {
+      this.isUnderwriter = true;
+      // console.log('isUnderwriter:', this.isUnderwriter);
+    }
+    if ((this.route as any)._routerState.snapshot.url.indexOf('/simulations/') !== -1) {
       this.isSimulation = true;
+      // console.log('isSimulation:', this.isSimulation);
     }
     if ((this.route as any)._routerState.snapshot.url.indexOf('/positions/') !== -1) {
-      this.isSimulation = false;
+      this.isPositions = false;
+      // console.log('isPositions:', this.isPositions);
     }
     if ((this.route as any)._routerState.snapshot.url.indexOf('/re/') !== -1) {
-      // console.log('REAL_ESTATE');
       this.isRealEstate = true;
+      // console.log('isRealEstate:', this.isRealEstate);
     }
     if ((this.route as any)._routerState.snapshot.url.indexOf('/retail/') !== -1) {
-      // console.log('RETAIL');
       this.isRetail = true;
+      // console.log('isRetail:', this.isRetail);
     } else {
-      // console.log('REAL_ESTATE');
       this.isRealEstate = true;
+      // console.log('isRealEstate:', this.isRealEstate);
     }
     this.route.params.subscribe(params => {
       this.config = dataset.dossier1MainData;

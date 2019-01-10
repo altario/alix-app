@@ -31,11 +31,11 @@ export class PerformanceComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       if ((this.route as any)._routerState.snapshot.url.indexOf('/4/') !== -1) {
-        console.log('RETAIL');
+        // console.log('RETAIL');
         this.isRetail = true;
         this.config = dataset2.dossier2MainData;
       } else {
-        console.log('REAL_ESTATE');
+        // console.log('REAL_ESTATE');
         this.isRealEstate = true;
         this.config = dataset1.dossier1MainData;
       }
@@ -47,6 +47,7 @@ export class PerformanceComponent implements OnInit {
     const axisyLabel = JSON.parse(JSON.stringify(eChartsConfig.yAxis.axisLabel));
     axisyLabel.formatter = function(value, index) {
       const processedValue = numericalValues(value);
+      console.log(processedValue);
       return processedValue.round + ' ' + (processedValue.unitname ? processedValue.unitname + '€' : '');
     };
 
@@ -129,9 +130,12 @@ export class PerformanceComponent implements OnInit {
         axisLine: eChartsConfig.xAxis.axisLine
       },
       yAxis: {
+        // axisLabel: axisyLabel,
+        axisLabel: {
+          show: false
+        },
         type: 'value',
         splitLine: eChartsConfig.yAxis.splitLine,
-        axisLabel: axisyLabel,
         axisLine: {
           show: false
         }
@@ -160,7 +164,10 @@ export class PerformanceComponent implements OnInit {
 
     this.opts.totalFootFallLastYear = {
       title: {
-        enable: false
+        text: 'TOTAL FOOTFALL YEAR (Previous Year)', // #HC
+        top: '17px',
+        left: '16px',
+        textStyle: eChartsConfig.title
       },
       legend: {
         enable: false,
@@ -234,9 +241,12 @@ export class PerformanceComponent implements OnInit {
         axisLine: eChartsConfig.xAxis.axisLine
       },
       yAxis: {
+        // axisLabel: axisyLabel,
+        axisLabel: {
+          show: false
+        },
         type: 'value',
         splitLine: eChartsConfig.yAxis.splitLine,
-        axisLabel: axisyLabel,
         axisLine: {
           show: false
         }
@@ -343,9 +353,12 @@ export class PerformanceComponent implements OnInit {
         axisLine: eChartsConfig.xAxis.axisLine
       },
       yAxis: {
+        // axisLabel: axisyLabel,
+        axisLabel: {
+          show: false
+        },
         type: 'value',
         splitLine: eChartsConfig.yAxis.splitLine,
-        axisLabel: axisyLabel,
         axisLine: {
           show: false
         }
@@ -499,9 +512,12 @@ export class PerformanceComponent implements OnInit {
         axisLine: eChartsConfig.xAxis.axisLine
       },
       yAxis: {
+        // axisLabel: axisyLabel,
+        axisLabel: {
+          show: false
+        },
         type: 'value',
         splitLine: eChartsConfig.yAxis.splitLine,
-        axisLabel: axisyLabel,
         axisLine: {
           show: false
         }
@@ -572,9 +588,12 @@ export class PerformanceComponent implements OnInit {
         data: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
       },
       yAxis: {
+        // axisLabel: eChartsConfig.yAxis.axisLabel,
+        axisLabel: {
+          show: false
+        },
         type: 'value',
         splitLine: eChartsConfig.yAxis.splitLine,
-        axisLabel: eChartsConfig.yAxis.axisLabel,
         axisLine: {
           show: false
         }
@@ -586,21 +605,21 @@ export class PerformanceComponent implements OnInit {
     return [
       {
         name: 'Morning - 6.00 am > 12.00 PM',
-        data: [400, 220, 100, 200, 250, 700, 450],
+        data: [34, 86, 114, 139, 246, 265, 143],
         type: 'bar',
         barGap: 0,
         color: lineColors['radius1Km']
       },
       {
         name: 'Afternoon - 12.01 am > 5.00 PM',
-        data: [300, 250, 60, 250, 280, 180, 100],
+        data: [138, 547, 523, 539, 742, 187, 288],
         type: 'bar',
         barGap: 0,
         color: lineColors['portaNuova']
       },
       {
         name: 'Evening - 5.01 am > 6.30 PM',
-        data: [250, 40, 20, 150, 60, 10, 10],
+        data: [115, 367, 420, 373, 1078, 1007, 709],
         type: 'bar',
         barGap: 0,
         color: lineColors['milano']
@@ -699,9 +718,12 @@ export class PerformanceComponent implements OnInit {
         axisLine: eChartsConfig.xAxis.axisLine
       },
       yAxis: {
+        // axisLabel: axisyLabel,
+        axisLabel: {
+          show: false
+        },
         type: 'value',
         splitLine: eChartsConfig.yAxis.splitLine,
-        axisLabel: axisyLabel,
         axisLine: {
           show: false
         }

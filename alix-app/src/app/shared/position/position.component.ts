@@ -19,6 +19,6 @@ export class PositionRowComponent implements OnInit {
 
   goToDashboard(id, type) {
     const pageType = this.ld.getPageType();
-    this.router.navigate([`${pageType}/positions/position`, id, type]);
+    this.router.navigate([`${pageType.split('-')[0]}/positions/position`, id, type]);
   }
 }

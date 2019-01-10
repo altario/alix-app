@@ -18,6 +18,8 @@ export class FinancialComponent implements OnInit {
   public config: object;
   // public dossier: object;
 
+  public mortgageTitle: string;
+
   public isRealEstate = false;
   public isRetail = false;
 
@@ -31,15 +33,18 @@ export class FinancialComponent implements OnInit {
       if ((this.route as any)._routerState.snapshot.url.indexOf('/re/') !== -1) {
         // console.log('REAL_ESTATE');
         this.isRealEstate = true;
+        this.mortgageTitle = 'Mortgage';
         this.config = dataset1.dossier1MainData;
       }
       if ((this.route as any)._routerState.snapshot.url.indexOf('/retail/') !== -1) {
         // console.log('RETAIL');
         this.isRetail = true;
+        this.mortgageTitle = 'Loan';
         this.config = dataset2.dossier2MainData;
       } else {
         // console.log('REAL_ESTATE');
         this.isRealEstate = true;
+        this.mortgageTitle = 'Mortgage';
         this.config = dataset1.dossier1MainData;
       }
 
