@@ -39,7 +39,7 @@ export class MatchComponent implements OnInit {
         this.imageShow = 'match_71';
       }
 
-      if (this.localData.getPageEmail().includes('diletta@')) {
+      if (this.localData.getPageEmail().includes('pietra@')) {
         // console.log('match_g');
         this.imageShow = 'match_g';
       }

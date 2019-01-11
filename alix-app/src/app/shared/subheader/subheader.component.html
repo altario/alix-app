@@ -8,7 +8,7 @@
   <div class="navbar__right">
     <!-- <a *ngIf="!isUnderwriter && !isSimulation" class="btn btn-ghost-lightest" [routerLink]="['match']" routerLinkActive="active">Match</a> -->
     <a *ngIf="!isSimulation" class="btn btn-ghost-lightest" [routerLink]="['financial']" routerLinkActive="active">Financial</a>
-    <a *ngIf="isUnderwriter && !isSimulation" class="btn btn-ghost-lightest" [routerLink]="['performance']" routerLinkActive="active">Performance</a>
+    <a *ngIf="isUnderwriter && !isSimulation || isRetail" class="btn btn-ghost-lightest" [routerLink]="['performance']" routerLinkActive="active">Performance</a>
     <a *ngIf="isRealEstate && !isUnderwriter && !isSimulation" class="btn btn-ghost-lightest" [routerLink]="['state-of-conservation']" routerLinkActive="active">State of Conservation</a>
     <a *ngIf="isRealEstate && !isUnderwriter && !isSimulation" class="btn btn-ghost-lightest" [routerLink]="['demand-offer']" routerLinkActive="active">Demand & Offer</a>
     <a *ngIf="!isSimulation" class="btn btn-ghost-lightest" [routerLink]="['location']" routerLinkActive="active">Location</a>
