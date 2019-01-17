@@ -105,3 +105,12 @@
     }
   }
 }
+
+.highlighted--huge {
+  small{
+    &.text__normal--size{
+      font-size: 1rem;
+      line-height: 1rem;
+    }
+  }
+}

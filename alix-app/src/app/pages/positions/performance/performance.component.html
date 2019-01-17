@@ -403,4 +403,94 @@
     </div>
   </section>
 
+  <!-- NEWS -->
+  <section class="page-section bg--dark">
+    <div class="row">
+      <div class="col-4">
+  
+        <div class="box box--table">
+          <app-report-selector></app-report-selector>
+          <div class="box__header box__header--bg">
+            <div class="row-justified">
+              <div class="title--compound">
+                <div class="main__title">RATING</div>
+                <div class="secondary__title"></div>
+              </div>
+            </div>
+          </div>
+          <div class="box__body box__body--bg">
+            <div class="cell__wrapper cell__wrapper--bg-dark">
+
+              <div class="highlighted--huge highlighted--color text--center">4.3</div>
+            </div>
+            <div class="cell__wrapper cell__wrapper--bg-light list-simple">
+              <small class="highlighted__small--color">GOAL for period:</small>
+              <div>
+                <span>4</span>
+              </div>
+              <small class="highlighted__small--color">Overyear Evolution:</small>
+              <div>
+                <span>3.8k > 4.3</span>
+              </div>
+            </div>
+            <div class="cell__wrapper cell__wrapper--bg-light list-simple">
+              <div>
+                <strong>87</strong>
+                <small class="highlighted__small--color">Contemporary Restaurant</small>
+              </div>
+              
+              <div>
+                <strong>3.9</strong>
+                <small class="highlighted__small--color">Average Rating</small>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+  
+      <div class="col-8">
+        <alix-line [series]="ratingEvolution()" [opts]="opts.ratingEvolution"></alix-line>
+      </div>
+    </div>
+  </section>
+  
+  <section class="page-section bg--light">
+    <div class="row">
+      <div class="col-4">
+  
+        <div class="box box--table">
+          <app-report-selector></app-report-selector>
+          <div class="box__header box__header--bg">
+            <div class="row-justified">
+              <div class="title--compound">
+                <div class="main__title">
+                  <span class="u-strong u-uppercase">SENTIMENT ANALYSIS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="box__body box__body--bg">
+            <div class=" cell__wrapper cell__wrapper--bg-dark">
+              <div class="highlighted--huge highlighted--color">
+                150
+                <small class="u-uppercase highlighted__small--color text__normal--size">Reviews Last Month</small>
+              </div>
+            </div>
+            <div class=" cell__wrapper cell__wrapper--bg-light list-simple">
+              <div class="highlighted--huge highlighted--color">
+                95%
+                <small class="u-uppercase highlighted__small--color text__normal--size">Reviews Last Month</small>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+      <div class="col-8">
+        <alix-bar [series]="sentimentAnalysis()" [opts]="opts.sentimentAnalysis"></alix-bar>
+      </div>
+    </div>
+  </section>
+
 </div>
