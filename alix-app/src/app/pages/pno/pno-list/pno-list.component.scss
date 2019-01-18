@@ -1,0 +1,91 @@
+@import '~src/scss/imports';
+
+:host::ng-deep {
+  .sidebar {
+    .cell__wrapper--bg-dark {
+      padding: 20px;
+      > .row-justified {
+        margin-bottom: 20px;
+      }
+      > .form-group {
+        margin: 0;
+      }
+    }
+  }
+
+  .extra-nums {
+    margin-top: -5px;
+    color: white;
+    font-weight: $font-weight--semibold;
+    font-size: rem(11);
+    @include align;
+    .goal {
+      font-weight: $font-weight--light;
+    }
+    .perc {
+      margin: 0 5px;
+    }
+    .perc-positive {
+      color: #1BDA48;
+    }
+  }
+}
+
+.restructuring-list {
+  @include align(column);
+  .list-header {
+    width: 100%;
+    height: 60px;
+    padding: 0 120px 0 80px;
+    border-radius: $border-radius__default $border-radius__default 0 0;
+    background: #141627;
+    @include align(middle);
+    .counterpart,
+    .position,
+    .status,
+    .current-exposure,
+    .businessplan-recovery,
+    .adjusted-recovery,
+    .adjusted-net-margin,
+    .expected-vs-net-margin {
+      margin: 0 10px;
+      text-align: center;
+      @include align(center);
+      font-size: rem(9);
+      color: #A4B3FF;
+      text-transform: uppercase;
+    }
+
+    .counterpart {
+      flex: 1;
+      text-align: left;
+    }
+    .position {
+      flex: 1;
+      text-align: left;
+    }
+    .status {
+      flex: 0 0 50px;
+    }
+    .current-exposure {
+      flex: 1;
+    }
+    .businessplan-recovery {
+      flex: 0 0 100px;
+    }
+    .adjusted-recovery {
+      flex: 0 0 100px;
+    }
+    .adjusted-net-margin {
+      flex: 0 0 60px;
+    }
+    .expected-vs-net-margin {
+      flex: 0 0 100px;
+    }
+  }
+
+  .list-content {
+    padding: 20px 0px;
+   // box-shadow: inset 0px 4px 20px rgba(0, 0, 0, 0.4);
+  }
+}

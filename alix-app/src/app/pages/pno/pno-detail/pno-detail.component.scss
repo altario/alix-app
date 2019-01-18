@@ -1,0 +1,58 @@
+@import '~src/scss/imports';
+
+:host {
+  display: block;
+  position: relative;
+}
+agm-map {
+  height: 450px;
+  width: 100%;
+}
+
+.container-fluid > .row {
+  min-width: 1024px;
+  max-width: 1260px;
+  padding: 0;
+  margin: 40px auto 20px;
+}
+
+.btn--edit {
+  width: fit-content;
+  padding: 0 10px !important;
+  align-self: flex-end;
+}
+
+ul,
+h1 {
+  padding: 0 20px;
+}
+
+ul {
+  margin-top: 30px;
+  list-style: none;
+}
+.highlighted--big {
+  font-size: 1.6rem;
+}
+.highlighted--big small {
+  font-size: 0.8rem;
+}
+.tag {
+  font-size: 0.5rem;
+}
+
+.green {
+  background: #43D17F;
+}
+.grey {
+  background: #B2B2B2;
+}
+.yellow {
+  background: #E6DE35;
+}
+.orange {
+  background: #F6B611;
+}
+.red {
+  background: #EE1B1B;
+}

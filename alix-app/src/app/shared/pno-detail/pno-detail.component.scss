@@ -1,0 +1,120 @@
+@import '~src/scss/imports';
+
+:host {
+  display: block;
+  position: relative;
+  margin-top: 20px;
+}
+
+.position-row__container {
+  height: 64px;
+  background-color: $color1;
+  color: white;
+  @include align(around middle);
+  border-radius: $border-radius__default;
+  padding: 0 20px;
+
+  .position-row__title {
+    flex: 1;
+    padding-right: 10px;
+    font-size: rem(20);
+    color: white;
+  }
+
+  .position-row__loan {
+    color: rgba(white, .7) !important;
+  }
+
+  .position-row__loan,
+  .position-row__time,
+  .position-row__stat,
+  .position-row__button {
+    flex: 1;
+    padding: 0 10px;
+    color: #828282;
+  }
+
+  .position-row__title,
+  .position-row__loan,
+  .position-row__stat,
+  .position-row__button {
+    font-size: rem(14);
+    @include line-clamp(2, 14px, 1.1);
+  }
+
+  .position-row__time {
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    @include line-clamp(2, 12px, 1.1);
+    text-align: center;
+    $size: 150px;
+    min-width: $size;
+    max-width: $size;
+  }
+
+  .position-row__state {
+    // $size: 110px;
+    // min-width: $size;
+    // max-width: $size;
+    width: 100px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    font-weight: $font-weight--bold;
+    color: white;
+    font-size: rem(12);
+    border-radius: $border-radius__default;
+
+    &.green {
+      background: #43D17F;
+    }
+    &.grey {
+      background: #B2B2B2;
+    }
+    &.yellow {
+      background: #E6DE35;
+    }
+    &.orange {
+      background: #F6B611;
+    }
+    &.red {
+      background: #EE1B1B;
+    }
+  }
+
+  .position-row__button {
+    max-width: 60px;
+    min-width: 60px;
+  }
+
+  ul.position-row__info {
+    padding: 0 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex: 3;
+
+    li {
+      list-style: none;
+      font-size: 10px;
+
+      div:nth-child(2) {
+        font-size: rem(14px);
+      }
+    }
+  }
+
+  .position-row__button {
+    flex: 0 0 115px;
+    height: 32px;
+    padding: 0;
+    @include align(stretch);
+    .btn {
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      color: white;
+    }
+  }
+}

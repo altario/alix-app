@@ -21,6 +21,8 @@ import { PositionRowComponent } from './position/position.component';
 import { RestructuringRowComponent } from './restructuring/restructuring.component';
 import { SimulationRowComponent } from './simulation/simulation.component';
 import { NotificationRowComponent } from './notification/notification.component';
+import { PnoRowComponent } from './pno/pno.component';
+import { PnoDetailRowComponent } from './pno-detail/pno-detail.component';
 
 // pipes
 import {
@@ -170,7 +172,9 @@ import {
     RestructuringRowComponent,
     NotificationRowComponent,
     SimulationRowComponent,
-    SubheaderComponent
+    SubheaderComponent,
+    PnoRowComponent,
+    PnoDetailRowComponent
   ],
   providers: [],
   exports: [
@@ -242,7 +246,9 @@ import {
     RestructuringRowComponent,
     NotificationRowComponent,
     SimulationRowComponent,
-    SubheaderComponent
+    SubheaderComponent,
+    PnoRowComponent,
+    PnoDetailRowComponent
   ]
 })
 export class SharedModule {}

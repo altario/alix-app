@@ -39,6 +39,11 @@ export const PagesRoutes: Routes = [
         component: DashboardComponent
       },
       {
+        path: 'pno',
+        component: BaseLayoutComponent,
+        loadChildren: './pno/pno.module#PnoModule'
+      },
+      {
         path: 'restructuring',
         component: BaseLayoutComponent,
         loadChildren: './restructuring/restructuring.module#RestructuringModule'

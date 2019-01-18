@@ -1,0 +1,52 @@
+<div class="box position-row__container">
+  <div class="position-row__title">
+    {{ position[0] }}</div>
+  <div class="position-row__loan">
+    {{ position[1] }}</div>
+  <ul class="position-row__info">
+    <li>
+      <div>Adj. PD 1y</div>
+      <div class="u-strong">
+        <span class="val appNum--unit-value">{{ getValue(position[2], 'value') }}</span>
+        <small class="small appNum--unit-label ">{{ getValue(position[2], 'small') }}%</small>
+      </div>
+    </li>
+
+    <li>
+      <div>Loan Original Value</div>
+      <div class="u-strong">
+        <span class="val appNum--unit-value">{{ getValue(position[3], 'value') }}</span>
+        <small class="small appNum--unit-label ">{{ getValue(position[3], 'small') }}</small>
+      </div>
+    </li>
+
+    <li>
+      <div>Current Exposure</div>
+      <div class="u-strong">
+        <span class="val appNum--unit-value">{{ getValue(position[4], 'value') }}</span>
+        <small class="small appNum--unit-label ">{{ getValue(position[4], 'small') }}</small>
+      </div>
+    </li>
+
+    <li>
+      <div>RAROC</div>
+      <div class="u-strong">
+        <span class="val appNum--unit-value">{{ getValue(position[5], 'value') }}</span>
+        <small class="small appNum--unit-label ">{{ getValue(position[5], 'small') }}%</small>
+      </div>
+    </li>
+
+    <li>
+      <div>Time to Maturity</div>
+      <div class="u-strong">
+        <span class="val appNum--unit-value">{{ getValue(position[6], 'value') }}</span>
+        <small class="small appNum--unit-label ">{{ getValue(position[6], 'small') }}y</small>
+      </div>
+    </li>
+
+  </ul>
+  <div class="position-row__button">
+    <button class="btn btn-primary btn-small">View</button>
+  </div>
+</div>
+

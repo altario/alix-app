@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <section class="page-section bg--light">
+    <div class="row">
+      <div class="col-6">
+        <div>PNO by Region</div>
+        <agm-map [disableDefaultUI]="false" [gestureHandling]="'none'" [latitude]="lat" [longitude]="lng" [streetViewControl]="false" [styles]="mapStyle" [zoomControl]="false" [zoom]="zoom">
+          <agm-circle *ngFor="let marker of dots" [circleDraggable]="false" [editable]="false" [latitude]="marker.lat" [longitude]="marker.lng" [radius]="marker.radius" fillColor="#c2863d" fillOpacity=".7"></agm-circle>
+        </agm-map>
+      </div>
+      <div class="col-6">
+        <alix-bar [series]="pnoTicketSize()" [opts]="pnoTicketSizeOpts()"></alix-bar>
+      </div>
+    </div>
+  </section>
+  <section class="page-section bg--dark">
+    <div class="row no-gutters">
+      <div class="col">
+        <ul>
+          <li *ngFor="let position of positionList()">
+            <app-pno-detail-row [position]="position"></app-pno-detail-row>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
