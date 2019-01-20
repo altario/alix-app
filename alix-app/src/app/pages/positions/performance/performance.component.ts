@@ -777,7 +777,7 @@ export class PerformanceComponent implements OnInit {
 
     this.opts.ratingEvolution = {
       title: {
-        text: 'RATING EVOLUTION', // #HC
+        text: 'SOCIAL RATING EVOLUTION', // #HC
         top: '17px',
         left: '16px',
         textStyle: eChartsConfig.title
@@ -895,7 +895,7 @@ export class PerformanceComponent implements OnInit {
   }
 
   sentimentAnalysis = () => {
-    const lineColors = ['#00B5E9', '#7AC143', '#FFFFFF'];
+    const lineColors = ['#E9545C', '#7AC143', '#FFFFFF'];
     const axisyLabel = JSON.parse(JSON.stringify(eChartsConfig.yAxis.axisLabel));
     axisyLabel.formatter = function (value, index) {
       const processedValue = numericalValues(value);
