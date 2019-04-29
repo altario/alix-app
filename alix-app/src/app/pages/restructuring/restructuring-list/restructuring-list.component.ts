@@ -9,9 +9,20 @@ import { Router } from '@angular/router';
 })
 export class RestructuringListComponent implements OnInit {
   public restructuringList = [
+    // {
+    //   id: 1,
+    //   counterpart: 'Carron Costruzioni Generali S.p.A.',
+    //   position: 'CPEO-14423',
+    //   status: 'PDL',
+    //   currentExposure: '243.7M€',
+    //   businessPlanRecovery: '240M€ - 7m',
+    //   adjustedRecovery: '228M€ - 19m',
+    //   adjustedNetMargin: '4.8M€',
+    //   expectedVsAdjustedNetMargin: '74.2%'
+    // },
     {
       id: 1,
-      counterpart: 'Carron Costruzioni Generali S.p.A.',
+      counterpart: 'Hampstel & Pfeiger',
       position: 'CPEO-14423',
       status: 'PDL',
       currentExposure: '243.7M€',
