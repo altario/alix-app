@@ -9,6 +9,9 @@
   overflow: hidden;
   @include shadow(card);
   .box__header {
+    display: flex;
+    align-items: center;
+
     .box__title { padding: $box-padding }
     .title--compound {
       padding: $box-padding
