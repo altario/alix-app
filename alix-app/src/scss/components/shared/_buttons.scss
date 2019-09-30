@@ -13,4 +13,17 @@
 .form--search {
   border-radius: $border-radius__default 0 0 $border-radius__default;
   border-top: none;
+  border-left: none;
+  border-bottom: none;
+}
+
+.btn--search {
+  width: 36px;
+  min-width: 36px;
+  height: 36px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 $border-radius__default $border-radius__default 0;
 }
