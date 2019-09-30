@@ -1,0 +1,360 @@
+[
+    {
+        "type": "StackedComponent",
+        "has_slider": false,
+        "position": 1,
+
+        "left_component": {
+            "has_slider": true,
+            "title": "Type Of Neighbourhood",
+            "subtitle": false,
+            "data_icon": "house.svg",
+            "data_name": "Residential",
+            "items": [
+                {
+                    "name": "Residencial",
+                    "color": "#f80",
+                    "percentage": "81%",
+                    "abs": "4002"
+                },
+                {
+                    "name": "Retail",
+                    "color": "#f80",
+                    "percentage": "10%",
+                    "abs": "512"
+                },
+                {
+                    "name": "Hospitality",
+                    "color": "#f80",
+                    "percentage": "8%",
+                    "abs": "472"
+                },
+                {
+                    "name": "Offices",
+                    "color": "#f80",
+                    "percentage": "1%",
+                    "abs": "50"
+                }
+            ]
+        },
+
+        "right_component": {
+            "has_slider": false,
+            "series": [
+                {
+                    "name": "直接访问",
+                    "type": "bar",
+                    "stack": "总量",
+                    "label": {
+                        "normal": {
+                            "show": true,
+                            "position": "insideRight"
+                        }
+                    },
+                    "data": [320, 302, 301, 334, 390, 330, 320]
+                },
+                {
+                    "name": "邮件营销",
+                    "type": "bar",
+                    "stack": "总量",
+                    "label": {
+                        "normal": {
+                            "show": true,
+                            "position": "insideRight"
+                        }
+                    },
+                    "data": [120, 132, 101, 134, 90, 230, 210]
+                },
+                {
+                    "name": "联盟广告",
+                    "type": "bar",
+                    "stack": "总量",
+                    "label": {
+                        "normal": {
+                            "show": true,
+                            "position": "insideRight"
+                        }
+                    },
+                    "data": [220, 182, 191, 234, 290, 330, 310]
+                },
+                {
+                    "name": "视频广告",
+                    "type": "bar",
+                    "stack": "总量",
+                    "label": {
+                        "normal": {
+                            "show": true,
+                            "position": "insideRight"
+                        }
+                    },
+                    "data": [150, 212, 201, 154, 190, 330, 410]
+                },
+                {
+                    "name": "搜索引擎",
+                    "type": "bar",
+                    "stack": "总量",
+                    "label": {
+                        "normal": {
+                            "show": true,
+                            "position": "insideRight"
+                        }
+                    },
+                    "data": [820, 832, 901, 934, 1290, 1330, 1320]
+                }
+            ]
+        }
+    },
+    {
+        "type": "StackedImageComponent",
+        "has_slider": false,
+        "position": 1,
+
+        "left_component": {
+            "title": "Architecture",
+            "data_name": "19th Century",
+            "items": [
+                {
+                    "name": "Residencial",
+                    "color": "#f80",
+                    "percentage": "81%",
+                    "abs": "4002"
+                },
+                {
+                    "name": "Retail",
+                    "color": "#f80",
+                    "percentage": "10%",
+                    "abs": "512"
+                },
+                {
+                    "name": "Hospitality",
+                    "color": "#f80",
+                    "percentage": "8%",
+                    "abs": "472"
+                },
+                {
+                    "name": "Offices",
+                    "color": "#f80",
+                    "percentage": "1%",
+                    "abs": "50"
+                }
+            ]
+        },
+
+        "right_component": {
+            "has_slider": false,
+            "image": "assets/images/default.png"
+        }
+    },
+    {
+        "type": "StackedScatterComponent",
+        "has_slider": false,
+        "position": 1,
+
+        "left_component": {
+            "has_slider": true,
+            "title": "Type Of Neighbourhood",
+            "subtitle": false,
+            "data_icon": "house.svg",
+            "data_name": "Residential",
+            "items": [
+                {
+                    "name": "Residencial",
+                    "color": "#f80",
+                    "percentage": "81%",
+                    "abs": "4002"
+                },
+                {
+                    "name": "Retail",
+                    "color": "#f80",
+                    "percentage": "10%",
+                    "abs": "512"
+                },
+                {
+                    "name": "Hospitality",
+                    "color": "#f80",
+                    "percentage": "8%",
+                    "abs": "472"
+                },
+                {
+                    "name": "Offices",
+                    "color": "#f80",
+                    "percentage": "1%",
+                    "abs": "50"
+                }
+            ]
+        },
+
+        "right_component": {
+            "has_slider": false,
+            "series": [
+                {
+                    "type": "scatter",
+                    "symbolSize": 20,
+                    "data": [
+                        [320, 302, 301, 334, 390, 330, 320],
+                        [120, 132, 101, 134, 90, 230, 210],
+                        [220, 182, 191, 234, 290, 330, 310],
+                        [150, 212, 201, 154, 190, 330, 410],
+                        [820, 832, 901, 934, 1290, 1330, 1320]
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "type": "PanelBoxComponent",
+        "position": 1,
+        "items": [
+            {
+                "title": "Fashion Retailers",
+
+                "left_component": {
+                    "data_icon": "diamond.svg"
+                },
+
+                "right_component": {
+                    "items": [
+                        {
+                            "value": "4.7",
+                            "label": "200 places"
+                        },
+                        {
+                            "value": "* * * * *"
+                        },
+                        {
+                            "value": "+0.2 Stars",
+                            "label": "2 years Ago"
+                        },
+                        {
+                            "title": "Keywords:",
+                            "value": "#High-end, #Upscale, #High-fashion, #Exclusive"
+                        }
+                    ]
+                }
+            },
+            {
+                "title": "Fashion Retailers",
+
+                "left_component": {
+                    "data_icon": "diamond.svg"
+                },
+
+                "right_component": {
+                    "items": [
+                        {
+                            "value": "4.7",
+                            "label": "200 places"
+                        },
+                        {
+                            "value": "* * * * *"
+                        },
+                        {
+                            "value": "+0.2 Stars",
+                            "label": "2 years Ago"
+                        },
+                        {
+                            "title": "Keywords:",
+                            "value": "#High-end, #Upscale, #High-fashion, #Exclusive"
+                        }
+                    ]
+                }
+            },
+            {
+                "title": "Fashion Retailers",
+
+                "left_component": {
+                    "data_icon": "diamond.svg"
+                },
+
+                "right_component": {
+                    "items": [
+                        {
+                            "value": "4.7",
+                            "label": "200 places"
+                        },
+                        {
+                            "value": "* * * * *"
+                        },
+                        {
+                            "value": "+0.2 Stars",
+                            "label": "2 years Ago"
+                        },
+                        {
+                            "title": "Keywords:",
+                            "value": "#High-end, #Upscale, #High-fashion, #Exclusive"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "type": "PanelBoxComponent",
+        "position": 1,
+        "items": [
+            {
+                "title": "Supermarkets",
+
+                "left_component": {
+                    "data_icon": "cart.svg"
+                },
+
+                "right_component": {
+                    "items": [
+                        {
+                            "value": "# 5",
+                            "label": "Units in 200m Radius"
+                        },
+                        {
+                            "icon": "man.svg",
+                            "value": "2 Min",
+                            "label": "Walking"
+                        }
+                    ]
+                }
+            },
+            {
+                "title": "Pharmacy",
+
+                "left_component": {
+                    "data_icon": "pharmacy.svg"
+                },
+
+                "right_component": {
+                    "items": [
+                        {
+                            "value": "# 2",
+                            "label": "Units in 200m Radius"
+                        },
+                        {
+                            "icon": "man.svg",
+                            "value": "3 Min",
+                            "label": "Walking"
+                        }
+                    ]
+                }
+            },
+            {
+                "title": "Clinics",
+
+                "left_component": {
+                    "data_icon": "hospital.svg"
+                },
+
+                "right_component": {
+                    "items": [
+                        {
+                            "value": "# 1",
+                            "label": "Units in 200m Radius"
+                        },
+                        {
+                            "icon": "man.svg",
+                            "value": "1 Min",
+                            "label": "Walking"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+]
