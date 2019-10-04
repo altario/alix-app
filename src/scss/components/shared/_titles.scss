@@ -80,8 +80,13 @@
 
 .text-row {
   display: flex;
+  flex-wrap: nowrap;
   font-size: rem(10px);
   font-family: $font-family--secondary;
   font-weight: $font-weight--light;
-  span { padding: .1em .2em }
+
+  span {
+    padding: .1em .2em;
+    white-space: nowrap;
+  }
 }

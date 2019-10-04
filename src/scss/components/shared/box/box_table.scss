@@ -11,6 +11,7 @@
     .cell__wrapper {
       padding: $box-padding/2 $box-padding;
       display: flex;
+      flex: 0 0 auto !important;
       width: 100%;
       flex-direction: column;
       justify-content: center;
