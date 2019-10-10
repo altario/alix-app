@@ -8,6 +8,7 @@ import { StateOfConservationComponent } from './state-of-conservation/state-of-c
 import { LocationComponent } from './location/location.component';
 import { DemandAndOfferComponent } from './demand-offer/demand-offer.component';
 import { MatchComponent } from './match/match.component';
+import { CreateSimulationComponent } from '../create-simulation/create-simulation.component';
 
 // layouts
 import { SimulationsLayoutComponent } from '@core/index';
@@ -16,6 +17,16 @@ export const SimulationsRoutes: Routes = [
   {
     path: '',
     component: SimulationsListComponent,
+  },
+  {
+    path: 'create-simulation',
+    component: SimulationsLayoutComponent,
+    children: [
+      {
+        path: '',
+        component: CreateSimulationComponent
+      }
+    ]
   },
   {
     path: ':id',
@@ -46,6 +57,6 @@ export const SimulationsRoutes: Routes = [
         path: 'match',
         component: MatchComponent
       }
-    ]
+    ],
   }
 ];

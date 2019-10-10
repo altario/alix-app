@@ -14,3 +14,13 @@ ul {
   margin-top: 30px;
   list-style: none;
 }
+
+.col--btn {
+  display: flex;
+  align-items: flex-end;
+
+  .btn--edit {
+    width: 220px;
+    margin-right: 20px;
+  }
+}

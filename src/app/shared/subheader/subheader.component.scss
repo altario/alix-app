@@ -128,3 +128,7 @@ $subheader__navbar--height: 40px;
     }
   }
 }
+
+.btn--fake {
+  pointer-events: none;
+}

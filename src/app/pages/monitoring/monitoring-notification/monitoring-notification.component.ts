@@ -1,17 +1,21 @@
+// angular
 import { Component, OnInit } from '@angular/core';
 
-import { MonitorListsService } from '../../services/monitorLists.service';
+// rxjs
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+
+// services
+import { MonitorListsService } from '@app/services/monitorLists.service';
 
 const filterSortArray = []; // [2, 1, ...]
 
 @Component({
-  selector: 'app-monitoring',
-  templateUrl: './monitoring.component.html',
-  styleUrls: ['./monitoring.component.scss']
+  selector: 'app-monitoring-notification',
+  templateUrl: './monitoring-notification.component.html',
+  styleUrls: ['./monitoring-notification.component.scss']
 })
-export class MonitoringComponent implements OnInit {
+export class MonitoringNotificationComponent implements OnInit {
   public notifications$: Observable<any>;
 
   constructor(private apiService: MonitorListsService) {

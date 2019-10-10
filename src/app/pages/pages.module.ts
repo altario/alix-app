@@ -7,17 +7,17 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 
 // routes
-import { PagesRoutes } from './pages.routing';
+import { PagesRoutes } from './page.routing';
 
 // pages
 import { LoginComponent } from './login/login.component';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { MonitoringComponent } from './monitoring/monitoring.component';
 import { ReportsComponent } from './reports/reports.component';
 import { CounterpartsComponent } from './counterparts/counterparts.component';
 
 import { CreatePortfolioComponent } from './create-portfolio/create-portfolio.component';
+// import { CreateSimulationComponent } from './create-simulation/create-simulation.component';
 
 // headers
 import { SubheaderDashboardComponent } from '@shared/subheader-dashboard/subheader-dashboard.component';
@@ -57,11 +57,11 @@ import { AgmCoreModule } from '@agm/core';
 
     // pages
     DashboardComponent,
-    MonitoringComponent,
     ReportsComponent,
     CounterpartsComponent,
 
     CreatePortfolioComponent,
+    // CreateSimulationComponent,
 
     // components
     SubheaderDashboardComponent,

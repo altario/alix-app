@@ -11,8 +11,7 @@ import { LocationComponent } from './location/location.component';
 import { DemandAndOfferComponent } from './demand-offer/demand-offer.component';
 import { SimulationsListComponent } from './simulations-list/simulations-list.component';
 import { MatchComponent } from './match/match.component';
-
-// components
+import { CreateSimulationComponent } from '../create-simulation/create-simulation.component';
 
 // routes
 import { SimulationsRoutes } from './simulations.routing';
@@ -47,7 +46,8 @@ import { AgmCoreModule } from '@agm/core';
     LocationComponent,
     DemandAndOfferComponent,
     SimulationsListComponent,
-    MatchComponent
+    MatchComponent,
+    CreateSimulationComponent
 
     // components
   ],

@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <section class="page-section bg--light">
+    <div class="row">
+      <div class="col col--panel">
+        <img src="assets/images/dash-panel--left.png" alt="">
+      </div>
+      <div class="col col--panel-content">
+        <img *ngIf="showMap && !showZoom" class="dash-image--map" src="assets/images/dash-image--map.png" alt="">
+        <img *ngIf="showMap && showZoom" class="dash-image--map--big" src="assets/images/dash-image--map--zoom.png" alt="">
+        <img *ngIf="showMap" (click)="changeMap()" class="dash-image--map-toggle" src="assets/images/dash-panel--toggle-view.png" alt="">
+        <img *ngIf="showMap" (click)="changeZoom()" class="dash-image--map-zoom" src="assets/images/dash--zoom-slider.png" alt="">
+
+        <img *ngIf="!showMap" src="assets/images/dash-image--list.png" alt="">
+        <img *ngIf="!showMap" (click)="changeMap()" class="dash-image--map-toggle" src="assets/images/dash-panel--toggle-view--list.png" alt="">
+      </div>
+      <div class="col col--panel">
+        <img src="assets/images/dash-panel--right.png" alt="">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <img *ngIf="!showZoom" src="assets/images/dash-image--info.png" alt="">
+        <img *ngIf="showZoom" src="assets/images/dash-image--info--big.png" alt="">
+      </div>
+    </div>
+  </section>
+</div>

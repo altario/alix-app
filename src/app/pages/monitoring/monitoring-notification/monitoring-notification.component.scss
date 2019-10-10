@@ -1,5 +1,9 @@
 @import '~src/scss/imports';
 
+.page-section {
+  padding-top: 20px;
+}
+
 ul {
   padding: 0;
 
@@ -39,8 +43,8 @@ ul {
 }
 
 .section-title {
+  top: 120px;
   position: fixed;
-  top: 100px;
 }
 
 .container-fluid .page-section > * + * {

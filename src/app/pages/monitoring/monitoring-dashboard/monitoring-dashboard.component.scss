@@ -1,0 +1,69 @@
+// @import '~src/scss/imports';
+
+// :host {
+// }
+
+// :host::ng-deep {
+// }
+
+.container-fluid {
+  .page-section {
+    padding: 0;
+
+    .row {
+      min-width: 100%;
+      max-width: 100%;
+      margin: 0;
+
+      .col {
+        padding: 0;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      .col--panel-content {
+        max-height: 660px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .dash-image--map,
+        .dash-image--map--big {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+
+        .dash-image--map-toggle {
+          width: 160px;
+          height: auto;
+          position: absolute;
+          top: 0;
+          left: 0;
+          margin-left: -20px;
+          cursor: pointer;
+        }
+
+        .dash-image--map-zoom {
+          width: 125px;
+          height: auto;
+          position: absolute;
+          top: 0;
+          right: 0;
+          cursor: pointer;
+        }
+
+        .dash-image--map--big {
+          padding: 100px;
+        }
+      }
+
+      .col--panel {
+        flex: 0 0 300px;
+        max-width: 300px;
+      }
+    }
+  }
+}

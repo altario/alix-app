@@ -1,0 +1,19 @@
+.page-section {
+  min-height: 100vh;
+
+  .row {
+    margin-top: 0;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .col--btn {
+    align-items: flex-start;
+
+    .btn--edit {
+      margin-left: 40px;
+    }
+  }
+}

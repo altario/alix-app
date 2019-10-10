@@ -1,0 +1,13 @@
+<section class="page-section bg--light">
+  <div class="row">
+    <div class="col">
+      <img src="assets/images/sim--new.png" alt="">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col--btn">
+      <a (click)="showMoreInfo()" class="btn btn-primary btn--edit">{{ moreInfo ? 'Refresh' : 'Generate' }}</a>
+      <img *ngIf="moreInfo" src="assets/images/sim--new--result.png" alt="">
+    </div>
+  </div>
+</section>

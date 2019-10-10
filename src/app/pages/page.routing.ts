@@ -1,15 +1,14 @@
 // angular
-import { Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
-// pages
+// components
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-// import { RestructuringListComponent } from './restructuring/restructuring-list/restructuring-list.component';
-import { MonitoringComponent } from './monitoring/monitoring.component';
 import { ReportsComponent } from './reports/reports.component';
 import { CounterpartsComponent } from './counterparts/counterparts.component';
-
 import { CreatePortfolioComponent } from './create-portfolio/create-portfolio.component';
+// import { CreateSimulationComponent } from './create-simulation/create-simulation.component';
 
 // layouts
 import { BaseLayoutComponent } from '@core/index';
@@ -50,7 +49,7 @@ export const PagesRoutes: Routes = [
       },
       {
         path: 'monitoring',
-        component: MonitoringComponent
+        loadChildren: './monitoring/monitoring.module#MonitoringModule'
       },
       {
         path: 'portfolios',
@@ -101,7 +100,11 @@ export const PagesRoutes: Routes = [
       {
         path: 'counterparts',
         component: CounterpartsComponent
-      }
+      },
+      // {
+      //   path: 'create-simulation',
+      //   component: CreateSimulationComponent
+      // }
     ]
   }
 ];

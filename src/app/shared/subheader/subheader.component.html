@@ -2,15 +2,22 @@
   <div class="navbar__left">
     <div class="back">
       <a (click)="goBack()" class="btn btn-ghost-lightest btn--back"><i class="icor ico-chevron-left"></i>Back</a>
-      <span *ngIf="!isUnderwriter">{{ config.client.clientName.value }}</span>
+      <span *ngIf="!isUnderwriter && !isMonitoring">{{ config.client.clientName.value }}</span>
     </div>
   </div>
   <div class="navbar__right">
     <!-- <a *ngIf="!isUnderwriter && !isSimulation" class="btn btn-ghost-lightest" [routerLink]="['match']" routerLinkActive="active">Match</a> -->
-    <a *ngIf="!isSimulation" class="btn btn-ghost-lightest" [routerLink]="['financial']" routerLinkActive="active">Financial</a>
+    <a *ngIf="!isSimulation && !isMonitoring" class="btn btn-ghost-lightest" [routerLink]="['financial']" routerLinkActive="active">Financial</a>
     <a *ngIf="isUnderwriter && !isSimulation || isRetail" class="btn btn-ghost-lightest" [routerLink]="['performance']" routerLinkActive="active">Performance</a>
     <a *ngIf="isRealEstate && !isUnderwriter && !isSimulation" class="btn btn-ghost-lightest" [routerLink]="['state-of-conservation']" routerLinkActive="active">State of Conservation</a>
     <a *ngIf="isRealEstate && !isUnderwriter && !isSimulation" class="btn btn-ghost-lightest" [routerLink]="['demand-offer']" routerLinkActive="active">Demand & Offer</a>
-    <a *ngIf="!isSimulation" class="btn btn-ghost-lightest" [routerLink]="['location']" routerLinkActive="active">Location</a>
+    <a *ngIf="!isSimulation && !isMonitoring" class="btn btn-ghost-lightest" [routerLink]="['location']" routerLinkActive="active">Location</a>
+
+    <a *ngIf="isMonitor && isMonitoring" class="btn btn-ghost-lightest" [routerLink]="['dashboard']" routerLinkActive="active">Dashboard</a>
+    <a *ngIf="isMonitor && isMonitoring" class="btn btn-ghost-lightest" [routerLink]="['intelligence']" routerLinkActive="active">Intelligence</a>
+    <a *ngIf="isMonitor && isMonitoring" class="btn btn-ghost-lightest" [routerLink]="['notification']" routerLinkActive="active">Notification</a>
+
+    <a *ngIf="isUnderwriter && isCreateSimulation" class="btn btn-ghost-lightest btn--fake" [routerLink]="['']" routerLinkActive="active">New Simulation</a>
+    <a *ngIf="isUnderwriter && isCreateSimulation" class="btn btn-ghost-lightest btn--fake" [routerLink]="['create-simulation']" routerLinkActive="active">Existing Simulation</a>
   </div>
 </nav>

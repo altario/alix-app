@@ -1,0 +1,22 @@
+// @import '~src/scss/imports';
+
+// :host {
+// }
+
+// :host::ng-deep {
+// }
+
+.container-fluid {
+  .page-section {
+    padding: 0;
+
+    .row {
+      min-width: 100%;
+      max-width: 100%;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
