@@ -370,7 +370,7 @@ export class StateOfConservationComponent implements OnInit {
       dots.push({
         lat: Math.floor(Math.random() * 85) + 15,
         lng: Math.floor(Math.random() * 85) + 15,
-        img: '/assets/images/soc_map/' + imgs.shift(),
+        img: 'assets/images/soc_map/' + imgs.shift(),
         color: '#7AC143'
       });
     }
