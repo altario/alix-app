@@ -11,10 +11,6 @@ import { fadeAnimation } from '@app/animations';
   animations: [fadeAnimation]
 })
 export class UnderwriterComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  constructor() {}
+  ngOnInit() {}
 }

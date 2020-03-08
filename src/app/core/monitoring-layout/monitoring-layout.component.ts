@@ -12,10 +12,10 @@ import { fadeAnimation } from '@app/animations';
 import { DossiersCommunicationService } from '@services/dossiers-communication.service';
 
 @Component({
-    selector: 'app-monitoring-layout',
-    templateUrl: './monitoring-layout.component.html',
-    styleUrls: ['./monitoring-layout.component.scss'],
-    animations: [fadeAnimation]
+  selector: 'app-monitoring-layout',
+  templateUrl: './monitoring-layout.component.html',
+  styleUrls: ['./monitoring-layout.component.scss'],
+  animations: [fadeAnimation]
 })
 export class MonitoringLayoutComponent implements OnInit {
   // public config: any;

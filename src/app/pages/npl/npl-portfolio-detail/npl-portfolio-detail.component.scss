@@ -1,0 +1,29 @@
+:host {
+  display: block;
+}
+
+.npl__image {
+  width: 100%;
+  height: auto;
+  box-shadow: 0px 12px 40px rgba(3, 4, 5, 0.3);
+}
+
+.npls__image--portfolio {
+  width: 100%;
+  min-width: 1250px;
+  height: auto;
+  margin-top: -40px;
+  margin-left: -40px;
+  margin-right: -40px;
+  cursor: pointer;
+}
+
+.block {
+  position: relative;
+
+  .btn {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+  }
+}

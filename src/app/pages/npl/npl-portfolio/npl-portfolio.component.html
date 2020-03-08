@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <section class="page-section bg--light">
+    <div class="row">
+      <div class="col">
+        <h1 class="section-title">Portfolio</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-8">
+        <div class="block">
+          <img class="npl__image npl__image--pointer npl__image--left1" src="assets/images/npl__portfolio--left1.png" (click)="goToDetail()">
+          <button class="btn btn-small btn-primary" (click)="openModal(template)">See Chart</button>
+        </div>
+        <div class="block">
+          <img class="npl__image npl__image--pointer npl__image--left2" src="assets/images/npl__portfolio--left2.png" (click)="goToDetail()">
+          <button class="btn btn-small btn-primary" (click)="openModal(template)">See Chart</button>
+        </div>
+        <div class="block">
+          <img class="npl__image npl__image--pointer npl__image--left3" src="assets/images/npl__portfolio--left3.png" (click)="goToDetail()">
+          <button class="btn btn-small btn-primary" (click)="openModal(template)">See Chart</button>
+        </div>
+      </div>
+      <div class="col-4 col--right">
+        <img class="npl__image npl__image--right" src="assets/images/npl__portfolio--right.png">
+      </div>
+    </div>
+  </section>
+</div>
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">NBV Recovery and REIC adj.</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()"></button>
+  </div>
+  <div class="modal-body">
+    <img class="" src="assets/images/npl__portfolio--modal-dontent.jpg">
+  </div>
+</ng-template>

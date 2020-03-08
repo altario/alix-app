@@ -5,7 +5,6 @@ import { Routes, RouterModule } from '@angular/router';
 // components
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ReportsComponent } from './reports/reports.component';
 import { CounterpartsComponent } from './counterparts/counterparts.component';
 import { CreatePortfolioComponent } from './create-portfolio/create-portfolio.component';
 // import { CreateSimulationComponent } from './create-simulation/create-simulation.component';
@@ -62,8 +61,8 @@ export const PagesRoutes: Routes = [
         loadChildren: './positions/positions.module#PositionsModule'
       },
       {
-        path: 'reports',
-        component: ReportsComponent
+        path: 'npl',
+        loadChildren: './npl/npl.module#NplModule'
       },
       {
         path: 'counterparts',

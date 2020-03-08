@@ -13,7 +13,6 @@ import { PagesRoutes } from './page.routing';
 import { LoginComponent } from './login/login.component';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ReportsComponent } from './reports/reports.component';
 import { CounterpartsComponent } from './counterparts/counterparts.component';
 
 import { CreatePortfolioComponent } from './create-portfolio/create-portfolio.component';
@@ -57,7 +56,6 @@ import { AgmCoreModule } from '@agm/core';
 
     // pages
     DashboardComponent,
-    ReportsComponent,
     CounterpartsComponent,
 
     CreatePortfolioComponent,

@@ -1,0 +1,23 @@
+:host {
+  display: block;
+}
+
+.npl__image {
+  width: 100%;
+  height: auto;
+  box-shadow: 0px 12px 40px rgba(3, 4, 5, 0.3);
+}
+
+.npl__image--pointer {
+  cursor: pointer;
+}
+
+.block {
+  position: relative;
+
+  .btn {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+  }
+}

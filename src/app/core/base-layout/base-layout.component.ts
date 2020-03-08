@@ -10,10 +10,6 @@ import { fadeAnimation } from '@app/animations';
   animations: [fadeAnimation]
 })
 export class BaseLayoutComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  constructor() {}
+  ngOnInit() {}
 }

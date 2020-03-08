@@ -19,11 +19,6 @@ import { MonitoringLayoutComponent } from '@app/core/monitoring-layout/monitorin
 export const MonitoringRoutes: Routes = [
   {
     path: '',
-    redirectTo: 'monitoring',
-    pathMatch: 'full'
-  },
-  {
-    path: 'monitoring',
     component: MonitoringLayoutComponent,
     children: [
       {

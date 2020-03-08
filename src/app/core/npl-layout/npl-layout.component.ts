@@ -12,12 +12,12 @@ import { fadeAnimation } from '@app/animations';
 import { DossiersCommunicationService } from '@services/dossiers-communication.service';
 
 @Component({
-  selector: 'app-positions-layout',
-  templateUrl: './positions-layout.component.html',
-  styleUrls: ['./positions-layout.component.scss'],
+  selector: 'app-npl-layout',
+  templateUrl: './npl-layout.component.html',
+  styleUrls: ['./npl-layout.component.scss'],
   animations: [fadeAnimation]
 })
-export class PositionsLayoutComponent implements OnInit {
+export class NplLayoutComponent implements OnInit {
   // public config: any;
 
   constructor(private route: ActivatedRoute, private dossierCommService: DossiersCommunicationService) {}

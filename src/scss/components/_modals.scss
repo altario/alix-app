@@ -288,3 +288,11 @@
     filter: blur(5px);
   }
 }
+
+.modal--portfolio {
+  max-width: 770px;
+
+  .modal-body {
+    padding: 0 !important;
+  }
+}
