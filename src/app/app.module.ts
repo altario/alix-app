@@ -55,7 +55,7 @@ import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 
     // plugins
     AgmCoreModule.forRoot({
-        apiKey: 'AIzaSyC_wMmBNunjK0XEu_HTlGrsOhVVHfyppN0' + '&libraries=visualization',
+        apiKey: 'AIzaSyAZ3vXwrJfNQAgaSvnjKYyIH-NitILRZwQ' + '&libraries=visualization',
     }),
   ],
   providers: [LocaldataService],
